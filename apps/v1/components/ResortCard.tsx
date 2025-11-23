@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Resort } from '@/lib/mock-data';
 import { Star, MapPin, Snowflake } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
@@ -24,8 +25,8 @@ export function ResortCard({ resort }: ResortCardProps) {
   };
 
   return (
-    <a
-      href={`#resort-${resort.slug}`}
+    <Link
+      href={`/colorado/${resort.slug}`}
       className="card group cursor-pointer"
     >
       {/* Image */}
@@ -106,6 +107,6 @@ export function ResortCard({ resort }: ResortCardProps) {
           />
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

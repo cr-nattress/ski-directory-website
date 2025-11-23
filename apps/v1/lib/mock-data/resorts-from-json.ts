@@ -167,23 +167,15 @@ function getDistanceFromDenver(lat: number, lng: number): { distance: number; dr
   };
 }
 
-// Helper to get Unsplash image URL
+// Helper to get hero image URL
 function getHeroImage(slug: string, idx: number): string {
-  const imageIds = [
-    '1605540436563-5bca919ae766',
-    '1551524164-687a55dd1126',
-    '1565992441121-4367c2967103',
-    '1543785734-4b6e564642f8',
-    '1551524559-8af4e6624178',
-    '1548777123-e216912df7d8',
-    '1609137144813-7d9921338f24',
-    '1544551763-46a013bb70d5',
-    '1547498575-853bad4e1e6c',
-    '1565992441121-4367c2967103',
-  ];
+  // Using Lorem Picsum for reliable placeholder images
+  // Each resort gets a consistent image based on its index
+  // Image IDs chosen to provide variety and mountain-like landscapes
+  const imageIds = [237, 251, 433, 582, 659, 783, 839, 1015, 1036, 1074];
 
   const imageId = imageIds[idx % imageIds.length];
-  return `https://images.unsplash.com/photo-${imageId}?w=800`;
+  return `https://picsum.photos/id/${imageId}/800/600`;
 }
 
 // Convert raw resort to our Resort type
