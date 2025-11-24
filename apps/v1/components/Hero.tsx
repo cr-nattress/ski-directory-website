@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
-import { getRegionalStats } from '@/lib/mock-data';
+import { useRegionalStats } from '@/lib/hooks';
 
 export function Hero() {
   const [whereValue, setWhereValue] = useState('');
   const [whenValue, setWhenValue] = useState('');
   const [whoValue, setWhoValue] = useState('');
 
-  const stats = getRegionalStats();
+  const { stats, isLoading } = useRegionalStats();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ export function Hero() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1920&q=80)',
+              'url(https://images.unsplash.com/photo-1551524164-687a55dd1126?w=1920&q=80)',
           }}
         />
         {/* Overlay */}
@@ -132,20 +132,30 @@ export function Hero() {
 
         {/* Stats */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white text-sm">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">{stats.totalResorts}</span>
-            <span className="opacity-90">world-class resorts</span>
-          </div>
-          <div className="hidden md:block w-1 h-1 rounded-full bg-white/50" />
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">{stats.avgAnnualSnowfall}"</span>
-            <span className="opacity-90">avg snowfall</span>
-          </div>
-          <div className="hidden md:block w-1 h-1 rounded-full bg-white/50" />
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">{stats.openResorts}</span>
-            <span className="opacity-90">open today</span>
-          </div>
+          {isLoading ? (
+            <div className="flex items-center gap-8">
+              <div className="h-4 w-32 bg-white/20 rounded animate-pulse" />
+              <div className="h-4 w-28 bg-white/20 rounded animate-pulse" />
+              <div className="h-4 w-24 bg-white/20 rounded animate-pulse" />
+            </div>
+          ) : stats ? (
+            <>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold">{stats.totalResorts}</span>
+                <span className="opacity-90">world-class resorts</span>
+              </div>
+              <div className="hidden md:block w-1 h-1 rounded-full bg-white/50" />
+              <div className="flex items-center gap-2">
+                <span className="font-semibold">{stats.avgAnnualSnowfall}"</span>
+                <span className="opacity-90">avg snowfall</span>
+              </div>
+              <div className="hidden md:block w-1 h-1 rounded-full bg-white/50" />
+              <div className="flex items-center gap-2">
+                <span className="font-semibold">{stats.openResorts}</span>
+                <span className="opacity-90">open today</span>
+              </div>
+            </>
+          ) : null}
         </div>
       </div>
     </section>

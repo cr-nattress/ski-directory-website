@@ -2,6 +2,14 @@
 
 export type PassAffiliation = 'epic' | 'ikon' | 'indy' | 'local';
 
+export interface ResortImage {
+  url: string;
+  alt: string;
+  priority: number; // Lower numbers display first (1 = highest priority)
+  isCardImage: boolean; // Shows on the dashboard/listing card
+  isHeroImage: boolean; // Large image for resort detail page
+}
+
 export interface Resort {
   id: string;
   slug: string;
@@ -72,8 +80,8 @@ export interface Resort {
   reviewCount: number;
 
   // Images
-  heroImage: string;
-  images?: string[];
+  heroImage: string; // @deprecated - Use images array with isHeroImage flag instead
+  images?: ResortImage[];
   trailMapUrl?: string;
 
   // Social Media

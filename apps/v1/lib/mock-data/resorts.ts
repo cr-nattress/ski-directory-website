@@ -38,6 +38,13 @@ export const mockResorts: Resort[] = [
     rating: 4.8,
     reviewCount: 2347,
     heroImage: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Vail Ski Resort mountain view', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800', alt: 'Vail Back Bowls panorama', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Vail Village at sunset', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Skiers on Vail slopes', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Vail gondola lift', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1200',
     weather: {
       current: {
@@ -109,6 +116,13 @@ export const mockResorts: Resort[] = [
     rating: 4.7,
     reviewCount: 3142,
     heroImage: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800', alt: 'Breckenridge Ski Resort peaks', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Breckenridge historic Main Street', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Breckenridge ski runs', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Breckenridge gondola', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Breckenridge powder skiing', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1200',
     weather: {
       current: {
@@ -180,6 +194,13 @@ export const mockResorts: Resort[] = [
     rating: 4.9,
     reviewCount: 1876,
     heroImage: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Aspen Snowmass mountain landscape', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Aspen downtown winter scene', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Aspen Highlands Bowl', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Snowmass Village', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Aspen powder day', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=1200',
     weather: {
       current: {
@@ -250,6 +271,13 @@ export const mockResorts: Resort[] = [
     rating: 4.8,
     reviewCount: 1654,
     heroImage: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Steamboat Resort Champagne Powder', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Steamboat Springs town', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Steamboat gondola ride', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Steamboat tree skiing', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Steamboat hot springs', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=1200',
     weather: {
       current: {
@@ -321,6 +349,13 @@ export const mockResorts: Resort[] = [
     rating: 4.7,
     reviewCount: 987,
     heroImage: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Arapahoe Basin high altitude terrain', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800', alt: 'A-Basin East Wall', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'A-Basin steep chutes', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'The Beach at A-Basin', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'A-Basin spring skiing', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=1200',
     weather: {
       current: {
@@ -391,6 +426,13 @@ export const mockResorts: Resort[] = [
     rating: 4.6,
     reviewCount: 1234,
     heroImage: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Loveland Ski Area summit view', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Loveland Basin terrain', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Loveland Valley beginner area', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Loveland Continental Divide', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Loveland powder day', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1200',
     weather: {
       current: {
@@ -461,6 +503,13 @@ export const mockResorts: Resort[] = [
     rating: 4.5,
     reviewCount: 1456,
     heroImage: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800', alt: 'Copper Mountain divided terrain', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Copper Center Village', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Copper Mountain superpipe', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Copper Mountain slopes', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Copper east village', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200',
     weather: {
       current: {
@@ -532,6 +581,13 @@ export const mockResorts: Resort[] = [
     rating: 4.6,
     reviewCount: 1789,
     heroImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800', alt: 'Winter Park Resort mountain view', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800', alt: 'Winter Park Mary Jane terrain', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Winter Park tree skiing', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Winter Park village', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Winter Park Express chairlift', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200',
     weather: {
       current: {
@@ -602,6 +658,13 @@ export const mockResorts: Resort[] = [
     rating: 4.4,
     reviewCount: 1523,
     heroImage: 'https://images.unsplash.com/photo-1486444786609-e3c8dcb0958e?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1486444786609-e3c8dcb0958e?w=800', alt: 'Keystone Resort night skiing', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Keystone River Run Village', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Keystone terrain park', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Keystone mountain peaks', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Keystone Outback terrain', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1486444786609-e3c8dcb0958e?w=1200',
     weather: {
       current: {
@@ -673,6 +736,13 @@ export const mockResorts: Resort[] = [
     rating: 4.9,
     reviewCount: 892,
     heroImage: 'https://images.unsplash.com/photo-1418290232843-5d7a0bd93f7d?w=800',
+    images: [
+      { url: 'https://images.unsplash.com/photo-1418290232843-5d7a0bd93f7d?w=800', alt: 'Telluride Ski Resort scenic view', priority: 1, isCardImage: true, isHeroImage: true },
+      { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Telluride historic downtown', priority: 2, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Telluride mountain village gondola', priority: 3, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Telluride San Juan views', priority: 4, isCardImage: false, isHeroImage: false },
+      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Telluride expert terrain', priority: 5, isCardImage: false, isHeroImage: false },
+    ],
     trailMapUrl: 'https://images.unsplash.com/photo-1418290232843-5d7a0bd93f7d?w=1200',
     weather: {
       current: {

@@ -4,7 +4,25 @@ export * from './articles';
 
 // Use real Colorado resorts data with weather and enhanced features
 import { mockResorts as resortsData } from './resorts';
-import { Resort } from './types';
+import { Resort, ResortImage } from './types';
+
+// Helper to get the card image for a resort (for dashboard/listing cards)
+export function getCardImage(resort: Resort): ResortImage | undefined {
+  if (!resort.images || resort.images.length === 0) return undefined;
+  return resort.images.find((img) => img.isCardImage) || resort.images[0];
+}
+
+// Helper to get the hero image for a resort (large image for detail page)
+export function getHeroImage(resort: Resort): ResortImage | undefined {
+  if (!resort.images || resort.images.length === 0) return undefined;
+  return resort.images.find((img) => img.isHeroImage) || resort.images[0];
+}
+
+// Helper to get all images sorted by priority
+export function getSortedImages(resort: Resort): ResortImage[] {
+  if (!resort.images || resort.images.length === 0) return [];
+  return [...resort.images].sort((a, b) => a.priority - b.priority);
+}
 
 // Export all resorts
 export const mockResorts = resortsData;

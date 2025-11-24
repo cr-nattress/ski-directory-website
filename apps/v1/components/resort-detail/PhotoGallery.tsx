@@ -1,6 +1,6 @@
 'use client';
 
-import { Resort } from '@/lib/mock-data';
+import { Resort, getSortedImages, ResortImage } from '@/lib/mock-data';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 
@@ -12,15 +12,11 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // For now, we'll use the heroImage multiple times
-  // In the future, this will pull from resort.images array
-  const images = [
-    resort.heroImage,
-    resort.heroImage,
-    resort.heroImage,
-    resort.heroImage,
-    resort.heroImage,
-  ];
+  // Get images sorted by priority, falling back to heroImage if no images array
+  const sortedImages = getSortedImages(resort);
+  const images: ResortImage[] = sortedImages.length > 0
+    ? sortedImages
+    : [{ url: resort.heroImage, alt: `${resort.name} main view`, priority: 1, isCardImage: true, isHeroImage: true }];
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -41,8 +37,8 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
           className="col-span-2 row-span-2 relative group overflow-hidden"
         >
           <img
-            src={images[0]}
-            alt={`${resort.name} - Main view`}
+            src={images[0].url}
+            alt={images[0].alt}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
@@ -56,8 +52,8 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
             className="relative group overflow-hidden aspect-square"
           >
             <img
-              src={image}
-              alt={`${resort.name} - View ${index + 2}`}
+              src={image.url}
+              alt={image.alt}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
@@ -76,8 +72,8 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
       {/* Mobile Gallery - Single swipeable image */}
       <div className="sm:hidden relative rounded-lg overflow-hidden">
         <img
-          src={images[0]}
-          alt={`${resort.name}`}
+          src={images[0].url}
+          alt={images[0].alt}
           className="w-full h-64 object-cover"
         />
         <button
@@ -103,8 +99,8 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
 
           <div className="relative max-w-7xl max-h-screen p-4" onClick={(e) => e.stopPropagation()}>
             <img
-              src={images[currentImageIndex]}
-              alt={`${resort.name} - Photo ${currentImageIndex + 1}`}
+              src={images[currentImageIndex].url}
+              alt={images[currentImageIndex].alt}
               className="max-w-full max-h-[90vh] object-contain mx-auto"
             />
 

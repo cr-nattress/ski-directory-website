@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Resort } from '@/lib/mock-data';
+import { Resort, getCardImage } from '@/lib/mock-data';
 import { Star, MapPin, Snowflake } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -9,6 +9,10 @@ interface ResortCardProps {
 }
 
 export function ResortCard({ resort }: ResortCardProps) {
+  const cardImage = getCardImage(resort);
+  const imageUrl = cardImage?.url || resort.heroImage;
+  const imageAlt = cardImage?.alt || `${resort.name} ski resort`;
+
   const getPassBadgeStyles = (pass: string) => {
     switch (pass) {
       case 'epic':
@@ -34,8 +38,10 @@ export function ResortCard({ resort }: ResortCardProps) {
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
           style={{
-            backgroundImage: `url(${resort.heroImage})`,
+            backgroundImage: `url(${imageUrl})`,
           }}
+          role="img"
+          aria-label={imageAlt}
         />
 
         {/* Pass badges */}

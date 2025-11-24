@@ -4,17 +4,37 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export function Header() {
+interface HeaderProps {
+  variant?: 'overlay' | 'solid';
+}
+
+export function Header({ variant = 'overlay' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const isOverlay = variant === 'overlay';
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <header
+      className={cn(
+        'z-50',
+        isOverlay
+          ? 'absolute top-0 left-0 right-0 bg-transparent'
+          : 'relative bg-white border-b border-gray-200'
+      )}
+    >
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-white font-display text-2xl font-bold">
-              ⛷️ SkiCO
+            <a
+              href="/"
+              className={cn(
+                'font-display text-2xl font-bold flex items-center gap-2',
+                isOverlay ? 'text-white' : 'text-ski-blue'
+              )}
+            >
+              <span>⛷️</span>
+              <span>SkiCO</span>
             </a>
           </div>
 
@@ -22,21 +42,20 @@ export function Header() {
           <div className="hidden md:flex items-center space-x-6">
             <a
               href="#"
-              className="text-white hover:text-powder-blue transition-colors text-sm font-medium"
+              className={cn(
+                'transition-colors text-sm font-medium',
+                isOverlay
+                  ? 'text-white hover:text-powder-blue'
+                  : 'text-gray-700 hover:text-ski-blue'
+              )}
             >
               Login
-            </a>
-            <a
-              href="#"
-              className="bg-white text-ski-blue px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
-            >
-              List Your Property
             </a>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-white p-2"
+            className={cn('md:hidden p-2', isOverlay ? 'text-white' : 'text-gray-700')}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -57,12 +76,6 @@ export function Header() {
                 className="text-ski-blue hover:text-powder-blue transition-colors font-medium"
               >
                 Login
-              </a>
-              <a
-                href="#"
-                className="bg-ski-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium text-center"
-              >
-                List Your Property
               </a>
             </div>
           </div>
