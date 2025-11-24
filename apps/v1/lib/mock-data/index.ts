@@ -2,12 +2,12 @@ export * from './types';
 export * from './categories';
 export * from './articles';
 
-// Use real Colorado resorts data
-import { allColoradoResorts } from './resorts-from-json';
+// Use real Colorado resorts data with weather and enhanced features
+import { mockResorts as resortsData } from './resorts';
 import { Resort } from './types';
 
 // Export all resorts
-export const mockResorts = allColoradoResorts;
+export const mockResorts = resortsData;
 
 export function getResortBySlug(slug: string): Resort | undefined {
   return mockResorts.find((resort) => resort.slug === slug);
