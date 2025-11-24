@@ -4,6 +4,10 @@ import { Footer } from '@/components/Footer';
 import { Breadcrumb } from './Breadcrumb';
 import { ResortHero } from './ResortHero';
 import { ResortStructuredData } from './ResortStructuredData';
+import { SocialMediaCard } from './SocialMediaCard';
+import { LocationMapCardWrapper } from './LocationMapCardWrapper';
+import { TrailMapCard } from './TrailMapCard';
+import { WeatherForecastCard } from './WeatherForecastCard';
 
 interface ResortDetailProps {
   resort: Resort;
@@ -112,6 +116,11 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                   />
                 </div>
               </section>
+
+              {/* Trail Map */}
+              <section className="border-t border-gray-200 pt-8">
+                <TrailMapCard resort={resort} />
+              </section>
             </div>
           </div>
 
@@ -169,24 +178,14 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                 </div>
               </div>
 
-              {/* Resort Info Card */}
-              <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold mb-4">Resort Info</h3>
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <p className="text-gray-600">Location</p>
-                    <p className="font-medium">{resort.nearestCity}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-600">Rating</p>
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg">⭐</span>
-                      <span className="font-semibold">{resort.rating}</span>
-                      <span className="text-gray-500">({resort.reviewCount.toLocaleString()} reviews)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Weather Forecast Card */}
+              <WeatherForecastCard resort={resort} />
+
+              {/* Location Map Card */}
+              <LocationMapCardWrapper resort={resort} />
+
+              {/* Social Media Card */}
+              <SocialMediaCard resort={resort} />
             </div>
           </div>
         </div>

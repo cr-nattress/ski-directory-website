@@ -47,6 +47,23 @@ export interface Resort {
     status: 'open' | 'closed' | 'opening-soon';
   };
 
+  // Weather forecast
+  weather?: {
+    current: {
+      temp: number; // fahrenheit
+      condition: string;
+      windSpeed: number; // mph
+      humidity: number; // percentage
+    };
+    forecast: Array<{
+      day: string;
+      high: number;
+      low: number;
+      condition: string;
+      snowChance: number; // percentage
+    }>;
+  };
+
   // Pass information
   passAffiliations: PassAffiliation[];
 
@@ -57,6 +74,16 @@ export interface Resort {
   // Images
   heroImage: string;
   images?: string[];
+  trailMapUrl?: string;
+
+  // Social Media
+  socialMedia?: {
+    facebook?: string;
+    instagram?: string;
+    youtube?: string;
+    tiktok?: string;
+    x?: string; // formerly Twitter
+  };
 
   // Features
   features: {
