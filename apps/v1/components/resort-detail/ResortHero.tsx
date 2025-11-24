@@ -68,10 +68,10 @@ export function ResortHero({ resort }: ResortHeroProps) {
           <span className="text-2xl">❄️</span>
           <div className="text-sm">
             <span className="font-semibold text-blue-900">
-              {resort.conditions.snowfall24h}" new overnight
+              {resort.conditions.snowfall24h}&quot; new overnight
             </span>
             <span className="text-blue-700 ml-2">
-              · {resort.conditions.baseDepth}" base
+              · {resort.conditions.baseDepth}&quot; base
             </span>
           </div>
         </div>

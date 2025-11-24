@@ -146,7 +146,7 @@ export function Hero() {
               </div>
               <div className="hidden md:block w-1 h-1 rounded-full bg-white/50" />
               <div className="flex items-center gap-2">
-                <span className="font-semibold">{stats.avgAnnualSnowfall}"</span>
+                <span className="font-semibold">{stats.avgAnnualSnowfall}&quot;</span>
                 <span className="opacity-90">avg snowfall</span>
               </div>
               <div className="hidden md:block w-1 h-1 rounded-full bg-white/50" />

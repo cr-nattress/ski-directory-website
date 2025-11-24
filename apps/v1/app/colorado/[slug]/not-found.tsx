@@ -12,7 +12,7 @@ export default function NotFound() {
         </h1>
 
         <p className="text-lg text-gray-600 mb-8">
-          We couldn't find the resort you're looking for. It may have been moved or doesn't exist.
+          We couldn&apos;t find the resort you&apos;re looking for. It may have been moved or doesn&apos;t exist.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -39,21 +39,23 @@ export function useResorts(options: ResortQueryOptions = {}): UseResortsResult {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
+  // Extract filter values for dependency tracking
+  const search = options.filters?.search;
+  const passAffiliation = options.filters?.passAffiliation?.join(',');
+  const maxDistance = options.filters?.maxDistance;
+  const minRating = options.filters?.minRating;
+  const status = options.filters?.status;
+  const tags = options.filters?.tags?.join(',');
+  const sortBy = options.sortBy;
+  const sortOrder = options.sortOrder;
+  const page = options.page;
+  const pageSize = options.pageSize;
+
   // Memoize options to prevent unnecessary re-fetches
   const memoizedOptions = useMemo(
     () => JSON.stringify(options),
-    [
-      options.filters?.search,
-      options.filters?.passAffiliation?.join(','),
-      options.filters?.maxDistance,
-      options.filters?.minRating,
-      options.filters?.status,
-      options.filters?.tags?.join(','),
-      options.sortBy,
-      options.sortOrder,
-      options.page,
-      options.pageSize,
-    ]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [search, passAffiliation, maxDistance, minRating, status, tags, sortBy, sortOrder, page, pageSize]
   );
 
   const fetchResorts = useCallback(async () => {

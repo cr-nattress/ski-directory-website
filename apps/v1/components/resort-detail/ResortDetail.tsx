@@ -137,11 +137,11 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                     <div className="space-y-1 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-700">New Snow (24h)</span>
-                        <span className="font-semibold">{resort.conditions.snowfall24h}"</span>
+                        <span className="font-semibold">{resort.conditions.snowfall24h}&quot;</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-700">Base Depth</span>
-                        <span className="font-semibold">{resort.conditions.baseDepth}"</span>
+                        <span className="font-semibold">{resort.conditions.baseDepth}&quot;</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-700">Terrain Open</span>
