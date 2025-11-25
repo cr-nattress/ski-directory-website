@@ -85,6 +85,9 @@ export interface Resort {
   images?: ResortImage[];
   trailMapUrl?: string;
 
+  // Website
+  websiteUrl?: string;
+
   // Social Media
   socialMedia?: {
     facebook?: string;

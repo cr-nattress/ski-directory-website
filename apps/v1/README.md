@@ -91,7 +91,7 @@ All mock data is type-safe and follows the data model designed in the planning p
 ## Components
 
 ### Header
-- Minimal navigation with logo, login, and "List Your Property" CTA
+- Minimal navigation with logo and login
 - Responsive mobile menu
 
 ### Hero

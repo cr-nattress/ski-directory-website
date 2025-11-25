@@ -1,6 +1,6 @@
 import { Resort } from '@/lib/mock-data';
 import { PhotoGallery } from './PhotoGallery';
-import { Star } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 
 interface ResortHeroProps {
   resort: Resort;
@@ -17,6 +17,18 @@ export function ResortHero({ resort }: ResortHeroProps) {
 
         {resort.tagline && (
           <p className="text-xl text-gray-600">{resort.tagline}</p>
+        )}
+
+        {resort.websiteUrl && (
+          <a
+            href={resort.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-ski-blue hover:text-blue-700 transition-colors text-sm font-medium"
+          >
+            <ExternalLink className="w-4 h-4" />
+            <span>Visit Official Website</span>
+          </a>
         )}
 
         {/* Quick Stats Row */}

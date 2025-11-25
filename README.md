@@ -1,93 +1,70 @@
-# Colorado Ski Directory 🏔️
+# Colorado Ski Directory
 
-> **Find your perfect Colorado ski resort with real-time conditions, AI-powered recommendations, and comprehensive resort information.**
+> **Discover Colorado's world-class ski resorts with real-time conditions, detailed trail maps, and comprehensive resort information.**
 
-A next-generation ski resort directory platform combining the clean simplicity of AllTrails, the search prominence of Airbnb, and the practical directory power of Yelp. Built with Next.js 14, TypeScript, and Tailwind CSS.
+A modern ski resort directory built with Next.js 14, TypeScript, and Tailwind CSS. Designed with the clean simplicity of AllTrails, the search prominence of Airbnb, and the practical directory power of Yelp.
+
+![Next.js](https://img.shields.io/badge/Next.js-14.1-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css)
+![License](https://img.shields.io/badge/license-Proprietary-red)
 
 ---
 
-## ✨ Features
+## Table of Contents
 
-### 🎿 Comprehensive Resort Data
-- **29 Colorado Ski Resorts** - Complete coverage of Colorado's world-class skiing destinations
-- **Real-time Conditions** - Live snowfall data, base depth, and terrain status
-- **Detailed Stats** - Skiable acres, vertical drop, lifts, runs, and elevation data
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Architecture](#architecture)
+- [Data Model](#data-model)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Features
+
+- **Resort Directory** - Comprehensive Colorado ski resort listings with detailed information
+- **Real-time Conditions** - Live snowfall data, base depth, terrain status, and lift counts
+- **Weather Forecasts** - Current conditions and 7-day forecasts for each resort
+- **Interactive Maps** - Leaflet-powered location maps with resort markers
+- **Trail Maps** - High-resolution trail maps for each resort
 - **Pass Affiliations** - Epic Pass, Ikon Pass, Indy Pass, and local resort badges
-
-### 🔍 Smart Search & Discovery
-- **Prominent Search Widget** - Airbnb-inspired search by location, dates, and skill level
-- **Category Browsing** - Filter by pass type, family-friendly, expert terrain, and more
-- **Progressive Disclosure** - Start simple, reveal complexity as users engage
-- **Mobile-First Design** - Optimized for on-the-go trip planning
-
-### 🏔️ Beautiful User Experience
-- **Clean, Modern Design** - Inspired by industry-leading platforms
-- **High-Quality Imagery** - Hero images and resort photos via Unsplash
-- **Scannable Resort Cards** - Essential information at a glance
-- **Responsive Layout** - Seamless experience across all devices
-
-### 🚀 AI-Ready Architecture
-- **Aggregate Root Model** - Unified structure for regions, subregions, and resorts
-- **Vector Embeddings Ready** - Prepared for AI-powered search and recommendations
-- **Structured Data** - SEO and LLM-optimized with JSON-LD
-- **Natural Language Search** - Foundation for conversational resort discovery
+- **Smart Filtering** - Filter by resort, skill level, and travel dates
+- **Responsive Design** - Mobile-first approach optimized for on-the-go planning
+- **SEO Optimized** - Structured data and metadata for search engine visibility
 
 ---
 
-## 🛠️ Tech Stack
-
-### Frontend
-- **[Next.js 14](https://nextjs.org/)** - React framework with App Router
-- **[React 18](https://react.dev/)** - UI component library
-- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first styling
-- **[Lucide React](https://lucide.dev/)** - Beautiful icon library
-
-### Data & Backend
-- **Mock Data Layer** - Realistic resort data with seeded random generation
-- **JSON Data Source** - 29 Colorado resorts from structured database export
-- **Prepared for Supabase** - PostgreSQL database ready architecture
-
-### Development Tools
-- **ESLint** - Code quality and consistency
-- **PostCSS** - CSS processing and optimization
-- **Autoprefixer** - Cross-browser CSS compatibility
-
----
-
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
-- Node.js 18+ and npm installed
-- Git for version control
+
+- Node.js 18+
+- npm or yarn
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/cr-nattress/ski-directory-website.git
-   cd ski-directory-website
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/cr-nattress/ski-directory-website.git
+cd ski-directory-website
 
-2. **Navigate to the app directory**
-   ```bash
-   cd apps/v1
-   ```
+# Navigate to the app directory
+cd apps/v1
 
-3. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# Install dependencies
+npm install
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+# Start development server
+npm run dev
+```
 
-5. **Open your browser**
-   ```
-   http://localhost:3000
-   ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Build for Production
 
@@ -98,229 +75,247 @@ npm start
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 state-ski-resort-directory/
-├── apps/
-│   ├── v1/                              # Next.js application
-│   │   ├── app/                         # Next.js App Router
-│   │   │   ├── layout.tsx              # Root layout
-│   │   │   ├── page.tsx                # Landing page
-│   │   │   └── globals.css             # Global styles
-│   │   ├── components/                  # React components
-│   │   │   ├── Header.tsx              # Navigation header
-│   │   │   ├── Hero.tsx                # Hero with search widget
-│   │   │   ├── CategoryChips.tsx       # Filter categories
-│   │   │   ├── ResortCard.tsx          # Individual resort cards
-│   │   │   ├── ResortGrid.tsx          # Resort card grid
-│   │   │   ├── ContentSection.tsx      # Featured articles
-│   │   │   └── Footer.tsx              # Site footer
-│   │   ├── lib/                         # Utilities and data
-│   │   │   ├── mock-data/              # Mock data layer
-│   │   │   │   ├── types.ts            # TypeScript types
-│   │   │   │   ├── resorts-from-json.ts # Data transformation
-│   │   │   │   ├── resorts_rows.json   # Raw resort data
-│   │   │   │   ├── categories.ts       # Category definitions
-│   │   │   │   ├── articles.ts         # Content data
-│   │   │   │   └── index.ts            # Exports & utilities
-│   │   │   └── utils.ts                # Helper functions
-│   │   ├── public/                      # Static assets
-│   │   ├── package.json                # Dependencies
-│   │   ├── tailwind.config.ts          # Tailwind configuration
-│   │   └── tsconfig.json               # TypeScript config
-│   └── colorado-landing-page-plan.md   # Implementation plan v2.0
-├── full-ski-directory-architecture.md  # Complete platform architecture
-├── ski-directory-data-model.md         # Database schema & types
-├── resorts_rows.json                   # Resort data (root copy)
-└── README.md                            # This file
+├── apps/v1/                    # Next.js application
+│   ├── app/                    # App Router pages
+│   │   ├── layout.tsx          # Root layout with fonts
+│   │   ├── page.tsx            # Landing page
+│   │   └── colorado/[slug]/    # Dynamic resort detail pages
+│   ├── components/             # React components
+│   │   ├── Header.tsx          # Navigation header
+│   │   ├── Hero.tsx            # Hero section with search
+│   │   ├── ResortCard.tsx      # Resort listing cards
+│   │   ├── ResortGrid.tsx      # Resort card grid
+│   │   └── resort-detail/      # Resort detail components
+│   ├── lib/                    # Utilities and data
+│   │   ├── api/                # API service layer
+│   │   ├── hooks/              # React hooks
+│   │   └── mock-data/          # Resort data and types
+│   └── public/images/          # Local resort images
+├── CLAUDE.md                   # AI development guide
+├── netlify.toml                # Netlify deployment config
+└── README.md                   # This file
 ```
 
 ---
 
-## 🎨 Design Philosophy
+## Architecture
 
-This project combines the best UI/UX patterns from leading platforms:
+### Tech Stack
 
-### Airbnb 🏠
-- **Search-first experience** - Prominent search widget in hero
-- **Minimal navigation** - Avoid overwhelming users
-- **One primary action** - Finding the perfect resort
-- **High-quality imagery** - Emotional connection through visuals
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript 5.3 |
+| Styling | Tailwind CSS 3.4 |
+| Icons | Lucide React |
+| Maps | Leaflet + React Leaflet |
+| Deployment | Netlify |
 
-### AllTrails 🥾
-- **Clean simplicity** - Uncluttered, outdoor-optimized design
-- **Category browsing** - Simple, intuitive filtering
-- **Essential information** - Only show what matters
-- **Mobile-optimized** - Perfect for on-the-go planning
+### Key Patterns
 
-### Yelp 📍
-- **Scannable listings** - Quick information scanning
-- **Ratings & reviews** - Social proof front and center
-- **Practical information** - Distance, conditions, pass types
-- **Directory functionality** - Comprehensive resort coverage
+**Data Layer**
+- Mock data simulates API responses with configurable latency
+- `isActive` flag controls which resorts appear in the UI
+- React hooks (`useResorts`, `useAllResorts`, `useRegionalStats`) provide data access
+
+**Component Architecture**
+- Server components for static content and SEO
+- Client components for interactive features
+- Dynamic imports for Leaflet maps (SSR-safe)
+
+**Styling System**
+- Custom colors: `ski-blue`, `powder-blue`, `epic-red`, `ikon-orange`
+- Fonts: Poppins (headings), Inter (body)
+- Mobile-first responsive breakpoints
 
 ---
 
-## 🔧 Development
+## Data Model
+
+### Resort Schema
+
+```typescript
+interface Resort {
+  id: string;
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  isActive: boolean;
+
+  // Location
+  location: { lat: number; lng: number };
+  nearestCity: string;
+  distanceFromDenver: number;
+  driveTimeFromDenver: number;
+
+  // Statistics
+  stats: {
+    skiableAcres: number;
+    liftsCount: number;
+    runsCount: number;
+    verticalDrop: number;
+    baseElevation: number;
+    summitElevation: number;
+    avgAnnualSnowfall: number;
+  };
+
+  // Terrain breakdown (percentages)
+  terrain: {
+    beginner: number;
+    intermediate: number;
+    advanced: number;
+    expert: number;
+  };
+
+  // Current conditions
+  conditions: {
+    snowfall24h: number;
+    snowfall72h: number;
+    baseDepth: number;
+    terrainOpen: number;
+    liftsOpen: number;
+    status: 'open' | 'closed' | 'opening-soon';
+  };
+
+  // Pass affiliations
+  passAffiliations: ('epic' | 'ikon' | 'indy' | 'local')[];
+
+  // Media
+  images: ResortImage[];
+  trailMapUrl: string;
+
+  // Optional
+  weather?: WeatherData;
+  socialMedia?: SocialLinks;
+  features: ResortFeatures;
+  tags: string[];
+}
+```
+
+### Active Resorts
+
+Currently, 3 resorts are active in the directory:
+
+| Resort | Pass | Distance from Denver |
+|--------|------|---------------------|
+| Vail Ski Resort | Epic | 100 miles |
+| Breckenridge Ski Resort | Epic | 85 miles |
+| Aspen Snowmass | Ikon | 200 miles |
+
+---
+
+## Development
 
 ### Available Scripts
 
 ```bash
-npm run dev      # Start development server (localhost:3000)
+npm run dev      # Start dev server (localhost:3000)
 npm run build    # Build for production
 npm start        # Start production server
 npm run lint     # Run ESLint
 ```
 
-### Key Implementation Details
+### Adding a New Resort
 
-#### Seeded Random Generation
-To prevent React hydration mismatches, all "random" values (ratings, snowfall, etc.) use deterministic seeded random generation:
+1. Add resort data to `lib/mock-data/resorts.ts`
+2. Set `isActive: true` to display in the UI
+3. Add listing image to `public/images/[resort]-listing.jpg`
+4. Add trail map to `public/images/[resort]-trailmap.jpg`
 
-```typescript
-function seededRandom(seed: number) {
-  const x = Math.sin(seed++) * 10000;
-  return x - Math.floor(x);
-}
-```
+### Common Issues
 
-This ensures server and client render identical content while maintaining data variety.
-
-#### Pass Affiliation Logic
-Resorts are intelligently assigned pass affiliations based on name/slug matching:
-
-```typescript
-// Epic Pass: Vail, Breckenridge, Keystone, Beaver Creek, Crested Butte
-// Ikon Pass: Aspen, Snowmass, Steamboat, Winter Park, Copper, Eldora, Arapahoe, Telluride
-// Indy Pass: Monarch, Powderhorn, Hesperus, Sunlight
-// Local: All others
-```
-
-#### Data Transformation
-Raw JSON resort data is transformed into app-ready format with:
-- Distance calculations from Denver
-- Terrain breakdowns by difficulty
-- Mock conditions with realistic values
-- Ratings and review counts
-- Hero images from Unsplash
+| Issue | Solution |
+|-------|----------|
+| Leaflet "window is not defined" | Use dynamic import with `ssr: false` |
+| Missing weather cards | Check imports in `lib/mock-data/index.ts` |
+| Hydration mismatch | Avoid random values that differ server/client |
 
 ---
 
-## 🏗️ Architecture Overview
+## Deployment
 
-This project implements an **aggregate root model** where regions, subregions, and resorts share a unified structure:
+### Netlify
 
-### Core Entities
-- **Region** - Colorado (expandable to other states)
-- **Subregion** - I-70 Corridor, Summit County, Front Range, etc.
-- **Resort** - Individual ski areas with full metadata
+The project is configured for Netlify deployment:
 
-### Data Model Highlights
-- **Pass Affiliations** - Epic, Ikon, Indy, Local
-- **Live Conditions** - Snowfall, base depth, terrain/lifts open
-- **Terrain Breakdown** - Beginner, intermediate, advanced, expert percentages
-- **Stats** - Skiable acres, vertical drop, elevations, annual snowfall
-- **Features** - Parks, halfpipes, night skiing, backcountry access
-- **Tags** - Family-friendly, budget, expert, near-denver, etc.
+```toml
+[build]
+  base = "apps/v1"
+  command = "npm run build"
+  publish = ".next"
 
-For complete architecture details, see:
-- [`full-ski-directory-architecture.md`](./full-ski-directory-architecture.md)
-- [`ski-directory-data-model.md`](./ski-directory-data-model.md)
-- [`apps/colorado-landing-page-plan.md`](./apps/colorado-landing-page-plan.md)
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+```
+
+Deploy automatically by pushing to the `master` branch.
 
 ---
 
-## 🎯 Roadmap
+## Roadmap
 
-### Phase 1: MVP ✅ (Complete)
-- [x] Next.js 14 project setup
-- [x] Design system (Tailwind + custom palette)
-- [x] Hero section with search widget
-- [x] Category filtering
-- [x] Resort card grid (29 resorts)
-- [x] Mobile responsive design
-- [x] Mock data layer
-- [x] Basic routing
+### Completed
 
-### Phase 2: Enhanced Features (Planned)
+- [x] Next.js 14 App Router setup
+- [x] Resort directory with filtering
+- [x] Resort detail pages with full information
+- [x] Weather forecasts and conditions
+- [x] Interactive location maps
+- [x] Trail map display
+- [x] Social media links
+- [x] API service layer with React hooks
+- [x] isActive flag for resort visibility
+- [x] Local images for listings and trail maps
+- [x] Netlify deployment
+
+### Planned
+
 - [ ] Real-time conditions API integration
-- [ ] Resort detail pages
-- [ ] Conditions dashboard
-- [ ] SEO optimization (structured data)
-- [ ] Featured articles/content section
-- [ ] Performance optimization
-
-### Phase 3: AI & Advanced Tools (Planned)
-- [ ] AI Resort Finder (natural language search)
-- [ ] Vector embeddings for semantic search
-- [ ] Pass optimizer tool
-- [ ] Trip budgeter calculator
 - [ ] User authentication
-- [ ] Reviews & snow reports
-
-### Phase 4: Community & Polish (Planned)
-- [ ] User-generated content (reviews, photos, reports)
-- [ ] Community features
-- [ ] Advanced filters & sorting
-- [ ] Map view
-- [ ] Weather forecasts
-- [ ] Analytics & insights
+- [ ] Reviews and ratings
+- [ ] AI-powered resort recommendations
+- [ ] Pass optimizer tool
+- [ ] Trip planning features
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome! This project is in active development.
+Contributions are welcome! Please follow these steps:
 
-### Guidelines
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit changes with descriptive messages
+4. Push to your branch (`git push origin feature/new-feature`)
 5. Open a Pull Request
 
 ### Code Style
-- Follow existing TypeScript conventions
-- Use Tailwind CSS for styling
-- Maintain mobile-first responsive design
-- Write clear, descriptive commit messages
+
+- TypeScript for all new code
+- Tailwind CSS for styling
+- Mobile-first responsive design
+- Conventional commit messages
 
 ---
 
-## 📄 License
+## License
 
-This project is private and proprietary. All rights reserved.
-
----
-
-## 🙏 Acknowledgments
-
-- **UI/UX Inspiration** - Airbnb, AllTrails, Yelp
-- **Resort Data** - Sourced from public ski resort databases
-- **Images** - [Unsplash](https://unsplash.com/) - High-quality ski photography
-- **Icons** - [Lucide](https://lucide.dev/) - Beautiful open-source icons
-- **Fonts** - Inter & Poppins from Google Fonts
+This project is proprietary. All rights reserved.
 
 ---
 
-## 📞 Contact & Support
+## Acknowledgments
 
-- **Repository**: [https://github.com/cr-nattress/ski-directory-website](https://github.com/cr-nattress/ski-directory-website)
-- **Issues**: [GitHub Issues](https://github.com/cr-nattress/ski-directory-website/issues)
-
----
-
-## 📊 Project Stats
-
-- **29 Colorado Resorts** - Complete coverage
-- **200+ Inches Average Snowfall** - Across all resorts
-- **Real-time Data Ready** - Architecture supports live conditions
-- **Mobile-First** - Responsive across all devices
-- **AI-Ready** - Prepared for vector embeddings and natural language search
+- **Design Inspiration** - Airbnb, AllTrails, Yelp
+- **Images** - Resort-provided imagery
+- **Icons** - [Lucide](https://lucide.dev/)
+- **Maps** - [Leaflet](https://leafletjs.com/) + [OpenStreetMap](https://www.openstreetmap.org/)
 
 ---
 
-**Built with ❄️ for Colorado skiers and snowboarders**
-
-*Last Updated: November 2025*
+**Built for Colorado skiers and snowboarders**
