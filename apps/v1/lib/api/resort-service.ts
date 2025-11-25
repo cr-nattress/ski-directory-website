@@ -33,6 +33,11 @@ function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// Helper to get only active resorts
+function getActiveResorts(): Resort[] {
+  return mockResorts.filter((r) => r.isActive);
+}
+
 // Helper to simulate random failures (for testing error handling)
 // Set to 0 to disable, or a value like 0.1 for 10% failure rate
 const FAILURE_RATE = 0;
@@ -135,8 +140,8 @@ class ResortService {
       pageSize = 10,
     } = options;
 
-    // Apply filters
-    let filtered = this.applyFilters(mockResorts, filters);
+    // Apply filters (start with only active resorts)
+    let filtered = this.applyFilters(getActiveResorts(), filters);
 
     // Apply sorting
     filtered = this.applySorting(filtered, sortBy, sortOrder);
@@ -164,7 +169,7 @@ class ResortService {
 
   /**
    * GET /api/resorts/all
-   * Fetch all resorts without pagination (useful for dropdowns, maps, etc.)
+   * Fetch all active resorts without pagination (useful for dropdowns, maps, etc.)
    */
   async getAllResorts(): Promise<ApiResponse<Resort[]>> {
     await delay(SIMULATED_DELAY);
@@ -178,7 +183,7 @@ class ResortService {
     }
 
     return {
-      data: [...mockResorts],
+      data: getActiveResorts(),
       status: 'success',
     };
   }
@@ -206,7 +211,7 @@ class ResortService {
     }
 
     const normalizedQuery = query.toLowerCase().trim();
-    const results = mockResorts.filter(
+    const results = getActiveResorts().filter(
       (resort) =>
         resort.name.toLowerCase().includes(normalizedQuery) ||
         resort.description.toLowerCase().includes(normalizedQuery) ||
@@ -240,12 +245,13 @@ class ResortService {
       };
     }
 
-    const totalResorts = mockResorts.length;
-    const openResorts = mockResorts.filter((r) => r.conditions.status === 'open').length;
+    const activeResorts = getActiveResorts();
+    const totalResorts = activeResorts.length;
+    const openResorts = activeResorts.filter((r) => r.conditions.status === 'open').length;
     const avgSnowfall24h =
-      mockResorts.reduce((sum, r) => sum + r.conditions.snowfall24h, 0) / totalResorts;
+      activeResorts.reduce((sum, r) => sum + r.conditions.snowfall24h, 0) / totalResorts;
     const avgAnnualSnowfall =
-      mockResorts.reduce((sum, r) => sum + r.stats.avgAnnualSnowfall, 0) / totalResorts;
+      activeResorts.reduce((sum, r) => sum + r.stats.avgAnnualSnowfall, 0) / totalResorts;
 
     return {
       data: {
@@ -273,8 +279,8 @@ class ResortService {
       };
     }
 
-    // Get top-rated resorts with recent snowfall
-    const featured = [...mockResorts]
+    // Get top-rated active resorts with recent snowfall
+    const featured = getActiveResorts()
       .sort((a, b) => {
         // Sort by rating first, then by recent snowfall
         if (b.rating !== a.rating) {
@@ -305,7 +311,7 @@ class ResortService {
       };
     }
 
-    const nearby = mockResorts
+    const nearby = getActiveResorts()
       .filter((r) => r.distanceFromDenver <= maxDistance)
       .sort((a, b) => a.distanceFromDenver - b.distanceFromDenver);
 
@@ -330,7 +336,7 @@ class ResortService {
       };
     }
 
-    const resorts = mockResorts.filter((r) =>
+    const resorts = getActiveResorts().filter((r) =>
       r.passAffiliations.includes(passType as any)
     );
 

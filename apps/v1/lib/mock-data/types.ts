@@ -16,6 +16,7 @@ export interface Resort {
   name: string;
   tagline?: string;
   description: string;
+  isActive: boolean; // Whether the resort is visible in the UI
 
   // Location
   location: {

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
-import { useRegionalStats } from '@/lib/hooks';
+import { useRegionalStats, useAllResorts } from '@/lib/hooks';
 
 export function Hero() {
   const [whereValue, setWhereValue] = useState('');
@@ -10,6 +10,7 @@ export function Hero() {
   const [whoValue, setWhoValue] = useState('');
 
   const { stats, isLoading } = useRegionalStats();
+  const { resorts } = useAllResorts();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,14 +53,19 @@ export function Hero() {
               >
                 Where?
               </label>
-              <input
+              <select
                 id="where"
-                type="text"
-                placeholder="All Colorado Resorts"
                 value={whereValue}
                 onChange={(e) => setWhereValue(e.target.value)}
-                className="w-full text-sm text-gray-900 placeholder-gray-400 border-none outline-none focus:ring-0 p-0"
-              />
+                className="w-full text-sm text-gray-900 border-none outline-none focus:ring-0 p-0 bg-transparent"
+              >
+                <option value="">All Colorado Resorts</option>
+                {resorts.map((resort) => (
+                  <option key={resort.id} value={resort.slug}>
+                    {resort.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
