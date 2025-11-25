@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import { Resort } from '@/lib/mock-data';
 import { cn } from '@/lib/utils';
@@ -153,9 +153,8 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
             const isExpanded = expandedRow === resort.id;
 
             return (
-              <>
+              <Fragment key={resort.id}>
                 <tr
-                  key={resort.id}
                   role="row"
                   className={cn(
                     'hover:bg-gray-50 transition-colors',
@@ -285,7 +284,7 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
 
                 {/* Expanded Details Row */}
                 {isExpanded && (
-                  <tr key={`${resort.id}-expanded`} className="bg-gray-50 border-b border-gray-200">
+                  <tr className="bg-gray-50 border-b border-gray-200">
                     <td colSpan={9} className="px-4 py-4">
                       <div className="pl-8 grid grid-cols-2 md:grid-cols-4 gap-4">
                         {/* 72h Snowfall */}
@@ -374,7 +373,7 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
                     </td>
                   </tr>
                 )}
-              </>
+              </Fragment>
             );
           })}
         </tbody>

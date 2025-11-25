@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
@@ -28,7 +29,9 @@ export default function DirectoryPage() {
       <DirectoryHero resortCount={resorts.length} />
 
       <div className="container-custom py-8">
-        <DirectoryContent resorts={resorts} />
+        <Suspense fallback={<div className="h-96 flex items-center justify-center text-gray-500">Loading directory...</div>}>
+          <DirectoryContent resorts={resorts} />
+        </Suspense>
       </div>
 
       <Footer />
