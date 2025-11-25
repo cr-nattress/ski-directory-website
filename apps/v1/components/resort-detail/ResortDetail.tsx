@@ -90,33 +90,6 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                 </div>
               </section>
 
-              {/* Terrain Breakdown */}
-              <section className="border-t border-gray-200 pt-8">
-                <h2 className="text-2xl font-semibold mb-6">Terrain Breakdown</h2>
-                <div className="space-y-3">
-                  <TerrainBar
-                    label="Beginner"
-                    percentage={resort.terrain.beginner}
-                    color="bg-green-500"
-                  />
-                  <TerrainBar
-                    label="Intermediate"
-                    percentage={resort.terrain.intermediate}
-                    color="bg-blue-500"
-                  />
-                  <TerrainBar
-                    label="Advanced"
-                    percentage={resort.terrain.advanced}
-                    color="bg-orange-500"
-                  />
-                  <TerrainBar
-                    label="Expert"
-                    percentage={resort.terrain.expert}
-                    color="bg-red-600"
-                  />
-                </div>
-              </section>
-
               {/* Trail Map */}
               <section className="border-t border-gray-200 pt-8">
                 <TrailMapCard resort={resort} />
@@ -207,19 +180,3 @@ function StatCard({ icon, label, value }: { icon: string; label: string; value: 
   );
 }
 
-function TerrainBar({ label, percentage, color }: { label: string; percentage: number; color: string }) {
-  return (
-    <div>
-      <div className="flex justify-between text-sm mb-1">
-        <span className="text-gray-700">{label}</span>
-        <span className="font-medium">{percentage}%</span>
-      </div>
-      <div className="w-full bg-gray-200 rounded-full h-3">
-        <div
-          className={`${color} h-3 rounded-full transition-all duration-300`}
-          style={{ width: `${percentage}%` }}
-        />
-      </div>
-    </div>
-  );
-}
