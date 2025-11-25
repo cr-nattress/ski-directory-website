@@ -24,8 +24,7 @@ export function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              'url(https://images.unsplash.com/photo-1551524164-687a55dd1126?w=1920&q=80)',
+            backgroundImage: 'url(/images/steamboat-town-mtn.jpg)',
           }}
         />
         {/* Overlay */}
