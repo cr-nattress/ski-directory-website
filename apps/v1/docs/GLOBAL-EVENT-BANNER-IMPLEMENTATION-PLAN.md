@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document provides a comprehensive implementation plan for adding a **Global Event Banner** system to the SkiColorado ski resort directory. The banner will display contextual alerts (snow reports, weather warnings, safety notices, system alerts) across all routes, positioned directly below the header.
+This document provides a comprehensive implementation plan for adding a **Global Event Banner** system to the Ski Colorado ski resort directory. The banner will display contextual alerts (snow reports, weather warnings, safety notices, system alerts) across all routes, positioned directly below the header.
 
 ---
 

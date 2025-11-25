@@ -108,6 +108,36 @@ Implement a global event banner system that displays contextual alerts (snow rep
 
 ---
 
+### Epic 7: A-Z Resort Directory Page
+**Status:** Ready
+**Priority:** High
+**Effort:** Large
+
+Create a comprehensive A-Z Directory page with a hybrid table/card design that provides skiers with a data-dense, scannable view of all Colorado ski resorts for quick comparison.
+
+**User Stories:** 12
+📁 [View Epic Details](./epic-7-az-directory-page/user-stories.md)
+📄 [Implementation Plan](../apps/v1/A-Z-DIRECTORY-PLAN.md)
+
+**Key Features:**
+- Desktop: Sortable data table with all key metrics
+- Mobile: Condensed card list optimized for touch
+- Sortable by: Name, Snow, Base Depth, Terrain Open, Acres, Vertical, Rating, Distance
+- Filterable by: Pass type (Epic/Ikon/Indy), Status (Open/Closed)
+- URL-persisted filter/sort state for shareable links
+
+**Data Displayed:**
+- Resort name, Status, 24h Snowfall, Base Depth
+- Terrain Open %, Skiable Acres, Vertical Drop
+- Pass badges, Rating, Distance from Denver
+
+**Technical Approach:**
+- Hybrid responsive design (CSS-based view switching)
+- Client-side sorting/filtering (small dataset)
+- Static generation at build time
+
+---
+
 ## Implementation Order (Recommended)
 
 1. **Epic 1** - Remove List Your Property Button (Quick win, cleanup)
@@ -116,18 +146,20 @@ Implement a global event banner system that displays contextual alerts (snow rep
 4. **Epic 3** - Trail Map Card Implementation (Medium complexity, need assets)
 5. **Epic 6** - Global Event Banner System (Large, foundation for future alerts)
 6. **Epic 4** - Weather Forecast Card (Most complex, API integration)
+7. **Epic 7** - A-Z Resort Directory Page (New page, high user value)
 
 ## Total Effort Estimate
 - **Small:** 2 epics (Epics 1, 5)
 - **Medium:** 2 epics (Epics 2, 3)
-- **Large:** 2 epics (Epics 4, 6)
+- **Large:** 3 epics (Epics 4, 6, 7)
 
-**Total User Stories:** 30
+**Total User Stories:** 42
 
 ---
 
 ## Notes
-- All epics enhance the resort detail page
+- Epics 1-6 enhance the resort detail page
+- Epic 7 adds a new directory page for resort comparison
 - Consider implementing in batches for iterative releases
 - Weather API will require API key and cost consideration
 - Trail map assets need to be sourced for each resort

@@ -1,0 +1,5 @@
+- remove 'List Your Property' button
+- need some kind of map of where the resort is on the resort page. possible under the resort info card
+- need another card which specifically has the trail map for the resort
+- need a card which shows current weather and next 7 day forecast
+- need a social media card that will include links to youtube, facebook, instagram, tiktok, x, etc.

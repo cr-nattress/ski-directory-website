@@ -34,7 +34,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
               )}
             >
               <span>⛷️</span>
-              <span>SkiColorado</span>
+              <span>Ski Colorado</span>
             </a>
           </div>
 
@@ -55,6 +55,12 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
         {/* Dropdown menu */}
         {mobileMenuOpen && (
           <div className="absolute right-4 top-14 w-48 py-2 bg-white rounded-lg shadow-lg border border-gray-200">
+            <a
+              href="/directory"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Directory
+            </a>
             <a
               href="/weather"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"

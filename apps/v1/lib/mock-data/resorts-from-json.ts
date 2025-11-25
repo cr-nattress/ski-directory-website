@@ -237,6 +237,7 @@ function transformResort(raw: RawResort, idx: number): Resort {
     heroImage: getHeroImage(raw.slug, idx),
     features,
     tags,
+    isActive: true,
   };
 }
 
