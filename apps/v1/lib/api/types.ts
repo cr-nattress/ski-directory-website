@@ -90,3 +90,56 @@ export interface UseRegionalStatsResult {
 
 // Re-export types from mock-data for convenience
 export type { Resort, ResortImage };
+
+// ============================================
+// Alert System Types
+// ============================================
+
+export type AlertType = 'info' | 'snow-report' | 'weather' | 'safety' | 'system';
+export type AlertPriority = 'low' | 'medium' | 'high' | 'critical';
+export type AlertSource = 'manual' | 'weather-api' | 'snow-api' | 'nws-api' | 'system';
+
+export interface EventAlert {
+  id: string;
+  type: AlertType;
+  priority: AlertPriority;
+  source: AlertSource;
+
+  // Content
+  title: string;
+  message: string;
+
+  // Optional link
+  linkText?: string;
+  linkUrl?: string;
+
+  // Targeting (optional - for resort-specific alerts)
+  resortSlug?: string; // null = global, specific = resort-only
+
+  // Timing
+  startsAt: string; // ISO date string
+  expiresAt: string; // ISO date string
+
+  // Behavior
+  isDismissible: boolean;
+  isPersistent: boolean; // If true, shows even after dismiss until expires
+
+  // Metadata
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AlertApiResponse {
+  data: EventAlert[];
+  status: 'success' | 'error';
+  message?: string;
+}
+
+export interface UseEventBannerResult {
+  alerts: EventAlert[];
+  activeAlert: EventAlert | null;
+  isLoading: boolean;
+  error: Error | null;
+  dismissAlert: (alertId: string) => void;
+  refetch: () => Promise<void>;
+}

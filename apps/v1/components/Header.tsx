@@ -18,7 +18,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
       className={cn(
         'z-50',
         isOverlay
-          ? 'absolute top-0 left-0 right-0 bg-transparent'
+          ? 'bg-black/20 backdrop-blur-sm'
           : 'relative bg-white border-b border-gray-200'
       )}
     >
@@ -38,24 +38,9 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <a
-              href="#"
-              className={cn(
-                'transition-colors text-sm font-medium',
-                isOverlay
-                  ? 'text-white hover:text-powder-blue'
-                  : 'text-gray-700 hover:text-ski-blue'
-              )}
-            >
-              Login
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
+          {/* Menu button */}
           <button
-            className={cn('md:hidden p-2', isOverlay ? 'text-white' : 'text-gray-700')}
+            className={cn('p-2', isOverlay ? 'text-white' : 'text-gray-700')}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -67,17 +52,40 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Dropdown menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
-            <div className="flex flex-col space-y-4 px-4">
-              <a
-                href="#"
-                className="text-ski-blue hover:text-powder-blue transition-colors font-medium"
-              >
-                Login
-              </a>
-            </div>
+          <div className="absolute right-4 top-14 w-48 py-2 bg-white rounded-lg shadow-lg border border-gray-200">
+            <a
+              href="/weather"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Weather
+            </a>
+            <a
+              href="/articles"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Articles
+            </a>
+            <a
+              href="/links"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Links
+            </a>
+            <a
+              href="/shops"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Shops
+            </a>
+            <div className="border-t border-gray-200 my-1"></div>
+            <a
+              href="#"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Login
+            </a>
           </div>
         )}
       </nav>

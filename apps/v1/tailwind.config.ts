@@ -29,6 +29,20 @@ const config: Config = {
       maxWidth: {
         'container': '1280px',
       },
+      animation: {
+        'slide-down': 'slideDown 0.3s ease-out forwards',
+        'slide-up': 'slideUp 0.3s ease-out forwards',
+      },
+      keyframes: {
+        slideDown: {
+          from: { opacity: '0', maxHeight: '0', transform: 'translateY(-10px)' },
+          to: { opacity: '1', maxHeight: '6rem', transform: 'translateY(0)' },
+        },
+        slideUp: {
+          from: { opacity: '1', maxHeight: '6rem', transform: 'translateY(0)' },
+          to: { opacity: '0', maxHeight: '0', transform: 'translateY(-10px)' },
+        },
+      },
     },
   },
   plugins: [],

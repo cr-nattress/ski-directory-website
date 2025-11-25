@@ -12,6 +12,7 @@ export {
 } from './useResorts';
 export { useResortSearch, useInstantResortSearch } from './useResortSearch';
 export { useRegionalStats } from './useRegionalStats';
+export { useEventBanner } from './useEventBanner';
 
 // Re-export types for convenience
 export type {
@@ -26,4 +27,10 @@ export type {
   UseResortSearchResult,
   UseRegionalStatsResult,
   RegionalStats,
+  // Alert types
+  AlertType,
+  AlertPriority,
+  AlertSource,
+  EventAlert,
+  UseEventBannerResult,
 } from '../api/types';

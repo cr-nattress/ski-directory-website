@@ -16,7 +16,7 @@ export const mockArticles: Article[] = [
     title: 'Epic vs Ikon: Which Pass is Right for You?',
     excerpt: 'A comprehensive comparison of Colorado\'s two major ski passes to help you decide which offers the best value.',
     readTime: 8,
-    image: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=600',
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600',
     publishedAt: '2025-01-10',
   },
   {
@@ -25,7 +25,7 @@ export const mockArticles: Article[] = [
     title: 'Powder Day Strategy Guide',
     excerpt: 'Make the most of fresh Colorado snow with our expert tips on timing, terrain selection, and technique.',
     readTime: 6,
-    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600',
+    image: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=600',
     publishedAt: '2025-01-12',
   },
   {
@@ -34,7 +34,7 @@ export const mockArticles: Article[] = [
     title: 'Beat the I-70 Traffic: Expert Tips',
     excerpt: 'Avoid the weekend ski traffic headache with these proven strategies for timing and alternate routes.',
     readTime: 4,
-    image: 'https://images.unsplash.com/photo-1543785734-4b6e564642f8?w=600',
+    image: 'https://images.unsplash.com/photo-1486444786609-e3c8dcb0958e?w=600',
     publishedAt: '2025-01-08',
   },
 ];

@@ -6,7 +6,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="font-display text-2xl font-bold mb-4">
-              ⛷️ SkiCO
+              ⛷️ SkiColorado
             </div>
             <p className="text-gray-400 text-sm">
               Your complete guide to Colorado ski resorts.
@@ -99,7 +99,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-400 text-sm">
-              © 2025 SkiCO. All rights reserved.
+              © 2025 SkiColorado. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a

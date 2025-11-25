@@ -1,5 +1,5 @@
 import { Resort } from '@/lib/mock-data';
-import { Header } from '@/components/Header';
+import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
 import { Breadcrumb } from './Breadcrumb';
 import { ResortHero } from './ResortHero';
@@ -18,7 +18,7 @@ export function ResortDetail({ resort }: ResortDetailProps) {
     <div className="min-h-screen bg-white">
       <ResortStructuredData resort={resort} />
 
-      <Header variant="solid" />
+      <PageWrapper headerVariant="solid" resortSlug={resort.slug} />
 
       <Breadcrumb
         items={[
