@@ -74,10 +74,10 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
               Articles
             </a>
             <a
-              href="/links"
+              href="/ski-links"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
             >
-              Links
+              Ski Links
             </a>
             <a
               href="/shops"
