@@ -94,7 +94,7 @@ export function ResortStructuredData({ resort }: ResortStructuredDataProps) {
     },
     amenityFeature: amenityFeatures,
     // Link to official website if available
-    ...(resort.website && { sameAs: resort.website }),
+    ...(resort.websiteUrl && { sameAs: resort.websiteUrl }),
   };
 
   return (
