@@ -45,6 +45,11 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
+                <a href="/ski-links" className="text-gray-400 hover:text-white transition-colors">
+                  Ski Links Directory
+                </a>
+              </li>
+              <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   Articles
                 </a>
@@ -52,11 +57,6 @@ export function Footer() {
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   Pass Guide
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Trip Planning
                 </a>
               </li>
               <li>
