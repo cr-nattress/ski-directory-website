@@ -238,6 +238,7 @@ function transformResort(raw: RawResort, idx: number): Resort {
     features,
     tags,
     isActive: true,
+    isLost: false,
   };
 }
 

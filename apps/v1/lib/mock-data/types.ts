@@ -29,6 +29,7 @@ export interface Resort {
   tagline?: string;
   description: string;
   isActive: boolean; // Whether the resort is visible in the UI
+  isLost: boolean; // false = currently operating, true = non-operational/closed permanently
 
   // Location
   location: {
