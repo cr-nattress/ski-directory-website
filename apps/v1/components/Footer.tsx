@@ -50,6 +50,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/social-links" className="text-gray-400 hover:text-white transition-colors">
+                  Social Media Directory
+                </a>
+              </li>
+              <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   Articles
                 </a>

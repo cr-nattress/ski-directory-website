@@ -80,6 +80,12 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
               Ski Links
             </a>
             <a
+              href="/social-links"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Social Media
+            </a>
+            <a
               href="/shops"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
             >
