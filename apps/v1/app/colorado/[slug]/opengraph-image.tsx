@@ -110,7 +110,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: 40, fontWeight: 'bold', color: 'white' }}>
-                {resort.stats.verticalDrop.toLocaleString()}'
+                {resort.stats.verticalDrop.toLocaleString()}&apos;
               </span>
               <span style={{ fontSize: 18, color: '#93c5fd' }}>Vertical Drop</span>
             </div>
