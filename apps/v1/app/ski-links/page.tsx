@@ -7,9 +7,12 @@ import { SkiLinksContent } from '@/components/ski-links/SkiLinksContent';
 import { getSkiLinks, getSkiLinkStats } from '@/lib/mock-data/ski-links';
 
 export const metadata: Metadata = {
-  title: 'Skiing Websites & Resources Directory | Ski Colorado',
+  title: 'Skiing Websites & Resources Directory',
   description:
     'Curated links to the best ski websites: resorts, snow reports, webcams, trail maps, lodging, gear reviews, communities, and more. Your one-stop ski resource hub.',
+  alternates: {
+    canonical: '/ski-links',
+  },
   openGraph: {
     title: 'Skiing Websites & Resources Directory | Ski Colorado',
     description:

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Ski Social Media Directory | YouTube, Instagram, TikTok & More',
   description:
     'Discover the best ski YouTube channels, Instagram accounts, TikTok creators, Reddit communities, and Discord servers. Curated social media for skiers of all levels.',
+  alternates: {
+    canonical: '/social-links',
+  },
   openGraph: {
     title: 'Ski Social Media Directory | YouTube, Instagram, TikTok & More',
     description:

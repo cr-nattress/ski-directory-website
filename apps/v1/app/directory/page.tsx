@@ -7,9 +7,12 @@ import { DirectoryHero } from '@/components/directory/DirectoryHero';
 import { mockResorts } from '@/lib/mock-data';
 
 export const metadata: Metadata = {
-  title: 'Colorado Ski Resorts A-Z Directory | Ski Colorado',
+  title: 'Colorado Ski Resorts A-Z Directory',
   description:
     'Compare all Colorado ski resorts at a glance. View real-time snow conditions, terrain open, skiable acres, vertical drop, and pass information for every resort.',
+  alternates: {
+    canonical: '/directory',
+  },
   openGraph: {
     title: 'Colorado Ski Resorts A-Z Directory | Ski Colorado',
     description:

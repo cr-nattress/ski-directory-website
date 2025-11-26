@@ -8,15 +8,26 @@ import { SocialMediaCard } from './SocialMediaCard';
 import { LocationMapCardWrapper } from './LocationMapCardWrapper';
 import { TrailMapCard } from './TrailMapCard';
 import { WeatherForecastCard } from './WeatherForecastCard';
+import { BreadcrumbJsonLd } from '@/components/schema';
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
 
 interface ResortDetailProps {
   resort: Resort;
 }
 
 export function ResortDetail({ resort }: ResortDetailProps) {
+  // Breadcrumb data for JSON-LD structured data
+  const breadcrumbItems = [
+    { name: 'Home', url: BASE_URL },
+    { name: 'Colorado Resorts', url: `${BASE_URL}/directory` },
+    { name: resort.name, url: `${BASE_URL}/colorado/${resort.slug}` },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <ResortStructuredData resort={resort} />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
 
       <PageWrapper headerVariant="solid" resortSlug={resort.slug} />
 
@@ -45,47 +56,55 @@ export function ResortDetail({ resort }: ResortDetailProps) {
 
               {/* Mountain Stats */}
               <section className="border-t border-gray-200 pt-8">
-                <h2 className="text-2xl font-semibold mb-6">Mountain Stats</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <h2 className="text-2xl font-semibold mb-4">Mountain Stats</h2>
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
                   <StatCard
-                    icon="📏"
-                    label="Vertical Drop"
-                    value={`${resort.stats.verticalDrop.toLocaleString()} ft`}
+                    label="Vertical"
+                    value={`${resort.stats.verticalDrop.toLocaleString()}'`}
                   />
                   <StatCard
-                    icon="⛰️"
-                    label="Summit Elevation"
-                    value={`${resort.stats.summitElevation.toLocaleString()} ft`}
+                    label="Summit"
+                    value={`${resort.stats.summitElevation.toLocaleString()}'`}
                   />
                   <StatCard
-                    icon="🏔️"
-                    label="Skiable Acres"
+                    label="Base"
+                    value={`${resort.stats.baseElevation.toLocaleString()}'`}
+                  />
+                  <StatCard
+                    label="Acres"
                     value={resort.stats.skiableAcres.toLocaleString()}
                   />
                   <StatCard
-                    icon="❄️"
-                    label="Avg Annual Snowfall"
-                    value={`${resort.stats.avgAnnualSnowfall}"`}
+                    label="Snowfall"
+                    value={`${resort.stats.avgAnnualSnowfall}"/yr`}
                   />
                   <StatCard
-                    icon="🎿"
                     label="Runs"
                     value={resort.stats.runsCount.toString()}
                   />
                   <StatCard
-                    icon="🚡"
-                    label="Lifts"
+                    label="Total Lifts"
                     value={resort.stats.liftsCount.toString()}
                   />
                   <StatCard
-                    icon="🏃"
-                    label="Base Elevation"
-                    value={`${resort.stats.baseElevation.toLocaleString()} ft`}
+                    label="High-Speed"
+                    value={resort.highSpeedLifts?.count.toString() || '-'}
                   />
                   <StatCard
-                    icon="🌨️"
-                    label="24h Snowfall"
-                    value={`${resort.conditions.snowfall24h}"`}
+                    label="Base Areas"
+                    value={resort.baseAreas?.count.toString() || '-'}
+                  />
+                  <StatCard
+                    label="Restaurants"
+                    value={resort.nearby?.restaurants?.count.toString() || '-'}
+                  />
+                  <StatCard
+                    label="Bars"
+                    value={resort.nearby?.bars?.count.toString() || '-'}
+                  />
+                  <StatCard
+                    label="Hotels"
+                    value={resort.nearby?.hotels?.count.toString() || '-'}
                   />
                 </div>
               </section>
@@ -170,12 +189,11 @@ export function ResortDetail({ resort }: ResortDetailProps) {
 }
 
 // Helper Components
-function StatCard({ icon, label, value }: { icon: string; label: string; value: string }) {
+function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="bg-gray-50 rounded-lg p-4 text-center">
-      <div className="text-3xl mb-2">{icon}</div>
-      <div className="text-xs text-gray-600 mb-1">{label}</div>
-      <div className="font-semibold text-gray-900">{value}</div>
+    <div className="bg-gray-50 rounded-lg p-2 text-center">
+      <div className="text-[10px] text-gray-500 uppercase tracking-wide">{label}</div>
+      <div className="font-semibold text-gray-900 text-sm">{value}</div>
     </div>
   );
 }

@@ -1,21 +1,47 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { WebVitals } from "@/components/WebVitals";
 
 const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-inter",
 });
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: "Colorado Ski Resorts - Find Your Perfect Mountain | Ski Directory",
-  description: "Discover 30+ Colorado ski resorts with real-time conditions, expert reviews, and AI-powered recommendations. Find your perfect mountain today.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com'),
+  title: {
+    default: 'Colorado Ski Resorts | Find Your Perfect Mountain',
+    template: '%s | Ski Colorado',
+  },
+  description: 'Discover 30+ Colorado ski resorts with real-time conditions, expert reviews, and detailed mountain stats. Find your perfect Colorado ski destination.',
+  keywords: ['Colorado ski resorts', 'skiing Colorado', 'snowboarding', 'ski conditions', 'trail maps', 'Epic Pass', 'Ikon Pass'],
+  authors: [{ name: 'Ski Colorado' }],
+  creator: 'Ski Colorado',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Ski Colorado',
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +51,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <WebVitals />
+        {children}
+      </body>
     </html>
   );
 }
