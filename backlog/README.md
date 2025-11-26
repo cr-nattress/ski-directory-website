@@ -246,25 +246,65 @@ Implement comprehensive SEO improvements based on Next.js 14 best practices for 
 
 ---
 
+### Epic 11: Colorado Ski Resort Data Population
+**Status:** Ready
+**Priority:** Critical
+**Effort:** X-Large
+
+Populate complete data models for all 76 Colorado ski resorts and areas: 33 currently operating resorts and 43 former/lost ski areas.
+
+**User Stories:** 76
+📁 [View Epic Details](./epic-11-resort-data-population/user-stories.md)
+
+**Key Features:**
+- Complete data for all 33 active Colorado ski resorts
+- Historical data for 43 former/lost ski areas
+- isLost flag distinguishes operating vs closed areas
+- Comprehensive stats, locations, pass affiliations, and features
+
+**Currently Operating (33):**
+- Major destinations: Vail, Aspen (4 mountains), Breckenridge, Telluride, Steamboat
+- Summit County: Keystone, Copper, A-Basin, Loveland
+- Western Slope: Crested Butte, Monarch, Powderhorn, Sunlight
+- Southern Colorado: Purgatory, Wolf Creek, Silverton, Ski Cooper
+- Small/Community: Howelsen Hill, Kendall Mountain, Chapman Hill, and more
+
+**Former/Lost Ski Areas (43):**
+- Historic areas: Berthoud Pass, Geneva Basin, Hidden Valley
+- Recently closed: Bluebird Backcountry, Cuchara Valley
+- Absorbed areas: Arrowhead (now Beaver Creek)
+- Community hills that no longer operate
+
+**Data Sources:**
+- Official resort websites
+- Colorado Ski Country USA
+- OnTheSnow.com
+- Wikipedia
+- Colorado Ski History archives
+
+---
+
 ## Implementation Order (Recommended)
 
 1. **Epic 1** - Remove List Your Property Button (Quick win, cleanup)
 2. **Epic 5** - Social Media Links Card (Small, no external dependencies)
 3. **Epic 10** - SEO Optimization & Structured Data (Critical for discoverability)
-4. **Epic 2** - Resort Location Map Integration (Medium complexity)
-5. **Epic 3** - Trail Map Card Implementation (Medium complexity, need assets)
-6. **Epic 6** - Global Event Banner System (Large, foundation for future alerts)
-7. **Epic 4** - Weather Forecast Card (Most complex, API integration)
-8. **Epic 7** - A-Z Resort Directory Page (New page, high user value)
-9. **Epic 8** - Ski Links Directory Page (New page, external resources hub)
-10. **Epic 9** - Social Media Links Directory Page (New page, social accounts hub)
+4. **Epic 11** - Colorado Ski Resort Data Population (Critical, enables all resort features)
+5. **Epic 2** - Resort Location Map Integration (Medium complexity)
+6. **Epic 3** - Trail Map Card Implementation (Medium complexity, need assets)
+7. **Epic 6** - Global Event Banner System (Large, foundation for future alerts)
+8. **Epic 4** - Weather Forecast Card (Most complex, API integration)
+9. **Epic 7** - A-Z Resort Directory Page (New page, high user value)
+10. **Epic 8** - Ski Links Directory Page (New page, external resources hub)
+11. **Epic 9** - Social Media Links Directory Page (New page, social accounts hub)
 
 ## Total Effort Estimate
 - **Small:** 2 epics (Epics 1, 5)
 - **Medium:** 3 epics (Epics 2, 3, 10)
 - **Large:** 5 epics (Epics 4, 6, 7, 8, 9)
+- **X-Large:** 1 epic (Epic 11)
 
-**Total User Stories:** 78
+**Total User Stories:** 154
 
 ---
 
@@ -274,9 +314,11 @@ Implement comprehensive SEO improvements based on Next.js 14 best practices for 
 - Epic 8 adds a new external links directory page
 - Epic 9 adds a new social media accounts directory page
 - Epic 10 implements critical SEO infrastructure for search engine visibility
+- Epic 11 populates data for all 76 Colorado ski resorts and areas (33 active + 43 lost)
 - Consider implementing in batches for iterative releases
 - Weather API will require API key and cost consideration
 - Trail map assets need to be sourced for each resort
 - Ski Links data file pre-populated with 150 curated industry links
 - Social Links data file contains 80+ curated social accounts
 - SEO implementation requires `NEXT_PUBLIC_BASE_URL` environment variable
+- Resort data population (Epic 11) is a prerequisite for comprehensive directory coverage
