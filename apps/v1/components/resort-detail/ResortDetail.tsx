@@ -82,30 +82,44 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                     label="Runs"
                     value={resort.stats.runsCount.toString()}
                   />
-                  <StatCard
-                    label="Total Lifts"
-                    value={resort.stats.liftsCount.toString()}
-                  />
-                  <StatCard
-                    label="High-Speed"
-                    value={resort.highSpeedLifts?.count.toString() || '-'}
-                  />
-                  <StatCard
-                    label="Base Areas"
-                    value={resort.baseAreas?.count.toString() || '-'}
-                  />
-                  <StatCard
-                    label="Restaurants"
-                    value={resort.nearby?.restaurants?.count.toString() || '-'}
-                  />
-                  <StatCard
-                    label="Bars"
-                    value={resort.nearby?.bars?.count.toString() || '-'}
-                  />
-                  <StatCard
-                    label="Hotels"
-                    value={resort.nearby?.hotels?.count.toString() || '-'}
-                  />
+                  {/* Hide lifts count for lost ski areas with 0 lifts */}
+                  {!(resort.isLost && resort.stats.liftsCount === 0) && (
+                    <StatCard
+                      label="Total Lifts"
+                      value={resort.stats.liftsCount.toString()}
+                    />
+                  )}
+                  {/* Only show optional stats if they have values */}
+                  {resort.highSpeedLifts?.count != null && resort.highSpeedLifts.count > 0 && (
+                    <StatCard
+                      label="High-Speed"
+                      value={resort.highSpeedLifts.count.toString()}
+                    />
+                  )}
+                  {resort.baseAreas?.count != null && resort.baseAreas.count > 0 && (
+                    <StatCard
+                      label="Base Areas"
+                      value={resort.baseAreas.count.toString()}
+                    />
+                  )}
+                  {resort.nearby?.restaurants?.count != null && resort.nearby.restaurants.count > 0 && (
+                    <StatCard
+                      label="Restaurants"
+                      value={resort.nearby.restaurants.count.toString()}
+                    />
+                  )}
+                  {resort.nearby?.bars?.count != null && resort.nearby.bars.count > 0 && (
+                    <StatCard
+                      label="Bars"
+                      value={resort.nearby.bars.count.toString()}
+                    />
+                  )}
+                  {resort.nearby?.hotels?.count != null && resort.nearby.hotels.count > 0 && (
+                    <StatCard
+                      label="Hotels"
+                      value={resort.nearby.hotels.count.toString()}
+                    />
+                  )}
                 </div>
               </section>
 
@@ -119,59 +133,61 @@ export function ResortDetail({ resort }: ResortDetailProps) {
           {/* Right Column - Action Rail (Sticky) */}
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-4 space-y-6">
-              {/* Action Card */}
-              <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold mb-4">Plan Your Visit</h3>
+              {/* Action Card - hidden for lost ski areas */}
+              {!resort.isLost && (
+                <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6">
+                  <h3 className="text-lg font-semibold mb-4">Plan Your Visit</h3>
 
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <p className="text-sm text-gray-600 mb-2">Current Conditions</p>
-                    <div className="space-y-1 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-700">New Snow (24h)</span>
-                        <span className="font-semibold">{resort.conditions.snowfall24h}&quot;</span>
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <p className="text-sm text-gray-600 mb-2">Current Conditions</p>
+                      <div className="space-y-1 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-700">New Snow (24h)</span>
+                          <span className="font-semibold">{resort.conditions.snowfall24h}&quot;</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-700">Base Depth</span>
+                          <span className="font-semibold">{resort.conditions.baseDepth}&quot;</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-700">Terrain Open</span>
+                          <span className="font-semibold">{resort.conditions.terrainOpen}%</span>
+                        </div>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-700">Base Depth</span>
-                        <span className="font-semibold">{resort.conditions.baseDepth}&quot;</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-700">Terrain Open</span>
-                        <span className="font-semibold">{resort.conditions.terrainOpen}%</span>
-                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-sm text-gray-600 mb-2">Distance from Denver</p>
+                      <p className="font-semibold">{resort.distanceFromDenver} mi • {resort.driveTimeFromDenver} min drive</p>
                     </div>
                   </div>
 
-                  <div>
-                    <p className="text-sm text-gray-600 mb-2">Distance from Denver</p>
-                    <p className="font-semibold">{resort.distanceFromDenver} mi • {resort.driveTimeFromDenver} min drive</p>
+                  <button className="w-full bg-ski-blue text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    Save Resort
+                  </button>
+
+                  <div className="mt-4 flex gap-2">
+                    {resort.passAffiliations.map((pass) => (
+                      <span
+                        key={pass}
+                        className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          pass === 'epic'
+                            ? 'bg-epic-red text-white'
+                            : pass === 'ikon'
+                            ? 'bg-ikon-orange text-white'
+                            : 'bg-gray-200 text-gray-700'
+                        }`}
+                      >
+                        {pass.charAt(0).toUpperCase() + pass.slice(1)} Pass
+                      </span>
+                    ))}
                   </div>
                 </div>
+              )}
 
-                <button className="w-full bg-ski-blue text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                  Save Resort
-                </button>
-
-                <div className="mt-4 flex gap-2">
-                  {resort.passAffiliations.map((pass) => (
-                    <span
-                      key={pass}
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        pass === 'epic'
-                          ? 'bg-epic-red text-white'
-                          : pass === 'ikon'
-                          ? 'bg-ikon-orange text-white'
-                          : 'bg-gray-200 text-gray-700'
-                      }`}
-                    >
-                      {pass.charAt(0).toUpperCase() + pass.slice(1)} Pass
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Weather Forecast Card */}
-              <WeatherForecastCard resort={resort} />
+              {/* Weather Forecast Card - hidden for lost ski areas */}
+              {!resort.isLost && <WeatherForecastCard resort={resort} />}
 
               {/* Location Map Card */}
               <LocationMapCardWrapper resort={resort} />

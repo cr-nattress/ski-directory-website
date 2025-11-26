@@ -197,7 +197,7 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
 
                   {/* Status */}
                   <td className="px-4 py-4 text-center" role="gridcell">
-                    <StatusBadge status={resort.conditions.status} />
+                    <StatusBadge status={resort.conditions.status} isLost={resort.isLost} />
                   </td>
 
                   {/* 24h Snow */}

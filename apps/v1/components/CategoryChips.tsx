@@ -19,12 +19,12 @@ export function CategoryChips({
           Browse by experience
         </h2>
 
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex flex-wrap gap-3">
           {/* All Resorts chip */}
           <button
             onClick={() => onSelectCategory(null)}
             className={cn(
-              'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 transition-all whitespace-nowrap font-medium text-sm flex-shrink-0',
+              'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 transition-all whitespace-nowrap font-medium text-sm',
               selectedCategory === null
                 ? 'bg-ski-blue border-ski-blue text-white shadow-md'
                 : 'bg-white border-gray-200 text-gray-700 hover:border-ski-blue hover:text-ski-blue'
@@ -39,7 +39,7 @@ export function CategoryChips({
               key={category.id}
               onClick={() => onSelectCategory(category.id)}
               className={cn(
-                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 transition-all whitespace-nowrap font-medium text-sm flex-shrink-0',
+                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 transition-all whitespace-nowrap font-medium text-sm',
                 selectedCategory === category.id
                   ? 'bg-ski-blue border-ski-blue text-white shadow-md'
                   : 'bg-white border-gray-200 text-gray-700 hover:border-ski-blue hover:text-ski-blue'
@@ -51,16 +51,6 @@ export function CategoryChips({
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 }

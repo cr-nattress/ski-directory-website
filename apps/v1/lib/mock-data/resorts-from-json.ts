@@ -188,6 +188,15 @@ function transformResort(raw: RawResort, idx: number): Resort {
   const features = getFeatures(raw.runs_count, raw.elevation_top_m);
   const tags = getTags(raw.name, raw.slug, raw.runs_count, raw.type, passAffiliations);
 
+  // Listing/card image for this resort (used in grids/tables)
+  const listingImage = {
+    url: `/images/${raw.slug}-listing.jpg`,
+    alt: `${raw.name} listing image`,
+    priority: 1,
+    isCardImage: true as const,
+    isHeroImage: false as const,
+  };
+
   // Calculate vertical drop
   const verticalDrop = Math.floor((raw.elevation_top_m - raw.elevation_base_m) * 3.28084); // meters to feet
 
@@ -235,6 +244,7 @@ function transformResort(raw: RawResort, idx: number): Resort {
     rating: Number(rating.toFixed(1)),
     reviewCount,
     heroImage: getHeroImage(raw.slug, idx),
+    images: [listingImage],
     features,
     tags,
     isActive: true,

@@ -57,7 +57,7 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
               <div className="flex-1 min-w-0">
                 <h3 className="font-semibold text-gray-900 truncate">{resort.name}</h3>
                 <div className="flex items-center gap-2 mt-1">
-                  <StatusBadge status={resort.conditions.status} />
+                  <StatusBadge status={resort.conditions.status} isLost={resort.isLost} />
                   <div className="flex gap-1">
                     {resort.passAffiliations.map((pass) => (
                       <PassBadge key={pass} pass={pass} size="xs" />

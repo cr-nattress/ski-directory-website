@@ -60,7 +60,12 @@ export function ResortCard({ resort }: ResortCardProps) {
         </div>
 
         {/* Status indicator */}
-        {resort.conditions.status === 'open' && (
+        {resort.isLost ? (
+          <div className="absolute top-3 left-3 bg-gray-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-white" />
+            Lost
+          </div>
+        ) : resort.conditions.status === 'open' && (
           <div className="absolute top-3 left-3 bg-success-green text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-white" />
             Open
@@ -75,43 +80,53 @@ export function ResortCard({ resort }: ResortCardProps) {
           {resort.name}
         </h3>
 
-        {/* Rating */}
-        <div className="flex items-center gap-1.5 mb-3">
-          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-          <span className="font-semibold text-sm">
-            {formatRating(resort.rating)}
-          </span>
-          <span className="text-gray-500 text-sm">
-            ({resort.reviewCount.toLocaleString()})
-          </span>
-        </div>
+        {/* Rating - hidden for lost ski areas */}
+        {!resort.isLost && (
+          <div className="flex items-center gap-1.5 mb-3">
+            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            <span className="font-semibold text-sm">
+              {formatRating(resort.rating)}
+            </span>
+            <span className="text-gray-500 text-sm">
+              ({resort.reviewCount.toLocaleString()})
+            </span>
+          </div>
+        )}
 
-        {/* Stats */}
-        <div className="flex items-center gap-3 text-sm text-gray-600">
+        {/* Stats - show location for all, snow only for active resorts */}
+        <div className={cn("flex items-center gap-3 text-sm text-gray-600", resort.isLost && "mt-2")}>
           <div className="flex items-center gap-1">
             <MapPin className="w-4 h-4" />
             <span>{formatDistance(resort.distanceFromDenver)}</span>
           </div>
-          <span>•</span>
-          <div className="flex items-center gap-1">
-            <Snowflake className="w-4 h-4" />
-            <span>{formatSnowfall(resort.conditions.snowfall24h)}</span>
-          </div>
+          {!resort.isLost && (
+            <>
+              <span>•</span>
+              <div className="flex items-center gap-1">
+                <Snowflake className="w-4 h-4" />
+                <span>{formatSnowfall(resort.conditions.snowfall24h)}</span>
+              </div>
+            </>
+          )}
         </div>
 
-        {/* Terrain open */}
-        <div className="mt-3 flex items-center justify-between">
-          <span className="text-xs text-gray-500">Terrain Open</span>
-          <span className="text-xs font-semibold text-gray-900">
-            {resort.conditions.terrainOpen}%
-          </span>
-        </div>
-        <div className="mt-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-success-green rounded-full transition-all"
-            style={{ width: `${resort.conditions.terrainOpen}%` }}
-          />
-        </div>
+        {/* Terrain open - hidden for lost ski areas */}
+        {!resort.isLost && (
+          <>
+            <div className="mt-3 flex items-center justify-between">
+              <span className="text-xs text-gray-500">Terrain Open</span>
+              <span className="text-xs font-semibold text-gray-900">
+                {resort.conditions.terrainOpen}%
+              </span>
+            </div>
+            <div className="mt-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-success-green rounded-full transition-all"
+                style={{ width: `${resort.conditions.terrainOpen}%` }}
+              />
+            </div>
+          </>
+        )}
       </div>
     </Link>
   );

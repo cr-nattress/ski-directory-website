@@ -3,10 +3,22 @@ import { cn } from '@/lib/utils';
 interface StatusBadgeProps {
   status: 'open' | 'closed' | 'opening-soon';
   size?: 'sm' | 'md';
+  isLost?: boolean;
 }
 
-export function StatusBadge({ status, size = 'md' }: StatusBadgeProps) {
+export function StatusBadge({ status, size = 'md', isLost = false }: StatusBadgeProps) {
   const getStatusConfig = () => {
+    // Lost ski areas get a special "Lost" badge
+    if (isLost) {
+      return {
+        label: 'Lost',
+        dotColor: 'bg-gray-500',
+        bgColor: 'bg-gray-100',
+        textColor: 'text-gray-700',
+        ariaLabel: 'Former ski area - no longer operating',
+      };
+    }
+
     switch (status) {
       case 'open':
         return {

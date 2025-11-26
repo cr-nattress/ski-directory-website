@@ -70,4 +70,10 @@ export const mockCategories: Category[] = [
       resort.tags.includes('hidden') ||
       resort.reviewCount < 1500,
   },
+  {
+    id: 'lost',
+    label: 'Lost Ski Areas',
+    icon: '🏚️',
+    filter: (resort: Resort) => resort.isLost === true,
+  },
 ];
