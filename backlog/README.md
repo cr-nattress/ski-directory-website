@@ -175,6 +175,43 @@ Create a comprehensive Ski Links Directory page serving as a curated hub of 150+
 
 ---
 
+### Epic 9: Social Media Links Directory Page
+**Status:** Ready
+**Priority:** High
+**Effort:** Large
+
+Create a comprehensive Social Media Links Directory page serving as a curated hub of 100+ ski-related social media profiles, channels, and communities across YouTube, Instagram, TikTok, Facebook, Reddit, Twitter/X, Discord, and forums.
+
+**User Stories:** 12
+📁 [View Epic Details](./epic-9-social-links-directory/user-stories.md)
+📄 [Implementation Plan](../apps/v1/SOCIAL_LINK_DIR_PLAN.md)
+
+**Key Features:**
+- 100+ curated social accounts across 8 platforms
+- 7 topic categories: Instruction, Trip Vlogs, Gear, Resort Official, Backcountry, News, Communities
+- Filterable by: Platform, Topic, Region, Skill Level
+- Search across names, handles, and descriptions
+- Platform-specific styling with brand colors and icons
+- Official/Community badges for account types
+- URL-persisted filter/search state for shareable links
+
+**Initial Data Coverage:**
+- 20 Instruction & Technique accounts (Stomp It Tutorials, PSIA, coaches)
+- 20 Trip Reports & Vlogs (Cody Townsend, TGR, travel vloggers)
+- 15 Gear & Reviews (Blister, Ski Essentials, boot fitters)
+- 15 Resort & Region Feeds (official resort accounts, local photographers)
+- 10 Backcountry & Safety (avalanche centers, guides)
+- 10 News, Commentary & Culture (ski news, memes)
+- 15 Communities & Groups (Reddit, Facebook groups, Discord)
+
+**Technical Approach:**
+- In-memory mock data (Phase 1), CMS/database later
+- Client-side filtering/sorting
+- Static generation at build time
+- Reuses design patterns from Ski Links Directory
+
+---
+
 ## Implementation Order (Recommended)
 
 1. **Epic 1** - Remove List Your Property Button (Quick win, cleanup)
@@ -185,13 +222,14 @@ Create a comprehensive Ski Links Directory page serving as a curated hub of 150+
 6. **Epic 4** - Weather Forecast Card (Most complex, API integration)
 7. **Epic 7** - A-Z Resort Directory Page (New page, high user value)
 8. **Epic 8** - Ski Links Directory Page (New page, external resources hub)
+9. **Epic 9** - Social Media Links Directory Page (New page, social accounts hub)
 
 ## Total Effort Estimate
 - **Small:** 2 epics (Epics 1, 5)
 - **Medium:** 2 epics (Epics 2, 3)
-- **Large:** 4 epics (Epics 4, 6, 7, 8)
+- **Large:** 5 epics (Epics 4, 6, 7, 8, 9)
 
-**Total User Stories:** 54
+**Total User Stories:** 66
 
 ---
 
@@ -199,7 +237,9 @@ Create a comprehensive Ski Links Directory page serving as a curated hub of 150+
 - Epics 1-6 enhance the resort detail page
 - Epic 7 adds a new directory page for resort comparison
 - Epic 8 adds a new external links directory page
+- Epic 9 adds a new social media accounts directory page
 - Consider implementing in batches for iterative releases
 - Weather API will require API key and cost consideration
 - Trail map assets need to be sourced for each resort
 - Ski Links data file pre-populated with 150 curated industry links
+- Social Links data file will contain 100+ curated social accounts
