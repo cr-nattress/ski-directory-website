@@ -2,6 +2,18 @@
 
 export type PassAffiliation = 'epic' | 'ikon' | 'indy' | 'local';
 
+// Generic item with name and URL (for nearby places, base areas, etc.)
+export interface NamedItem {
+  name: string;
+  url?: string;
+}
+
+// Collection of items with count
+export interface ItemCollection {
+  count: number;
+  items: NamedItem[];
+}
+
 export interface ResortImage {
   url: string;
   alt: string;
@@ -108,6 +120,21 @@ export interface Resort {
 
   // Tags for AI/filtering
   tags: string[];
+
+  // Base areas and high-speed lifts
+  baseAreas?: ItemCollection;
+  highSpeedLifts?: ItemCollection;
+
+  // Nearby amenities (within 1 mile)
+  nearby?: {
+    bars?: ItemCollection;
+    restaurants?: ItemCollection;
+    skiShops?: ItemCollection;
+    shops?: ItemCollection;
+    groceryStores?: ItemCollection;
+    hotels?: ItemCollection;
+    motels?: ItemCollection;
+  };
 }
 
 export interface Category {

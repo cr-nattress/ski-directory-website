@@ -80,6 +80,99 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: true,
     },
     tags: ['destination', 'epic-pass', 'bowls', 'upscale', 'large'],
+
+    // Base areas
+    baseAreas: {
+      count: 3,
+      items: [
+        { name: 'Vail Village', url: 'https://www.vail.com/explore-the-resort/the-village.aspx' },
+        { name: 'Lionshead Village', url: 'https://www.vail.com/explore-the-resort/the-village.aspx' },
+        { name: 'Golden Peak', url: 'https://www.vail.com/explore-the-resort/the-village.aspx' },
+      ],
+    },
+
+    // High-speed lifts (2 gondolas + 21 high-speed detachable chairlifts)
+    highSpeedLifts: {
+      count: 23,
+      items: [
+        { name: 'Gondola One', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Eagle Bahn Gondola', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Sun Up Express (#9)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Riva Bahn Express (#6)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Born Free Express (#8)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Northwoods Express (#11)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Mountaintop Express (#4)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Avanti Express (#2)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Game Creek Express (#7)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Highline Express (#10)', url: 'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx' },
+      ],
+    },
+
+    // Nearby amenities (within 1 mile of base area)
+    nearby: {
+      bars: {
+        count: 15,
+        items: [
+          { name: 'Red Lion', url: 'https://discovervail.com' },
+          { name: 'Garfinkel\'s', url: 'https://discovervail.com' },
+          { name: 'Los Amigos', url: 'https://discovervail.com' },
+          { name: 'Shakedown Bar', url: 'https://discovervail.com' },
+          { name: 'Root and Flower', url: 'https://discovervail.com' },
+          { name: 'Vail Ale House', url: 'https://discovervail.com' },
+        ],
+      },
+      restaurants: {
+        count: 80,
+        items: [
+          { name: 'Mountain Standard', url: 'https://www.mtnstandard.com' },
+          { name: 'Sweet Basil', url: 'https://www.sweetbasil-vail.com' },
+          { name: 'Vendetta\'s', url: 'https://discovervail.com' },
+          { name: 'Pepi\'s', url: 'https://pepis.com' },
+          { name: 'Almresi', url: 'https://discovervail.com' },
+          { name: 'The 10th', url: 'https://www.the10thvail.com' },
+        ],
+      },
+      skiShops: {
+        count: 12,
+        items: [
+          { name: 'Vail Sports', url: 'https://www.vail.com/explore-the-resort/during-your-stay/vail-sports.aspx' },
+          { name: 'Gorsuch', url: 'https://www.gorsuch.com' },
+          { name: 'Christy Sports', url: 'https://www.christysports.com' },
+        ],
+      },
+      shops: {
+        count: 100,
+        items: [
+          { name: 'Gorsuch', url: 'https://www.gorsuch.com' },
+          { name: 'Kemo Sabe', url: 'https://kemosabe.com' },
+          { name: 'Vail Village Shopping', url: 'https://discovervail.com' },
+        ],
+      },
+      groceryStores: {
+        count: 3,
+        items: [
+          { name: 'City Market', url: 'https://www.citymarket.com' },
+          { name: 'Safeway', url: 'https://www.safeway.com' },
+        ],
+      },
+      hotels: {
+        count: 25,
+        items: [
+          { name: 'The Lodge at Vail', url: 'https://www.lodgeatvail.com' },
+          { name: 'Four Seasons Resort Vail', url: 'https://www.fourseasons.com/vail/' },
+          { name: 'Sonnenalp', url: 'https://www.sonnenalp.com' },
+          { name: 'The Sebastian', url: 'https://www.thesebastianvail.com' },
+          { name: 'Manor Vail Lodge', url: 'https://www.manorvail.com' },
+          { name: 'Tivoli Lodge', url: 'https://www.tivolilodge.com' },
+        ],
+      },
+      motels: {
+        count: 2,
+        items: [
+          { name: 'Roost Lodge', url: 'https://roostlodge.com' },
+        ],
+      },
+    },
   },
   {
     id: 'resort:breckenridge',
@@ -160,6 +253,102 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['destination', 'epic-pass', 'town', 'family-friendly', 'large'],
+
+    // Base areas (5 peaks with multiple base areas)
+    baseAreas: {
+      count: 4,
+      items: [
+        { name: 'Peak 8 Base', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/base-areas-and-progression.aspx' },
+        { name: 'Peak 9 Base (Maggie)', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/base-areas-and-progression.aspx' },
+        { name: 'Peak 7 Base', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/base-areas-and-progression.aspx' },
+        { name: 'Main Street/Town', url: 'https://gobreck.com' },
+      ],
+    },
+
+    // High-speed lifts (1 gondola + multiple high-speed detachable chairlifts)
+    highSpeedLifts: {
+      count: 11,
+      items: [
+        { name: 'BreckConnect Gondola', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Imperial Express SuperChair', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Colorado SuperChair', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'QuickSilver Super 6', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Falcon SuperChair', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Rocky Mountain SuperChair', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Rip\'s Ride (Chair 7)', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Five SuperChair', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Beaver Run SuperChair', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+        { name: 'Peak 8 SuperConnect', url: 'https://www.breckenridge.com/the-mountain/about-the-mountain/trail-map.aspx' },
+      ],
+    },
+
+    // Nearby amenities (within 1 mile of base area)
+    nearby: {
+      bars: {
+        count: 25,
+        items: [
+          { name: 'T-Bar Restaurant', url: 'https://www.breckenridge.com' },
+          { name: 'RMU Tavern', url: 'https://rmutavern.com' },
+          { name: 'Breckenridge Brewery', url: 'https://breckbrew.com' },
+          { name: 'Kenosha Breck', url: 'https://kenoshabreck.com' },
+          { name: 'Burke and Riley\'s', url: 'https://gobreck.com' },
+          { name: 'Cecilia\'s', url: 'https://gobreck.com' },
+        ],
+      },
+      restaurants: {
+        count: 100,
+        items: [
+          { name: 'Aurum Food & Wine', url: 'https://aurumbreckenridge.com' },
+          { name: 'Blue River Bistro', url: 'https://blueriverbistroco.com' },
+          { name: 'Quandary Grille', url: 'https://quandarygrille.com' },
+          { name: 'Robbie\'s Tavern', url: 'https://robbiestavern.com' },
+          { name: 'Giampietro Pizzeria', url: 'https://gobreck.com' },
+          { name: 'Crepes a la Cart', url: 'https://gobreck.com' },
+        ],
+      },
+      skiShops: {
+        count: 15,
+        items: [
+          { name: 'RMU', url: 'https://rmutavern.com' },
+          { name: 'Christy Sports', url: 'https://www.christysports.com' },
+          { name: 'Breckenridge Ski Rentals', url: 'https://www.breckenridge.com' },
+          { name: 'Peak 9 Ski Rental', url: 'https://www.breckenridge.com' },
+        ],
+      },
+      shops: {
+        count: 200,
+        items: [
+          { name: 'Main Street Shops', url: 'https://gobreck.com' },
+          { name: 'La Cima Mall', url: 'https://gobreck.com' },
+          { name: 'Historic Main Street', url: 'https://gobreck.com' },
+        ],
+      },
+      groceryStores: {
+        count: 3,
+        items: [
+          { name: 'City Market', url: 'https://www.citymarket.com' },
+          { name: 'Whole Foods Market', url: 'https://www.wholefoodsmarket.com' },
+        ],
+      },
+      hotels: {
+        count: 30,
+        items: [
+          { name: 'Grand Colorado on Peak 8', url: 'https://grandcolorado.com' },
+          { name: 'Grand Lodge on Peak 7', url: 'https://www.breckenridge.com' },
+          { name: 'One Ski Hill Place', url: 'https://www.breckenridge.com' },
+          { name: 'The Lodge at Breckenridge', url: 'https://thelodgeatbreckenridge.com' },
+          { name: 'Gravity Haus', url: 'https://www.gravityhaus.com' },
+          { name: 'Residence Inn Breckenridge', url: 'https://www.marriott.com' },
+        ],
+      },
+      motels: {
+        count: 4,
+        items: [
+          { name: 'Fireside Inn', url: 'https://gobreck.com' },
+          { name: 'Bivvi Hostel', url: 'https://thebivvi.com' },
+        ],
+      },
+    },
   },
   {
     id: 'resort:aspen-snowmass',
@@ -239,6 +428,104 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: true,
     },
     tags: ['destination', 'ikon-pass', 'luxury', 'four-mountains', 'large'],
+
+    // Base areas (4 mountains = 4 base areas + villages)
+    baseAreas: {
+      count: 5,
+      items: [
+        { name: 'Aspen Mountain (Ajax)', url: 'https://www.aspensnowmass.com/four-mountains/aspen-mountain' },
+        { name: 'Aspen Highlands', url: 'https://www.aspensnowmass.com/four-mountains/aspen-highlands' },
+        { name: 'Buttermilk', url: 'https://www.aspensnowmass.com/four-mountains/buttermilk' },
+        { name: 'Snowmass Base Village', url: 'https://www.aspensnowmass.com/four-mountains/snowmass' },
+        { name: 'Downtown Aspen', url: 'https://www.aspenchamber.org' },
+      ],
+    },
+
+    // High-speed lifts across all 4 mountains
+    highSpeedLifts: {
+      count: 21,
+      items: [
+        { name: 'Silver Queen Gondola (Aspen)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Elk Camp Gondola (Snowmass)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Village Express (Snowmass)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Sam\'s Knob (Snowmass)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Big Burn (Snowmass)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Loge Peak (Highlands)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Exhibition (Highlands)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Cloud Nine (Highlands)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Summit Express (Buttermilk)', url: 'https://www.aspensnowmass.com' },
+        { name: 'Tiehack (Buttermilk)', url: 'https://www.aspensnowmass.com' },
+      ],
+    },
+
+    // Nearby amenities (within 1 mile - downtown Aspen)
+    nearby: {
+      bars: {
+        count: 40,
+        items: [
+          { name: 'Ajax Tavern', url: 'https://www.thelittlenell.com/dining/ajax-tavern' },
+          { name: 'Highlands Ale House', url: 'https://www.aspensnowmass.com' },
+          { name: '39 Degrees (Little Nell)', url: 'https://www.thelittlenell.com' },
+          { name: 'Belly Up', url: 'https://bellyupaspen.com' },
+          { name: 'Aspen Public House', url: 'https://aspenpublichouse.com' },
+          { name: 'Eric\'s Bar', url: 'https://aspenchamber.org' },
+        ],
+      },
+      restaurants: {
+        count: 100,
+        items: [
+          { name: 'Bosq (Michelin Star)', url: 'https://www.bosqaspen.com' },
+          { name: 'Ajax Tavern', url: 'https://www.thelittlenell.com/dining/ajax-tavern' },
+          { name: 'Cloud Nine Alpine Bistro', url: 'https://www.aspensnowmass.com' },
+          { name: 'Kenichi', url: 'https://kenichiaspen.com' },
+          { name: 'Clark\'s Aspen', url: 'https://clarksaspen.com' },
+          { name: 'The Sundeck', url: 'https://www.aspensnowmass.com' },
+        ],
+      },
+      skiShops: {
+        count: 20,
+        items: [
+          { name: 'Four Mountain Sports', url: 'https://www.aspensnowmass.com/visit/four-mountain-sports-locations' },
+          { name: 'Incline Ski & Board', url: 'https://www.inclineski.com' },
+          { name: 'Radio Boardshop', url: 'https://aspenchamber.org' },
+          { name: 'Gorsuch', url: 'https://www.gorsuch.com' },
+        ],
+      },
+      shops: {
+        count: 150,
+        items: [
+          { name: 'Downtown Aspen Shopping', url: 'https://aspenchamber.org' },
+          { name: 'Galena Street', url: 'https://aspenchamber.org' },
+          { name: 'Snowmass Base Village', url: 'https://www.gosnowmass.com' },
+        ],
+      },
+      groceryStores: {
+        count: 4,
+        items: [
+          { name: 'Clark\'s Market', url: 'https://clarksmarket.com' },
+          { name: 'City Market', url: 'https://www.citymarket.com' },
+          { name: 'Whole Foods Market', url: 'https://www.wholefoodsmarket.com' },
+        ],
+      },
+      hotels: {
+        count: 35,
+        items: [
+          { name: 'The Little Nell', url: 'https://www.thelittlenell.com' },
+          { name: 'St. Regis Aspen Resort', url: 'https://www.marriott.com/hotels/travel/asexr-the-st-regis-aspen-resort' },
+          { name: 'The Limelight Hotel', url: 'https://www.limelighthotels.com/aspen' },
+          { name: 'Hotel Jerome', url: 'https://www.aubergeresorts.com/hoteljerome' },
+          { name: 'Viceroy Snowmass', url: 'https://www.viceroyhotelsandresorts.com/snowmass' },
+          { name: 'W Aspen', url: 'https://www.marriott.com/hotels/travel/asewh-w-aspen' },
+        ],
+      },
+      motels: {
+        count: 3,
+        items: [
+          { name: 'Aspen Mountain Lodge', url: 'https://aspenmountainlodge.com' },
+          { name: 'Molly Gibson Lodge', url: 'https://www.mollygibson.com' },
+        ],
+      },
+    },
   },
   {
     id: 'resort:steamboat',
@@ -319,6 +606,98 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['destination', 'ikon-pass', 'champagne-powder', 'western', 'large'],
+
+    // Base areas
+    baseAreas: {
+      count: 2,
+      items: [
+        { name: 'Steamboat Square (Gondola Square)', url: 'https://www.steamboat.com' },
+        { name: 'Thunderhead', url: 'https://www.steamboat.com' },
+      ],
+    },
+
+    // High-speed lifts (2 gondolas + 8 high-speed quads + 1 high-speed six)
+    highSpeedLifts: {
+      count: 11,
+      items: [
+        { name: 'Wild Blue Gondola', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Steamboat Gondola', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Storm Peak Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Morningside Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Pony Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Four Points Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Sunshine Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Priest Creek Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Thunderhead Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+        { name: 'Greenhorn Ranch Express', url: 'https://www.steamboat.com/the-mountain/mountain-stats' },
+      ],
+    },
+
+    // Nearby amenities (within 1 mile)
+    nearby: {
+      bars: {
+        count: 20,
+        items: [
+          { name: 'The Cabin', url: 'https://www.steamboat.com' },
+          { name: 'Timber & Torch', url: 'https://www.steamboat.com' },
+          { name: 'The Range Food & Drink Hall', url: 'https://www.steamboat.com' },
+          { name: 'Brick', url: 'https://www.steamboatchamber.com' },
+          { name: 'Salt & Lime', url: 'https://www.steamboatchamber.com' },
+          { name: 'Meat Bar', url: 'https://www.steamboatchamber.com' },
+        ],
+      },
+      restaurants: {
+        count: 130,
+        items: [
+          { name: 'Gondola Pub & Grill', url: 'https://www.gondolapubandgrill.com' },
+          { name: 'Four Points Lodge', url: 'https://www.steamboat.com' },
+          { name: 'Hazie\'s', url: 'https://www.steamboat.com' },
+          { name: 'Yampa Valley Kitchen', url: 'https://yampavalleykitchen.com' },
+          { name: 'Table 79', url: 'https://table79.com' },
+          { name: 'Aurum Food & Wine', url: 'https://aurumsteamboat.com' },
+        ],
+      },
+      skiShops: {
+        count: 10,
+        items: [
+          { name: 'Steamboat Ski & Sport', url: 'https://www.steamboat.com' },
+          { name: 'Christy Sports', url: 'https://www.christysports.com' },
+          { name: 'Ski Haus', url: 'https://skihaussteamboat.com' },
+        ],
+      },
+      shops: {
+        count: 60,
+        items: [
+          { name: 'Downtown Lincoln Avenue', url: 'https://www.steamboatchamber.com' },
+          { name: 'Steamboat Square Shops', url: 'https://www.steamboat.com' },
+        ],
+      },
+      groceryStores: {
+        count: 4,
+        items: [
+          { name: 'City Market', url: 'https://www.citymarket.com' },
+          { name: 'Safeway', url: 'https://www.safeway.com' },
+          { name: 'Natural Grocers', url: 'https://www.naturalgrocers.com' },
+        ],
+      },
+      hotels: {
+        count: 20,
+        items: [
+          { name: 'The Steamboat Grand', url: 'https://www.steamboatgrand.com' },
+          { name: 'One Steamboat Place', url: 'https://www.onesteamboatplace.com' },
+          { name: 'Trailhead Lodge', url: 'https://www.steamboat.com' },
+          { name: 'Ptarmigan Inn', url: 'https://www.ptarmiganinn.com' },
+          { name: 'Sheraton Steamboat Resort', url: 'https://www.marriott.com' },
+        ],
+      },
+      motels: {
+        count: 5,
+        items: [
+          { name: 'Rabbit Ears Motel', url: 'https://rabbitearsmotel.com' },
+          { name: 'Holiday Inn', url: 'https://www.ihg.com' },
+        ],
+      },
+    },
   },
   {
     id: 'resort:arapahoe-basin',
@@ -869,6 +1248,96 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: true,
     },
     tags: ['destination', 'epic-pass', 'luxury', 'groomed', 'family-friendly', 'large'],
+
+    // Base areas (3 villages)
+    baseAreas: {
+      count: 3,
+      items: [
+        { name: 'Beaver Creek Village', url: 'https://www.beavercreek.com/explore-the-resort/the-village.aspx' },
+        { name: 'Bachelor Gulch', url: 'https://bachelorgulchvillage.com' },
+        { name: 'Arrowhead', url: 'https://www.beavercreek.com' },
+      ],
+    },
+
+    // High-speed lifts (4 gondolas + 12+ high-speed detachable chairlifts)
+    highSpeedLifts: {
+      count: 16,
+      items: [
+        { name: 'Riverfront Express Gondola', url: 'https://www.beavercreek.com' },
+        { name: 'Buckaroo Express Gondola', url: 'https://www.beavercreek.com' },
+        { name: 'Haymeadow Express Gondola', url: 'https://www.beavercreek.com' },
+        { name: 'Centennial Express', url: 'https://www.beavercreek.com' },
+        { name: 'Lower Beaver Creek Mountain Express', url: 'https://www.beavercreek.com' },
+        { name: 'Upper Beaver Creek Mountain Express', url: 'https://www.beavercreek.com' },
+        { name: 'Birds of Prey Express', url: 'https://www.beavercreek.com' },
+        { name: 'Strawberry Park Express', url: 'https://www.beavercreek.com' },
+        { name: 'Larkspur Express', url: 'https://www.beavercreek.com' },
+        { name: 'Rose Bowl Express', url: 'https://www.beavercreek.com' },
+      ],
+    },
+
+    // Nearby amenities (within 1 mile)
+    nearby: {
+      bars: {
+        count: 12,
+        items: [
+          { name: 'Coyote Café', url: 'https://www.beavercreek.com' },
+          { name: 'Broken Arrow', url: 'https://www.beavercreek.com' },
+          { name: 'Brass Bear Bar', url: 'https://www.beavercreek.com' },
+          { name: '8100 Mountainside Bar', url: 'https://www.beavercreek.com' },
+        ],
+      },
+      restaurants: {
+        count: 25,
+        items: [
+          { name: 'Splendido at the Chateau', url: 'https://www.beavercreek.com' },
+          { name: 'Citrea', url: 'https://www.beavercreek.com' },
+          { name: 'Alpine + Antlers', url: 'https://www.beavercreek.com' },
+          { name: 'Beaver Creek Chophouse', url: 'https://www.beavercreek.com' },
+          { name: 'The Charter Steakhouse', url: 'https://www.beavercreek.com' },
+          { name: 'Hooked', url: 'https://www.beavercreek.com' },
+        ],
+      },
+      skiShops: {
+        count: 8,
+        items: [
+          { name: 'Beaver Creek Sports', url: 'https://www.beavercreek.com' },
+          { name: 'Christy Sports', url: 'https://www.christysports.com' },
+          { name: 'Gorsuch', url: 'https://www.gorsuch.com' },
+        ],
+      },
+      shops: {
+        count: 40,
+        items: [
+          { name: 'Beaver Creek Village Shopping', url: 'https://www.beavercreek.com' },
+          { name: 'The Market at Beaver Creek', url: 'https://www.beavercreek.com' },
+        ],
+      },
+      groceryStores: {
+        count: 2,
+        items: [
+          { name: 'City Market (Avon)', url: 'https://www.citymarket.com' },
+          { name: 'Whole Foods (Avon)', url: 'https://www.wholefoodsmarket.com' },
+        ],
+      },
+      hotels: {
+        count: 15,
+        items: [
+          { name: 'The Ritz-Carlton Bachelor Gulch', url: 'https://www.ritzcarlton.com/en/hotels/colorado/bachelor-gulch' },
+          { name: 'Park Hyatt Beaver Creek', url: 'https://www.hyatt.com/en-US/hotel/colorado/park-hyatt-beaver-creek-resort-and-spa' },
+          { name: 'The Pines Lodge', url: 'https://www.pineslodge.com' },
+          { name: 'The Charter at Beaver Creek', url: 'https://www.beavercreek.com' },
+          { name: 'Osprey at Beaver Creek', url: 'https://www.ospreyatbeavercreek.com' },
+        ],
+      },
+      motels: {
+        count: 3,
+        items: [
+          { name: 'Comfort Inn Avon', url: 'https://www.choicehotels.com' },
+          { name: 'Westin Riverfront (Avon)', url: 'https://www.marriott.com' },
+        ],
+      },
+    },
   },
   {
     id: 'resort:crested-butte',
@@ -948,5 +1417,88 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['destination', 'epic-pass', 'extreme', 'authentic', 'expert', 'medium'],
+
+    // Base areas
+    baseAreas: {
+      count: 2,
+      items: [
+        { name: 'Mt. Crested Butte Base Village', url: 'https://www.skicb.com' },
+        { name: 'Town of Crested Butte (Elk Avenue)', url: 'https://gunnisoncrestedbutte.com' },
+      ],
+    },
+
+    // High-speed lifts (4 high-speed detachable quads)
+    highSpeedLifts: {
+      count: 4,
+      items: [
+        { name: 'Silver Queen Express', url: 'https://www.skicb.com' },
+        { name: 'Red Lady Express', url: 'https://www.skicb.com' },
+        { name: 'Paradise Express', url: 'https://www.skicb.com' },
+        { name: 'East River Express', url: 'https://www.skicb.com' },
+      ],
+    },
+
+    // Nearby amenities (within 1 mile)
+    nearby: {
+      bars: {
+        count: 15,
+        items: [
+          { name: 'Kochevar\'s', url: 'https://travelcrestedbutte.com' },
+          { name: 'The Talk of the Town', url: 'https://travelcrestedbutte.com' },
+          { name: 'Montanya Distillers', url: 'https://montanyarum.com' },
+          { name: 'Public House', url: 'https://travelcrestedbutte.com' },
+          { name: 'Butte 66 BBQ', url: 'https://www.skicb.com' },
+        ],
+      },
+      restaurants: {
+        count: 50,
+        items: [
+          { name: 'Elk Ave Prime', url: 'https://elkaveprime.com' },
+          { name: 'Secret Stash', url: 'https://secretstash.com' },
+          { name: 'Breadery', url: 'https://travelcrestedbutte.com' },
+          { name: 'Soupçon', url: 'https://soupconrestaurant.com' },
+          { name: 'Slogar Bar & Restaurant', url: 'https://slogarrestaurant.com' },
+          { name: 'Butte 66 BBQ Roadhouse', url: 'https://www.skicb.com' },
+        ],
+      },
+      skiShops: {
+        count: 6,
+        items: [
+          { name: 'Butte & Co.', url: 'https://www.skicb.com' },
+          { name: 'Christy Sports', url: 'https://www.christysports.com' },
+          { name: 'Flatiron Sports', url: 'https://travelcrestedbutte.com' },
+        ],
+      },
+      shops: {
+        count: 30,
+        items: [
+          { name: 'Elk Avenue Shops', url: 'https://gunnisoncrestedbutte.com' },
+          { name: 'Downtown Crested Butte', url: 'https://travelcrestedbutte.com' },
+        ],
+      },
+      groceryStores: {
+        count: 2,
+        items: [
+          { name: 'Clark\'s Market', url: 'https://clarksmarket.com' },
+          { name: 'Mountain Earth', url: 'https://travelcrestedbutte.com' },
+        ],
+      },
+      hotels: {
+        count: 12,
+        items: [
+          { name: 'Grand Lodge Crested Butte', url: 'https://www.skicb.com' },
+          { name: 'Elevation Hotel & Spa', url: 'https://elevationresort.com' },
+          { name: 'The Lodge at Mountaineer Square', url: 'https://www.skicb.com' },
+          { name: 'Crested Butte Mountain Resort Lodging', url: 'https://www.skicb.com' },
+        ],
+      },
+      motels: {
+        count: 4,
+        items: [
+          { name: 'Nordic Inn', url: 'https://travelcrestedbutte.com' },
+          { name: 'Old Town Inn', url: 'https://travelcrestedbutte.com' },
+        ],
+      },
+    },
   },
 ];
