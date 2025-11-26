@@ -1,0 +1,13 @@
+{
+  "country": "CA",
+  "province": "New Brunswick",
+  "resorts": [
+    { "name": "Crabbe Mountain", "status": "active" },
+    { "name": "Poley Mountain", "status": "active" },
+    { "name": "Sugarloaf Provincial Park", "status": "active" },
+    { "name": "Mont Farlagne", "status": "active" },
+
+    { "name": "Fundy Highlands Golf & Ski", "status": "defunct" },
+    { "name": "Silver Falls Ski Area", "status": "defunct" }
+  ]
+}

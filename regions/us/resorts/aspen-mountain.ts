@@ -1,0 +1,63 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const aspenMountain: Resort = {
+  id: 'resort:aspen-mountain',
+  slug: 'aspen-mountain',
+  name: 'Aspen Mountain',
+  tagline: 'The iconic silver gondola above America\'s most famous ski town',
+  description: 'Aspen Mountain, known locally as "Ajax," is the original ski area that established Aspen as a world-famous resort destination. Rising directly above downtown Aspen, the Silver Queen Gondola provides immediate access to over 3,200 vertical feet of challenging, intermediate-to-expert terrain. Unlike many resorts, Aspen Mountain has no beginner runs - every trail offers a genuine challenge. The mountain\'s legendary runs like Corkscrew, Spar Gulch, and the Face of Bell have challenged generations of skilled skiers while the Sundeck restaurant provides one of the most spectacular lunch venues in skiing.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 39.1875, lng: -106.8186 },
+  nearestCity: 'Aspen, CO',
+  distanceFromDenver: 200,
+  driveTimeFromDenver: 240,
+  stats: {
+    skiableAcres: 675,
+    liftsCount: 8,
+    runsCount: 76,
+    verticalDrop: 3267,
+    baseElevation: 7945,
+    summitElevation: 11212,
+    avgAnnualSnowfall: 300,
+  },
+  terrain: {
+    beginner: 0,
+    intermediate: 48,
+    advanced: 26,
+    expert: 26,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.7,
+  reviewCount: 1456,
+  heroImage: '/images/aspen-mountain-hero.jpg',
+  websiteUrl: 'https://www.aspensnowmass.com/our-mountains/aspen-mountain',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/aspensnowmass',
+    instagram: 'https://www.instagram.com/aspensnowmass',
+  },
+  features: {
+    hasPark: false,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['destination', 'ikon-pass', 'expert', 'upscale', 'colorado', 'iconic'],
+  highSpeedLifts: {
+    count: 3,
+    items: [
+      { name: 'Silver Queen Gondola', url: 'https://www.aspensnowmass.com' },
+      { name: 'Ajax Express', url: 'https://www.aspensnowmass.com' },
+      { name: 'FIS Express', url: 'https://www.aspensnowmass.com' },
+    ],
+  },
+};

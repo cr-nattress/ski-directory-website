@@ -1,0 +1,72 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const palisadesTahoe: Resort = {
+  id: 'resort:palisades-tahoe',
+  slug: 'palisades-tahoe',
+  name: 'Palisades Tahoe',
+  tagline: 'Olympic heritage and legendary Lake Tahoe terrain',
+  description: 'Palisades Tahoe, formerly known as Squaw Valley and Alpine Meadows, is a legendary California ski destination that hosted the 1960 Winter Olympics. The combined resort now offers over 6,000 acres of skiable terrain across two interconnected mountains linked by the Gondola. Squaw Valley is renowned for its Olympic-caliber terrain, including the iconic KT-22 and Headwall, while Alpine Meadows offers a more intimate, tree-skiing experience. The resort\'s proximity to Lake Tahoe provides stunning alpine and lake views throughout.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 39.1969, lng: -120.2358 },
+  nearestCity: 'Olympic Valley, CA',
+  distanceFromDenver: 880,
+  driveTimeFromDenver: 810,
+  stats: {
+    skiableAcres: 6000,
+    liftsCount: 44,
+    runsCount: 270,
+    verticalDrop: 2840,
+    baseElevation: 6200,
+    summitElevation: 9050,
+    avgAnnualSnowfall: 400,
+  },
+  terrain: {
+    beginner: 25,
+    intermediate: 40,
+    advanced: 25,
+    expert: 10,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.6,
+  reviewCount: 1834,
+  heroImage: '/images/palisades-tahoe-hero.jpg',
+  websiteUrl: 'https://www.palisadestahoe.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/palisadestahoe',
+    instagram: 'https://www.instagram.com/palisadestahoe',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: true,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['destination', 'ikon-pass', 'olympic', 'lake-tahoe', 'california', 'expert'],
+  highSpeedLifts: {
+    count: 12,
+    items: [
+      { name: 'Funitel', url: 'https://www.palisadestahoe.com' },
+      { name: 'Base to Base Gondola', url: 'https://www.palisadestahoe.com' },
+      { name: 'Gold Coast Funitel', url: 'https://www.palisadestahoe.com' },
+      { name: 'KT-22 Express', url: 'https://www.palisadestahoe.com' },
+      { name: 'Shirley Lake Express', url: 'https://www.palisadestahoe.com' },
+    ],
+  },
+  baseAreas: {
+    count: 2,
+    items: [
+      { name: 'The Village at Palisades Tahoe', url: 'https://www.palisadestahoe.com' },
+      { name: 'Alpine Meadows Base', url: 'https://www.palisadestahoe.com' },
+    ],
+  },
+};

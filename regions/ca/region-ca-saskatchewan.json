@@ -1,0 +1,17 @@
+{
+  "country": "CA",
+  "province": "Saskatchewan",
+  "resorts": [
+    { "name": "Mission Ridge Winter Park", "status": "active" },
+    { "name": "Table Mountain Regional Park", "status": "active" },
+    { "name": "Wapiti Valley Ski Resort", "status": "active" },
+    { "name": "Ski Timber Ridge", "status": "active" },
+    { "name": "Duck Mountain Provincial Park", "status": "active" },
+    { "name": "Eb's Ski and Snowboard Trails", "status": "active" },
+    { "name": "Long Lake Ski Club", "status": "active" },
+    { "name": "Little Red River Park", "status": "active" },
+    { "name": "Optimist Hill", "status": "active" },
+
+    { "name": "Blackstrap Ski Hill", "status": "defunct" }
+  ]
+}

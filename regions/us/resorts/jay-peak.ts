@@ -1,0 +1,63 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const jayPeak: Resort = {
+  id: 'resort:jay-peak',
+  slug: 'jay-peak',
+  name: 'Jay Peak Resort',
+  tagline: 'Deep powder and legendary glades on the Canadian border',
+  description: 'Jay Peak Resort sits on the Vermont-Quebec border and benefits from its position in the path of major weather systems, receiving more natural snow than any other ski area in the eastern United States. The resort is legendary for its glade skiing - hundreds of acres of perfectly spaced trees ranging from gentle to extreme. The 60-passenger aerial tramway accesses the 3,858-foot summit where expert terrain awaits in all directions. Recent waterpark and hotel developments have expanded Jay\'s appeal while maintaining its core identity as a powder skier\'s paradise.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 44.9275, lng: -72.5064 },
+  nearestCity: 'Jay, VT',
+  distanceFromDenver: 2050,
+  driveTimeFromDenver: 1900,
+  stats: {
+    skiableAcres: 385,
+    liftsCount: 9,
+    runsCount: 81,
+    verticalDrop: 2153,
+    baseElevation: 1815,
+    summitElevation: 3968,
+    avgAnnualSnowfall: 359,
+  },
+  terrain: {
+    beginner: 21,
+    intermediate: 44,
+    advanced: 21,
+    expert: 14,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.5,
+  reviewCount: 923,
+  heroImage: '/images/jay-peak-hero.jpg',
+  websiteUrl: 'https://www.jaypeakresort.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/jaypeakresort',
+    instagram: 'https://www.instagram.com/jaypeakresort',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['powder', 'ikon-pass', 'glades', 'tram', 'vermont', 'border'],
+  highSpeedLifts: {
+    count: 3,
+    items: [
+      { name: 'Aerial Tramway', url: 'https://www.jaypeakresort.com' },
+      { name: 'Flyer Express', url: 'https://www.jaypeakresort.com' },
+      { name: 'Bonnie Express', url: 'https://www.jaypeakresort.com' },
+    ],
+  },
+};

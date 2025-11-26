@@ -1,0 +1,61 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const kickingHorse: Resort = {
+  id: 'resort:kicking-horse',
+  slug: 'kicking-horse',
+  name: 'Kicking Horse Mountain Resort',
+  tagline: 'Champagne powder and extreme terrain in Golden',
+  description: 'Kicking Horse Mountain Resort delivers some of the most extreme inbounds terrain in North America, with over 85 chutes and nearly 2,000 acres of expert terrain spread across 120+ runs. The Golden Eagle Express gondola rises 4,133 vertical feet from the valley floor to the summit ridge, accessing powder stashes, steep faces, and exposed alpine terrain. Located in Golden, BC, Kicking Horse receives dry interior powder and offers a raw, challenging skiing experience that attracts expert skiers seeking uncrowded, ungroomed adventure.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 51.2975, lng: -117.0478 },
+  nearestCity: 'Golden, BC',
+  distanceFromDenver: 850,
+  driveTimeFromDenver: 780,
+  stats: {
+    skiableAcres: 2825,
+    liftsCount: 5,
+    runsCount: 128,
+    verticalDrop: 4133,
+    baseElevation: 3900,
+    summitElevation: 8033,
+    avgAnnualSnowfall: 295,
+  },
+  terrain: {
+    beginner: 20,
+    intermediate: 20,
+    advanced: 45,
+    expert: 15,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.5,
+  reviewCount: 654,
+  heroImage: '/images/kicking-horse-hero.jpg',
+  websiteUrl: 'https://www.kickinghorseresort.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/kickinghorseresort',
+    instagram: 'https://www.instagram.com/kickinghorseresort',
+  },
+  features: {
+    hasPark: false,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: false,
+  },
+  tags: ['expert', 'ikon-pass', 'steep', 'powder', 'british-columbia', 'chutes'],
+  highSpeedLifts: {
+    count: 1,
+    items: [
+      { name: 'Golden Eagle Express Gondola', url: 'https://www.kickinghorseresort.com' },
+    ],
+  },
+};

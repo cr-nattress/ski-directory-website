@@ -1,0 +1,73 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const bigSky: Resort = {
+  id: 'resort:big-sky',
+  slug: 'big-sky',
+  name: 'Big Sky Resort',
+  tagline: 'The Biggest Skiing in America with minimal crowds',
+  description: 'Big Sky Resort proudly claims the title of "Biggest Skiing in America" with over 5,800 acres of skiable terrain spanning four mountains. Despite its massive size, Big Sky remains blissfully uncrowded - even on peak days, lift lines are virtually nonexistent. The terrain ranges from gentle beginner areas to the exposed, alpine challenges of Lone Peak, whose 11,166-foot summit offers some of the most extreme inbounds terrain in North America. Big Sky\'s location in Montana\'s Madison Range provides reliable powder and spectacular views of Yellowstone country.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 45.2869, lng: -111.4019 },
+  nearestCity: 'Big Sky, MT',
+  distanceFromDenver: 615,
+  driveTimeFromDenver: 560,
+  stats: {
+    skiableAcres: 5800,
+    liftsCount: 36,
+    runsCount: 300,
+    verticalDrop: 4350,
+    baseElevation: 6800,
+    summitElevation: 11166,
+    avgAnnualSnowfall: 400,
+  },
+  terrain: {
+    beginner: 15,
+    intermediate: 25,
+    advanced: 42,
+    expert: 18,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.7,
+  reviewCount: 1678,
+  heroImage: '/images/big-sky-hero.jpg',
+  websiteUrl: 'https://www.bigskyresort.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/bigskoresort',
+    instagram: 'https://www.instagram.com/bigskyresort',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['destination', 'ikon-pass', 'largest', 'uncrowded', 'montana', 'expert'],
+  highSpeedLifts: {
+    count: 14,
+    items: [
+      { name: 'Lone Peak Tram', url: 'https://www.bigskyresort.com' },
+      { name: 'Ramcharger 8', url: 'https://www.bigskyresort.com' },
+      { name: 'Swift Current 6', url: 'https://www.bigskyresort.com' },
+      { name: 'Powder Seeker', url: 'https://www.bigskyresort.com' },
+      { name: 'Six Shooter', url: 'https://www.bigskyresort.com' },
+    ],
+  },
+  baseAreas: {
+    count: 3,
+    items: [
+      { name: 'Mountain Village', url: 'https://www.bigskyresort.com' },
+      { name: 'Meadow Village', url: 'https://www.bigskyresort.com' },
+      { name: 'Town Center', url: 'https://www.bigskyresort.com' },
+    ],
+  },
+};

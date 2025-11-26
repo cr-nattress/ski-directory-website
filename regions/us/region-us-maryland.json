@@ -1,0 +1,9 @@
+{
+  "country": "US",
+  "state": "Maryland",
+  "resorts": [
+    { "name": "Wisp Resort", "status": "active" },
+
+    { "name": "Braddock Heights", "status": "defunct" }
+  ]
+}

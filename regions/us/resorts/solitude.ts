@@ -1,0 +1,70 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const solitude: Resort = {
+  id: 'resort:solitude',
+  slug: 'solitude',
+  name: 'Solitude Mountain Resort',
+  tagline: 'Utah\'s uncrowded gem in Big Cottonwood Canyon',
+  description: 'Solitude Mountain Resort lives up to its name, offering a peaceful, uncrowded skiing experience in Big Cottonwood Canyon just 30 minutes from Salt Lake City. The resort features excellent intermediate terrain with some surprisingly challenging expert runs, all blanketed by Utah\'s famous light, dry powder. Solitude\'s European-style village provides cozy accommodations and dining without the crowds found at larger resorts. Connected to Brighton via the SolBright trail, advanced skiers can explore both mountains on a single pass.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 40.6199, lng: -111.5919 },
+  nearestCity: 'Salt Lake City, UT',
+  distanceFromDenver: 535,
+  driveTimeFromDenver: 465,
+  stats: {
+    skiableAcres: 1200,
+    liftsCount: 8,
+    runsCount: 77,
+    verticalDrop: 2047,
+    baseElevation: 7988,
+    summitElevation: 10035,
+    avgAnnualSnowfall: 500,
+  },
+  terrain: {
+    beginner: 20,
+    intermediate: 50,
+    advanced: 30,
+    expert: 0,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.5,
+  reviewCount: 654,
+  heroImage: '/images/solitude-hero.jpg',
+  websiteUrl: 'https://www.solitudemountain.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/solitudemountain',
+    instagram: 'https://www.instagram.com/solikidemtn',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['uncrowded', 'ikon-pass', 'intermediate', 'village', 'utah', 'peaceful'],
+  highSpeedLifts: {
+    count: 4,
+    items: [
+      { name: 'Moonbeam Express', url: 'https://www.solitudemountain.com' },
+      { name: 'Apex Express', url: 'https://www.solitudemountain.com' },
+      { name: 'Summit Express', url: 'https://www.solitudemountain.com' },
+      { name: 'Powderhorn Express', url: 'https://www.solitudemountain.com' },
+    ],
+  },
+  baseAreas: {
+    count: 1,
+    items: [
+      { name: 'Solitude Village', url: 'https://www.solitudemountain.com' },
+    ],
+  },
+};

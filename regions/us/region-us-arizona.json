@@ -1,0 +1,12 @@
+{
+  "country": "US",
+  "state": "Arizona",
+  "resorts": [
+    { "name": "Arizona Snowbowl", "status": "active" },
+    { "name": "Sunrise Park Resort", "status": "active" },
+    { "name": "Mount Lemmon Ski Valley", "status": "active" },
+
+    { "name": "Williams Ski Area", "status": "defunct" },
+    { "name": "Mormon Lake Ski Area", "status": "defunct" }
+  ]
+}

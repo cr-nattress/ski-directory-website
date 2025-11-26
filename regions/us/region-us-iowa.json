@@ -1,0 +1,14 @@
+{
+  "country": "US",
+  "state": "Iowa",
+  "resorts": [
+    { "name": "Sundown Mountain Resort", "status": "active" },
+    { "name": "Seven Oaks Recreation", "status": "active" },
+    { "name": "Sleepy Hollow Sports Park", "status": "active" },
+    { "name": "Fun Valley Ski Area", "status": "active" },
+    { "name": "Mt. Crescent Ski Area", "status": "active" },
+
+    { "name": "Ski-Hi", "status": "defunct" },
+    { "name": "Chestnut Hills", "status": "defunct" }
+  ]
+}

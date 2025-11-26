@@ -1,0 +1,12 @@
+{
+  "country": "US",
+  "state": "Nevada",
+  "resorts": [
+    { "name": "Lee Canyon", "status": "active" },
+    { "name": "Mt. Rose Ski Tahoe", "status": "active", "notes": "On NV/CA border" },
+
+    { "name": "Ski Incline", "status": "defunct" },
+    { "name": "Slide Mountain", "status": "defunct" },
+    { "name": "Reno Ski Bowl", "status": "defunct" }
+  ]
+}

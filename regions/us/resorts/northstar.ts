@@ -1,0 +1,71 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const northstar: Resort = {
+  id: 'resort:northstar',
+  slug: 'northstar',
+  name: 'Northstar California',
+  tagline: 'Family-friendly luxury in Lake Tahoe\'s north shore',
+  description: 'Northstar California is Lake Tahoe\'s premier family-friendly resort, offering a seamless blend of excellent skiing, upscale village amenities, and consistent grooming. The resort is renowned for its meticulously maintained corduroy runs, making it a favorite for intermediate skiers and families. The Village at Northstar provides a pedestrian-friendly base area with high-end shopping, dining, and ice skating. While intermediates will love the wide groomers, experts can find challenges in the Lookout Mountain area and excellent tree skiing throughout.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 39.2746, lng: -120.1211 },
+  nearestCity: 'Truckee, CA',
+  distanceFromDenver: 870,
+  driveTimeFromDenver: 800,
+  stats: {
+    skiableAcres: 3170,
+    liftsCount: 20,
+    runsCount: 100,
+    verticalDrop: 2280,
+    baseElevation: 6330,
+    summitElevation: 8610,
+    avgAnnualSnowfall: 350,
+  },
+  terrain: {
+    beginner: 13,
+    intermediate: 60,
+    advanced: 20,
+    expert: 7,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['epic'],
+  rating: 4.4,
+  reviewCount: 1234,
+  heroImage: '/images/northstar-hero.jpg',
+  websiteUrl: 'https://www.northstarcalifornia.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/northstarcalifornia',
+    instagram: 'https://www.instagram.com/northstarcalifornia',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: true,
+    hasNightSkiing: false,
+    hasBackcountryAccess: false,
+    hasSpaVillage: true,
+  },
+  tags: ['family', 'epic-pass', 'groomed', 'lake-tahoe', 'california', 'village'],
+  highSpeedLifts: {
+    count: 7,
+    items: [
+      { name: 'Village Gondola', url: 'https://www.northstarcalifornia.com' },
+      { name: 'Arrow Express', url: 'https://www.northstarcalifornia.com' },
+      { name: 'Vista Express', url: 'https://www.northstarcalifornia.com' },
+      { name: 'Comstock Express', url: 'https://www.northstarcalifornia.com' },
+      { name: 'Zephyr Express', url: 'https://www.northstarcalifornia.com' },
+    ],
+  },
+  baseAreas: {
+    count: 1,
+    items: [
+      { name: 'The Village at Northstar', url: 'https://www.northstarcalifornia.com' },
+    ],
+  },
+};

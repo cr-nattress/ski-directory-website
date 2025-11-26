@@ -1,0 +1,71 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const sugarbush: Resort = {
+  id: 'resort:sugarbush',
+  slug: 'sugarbush',
+  name: 'Sugarbush Resort',
+  tagline: 'Two mountains of Vermont\'s finest terrain',
+  description: 'Sugarbush Resort encompasses two distinct mountains - Lincoln Peak and Mount Ellen - connected by a scenic shuttle bus, creating one of the largest ski areas in the East. The resort is known for its natural snow, diverse terrain, and classic Vermont atmosphere without the crowds of larger resorts. Lincoln Peak offers challenging steeps and excellent intermediate cruisers, while Mount Ellen provides a more secluded, old-school New England experience. The Mad River Valley base community adds authentic Vermont charm with local restaurants and covered bridges.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 44.1357, lng: -72.9053 },
+  nearestCity: 'Warren, VT',
+  distanceFromDenver: 1980,
+  driveTimeFromDenver: 1830,
+  stats: {
+    skiableAcres: 581,
+    liftsCount: 16,
+    runsCount: 111,
+    verticalDrop: 2600,
+    baseElevation: 1500,
+    summitElevation: 4083,
+    avgAnnualSnowfall: 283,
+  },
+  terrain: {
+    beginner: 20,
+    intermediate: 45,
+    advanced: 23,
+    expert: 12,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.4,
+  reviewCount: 789,
+  heroImage: '/images/sugarbush-hero.jpg',
+  websiteUrl: 'https://www.sugarbush.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/sugarbushvt',
+    instagram: 'https://www.instagram.com/sugaborshresort',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: false,
+  },
+  tags: ['destination', 'ikon-pass', 'two-mountains', 'natural-snow', 'vermont', 'classic'],
+  highSpeedLifts: {
+    count: 5,
+    items: [
+      { name: 'Super Bravo Express', url: 'https://www.sugarbush.com' },
+      { name: 'Heaven\'s Gate Express', url: 'https://www.sugarbush.com' },
+      { name: 'Valley House Express', url: 'https://www.sugarbush.com' },
+      { name: 'Summit Express', url: 'https://www.sugarbush.com' },
+    ],
+  },
+  baseAreas: {
+    count: 2,
+    items: [
+      { name: 'Lincoln Peak', url: 'https://www.sugarbush.com' },
+      { name: 'Mount Ellen', url: 'https://www.sugarbush.com' },
+    ],
+  },
+};

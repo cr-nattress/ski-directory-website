@@ -1,0 +1,75 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const snowbird: Resort = {
+  id: 'resort:snowbird',
+  slug: 'snowbird',
+  name: 'Snowbird',
+  tagline: 'Utah\'s most challenging terrain and deepest powder',
+  description: 'Snowbird is legendary among expert skiers for its steep terrain, extreme vertical, and prodigious snowfall in Little Cottonwood Canyon. The resort\'s iconic 125-passenger aerial tram whisks skiers 2,900 vertical feet to Hidden Peak in just ten minutes, accessing some of the most challenging inbounds terrain in North America. With an average of 500 inches of Utah\'s famous "Greatest Snow on Earth" annually, Snowbird regularly extends its season into Memorial Day weekend. The resort maintains a no-frills, skiing-first atmosphere that attracts serious skiers from around the world.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 40.5830, lng: -111.6556 },
+  nearestCity: 'Salt Lake City, UT',
+  distanceFromDenver: 540,
+  driveTimeFromDenver: 470,
+  stats: {
+    skiableAcres: 2500,
+    liftsCount: 14,
+    runsCount: 168,
+    verticalDrop: 3240,
+    baseElevation: 7760,
+    summitElevation: 11000,
+    avgAnnualSnowfall: 500,
+  },
+  terrain: {
+    beginner: 27,
+    intermediate: 38,
+    advanced: 35,
+    expert: 0,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.7,
+  reviewCount: 1834,
+  heroImage: '/images/snowbird-hero.jpg',
+  websiteUrl: 'https://www.snowbird.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/snowaborbird',
+    instagram: 'https://www.instagram.com/snowaborbird',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['expert', 'ikon-pass', 'deep-snow', 'steep', 'utah', 'tram'],
+  highSpeedLifts: {
+    count: 6,
+    items: [
+      { name: 'Aerial Tram', url: 'https://www.snowbird.com' },
+      { name: 'Peruvian Express', url: 'https://www.snowbird.com' },
+      { name: 'Little Cloud', url: 'https://www.snowbird.com' },
+      { name: 'Gad 2', url: 'https://www.snowbird.com' },
+      { name: 'Mineral Basin Express', url: 'https://www.snowbird.com' },
+    ],
+  },
+  nearby: {
+    hotels: {
+      count: 4,
+      items: [
+        { name: 'The Cliff Lodge', url: 'https://www.snowbird.com/lodging' },
+        { name: 'The Lodge at Snowbird', url: 'https://www.snowbird.com/lodging' },
+        { name: 'Iron Blosam Lodge', url: 'https://www.snowbird.com/lodging' },
+      ],
+    },
+  },
+};

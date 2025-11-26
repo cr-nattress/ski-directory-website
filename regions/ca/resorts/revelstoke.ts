@@ -1,0 +1,63 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const revelstoke: Resort = {
+  id: 'resort:revelstoke',
+  slug: 'revelstoke',
+  name: 'Revelstoke Mountain Resort',
+  tagline: 'North America\'s greatest vertical drop',
+  description: 'Revelstoke Mountain Resort boasts the longest lift-served vertical descent in North America at 5,620 feet, dropping from the summit of Mount Mackenzie to the base village. This relatively new resort, opened in 2007, has quickly established itself as a powder skiing mecca, receiving massive amounts of interior British Columbia snow. The terrain is predominantly expert-oriented with steep trees, wide-open alpine bowls, and legendary cat-skiing and heli-skiing in the surrounding Selkirk and Monashee mountain ranges. The town of Revelstoke offers an authentic Canadian mountain community experience.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 51.0029, lng: -118.1611 },
+  nearestCity: 'Revelstoke, BC',
+  distanceFromDenver: 940,
+  driveTimeFromDenver: 850,
+  stats: {
+    skiableAcres: 3121,
+    liftsCount: 8,
+    runsCount: 75,
+    verticalDrop: 5620,
+    baseElevation: 1680,
+    summitElevation: 7300,
+    avgAnnualSnowfall: 394,
+  },
+  terrain: {
+    beginner: 7,
+    intermediate: 45,
+    advanced: 38,
+    expert: 10,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.7,
+  reviewCount: 987,
+  heroImage: '/images/revelstoke-hero.jpg',
+  websiteUrl: 'https://www.revelstokemountainresort.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/RevelstokeMountainResort',
+    instagram: 'https://www.instagram.com/revelstokemtn',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['destination', 'ikon-pass', 'vertical', 'powder', 'british-columbia', 'expert'],
+  highSpeedLifts: {
+    count: 3,
+    items: [
+      { name: 'Revelation Gondola', url: 'https://www.revelstokemountainresort.com' },
+      { name: 'Stoke Chair', url: 'https://www.revelstokemountainresort.com' },
+      { name: 'Ripper Chair', url: 'https://www.revelstokemountainresort.com' },
+    ],
+  },
+};

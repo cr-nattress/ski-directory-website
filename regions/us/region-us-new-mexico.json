@@ -1,0 +1,22 @@
+{
+  "country": "US",
+  "state": "New Mexico",
+  "resorts": [
+    { "name": "Taos Ski Valley", "status": "active" },
+    { "name": "Ski Santa Fe", "status": "active" },
+    { "name": "Angel Fire Resort", "status": "active" },
+    { "name": "Ski Apache", "status": "active" },
+    { "name": "Red River Ski Area", "status": "active" },
+    { "name": "Sipapu Ski Resort", "status": "active" },
+    { "name": "Pajarito Mountain", "status": "active" },
+    { "name": "Sandia Peak", "status": "active" },
+    { "name": "Ski Cloudcroft", "status": "active" },
+
+    { "name": "Rio Costilla Ski Area", "status": "defunct" },
+    { "name": "Sugarite Ski Basin", "status": "defunct" },
+    { "name": "La Madera", "status": "defunct" },
+    { "name": "Agua Piedra", "status": "defunct" },
+    { "name": "Capulin Ski Area", "status": "defunct" },
+    { "name": "Santa Fe Ski Basin (original)", "status": "defunct", "notes": "Now Ski Santa Fe" }
+  ]
+}

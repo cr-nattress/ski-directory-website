@@ -1,0 +1,7 @@
+{
+  "country": "US",
+  "state": "Georgia",
+  "resorts": [
+    { "name": "Sky Valley Resort", "status": "defunct" }
+  ]
+}

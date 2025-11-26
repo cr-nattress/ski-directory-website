@@ -1,0 +1,70 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const blueMountain: Resort = {
+  id: 'resort:blue-mountain',
+  slug: 'blue-mountain',
+  name: 'Blue Mountain Resort',
+  tagline: 'Ontario\'s largest ski resort with four-season village',
+  description: 'Blue Mountain Resort is Ontario\'s largest ski destination, located on the scenic Niagara Escarpment overlooking Georgian Bay. While the vertical is modest compared to western resorts, Blue Mountain offers the best skiing within easy reach of Toronto and has invested heavily in snowmaking, terrain parks, and a vibrant pedestrian village. The resort operates year-round with summer activities, making it a true four-season destination. The Village at Blue provides boutique shopping, dining, and entertainment in an attractive walkable setting.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 44.5015, lng: -80.3161 },
+  nearestCity: 'Collingwood, ON',
+  distanceFromDenver: 1650,
+  driveTimeFromDenver: 1500,
+  stats: {
+    skiableAcres: 365,
+    liftsCount: 16,
+    runsCount: 43,
+    verticalDrop: 720,
+    baseElevation: 580,
+    summitElevation: 1483,
+    avgAnnualSnowfall: 130,
+  },
+  terrain: {
+    beginner: 23,
+    intermediate: 46,
+    advanced: 26,
+    expert: 5,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.2,
+  reviewCount: 1567,
+  heroImage: '/images/blue-mountain-hero.jpg',
+  websiteUrl: 'https://www.bluemountain.ca',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/BlueMountainResort',
+    instagram: 'https://www.instagram.com/bluemtnresort',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: true,
+    hasNightSkiing: true,
+    hasBackcountryAccess: false,
+    hasSpaVillage: true,
+  },
+  tags: ['regional', 'ikon-pass', 'village', 'family', 'ontario', 'four-season'],
+  highSpeedLifts: {
+    count: 6,
+    items: [
+      { name: 'Orchard Express', url: 'https://www.bluemountain.ca' },
+      { name: 'Silver Bullet Express', url: 'https://www.bluemountain.ca' },
+      { name: 'Apple Bowl Express', url: 'https://www.bluemountain.ca' },
+      { name: 'Great White Express', url: 'https://www.bluemountain.ca' },
+    ],
+  },
+  baseAreas: {
+    count: 1,
+    items: [
+      { name: 'The Village at Blue', url: 'https://www.bluemountain.ca' },
+    ],
+  },
+};

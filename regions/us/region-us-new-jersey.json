@@ -1,0 +1,14 @@
+{
+  "country": "US",
+  "state": "New Jersey",
+  "resorts": [
+    { "name": "Mountain Creek", "status": "active" },
+    { "name": "Campgaw Mountain", "status": "active" },
+
+    { "name": "Vernon Valley/Great Gorge", "status": "defunct", "notes": "Now Mountain Creek" },
+    { "name": "Craigmeur Ski Area", "status": "defunct" },
+    { "name": "Belle Mountain Ski Area", "status": "defunct" },
+    { "name": "Snow Bowl Ski Area", "status": "defunct" },
+    { "name": "High Point Ski Area", "status": "defunct" }
+  ]
+}

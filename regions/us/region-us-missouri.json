@@ -1,0 +1,10 @@
+{
+  "country": "US",
+  "state": "Missouri",
+  "resorts": [
+    { "name": "Snow Creek", "status": "active" },
+    { "name": "Hidden Valley", "status": "active" },
+
+    { "name": "Tan-Tar-A Resort", "status": "defunct" }
+  ]
+}

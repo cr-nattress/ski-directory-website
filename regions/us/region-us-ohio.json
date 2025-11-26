@@ -1,0 +1,17 @@
+{
+  "country": "US",
+  "state": "Ohio",
+  "resorts": [
+    { "name": "Snow Trails", "status": "active" },
+    { "name": "Boston Mills/Brandywine", "status": "active" },
+    { "name": "Alpine Valley", "status": "active" },
+    { "name": "Mad River Mountain", "status": "active" },
+    { "name": "Clear Fork Ski Area", "status": "active" },
+
+    { "name": "Valley Hi Ski Area", "status": "defunct" },
+    { "name": "Cedar Knoll Ski Resort", "status": "defunct" },
+    { "name": "Big Creek Ski Area", "status": "defunct" },
+    { "name": "Punderson State Park", "status": "defunct" },
+    { "name": "Catawba Cliffs", "status": "defunct" }
+  ]
+}

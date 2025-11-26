@@ -478,6 +478,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: true,
     },
     tags: ['destination', 'ikon-pass', 'expert', 'luxury', 'ajax', 'aspen-area'],
+    websiteUrl: 'https://www.aspensnowmass.com/four-mountains/aspen-mountain',
   },
   {
     id: 'resort:aspen-highlands',
@@ -526,6 +527,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['destination', 'ikon-pass', 'expert', 'highland-bowl', 'locals', 'aspen-area'],
+    websiteUrl: 'https://www.aspensnowmass.com/four-mountains/aspen-highlands',
   },
   {
     id: 'resort:buttermilk',
@@ -574,6 +576,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['destination', 'ikon-pass', 'beginner', 'x-games', 'park', 'family', 'aspen-area'],
+    websiteUrl: 'https://www.aspensnowmass.com/four-mountains/buttermilk',
   },
   {
     id: 'resort:steamboat',
@@ -826,6 +829,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['expert', 'ikon-pass', 'high-altitude', 'steep', 'medium'],
+    websiteUrl: 'https://www.arapahoebasin.com',
   },
   {
     id: 'resort:loveland',
@@ -905,6 +909,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['near-denver', 'value', 'high-altitude', 'medium'],
+    websiteUrl: 'https://www.skiloveland.com',
   },
   {
     id: 'resort:copper',
@@ -985,6 +990,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['ikon-pass', 'family-friendly', 'divided-terrain', 'large'],
+    websiteUrl: 'https://www.coppercolorado.com',
   },
   {
     id: 'resort:winter-park',
@@ -1064,6 +1070,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['ikon-pass', 'trees', 'near-denver', 'large'],
+    websiteUrl: 'https://www.winterparkresort.com',
   },
   {
     id: 'resort:keystone',
@@ -1144,6 +1151,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['epic-pass', 'night-skiing', 'family-friendly', 'large'],
+    websiteUrl: 'https://www.keystoneresort.com',
   },
   {
     id: 'resort:telluride',
@@ -1224,6 +1232,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: true,
     },
     tags: ['destination', 'ikon-pass', 'scenic', 'expert', 'large'],
+    websiteUrl: 'https://www.tellurideskiresort.com',
   },
   {
     id: 'resort:beaver-creek',
@@ -1605,6 +1614,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['independent', 'powder', 'uncrowded', 'value', 'indy-pass', 'medium'],
+    websiteUrl: 'https://www.skimonarch.com',
   },
   {
     id: 'resort:purgatory',
@@ -1653,6 +1663,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['destination', 'ikon-pass', 'family', 'southwest', 'medium'],
+    websiteUrl: 'https://www.purgatoryresort.com',
   },
   {
     id: 'resort:silverton',
@@ -1701,6 +1712,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['expert-only', 'extreme', 'backcountry', 'guided', 'highest', 'unique'],
+    websiteUrl: 'https://www.silvertonmountain.com',
   },
   {
     id: 'resort:ski-cooper',
@@ -1749,6 +1761,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['historic', 'indy-pass', 'uncrowded', 'value', 'family', 'small'],
+    websiteUrl: 'https://www.skicooper.com',
   },
   {
     id: 'resort:wolf-creek',
@@ -1797,6 +1810,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['powder', 'independent', 'most-snow', 'value', 'authentic', 'medium'],
+    websiteUrl: 'https://www.wolfcreekski.com',
   },
   {
     id: 'resort:eldora',
@@ -1845,6 +1859,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['local', 'ikon-pass', 'boulder', 'night-skiing', 'value', 'small'],
+    websiteUrl: 'https://www.eldora.com',
   },
   {
     id: 'resort:powderhorn',
@@ -1893,6 +1908,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['western-slope', 'indy-pass', 'uncrowded', 'value', 'local', 'medium'],
+    websiteUrl: 'https://www.powderhorn.com',
   },
   {
     id: 'resort:sunlight',
@@ -1941,6 +1957,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['family', 'indy-pass', 'value', 'hot-springs', 'local', 'small'],
+    websiteUrl: 'https://www.sunlightmtn.com',
   },
   {
     id: 'resort:echo-mountain',
@@ -1989,6 +2006,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['local', 'night-skiing', 'beginner', 'park', 'close-to-denver', 'small'],
+    websiteUrl: 'https://www.echomountainresort.com',
   },
   {
     id: 'resort:granby-ranch',
@@ -2037,6 +2055,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['family', 'beginner', 'night-skiing', 'value', 'local', 'small'],
+    websiteUrl: 'https://www.granbyranch.com',
   },
   {
     id: 'resort:hesperus',
@@ -2085,6 +2104,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['local', 'night-skiing', 'family', 'value', 'small', 'durango'],
+    websiteUrl: 'https://www.ski-hesperus.com',
   },
   {
     id: 'resort:howelsen-hill',
@@ -2133,6 +2153,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['historic', 'local', 'night-skiing', 'olympic', 'ski-jumping', 'small'],
+    websiteUrl: 'https://www.steamboatsprings.net/259/Howelsen-Hill-Ski-Area',
   },
   {
     id: 'resort:kendall-mountain',
@@ -2181,6 +2202,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['free', 'community', 'historic', 'unique', 'small', 'rope-tow'],
+    websiteUrl: 'https://www.townofsilverton.co/kendall-mountain-recreation-area',
   },
   {
     id: 'resort:chapman-hill',
@@ -2229,6 +2251,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['free', 'community', 'beginner', 'family', 'small', 'rope-tow'],
+    websiteUrl: 'https://www.durangogov.org/291/Chapman-Hill',
   },
   {
     id: 'resort:cranor-hill',
@@ -2277,6 +2300,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['community', 'local', 'value', 'small', 'rope-tow', 'gunnison'],
+    websiteUrl: 'https://www.gunnisoncrestedbutte.com/cranor-hill-ski-area/',
   },
   {
     id: 'resort:lake-city-ski-hill',
@@ -2325,6 +2349,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['remote', 'community', 'scenic', 'uncrowded', 'small', 'san-juan'],
+    websiteUrl: 'https://www.lakecity.com/lake-city-ski-hill',
   },
   {
     id: 'resort:lees-ski-hill',
@@ -2373,6 +2398,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['free', 'community', 'scenic', 'small', 'rope-tow', 'ouray'],
+    websiteUrl: 'https://www.ouraycolorado.com/activities/lees-ski-hill',
   },
   {
     id: 'resort:hoedown-hill',
@@ -2421,6 +2447,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['family', 'community', 'unique', 'small', 'rope-tow', 'sangre-de-cristo'],
+    websiteUrl: 'https://www.facebook.com/HoedownHill/',
   },
   // ============================================
   // LOST/FORMER COLORADO SKI AREAS
@@ -2473,6 +2500,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'historic', 'backcountry', 'continental-divide', 'closed-2002'],
+    websiteUrl: 'https://en.wikipedia.org/wiki/Berthoud_Pass',
   },
   {
     id: 'resort:geneva-basin',
@@ -2521,6 +2549,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'historic', 'front-range', 'guanella-pass', 'closed-1984'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/geneva-basin/',
   },
   {
     id: 'resort:hidden-valley',
@@ -2569,6 +2598,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'historic', 'national-park', 'family', 'closed-1991'],
+    websiteUrl: 'https://en.wikipedia.org/wiki/Hidden_Valley_(ski_area)',
   },
   {
     id: 'resort:cuchara-valley',
@@ -2617,6 +2647,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'spanish-peaks', 'southern-colorado', 'closed-2000'],
+    websiteUrl: 'https://www.uncovercolorado.com/cuchara-mountain-park/',
   },
   {
     id: 'resort:bluebird-backcountry',
@@ -2665,6 +2696,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'innovative', 'human-powered', 'backcountry', 'closed-2023'],
+    websiteUrl: 'https://www.bluebirdbackcountry.com/',
   },
   {
     id: 'resort:ski-broadmoor',
@@ -2713,6 +2745,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: true,
     },
     tags: ['lost', 'historic', 'resort-hotel', 'colorado-springs', 'closed-1991'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/ski-broadmoor/',
   },
   {
     id: 'resort:conquistador',
@@ -2761,6 +2794,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'sangre-de-cristo', 'southern-colorado', 'closed-1980s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/conquistador/',
   },
   {
     id: 'resort:pikes-peak',
@@ -2809,6 +2843,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'historic', 'fourteener', 'colorado-springs', 'closed-1984'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/pikes-peak/',
   },
   {
     id: 'resort:arrowhead',
@@ -2857,6 +2892,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: true,
     },
     tags: ['lost', 'merged', 'beaver-creek', 'vail-valley', 'closed-2006'],
+    websiteUrl: 'https://en.wikipedia.org/wiki/Arrowhead_Ski_Area',
   },
   {
     id: 'resort:climax',
@@ -2905,6 +2941,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'mining', 'historic', 'leadville', 'closed-1980s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/climax/',
   },
   // Lost Ski Areas - Batch 2
   {
@@ -2954,6 +2991,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'aspen-area', 'short-lived', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/adams-rib/',
   },
   {
     id: 'resort:arapahoe-east',
@@ -3002,6 +3040,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'loveland-pass', 'high-alpine', 'backcountry', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/arapahoe-east/',
   },
   {
     id: 'resort:baker-mountain',
@@ -3050,6 +3089,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'community', 'mining-town', 'northwest-colorado', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/baker-mountain/',
   },
   {
     id: 'resort:coal-bank-pass',
@@ -3098,6 +3138,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'highway', 'san-juans', 'backcountry', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/coal-bank-pass/',
   },
   {
     id: 'resort:emerald-mountain',
@@ -3146,6 +3187,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'historic', 'steamboat-original', 'community', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/emerald-mountain/',
   },
   {
     id: 'resort:hoosier-pass',
@@ -3194,6 +3236,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'highway', 'roadside', 'south-park', 'closed-1950s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/hoosier-pass/',
   },
   {
     id: 'resort:idlewild',
@@ -3242,6 +3285,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'historic', 'winter-park-predecessor', 'moffat-tunnel', 'closed-1940s'],
+    websiteUrl: 'https://en.wikipedia.org/wiki/Winter_Park_Resort#History',
   },
   {
     id: 'resort:ironton-park',
@@ -3290,6 +3334,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'san-juans', 'million-dollar-highway', 'ghost-town', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/ironton-park/',
   },
   {
     id: 'resort:jones-pass',
@@ -3338,6 +3383,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'continental-divide', 'backcountry', 'highway', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/jones-pass/',
   },
   {
     id: 'resort:libby-creek',
@@ -3386,6 +3432,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'community', 'national-forest', 'northern-colorado', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/libby-creek/',
   },
   // Lost Ski Areas - Batch 3
   {
@@ -3435,6 +3482,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'aspen-area', 'beginner', 'historic', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/little-annie/',
   },
   {
     id: 'resort:lizard-head-pass',
@@ -3483,6 +3531,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'highway', 'san-juans', 'telluride-region', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/lizard-head-pass/',
   },
   {
     id: 'resort:marble-mountain',
@@ -3531,6 +3580,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'crystal-valley', 'historic', 'community', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/marble-mountain/',
   },
   {
     id: 'resort:marshall-pass',
@@ -3579,6 +3629,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'continental-divide', 'railroad-history', 'salida', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/marshall-pass/',
   },
   {
     id: 'resort:meadow-mountain',
@@ -3627,6 +3678,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'vail-predecessor', 'eagle-valley', 'historic', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/meadow-mountain/',
   },
   {
     id: 'resort:mesa-creek',
@@ -3675,6 +3727,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'western-slope', 'community', 'grand-junction', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/mesa-creek/',
   },
   {
     id: 'resort:montezuma-basin',
@@ -3723,6 +3776,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'summit-county', 'mining', 'backcountry', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/montezuma-basin/',
   },
   {
     id: 'resort:mount-lugo',
@@ -3771,6 +3825,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'san-luis-valley', 'community', 'southern-colorado', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/mount-lugo/',
   },
   {
     id: 'resort:peak-one',
@@ -3819,6 +3874,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'breckenridge-original', 'summit-county', 'historic', 'merged'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/peak-one/',
   },
   {
     id: 'resort:pioneer',
@@ -3867,6 +3923,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'clear-creek', 'community', 'i-70-corridor', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/pioneer/',
   },
   // Lost Ski Areas - Batch 4
   {
@@ -3916,6 +3973,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'leadville', 'community', 'mining', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/porcupine-gulch/',
   },
   {
     id: 'resort:red-mountain',
@@ -3964,6 +4022,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'san-juans', 'extreme', 'backcountry', 'avalanche', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/red-mountain/',
   },
   {
     id: 'resort:rock-creek',
@@ -4012,6 +4071,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'foothills', 'front-range', 'family', 'closed-1960s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/rock-creek/',
   },
   {
     id: 'resort:rozman-hill',
@@ -4060,6 +4120,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'south-park', 'community', 'family', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/rozman-hill/',
   },
   {
     id: 'resort:saint-marys-glacier',
@@ -4108,6 +4169,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'glacier', 'unique', 'summer-skiing', 'close-to-denver', 'closed-1980s'],
+    websiteUrl: 'https://en.wikipedia.org/wiki/St._Mary%27s_Glacier',
   },
   {
     id: 'resort:seven-utes',
@@ -4156,6 +4218,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'tribal', 'ute', 'four-corners', 'community', 'closed-1980s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/seven-utes/',
   },
   {
     id: 'resort:sharktooth',
@@ -4204,6 +4267,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'san-juans', 'extreme', 'short-lived', 'backcountry', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/sharktooth/',
   },
   {
     id: 'resort:ski-dallas',
@@ -4252,6 +4316,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'ouray', 'community', 'san-juans', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/ski-dallas/',
   },
   {
     id: 'resort:steamboat-lake',
@@ -4300,6 +4365,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'north-routt', 'community', 'state-park', 'closed-1970s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/steamboat-lake/',
   },
   {
     id: 'resort:stoner',
@@ -4348,6 +4414,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'dolores-valley', 'four-corners', 'community', 'closed-1980s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/stoner/',
   },
   // Lost Ski Areas - Batch 5 (Final)
   {
@@ -4397,6 +4464,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'gunnison', 'community', 'family', 'closed-1980s'],
+    websiteUrl: 'https://coloradoskihistory.com/lost/white-pine/',
   },
   {
     id: 'resort:wolf-creek-pass-old',
@@ -4445,6 +4513,7 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'historic', 'wolf-creek-original', 'replaced', 'closed-1950s'],
+    websiteUrl: 'https://www.wolfcreekski.com/about/history/',
   },
   {
     id: 'resort:fern-lake',
@@ -4493,5 +4562,6 @@ export const mockResorts: Resort[] = [
       hasSpaVillage: false,
     },
     tags: ['lost', 'rmnp', 'national-park', 'historic', 'backcountry', 'closed-1980s'],
+    websiteUrl: 'https://www.nps.gov/romo/planyourvisit/skiing.htm',
   },
 ];

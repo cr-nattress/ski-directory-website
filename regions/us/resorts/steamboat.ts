@@ -1,0 +1,72 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const steamboat: Resort = {
+  id: 'resort:steamboat',
+  slug: 'steamboat',
+  name: 'Steamboat Ski Resort',
+  tagline: 'Home of Champagne Powder and Olympic tradition',
+  description: 'Steamboat Ski Resort is famous for its trademarked Champagne Powder, the light, dry snow that falls on its aspen-covered slopes in northwest Colorado. The resort has produced more Winter Olympians than any other town in North America, earning it the title "Ski Town USA." Steamboat\'s terrain spans six peaks, offering exceptional tree skiing, cruisy groomers, and challenging steeps. The authentic Western town of Steamboat Springs sits at the base, providing a genuine Colorado ranching community atmosphere distinct from purpose-built resort villages.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 40.4572, lng: -106.8045 },
+  nearestCity: 'Steamboat Springs, CO',
+  distanceFromDenver: 157,
+  driveTimeFromDenver: 180,
+  stats: {
+    skiableAcres: 2965,
+    liftsCount: 18,
+    runsCount: 169,
+    verticalDrop: 3668,
+    baseElevation: 6900,
+    summitElevation: 10568,
+    avgAnnualSnowfall: 349,
+  },
+  terrain: {
+    beginner: 14,
+    intermediate: 42,
+    advanced: 44,
+    expert: 0,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.6,
+  reviewCount: 1789,
+  heroImage: '/images/steamboat-hero.jpg',
+  websiteUrl: 'https://www.steamboat.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/steamboatresort',
+    instagram: 'https://www.instagram.com/steamboatresort',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: true,
+    hasNightSkiing: true,
+    hasBackcountryAccess: true,
+    hasSpaVillage: true,
+  },
+  tags: ['destination', 'ikon-pass', 'champagne-powder', 'tree-skiing', 'colorado', 'western'],
+  highSpeedLifts: {
+    count: 8,
+    items: [
+      { name: 'Gondola', url: 'https://www.steamboat.com' },
+      { name: 'Storm Peak Express', url: 'https://www.steamboat.com' },
+      { name': 'Sundown Express', url: 'https://www.steamboat.com' },
+      { name: 'Pony Express', url: 'https://www.steamboat.com' },
+      { name: 'Four Points Express', url: 'https://www.steamboat.com' },
+    ],
+  },
+  baseAreas: {
+    count: 2,
+    items: [
+      { name: 'Steamboat Base Village', url: 'https://www.steamboat.com' },
+      { name: 'Thunderhead Lodge', url: 'https://www.steamboat.com' },
+    ],
+  },
+};

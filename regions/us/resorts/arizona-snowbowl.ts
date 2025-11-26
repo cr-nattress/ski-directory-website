@@ -1,0 +1,63 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const arizonaSnowbowl: Resort = {
+  id: 'resort:arizona-snowbowl',
+  slug: 'arizona-snowbowl',
+  name: 'Arizona Snowbowl',
+  tagline: 'Desert mountain skiing on an ancient volcano',
+  description: 'Arizona Snowbowl is located on the San Francisco Peaks, an ancient volcanic mountain range near Flagstaff. As the premier ski destination in Arizona, Snowbowl offers surprising vertical and varied terrain just hours from Phoenix. The resort sits on the slopes of Humphreys Peak, Arizona\'s highest point at 12,633 feet, providing stunning views of the Painted Desert and Grand Canyon region. Recent investments have added a high-speed six-pack chairlift and expanded snowmaking, ensuring reliable conditions in this unique desert mountain environment.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 35.3308, lng: -111.7114 },
+  nearestCity: 'Flagstaff, AZ',
+  distanceFromDenver: 490,
+  driveTimeFromDenver: 450,
+  stats: {
+    skiableAcres: 777,
+    liftsCount: 8,
+    runsCount: 55,
+    verticalDrop: 2300,
+    baseElevation: 9200,
+    summitElevation: 11500,
+    avgAnnualSnowfall: 260,
+  },
+  terrain: {
+    beginner: 17,
+    intermediate: 37,
+    advanced: 32,
+    expert: 14,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['ikon'],
+  rating: 4.2,
+  reviewCount: 645,
+  heroImage: '/images/arizona-snowbowl-hero.jpg',
+  websiteUrl: 'https://www.snowbowl.ski',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/ArizonaSnowbowl',
+    instagram: 'https://www.instagram.com/arizonasnowbowl',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: false,
+    hasSpaVillage: false,
+  },
+  tags: ['regional', 'ikon-pass', 'desert-skiing', 'arizona', 'volcanic'],
+  highSpeedLifts: {
+    count: 3,
+    items: [
+      { name: 'Arizona Gondola', url: 'https://www.snowbowl.ski' },
+      { name: 'Grand Canyon Express', url: 'https://www.snowbowl.ski' },
+      { name: 'Sunset Express', url: 'https://www.snowbowl.ski' },
+    ],
+  },
+};

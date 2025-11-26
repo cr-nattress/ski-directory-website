@@ -1,0 +1,10 @@
+{
+  "country": "CA",
+  "province": "Prince Edward Island",
+  "resorts": [
+    { "name": "Brookvale Provincial Ski Park", "status": "active" },
+    { "name": "Mark Chicken Ski Hill", "status": "active" },
+
+    { "name": "Cavendish Ski Area", "status": "defunct" }
+  ]
+}

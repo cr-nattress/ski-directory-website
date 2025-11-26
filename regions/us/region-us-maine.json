@@ -1,0 +1,35 @@
+{
+  "country": "US",
+  "state": "Maine",
+  "resorts": [
+    { "name": "Sugarloaf", "status": "active" },
+    { "name": "Sunday River", "status": "active" },
+    { "name": "Saddleback Mountain", "status": "active" },
+    { "name": "Shawnee Peak", "status": "active" },
+    { "name": "Lost Valley", "status": "active" },
+    { "name": "Mt. Abram", "status": "active" },
+    { "name": "Black Mountain of Maine", "status": "active" },
+    { "name": "Camden Snow Bowl", "status": "active" },
+    { "name": "Titcomb Mountain", "status": "active" },
+    { "name": "Bigrock Mountain", "status": "active" },
+    { "name": "Big Squaw Mountain", "status": "active" },
+    { "name": "Lonesome Pine Trails", "status": "active" },
+    { "name": "Hermon Mountain", "status": "active" },
+    { "name": "Pinnacle Ski Club", "status": "active" },
+    { "name": "Eaton Mountain", "status": "active" },
+    { "name": "Spruce Mountain", "status": "active" },
+    { "name": "Baker Mountain", "status": "active" },
+
+    { "name": "Pleasant Mountain", "status": "defunct", "notes": "Now Shawnee Peak" },
+    { "name": "Evergreen Valley", "status": "defunct" },
+    { "name": "Squaw Mountain", "status": "defunct", "notes": "Operated intermittently, now Big Squaw" },
+    { "name": "Enchanted Mountain", "status": "defunct" },
+    { "name": "Mt. Jefferson Ski Area", "status": "defunct" },
+    { "name": "Songo Pond", "status": "defunct" },
+    { "name": "Bald Mountain Ski Area", "status": "defunct" },
+    { "name": "Caribou Ski Area", "status": "defunct" },
+    { "name": "Mars Hill", "status": "defunct" },
+    { "name": "Sugarloaf USA (original)", "status": "defunct", "notes": "Expanded to current Sugarloaf" },
+    { "name": "Sunday River (original)", "status": "defunct", "notes": "Expanded to current resort" }
+  ]
+}

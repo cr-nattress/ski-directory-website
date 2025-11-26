@@ -1,0 +1,17 @@
+{
+  "country": "US",
+  "state": "North Carolina",
+  "resorts": [
+    { "name": "Appalachian Ski Mountain", "status": "active" },
+    { "name": "Sugar Mountain Resort", "status": "active" },
+    { "name": "Beech Mountain Resort", "status": "active" },
+    { "name": "Cataloochee Ski Area", "status": "active" },
+    { "name": "Wolf Ridge Ski Resort", "status": "active" },
+    { "name": "Sapphire Valley Ski Area", "status": "active" },
+
+    { "name": "Ski Hawksnest", "status": "defunct" },
+    { "name": "Ski Scaly", "status": "defunct" },
+    { "name": "Hound Ears Club", "status": "defunct" },
+    { "name": "High Meadows", "status": "defunct" }
+  ]
+}

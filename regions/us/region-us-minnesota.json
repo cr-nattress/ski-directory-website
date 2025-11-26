@@ -1,0 +1,31 @@
+{
+  "country": "US",
+  "state": "Minnesota",
+  "resorts": [
+    { "name": "Lutsen Mountains", "status": "active" },
+    { "name": "Spirit Mountain", "status": "active" },
+    { "name": "Giants Ridge", "status": "active" },
+    { "name": "Afton Alps", "status": "active" },
+    { "name": "Buck Hill", "status": "active" },
+    { "name": "Wild Mountain", "status": "active" },
+    { "name": "Welch Village", "status": "active" },
+    { "name": "Hyland Ski Area", "status": "active" },
+    { "name": "Mount Kato", "status": "active" },
+    { "name": "Powder Ridge", "status": "active" },
+    { "name": "Andes Tower Hills", "status": "active" },
+    { "name": "Buena Vista Ski Area", "status": "active" },
+    { "name": "Coffee Mill Ski Area", "status": "active" },
+    { "name": "Detroit Mountain", "status": "active" },
+    { "name": "Mount Frontenac", "status": "active" },
+    { "name": "Troll Hollow", "status": "active" },
+    { "name": "Elm Creek Park Reserve", "status": "active" },
+    { "name": "Theodore Wirth Park", "status": "active" },
+
+    { "name": "Quadna Mountain", "status": "defunct" },
+    { "name": "Hidden Valley (Ely)", "status": "defunct" },
+    { "name": "Como Park", "status": "defunct" },
+    { "name": "Highland Hills", "status": "defunct" },
+    { "name": "Pine Bend", "status": "defunct" },
+    { "name": "Carver Park Reserve", "status": "defunct" }
+  ]
+}

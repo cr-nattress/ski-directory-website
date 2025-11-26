@@ -1,0 +1,17 @@
+{
+  "country": "US",
+  "state": "Connecticut",
+  "resorts": [
+    { "name": "Mohawk Mountain", "status": "active" },
+    { "name": "Mount Southington", "status": "active" },
+    { "name": "Ski Sundown", "status": "active" },
+    { "name": "Powder Ridge Mountain Park", "status": "active" },
+
+    { "name": "Powder Hill", "status": "defunct" },
+    { "name": "Tapawingo Ski Area", "status": "defunct" },
+    { "name": "Satan's Ridge", "status": "defunct" },
+    { "name": "Woodbury Ski Area", "status": "defunct" },
+    { "name": "Brodie Park", "status": "defunct" },
+    { "name": "Pinnacle Ski Area", "status": "defunct" }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "country": "US",
+  "state": "Oregon",
+  "resorts": [
+    { "name": "Mt. Bachelor", "status": "active" },
+    { "name": "Mt. Hood Meadows", "status": "active" },
+    { "name": "Timberline Lodge", "status": "active" },
+    { "name": "Mt. Hood Skibowl", "status": "active" },
+    { "name": "Mt. Ashland", "status": "active" },
+    { "name": "Anthony Lakes", "status": "active" },
+    { "name": "Willamette Pass", "status": "active" },
+    { "name": "Hoodoo Ski Area", "status": "active" },
+    { "name": "Spout Springs", "status": "active" },
+    { "name": "Warner Canyon Ski Area", "status": "active" },
+    { "name": "Ferguson Ridge Ski Area", "status": "active" },
+    { "name": "Cooper Spur Ski Area", "status": "active" },
+    { "name": "Summit Ski Area", "status": "active" },
+
+    { "name": "Multorpor Mountain", "status": "defunct" },
+    { "name": "Tomahawk", "status": "defunct" },
+    { "name": "Snow Bunny Lodge", "status": "defunct" },
+    { "name": "Ski Bowl East", "status": "defunct" },
+    { "name": "Odell Lake", "status": "defunct" },
+    { "name": "Blue Lake Ski Area", "status": "defunct" }
+  ]
+}

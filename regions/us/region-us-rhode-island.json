@@ -1,0 +1,10 @@
+{
+  "country": "US",
+  "state": "Rhode Island",
+  "resorts": [
+    { "name": "Yawgoo Valley", "status": "active" },
+
+    { "name": "Ski Valley", "status": "defunct" },
+    { "name": "Diamond Hill", "status": "defunct" }
+  ]
+}

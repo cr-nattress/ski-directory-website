@@ -1,0 +1,14 @@
+{
+  "country": "US",
+  "state": "Illinois",
+  "resorts": [
+    { "name": "Chestnut Mountain Resort", "status": "active" },
+    { "name": "Villa Olivia", "status": "active" },
+    { "name": "Four Lakes Ski Area", "status": "active" },
+    { "name": "Raging Buffalo Snowboard Park", "status": "active" },
+
+    { "name": "Nordic Hills", "status": "defunct" },
+    { "name": "Buffalo Park", "status": "defunct" },
+    { "name": "Apple Canyon Lake", "status": "defunct" }
+  ]
+}

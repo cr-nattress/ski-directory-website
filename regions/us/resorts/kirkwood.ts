@@ -1,0 +1,63 @@
+import { Resort } from '../../../apps/v1/lib/mock-data/types';
+
+export const kirkwood: Resort = {
+  id: 'resort:kirkwood',
+  slug: 'kirkwood',
+  name: 'Kirkwood Mountain Resort',
+  tagline: 'Deep snow and serious terrain for dedicated skiers',
+  description: 'Kirkwood Mountain Resort is known among serious skiers as Lake Tahoe\'s hidden gem for expert terrain and abundant snowfall. Located south of Lake Tahoe on Carson Pass, Kirkwood\'s higher elevation and unique geography funnel Pacific storms to deliver some of the deepest snow in the Sierra. The resort is famous for its steep chutes, challenging cliff bands, and expansive backcountry access. While less developed than larger Tahoe resorts, Kirkwood\'s focus on terrain over amenities attracts a dedicated following of powder hounds and expert skiers.',
+  isActive: true,
+  isLost: false,
+  location: { lat: 38.6850, lng: -120.0653 },
+  nearestCity: 'Kirkwood, CA',
+  distanceFromDenver: 910,
+  driveTimeFromDenver: 840,
+  stats: {
+    skiableAcres: 2300,
+    liftsCount: 15,
+    runsCount: 86,
+    verticalDrop: 2000,
+    baseElevation: 7800,
+    summitElevation: 9800,
+    avgAnnualSnowfall: 500,
+  },
+  terrain: {
+    beginner: 15,
+    intermediate: 50,
+    advanced: 20,
+    expert: 15,
+  },
+  conditions: {
+    snowfall24h: 0,
+    snowfall72h: 0,
+    baseDepth: 0,
+    terrainOpen: 0,
+    liftsOpen: 0,
+    status: 'closed',
+  },
+  passAffiliations: ['epic'],
+  rating: 4.5,
+  reviewCount: 892,
+  heroImage: '/images/kirkwood-hero.jpg',
+  websiteUrl: 'https://www.kirkwood.com',
+  socialMedia: {
+    facebook: 'https://www.facebook.com/kirkwoodmtn',
+    instagram: 'https://www.instagram.com/kirkwoodmtn',
+  },
+  features: {
+    hasPark: true,
+    hasHalfpipe: false,
+    hasNightSkiing: false,
+    hasBackcountryAccess: true,
+    hasSpaVillage: false,
+  },
+  tags: ['expert', 'epic-pass', 'deep-snow', 'lake-tahoe', 'california', 'backcountry'],
+  highSpeedLifts: {
+    count: 4,
+    items: [
+      { name: 'Cornice Express', url: 'https://www.kirkwood.com' },
+      { name: 'Chair 6', url: 'https://www.kirkwood.com' },
+      { name: 'Chair 10', url: 'https://www.kirkwood.com' },
+    ],
+  },
+};

@@ -1,0 +1,30 @@
+{
+  "country": "CA",
+  "province": "Alberta",
+  "resorts": [
+    { "name": "Lake Louise Ski Resort", "status": "active" },
+    { "name": "Sunshine Village", "status": "active" },
+    { "name": "Mt. Norquay", "status": "active" },
+    { "name": "Marmot Basin", "status": "active" },
+    { "name": "Nakiska", "status": "active" },
+    { "name": "Castle Mountain Resort", "status": "active" },
+    { "name": "WinSport Canada Olympic Park", "status": "active" },
+    { "name": "Snow Valley Edmonton", "status": "active" },
+    { "name": "Sunridge Ski Area", "status": "active" },
+    { "name": "Rabbit Hill Snow Resort", "status": "active" },
+    { "name": "Canyon Ski Resort", "status": "active" },
+    { "name": "Tawatinaw Valley Ski Hill", "status": "active" },
+    { "name": "Pass Powderkeg", "status": "active" },
+    { "name": "Kinosoo Ridge", "status": "active" },
+    { "name": "Hidden Valley Ski Resort", "status": "active" },
+    { "name": "Vista Ridge", "status": "active" },
+    { "name": "Nitehawk Ski Area", "status": "active" },
+    { "name": "Misery Mountain", "status": "active" },
+    { "name": "Little Smoky Ski Area", "status": "active" },
+
+    { "name": "Westcastle Mountain Resort", "status": "defunct", "notes": "Now Castle Mountain" },
+    { "name": "Fortress Mountain", "status": "defunct" },
+    { "name": "Wintergreen Ski Resort", "status": "defunct" },
+    { "name": "Paskapoo Ski Hill", "status": "defunct" }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "country": "US",
+  "state": "Wisconsin",
+  "resorts": [
+    { "name": "Granite Peak", "status": "active" },
+    { "name": "Devil's Head Resort", "status": "active" },
+    { "name": "Cascade Mountain", "status": "active" },
+    { "name": "Whitecap Mountains", "status": "active" },
+    { "name": "Trollhaugen", "status": "active" },
+    { "name": "Tyrol Basin", "status": "active" },
+    { "name": "Christmas Mountain Village", "status": "active" },
+    { "name": "Little Switzerland", "status": "active" },
+    { "name": "Wilmot Mountain", "status": "active" },
+    { "name": "The Rock Snowpark", "status": "active" },
+    { "name": "Alpine Valley Resort", "status": "active" },
+    { "name": "Nordic Mountain", "status": "active" },
+    { "name": "Sunburst Ski Area", "status": "active" },
+    { "name": "Ausblick Ski Club", "status": "active" },
+    { "name": "Mt. Ashwabay", "status": "active" },
+    { "name": "Christie Mountain", "status": "active" },
+    { "name": "Hidden Valley Ski Area", "status": "active" },
+    { "name": "Mt. La Crosse", "status": "active" },
+    { "name": "Highlands of Olympia", "status": "active" },
+    { "name": "Skyline Ski Area", "status": "active" },
+
+    { "name": "Hardscrabble", "status": "defunct" },
+    { "name": "Telemark Lodge", "status": "defunct" },
+    { "name": "Mt. Telemark", "status": "defunct" },
+    { "name": "Navarino Slopes", "status": "defunct" },
+    { "name": "Pine View", "status": "defunct" },
+    { "name": "Bruce Mound", "status": "defunct" },
+    { "name": "Calumet County Park", "status": "defunct" },
+    { "name": "Standing Rocks", "status": "defunct" }
+  ]
+}
