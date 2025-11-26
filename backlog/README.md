@@ -212,24 +212,59 @@ Create a comprehensive Social Media Links Directory page serving as a curated hu
 
 ---
 
+### Epic 10: SEO Optimization & Structured Data
+**Status:** Ready
+**Priority:** High
+**Effort:** Medium
+
+Implement comprehensive SEO improvements based on Next.js 14 best practices for directory websites. Addresses critical gaps including missing sitemaps, robots.txt, structured data enhancements, canonical URLs, and dynamic OG images.
+
+**User Stories:** 12
+📁 [View Epic Details](./epic-10-seo-optimization/user-stories.md)
+📄 [SEO Recommendations](../apps/v1/SEO-RECOMMENDATIONS.md)
+
+**Key Features:**
+- Dynamic sitemap.xml and robots.txt generation
+- metadataBase configuration with title templates
+- Canonical URLs on all pages
+- BreadcrumbList and WebSite JSON-LD schemas
+- Enhanced SkiResort structured data
+- Dynamic OG image generation for resort pages
+- Incremental Static Regeneration (ISR)
+- Core Web Vitals monitoring
+
+**Sprint Breakdown:**
+- Sprint 1: Critical Foundation (sitemap, robots, metadataBase, canonicals)
+- Sprint 2: Structured Data (JSON-LD components, schema enhancements)
+- Sprint 3: Enhancements (OG images, ISR, Web Vitals)
+
+**Technical Approach:**
+- Next.js 14 Metadata API
+- App Router sitemap.ts and robots.ts conventions
+- ImageResponse API for dynamic OG images
+- useReportWebVitals for performance monitoring
+
+---
+
 ## Implementation Order (Recommended)
 
 1. **Epic 1** - Remove List Your Property Button (Quick win, cleanup)
 2. **Epic 5** - Social Media Links Card (Small, no external dependencies)
-3. **Epic 2** - Resort Location Map Integration (Medium complexity)
-4. **Epic 3** - Trail Map Card Implementation (Medium complexity, need assets)
-5. **Epic 6** - Global Event Banner System (Large, foundation for future alerts)
-6. **Epic 4** - Weather Forecast Card (Most complex, API integration)
-7. **Epic 7** - A-Z Resort Directory Page (New page, high user value)
-8. **Epic 8** - Ski Links Directory Page (New page, external resources hub)
-9. **Epic 9** - Social Media Links Directory Page (New page, social accounts hub)
+3. **Epic 10** - SEO Optimization & Structured Data (Critical for discoverability)
+4. **Epic 2** - Resort Location Map Integration (Medium complexity)
+5. **Epic 3** - Trail Map Card Implementation (Medium complexity, need assets)
+6. **Epic 6** - Global Event Banner System (Large, foundation for future alerts)
+7. **Epic 4** - Weather Forecast Card (Most complex, API integration)
+8. **Epic 7** - A-Z Resort Directory Page (New page, high user value)
+9. **Epic 8** - Ski Links Directory Page (New page, external resources hub)
+10. **Epic 9** - Social Media Links Directory Page (New page, social accounts hub)
 
 ## Total Effort Estimate
 - **Small:** 2 epics (Epics 1, 5)
-- **Medium:** 2 epics (Epics 2, 3)
+- **Medium:** 3 epics (Epics 2, 3, 10)
 - **Large:** 5 epics (Epics 4, 6, 7, 8, 9)
 
-**Total User Stories:** 66
+**Total User Stories:** 78
 
 ---
 
@@ -238,8 +273,10 @@ Create a comprehensive Social Media Links Directory page serving as a curated hu
 - Epic 7 adds a new directory page for resort comparison
 - Epic 8 adds a new external links directory page
 - Epic 9 adds a new social media accounts directory page
+- Epic 10 implements critical SEO infrastructure for search engine visibility
 - Consider implementing in batches for iterative releases
 - Weather API will require API key and cost consideration
 - Trail map assets need to be sourced for each resort
 - Ski Links data file pre-populated with 150 curated industry links
-- Social Links data file will contain 100+ curated social accounts
+- Social Links data file contains 80+ curated social accounts
+- SEO implementation requires `NEXT_PUBLIC_BASE_URL` environment variable
