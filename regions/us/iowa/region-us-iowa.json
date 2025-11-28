@@ -1,0 +1,168 @@
+{
+  "country": "US",
+  "state": "Iowa",
+  "resorts": [
+    {
+      "name": "Sundown Mountain Resort",
+      "slug": "sundown-mountain",
+      "status": "active",
+      "location": { "lat": 42.5089, "lng": -90.8472 },
+      "nearestCity": "Dubuque",
+      "stats": {
+        "skiableAcres": 85,
+        "liftsCount": 5,
+        "runsCount": 21,
+        "verticalDrop": 475,
+        "baseElevation": 725,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sundownmtn.com",
+      "description": "Sundown Mountain is Iowa's largest ski area, located in the rolling bluffs along the Mississippi River near Dubuque. The resort offers impressive vertical for the Midwest and challenging terrain, making it a destination for Iowa and Illinois skiers.",
+      "tags": ["indy-pass", "largest-iowa", "dubuque", "mississippi-bluffs", "night-skiing"]
+    },
+    {
+      "name": "Seven Oaks Recreation",
+      "slug": "seven-oaks",
+      "status": "active",
+      "location": { "lat": 41.9906, "lng": -93.5903 },
+      "nearestCity": "Boone",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 4,
+        "runsCount": 12,
+        "verticalDrop": 225,
+        "baseElevation": 1000,
+        "summitElevation": 1225,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sevenoaksrec.com",
+      "description": "Seven Oaks is a full-service recreation area near Boone serving the Des Moines market. The ski area offers reliable skiing with excellent snowmaking and is conveniently located just north of Iowa's capital.",
+      "tags": ["des-moines-area", "boone", "night-skiing", "family-friendly"]
+    },
+    {
+      "name": "Sleepy Hollow Sports Park",
+      "slug": "sleepy-hollow",
+      "status": "active",
+      "location": { "lat": 41.5833, "lng": -93.7333 },
+      "nearestCity": "Des Moines",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 3,
+        "runsCount": 8,
+        "verticalDrop": 150,
+        "baseElevation": 900,
+        "summitElevation": 1050,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sleepyhollowsportspark.com",
+      "description": "Sleepy Hollow is Des Moines' neighborhood ski area, providing convenient access for city residents. The area specializes in snow tubing alongside skiing and snowboarding, making it a popular family destination.",
+      "tags": ["des-moines", "urban-area", "tubing", "night-skiing", "family-friendly"]
+    },
+    {
+      "name": "Fun Valley Ski Area",
+      "slug": "fun-valley",
+      "status": "active",
+      "location": { "lat": 43.1464, "lng": -95.1378 },
+      "nearestCity": "Spencer",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 6,
+        "verticalDrop": 100,
+        "baseElevation": 1300,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 40
+      },
+      "terrain": { "beginner": 40, "intermediate": 45, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.funvalleyskiarea.com",
+      "description": "Fun Valley serves northwest Iowa with affordable skiing and a family-friendly atmosphere. The small area is perfect for beginners and provides accessible winter recreation for the rural region.",
+      "tags": ["northwest-iowa", "spencer", "beginner-friendly", "affordable", "family-area"]
+    },
+    {
+      "name": "Mt. Crescent Ski Area",
+      "slug": "mt-crescent",
+      "status": "active",
+      "location": { "lat": 41.3167, "lng": -95.8500 },
+      "nearestCity": "Crescent",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 5,
+        "runsCount": 14,
+        "verticalDrop": 300,
+        "baseElevation": 1000,
+        "summitElevation": 1300,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skicrescent.com",
+      "description": "Mt. Crescent is located in Iowa's Loess Hills near Omaha, serving the Omaha-Council Bluffs metro area. The resort offers solid vertical and varied terrain, making it the primary ski destination for western Iowa and eastern Nebraska.",
+      "tags": ["omaha-area", "loess-hills", "council-bluffs", "night-skiing"]
+    },
+
+    {
+      "name": "Ski-Hi",
+      "slug": "ski-hi",
+      "status": "defunct",
+      "location": { "lat": 43.0500, "lng": -92.4500 },
+      "nearestCity": "Charles City",
+      "yearClosed": 1995,
+      "description": "Ski-Hi was a community ski area in northeast Iowa that operated until the mid-1990s. The area served the Mason City and Charles City communities before closing due to economic challenges.",
+      "tags": ["closed", "northeast-iowa", "community-area"]
+    },
+    {
+      "name": "Chestnut Hills",
+      "slug": "chestnut-hills",
+      "status": "defunct",
+      "location": { "lat": 42.1500, "lng": -91.0000 },
+      "nearestCity": "Maquoketa",
+      "yearClosed": 1988,
+      "description": "Chestnut Hills was a small ski area in eastern Iowa that operated through the 1980s. The area provided skiing for the Cedar Rapids region before closing.",
+      "tags": ["closed", "eastern-iowa", "maquoketa"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

@@ -1,0 +1,17 @@
+{
+  "country": "US",
+  "state": "Georgia",
+  "resorts": [
+    {
+      "name": "Sky Valley Resort",
+      "slug": "sky-valley",
+      "status": "defunct",
+      "location": { "lat": 35.0267, "lng": -83.3333 },
+      "nearestCity": "Sky Valley",
+      "yearClosed": 2011,
+      "description": "Sky Valley was Georgia's only ski area, located in the Blue Ridge Mountains near the North Carolina border. The resort operated intermittently for decades before finally closing in 2011, making Georgia one of the few states with no operational ski areas.",
+      "tags": ["closed", "only-georgia-resort", "blue-ridge", "intermittent-operation"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

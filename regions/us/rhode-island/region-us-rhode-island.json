@@ -1,0 +1,56 @@
+{
+  "country": "US",
+  "state": "Rhode Island",
+  "resorts": [
+    {
+      "name": "Yawgoo Valley",
+      "slug": "yawgoo-valley",
+      "status": "active",
+      "location": { "lat": 41.5192, "lng": -71.5761 },
+      "nearestCity": "Exeter",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 4,
+        "runsCount": 12,
+        "verticalDrop": 245,
+        "baseElevation": 250,
+        "summitElevation": 495,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.yawgoo.com",
+      "description": "Yawgoo Valley is Rhode Island's only ski area, serving the smallest US state with affordable skiing since 1965. The family-owned resort offers convenient access for Rhode Islanders and southeastern Massachusetts residents seeking quick ski sessions.",
+      "tags": ["only-in-rhode-island", "family-owned", "night-skiing", "affordable", "exeter"]
+    },
+
+    {
+      "name": "Ski Valley",
+      "slug": "ski-valley-ri",
+      "status": "defunct",
+      "location": { "lat": 41.8500, "lng": -71.3500 },
+      "nearestCity": "Cumberland",
+      "yearClosed": 1988,
+      "description": "Ski Valley was a small ski area in northern Rhode Island that operated until 1988. The area served the Providence metro before closing due to development pressure and inconsistent winters.",
+      "tags": ["closed", "cumberland", "providence-area"]
+    },
+    {
+      "name": "Diamond Hill",
+      "slug": "diamond-hill",
+      "status": "defunct",
+      "location": { "lat": 41.9600, "lng": -71.3800 },
+      "nearestCity": "Cumberland",
+      "yearClosed": 1980,
+      "description": "Diamond Hill operated a small ski area at Diamond Hill State Park until around 1980. The area provided local skiing before the ski operations ended, though the park continues.",
+      "tags": ["closed", "state-park", "cumberland"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

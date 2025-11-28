@@ -1,0 +1,112 @@
+{
+  "country": "US",
+  "state": "South Dakota",
+  "resorts": [
+    {
+      "name": "Terry Peak",
+      "slug": "terry-peak",
+      "status": "active",
+      "location": { "lat": 44.3608, "lng": -103.8036 },
+      "nearestCity": "Lead",
+      "stats": {
+        "skiableAcres": 450,
+        "liftsCount": 5,
+        "runsCount": 30,
+        "verticalDrop": 1100,
+        "baseElevation": 6050,
+        "summitElevation": 7150,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.terrypeak.com",
+      "description": "Terry Peak is the largest ski area in the northern Great Plains, located in the Black Hills near the historic mining towns of Lead and Deadwood. With over 1,100 feet of vertical and spectacular views, it's a destination for skiers across the Dakotas and Nebraska.",
+      "tags": ["indy-pass", "largest-south-dakota", "black-hills", "lead-deadwood", "night-skiing"]
+    },
+    {
+      "name": "Deer Mountain Ski Area",
+      "slug": "deer-mountain",
+      "status": "active",
+      "location": { "lat": 44.3483, "lng": -103.8147 },
+      "nearestCity": "Lead",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 3,
+        "runsCount": 18,
+        "verticalDrop": 650,
+        "baseElevation": 6400,
+        "summitElevation": 7050,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skideermountain.com",
+      "description": "Deer Mountain offers a more intimate Black Hills skiing experience adjacent to Terry Peak. The area is known for its family-friendly atmosphere, affordable pricing, and uncrowded slopes.",
+      "tags": ["black-hills", "family-friendly", "affordable", "uncrowded", "lead"]
+    },
+    {
+      "name": "Great Bear Ski Valley",
+      "slug": "great-bear",
+      "status": "active",
+      "location": { "lat": 43.4853, "lng": -96.7286 },
+      "nearestCity": "Sioux Falls",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 5,
+        "runsCount": 14,
+        "verticalDrop": 250,
+        "baseElevation": 1400,
+        "summitElevation": 1650,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.greatbearpark.com",
+      "description": "Great Bear Ski Valley serves the Sioux Falls metropolitan area with convenient access just minutes from downtown. The area offers reliable skiing with extensive snowmaking and is the most accessible option for eastern South Dakota residents.",
+      "tags": ["sioux-falls", "city-accessible", "night-skiing", "family-friendly"]
+    },
+
+    {
+      "name": "Inkpa-duta Ski Area",
+      "slug": "inkpa-duta",
+      "status": "defunct",
+      "location": { "lat": 43.8500, "lng": -96.3500 },
+      "nearestCity": "Hartford",
+      "yearClosed": 1988,
+      "description": "Inkpa-duta was a small ski area east of Sioux Falls that operated until the late 1980s. The area served the local community before closing due to economic challenges and competition from Great Bear.",
+      "tags": ["closed", "sioux-falls-area", "community-area"]
+    },
+    {
+      "name": "Mystic Miner Ski Area",
+      "slug": "mystic-miner",
+      "status": "defunct",
+      "location": { "lat": 44.0800, "lng": -103.4300 },
+      "nearestCity": "Hill City",
+      "yearClosed": 1992,
+      "description": "Mystic Miner was a small Black Hills ski area near Hill City that operated until 1992. The area featured a historic mining theme but closed due to limited terrain and competition from larger Black Hills resorts.",
+      "tags": ["closed", "black-hills", "hill-city", "mining-theme"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

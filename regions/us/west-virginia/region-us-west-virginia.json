@@ -1,0 +1,188 @@
+{
+  "country": "US",
+  "state": "West Virginia",
+  "resorts": [
+    {
+      "name": "Snowshoe Mountain",
+      "slug": "snowshoe",
+      "status": "active",
+      "location": { "lat": 38.4211, "lng": -79.9969 },
+      "nearestCity": "Snowshoe",
+      "stats": {
+        "skiableAcres": 244,
+        "liftsCount": 14,
+        "runsCount": 60,
+        "verticalDrop": 1500,
+        "baseElevation": 3350,
+        "summitElevation": 4848,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 17, "intermediate": 45, "advanced": 38, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.snowshoemtn.com",
+      "description": "Snowshoe Mountain is the largest ski resort in the Mid-Atlantic region and a Vail Resorts property. Located in the Allegheny Mountains at nearly 4,850 feet, it offers the most snow, terrain, and vertical drop south of New England.",
+      "tags": ["epic-pass", "vail-resorts", "largest-mid-atlantic", "destination-resort", "highest-southeast", "night-skiing"]
+    },
+    {
+      "name": "Canaan Valley Resort",
+      "slug": "canaan-valley",
+      "status": "active",
+      "location": { "lat": 39.0039, "lng": -79.4539 },
+      "nearestCity": "Davis",
+      "stats": {
+        "skiableAcres": 95,
+        "liftsCount": 5,
+        "runsCount": 47,
+        "verticalDrop": 850,
+        "baseElevation": 3350,
+        "summitElevation": 4200,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.canaanresort.com",
+      "description": "Canaan Valley is a West Virginia state park resort offering affordable skiing in a beautiful mountain setting. The high valley receives excellent natural snowfall and features extensive cross-country trails alongside alpine skiing.",
+      "tags": ["indy-pass", "state-park", "canaan-valley", "cross-country", "night-skiing", "affordable"]
+    },
+    {
+      "name": "Timberline Mountain",
+      "slug": "timberline",
+      "status": "active",
+      "location": { "lat": 39.0225, "lng": -79.3992 },
+      "nearestCity": "Davis",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 3,
+        "runsCount": 40,
+        "verticalDrop": 1000,
+        "baseElevation": 3268,
+        "summitElevation": 4268,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.timberlinemountain.com",
+      "description": "Timberline Mountain reopened in 2021 under new ownership after a brief closure. The resort features the longest runs in the Mid-Atlantic and challenging terrain in the scenic Canaan Valley, known for its natural snow.",
+      "tags": ["indy-pass", "longest-runs-mid-atlantic", "canaan-valley", "reopened", "natural-snow"]
+    },
+    {
+      "name": "Winterplace Ski Resort",
+      "slug": "winterplace",
+      "status": "active",
+      "location": { "lat": 37.5986, "lng": -81.0997 },
+      "nearestCity": "Ghent",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 9,
+        "runsCount": 27,
+        "verticalDrop": 603,
+        "baseElevation": 2900,
+        "summitElevation": 3503,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.winterplace.com",
+      "description": "Winterplace is conveniently located just off I-77 in southern West Virginia, making it the most accessible ski area for Virginia, Kentucky, and southern Ohio. The resort features extensive snowmaking and is known for great conditions.",
+      "tags": ["interstate-accessible", "southern-wv", "snowmaking", "night-skiing", "family-friendly"]
+    },
+    {
+      "name": "Oglebay Resort",
+      "slug": "oglebay",
+      "status": "active",
+      "location": { "lat": 40.0958, "lng": -80.6467 },
+      "nearestCity": "Wheeling",
+      "stats": {
+        "skiableAcres": 10,
+        "liftsCount": 3,
+        "runsCount": 5,
+        "verticalDrop": 245,
+        "baseElevation": 900,
+        "summitElevation": 1145,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.oglebay.com",
+      "description": "Oglebay is a municipal park and resort in Wheeling offering small-scale skiing as part of its winter recreation. The area focuses on beginners and families, providing affordable skiing for the Ohio Valley region.",
+      "tags": ["municipal-park", "wheeling", "beginner-friendly", "resort-amenity", "ohio-valley"]
+    },
+
+    {
+      "name": "Weiss Knob Ski Area",
+      "slug": "weiss-knob",
+      "status": "defunct",
+      "location": { "lat": 38.6500, "lng": -79.8000 },
+      "nearestCity": "Durbin",
+      "yearClosed": 1980,
+      "description": "Weiss Knob was a small ski area in the Monongahela National Forest that operated through the 1970s. The remote location and limited infrastructure led to its closure.",
+      "tags": ["closed", "monongahela-nf", "durbin"]
+    },
+    {
+      "name": "Alpena Ski Area",
+      "slug": "alpena",
+      "status": "defunct",
+      "location": { "lat": 39.1500, "lng": -79.8500 },
+      "nearestCity": "Thomas",
+      "yearClosed": 1985,
+      "description": "Alpena was a small ski area near Thomas that operated until the mid-1980s. The area served as an alternative to Canaan Valley before closing.",
+      "tags": ["closed", "thomas", "community-area"]
+    },
+    {
+      "name": "Bald Knob Ski Area",
+      "slug": "bald-knob",
+      "status": "defunct",
+      "location": { "lat": 38.9200, "lng": "-79.6800" },
+      "nearestCity": "Canaan Valley",
+      "yearClosed": 1975,
+      "description": "Bald Knob was an early ski area in the Canaan Valley region that operated through the mid-1970s. The area was a pioneer of skiing in West Virginia.",
+      "tags": ["closed", "pioneer-area", "canaan-valley"]
+    },
+    {
+      "name": "Chestnut Ridge",
+      "slug": "chestnut-ridge-wv",
+      "status": "defunct",
+      "location": { "lat": 39.6500, "lng": -79.8000 },
+      "nearestCity": "Morgantown",
+      "yearClosed": 1990,
+      "description": "Chestnut Ridge was a small ski area near Morgantown that served the university community and northern West Virginia until around 1990.",
+      "tags": ["closed", "morgantown", "university-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

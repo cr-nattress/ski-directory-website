@@ -1,0 +1,46 @@
+{
+  "country": "CA",
+  "province": "Yukon",
+  "resorts": [
+    {
+      "name": "Mount Sima Ski Hill",
+      "slug": "mount-sima",
+      "status": "active",
+      "location": { "lat": 60.6333, "lng": -135.0333 },
+      "nearestCity": "Whitehorse",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 330,
+        "baseElevation": 2600,
+        "summitElevation": 2930,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountsima.com",
+      "description": "Mount Sima is the Yukon's only developed ski area, located just outside Whitehorse. The nonprofit resort offers skiing under the northern lights and spectacular aurora viewing during the long subarctic winter nights.",
+      "tags": ["only-yukon-resort", "whitehorse", "northern-lights", "subarctic", "night-skiing", "aurora"]
+    },
+
+    {
+      "name": "Watson Lake Ski Club",
+      "slug": "watson-lake",
+      "status": "defunct",
+      "location": { "lat": 60.0633, "lng": -128.7100 },
+      "nearestCity": "Watson Lake",
+      "yearClosed": 2005,
+      "description": "Watson Lake Ski Club operated a small community ski hill in southeastern Yukon until around 2005. The remote location and small population made sustained operations difficult.",
+      "tags": ["closed", "watson-lake", "community-area", "remote"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

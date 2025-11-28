@@ -1,0 +1,130 @@
+{
+  "country": "US",
+  "state": "North Dakota",
+  "resorts": [
+    {
+      "name": "Bottineau Winter Park",
+      "slug": "bottineau-winter-park",
+      "status": "active",
+      "location": { "lat": 48.8356, "lng": -100.4117 },
+      "nearestCity": "Bottineau",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 13,
+        "verticalDrop": 350,
+        "baseElevation": 1650,
+        "summitElevation": 2000,
+        "avgAnnualSnowfall": 75
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibwp.com",
+      "description": "Bottineau Winter Park is located in the Turtle Mountains of northern North Dakota, offering the best skiing in the state. The area benefits from consistent snowfall and provides a destination for skiers across the northern plains.",
+      "tags": ["turtle-mountains", "largest-north-dakota", "northern-plains", "family-friendly"]
+    },
+    {
+      "name": "Frost Fire Park",
+      "slug": "frost-fire",
+      "status": "active",
+      "location": { "lat": 48.8806, "lng": -97.8997 },
+      "nearestCity": "Walhalla",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 3,
+        "runsCount": 10,
+        "verticalDrop": 250,
+        "baseElevation": 1400,
+        "summitElevation": 1650,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.frostfirepark.com",
+      "description": "Frost Fire Park is nestled in the Pembina Gorge near the Canadian border, featuring some of the most scenic skiing in North Dakota. The area's natural terrain and wooded runs offer a unique experience for the region.",
+      "tags": ["pembina-gorge", "scenic", "walhalla", "canadian-border"]
+    },
+    {
+      "name": "Huff Hills Ski Area",
+      "slug": "huff-hills",
+      "status": "active",
+      "location": { "lat": 46.6678, "lng": -100.6786 },
+      "nearestCity": "Mandan",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 400,
+        "baseElevation": 1700,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.huffhills.com",
+      "description": "Huff Hills serves the Bismarck-Mandan area with surprisingly steep terrain carved into the Missouri River bluffs. The nonprofit ski area offers the most vertical drop in North Dakota and challenging runs for experienced skiers.",
+      "tags": ["bismarck-area", "missouri-bluffs", "nonprofit", "challenging-terrain", "most-vertical"]
+    },
+    {
+      "name": "Villa Maria Ski Area",
+      "slug": "villa-maria",
+      "status": "active",
+      "location": { "lat": 46.8994, "lng": -96.8108 },
+      "nearestCity": "Fargo",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 4,
+        "verticalDrop": 70,
+        "baseElevation": 900,
+        "summitElevation": 970,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.fargoparks.com/villamaria",
+      "description": "Villa Maria is Fargo's city-owned ski area, providing affordable learn-to-ski opportunities on the flat plains of eastern North Dakota. The area focuses on beginner programs and youth skiing development.",
+      "tags": ["fargo", "city-owned", "beginner-focus", "learn-to-ski", "affordable"]
+    },
+
+    {
+      "name": "Pembina Gorge",
+      "slug": "pembina-gorge-old",
+      "status": "defunct",
+      "location": { "lat": 48.9000, "lng": -97.8000 },
+      "nearestCity": "Walhalla",
+      "yearClosed": 1970,
+      "description": "The original Pembina Gorge ski area operated until around 1970 before Frost Fire Park was established. The area was a pioneer for skiing in North Dakota's unique Pembina Gorge terrain.",
+      "tags": ["closed", "historic", "pembina-gorge", "pioneer-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

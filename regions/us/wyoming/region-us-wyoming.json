@@ -1,0 +1,308 @@
+{
+  "country": "US",
+  "state": "Wyoming",
+  "resorts": [
+    {
+      "name": "Jackson Hole Mountain Resort",
+      "slug": "jackson-hole",
+      "status": "active",
+      "location": { "lat": 43.5875, "lng": -110.8278 },
+      "nearestCity": "Jackson",
+      "stats": {
+        "skiableAcres": 2500,
+        "liftsCount": 13,
+        "runsCount": 133,
+        "verticalDrop": 4139,
+        "baseElevation": 6311,
+        "summitElevation": 10450,
+        "avgAnnualSnowfall": 459
+      },
+      "terrain": { "beginner": 10, "intermediate": 40, "advanced": 50, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.jacksonhole.com",
+      "description": "Jackson Hole is legendary for its challenging terrain, including the iconic Corbet's Couloir. With the longest continuous vertical drop in the US at 4,139 feet, it attracts expert skiers from around the world. The aerial tram and new gondola provide access to incredible steep terrain, while the charming town of Jackson offers western hospitality.",
+      "tags": ["expert-terrain", "corbets-couloir", "ikon-pass", "aerial-tram", "powder", "vertical-drop", "backcountry"]
+    },
+    {
+      "name": "Grand Targhee Resort",
+      "slug": "grand-targhee",
+      "status": "active",
+      "location": { "lat": 43.7892, "lng": -110.9575 },
+      "nearestCity": "Driggs",
+      "stats": {
+        "skiableAcres": 2602,
+        "liftsCount": 5,
+        "runsCount": 95,
+        "verticalDrop": 2270,
+        "baseElevation": 8010,
+        "summitElevation": 10230,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 10, "intermediate": 70, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.grandtarghee.com",
+      "description": "Known as 'Grand Targhee: The Snow Kept Secret,' this resort on the west side of the Tetons receives an average of 500 inches of snow annually. Its uncrowded slopes, extensive cat-skiing, and laid-back atmosphere make it a powder lover's paradise. The views of the Grand Teton are unmatched.",
+      "tags": ["powder", "uncrowded", "ikon-pass", "cat-skiing", "teton-views", "hidden-gem", "snow-kept-secret"]
+    },
+    {
+      "name": "Snow King Mountain",
+      "slug": "snow-king",
+      "status": "active",
+      "location": { "lat": 43.4711, "lng": -110.7586 },
+      "nearestCity": "Jackson",
+      "stats": {
+        "skiableAcres": 400,
+        "liftsCount": 5,
+        "runsCount": 32,
+        "verticalDrop": 1571,
+        "baseElevation": 6237,
+        "summitElevation": 7808,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 15, "intermediate": 25, "advanced": 60, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowkingmountain.com",
+      "description": "Snow King is Jackson's original ski hill, known locally as the 'Town Hill' because it rises directly from downtown Jackson. With one of the steepest lift-served runs in the country and night skiing, it offers a local's alternative to the bigger resort. The views of the town and valley are spectacular.",
+      "tags": ["town-hill", "steep-terrain", "night-skiing", "indy-pass", "local-favorite", "historic"]
+    },
+    {
+      "name": "Snowy Range Ski Area",
+      "slug": "snowy-range",
+      "status": "active",
+      "location": { "lat": 41.3450, "lng": -106.1675 },
+      "nearestCity": "Laramie",
+      "stats": {
+        "skiableAcres": 255,
+        "liftsCount": 5,
+        "runsCount": 32,
+        "verticalDrop": 1000,
+        "baseElevation": 9200,
+        "summitElevation": 10200,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowyrangeski.com",
+      "description": "Located in the Medicine Bow National Forest near Laramie, Snowy Range offers affordable family skiing with beautiful mountain scenery. Popular with University of Wyoming students and locals, it provides a no-frills skiing experience with stunning views of the Snowy Range peaks.",
+      "tags": ["family-friendly", "affordable", "indy-pass", "university-town", "medicine-bow"]
+    },
+    {
+      "name": "Hogadon Basin Ski Area",
+      "slug": "hogadon-basin",
+      "status": "active",
+      "location": { "lat": 42.7489, "lng": -106.3000 },
+      "nearestCity": "Casper",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 2,
+        "runsCount": 28,
+        "verticalDrop": 600,
+        "baseElevation": 7900,
+        "summitElevation": 8500,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 60, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.hogadon.net",
+      "description": "Hogadon Basin is a city-owned ski area on Casper Mountain, making it one of the most affordable ski areas in Wyoming. Family-focused with a ski school and tubing hill, it serves the central Wyoming community with accessible, beginner-friendly terrain.",
+      "tags": ["city-owned", "affordable", "family-friendly", "beginner-friendly", "casper", "local"]
+    },
+    {
+      "name": "White Pine Ski Area",
+      "slug": "white-pine",
+      "status": "active",
+      "location": { "lat": 42.9336, "lng": -109.7519 },
+      "nearestCity": "Pinedale",
+      "stats": {
+        "skiableAcres": 160,
+        "liftsCount": 3,
+        "runsCount": 25,
+        "verticalDrop": 1100,
+        "baseElevation": 8750,
+        "summitElevation": 9500,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.whitepineski.com",
+      "description": "White Pine sits in the Wind River Mountains near Pinedale, offering spectacular views and uncrowded slopes. This community ski area provides affordable family skiing and serves as a gateway to exceptional backcountry terrain in the surrounding wilderness.",
+      "tags": ["wind-river-mountains", "affordable", "uncrowded", "backcountry-access", "local", "family-friendly"]
+    },
+    {
+      "name": "Sleeping Giant Ski Area",
+      "slug": "sleeping-giant",
+      "status": "active",
+      "location": { "lat": 44.4728, "lng": -109.8800 },
+      "nearestCity": "Cody",
+      "stats": {
+        "skiableAcres": 184,
+        "liftsCount": 3,
+        "runsCount": 49,
+        "verticalDrop": 810,
+        "baseElevation": 7428,
+        "summitElevation": 8238,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://skisg.com",
+      "description": "Named after the Sleeping Giant rock formation visible from Cody, this family-owned ski area serves the Yellowstone gateway community. Located on the North Fork of the Shoshone River, it offers affordable skiing with dramatic mountain scenery on the road to Yellowstone's East Entrance.",
+      "tags": ["yellowstone-gateway", "family-owned", "affordable", "cody", "local", "scenic"]
+    },
+    {
+      "name": "Pine Creek Ski Area",
+      "slug": "pine-creek",
+      "status": "active",
+      "location": { "lat": 42.8583, "lng": -108.9083 },
+      "nearestCity": "Lander",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 1,
+        "runsCount": 15,
+        "verticalDrop": 500,
+        "baseElevation": 8400,
+        "summitElevation": 8900,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://pinecreekskiresort.com",
+      "description": "Pine Creek is a tiny community ski area serving the Lander area in central Wyoming. Operated by volunteers and the local ski club, it offers the most affordable skiing in the state with a genuine small-town, family atmosphere.",
+      "tags": ["community-run", "affordable", "volunteer-operated", "lander", "local", "family-friendly"]
+    },
+    {
+      "name": "Antelope Butte Mountain Recreation Area",
+      "slug": "antelope-butte",
+      "status": "active",
+      "location": { "lat": 44.6167, "lng": -107.3833 },
+      "nearestCity": "Sheridan",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 1,
+        "runsCount": 24,
+        "verticalDrop": 1000,
+        "baseElevation": 8400,
+        "summitElevation": 9400,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 20, "intermediate": 60, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://antelopebuttefoundation.org",
+      "description": "Antelope Butte is a non-profit ski area in the Bighorn Mountains serving the Sheridan community. Recently revived after years of closure, it operates with community support and volunteer effort, offering affordable skiing in a beautiful mountain setting.",
+      "tags": ["non-profit", "community-supported", "bighorn-mountains", "affordable", "sheridan", "revived"]
+    },
+
+    {
+      "name": "Meadowlark Ski Lodge",
+      "slug": "meadowlark",
+      "status": "defunct",
+      "notes": "Former ski area in the Bighorn Mountains, operated 1960s-1990s",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 44.3, "lng": -107.4 },
+      "tags": ["historic", "bighorn-mountains"]
+    },
+    {
+      "name": "Happy Jack",
+      "slug": "happy-jack",
+      "status": "defunct",
+      "notes": "Former ski area near Cheyenne, one of Wyoming's earliest ski areas",
+      "yearsOperated": "1950s-1970s",
+      "location": { "lat": 41.2, "lng": -105.3 },
+      "tags": ["historic", "cheyenne-area", "early-wyoming-skiing"]
+    },
+    {
+      "name": "Medicine Bow",
+      "slug": "medicine-bow-ski",
+      "status": "defunct",
+      "notes": "Former ski area in Medicine Bow National Forest, precursor operations to Snowy Range",
+      "yearsOperated": "1940s-1960s",
+      "location": { "lat": 41.35, "lng": -106.2 },
+      "tags": ["historic", "medicine-bow", "early-wyoming-skiing"]
+    },
+    {
+      "name": "Pole Mountain",
+      "slug": "pole-mountain",
+      "status": "defunct",
+      "notes": "Early ski area near Laramie that served University of Wyoming students",
+      "yearsOperated": "1940s-1960s",
+      "location": { "lat": 41.15, "lng": -105.4 },
+      "tags": ["historic", "laramie", "university-skiing"]
+    },
+    {
+      "name": "Togwotee",
+      "slug": "togwotee",
+      "status": "defunct",
+      "notes": "Former small ski area near Togwotee Pass between Jackson and Dubois",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 43.75, "lng": -110.05 },
+      "tags": ["historic", "togwotee-pass", "teton-region"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-26T20:30:00Z"
+  }
+}

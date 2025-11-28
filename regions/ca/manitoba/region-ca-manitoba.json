@@ -1,0 +1,224 @@
+{
+  "country": "CA",
+  "province": "Manitoba",
+  "resorts": [
+    {
+      "name": "Asessippi Ski Area and Resort",
+      "slug": "asessippi",
+      "status": "active",
+      "location": { "lat": 51.5333, "lng": -101.6667 },
+      "nearestCity": "Russell",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 4,
+        "runsCount": 25,
+        "verticalDrop": 340,
+        "baseElevation": 1640,
+        "summitElevation": 1980,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.asessippi.com",
+      "description": "Asessippi is Manitoba's largest ski resort, located in the Asessippi Provincial Park near the Saskatchewan border. The resort offers the most terrain and vertical in the province, with ski-in/ski-out accommodations available.",
+      "tags": ["largest-manitoba", "provincial-park", "destination-resort", "night-skiing"]
+    },
+    {
+      "name": "Falcon Ridge Ski Slopes",
+      "slug": "falcon-ridge",
+      "status": "active",
+      "location": { "lat": 49.7333, "lng": -95.3333 },
+      "nearestCity": "Falcon Lake",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 230,
+        "baseElevation": 1100,
+        "summitElevation": 1330,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.falconridgeski.com",
+      "description": "Falcon Ridge is located in Whiteshell Provincial Park, offering skiing in Manitoba's lake country near the Ontario border. The area attracts visitors from both Winnipeg and western Ontario.",
+      "tags": ["whiteshell", "provincial-park", "falcon-lake", "family-friendly"]
+    },
+    {
+      "name": "Holiday Mountain",
+      "slug": "holiday-mountain",
+      "status": "active",
+      "location": { "lat": 49.1667, "lng": -99.5000 },
+      "nearestCity": "La Riviere",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 4,
+        "runsCount": 18,
+        "verticalDrop": 300,
+        "baseElevation": 1100,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 70
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.holidaymountain.com",
+      "description": "Holiday Mountain is located in the Pembina Valley, offering some of Manitoba's most challenging terrain. The area is conveniently located for day trips from Winnipeg and features extensive snowmaking.",
+      "tags": ["pembina-valley", "challenging-terrain", "night-skiing", "winnipeg-accessible"]
+    },
+    {
+      "name": "Stony Mountain Ski Area",
+      "slug": "stony-mountain",
+      "status": "active",
+      "location": { "lat": 50.0833, "lng": -97.1500 },
+      "nearestCity": "Stony Mountain",
+      "stats": {
+        "skiableAcres": 20,
+        "liftsCount": 3,
+        "runsCount": 10,
+        "verticalDrop": 150,
+        "baseElevation": 850,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.stonymountain.ca",
+      "description": "Stony Mountain is the closest ski area to Winnipeg, located just 20 minutes north of the city. The area is perfect for quick after-work sessions and beginner lessons.",
+      "tags": ["winnipeg-closest", "beginner-friendly", "night-skiing", "urban-accessible"]
+    },
+    {
+      "name": "Spring Hill Winter Park",
+      "slug": "spring-hill",
+      "status": "active",
+      "location": { "lat": 49.9167, "lng": -97.3500 },
+      "nearestCity": "Winnipeg",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 6,
+        "verticalDrop": 75,
+        "baseElevation": 800,
+        "summitElevation": 875,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.springhillwinterpark.com",
+      "description": "Spring Hill is a small ski area within Winnipeg city limits, making it the most accessible option for urban residents. The area focuses on learn-to-ski programs and family skiing.",
+      "tags": ["winnipeg", "urban-ski-area", "beginner-focus", "night-skiing"]
+    },
+    {
+      "name": "Mystery Mountain",
+      "slug": "mystery-mountain",
+      "status": "active",
+      "location": { "lat": 54.7500, "lng": -101.8833 },
+      "nearestCity": "Thompson",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 8,
+        "verticalDrop": 200,
+        "baseElevation": 900,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mysterymountain.ca",
+      "description": "Mystery Mountain serves northern Manitoba from the mining town of Thompson. One of Canada's northernmost ski areas, it offers skiing under the northern lights during the long winter nights.",
+      "tags": ["northern-manitoba", "thompson", "northern-lights", "night-skiing", "remote"]
+    },
+    {
+      "name": "Ski Flin Flon",
+      "slug": "ski-flin-flon",
+      "status": "active",
+      "location": { "lat": 54.7667, "lng": -101.8833 },
+      "nearestCity": "Flin Flon",
+      "stats": {
+        "skiableAcres": 10,
+        "liftsCount": 1,
+        "runsCount": 5,
+        "verticalDrop": 150,
+        "baseElevation": 1050,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 85
+      },
+      "terrain": { "beginner": 40, "intermediate": 45, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiflinflon.ca",
+      "description": "Ski Flin Flon is a community-operated ski area in the remote mining town of Flin Flon on the Manitoba-Saskatchewan border. The area provides winter recreation for one of Canada's most isolated communities.",
+      "tags": ["flin-flon", "community-area", "remote", "northern-manitoba"]
+    },
+
+    {
+      "name": "La Riviere Ski Area",
+      "slug": "la-riviere",
+      "status": "defunct",
+      "location": { "lat": 49.2300, "lng": -98.7500 },
+      "nearestCity": "La Riviere",
+      "yearClosed": 1995,
+      "description": "La Riviere was a small community ski area in the Pembina Valley that closed in the mid-1990s. Holiday Mountain, located nearby, absorbed much of the area's former customer base.",
+      "tags": ["closed", "pembina-valley", "community-area"]
+    },
+    {
+      "name": "Springhill",
+      "slug": "springhill-old",
+      "status": "defunct",
+      "location": { "lat": 49.8800, "lng": -97.3200 },
+      "nearestCity": "Winnipeg",
+      "yearClosed": 1980,
+      "description": "The original Springhill ski area operated until around 1980 before being revitalized as Spring Hill Winter Park in a different location.",
+      "tags": ["closed", "winnipeg", "historic"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

@@ -1,0 +1,568 @@
+{
+  "country": "US",
+  "state": "Maine",
+  "resorts": [
+    {
+      "name": "Sugarloaf",
+      "slug": "sugarloaf",
+      "status": "active",
+      "location": { "lat": 45.0314, "lng": -70.3131 },
+      "nearestCity": "Carrabassett Valley",
+      "stats": {
+        "skiableAcres": 1232,
+        "liftsCount": 13,
+        "runsCount": 162,
+        "verticalDrop": 2820,
+        "baseElevation": 1417,
+        "summitElevation": 4237,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 22, "intermediate": 32, "advanced": 27, "expert": 19 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.sugarloaf.com",
+      "description": "Sugarloaf is the largest ski resort east of the Rockies by skiable acreage, featuring the only lift-served above-treeline skiing in the East. With the greatest vertical drop in New England and a full slopeside village, it's Maine's premier destination resort.",
+      "tags": ["ikon-pass", "largest-east", "above-treeline", "greatest-vertical-east", "slopeside-village"]
+    },
+    {
+      "name": "Sunday River",
+      "slug": "sunday-river",
+      "status": "active",
+      "location": { "lat": 44.4731, "lng": -70.8569 },
+      "nearestCity": "Newry",
+      "stats": {
+        "skiableAcres": 870,
+        "liftsCount": 18,
+        "runsCount": 135,
+        "verticalDrop": 2340,
+        "baseElevation": 800,
+        "summitElevation": 3140,
+        "avgAnnualSnowfall": 167
+      },
+      "terrain": { "beginner": 25, "intermediate": 35, "advanced": 27, "expert": 13 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.sundayriver.com",
+      "description": "Sunday River spans eight interconnected mountain peaks with excellent snowmaking (95% coverage) and consistent conditions. Known for its pioneering snowmaking technology and reliable skiing, it's a favorite destination for skiers from Boston and beyond.",
+      "tags": ["ikon-pass", "eight-peaks", "snowmaking-leader", "reliable-conditions", "boston-accessible"]
+    },
+    {
+      "name": "Saddleback Mountain",
+      "slug": "saddleback-mountain",
+      "status": "active",
+      "location": { "lat": 44.9389, "lng": -70.5114 },
+      "nearestCity": "Rangeley",
+      "stats": {
+        "skiableAcres": 400,
+        "liftsCount": 5,
+        "runsCount": 68,
+        "verticalDrop": 2000,
+        "baseElevation": 2464,
+        "summitElevation": 4120,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 20, "intermediate": 38, "advanced": 30, "expert": 12 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.saddlebackmaine.com",
+      "description": "Saddleback Mountain was revived in 2020 after closing in 2015, featuring above-treeline terrain and spectacular Rangeley Lakes views. Under new ownership with major investments, it offers an authentic ski experience with challenging terrain and natural snow.",
+      "tags": ["indy-pass", "revived-2020", "above-treeline", "rangeley-lakes", "natural-snow"]
+    },
+    {
+      "name": "Shawnee Peak",
+      "slug": "shawnee-peak",
+      "status": "active",
+      "location": { "lat": 44.0428, "lng": -70.8097 },
+      "nearestCity": "Bridgton",
+      "stats": {
+        "skiableAcres": 249,
+        "liftsCount": 6,
+        "runsCount": 44,
+        "verticalDrop": 1300,
+        "baseElevation": 600,
+        "summitElevation": 1900,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 30, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.shawneepeak.com",
+      "description": "Shawnee Peak is Maine's most accessible ski area from Portland, offering extensive night skiing and affordable family skiing. Formerly Pleasant Mountain, it's known for its terrain variety and proximity to lakes region attractions.",
+      "tags": ["night-skiing", "portland-accessible", "family-friendly", "lakes-region", "formerly-pleasant-mountain"]
+    },
+    {
+      "name": "Lost Valley",
+      "slug": "lost-valley",
+      "status": "active",
+      "location": { "lat": 44.2156, "lng": -70.2294 },
+      "nearestCity": "Auburn",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 3,
+        "runsCount": 31,
+        "verticalDrop": 240,
+        "baseElevation": 450,
+        "summitElevation": 690,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.lostvalleyski.com",
+      "description": "Lost Valley is a family-owned ski area serving the Lewiston-Auburn area with affordable skiing and excellent learn-to-ski programs. The area has been in continuous operation since 1961 and remains a community favorite.",
+      "tags": ["family-owned", "learn-to-ski", "night-skiing", "lewiston-auburn", "affordable"]
+    },
+    {
+      "name": "Mt. Abram",
+      "slug": "mt-abram",
+      "status": "active",
+      "location": { "lat": 44.3822, "lng": -70.7061 },
+      "nearestCity": "Greenwood",
+      "stats": {
+        "skiableAcres": 150,
+        "liftsCount": 4,
+        "runsCount": 44,
+        "verticalDrop": 1150,
+        "baseElevation": 950,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtabram.com",
+      "description": "Mt. Abram is a family-friendly ski area in Maine's western mountains with diverse terrain and a welcoming atmosphere. Known for its local character and uncrowded slopes, it offers excellent value skiing.",
+      "tags": ["family-friendly", "uncrowded", "western-maine", "value", "local-character"]
+    },
+    {
+      "name": "Black Mountain of Maine",
+      "slug": "black-mountain-maine",
+      "status": "active",
+      "location": { "lat": 44.2597, "lng": -70.4167 },
+      "nearestCity": "Rumford",
+      "stats": {
+        "skiableAcres": 135,
+        "liftsCount": 3,
+        "runsCount": 41,
+        "verticalDrop": 1100,
+        "baseElevation": 700,
+        "summitElevation": 1800,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiblackmountain.org",
+      "description": "Black Mountain of Maine is a nonprofit community ski area in Rumford with surprisingly diverse terrain for its size. The oldest continually operating ski area in Maine, it's been serving the community since 1962.",
+      "tags": ["nonprofit", "community-owned", "night-skiing", "oldest-operating-maine", "rumford"]
+    },
+    {
+      "name": "Camden Snow Bowl",
+      "slug": "camden-snow-bowl",
+      "status": "active",
+      "location": { "lat": 44.2136, "lng": -69.1244 },
+      "nearestCity": "Camden",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 4,
+        "runsCount": 20,
+        "verticalDrop": 950,
+        "baseElevation": 200,
+        "summitElevation": 1150,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.camdensnowbowl.com",
+      "description": "Camden Snow Bowl is the only ski area in America with views of the Atlantic Ocean. Town-owned and operated, it features a unique toboggan chute and serves the midcoast Maine community with affordable skiing.",
+      "tags": ["ocean-views", "town-owned", "toboggan-chute", "midcoast-maine", "unique-views"]
+    },
+    {
+      "name": "Titcomb Mountain",
+      "slug": "titcomb-mountain",
+      "status": "active",
+      "location": { "lat": 44.6667, "lng": -70.1500 },
+      "nearestCity": "Farmington",
+      "stats": {
+        "skiableAcres": 22,
+        "liftsCount": 2,
+        "runsCount": 14,
+        "verticalDrop": 340,
+        "baseElevation": 580,
+        "summitElevation": 920,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.titcombmountain.com",
+      "description": "Titcomb Mountain is a nonprofit community ski area serving the Farmington region. Affiliated with the University of Maine at Farmington, it offers affordable skiing and excellent programs for beginners.",
+      "tags": ["nonprofit", "community-hill", "umf-affiliated", "farmington", "affordable"]
+    },
+    {
+      "name": "Bigrock Mountain",
+      "slug": "bigrock-mountain",
+      "status": "active",
+      "location": { "lat": 46.4833, "lng": -68.0500 },
+      "nearestCity": "Mars Hill",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 23,
+        "verticalDrop": 980,
+        "baseElevation": 520,
+        "summitElevation": 1500,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bigrockmaine.com",
+      "description": "Bigrock Mountain is the northernmost ski area in New England, located in Aroostook County near the Canadian border. Known for reliable natural snow and cold temperatures, it serves northern Maine's skiing community.",
+      "tags": ["northernmost-new-england", "aroostook-county", "natural-snow", "canadian-border", "night-skiing"]
+    },
+    {
+      "name": "Big Moose Mountain",
+      "slug": "big-moose-mountain",
+      "status": "active",
+      "location": { "lat": 45.4833, "lng": -69.7167 },
+      "nearestCity": "Greenville",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 3,
+        "runsCount": 21,
+        "verticalDrop": 1600,
+        "baseElevation": 1400,
+        "summitElevation": 3000,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibigmoose.com",
+      "description": "Big Moose Mountain (formerly Big Squaw Mountain) overlooks Moosehead Lake, Maine's largest lake. With impressive vertical for a small area and spectacular views, it's been revived after periods of closure and offers authentic Maine skiing.",
+      "tags": ["moosehead-lake-views", "revived", "remote-maine", "impressive-vertical", "authentic"]
+    },
+    {
+      "name": "Lonesome Pine Trails",
+      "slug": "lonesome-pine-trails",
+      "status": "active",
+      "location": { "lat": 46.6833, "lng": -68.0167 },
+      "nearestCity": "Fort Kent",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 3,
+        "runsCount": 17,
+        "verticalDrop": 550,
+        "baseElevation": 550,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.lonesomepines.org",
+      "description": "Lonesome Pine Trails is a nonprofit community ski area in Fort Kent, one of Maine's northernmost towns. Operating since 1965, it serves the St. John Valley with affordable skiing and Nordic trails.",
+      "tags": ["nonprofit", "fort-kent", "st-john-valley", "night-skiing", "nordic-trails"]
+    },
+    {
+      "name": "Hermon Mountain",
+      "slug": "hermon-mountain",
+      "status": "active",
+      "location": { "lat": 44.8333, "lng": -68.9333 },
+      "nearestCity": "Hermon",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 4,
+        "runsCount": 20,
+        "verticalDrop": 400,
+        "baseElevation": 250,
+        "summitElevation": 650,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skihermonmountain.com",
+      "description": "Hermon Mountain serves the Greater Bangor area with convenient, affordable skiing. Family-owned since 1964, it offers excellent learning terrain and a welcoming atmosphere for families and beginners.",
+      "tags": ["family-owned", "bangor-area", "beginner-friendly", "night-skiing", "learn-to-ski"]
+    },
+    {
+      "name": "Pinnacle Ski Club",
+      "slug": "pinnacle-ski-club",
+      "status": "active",
+      "location": { "lat": 44.5833, "lng": -69.8000 },
+      "nearestCity": "Pittsfield",
+      "stats": {
+        "skiableAcres": 12,
+        "liftsCount": 1,
+        "runsCount": 4,
+        "verticalDrop": 200,
+        "baseElevation": 350,
+        "summitElevation": 550,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.thepinnacleskiclub.org",
+      "description": "Pinnacle Ski Club is a tiny member-owned ski hill in Pittsfield, operating as a volunteer-run nonprofit. One of Maine's smallest ski areas, it provides affordable skiing for the local community.",
+      "tags": ["ski-club", "member-owned", "volunteer-run", "pittsfield", "smallest-maine"]
+    },
+    {
+      "name": "Eaton Mountain",
+      "slug": "eaton-mountain",
+      "status": "active",
+      "location": { "lat": 44.7833, "lng": -69.6667 },
+      "nearestCity": "Skowhegan",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 2,
+        "runsCount": 17,
+        "verticalDrop": 620,
+        "baseElevation": 400,
+        "summitElevation": 1020,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.eatonmountain.com",
+      "description": "Eaton Mountain is a revived community ski area in Skowhegan that reopened in 2016 after years of closure. Under new ownership, it offers affordable skiing and snow tubing for central Maine families.",
+      "tags": ["revived", "community-hill", "skowhegan", "snow-tubing", "affordable"]
+    },
+    {
+      "name": "Spruce Mountain",
+      "slug": "spruce-mountain-maine",
+      "status": "active",
+      "location": { "lat": 44.3833, "lng": -70.1833 },
+      "nearestCity": "Jay",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 2,
+        "runsCount": 9,
+        "verticalDrop": 450,
+        "baseElevation": 700,
+        "summitElevation": 1150,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sprucemountainski.org",
+      "description": "Spruce Mountain is a nonprofit community ski area serving the Jay-Livermore Falls area. Operated by volunteers, it offers affordable skiing with night operations and strong youth programs.",
+      "tags": ["nonprofit", "volunteer-run", "community-hill", "jay-maine", "night-skiing"]
+    },
+    {
+      "name": "Baker Mountain",
+      "slug": "baker-mountain",
+      "status": "active",
+      "location": { "lat": 45.0833, "lng": -69.0000 },
+      "nearestCity": "Moscow",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 8,
+        "verticalDrop": 300,
+        "baseElevation": 700,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 40, "intermediate": 45, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bakermountain.org",
+      "description": "Baker Mountain is a small nonprofit community ski area in the rural Moscow area of Somerset County. One of Maine's most affordable options, it serves families in the upper Kennebec Valley.",
+      "tags": ["nonprofit", "community-hill", "rural-maine", "most-affordable", "kennebec-valley"]
+    },
+
+    {
+      "name": "Pleasant Mountain",
+      "slug": "pleasant-mountain",
+      "status": "defunct",
+      "location": { "lat": 44.0428, "lng": -70.8097 },
+      "nearestCity": "Bridgton",
+      "yearsOperated": "1938-1988",
+      "notes": "Historic Maine ski area that was renamed Shawnee Peak in 1988. The original Pleasant Mountain ski area was one of Maine's first, with a rich racing history.",
+      "tags": ["became-shawnee-peak", "historic", "racing-history"]
+    },
+    {
+      "name": "Evergreen Valley",
+      "slug": "evergreen-valley",
+      "status": "defunct",
+      "location": { "lat": 44.1000, "lng": -70.7500 },
+      "nearestCity": "East Stoneham",
+      "yearsOperated": "1973-2003",
+      "notes": "Small family ski area with one lift that operated for three decades before closing due to unreliable snow and financial challenges.",
+      "tags": ["family-ski-area", "one-lift", "closed-2003"]
+    },
+    {
+      "name": "Enchanted Mountain",
+      "slug": "enchanted-mountain",
+      "status": "defunct",
+      "location": { "lat": 45.1833, "lng": -70.1167 },
+      "nearestCity": "Jackman",
+      "yearsOperated": "1970s-1990s",
+      "notes": "Remote ski area near the Canadian border that operated intermittently. Location made consistent operation challenging.",
+      "tags": ["remote", "canadian-border", "intermittent-operation"]
+    },
+    {
+      "name": "Mt. Jefferson Ski Area",
+      "slug": "mt-jefferson-ski-area",
+      "status": "defunct",
+      "location": { "lat": 44.4167, "lng": -70.4333 },
+      "nearestCity": "Lee",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Small community ski area that operated for several decades before closing.",
+      "tags": ["community-hill", "central-maine"]
+    },
+    {
+      "name": "Songo Pond",
+      "slug": "songo-pond",
+      "status": "defunct",
+      "location": { "lat": 44.0833, "lng": -70.6500 },
+      "nearestCity": "Bethel",
+      "yearsOperated": "1960s-1970s",
+      "notes": "Small rope tow ski area in the Bethel region that closed as Sunday River expanded nearby.",
+      "tags": ["rope-tow", "bethel-area", "sunday-river-impact"]
+    },
+    {
+      "name": "Bald Mountain Ski Area",
+      "slug": "bald-mountain-ski-area-maine",
+      "status": "defunct",
+      "location": { "lat": 44.9000, "lng": -70.7000 },
+      "nearestCity": "Oquossoc",
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small ski area in the Rangeley Lakes region that operated before Saddleback became the dominant area.",
+      "tags": ["rangeley-region", "early-ski-area"]
+    },
+    {
+      "name": "Caribou Ski Area",
+      "slug": "caribou-ski-area",
+      "status": "defunct",
+      "location": { "lat": 46.8667, "lng": -68.0167 },
+      "nearestCity": "Caribou",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Community ski area in Aroostook County that served the Caribou area before Bigrock consolidated northern Maine skiing.",
+      "tags": ["aroostook-county", "community-hill", "northern-maine"]
+    },
+    {
+      "name": "Mars Hill",
+      "slug": "mars-hill",
+      "status": "defunct",
+      "location": { "lat": 46.5167, "lng": -67.8333 },
+      "nearestCity": "Mars Hill",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Original ski area in Mars Hill before Bigrock Mountain was developed. Some infrastructure may have been incorporated into the current resort.",
+      "tags": ["became-bigrock", "northern-maine"]
+    }
+  ],
+  "meta": {
+    "totalActive": 17,
+    "totalDefunct": 8,
+    "lastUpdated": "2025-01-15"
+  }
+}

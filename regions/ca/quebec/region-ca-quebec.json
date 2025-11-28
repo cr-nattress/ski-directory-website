@@ -1,0 +1,1306 @@
+{
+  "country": "CA",
+  "province": "Quebec",
+  "resorts": [
+    {
+      "name": "Mont Tremblant",
+      "slug": "mont-tremblant",
+      "status": "active",
+      "location": { "lat": 46.2108, "lng": -74.5856 },
+      "nearestCity": "Mont-Tremblant",
+      "stats": {
+        "skiableAcres": 755,
+        "liftsCount": 14,
+        "runsCount": 102,
+        "verticalDrop": 2116,
+        "baseElevation": 755,
+        "summitElevation": 2871,
+        "avgAnnualSnowfall": 158
+      },
+      "terrain": { "beginner": 21, "intermediate": 32, "advanced": 47, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.tremblant.ca",
+      "description": "Mont Tremblant is Eastern Canada's premier ski destination, featuring a world-renowned pedestrian village and excellent terrain. The Laurentian resort offers four distinct mountain faces, extensive night skiing, and a vibrant apres-ski scene with European charm.",
+      "tags": ["ikon-pass", "largest-eastern-canada", "pedestrian-village", "laurentians", "night-skiing", "world-class", "four-faces"]
+    },
+    {
+      "name": "Le Massif de Charlevoix",
+      "slug": "le-massif",
+      "status": "active",
+      "location": { "lat": 47.2803, "lng": -70.5961 },
+      "nearestCity": "Baie-Saint-Paul",
+      "stats": {
+        "skiableAcres": 403,
+        "liftsCount": 5,
+        "runsCount": 53,
+        "verticalDrop": 2526,
+        "baseElevation": 164,
+        "summitElevation": 2690,
+        "avgAnnualSnowfall": 266
+      },
+      "terrain": { "beginner": 17, "intermediate": 36, "advanced": 47, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.lemassif.com",
+      "description": "Le Massif offers the highest vertical drop east of the Rockies, with runs descending directly toward the St. Lawrence River. Known for abundant natural snow and spectacular scenery, this Club Med-managed resort provides a unique skiing experience.",
+      "tags": ["highest-vertical-east", "st-lawrence-views", "club-med", "natural-snow", "charlevoix", "scenic", "unique"]
+    },
+    {
+      "name": "Mont-Sainte-Anne",
+      "slug": "mont-sainte-anne",
+      "status": "active",
+      "location": { "lat": 47.0753, "lng": -70.9044 },
+      "nearestCity": "Beaupre",
+      "stats": {
+        "skiableAcres": 485,
+        "liftsCount": 13,
+        "runsCount": 71,
+        "verticalDrop": 2050,
+        "baseElevation": 574,
+        "summitElevation": 2624,
+        "avgAnnualSnowfall": 177
+      },
+      "terrain": { "beginner": 22, "intermediate": 46, "advanced": 32, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://mont-sainte-anne.com",
+      "description": "Mont-Sainte-Anne is Quebec's most complete four-season resort near Quebec City. With three distinct mountain faces, extensive night skiing on the largest lit area in Canada, and world-class cross-country trails, it's a regional powerhouse.",
+      "tags": ["ikon-pass", "largest-night-skiing-canada", "quebec-city-area", "three-faces", "cross-country", "four-season"]
+    },
+    {
+      "name": "Stoneham Mountain Resort",
+      "slug": "stoneham",
+      "status": "active",
+      "location": { "lat": 47.0278, "lng": -71.1458 },
+      "nearestCity": "Stoneham",
+      "stats": {
+        "skiableAcres": 365,
+        "liftsCount": 9,
+        "runsCount": 42,
+        "verticalDrop": 1380,
+        "baseElevation": 1000,
+        "summitElevation": 2380,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 23, "intermediate": 36, "advanced": 41, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://ski-stoneham.com",
+      "description": "Stoneham is Quebec City's closest major resort, known for excellent terrain parks and freestyle facilities. With extensive night skiing and a youthful energy, it's popular with local riders and has hosted World Cup freestyle events.",
+      "tags": ["ikon-pass", "quebec-city-area", "terrain-parks", "freestyle", "night-skiing", "world-cup-venue"]
+    },
+    {
+      "name": "Bromont",
+      "slug": "bromont",
+      "status": "active",
+      "location": { "lat": 45.3083, "lng": -72.6467 },
+      "nearestCity": "Bromont",
+      "stats": {
+        "skiableAcres": 450,
+        "liftsCount": 9,
+        "runsCount": 141,
+        "verticalDrop": 1329,
+        "baseElevation": 650,
+        "summitElevation": 1979,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 25, "intermediate": 34, "advanced": 41, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibromont.com",
+      "description": "Bromont is the largest night skiing area in North America, with 141 lit trails. Located in the Eastern Townships an hour from Montreal, it offers extensive snowmaking, terrain variety, and year-round mountain biking.",
+      "tags": ["ikon-pass", "largest-night-skiing-north-america", "eastern-townships", "montreal-accessible", "snowmaking", "mountain-biking"]
+    },
+    {
+      "name": "Mont Sutton",
+      "slug": "mont-sutton",
+      "status": "active",
+      "location": { "lat": 45.1044, "lng": -72.5658 },
+      "nearestCity": "Sutton",
+      "stats": {
+        "skiableAcres": 400,
+        "liftsCount": 9,
+        "runsCount": 60,
+        "verticalDrop": 1500,
+        "baseElevation": 755,
+        "summitElevation": 2350,
+        "avgAnnualSnowfall": 190
+      },
+      "terrain": { "beginner": 21, "intermediate": 33, "advanced": 46, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montsutton.com",
+      "description": "Mont Sutton is beloved for its natural snow, glade skiing, and authentic atmosphere. The independent resort in the Eastern Townships offers exceptional tree skiing and a laid-back vibe that attracts powder seekers from Montreal.",
+      "tags": ["indy-pass", "glade-skiing", "natural-snow", "eastern-townships", "authentic", "tree-skiing", "locals-favorite"]
+    },
+    {
+      "name": "Mont Orford",
+      "slug": "mont-orford",
+      "status": "active",
+      "location": { "lat": 45.3272, "lng": -72.1861 },
+      "nearestCity": "Magog",
+      "stats": {
+        "skiableAcres": 250,
+        "liftsCount": 8,
+        "runsCount": 61,
+        "verticalDrop": 1772,
+        "baseElevation": 915,
+        "summitElevation": 2687,
+        "avgAnnualSnowfall": 157
+      },
+      "terrain": { "beginner": 28, "intermediate": 39, "advanced": 33, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.orford.com",
+      "description": "Mont Orford sits within a provincial park offering natural beauty and diverse terrain. The Eastern Townships resort provides family-friendly skiing with night operations and beautiful views of the surrounding Appalachian landscape.",
+      "tags": ["provincial-park", "eastern-townships", "family-friendly", "night-skiing", "appalachian", "magog"]
+    },
+    {
+      "name": "Owl's Head",
+      "slug": "owls-head",
+      "status": "active",
+      "location": { "lat": 45.0833, "lng": -72.2167 },
+      "nearestCity": "Mansonville",
+      "stats": {
+        "skiableAcres": 180,
+        "liftsCount": 6,
+        "runsCount": 52,
+        "verticalDrop": 1772,
+        "baseElevation": 720,
+        "summitElevation": 2492,
+        "avgAnnualSnowfall": 170
+      },
+      "terrain": { "beginner": 19, "intermediate": 43, "advanced": 38, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.owlshead.com",
+      "description": "Owl's Head overlooks Lake Memphremagog in the Eastern Townships, offering spectacular views and challenging terrain. The intimate resort provides a quieter alternative to larger areas with excellent natural snow retention.",
+      "tags": ["lake-memphremagog", "eastern-townships", "scenic-views", "challenging-terrain", "natural-snow", "intimate"]
+    },
+    {
+      "name": "Mont Blanc",
+      "slug": "mont-blanc-qc",
+      "status": "active",
+      "location": { "lat": 46.1250, "lng": -74.6167 },
+      "nearestCity": "Saint-Faustin-Lac-Carre",
+      "stats": {
+        "skiableAcres": 195,
+        "liftsCount": 6,
+        "runsCount": 43,
+        "verticalDrop": 984,
+        "baseElevation": 1230,
+        "summitElevation": 2214,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 26, "intermediate": 37, "advanced": 37, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skimontblanc.com",
+      "description": "Mont Blanc is located in the Laurentians near Mont Tremblant, offering family-friendly skiing with night operations. The resort provides a more affordable alternative to its famous neighbor with varied terrain.",
+      "tags": ["laurentians", "family-friendly", "night-skiing", "affordable", "near-tremblant"]
+    },
+    {
+      "name": "Mont Saint-Sauveur",
+      "slug": "mont-saint-sauveur",
+      "status": "active",
+      "location": { "lat": 45.8972, "lng": -74.1694 },
+      "nearestCity": "Saint-Sauveur",
+      "stats": {
+        "skiableAcres": 142,
+        "liftsCount": 9,
+        "runsCount": 38,
+        "verticalDrop": 700,
+        "baseElevation": 755,
+        "summitElevation": 1455,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mssi.ca",
+      "description": "Mont Saint-Sauveur is the Laurentians' most accessible resort, just 45 minutes from Montreal. Known for extensive night skiing, terrain parks, and a vibrant village atmosphere, it's the go-to destination for Montreal skiers.",
+      "tags": ["epic-pass", "montreal-closest", "laurentians", "night-skiing", "village-atmosphere", "terrain-parks"]
+    },
+    {
+      "name": "Mont Avila",
+      "slug": "mont-avila",
+      "status": "active",
+      "location": { "lat": 45.9083, "lng": -74.1639 },
+      "nearestCity": "Piedmont",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 607,
+        "baseElevation": 820,
+        "summitElevation": 1427,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sommetssaintsauveur.com/montagne/mont-avila",
+      "description": "Mont Avila is part of the Sommets Saint-Sauveur group, offering family-oriented skiing with excellent beginner terrain and night skiing. Perfect for families and those learning to ski.",
+      "tags": ["epic-pass", "family-friendly", "beginner-friendly", "night-skiing", "laurentians", "sommets-group"]
+    },
+    {
+      "name": "Mont Gabriel",
+      "slug": "mont-gabriel",
+      "status": "active",
+      "location": { "lat": 45.9417, "lng": -74.1417 },
+      "nearestCity": "Sainte-Adele",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 5,
+        "runsCount": 23,
+        "verticalDrop": 656,
+        "baseElevation": 900,
+        "summitElevation": 1556,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sommetssaintsauveur.com/montagne/mont-gabriel",
+      "description": "Mont Gabriel is a historic Laurentian resort known for its natural character and intermediate terrain. Part of the Sommets Saint-Sauveur group, it offers a more relaxed atmosphere than its busier neighbors.",
+      "tags": ["epic-pass", "historic", "laurentians", "night-skiing", "sommets-group", "intermediate-friendly"]
+    },
+    {
+      "name": "Mont Olympia",
+      "slug": "mont-olympia",
+      "status": "active",
+      "location": { "lat": 45.9472, "lng": -74.1806 },
+      "nearestCity": "Piedmont",
+      "stats": {
+        "skiableAcres": 75,
+        "liftsCount": 4,
+        "runsCount": 22,
+        "verticalDrop": 682,
+        "baseElevation": 850,
+        "summitElevation": 1532,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 27, "intermediate": 45, "advanced": 28, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sommetssaintsauveur.com/montagne/mont-olympia",
+      "description": "Mont Olympia is another Sommets Saint-Sauveur resort offering family skiing with good intermediate terrain. Night skiing and proximity to Montreal make it a convenient Laurentian option.",
+      "tags": ["epic-pass", "family-friendly", "laurentians", "night-skiing", "sommets-group"]
+    },
+    {
+      "name": "Ski Morin Heights",
+      "slug": "morin-heights",
+      "status": "active",
+      "location": { "lat": 45.9167, "lng": -74.2500 },
+      "nearestCity": "Morin-Heights",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 5,
+        "runsCount": 29,
+        "verticalDrop": 656,
+        "baseElevation": 950,
+        "summitElevation": 1606,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sommets.com/morin-heights",
+      "description": "Ski Morin Heights is a family-friendly Laurentian resort with good beginner and intermediate terrain. Night skiing and a welcoming atmosphere make it popular with Montreal families.",
+      "tags": ["family-friendly", "laurentians", "night-skiing", "beginner-friendly", "montreal-accessible"]
+    },
+    {
+      "name": "Sommet Saint-Sauveur",
+      "slug": "sommet-saint-sauveur",
+      "status": "active",
+      "location": { "lat": 45.8917, "lng": -74.1611 },
+      "nearestCity": "Saint-Sauveur",
+      "stats": {
+        "skiableAcres": 130,
+        "liftsCount": 7,
+        "runsCount": 30,
+        "verticalDrop": 640,
+        "baseElevation": 780,
+        "summitElevation": 1420,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 42, "advanced": 33, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sommetssaintsauveur.com",
+      "description": "Sommet Saint-Sauveur is the flagship of the Sommets group, offering terrain parks, night skiing, and a lively village. One of Quebec's most popular weekend destinations for Montreal skiers.",
+      "tags": ["epic-pass", "laurentians", "terrain-parks", "night-skiing", "village", "montreal-accessible"]
+    },
+    {
+      "name": "Vallee Bleue",
+      "slug": "vallee-bleue",
+      "status": "active",
+      "location": { "lat": 45.9333, "lng": -74.3000 },
+      "nearestCity": "Val-Morin",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 4,
+        "runsCount": 18,
+        "verticalDrop": 492,
+        "baseElevation": 1000,
+        "summitElevation": 1492,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.valleebleue.com",
+      "description": "Vallee Bleue is a charming family ski area in the Laurentians offering affordable skiing and night operations. The intimate atmosphere and beginner-friendly terrain make it ideal for families.",
+      "tags": ["family-friendly", "affordable", "laurentians", "night-skiing", "beginner-friendly"]
+    },
+    {
+      "name": "Mont Habitant",
+      "slug": "mont-habitant",
+      "status": "active",
+      "location": { "lat": 45.8833, "lng": -74.1500 },
+      "nearestCity": "Saint-Sauveur",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 610,
+        "baseElevation": 750,
+        "summitElevation": 1360,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.monthabitant.com",
+      "description": "Mont Habitant is a small Laurentian hill offering affordable skiing close to Saint-Sauveur. The relaxed atmosphere and lower prices make it popular with families and budget-conscious skiers.",
+      "tags": ["affordable", "family-friendly", "laurentians", "night-skiing", "budget-friendly"]
+    },
+    {
+      "name": "Ski Chantecler",
+      "slug": "ski-chantecler",
+      "status": "active",
+      "location": { "lat": 45.9583, "lng": -74.0917 },
+      "nearestCity": "Sainte-Adele",
+      "stats": {
+        "skiableAcres": 55,
+        "liftsCount": 3,
+        "runsCount": 22,
+        "verticalDrop": 590,
+        "baseElevation": 800,
+        "summitElevation": 1390,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skichantecler.com",
+      "description": "Ski Chantecler is a historic Laurentian resort connected to the legendary Hotel & Spa Le Chantecler. The intimate ski area offers family skiing with convenient slopeside accommodation.",
+      "tags": ["historic", "family-friendly", "laurentians", "night-skiing", "hotel-connected", "intimate"]
+    },
+    {
+      "name": "Le Relais",
+      "slug": "le-relais",
+      "status": "active",
+      "location": { "lat": 46.9028, "lng": -71.2333 },
+      "nearestCity": "Lac-Beauport",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 5,
+        "runsCount": 32,
+        "verticalDrop": 734,
+        "baseElevation": 850,
+        "summitElevation": 1584,
+        "avgAnnualSnowfall": 165
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skirelais.com",
+      "description": "Le Relais is Quebec City's closest ski area, just 20 minutes from downtown. Family-oriented with excellent night skiing and terrain parks, it's the go-to hill for Quebec City residents.",
+      "tags": ["quebec-city-closest", "family-friendly", "night-skiing", "terrain-parks", "accessible"]
+    },
+    {
+      "name": "Mont Grand-Fonds",
+      "slug": "mont-grand-fonds",
+      "status": "active",
+      "location": { "lat": 47.6139, "lng": -70.1500 },
+      "nearestCity": "La Malbaie",
+      "stats": {
+        "skiableAcres": 130,
+        "liftsCount": 4,
+        "runsCount": 22,
+        "verticalDrop": 1105,
+        "baseElevation": 600,
+        "summitElevation": 1705,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montgrandfonds.com",
+      "description": "Mont Grand-Fonds is a Charlevoix gem offering excellent natural snow and uncrowded slopes. The authentic Quebec atmosphere and beautiful mountain scenery attract skiers seeking a quieter experience.",
+      "tags": ["charlevoix", "natural-snow", "uncrowded", "authentic", "scenic", "backcountry-access"]
+    },
+    {
+      "name": "Mont Edouard",
+      "slug": "mont-edouard",
+      "status": "active",
+      "location": { "lat": 48.2583, "lng": -70.6167 },
+      "nearestCity": "L'Anse-Saint-Jean",
+      "stats": {
+        "skiableAcres": 227,
+        "liftsCount": 4,
+        "runsCount": 35,
+        "verticalDrop": 1476,
+        "baseElevation": 500,
+        "summitElevation": 1976,
+        "avgAnnualSnowfall": 236
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montedouard.com",
+      "description": "Mont Edouard sits in the heart of the Saguenay Fjord region, offering significant vertical and abundant natural snow. The remote location and spectacular scenery provide a true wilderness skiing experience.",
+      "tags": ["saguenay-fjord", "high-vertical", "natural-snow", "wilderness", "scenic", "remote"]
+    },
+    {
+      "name": "Valinouet",
+      "slug": "valinouet",
+      "status": "active",
+      "location": { "lat": 48.8000, "lng": -71.0333 },
+      "nearestCity": "Saguenay",
+      "stats": {
+        "skiableAcres": 150,
+        "liftsCount": 3,
+        "runsCount": 27,
+        "verticalDrop": 1050,
+        "baseElevation": 1200,
+        "summitElevation": 2250,
+        "avgAnnualSnowfall": 275
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.valinouet.qc.ca",
+      "description": "Valinouet is Quebec's northernmost major ski area, receiving exceptional snowfall in the Saguenay-Lac-Saint-Jean region. The high base elevation and cold temperatures preserve excellent snow conditions.",
+      "tags": ["northernmost-quebec", "exceptional-snowfall", "saguenay-region", "cold-smoke", "high-elevation"]
+    },
+    {
+      "name": "Mont Comi",
+      "slug": "mont-comi",
+      "status": "active",
+      "location": { "lat": 48.6500, "lng": -68.1667 },
+      "nearestCity": "Saint-Donat",
+      "stats": {
+        "skiableAcres": 110,
+        "liftsCount": 3,
+        "runsCount": 25,
+        "verticalDrop": 984,
+        "baseElevation": 700,
+        "summitElevation": 1684,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montcomi.ca",
+      "description": "Mont Comi serves the Bas-Saint-Laurent region, offering the largest ski area east of Quebec City. Good natural snowfall and friendly atmosphere make it a regional favorite.",
+      "tags": ["bas-saint-laurent", "largest-eastern-quebec", "night-skiing", "family-friendly", "regional"]
+    },
+    {
+      "name": "Mont Belu",
+      "slug": "mont-belu",
+      "status": "active",
+      "location": { "lat": 48.1667, "lng": -77.2500 },
+      "nearestCity": "Val-d'Or",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 2,
+        "runsCount": 15,
+        "verticalDrop": 400,
+        "baseElevation": 1000,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montbelu.com",
+      "description": "Mont Belu serves the Abitibi-Temiscamingue region in northwestern Quebec. This community hill provides affordable family skiing for the mining communities of the region.",
+      "tags": ["abitibi", "community-run", "family-friendly", "affordable", "night-skiing", "northwestern-quebec"]
+    },
+    {
+      "name": "Mont Lac-Vert",
+      "slug": "mont-lac-vert",
+      "status": "active",
+      "location": { "lat": 48.4667, "lng": -71.8000 },
+      "nearestCity": "Hebertville",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 500,
+        "baseElevation": 900,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montlacvert.com",
+      "description": "Mont Lac-Vert is a family ski area in the Lac-Saint-Jean region, offering affordable skiing with night operations. The community atmosphere makes it popular with local families.",
+      "tags": ["lac-saint-jean", "family-friendly", "affordable", "night-skiing", "community"]
+    },
+    {
+      "name": "Mont Fortin",
+      "slug": "mont-fortin",
+      "status": "active",
+      "location": { "lat": 48.0667, "lng": -70.9333 },
+      "nearestCity": "Jonquiere",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 3,
+        "runsCount": 18,
+        "verticalDrop": 480,
+        "baseElevation": 800,
+        "summitElevation": 1280,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montfortin.com",
+      "description": "Mont Fortin is Saguenay's local ski hill, serving Jonquiere and surrounding communities. Night skiing and terrain parks attract local families and younger riders.",
+      "tags": ["saguenay", "local-hill", "night-skiing", "terrain-parks", "family-friendly"]
+    },
+    {
+      "name": "Mont Rigaud",
+      "slug": "mont-rigaud",
+      "status": "active",
+      "location": { "lat": 45.4833, "lng": -74.3000 },
+      "nearestCity": "Rigaud",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 3,
+        "runsCount": 14,
+        "verticalDrop": 450,
+        "baseElevation": 150,
+        "summitElevation": 600,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montrigaud.com",
+      "description": "Mont Rigaud is west of Montreal, offering convenient access for families in the West Island and Vaudreuil-Soulanges. Night skiing and beginner programs make it a popular learn-to-ski destination.",
+      "tags": ["west-montreal", "beginner-friendly", "family-friendly", "night-skiing", "accessible"]
+    },
+    {
+      "name": "Belle Neige",
+      "slug": "belle-neige",
+      "status": "active",
+      "location": { "lat": 46.0833, "lng": -74.6000 },
+      "nearestCity": "Val-Morin",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 2,
+        "runsCount": 15,
+        "verticalDrop": 380,
+        "baseElevation": 950,
+        "summitElevation": 1330,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.belleneige.com",
+      "description": "Belle Neige is a small family ski area in the Laurentians, offering affordable skiing with a focus on beginners and families. The intimate atmosphere provides a stress-free learning environment.",
+      "tags": ["family-friendly", "beginner-friendly", "laurentians", "affordable", "intimate"]
+    },
+    {
+      "name": "Ski La Reserve",
+      "slug": "ski-la-reserve",
+      "status": "active",
+      "location": { "lat": 46.1000, "lng": -74.5167 },
+      "nearestCity": "Saint-Donat",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 20,
+        "verticalDrop": 550,
+        "baseElevation": 1200,
+        "summitElevation": 1750,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skilareserve.com",
+      "description": "Ski La Reserve is located in Saint-Donat, offering family skiing in the heart of the Laurentians. The quieter atmosphere and natural setting attract families seeking a relaxed experience.",
+      "tags": ["laurentians", "family-friendly", "night-skiing", "saint-donat", "relaxed"]
+    },
+    {
+      "name": "Mont Gleason",
+      "slug": "mont-gleason",
+      "status": "active",
+      "location": { "lat": 45.3667, "lng": -73.0667 },
+      "nearestCity": "Saint-Hyacinthe",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 285,
+        "baseElevation": 100,
+        "summitElevation": 385,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skigleason.com",
+      "description": "Mont Gleason is a small hill in the Monteregie region, providing accessible skiing for communities south of Montreal. Night skiing and terrain parks serve the local population.",
+      "tags": ["monteregie", "local-hill", "night-skiing", "terrain-parks", "accessible"]
+    },
+    {
+      "name": "Station Mont Kanasuta",
+      "slug": "mont-kanasuta",
+      "status": "active",
+      "location": { "lat": 48.2333, "lng": -79.4500 },
+      "nearestCity": "Rouyn-Noranda",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 2,
+        "runsCount": 16,
+        "verticalDrop": 430,
+        "baseElevation": 1000,
+        "summitElevation": 1430,
+        "avgAnnualSnowfall": 170
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montkanasuta.com",
+      "description": "Mont Kanasuta serves the Abitibi-Temiscamingue region near Rouyn-Noranda. This community ski area provides winter recreation for the northwestern Quebec mining communities.",
+      "tags": ["abitibi", "rouyn-noranda", "community-run", "night-skiing", "family-friendly"]
+    },
+    {
+      "name": "Mont Video",
+      "slug": "mont-video",
+      "status": "active",
+      "location": { "lat": 45.9333, "lng": -73.5667 },
+      "nearestCity": "Barkmere",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 2,
+        "runsCount": 10,
+        "verticalDrop": 350,
+        "baseElevation": 850,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montvideo.ca",
+      "description": "Mont Video is a small community ski area north of Montreal, offering affordable family skiing. The intimate setting and friendly atmosphere make it ideal for learning to ski.",
+      "tags": ["community-run", "family-friendly", "beginner-friendly", "affordable", "intimate"]
+    },
+    {
+      "name": "Ski Saint-Bruno",
+      "slug": "ski-saint-bruno",
+      "status": "active",
+      "location": { "lat": 45.5333, "lng": -73.3167 },
+      "nearestCity": "Saint-Bruno-de-Montarville",
+      "stats": {
+        "skiableAcres": 86,
+        "liftsCount": 6,
+        "runsCount": 15,
+        "verticalDrop": 443,
+        "baseElevation": 115,
+        "summitElevation": 558,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisaintbruno.ca",
+      "description": "Ski Saint-Bruno is the closest ski area to downtown Montreal, located in Mont-Saint-Bruno National Park. Excellent for beginners and families, it offers convenient access and extensive night skiing.",
+      "tags": ["montreal-closest", "national-park", "beginner-friendly", "night-skiing", "accessible"]
+    },
+    {
+      "name": "Mont Cascades",
+      "slug": "mont-cascades",
+      "status": "active",
+      "location": { "lat": 45.6500, "lng": -75.7167 },
+      "nearestCity": "Cantley",
+      "stats": {
+        "skiableAcres": 75,
+        "liftsCount": 4,
+        "runsCount": 25,
+        "verticalDrop": 620,
+        "baseElevation": 400,
+        "summitElevation": 1020,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montcascades.ca",
+      "description": "Mont Cascades is in the Gatineau Hills serving both Ottawa and Gatineau. The versatile resort offers skiing, waterpark, and golf, making it a year-round family destination.",
+      "tags": ["gatineau-hills", "ottawa-area", "night-skiing", "terrain-parks", "year-round", "family-friendly"]
+    },
+    {
+      "name": "Edelweiss Valley",
+      "slug": "edelweiss-valley",
+      "status": "active",
+      "location": { "lat": 45.6333, "lng": -75.7833 },
+      "nearestCity": "Wakefield",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 5,
+        "runsCount": 26,
+        "verticalDrop": 656,
+        "baseElevation": 450,
+        "summitElevation": 1106,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiedelweiss.com",
+      "description": "Edelweiss Valley is in the Gatineau Hills near Wakefield, offering varied terrain for the Ottawa-Gatineau region. Night skiing and terrain parks attract a diverse crowd.",
+      "tags": ["gatineau-hills", "ottawa-area", "night-skiing", "terrain-parks", "wakefield"]
+    },
+    {
+      "name": "Camp Fortune",
+      "slug": "camp-fortune",
+      "status": "active",
+      "location": { "lat": 45.5167, "lng": -75.8333 },
+      "nearestCity": "Chelsea",
+      "stats": {
+        "skiableAcres": 150,
+        "liftsCount": 6,
+        "runsCount": 25,
+        "verticalDrop": 600,
+        "baseElevation": 460,
+        "summitElevation": 1060,
+        "avgAnnualSnowfall": 155
+      },
+      "terrain": { "beginner": 28, "intermediate": 44, "advanced": 28, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.campfortune.com",
+      "description": "Camp Fortune is Ottawa's closest ski area, located in Gatineau Park. The historic resort offers convenient skiing for the National Capital Region with night operations and terrain parks.",
+      "tags": ["gatineau-park", "ottawa-closest", "night-skiing", "terrain-parks", "historic", "national-capital"]
+    },
+    {
+      "name": "Vorlage",
+      "slug": "vorlage",
+      "status": "active",
+      "location": { "lat": 45.6167, "lng": -75.8000 },
+      "nearestCity": "Wakefield",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 3,
+        "runsCount": 14,
+        "verticalDrop": 575,
+        "baseElevation": 450,
+        "summitElevation": 1025,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.vorlage.ca",
+      "description": "Vorlage is a small Gatineau Hills ski area known for challenging terrain and an expert-friendly pitch. The intimate setting and night skiing attract dedicated skiers from the Ottawa region.",
+      "tags": ["gatineau-hills", "challenging-terrain", "night-skiing", "expert-friendly", "intimate"]
+    },
+    {
+      "name": "Mont Sainte-Marie",
+      "slug": "mont-sainte-marie",
+      "status": "active",
+      "location": { "lat": 46.2500, "lng": -76.0167 },
+      "nearestCity": "Lac-Sainte-Marie",
+      "stats": {
+        "skiableAcres": 180,
+        "liftsCount": 5,
+        "runsCount": 30,
+        "verticalDrop": 1250,
+        "baseElevation": 700,
+        "summitElevation": 1950,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 22, "intermediate": 40, "advanced": 38, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montstemarie.com",
+      "description": "Mont Sainte-Marie offers the highest vertical in the Ottawa-Gatineau region with excellent natural snow. The Outaouais resort attracts skiers seeking more challenging terrain than local hills provide.",
+      "tags": ["highest-vertical-ottawa-region", "outaouais", "natural-snow", "challenging-terrain", "backcountry-access"]
+    },
+    {
+      "name": "Mont Garceau",
+      "slug": "mont-garceau",
+      "status": "active",
+      "location": { "lat": 46.3833, "lng": -74.7667 },
+      "nearestCity": "Saint-Donat",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 3,
+        "runsCount": 17,
+        "verticalDrop": 610,
+        "baseElevation": 1300,
+        "summitElevation": 1910,
+        "avgAnnualSnowfall": 175
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montgarceau.com",
+      "description": "Mont Garceau is located in the Lanaudiere region, offering family skiing with night operations. The accessible location and varied terrain make it popular with families from the north shore of Montreal.",
+      "tags": ["lanaudiere", "family-friendly", "night-skiing", "north-shore-montreal"]
+    },
+    {
+      "name": "Val Saint-Come",
+      "slug": "val-saint-come",
+      "status": "active",
+      "location": { "lat": 46.2667, "lng": -73.8167 },
+      "nearestCity": "Saint-Come",
+      "stats": {
+        "skiableAcres": 165,
+        "liftsCount": 5,
+        "runsCount": 39,
+        "verticalDrop": 1025,
+        "baseElevation": 850,
+        "summitElevation": 1875,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.valsaintcome.com",
+      "description": "Val Saint-Come is the Lanaudiere region's largest ski area, known for excellent glade skiing and natural snow. The challenging terrain and uncrowded slopes attract Montreal skiers seeking adventure.",
+      "tags": ["lanaudiere", "glade-skiing", "natural-snow", "uncrowded", "night-skiing", "challenging"]
+    },
+    {
+      "name": "Ski Montcalm",
+      "slug": "ski-montcalm",
+      "status": "active",
+      "location": { "lat": 45.9833, "lng": -73.6500 },
+      "nearestCity": "Rawdon",
+      "stats": {
+        "skiableAcres": 55,
+        "liftsCount": 4,
+        "runsCount": 20,
+        "verticalDrop": 400,
+        "baseElevation": 700,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skimontcalm.com",
+      "description": "Ski Montcalm is a family ski area in Lanaudiere offering affordable skiing close to Montreal's north shore. Night skiing and a friendly atmosphere make it popular with families.",
+      "tags": ["lanaudiere", "family-friendly", "affordable", "night-skiing", "north-shore-montreal"]
+    },
+    {
+      "name": "Massif du Sud",
+      "slug": "massif-du-sud",
+      "status": "active",
+      "location": { "lat": 46.5333, "lng": -70.4000 },
+      "nearestCity": "Saint-Philemon",
+      "stats": {
+        "skiableAcres": 115,
+        "liftsCount": 3,
+        "runsCount": 36,
+        "verticalDrop": 1378,
+        "baseElevation": 700,
+        "summitElevation": 2078,
+        "avgAnnualSnowfall": 236
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.massifdusud.com",
+      "description": "Massif du Sud is hidden in the Appalachian Mountains south of Quebec City, offering exceptional glade skiing and natural snow. The remote location and challenging terrain attract adventurous skiers.",
+      "tags": ["appalachian", "glade-skiing", "natural-snow", "challenging-terrain", "remote", "backcountry-access"]
+    },
+    {
+      "name": "Mont Orignal",
+      "slug": "mont-orignal",
+      "status": "active",
+      "location": { "lat": 46.4333, "lng": -70.3333 },
+      "nearestCity": "Lac-Etchemin",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 3,
+        "runsCount": 25,
+        "verticalDrop": 900,
+        "baseElevation": 600,
+        "summitElevation": 1500,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 28, "intermediate": 42, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montorignal.com",
+      "description": "Mont Orignal serves the Chaudiere-Appalaches region with varied terrain and night skiing. The family-friendly resort provides accessible skiing for communities south of Quebec City.",
+      "tags": ["chaudiere-appalaches", "family-friendly", "night-skiing", "south-of-quebec-city"]
+    },
+    {
+      "name": "Gallix",
+      "slug": "gallix",
+      "status": "active",
+      "location": { "lat": 50.2500, "lng": -66.0833 },
+      "nearestCity": "Sept-Iles",
+      "stats": {
+        "skiableAcres": 55,
+        "liftsCount": 2,
+        "runsCount": 15,
+        "verticalDrop": 465,
+        "baseElevation": 400,
+        "summitElevation": 865,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.gallix.com",
+      "description": "Gallix is Quebec's northernmost ski area on the North Shore (Cote-Nord), serving Sept-Iles and remote northern communities. Heavy snowfall and a long season compensate for the remote location.",
+      "tags": ["northernmost-lift-served", "cote-nord", "sept-iles", "heavy-snowfall", "remote", "long-season"]
+    },
+
+    {
+      "name": "Gray Rocks",
+      "slug": "gray-rocks",
+      "status": "defunct",
+      "notes": "Historic Laurentian resort and ski school closed in 2012, known for pioneering North American ski instruction",
+      "yearsOperated": "1930s-2012",
+      "location": { "lat": 46.07, "lng": -74.58 },
+      "tags": ["historic", "laurentians", "pioneering-ski-school", "mont-tremblant-area"]
+    },
+    {
+      "name": "Mont Castor",
+      "slug": "mont-castor",
+      "status": "defunct",
+      "notes": "Former ski area in the Laurentians, closed due to financial difficulties",
+      "yearsOperated": "1970s-2000s",
+      "location": { "lat": 46.0, "lng": -74.4 },
+      "tags": ["historic", "laurentians", "closed"]
+    },
+    {
+      "name": "Mont Christie",
+      "slug": "mont-christie",
+      "status": "defunct",
+      "notes": "Former Laurentian ski area near Sainte-Agathe",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 46.05, "lng": -74.3 },
+      "tags": ["historic", "laurentians", "sainte-agathe"]
+    },
+    {
+      "name": "La Marquise",
+      "slug": "la-marquise",
+      "status": "defunct",
+      "notes": "Former Eastern Townships ski area",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 45.2, "lng": -72.1 },
+      "tags": ["historic", "eastern-townships", "closed"]
+    },
+    {
+      "name": "Mont Radar",
+      "slug": "mont-radar",
+      "status": "defunct",
+      "notes": "Former military/community ski area in the Laurentians",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 46.2, "lng": -74.2 },
+      "tags": ["historic", "laurentians", "military-history"]
+    },
+    {
+      "name": "Mont Glen",
+      "slug": "mont-glen",
+      "status": "defunct",
+      "notes": "Former Eastern Townships ski area that closed and was redeveloped",
+      "yearsOperated": "1960s-2000s",
+      "location": { "lat": 45.15, "lng": -72.5 },
+      "tags": ["historic", "eastern-townships", "redeveloped"]
+    },
+    {
+      "name": "Val-Neigette",
+      "slug": "val-neigette",
+      "status": "defunct",
+      "notes": "Former ski area in the Bas-Saint-Laurent region",
+      "yearsOperated": "1970s-1990s",
+      "location": { "lat": 48.5, "lng": -68.3 },
+      "tags": ["historic", "bas-saint-laurent", "closed"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites", "maneige.com"],
+    "snapshotAt": "2025-11-27T01:00:00Z"
+  }
+}

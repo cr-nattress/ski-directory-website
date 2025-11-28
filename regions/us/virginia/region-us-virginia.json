@@ -1,0 +1,130 @@
+{
+  "country": "US",
+  "state": "Virginia",
+  "resorts": [
+    {
+      "name": "Wintergreen Resort",
+      "slug": "wintergreen",
+      "status": "active",
+      "location": { "lat": 37.9350, "lng": -78.9339 },
+      "nearestCity": "Wintergreen",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 6,
+        "runsCount": 26,
+        "verticalDrop": 1003,
+        "baseElevation": 2470,
+        "summitElevation": 3515,
+        "avgAnnualSnowfall": 40
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.wintergreenresort.com",
+      "description": "Wintergreen is Virginia's largest ski resort, located in the Blue Ridge Mountains near Charlottesville. The full-service resort offers skiing, golf, a spa, and real estate, making it a true four-season destination.",
+      "tags": ["largest-virginia", "blue-ridge", "destination-resort", "four-season", "night-skiing", "spa"]
+    },
+    {
+      "name": "The Homestead",
+      "slug": "homestead",
+      "status": "active",
+      "location": { "lat": 37.9969, "lng": -79.9669 },
+      "nearestCity": "Hot Springs",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 2,
+        "runsCount": 9,
+        "verticalDrop": 700,
+        "baseElevation": 2400,
+        "summitElevation": 3100,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 35, "intermediate": 50, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.thehomestead.com",
+      "description": "The Homestead is a historic luxury resort dating to 1766, offering small-scale skiing as part of its winter amenities. The resort features natural hot springs, fine dining, and classic Virginia hospitality alongside skiing on its private slopes.",
+      "tags": ["historic-resort", "luxury", "hot-springs", "resort-skiing", "spa"]
+    },
+    {
+      "name": "Massanutten Resort",
+      "slug": "massanutten",
+      "status": "active",
+      "location": { "lat": 38.4094, "lng": -78.7475 },
+      "nearestCity": "McGaheysville",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 7,
+        "runsCount": 14,
+        "verticalDrop": 1110,
+        "baseElevation": 1650,
+        "summitElevation": 2760,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.massresort.com",
+      "description": "Massanutten is a full-service resort in the Shenandoah Valley, offering skiing along with an indoor waterpark, golf, and timeshare accommodations. The resort attracts visitors from the DC metro area and Richmond seeking a complete mountain vacation.",
+      "tags": ["indy-pass", "shenandoah-valley", "waterpark", "dc-accessible", "night-skiing", "destination-resort"]
+    },
+    {
+      "name": "Bryce Resort",
+      "slug": "bryce-resort",
+      "status": "active",
+      "location": { "lat": 38.8111, "lng": -78.8556 },
+      "nearestCity": "Basye",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 6,
+        "runsCount": 8,
+        "verticalDrop": 500,
+        "baseElevation": 1600,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 30
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bryceresort.com",
+      "description": "Bryce is a family-friendly resort in the Shenandoah Valley, offering affordable skiing close to the DC metro area. The resort focuses on learn-to-ski programs and provides year-round recreation including golf and zip lines.",
+      "tags": ["family-friendly", "shenandoah-valley", "dc-close", "affordable", "night-skiing"]
+    },
+
+    {
+      "name": "Cascade Mountain",
+      "slug": "cascade-mountain",
+      "status": "defunct",
+      "location": { "lat": 37.6500, "lng": -78.9000 },
+      "nearestCity": "Fancy Gap",
+      "yearClosed": 1999,
+      "description": "Cascade Mountain was a ski area on the Blue Ridge Parkway near Fancy Gap that operated until 1999. The area served the Roanoke market before closing due to inconsistent winters and economic challenges.",
+      "tags": ["closed", "blue-ridge-parkway", "roanoke-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

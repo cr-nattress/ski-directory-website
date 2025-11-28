@@ -1,0 +1,270 @@
+{
+  "country": "CA",
+  "province": "Saskatchewan",
+  "resorts": [
+    {
+      "name": "Mission Ridge Winter Park",
+      "slug": "mission-ridge",
+      "status": "active",
+      "location": { "lat": 51.0833, "lng": -107.8333 },
+      "nearestCity": "Fort Qu'Appelle",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 4,
+        "runsCount": 20,
+        "verticalDrop": 380,
+        "baseElevation": 1900,
+        "summitElevation": 2280,
+        "avgAnnualSnowfall": 70
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.missionridge.ca",
+      "description": "Mission Ridge is Saskatchewan's largest ski area, located in the scenic Qu'Appelle Valley. The resort offers the most vertical and terrain in the province with excellent snowmaking and a welcoming atmosphere.",
+      "tags": ["largest-saskatchewan", "quappelle-valley", "night-skiing", "destination-resort"]
+    },
+    {
+      "name": "Table Mountain Regional Park",
+      "slug": "table-mountain",
+      "status": "active",
+      "location": { "lat": 52.0500, "lng": -107.6500 },
+      "nearestCity": "North Battleford",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 3,
+        "runsCount": 14,
+        "verticalDrop": 300,
+        "baseElevation": 1800,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 65
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tablemountain.ca",
+      "description": "Table Mountain is a regional park ski area serving North Battleford and west-central Saskatchewan. The area features some of the province's most challenging terrain and year-round recreation.",
+      "tags": ["north-battleford", "regional-park", "night-skiing", "challenging-terrain"]
+    },
+    {
+      "name": "Wapiti Valley Ski Resort",
+      "slug": "wapiti-valley",
+      "status": "active",
+      "location": { "lat": 51.3833, "lng": -105.8000 },
+      "nearestCity": "Swift Current",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 250,
+        "baseElevation": 2200,
+        "summitElevation": 2450,
+        "avgAnnualSnowfall": 55
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.wapitivalley.com",
+      "description": "Wapiti Valley serves southwest Saskatchewan from a location near Swift Current. The family-owned resort offers affordable skiing with good facilities and consistent snow conditions.",
+      "tags": ["swift-current", "family-owned", "night-skiing", "affordable"]
+    },
+    {
+      "name": "Ski Timber Ridge",
+      "slug": "ski-timber-ridge",
+      "status": "active",
+      "location": { "lat": 52.0000, "lng": -104.6500 },
+      "nearestCity": "Prince Albert",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 270,
+        "baseElevation": 1700,
+        "summitElevation": 1970,
+        "avgAnnualSnowfall": 75
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skitimberridge.com",
+      "description": "Ski Timber Ridge serves Prince Albert and north-central Saskatchewan. Located in the transition zone between prairie and boreal forest, the area benefits from excellent natural snow.",
+      "tags": ["prince-albert", "boreal-forest", "night-skiing", "natural-snow"]
+    },
+    {
+      "name": "Duck Mountain Provincial Park",
+      "slug": "duck-mountain",
+      "status": "active",
+      "location": { "lat": 51.8333, "lng": -101.5000 },
+      "nearestCity": "Kamsack",
+      "stats": {
+        "skiableAcres": 20,
+        "liftsCount": 2,
+        "runsCount": 10,
+        "verticalDrop": 200,
+        "baseElevation": 2200,
+        "summitElevation": 2400,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.saskparks.com/duckmountain",
+      "description": "Duck Mountain Provincial Park features skiing in one of Saskatchewan's most scenic wilderness areas. The park straddles the Manitoba border and offers excellent cross-country skiing alongside alpine.",
+      "tags": ["provincial-park", "wilderness", "cross-country", "duck-mountain"]
+    },
+    {
+      "name": "Eb's Ski and Snowboard Trails",
+      "slug": "ebs-trails",
+      "status": "active",
+      "location": { "lat": 52.1333, "lng": -106.6333 },
+      "nearestCity": "Saskatoon",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 8,
+        "verticalDrop": 150,
+        "baseElevation": 1600,
+        "summitElevation": 1750,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.ebstrails.com",
+      "description": "Eb's is a small ski area near Saskatoon offering convenient access for city residents. The area focuses on terrain parks and freestyle riding alongside traditional skiing.",
+      "tags": ["saskatoon", "terrain-parks", "night-skiing", "urban-accessible"]
+    },
+    {
+      "name": "Long Lake Ski Club",
+      "slug": "long-lake",
+      "status": "active",
+      "location": { "lat": 50.4500, "lng": -104.6000 },
+      "nearestCity": "Regina",
+      "stats": {
+        "skiableAcres": 10,
+        "liftsCount": 2,
+        "runsCount": 5,
+        "verticalDrop": 100,
+        "baseElevation": 1850,
+        "summitElevation": 1950,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 40, "intermediate": 50, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.longlakeskiclub.ca",
+      "description": "Long Lake is a member-operated ski club near Regina providing affordable skiing for Saskatchewan's capital city residents. The nonprofit operation focuses on youth development and family skiing.",
+      "tags": ["regina", "ski-club", "nonprofit", "night-skiing"]
+    },
+    {
+      "name": "Little Red River Park",
+      "slug": "little-red-river",
+      "status": "active",
+      "location": { "lat": 53.2500, "lng": -105.7500 },
+      "nearestCity": "Prince Albert",
+      "stats": {
+        "skiableAcres": 8,
+        "liftsCount": 1,
+        "runsCount": 4,
+        "verticalDrop": 80,
+        "baseElevation": 1400,
+        "summitElevation": 1480,
+        "avgAnnualSnowfall": 70
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.citypa.com/littleredriverpark",
+      "description": "Little Red River Park is a city-operated recreation area in Prince Albert offering small-scale skiing alongside cross-country trails. The area is perfect for beginners and families.",
+      "tags": ["city-park", "prince-albert", "beginner-focus", "cross-country"]
+    },
+    {
+      "name": "Optimist Hill",
+      "slug": "optimist-hill",
+      "status": "active",
+      "location": { "lat": 52.1167, "lng": -106.6833 },
+      "nearestCity": "Saskatoon",
+      "stats": {
+        "skiableAcres": 5,
+        "liftsCount": 2,
+        "runsCount": 3,
+        "verticalDrop": 65,
+        "baseElevation": 1600,
+        "summitElevation": 1665,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 60, "intermediate": 35, "advanced": 5, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.optimisthill.ca",
+      "description": "Optimist Hill is a nonprofit ski area within Saskatoon city limits, operated by the Optimist Club. The area provides affordable learn-to-ski programs and youth skiing development.",
+      "tags": ["saskatoon", "nonprofit", "learn-to-ski", "night-skiing", "urban"]
+    },
+
+    {
+      "name": "Blackstrap Ski Hill",
+      "slug": "blackstrap",
+      "status": "defunct",
+      "location": { "lat": 51.7000, "lng": -106.5000 },
+      "nearestCity": "Dundurn",
+      "yearClosed": 2010,
+      "description": "Blackstrap was a ski area at Blackstrap Provincial Park south of Saskatoon. The area closed around 2010 due to maintenance costs and climate challenges.",
+      "tags": ["closed", "provincial-park", "saskatoon-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

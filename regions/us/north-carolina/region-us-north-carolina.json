@@ -1,0 +1,216 @@
+{
+  "country": "US",
+  "state": "North Carolina",
+  "resorts": [
+    {
+      "name": "Sugar Mountain Resort",
+      "slug": "sugar-mountain",
+      "status": "active",
+      "location": { "lat": 36.1172, "lng": -81.8694 },
+      "nearestCity": "Banner Elk",
+      "stats": {
+        "skiableAcres": 125,
+        "liftsCount": 8,
+        "runsCount": 21,
+        "verticalDrop": 1200,
+        "baseElevation": 4100,
+        "summitElevation": 5300,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisugar.com",
+      "description": "Sugar Mountain is North Carolina's largest ski resort, featuring the highest vertical drop in the Southeast. The resort is the anchor of the Banner Elk ski community and attracts skiers from across the Southeast looking for the best terrain in the region.",
+      "tags": ["largest-north-carolina", "banner-elk", "highest-vertical-southeast", "night-skiing"]
+    },
+    {
+      "name": "Appalachian Ski Mountain",
+      "slug": "appalachian-ski",
+      "status": "active",
+      "location": { "lat": 36.0944, "lng": -81.6461 },
+      "nearestCity": "Blowing Rock",
+      "stats": {
+        "skiableAcres": 55,
+        "liftsCount": 6,
+        "runsCount": 12,
+        "verticalDrop": 365,
+        "baseElevation": 3800,
+        "summitElevation": 4165,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.appskimtn.com",
+      "description": "Appalachian Ski Mountain is a family-owned resort near Blowing Rock known for its excellent learn-to-ski programs and friendly atmosphere. The French-Swiss Ski College has taught generations of Southeastern skiers since 1962.",
+      "tags": ["family-owned", "french-swiss-ski-college", "blowing-rock", "learn-to-ski", "night-skiing"]
+    },
+    {
+      "name": "Beech Mountain Resort",
+      "slug": "beech-mountain",
+      "status": "active",
+      "location": { "lat": 36.1858, "lng": -81.9061 },
+      "nearestCity": "Beech Mountain",
+      "stats": {
+        "skiableAcres": 95,
+        "liftsCount": 8,
+        "runsCount": 17,
+        "verticalDrop": 830,
+        "baseElevation": 4675,
+        "summitElevation": 5505,
+        "avgAnnualSnowfall": 85
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.beechmountainresort.com",
+      "description": "Beech Mountain is the highest ski area in the Eastern United States at 5,505 feet, offering the most reliable natural snow in the Southeast. The resort anchors the town of Beech Mountain, the highest incorporated town east of the Rockies.",
+      "tags": ["highest-eastern-us", "beech-mountain", "most-reliable-snow", "night-skiing"]
+    },
+    {
+      "name": "Cataloochee Ski Area",
+      "slug": "cataloochee",
+      "status": "active",
+      "location": { "lat": 35.5217, "lng": -83.0936 },
+      "nearestCity": "Maggie Valley",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 5,
+        "runsCount": 18,
+        "verticalDrop": 740,
+        "baseElevation": 4600,
+        "summitElevation": 5340,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cataloochee.com",
+      "description": "Cataloochee is North Carolina's first ski area, opening in 1961 in the Great Smoky Mountains near Maggie Valley. The family-owned resort offers accessible skiing with views into the Smokies and convenient access from I-40.",
+      "tags": ["first-in-nc", "great-smokies", "maggie-valley", "family-owned", "night-skiing"]
+    },
+    {
+      "name": "Wolf Ridge Ski Resort",
+      "slug": "wolf-ridge",
+      "status": "active",
+      "location": { "lat": 35.5133, "lng": "-82.8278" },
+      "nearestCity": "Mars Hill",
+      "stats": {
+        "skiableAcres": 54,
+        "liftsCount": 4,
+        "runsCount": 23,
+        "verticalDrop": 700,
+        "baseElevation": 4000,
+        "summitElevation": 4700,
+        "avgAnnualSnowfall": 55
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiwolfridge.com",
+      "description": "Wolf Ridge is located near Asheville, offering convenient skiing for the Western North Carolina region. The resort is known for some of the most challenging terrain in the state and a welcoming atmosphere for all skill levels.",
+      "tags": ["asheville-area", "mars-hill", "challenging-terrain", "night-skiing"]
+    },
+    {
+      "name": "Sapphire Valley Ski Area",
+      "slug": "sapphire-valley",
+      "status": "active",
+      "location": { "lat": 35.1044, "lng": -82.9922 },
+      "nearestCity": "Sapphire",
+      "stats": {
+        "skiableAcres": 12,
+        "liftsCount": 2,
+        "runsCount": 4,
+        "verticalDrop": 200,
+        "baseElevation": 3250,
+        "summitElevation": 3450,
+        "avgAnnualSnowfall": 40
+      },
+      "terrain": { "beginner": 60, "intermediate": 40, "advanced": 0, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sapphirevalley.com",
+      "description": "Sapphire Valley is a small resort ski area serving the Cashiers and Highlands communities in the Blue Ridge Mountains. The area focuses on beginners and families staying at the resort, offering a relaxed introduction to skiing.",
+      "tags": ["resort-ski-area", "beginner-only", "cashiers", "blue-ridge"]
+    },
+
+    {
+      "name": "Ski Hawksnest",
+      "slug": "hawksnest",
+      "status": "defunct",
+      "location": { "lat": 36.1800, "lng": -81.8200 },
+      "nearestCity": "Banner Elk",
+      "yearClosed": 2012,
+      "description": "Hawksnest was a ski area near Banner Elk that operated until 2012 when it converted to a tubing-only operation. The resort now focuses exclusively on snow tubing and zipline tours.",
+      "tags": ["closed", "now-tubing-only", "banner-elk"]
+    },
+    {
+      "name": "Ski Scaly",
+      "slug": "ski-scaly",
+      "status": "defunct",
+      "location": { "lat": 35.0100, "lng": -83.3200 },
+      "nearestCity": "Scaly Mountain",
+      "yearClosed": 2005,
+      "description": "Ski Scaly was a small ski area near the Georgia border that operated until 2005. The area served the Highlands community and visitors from Georgia before closing.",
+      "tags": ["closed", "georgia-border", "scaly-mountain"]
+    },
+    {
+      "name": "Hound Ears Club",
+      "slug": "hound-ears",
+      "status": "defunct",
+      "location": { "lat": 36.1500, "lng": -81.7300 },
+      "nearestCity": "Blowing Rock",
+      "yearClosed": 1995,
+      "description": "Hound Ears Club operated a small private ski slope for club members near Blowing Rock. The ski operations ended in the mid-1990s, though the club continues as a golf resort.",
+      "tags": ["closed", "private-club", "blowing-rock"]
+    },
+    {
+      "name": "High Meadows",
+      "slug": "high-meadows",
+      "status": "defunct",
+      "location": { "lat": 36.2000, "lng": -81.9500 },
+      "nearestCity": "Banner Elk",
+      "yearClosed": 1980,
+      "description": "High Meadows was a small ski area in the Banner Elk area that operated through the 1970s. The area closed due to competition from larger neighboring resorts.",
+      "tags": ["closed", "banner-elk-area", "small-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

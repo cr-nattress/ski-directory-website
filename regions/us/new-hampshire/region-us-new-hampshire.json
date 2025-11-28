@@ -1,0 +1,674 @@
+{
+  "country": "US",
+  "state": "New Hampshire",
+  "resorts": [
+    {
+      "name": "Loon Mountain",
+      "slug": "loon-mountain",
+      "status": "active",
+      "location": { "lat": 44.0364, "lng": -71.6214 },
+      "nearestCity": "Lincoln",
+      "stats": {
+        "skiableAcres": 370,
+        "liftsCount": 11,
+        "runsCount": 61,
+        "verticalDrop": 2100,
+        "baseElevation": 950,
+        "summitElevation": 3050,
+        "avgAnnualSnowfall": 128
+      },
+      "terrain": { "beginner": 20, "intermediate": 60, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.loonmtn.com",
+      "description": "Loon Mountain is one of New Hampshire's largest ski resorts, located in the White Mountains along the Kancamagus Highway. Known for its excellent snowmaking, family-friendly atmosphere, and scenic gondola rides, Loon offers a complete four-season resort experience.",
+      "tags": ["epic-pass", "white-mountains", "family-friendly", "gondola", "four-seasons"]
+    },
+    {
+      "name": "Cannon Mountain",
+      "slug": "cannon-mountain",
+      "status": "active",
+      "location": { "lat": 44.1567, "lng": -71.6989 },
+      "nearestCity": "Franconia",
+      "stats": {
+        "skiableAcres": 285,
+        "liftsCount": 11,
+        "runsCount": 97,
+        "verticalDrop": 2180,
+        "baseElevation": 1900,
+        "summitElevation": 4080,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 18, "intermediate": 47, "advanced": 23, "expert": 12 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cannonmt.com",
+      "description": "Cannon Mountain is a state-owned ski area in Franconia Notch State Park, famous for being the site of America's first aerial tramway (1938). Known for challenging terrain, natural snow, and authentic New England skiing, Cannon offers some of the most demanding expert terrain in the East.",
+      "tags": ["state-owned", "historic", "aerial-tramway", "expert-terrain", "franconia-notch"]
+    },
+    {
+      "name": "Bretton Woods",
+      "slug": "bretton-woods",
+      "status": "active",
+      "location": { "lat": 44.2578, "lng": -71.4408 },
+      "nearestCity": "Bretton Woods",
+      "stats": {
+        "skiableAcres": 464,
+        "liftsCount": 10,
+        "runsCount": 63,
+        "verticalDrop": 1500,
+        "baseElevation": 1600,
+        "summitElevation": 3100,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 29, "intermediate": 42, "advanced": 23, "expert": 6 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.brettonwoods.com",
+      "description": "Bretton Woods is New Hampshire's largest ski area by acreage, located at the historic Omni Mount Washington Resort. With spectacular views of the Presidential Range, excellent grooming, and a luxury resort atmosphere, it's known as one of the East's premier destination resorts.",
+      "tags": ["ikon-pass", "largest-nh", "luxury-resort", "mount-washington-views", "omni-hotel"]
+    },
+    {
+      "name": "Waterville Valley Resort",
+      "slug": "waterville-valley",
+      "status": "active",
+      "location": { "lat": 43.9506, "lng": -71.5278 },
+      "nearestCity": "Waterville Valley",
+      "stats": {
+        "skiableAcres": 225,
+        "liftsCount": 11,
+        "runsCount": 52,
+        "verticalDrop": 2020,
+        "baseElevation": 1880,
+        "summitElevation": 3900,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 20, "intermediate": 60, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.waterville.com",
+      "description": "Waterville Valley is a self-contained resort village surrounded by the White Mountain National Forest. Founded by former Olympian Tom Corcoran, it's known for its freestyle terrain, family atmosphere, and pedestrian village with lodging, dining, and recreation all within walking distance.",
+      "tags": ["epic-pass", "village-resort", "freestyle-focus", "family-friendly", "olympic-history"]
+    },
+    {
+      "name": "Wildcat Mountain",
+      "slug": "wildcat-mountain",
+      "status": "active",
+      "location": { "lat": 44.2631, "lng": -71.2392 },
+      "nearestCity": "Jackson",
+      "stats": {
+        "skiableAcres": 225,
+        "liftsCount": 5,
+        "runsCount": 48,
+        "verticalDrop": 2112,
+        "baseElevation": 2000,
+        "summitElevation": 4062,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiwildcat.com",
+      "description": "Wildcat Mountain offers some of the best views in New England with direct sightlines to Mount Washington. Located in Pinkham Notch, it's known for natural snow, challenging terrain, and an authentic ski experience with views of Tuckerman Ravine across the valley.",
+      "tags": ["epic-pass", "pinkham-notch", "mt-washington-views", "natural-snow", "challenging"]
+    },
+    {
+      "name": "Attitash Mountain Resort",
+      "slug": "attitash-mountain",
+      "status": "active",
+      "location": { "lat": 44.0833, "lng": -71.2283 },
+      "nearestCity": "Bartlett",
+      "stats": {
+        "skiableAcres": 311,
+        "liftsCount": 11,
+        "runsCount": 68,
+        "verticalDrop": 1750,
+        "baseElevation": 600,
+        "summitElevation": 2350,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 21, "intermediate": 47, "advanced": 25, "expert": 7 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.attitash.com",
+      "description": "Attitash Mountain Resort encompasses two interconnected peaks - Attitash and Bear Peak - offering diverse terrain for all abilities. Located in the Mount Washington Valley, it features excellent family facilities and serves as a year-round recreation destination.",
+      "tags": ["epic-pass", "two-peaks", "mount-washington-valley", "family-friendly", "alpine-slide"]
+    },
+    {
+      "name": "Cranmore Mountain Resort",
+      "slug": "cranmore-mountain",
+      "status": "active",
+      "location": { "lat": 44.0569, "lng": -71.1122 },
+      "nearestCity": "North Conway",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 9,
+        "runsCount": 56,
+        "verticalDrop": 1200,
+        "baseElevation": 575,
+        "summitElevation": 1700,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 24, "intermediate": 48, "advanced": 22, "expert": 6 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cranmore.com",
+      "description": "Cranmore Mountain Resort is a historic ski area in North Conway, founded in 1937. Once famous for its unique Skimobile lift, Cranmore is now known as a family-friendly mountain with proximity to outlets, restaurants, and attractions in the Mount Washington Valley.",
+      "tags": ["indy-pass", "historic", "north-conway", "family-friendly", "night-skiing", "skimobile-history"]
+    },
+    {
+      "name": "Gunstock Mountain Resort",
+      "slug": "gunstock-mountain",
+      "status": "active",
+      "location": { "lat": 43.5522, "lng": -71.3633 },
+      "nearestCity": "Gilford",
+      "stats": {
+        "skiableAcres": 220,
+        "liftsCount": 7,
+        "runsCount": 55,
+        "verticalDrop": 1400,
+        "baseElevation": 900,
+        "summitElevation": 2300,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 15, "intermediate": 45, "advanced": 30, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.gunstock.com",
+      "description": "Gunstock Mountain Resort overlooks Lake Winnipesaukee in the Lakes Region of New Hampshire. County-owned since 1937, it offers diverse terrain, excellent night skiing, and a full adventure park with zip lines and mountain coasters year-round.",
+      "tags": ["county-owned", "lakes-region", "lake-winnipesaukee", "night-skiing", "adventure-park"]
+    },
+    {
+      "name": "Ragged Mountain Resort",
+      "slug": "ragged-mountain",
+      "status": "active",
+      "location": { "lat": 43.4722, "lng": -71.8386 },
+      "nearestCity": "Danbury",
+      "stats": {
+        "skiableAcres": 250,
+        "liftsCount": 6,
+        "runsCount": 57,
+        "verticalDrop": 1250,
+        "baseElevation": 850,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.raggedmountainresort.com",
+      "description": "Ragged Mountain Resort is a family-owned ski area in central New Hampshire, known for its uncrowded slopes and excellent value. With terrain spread across two peaks, it offers a relaxed atmosphere away from the busier White Mountain resorts.",
+      "tags": ["indy-pass", "uncrowded", "family-owned", "value", "two-peaks"]
+    },
+    {
+      "name": "Black Mountain",
+      "slug": "black-mountain-nh",
+      "status": "active",
+      "location": { "lat": 44.0511, "lng": -71.1564 },
+      "nearestCity": "Jackson",
+      "stats": {
+        "skiableAcres": 143,
+        "liftsCount": 5,
+        "runsCount": 45,
+        "verticalDrop": 1100,
+        "baseElevation": 900,
+        "summitElevation": 2000,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 33, "intermediate": 40, "advanced": 20, "expert": 7 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.blackmt.com",
+      "description": "Black Mountain is a family-friendly ski area in the charming village of Jackson. One of New Hampshire's oldest ski areas (opened 1935), it maintains an old-school atmosphere with authentic New England character and excellent beginner/intermediate terrain.",
+      "tags": ["indy-pass", "historic", "jackson-village", "family-friendly", "beginner-friendly"]
+    },
+    {
+      "name": "King Pine Ski Area",
+      "slug": "king-pine",
+      "status": "active",
+      "location": { "lat": 43.8833, "lng": -71.1500 },
+      "nearestCity": "East Madison",
+      "stats": {
+        "skiableAcres": 48,
+        "liftsCount": 3,
+        "runsCount": 17,
+        "verticalDrop": 350,
+        "baseElevation": 750,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 35, "intermediate": 50, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.kingpine.com",
+      "description": "King Pine Ski Area is a small family ski area at Purity Spring Resort, perfect for beginners and families. With affordable prices and a welcoming atmosphere, it's an ideal place to introduce children to skiing.",
+      "tags": ["family-ski-area", "beginner-friendly", "affordable", "purity-spring-resort", "night-skiing"]
+    },
+    {
+      "name": "Pats Peak",
+      "slug": "pats-peak",
+      "status": "active",
+      "location": { "lat": 43.0858, "lng": -71.7828 },
+      "nearestCity": "Henniker",
+      "stats": {
+        "skiableAcres": 110,
+        "liftsCount": 10,
+        "runsCount": 28,
+        "verticalDrop": 770,
+        "baseElevation": 680,
+        "summitElevation": 1450,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.patspeak.com",
+      "description": "Pats Peak is a family-owned ski area in southern New Hampshire, popular with skiers from the Boston area. Known for extensive snowmaking, night skiing, and a strong learn-to-ski program, it's been family-owned and operated since 1963.",
+      "tags": ["family-owned", "night-skiing", "southern-nh", "boston-accessible", "learn-to-ski"]
+    },
+    {
+      "name": "Dartmouth Skiway",
+      "slug": "dartmouth-skiway",
+      "status": "active",
+      "location": { "lat": 43.7753, "lng": -72.0628 },
+      "nearestCity": "Lyme",
+      "stats": {
+        "skiableAcres": 104,
+        "liftsCount": 4,
+        "runsCount": 30,
+        "verticalDrop": 968,
+        "baseElevation": 800,
+        "summitElevation": 1768,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://skiway.dartmouth.edu",
+      "description": "Dartmouth Skiway is owned and operated by Dartmouth College, home to one of the oldest collegiate ski racing programs in the nation. While primarily serving students, it's open to the public and offers uncrowded skiing with a relaxed atmosphere.",
+      "tags": ["college-owned", "dartmouth", "uncrowded", "racing-history", "affordable"]
+    },
+    {
+      "name": "Whaleback Mountain",
+      "slug": "whaleback-mountain",
+      "status": "active",
+      "location": { "lat": 43.6017, "lng": -72.1833 },
+      "nearestCity": "Enfield",
+      "stats": {
+        "skiableAcres": 55,
+        "liftsCount": 2,
+        "runsCount": 30,
+        "verticalDrop": 700,
+        "baseElevation": 850,
+        "summitElevation": 1550,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.whaleback.com",
+      "description": "Whaleback Mountain is a nonprofit community ski area saved from closure and revived by local volunteers. Known for its excellent freestyle terrain park and affordable family skiing, it represents the best of community-supported skiing.",
+      "tags": ["nonprofit", "community-owned", "terrain-park", "family-friendly", "revived"]
+    },
+    {
+      "name": "Tenney Mountain",
+      "slug": "tenney-mountain",
+      "status": "active",
+      "location": { "lat": 43.8194, "lng": -71.7333 },
+      "nearestCity": "Plymouth",
+      "stats": {
+        "skiableAcres": 110,
+        "liftsCount": 3,
+        "runsCount": 45,
+        "verticalDrop": 1400,
+        "baseElevation": 1000,
+        "summitElevation": 2400,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 30, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tenneymtn.com",
+      "description": "Tenney Mountain is a revived ski area near Plymouth that closed in 2010 and reopened in 2018. Under new ownership, it offers challenging terrain, a growing terrain park, and an authentic retro ski experience.",
+      "tags": ["indy-pass", "revived", "challenging", "retro-vibe", "plymouth"]
+    },
+    {
+      "name": "McIntyre Ski Area",
+      "slug": "mcintyre-ski-area",
+      "status": "active",
+      "location": { "lat": 43.0047, "lng": -71.4425 },
+      "nearestCity": "Manchester",
+      "stats": {
+        "skiableAcres": 26,
+        "liftsCount": 3,
+        "runsCount": 14,
+        "verticalDrop": 180,
+        "baseElevation": 260,
+        "summitElevation": 440,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 40, "intermediate": 45, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mcintyreskiarea.com",
+      "description": "McIntyre Ski Area is a city-owned ski hill in Manchester, New Hampshire's largest city. Perfect for beginners and families, it offers affordable skiing close to home with excellent night skiing and learn-to-ski programs.",
+      "tags": ["city-owned", "urban-hill", "beginner-friendly", "affordable", "night-skiing", "manchester"]
+    },
+    {
+      "name": "Crotched Mountain",
+      "slug": "crotched-mountain",
+      "status": "active",
+      "location": { "lat": 43.0131, "lng": -71.8758 },
+      "nearestCity": "Bennington",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 5,
+        "runsCount": 24,
+        "verticalDrop": 875,
+        "baseElevation": 1150,
+        "summitElevation": 2025,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.crotchedmtn.com",
+      "description": "Crotched Mountain is a night skiing specialist in southern New Hampshire, offering 100% lighted terrain. Convenient to Boston and Nashua, it provides an excellent after-work ski option with full snowmaking coverage.",
+      "tags": ["epic-pass", "night-skiing", "100-percent-lighted", "southern-nh", "boston-accessible"]
+    },
+    {
+      "name": "Granite Gorge",
+      "slug": "granite-gorge",
+      "status": "active",
+      "location": { "lat": 42.9333, "lng": -72.2547 },
+      "nearestCity": "Keene",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 3,
+        "runsCount": 20,
+        "verticalDrop": 525,
+        "baseElevation": 1000,
+        "summitElevation": 1525,
+        "avgAnnualSnowfall": 70
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.granitegorge.com",
+      "description": "Granite Gorge is a small family ski area near Keene, offering affordable skiing with night operations and tubing. Perfect for families and beginners in the Monadnock Region.",
+      "tags": ["family-ski-area", "night-skiing", "tubing", "affordable", "monadnock-region"]
+    },
+    {
+      "name": "Abenaki Ski Area",
+      "slug": "abenaki-ski-area",
+      "status": "active",
+      "location": { "lat": 43.2544, "lng": -71.1286 },
+      "nearestCity": "Wolfeboro",
+      "stats": {
+        "skiableAcres": 6,
+        "liftsCount": 1,
+        "runsCount": 4,
+        "verticalDrop": 135,
+        "baseElevation": 580,
+        "summitElevation": 715,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 50, "intermediate": 50, "advanced": 0, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.wolfeboronh.us/abenaki-ski-area",
+      "description": "Abenaki Ski Area is a tiny town-owned ski hill in Wolfeboro, perfect for introducing children to skiing. With minimal vertical and a rope tow, it offers the most affordable skiing in the state.",
+      "tags": ["town-owned", "rope-tow", "beginner-only", "most-affordable", "kids-learning"]
+    },
+
+    {
+      "name": "The Balsams Wilderness",
+      "slug": "balsams-wilderness",
+      "status": "defunct",
+      "location": { "lat": 44.8656, "lng": -71.3061 },
+      "nearestCity": "Dixville Notch",
+      "yearsOperated": "1966-2011",
+      "notes": "Historic grand resort ski area at the famous Balsams Grand Resort Hotel. Closed when the hotel closed in 2011. Ambitious redevelopment plans have been ongoing since 2014 with various delays. Featured 1,000 vertical feet and 16 trails with backcountry access.",
+      "tags": ["grand-resort", "dixville-notch", "redevelopment-planned", "historic-hotel"]
+    },
+    {
+      "name": "Mittersill",
+      "slug": "mittersill",
+      "status": "defunct",
+      "location": { "lat": 44.1478, "lng": -71.6875 },
+      "nearestCity": "Franconia",
+      "yearsOperated": "1946-1984",
+      "notes": "Former independent ski area with European character, now integrated into Cannon Mountain. Original Austrian-themed village with separate lifts operated for decades before merging. Some original trails remain as Cannon's Mittersill terrain pod.",
+      "tags": ["austrian-themed", "now-cannon-mountain", "integrated", "historic"]
+    },
+    {
+      "name": "Intervale Ski Area",
+      "slug": "intervale-ski-area",
+      "status": "defunct",
+      "location": { "lat": 44.0653, "lng": -71.1247 },
+      "nearestCity": "North Conway",
+      "yearsOperated": "1936-1965",
+      "notes": "Early ski area in the Mount Washington Valley with rope tows and natural terrain. Closed as larger resorts developed in the region.",
+      "tags": ["early-ski-area", "mount-washington-valley"]
+    },
+    {
+      "name": "Moose Mountain",
+      "slug": "moose-mountain-nh",
+      "status": "defunct",
+      "location": { "lat": 43.3833, "lng": -71.2167 },
+      "nearestCity": "Brookfield",
+      "yearsOperated": "1965-2000",
+      "notes": "Small family ski area that operated for over three decades before closing due to inconsistent snow and economic challenges.",
+      "tags": ["family-ski-area", "closed-2000"]
+    },
+    {
+      "name": "Tyrol Ski Area",
+      "slug": "tyrol-ski-area",
+      "status": "defunct",
+      "location": { "lat": 44.0833, "lng": -71.1417 },
+      "nearestCity": "Jackson",
+      "yearsOperated": "1950s-1979",
+      "notes": "Austrian-themed ski area in Jackson that operated alongside Black Mountain. Buildings were converted to condominiums after closure.",
+      "tags": ["austrian-themed", "jackson", "condominiums-now"]
+    },
+    {
+      "name": "Highland Lodge",
+      "slug": "highland-lodge-ski",
+      "status": "defunct",
+      "location": { "lat": 44.1522, "lng": -71.6944 },
+      "nearestCity": "Franconia",
+      "yearsOperated": "1939-1960s",
+      "notes": "Small rope tow operation at a mountain lodge near Cannon Mountain. Served lodge guests and locals during early ski era.",
+      "tags": ["lodge-skiing", "rope-tow", "franconia-area"]
+    },
+    {
+      "name": "Kancamagus Ski Area",
+      "slug": "kancamagus-ski-area",
+      "status": "defunct",
+      "location": { "lat": 44.0000, "lng": -71.5833 },
+      "nearestCity": "Lincoln",
+      "yearsOperated": "1960s-1970s",
+      "notes": "Short-lived ski area along the scenic Kancamagus Highway. Closed as Loon Mountain developed nearby.",
+      "tags": ["kancamagus-highway", "short-lived"]
+    },
+    {
+      "name": "Tecumseh Ski Area",
+      "slug": "tecumseh-ski-area",
+      "status": "defunct",
+      "location": { "lat": 43.9500, "lng": -71.5500 },
+      "nearestCity": "Waterville Valley",
+      "yearsOperated": "1966-1969",
+      "notes": "Original ski development that evolved into Waterville Valley Resort. The mountain was renamed and expanded under Tom Corcoran's leadership.",
+      "tags": ["became-waterville-valley", "olympic-founder"]
+    },
+    {
+      "name": "Temple Mountain",
+      "slug": "temple-mountain",
+      "status": "defunct",
+      "location": { "lat": 42.8667, "lng": -71.9333 },
+      "nearestCity": "Peterborough",
+      "yearsOperated": "1937-2001",
+      "notes": "Historic southern New Hampshire ski area with rope tows and T-bars. One of the state's oldest ski areas, it closed due to financial difficulties and unreliable snow.",
+      "tags": ["historic", "southern-nh", "closed-2001", "one-of-oldest"]
+    },
+    {
+      "name": "Pinnacle Peak",
+      "slug": "pinnacle-peak-nh",
+      "status": "defunct",
+      "location": { "lat": 43.8500, "lng": -71.7667 },
+      "nearestCity": "Holderness",
+      "yearsOperated": "1960s-1970s",
+      "notes": "Small ski area near Squam Lake that operated for a short period before closing.",
+      "tags": ["squam-lake-area", "short-lived"]
+    },
+    {
+      "name": "Arrowhead Ski Area",
+      "slug": "arrowhead-nh",
+      "status": "defunct",
+      "location": { "lat": 43.1833, "lng": -72.1167 },
+      "nearestCity": "Claremont",
+      "yearsOperated": "1963-2006",
+      "notes": "Town-owned ski area in Claremont that served the local community for over 40 years. Closed due to budget constraints and aging infrastructure.",
+      "tags": ["town-owned", "claremont", "community-ski-area"]
+    },
+    {
+      "name": "Brookline Ski Area",
+      "slug": "brookline-ski-area",
+      "status": "defunct",
+      "location": { "lat": 42.7333, "lng": -71.6667 },
+      "nearestCity": "Brookline",
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small community ski hill with rope tow serving southern New Hampshire families.",
+      "tags": ["community-hill", "rope-tow", "southern-nh"]
+    },
+    {
+      "name": "Colebrook Ski Area",
+      "slug": "colebrook-ski-area",
+      "status": "defunct",
+      "location": { "lat": 44.8833, "lng": -71.5000 },
+      "nearestCity": "Colebrook",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Small community ski area in New Hampshire's North Country that served the local population near the Canadian border.",
+      "tags": ["north-country", "community-hill", "canadian-border-area"]
+    }
+  ],
+  "meta": {
+    "totalActive": 19,
+    "totalDefunct": 13,
+    "lastUpdated": "2025-01-15"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "country": "US",
+  "state": "Ohio",
+  "resorts": [
+    {
+      "name": "Snow Trails",
+      "slug": "snow-trails",
+      "status": "active",
+      "location": { "lat": 40.6756, "lng": -82.5183 },
+      "nearestCity": "Mansfield",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 7,
+        "runsCount": 17,
+        "verticalDrop": 300,
+        "baseElevation": 1100,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowtrails.com",
+      "description": "Snow Trails is a family-owned ski area in north-central Ohio, known for pioneering snowmaking technology in the Midwest. Operating since 1961, it offers reliable skiing with extensive snowmaking and night skiing.",
+      "tags": ["family-owned", "snowmaking-pioneer", "mansfield", "night-skiing", "historic"]
+    },
+    {
+      "name": "Boston Mills/Brandywine",
+      "slug": "boston-mills-brandywine",
+      "status": "active",
+      "location": { "lat": 41.2553, "lng": -81.5561 },
+      "nearestCity": "Peninsula",
+      "stats": {
+        "skiableAcres": 88,
+        "liftsCount": 18,
+        "runsCount": 19,
+        "verticalDrop": 264,
+        "baseElevation": 800,
+        "summitElevation": 1064,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bmbw.com",
+      "description": "Boston Mills and Brandywine are twin Vail Resorts properties in the Cuyahoga Valley, offering Epic Pass access in Ohio. The combined resorts serve the Cleveland and Akron markets with reliable skiing and excellent terrain parks.",
+      "tags": ["epic-pass", "vail-resorts", "cleveland-area", "cuyahoga-valley", "terrain-parks", "night-skiing"]
+    },
+    {
+      "name": "Alpine Valley",
+      "slug": "alpine-valley-oh",
+      "status": "active",
+      "location": { "lat": 41.4675, "lng": -81.0350 },
+      "nearestCity": "Chesterland",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 9,
+        "runsCount": 12,
+        "verticalDrop": 230,
+        "baseElevation": 1070,
+        "summitElevation": 1300,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.alpinevalleyohio.com",
+      "description": "Alpine Valley is a Vail Resorts property east of Cleveland, offering Epic Pass skiing in Ohio's snow belt. The area benefits from lake-effect snow and serves as a convenient option for northeast Ohio skiers.",
+      "tags": ["epic-pass", "vail-resorts", "snow-belt", "cleveland-area", "night-skiing"]
+    },
+    {
+      "name": "Mad River Mountain",
+      "slug": "mad-river-mountain",
+      "status": "active",
+      "location": { "lat": 40.3125, "lng": -83.6853 },
+      "nearestCity": "Zanesfield",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 9,
+        "runsCount": 20,
+        "verticalDrop": 300,
+        "baseElevation": 1150,
+        "summitElevation": 1450,
+        "avgAnnualSnowfall": 40
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skimadriver.com",
+      "description": "Mad River Mountain is Ohio's largest ski resort and a Vail Resorts property. Located in central Ohio, it serves Columbus and Dayton skiers with the most terrain in the state and Epic Pass access.",
+      "tags": ["epic-pass", "vail-resorts", "largest-ohio", "columbus-area", "night-skiing", "terrain-parks"]
+    },
+    {
+      "name": "Clear Fork Ski Area",
+      "slug": "clear-fork",
+      "status": "active",
+      "location": { "lat": 40.6319, "lng": -82.5033 },
+      "nearestCity": "Butler",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 5,
+        "runsCount": 10,
+        "verticalDrop": 275,
+        "baseElevation": 1125,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.clearforkresort.com",
+      "description": "Clear Fork is a family-owned resort near Mansfield, offering skiing alongside other recreational amenities. The intimate atmosphere and competitive pricing make it popular with local families.",
+      "tags": ["family-owned", "mansfield", "night-skiing", "affordable", "local-favorite"]
+    },
+
+    {
+      "name": "Valley Hi Ski Area",
+      "slug": "valley-hi",
+      "status": "defunct",
+      "location": { "lat": 41.2500, "lng": -80.8200 },
+      "nearestCity": "Braceville",
+      "yearClosed": 2004,
+      "description": "Valley Hi was a small ski area in northeast Ohio that operated until 2004. Economic challenges and limited snowfall led to its closure after serving the local community for decades.",
+      "tags": ["closed", "northeast-ohio", "community-area"]
+    },
+    {
+      "name": "Cedar Knoll Ski Resort",
+      "slug": "cedar-knoll",
+      "status": "defunct",
+      "location": { "lat": 41.3200, "lng": -80.9500 },
+      "nearestCity": "Cortland",
+      "yearClosed": 1998,
+      "description": "Cedar Knoll was a family ski area near Cortland that closed in 1998. The area served the Youngstown market before economic pressures forced its closure.",
+      "tags": ["closed", "youngstown-area", "family-area"]
+    },
+    {
+      "name": "Big Creek Ski Area",
+      "slug": "big-creek",
+      "status": "defunct",
+      "location": { "lat": 41.3500, "lng": -81.8500 },
+      "nearestCity": "Parma Heights",
+      "yearClosed": 1980,
+      "description": "Big Creek was a small urban ski area in a Cleveland suburb that operated through the 1970s. Development pressure and limited terrain led to its closure.",
+      "tags": ["closed", "cleveland-suburb", "urban-area"]
+    },
+    {
+      "name": "Punderson State Park",
+      "slug": "punderson",
+      "status": "defunct",
+      "location": { "lat": 41.4000, "lng": -81.2000 },
+      "nearestCity": "Newbury",
+      "yearClosed": 1995,
+      "description": "Punderson State Park operated a small ski area as part of the state park system. The ski operations ended in 1995, though the park continues to offer other winter recreation.",
+      "tags": ["closed", "state-park", "geauga-county"]
+    },
+    {
+      "name": "Catawba Cliffs",
+      "slug": "catawba-cliffs",
+      "status": "defunct",
+      "location": { "lat": 41.5200, "lng": -82.9000 },
+      "nearestCity": "Port Clinton",
+      "yearClosed": 1975,
+      "description": "Catawba Cliffs was a unique ski area on the Lake Erie shore near Port Clinton. The area operated on cliffs overlooking the lake before closing in the mid-1970s.",
+      "tags": ["closed", "lake-erie", "unique-location", "port-clinton"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-27T22:00:00Z" }
+}

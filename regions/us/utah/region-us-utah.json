@@ -1,0 +1,602 @@
+{
+  "country": "US",
+  "state": "Utah",
+  "resorts": [
+    {
+      "name": "Park City Mountain Resort",
+      "slug": "park-city-mountain",
+      "status": "active",
+      "location": { "lat": 40.6514, "lng": -111.508 },
+      "nearestCity": "Park City",
+      "stats": {
+        "skiableAcres": 7300,
+        "liftsCount": 41,
+        "runsCount": 341,
+        "verticalDrop": 3226,
+        "baseElevation": 6900,
+        "summitElevation": 10026,
+        "avgAnnualSnowfall": 360
+      },
+      "terrain": { "beginner": 8, "intermediate": 41, "advanced": 36, "expert": 15 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.parkcitymountain.com",
+      "description": "The largest ski resort in the United States, Park City Mountain combines the former Park City and Canyons resorts into one massive skiing destination. Located just 32 miles from Salt Lake City International Airport, it offers world-class terrain for all ability levels, a vibrant historic Main Street, and hosted events during the 2002 Winter Olympics.",
+      "tags": ["largest-in-us", "olympic-venue", "epic-pass", "family-friendly", "terrain-parks", "historic-town"]
+    },
+    {
+      "name": "Deer Valley Resort",
+      "slug": "deer-valley",
+      "status": "active",
+      "location": { "lat": 40.6375, "lng": -111.478 },
+      "nearestCity": "Park City",
+      "stats": {
+        "skiableAcres": 2026,
+        "liftsCount": 21,
+        "runsCount": 103,
+        "verticalDrop": 3000,
+        "baseElevation": 6570,
+        "summitElevation": 9570,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 27, "intermediate": 41, "advanced": 32, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.deervalley.com",
+      "description": "Deer Valley is renowned for its impeccable grooming, limited daily ticket sales, and luxury ski experience. This skier-only resort (no snowboarders) consistently ranks as North America's top ski resort for service and on-mountain dining. The 2002 Winter Olympics freestyle skiing events were held here.",
+      "tags": ["luxury", "ski-only", "groomed", "olympic-venue", "ikon-pass", "fine-dining", "limited-tickets"]
+    },
+    {
+      "name": "Snowbird",
+      "slug": "snowbird",
+      "status": "active",
+      "location": { "lat": 40.583, "lng": -111.6538 },
+      "nearestCity": "Salt Lake City",
+      "stats": {
+        "skiableAcres": 2500,
+        "liftsCount": 14,
+        "runsCount": 169,
+        "verticalDrop": 3240,
+        "baseElevation": 7760,
+        "summitElevation": 11000,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 27, "intermediate": 38, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.snowbird.com",
+      "description": "Snowbird delivers some of Utah's most challenging terrain and legendary powder. Located in Little Cottonwood Canyon just 29 miles from Salt Lake City, it features the 125-passenger aerial tram, the longest season in Utah (often skiing into July), and an average of 500 inches of 'Greatest Snow on Earth' annually.",
+      "tags": ["expert-terrain", "powder", "aerial-tram", "ikon-pass", "long-season", "backcountry-access"]
+    },
+    {
+      "name": "Alta Ski Area",
+      "slug": "alta",
+      "status": "active",
+      "location": { "lat": 40.5884, "lng": -111.6386 },
+      "nearestCity": "Salt Lake City",
+      "stats": {
+        "skiableAcres": 2614,
+        "liftsCount": 11,
+        "runsCount": 119,
+        "verticalDrop": 2538,
+        "baseElevation": 8530,
+        "summitElevation": 11068,
+        "avgAnnualSnowfall": 560
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.alta.com",
+      "description": "Alta is a legendary skier-only mountain known for its deep powder, steep terrain, and old-school atmosphere. One of the oldest ski resorts in the country (opened 1939), it maintains its no-snowboarding policy and focuses on the pure skiing experience. Combined with Snowbird via the AltaBird pass.",
+      "tags": ["ski-only", "powder", "expert-terrain", "ikon-pass", "classic", "no-snowboards", "historic"]
+    },
+    {
+      "name": "Brighton Resort",
+      "slug": "brighton",
+      "status": "active",
+      "location": { "lat": 40.5980, "lng": -111.5832 },
+      "nearestCity": "Salt Lake City",
+      "stats": {
+        "skiableAcres": 1050,
+        "liftsCount": 7,
+        "runsCount": 66,
+        "verticalDrop": 1875,
+        "baseElevation": 8755,
+        "summitElevation": 10500,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 21, "intermediate": 40, "advanced": 39, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.brightonresort.com",
+      "description": "Brighton is Utah's original ski resort (opened 1936) and a favorite among locals for its affordable prices, night skiing, and excellent terrain parks. Located in Big Cottonwood Canyon, it connects to Solitude via the SolBright trail and offers some of Salt Lake's best accessible backcountry terrain.",
+      "tags": ["night-skiing", "terrain-parks", "local-favorite", "ikon-pass", "affordable", "historic"]
+    },
+    {
+      "name": "Solitude Mountain Resort",
+      "slug": "solitude",
+      "status": "active",
+      "location": { "lat": 40.6199, "lng": -111.5927 },
+      "nearestCity": "Salt Lake City",
+      "stats": {
+        "skiableAcres": 1200,
+        "liftsCount": 8,
+        "runsCount": 82,
+        "verticalDrop": 2494,
+        "baseElevation": 7988,
+        "summitElevation": 10488,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.solitudemountain.com",
+      "description": "True to its name, Solitude offers a quieter, more intimate skiing experience in Big Cottonwood Canyon. Known for excellent intermediate terrain and a charming European-style village, it's a perfect escape from the crowds while still delivering Utah's famous powder.",
+      "tags": ["uncrowded", "intermediate-friendly", "ikon-pass", "european-village", "powder"]
+    },
+    {
+      "name": "Snowbasin",
+      "slug": "snowbasin",
+      "status": "active",
+      "location": { "lat": 41.2160, "lng": -111.8569 },
+      "nearestCity": "Ogden",
+      "stats": {
+        "skiableAcres": 3000,
+        "liftsCount": 12,
+        "runsCount": 107,
+        "verticalDrop": 2959,
+        "baseElevation": 6391,
+        "summitElevation": 9350,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 10, "intermediate": 50, "advanced": 20, "expert": 20 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowbasin.com",
+      "description": "Snowbasin hosted the 2002 Olympic downhill events and is owned by the Holding family (Sun Valley). The resort offers exceptional grooming, stunning lodges, and rarely crowded slopes. Its Earl's Lodge is considered one of the finest day lodges in North America.",
+      "tags": ["olympic-venue", "uncrowded", "epic-pass", "luxury-lodges", "groomed", "expert-terrain"]
+    },
+    {
+      "name": "Powder Mountain",
+      "slug": "powder-mountain",
+      "status": "active",
+      "location": { "lat": 41.3789, "lng": -111.7808 },
+      "nearestCity": "Eden",
+      "stats": {
+        "skiableAcres": 8464,
+        "liftsCount": 9,
+        "runsCount": 167,
+        "verticalDrop": 2205,
+        "baseElevation": 6900,
+        "summitElevation": 9422,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.powdermountain.com",
+      "description": "Powder Mountain has the most skiable acreage in the United States at 8,464 acres. It limits daily tickets to preserve the uncrowded experience and offers extensive cat-skiing and snowcat-accessed terrain. Night skiing available on select terrain.",
+      "tags": ["largest-acreage", "uncrowded", "indy-pass", "cat-skiing", "night-skiing", "powder"]
+    },
+    {
+      "name": "Brian Head Resort",
+      "slug": "brian-head",
+      "status": "active",
+      "location": { "lat": 37.7022, "lng": -112.8497 },
+      "nearestCity": "Cedar City",
+      "stats": {
+        "skiableAcres": 665,
+        "liftsCount": 9,
+        "runsCount": 71,
+        "verticalDrop": 1707,
+        "baseElevation": 9600,
+        "summitElevation": 11307,
+        "avgAnnualSnowfall": 360
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.brianhead.com",
+      "description": "Brian Head is Utah's highest base elevation resort and the southernmost ski area in Utah. Located near Cedar Breaks National Monument and Zion National Park, it offers a unique combination of skiing and red rock country. Popular with visitors from Las Vegas (3 hours away).",
+      "tags": ["high-elevation", "southern-utah", "indy-pass", "family-friendly", "near-national-parks"]
+    },
+    {
+      "name": "Sundance Mountain Resort",
+      "slug": "sundance",
+      "status": "active",
+      "location": { "lat": 40.3922, "lng": -111.5875 },
+      "nearestCity": "Provo",
+      "stats": {
+        "skiableAcres": 450,
+        "liftsCount": 5,
+        "runsCount": 45,
+        "verticalDrop": 2150,
+        "baseElevation": 6100,
+        "summitElevation": 8250,
+        "avgAnnualSnowfall": 320
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.sundanceresort.com",
+      "description": "Founded by Robert Redford, Sundance is a boutique resort focused on environmental sustainability and artistic expression. Home to the Sundance Film Festival's mountain venue, it offers intimate skiing in a beautiful canyon setting with world-class dining and spa facilities.",
+      "tags": ["boutique", "robert-redford", "sustainable", "indy-pass", "night-skiing", "film-festival", "spa"]
+    },
+    {
+      "name": "Nordic Valley",
+      "slug": "nordic-valley",
+      "status": "active",
+      "location": { "lat": 41.3106, "lng": -111.8650 },
+      "nearestCity": "Eden",
+      "stats": {
+        "skiableAcres": 450,
+        "liftsCount": 4,
+        "runsCount": 24,
+        "verticalDrop": 1000,
+        "baseElevation": 5400,
+        "summitElevation": 6400,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.nordicvalley.com",
+      "description": "Nordic Valley (formerly Wolf Mountain) is a family-friendly resort near Ogden offering affordable skiing and the largest night skiing operation in Utah. Recently expanded with new terrain and lifts, it's perfect for beginners and families learning to ski.",
+      "tags": ["family-friendly", "affordable", "night-skiing", "beginner-friendly", "local"]
+    },
+    {
+      "name": "Cherry Peak Resort",
+      "slug": "cherry-peak",
+      "status": "active",
+      "location": { "lat": 41.9294, "lng": -111.7469 },
+      "nearestCity": "Logan",
+      "stats": {
+        "skiableAcres": 220,
+        "liftsCount": 3,
+        "runsCount": 20,
+        "verticalDrop": 1265,
+        "baseElevation": 5775,
+        "summitElevation": 7040,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skicherrypeak.com",
+      "description": "Utah's newest ski resort, Cherry Peak opened in 2015 and serves the Cache Valley community near Logan. It offers affordable family skiing with night skiing available every evening during the season.",
+      "tags": ["family-friendly", "affordable", "night-skiing", "newest-resort", "local", "cache-valley"]
+    },
+    {
+      "name": "Beaver Mountain",
+      "slug": "beaver-mountain",
+      "status": "active",
+      "location": { "lat": 41.9681, "lng": -111.5428 },
+      "nearestCity": "Logan",
+      "stats": {
+        "skiableAcres": 828,
+        "liftsCount": 6,
+        "runsCount": 48,
+        "verticalDrop": 1700,
+        "baseElevation": 7200,
+        "summitElevation": 8900,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skithebeav.com",
+      "description": "Beaver Mountain is the longest continuously family-owned ski resort in America, operated by the Seeholzer family since 1939. Known for its affordable prices, no-frills atmosphere, and loyal following of Utah State University students and Cache Valley locals.",
+      "tags": ["family-owned", "affordable", "historic", "local", "cache-valley", "no-frills"]
+    },
+    {
+      "name": "Eagle Point Resort",
+      "slug": "eagle-point",
+      "status": "active",
+      "location": { "lat": 38.3203, "lng": -112.3839 },
+      "nearestCity": "Beaver",
+      "stats": {
+        "skiableAcres": 600,
+        "liftsCount": 5,
+        "runsCount": 40,
+        "verticalDrop": 1500,
+        "baseElevation": 9100,
+        "summitElevation": 10600,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 30, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.eaglepointresort.com",
+      "description": "Eagle Point is a hidden gem in southern Utah's Tushar Mountains, known for its dry powder, uncrowded slopes, and authentic mountain town vibe. It offers real estate development and serves as a quieter alternative to northern Utah resorts.",
+      "tags": ["hidden-gem", "southern-utah", "indy-pass", "uncrowded", "powder", "tushar-mountains"]
+    },
+    {
+      "name": "Woodward Park City",
+      "slug": "woodward-park-city",
+      "status": "active",
+      "location": { "lat": 40.7136, "lng": -111.5175 },
+      "nearestCity": "Park City",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 4,
+        "runsCount": 8,
+        "verticalDrop": 400,
+        "baseElevation": 7000,
+        "summitElevation": 7400,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 40, "intermediate": 30, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.woodwardparkcity.com",
+      "description": "Woodward Park City is an action sports destination focused on terrain parks, indoor training facilities, and progression coaching. With snowboard and ski camps, foam pits, trampolines, and year-round training, it's designed for riders looking to advance their freestyle skills.",
+      "tags": ["terrain-parks", "action-sports", "coaching", "indoor-facilities", "progression", "freestyle"]
+    },
+
+    {
+      "name": "The Canyons",
+      "slug": "canyons",
+      "status": "defunct",
+      "notes": "Merged into Park City Mountain Resort in 2015 after Vail Resorts acquired both properties",
+      "yearsOperated": "1968-2015",
+      "location": { "lat": 40.6847, "lng": -111.5558 },
+      "tags": ["merged", "now-park-city"]
+    },
+    {
+      "name": "Park City Mountain Resort (original)",
+      "slug": "park-city-original",
+      "status": "defunct",
+      "notes": "Merged with Canyons in 2015 to form current Park City Mountain Resort",
+      "yearsOperated": "1963-2015",
+      "location": { "lat": 40.6514, "lng": -111.508 },
+      "tags": ["merged", "now-park-city"]
+    },
+    {
+      "name": "Wolf Mountain",
+      "slug": "wolf-mountain",
+      "status": "defunct",
+      "notes": "Renamed to Nordic Valley in 2009",
+      "yearsOperated": "1939-2009",
+      "location": { "lat": 41.3106, "lng": -111.8650 },
+      "tags": ["renamed", "now-nordic-valley"]
+    },
+    {
+      "name": "Ecker Hill",
+      "slug": "ecker-hill",
+      "status": "defunct",
+      "notes": "Early Park City area ski hill, closed in the 1940s",
+      "yearsOperated": "1930s-1940s",
+      "location": { "lat": 40.68, "lng": -111.55 },
+      "tags": ["historic", "early-utah-skiing"]
+    },
+    {
+      "name": "Snow Basin Ski Area",
+      "slug": "snow-basin-old",
+      "status": "defunct",
+      "notes": "Original name, now operates as Snowbasin (one word)",
+      "yearsOperated": "1939-1990s",
+      "location": { "lat": 41.2160, "lng": -111.8569 },
+      "tags": ["renamed", "now-snowbasin"]
+    },
+    {
+      "name": "Iron Mountain",
+      "slug": "iron-mountain",
+      "status": "defunct",
+      "notes": "Former small ski area in southern Utah",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 37.8, "lng": -113.0 },
+      "tags": ["historic", "southern-utah"]
+    },
+    {
+      "name": "Timp Haven",
+      "slug": "timp-haven",
+      "status": "defunct",
+      "notes": "Former ski area near Mount Timpanogos, closed in 1990s",
+      "yearsOperated": "1940s-1990s",
+      "location": { "lat": 40.38, "lng": -111.62 },
+      "tags": ["historic", "wasatch-front"]
+    },
+    {
+      "name": "Brianhead",
+      "slug": "brianhead-old",
+      "status": "defunct",
+      "notes": "Original spelling, now Brian Head Resort (two words)",
+      "yearsOperated": "1964-1990s",
+      "location": { "lat": 37.7022, "lng": -112.8497 },
+      "tags": ["renamed", "now-brian-head"]
+    },
+    {
+      "name": "Elk Meadows",
+      "slug": "elk-meadows",
+      "status": "defunct",
+      "notes": "Former ski area near Beaver, predecessor to Eagle Point in the same region",
+      "yearsOperated": "1970s-1990s",
+      "location": { "lat": 38.3, "lng": -112.4 },
+      "tags": ["historic", "southern-utah"]
+    },
+    {
+      "name": "Mount Holly",
+      "slug": "mount-holly",
+      "status": "defunct",
+      "notes": "Former small ski area in the Wasatch",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 40.5, "lng": -111.6 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Treasure Mountain",
+      "slug": "treasure-mountain",
+      "status": "defunct",
+      "notes": "Original name for Park City ski area when it opened in 1963",
+      "yearsOperated": "1963-1970s",
+      "location": { "lat": 40.6514, "lng": -111.508 },
+      "tags": ["renamed", "now-park-city", "historic"]
+    },
+    {
+      "name": "Park West",
+      "slug": "park-west",
+      "status": "defunct",
+      "notes": "Former name for what became The Canyons, later merged into Park City Mountain",
+      "yearsOperated": "1968-1997",
+      "location": { "lat": 40.6847, "lng": -111.5558 },
+      "tags": ["renamed", "now-park-city"]
+    },
+    {
+      "name": "PowMow",
+      "slug": "powmow",
+      "status": "defunct",
+      "notes": "Early name for Powder Mountain",
+      "yearsOperated": "1972-1980s",
+      "location": { "lat": 41.3789, "lng": -111.7808 },
+      "tags": ["renamed", "now-powder-mountain"]
+    },
+    {
+      "name": "Alta Canyon Sports Center",
+      "slug": "alta-canyon-sports",
+      "status": "defunct",
+      "notes": "Former small ski operation",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 40.58, "lng": -111.64 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Mount Ogden",
+      "slug": "mount-ogden",
+      "status": "defunct",
+      "notes": "Former ski area near Ogden",
+      "yearsOperated": "1940s-1960s",
+      "location": { "lat": 41.2, "lng": -111.9 },
+      "tags": ["historic", "ogden-area"]
+    },
+    {
+      "name": "Snow Pine Lodge",
+      "slug": "snow-pine-lodge",
+      "status": "defunct",
+      "notes": "Historic ski lodge operation",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 40.6, "lng": -111.6 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Snow Park",
+      "slug": "snow-park",
+      "status": "defunct",
+      "notes": "Early Deer Valley area ski operation, now part of Deer Valley Resort",
+      "yearsOperated": "1940s-1980s",
+      "location": { "lat": 40.6375, "lng": -111.478 },
+      "tags": ["historic", "now-deer-valley"]
+    },
+    {
+      "name": "Collins Gulch",
+      "slug": "collins-gulch",
+      "status": "defunct",
+      "notes": "Historic rope tow operation in Little Cottonwood Canyon",
+      "yearsOperated": "1940s-1950s",
+      "location": { "lat": 40.58, "lng": -111.65 },
+      "tags": ["historic", "rope-tow"]
+    },
+    {
+      "name": "Aspen Grove",
+      "slug": "aspen-grove-utah",
+      "status": "defunct",
+      "notes": "BYU-affiliated ski area on Mount Timpanogos, used for ski classes",
+      "yearsOperated": "1940s-1990s",
+      "location": { "lat": 40.39, "lng": -111.61 },
+      "tags": ["historic", "byu", "educational"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-26T20:00:00Z"
+  }
+}

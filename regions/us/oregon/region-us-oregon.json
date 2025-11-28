@@ -1,0 +1,436 @@
+{
+  "country": "US",
+  "state": "Oregon",
+  "resorts": [
+    {
+      "name": "Mt. Bachelor",
+      "slug": "mt-bachelor",
+      "status": "active",
+      "location": { "lat": 43.9792, "lng": -121.6883 },
+      "nearestCity": "Bend",
+      "stats": {
+        "skiableAcres": 4318,
+        "liftsCount": 12,
+        "runsCount": 101,
+        "verticalDrop": 3365,
+        "baseElevation": 5700,
+        "summitElevation": 9065,
+        "avgAnnualSnowfall": 462
+      },
+      "terrain": { "beginner": 15, "intermediate": 25, "advanced": 35, "expert": 25 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtbachelor.com",
+      "description": "Mt. Bachelor is the Pacific Northwest's largest ski resort, featuring a dormant volcanic cone with 360-degree skiing. With massive snowfall, extensive terrain, and proximity to Bend's outdoor culture, it's one of America's premier ski destinations.",
+      "tags": ["ikon-pass", "volcanic-cone", "360-degree-skiing", "largest-pnw", "massive-snowfall", "bend"]
+    },
+    {
+      "name": "Mt. Hood Meadows",
+      "slug": "mt-hood-meadows",
+      "status": "active",
+      "location": { "lat": 45.3333, "lng": -121.6667 },
+      "nearestCity": "Government Camp",
+      "stats": {
+        "skiableAcres": 2150,
+        "liftsCount": 14,
+        "runsCount": 87,
+        "verticalDrop": 2777,
+        "baseElevation": 4523,
+        "summitElevation": 7300,
+        "avgAnnualSnowfall": 430
+      },
+      "terrain": { "beginner": 15, "intermediate": 50, "advanced": 20, "expert": 15 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skihood.com",
+      "description": "Mt. Hood Meadows is Oregon's largest ski resort by acreage, featuring diverse terrain across multiple exposures on Mt. Hood's southeast flank. Close to Portland, it offers excellent conditions and extensive night skiing.",
+      "tags": ["ikon-pass", "largest-oregon", "mt-hood", "portland-accessible", "night-skiing", "diverse-terrain"]
+    },
+    {
+      "name": "Timberline Lodge",
+      "slug": "timberline-lodge",
+      "status": "active",
+      "location": { "lat": 45.3311, "lng": -121.7111 },
+      "nearestCity": "Government Camp",
+      "stats": {
+        "skiableAcres": 1415,
+        "liftsCount": 9,
+        "runsCount": 41,
+        "verticalDrop": 3690,
+        "baseElevation": 4540,
+        "summitElevation": 8540,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.timberlinelodge.com",
+      "description": "Timberline Lodge is America's only ski area with year-round lift-served skiing, thanks to the Palmer Snowfield glacier. The historic WPA-built lodge is a National Historic Landmark, featured in 'The Shining.'",
+      "tags": ["year-round-skiing", "glacier-skiing", "historic-lodge", "national-landmark", "the-shining", "mt-hood"]
+    },
+    {
+      "name": "Mt. Hood Skibowl",
+      "slug": "mt-hood-skibowl",
+      "status": "active",
+      "location": { "lat": 45.3000, "lng": -121.7667 },
+      "nearestCity": "Government Camp",
+      "stats": {
+        "skiableAcres": 960,
+        "liftsCount": 10,
+        "runsCount": 65,
+        "verticalDrop": 1500,
+        "baseElevation": 3700,
+        "summitElevation": 5200,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 30, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibowl.com",
+      "description": "Mt. Hood Skibowl is America's largest night ski area, with extensive lighting across both east and west slopes. The most accessible Mt. Hood resort from Portland, it offers summer activities including an adventure park.",
+      "tags": ["largest-night-skiing", "mt-hood", "portland-closest", "adventure-park", "two-slopes"]
+    },
+    {
+      "name": "Mt. Ashland",
+      "slug": "mt-ashland",
+      "status": "active",
+      "location": { "lat": 42.0817, "lng": -122.7153 },
+      "nearestCity": "Ashland",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 4,
+        "runsCount": 23,
+        "verticalDrop": 1150,
+        "baseElevation": 6350,
+        "summitElevation": 7500,
+        "avgAnnualSnowfall": 270
+      },
+      "terrain": { "beginner": 25, "intermediate": 35, "advanced": 25, "expert": 15 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtashland.com",
+      "description": "Mt. Ashland is a nonprofit community ski area in the Siskiyou Mountains near the California border. Known for diverse terrain and access to backcountry bowls, it serves southern Oregon and northern California skiers.",
+      "tags": ["indy-pass", "nonprofit", "siskiyou-mountains", "backcountry-access", "southern-oregon"]
+    },
+    {
+      "name": "Anthony Lakes",
+      "slug": "anthony-lakes",
+      "status": "active",
+      "location": { "lat": 44.9542, "lng": -118.2325 },
+      "nearestCity": "North Powder",
+      "stats": {
+        "skiableAcres": 900,
+        "liftsCount": 1,
+        "runsCount": 21,
+        "verticalDrop": 900,
+        "baseElevation": 7100,
+        "summitElevation": 8000,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 20, "expert": 20 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.anthonylakes.com",
+      "description": "Anthony Lakes is a hidden gem in Oregon's Blue Mountains, known for exceptional powder snow and extensive backcountry terrain. With just one chairlift serving over 900 acres, it offers a purist's ski experience.",
+      "tags": ["indy-pass", "blue-mountains", "powder-snow", "backcountry", "one-lift", "hidden-gem"]
+    },
+    {
+      "name": "Willamette Pass",
+      "slug": "willamette-pass",
+      "status": "active",
+      "location": { "lat": 43.5983, "lng": -122.0394 },
+      "nearestCity": "Oakridge",
+      "stats": {
+        "skiableAcres": 555,
+        "liftsCount": 6,
+        "runsCount": 29,
+        "verticalDrop": 1563,
+        "baseElevation": 5100,
+        "summitElevation": 6683,
+        "avgAnnualSnowfall": 310
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.willamettepass.com",
+      "description": "Willamette Pass is a family-friendly ski area in the Cascade Range between Eugene and Bend. Known for excellent snow quality and varied terrain, it offers a more relaxed alternative to the crowded Mt. Hood resorts.",
+      "tags": ["indy-pass", "cascades", "family-friendly", "uncrowded", "eugene-accessible"]
+    },
+    {
+      "name": "Hoodoo Ski Area",
+      "slug": "hoodoo",
+      "status": "active",
+      "location": { "lat": 44.4086, "lng": -121.8717 },
+      "nearestCity": "Sisters",
+      "stats": {
+        "skiableAcres": 806,
+        "liftsCount": 5,
+        "runsCount": 34,
+        "verticalDrop": 1035,
+        "baseElevation": 4668,
+        "summitElevation": 5703,
+        "avgAnnualSnowfall": 420
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skihoodoo.com",
+      "description": "Hoodoo Ski Area is a family-friendly resort in the Cascade Range, convenient to Salem, Corvallis, and Eugene. With excellent snowfall and affordable prices, it's a popular destination for families and beginners.",
+      "tags": ["family-friendly", "affordable", "cascades", "excellent-snow", "salem-accessible"]
+    },
+    {
+      "name": "Spout Springs",
+      "slug": "spout-springs",
+      "status": "active",
+      "location": { "lat": 45.8500, "lng": -118.2000 },
+      "nearestCity": "Pendleton",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 540,
+        "baseElevation": 4800,
+        "summitElevation": 5340,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.spoutsprings.com",
+      "description": "Spout Springs is a nonprofit community ski area in the Blue Mountains near Pendleton. Family-operated since 1937, it offers affordable skiing with night operations for eastern Oregon families.",
+      "tags": ["nonprofit", "community-owned", "blue-mountains", "night-skiing", "since-1937", "pendleton"]
+    },
+    {
+      "name": "Warner Canyon Ski Area",
+      "slug": "warner-canyon",
+      "status": "active",
+      "location": { "lat": 42.2333, "lng": -120.1167 },
+      "nearestCity": "Lakeview",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 1,
+        "runsCount": 10,
+        "verticalDrop": 750,
+        "baseElevation": 6100,
+        "summitElevation": 6850,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.lakecountyor.org/departments/ski_hill.php",
+      "description": "Warner Canyon Ski Area is a county-owned ski hill in the remote Warner Mountains of eastern Oregon. One of Oregon's most isolated ski areas, it serves the ranching communities of Lake County.",
+      "tags": ["county-owned", "remote", "warner-mountains", "eastern-oregon", "ranching-community"]
+    },
+    {
+      "name": "Ferguson Ridge Ski Area",
+      "slug": "ferguson-ridge",
+      "status": "active",
+      "location": { "lat": 45.3167, "lng": -117.1333 },
+      "nearestCity": "Joseph",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 1,
+        "runsCount": 8,
+        "verticalDrop": 640,
+        "baseElevation": 5500,
+        "summitElevation": 6140,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.fergusonridge.org",
+      "description": "Ferguson Ridge Ski Area is a nonprofit community ski area in the Wallowa Mountains near Joseph. Run entirely by volunteers, it serves the remote Wallowa County with affordable family skiing.",
+      "tags": ["nonprofit", "volunteer-run", "wallowa-mountains", "joseph", "remote", "affordable"]
+    },
+    {
+      "name": "Cooper Spur Ski Area",
+      "slug": "cooper-spur",
+      "status": "active",
+      "location": { "lat": 45.4167, "lng": -121.5833 },
+      "nearestCity": "Mount Hood",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 2,
+        "runsCount": 10,
+        "verticalDrop": 500,
+        "baseElevation": 4500,
+        "summitElevation": 5000,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cooperspur.com",
+      "description": "Cooper Spur Ski Area is a small family ski area on Mt. Hood's northeast side. Dating back to 1927, it's one of Oregon's oldest ski areas and offers a peaceful alternative to the busier south-side resorts.",
+      "tags": ["oldest-oregon", "mt-hood", "family-friendly", "historic", "quiet-alternative"]
+    },
+    {
+      "name": "Summit Ski Area",
+      "slug": "summit-ski-area",
+      "status": "active",
+      "location": { "lat": 45.3000, "lng": -121.7500 },
+      "nearestCity": "Government Camp",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 2,
+        "runsCount": 5,
+        "verticalDrop": 300,
+        "baseElevation": 4000,
+        "summitElevation": 4300,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.summitskiarea.com",
+      "description": "Summit Ski Area is a small beginner-focused ski area at Government Camp. Perfect for first-timers and families, it offers affordable learn-to-ski programs and a relaxed pace away from the larger Mt. Hood resorts.",
+      "tags": ["beginner-focused", "learn-to-ski", "government-camp", "mt-hood", "affordable"]
+    },
+
+    {
+      "name": "Multorpor Mountain",
+      "slug": "multorpor-mountain",
+      "status": "defunct",
+      "location": { "lat": 45.2833, "lng": -121.7833 },
+      "nearestCity": "Government Camp",
+      "yearsOperated": "1930s-1970s",
+      "notes": "Early Mt. Hood ski area that was one of the region's first. Infrastructure and terrain were incorporated into Mt. Hood Skibowl.",
+      "tags": ["mt-hood", "pioneer", "became-skibowl"]
+    },
+    {
+      "name": "Tomahawk",
+      "slug": "tomahawk",
+      "status": "defunct",
+      "location": { "lat": 45.2667, "lng": -121.8000 },
+      "nearestCity": "Government Camp",
+      "yearsOperated": "1940s-1960s",
+      "notes": "Small rope tow ski area on Mt. Hood that closed as larger areas expanded. Located near the current Skibowl location.",
+      "tags": ["mt-hood", "rope-tow", "early-ski-area"]
+    },
+    {
+      "name": "Snow Bunny Lodge",
+      "slug": "snow-bunny-lodge",
+      "status": "defunct",
+      "location": { "lat": 45.3167, "lng": -121.7500 },
+      "nearestCity": "Government Camp",
+      "yearsOperated": "1940s-1980s",
+      "notes": "Small beginner ski area at Government Camp that served the learn-to-ski market for decades before closing.",
+      "tags": ["mt-hood", "beginner-area", "government-camp"]
+    },
+    {
+      "name": "Ski Bowl East",
+      "slug": "ski-bowl-east",
+      "status": "defunct",
+      "location": { "lat": 45.3000, "lng": -121.7500 },
+      "nearestCity": "Government Camp",
+      "yearsOperated": "1928-present (integrated)",
+      "notes": "Original Ski Bowl operation that is now part of Mt. Hood Skibowl. The east side terrain remains operational as part of the expanded resort.",
+      "tags": ["mt-hood", "integrated-skibowl", "historic"]
+    },
+    {
+      "name": "Odell Lake",
+      "slug": "odell-lake",
+      "status": "defunct",
+      "location": { "lat": 43.5833, "lng": -122.0333 },
+      "nearestCity": "Oakridge",
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small ski area near Odell Lake that closed as Willamette Pass expanded and became the dominant ski area in the region.",
+      "tags": ["cascades", "willamette-pass-area"]
+    },
+    {
+      "name": "Blue Lake Ski Area",
+      "slug": "blue-lake-ski-area",
+      "status": "defunct",
+      "location": { "lat": 44.9167, "lng": -118.2000 },
+      "nearestCity": "La Grande",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Small community ski area in the Blue Mountains that closed due to access issues and unreliable snow at lower elevation.",
+      "tags": ["blue-mountains", "community-hill", "eastern-oregon"]
+    }
+  ],
+  "meta": {
+    "totalActive": 13,
+    "totalDefunct": 6,
+    "lastUpdated": "2025-01-15"
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "country": "US",
+  "state": "New Mexico",
+  "resorts": [
+    {
+      "name": "Taos Ski Valley",
+      "slug": "taos-ski-valley",
+      "status": "active",
+      "location": { "lat": 36.5957, "lng": -105.4545 },
+      "nearestCity": "Taos",
+      "stats": {
+        "skiableAcres": 1294,
+        "liftsCount": 14,
+        "runsCount": 110,
+        "verticalDrop": 3281,
+        "baseElevation": 9207,
+        "summitElevation": 12481,
+        "avgAnnualSnowfall": 305
+      },
+      "terrain": { "beginner": 24, "intermediate": 25, "advanced": 26, "expert": 25 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.skitaos.com",
+      "description": "Taos Ski Valley is a legendary ski area known for its challenging expert terrain and authentic Southwest character. Founded in 1955 by German ski instructor Ernie Blake, Taos was famously known for its 'Don't Worry, You'll Ski Better Here' slogan. With one of the highest summit elevations in North America at 12,481 feet and incredible dry powder, Taos offers terrain for all abilities while maintaining its reputation as an expert's paradise. The Blake family-founded mountain joined the Ikon Pass in 2018, bringing this hidden gem to wider recognition.",
+      "tags": ["ikon-pass", "expert-terrain", "high-elevation", "powder", "southwest-culture", "taos"]
+    },
+    {
+      "name": "Ski Santa Fe",
+      "slug": "ski-santa-fe",
+      "status": "active",
+      "location": { "lat": 35.7956, "lng": -105.8028 },
+      "nearestCity": "Santa Fe",
+      "stats": {
+        "skiableAcres": 660,
+        "liftsCount": 7,
+        "runsCount": 83,
+        "verticalDrop": 1725,
+        "baseElevation": 10350,
+        "summitElevation": 12075,
+        "avgAnnualSnowfall": 225
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisantafe.com",
+      "description": "Ski Santa Fe is the Southwest's highest-altitude ski area, with a base elevation of 10,350 feet in the Sangre de Cristo Mountains. Located just 16 miles from downtown Santa Fe, it combines world-class skiing with easy access to one of America's most culturally rich cities. The mountain offers spectacular views of the Rio Grande Valley and terrain that ranges from gentle beginner slopes to challenging chutes and glades. After skiing, visitors enjoy Santa Fe's legendary art scene, cuisine, and historic Plaza.",
+      "tags": ["ikon-pass", "high-elevation", "santa-fe", "culture", "day-trip", "sangre-de-cristo"]
+    },
+    {
+      "name": "Angel Fire Resort",
+      "slug": "angel-fire",
+      "status": "active",
+      "location": { "lat": 36.3939, "lng": -105.2854 },
+      "nearestCity": "Angel Fire",
+      "stats": {
+        "skiableAcres": 560,
+        "liftsCount": 7,
+        "runsCount": 81,
+        "verticalDrop": 2077,
+        "baseElevation": 8600,
+        "summitElevation": 10677,
+        "avgAnnualSnowfall": 210
+      },
+      "terrain": { "beginner": 21, "intermediate": 56, "advanced": 17, "expert": 6 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.angelfireresort.com",
+      "description": "Angel Fire Resort is a family-friendly four-season destination in the Moreno Valley of northern New Mexico. Known for its consistent grooming, gentle learning terrain, and friendly atmosphere, Angel Fire is ideal for families and intermediate skiers. The resort offers a full village experience with lodging, dining, and activities. The mountain features extensive intermediate terrain with some challenging steeps and glades for advanced skiers. Summer brings mountain biking, golf, and the renowned Angel Fire Vietnam Veterans Memorial.",
+      "tags": ["indy-pass", "family-friendly", "intermediate-terrain", "four-season", "moreno-valley", "angel-fire"]
+    },
+    {
+      "name": "Ski Apache",
+      "slug": "ski-apache",
+      "status": "active",
+      "location": { "lat": 33.3967, "lng": -105.7933 },
+      "nearestCity": "Ruidoso",
+      "stats": {
+        "skiableAcres": 750,
+        "liftsCount": 11,
+        "runsCount": 55,
+        "verticalDrop": 1900,
+        "baseElevation": 9600,
+        "summitElevation": 11500,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 25, "intermediate": 35, "advanced": 20, "expert": 20 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiapache.com",
+      "description": "Ski Apache is owned and operated by the Mescalero Apache Tribe, making it one of the few tribally-owned ski resorts in North America. Located on the slopes of Sierra Blanca Peak in the Sacramento Mountains, Ski Apache offers southern New Mexico's only skiing with terrain for all abilities. The gondola, one of the southernmost in the country, provides access to expert terrain on the mountain's upper reaches. The resort is known for its friendly atmosphere, affordable prices, and the adjacent Inn of the Mountain Gods casino resort.",
+      "tags": ["tribal-owned", "mescalero-apache", "gondola", "sierra-blanca", "ruidoso", "southern-new-mexico"]
+    },
+    {
+      "name": "Red River Ski Area",
+      "slug": "red-river",
+      "status": "active",
+      "location": { "lat": 36.6778, "lng": -105.4125 },
+      "nearestCity": "Red River",
+      "stats": {
+        "skiableAcres": 209,
+        "liftsCount": 7,
+        "runsCount": 63,
+        "verticalDrop": 1600,
+        "baseElevation": 8750,
+        "summitElevation": 10350,
+        "avgAnnualSnowfall": 214
+      },
+      "terrain": { "beginner": 32, "intermediate": 38, "advanced": 16, "expert": 14 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.redriverskiarea.com",
+      "description": "Red River Ski Area is a classic Western ski town experience in the heart of northern New Mexico's Sangre de Cristo Mountains. The ski-in/ski-out village maintains an authentic Old West mining town atmosphere with locally-owned shops, restaurants, and lodging. The mountain is known for its family-friendly vibe, excellent beginner and intermediate terrain, and consistent snowmaking. Red River is part of the enchanted circle scenic byway and offers a genuine small-town ski experience increasingly rare in modern skiing.",
+      "tags": ["indy-pass", "ski-town", "family-friendly", "old-west", "enchanted-circle", "red-river"]
+    },
+    {
+      "name": "Sipapu Ski Resort",
+      "slug": "sipapu",
+      "status": "active",
+      "location": { "lat": 36.0914, "lng": -105.4944 },
+      "nearestCity": "Vadito",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 5,
+        "runsCount": 43,
+        "verticalDrop": 1055,
+        "baseElevation": 8200,
+        "summitElevation": 9255,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sipapu.ski",
+      "description": "Sipapu Ski Resort is a charming family-owned resort in northern New Mexico's Sangre de Cristo Mountains. Named after the Puebloan concept of the sipapu—a portal to the spirit world—the resort offers an intimate, affordable skiing experience. With reasonable prices, friendly staff, and terrain suitable for beginners through advanced skiers, Sipapu has cultivated a loyal following. The resort also offers tubing, lodging, and summer camping, making it a year-round destination.",
+      "tags": ["indy-pass", "family-owned", "affordable", "intimate", "sangre-de-cristo", "vadito"]
+    },
+    {
+      "name": "Pajarito Mountain",
+      "slug": "pajarito-mountain",
+      "status": "active",
+      "location": { "lat": 35.8883, "lng": -106.3939 },
+      "nearestCity": "Los Alamos",
+      "stats": {
+        "skiableAcres": 750,
+        "liftsCount": 6,
+        "runsCount": 45,
+        "verticalDrop": 1410,
+        "baseElevation": 9000,
+        "summitElevation": 10441,
+        "avgAnnualSnowfall": 155
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skipajarito.com",
+      "description": "Pajarito Mountain is a nonprofit community ski area serving the Los Alamos area and northern New Mexico. Originally established for scientists and employees of Los Alamos National Laboratory, the mountain offers surprisingly diverse terrain in the Jemez Mountains. Known locally for its steep chutes and glades accessible from the summit, Pajarito delivers advanced terrain that belies its modest appearance. The resort operates efficiently with a volunteer-heavy staff and offers exceptional value.",
+      "tags": ["indy-pass", "nonprofit", "community", "los-alamos", "jemez-mountains", "hidden-gem"]
+    },
+    {
+      "name": "Sandia Peak",
+      "slug": "sandia-peak",
+      "status": "active",
+      "location": { "lat": 35.2108, "lng": -106.4456 },
+      "nearestCity": "Albuquerque",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 4,
+        "runsCount": 35,
+        "verticalDrop": 1700,
+        "baseElevation": 8678,
+        "summitElevation": 10378,
+        "avgAnnualSnowfall": 125
+      },
+      "terrain": { "beginner": 35, "intermediate": 55, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sandiapeak.com",
+      "description": "Sandia Peak is Albuquerque's local ski area, accessible via an exciting aerial tramway from the city or by road from the east side. The Sandia Peak Tramway is the world's third-longest passenger tramway, offering spectacular views during the 15-minute ride. The ski area offers modest terrain suited to beginners and intermediates, making it a perfect introduction to skiing or a quick escape from New Mexico's largest city. The summit restaurant provides panoramic views spanning 11,000 square miles.",
+      "tags": ["aerial-tramway", "albuquerque", "city-skiing", "beginner-friendly", "sandia-mountains", "views"]
+    },
+    {
+      "name": "Ski Cloudcroft",
+      "slug": "ski-cloudcroft",
+      "status": "active",
+      "location": { "lat": 32.9547, "lng": -105.7478 },
+      "nearestCity": "Cloudcroft",
+      "stats": {
+        "skiableAcres": 28,
+        "liftsCount": 2,
+        "runsCount": 25,
+        "verticalDrop": 700,
+        "baseElevation": 8600,
+        "summitElevation": 9300,
+        "avgAnnualSnowfall": 85
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skicloudcroft.net",
+      "description": "Ski Cloudcroft is the southernmost ski area in New Mexico and one of the southernmost in the United States. This small family ski area in the Lincoln National Forest offers basic skiing and snowboarding on a handful of runs. Despite its modest size, Ski Cloudcroft provides an accessible introduction to snow sports for residents of southern New Mexico and West Texas. The charming Victorian village of Cloudcroft offers lodging and dining nearby.",
+      "tags": ["small-resort", "southernmost", "family-area", "cloudcroft", "lincoln-national-forest", "beginner-friendly"]
+    },
+
+    {
+      "name": "Rio Costilla Ski Area",
+      "slug": "rio-costilla",
+      "status": "defunct",
+      "location": { "lat": 36.9500, "lng": -105.2167 },
+      "yearsOperated": "1960s-1990s",
+      "notes": "Small ski area near the Colorado border that operated intermittently. Located on private land with limited access.",
+      "tags": ["defunct", "northern-new-mexico", "small-area"]
+    },
+    {
+      "name": "Sugarite Ski Basin",
+      "slug": "sugarite-ski-basin",
+      "status": "defunct",
+      "location": { "lat": 36.9833, "lng": -104.4167 },
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small ski area near Raton in northeastern New Mexico. Operated with rope tows and limited terrain before closing.",
+      "tags": ["defunct", "raton", "rope-tow", "northeastern-new-mexico"]
+    },
+    {
+      "name": "La Madera",
+      "slug": "la-madera",
+      "status": "defunct",
+      "location": { "lat": 35.9667, "lng": -105.9667 },
+      "yearsOperated": "1970s-1980s",
+      "notes": "Small ski area in northern New Mexico that operated briefly before financial difficulties led to closure.",
+      "tags": ["defunct", "small-area", "northern-new-mexico"]
+    },
+    {
+      "name": "Agua Piedra",
+      "slug": "agua-piedra",
+      "status": "defunct",
+      "location": { "lat": 36.4167, "lng": -105.3833 },
+      "yearsOperated": "1960s-1970s",
+      "notes": "Remote ski area in the Sangre de Cristo Mountains that operated briefly with minimal infrastructure.",
+      "tags": ["defunct", "remote", "sangre-de-cristo", "minimal-infrastructure"]
+    },
+    {
+      "name": "Capulin Ski Area",
+      "slug": "capulin-ski-area",
+      "status": "defunct",
+      "location": { "lat": 36.7833, "lng": -104.0833 },
+      "yearsOperated": "1960s",
+      "notes": "Short-lived ski area near Capulin Volcano in northeastern New Mexico. Limited snowfall and access issues led to early closure.",
+      "tags": ["defunct", "capulin", "northeastern-new-mexico", "short-lived"]
+    },
+    {
+      "name": "Santa Fe Ski Basin (Original)",
+      "slug": "santa-fe-ski-basin-original",
+      "status": "defunct",
+      "location": { "lat": 35.7900, "lng": -105.8000 },
+      "yearsOperated": "1936-1950s",
+      "notes": "The original Santa Fe ski area that evolved into today's Ski Santa Fe. Early rope tow operations gave way to modern chairlift infrastructure.",
+      "tags": ["defunct", "historic", "predecessor", "santa-fe", "evolved"]
+    }
+  ],
+  "meta": {
+    "totalActive": 9,
+    "totalDefunct": 6,
+    "lastUpdated": "2025-01-27"
+  }
+}

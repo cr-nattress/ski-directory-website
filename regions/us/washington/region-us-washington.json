@@ -1,0 +1,447 @@
+{
+  "country": "US",
+  "state": "Washington",
+  "resorts": [
+    {
+      "name": "Crystal Mountain",
+      "slug": "crystal-mountain-wa",
+      "status": "active",
+      "location": { "lat": 46.9282, "lng": -121.5045 },
+      "nearestCity": "Enumclaw",
+      "stats": {
+        "skiableAcres": 2600,
+        "liftsCount": 11,
+        "runsCount": 57,
+        "verticalDrop": 3100,
+        "baseElevation": 4400,
+        "summitElevation": 7012,
+        "avgAnnualSnowfall": 486
+      },
+      "terrain": { "beginner": 13, "intermediate": 57, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.crystalmountainresort.com",
+      "description": "Washington's largest ski resort, Crystal Mountain offers stunning views of Mount Rainier from the summit. Known for excellent snow conditions and challenging terrain, it features the state's only gondola providing scenic rides to the Summit House restaurant at 6,872 feet.",
+      "tags": ["largest-in-washington", "ikon-pass", "mount-rainier-views", "gondola", "powder", "backcountry"]
+    },
+    {
+      "name": "Stevens Pass",
+      "slug": "stevens-pass",
+      "status": "active",
+      "location": { "lat": 47.7448, "lng": -121.0890 },
+      "nearestCity": "Leavenworth",
+      "stats": {
+        "skiableAcres": 1125,
+        "liftsCount": 10,
+        "runsCount": 52,
+        "verticalDrop": 1800,
+        "baseElevation": 4061,
+        "summitElevation": 5845,
+        "avgAnnualSnowfall": 450
+      },
+      "terrain": { "beginner": 11, "intermediate": 54, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.stevenspass.com",
+      "description": "Located on US Highway 2, Stevens Pass is a favorite of Seattle skiers offering excellent terrain, night skiing, and reliable snowfall. The resort features two separate base areas (front and back side) with varied terrain and outstanding terrain parks.",
+      "tags": ["epic-pass", "night-skiing", "terrain-parks", "seattle-accessible", "cascade-range", "backcountry"]
+    },
+    {
+      "name": "Mt. Baker Ski Area",
+      "slug": "mt-baker",
+      "status": "active",
+      "location": { "lat": 48.8571, "lng": -121.6656 },
+      "nearestCity": "Bellingham",
+      "stats": {
+        "skiableAcres": 1000,
+        "liftsCount": 8,
+        "runsCount": 38,
+        "verticalDrop": 1500,
+        "baseElevation": 3500,
+        "summitElevation": 5089,
+        "avgAnnualSnowfall": 641
+      },
+      "terrain": { "beginner": 15, "intermediate": 30, "advanced": 55, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtbaker.us",
+      "description": "Mt. Baker holds the world record for snowfall in a single season (1,140 inches in 1998-99). Known for its legendary powder, steep terrain, and strong snowboard culture, it's a mecca for hardcore riders and powder hounds. No on-mountain lodging preserves its raw, authentic vibe.",
+      "tags": ["world-record-snowfall", "powder", "legendary", "snowboard-culture", "indy-pass", "backcountry", "steep"]
+    },
+    {
+      "name": "The Summit at Snoqualmie",
+      "slug": "summit-at-snoqualmie",
+      "status": "active",
+      "location": { "lat": 47.4206, "lng": -121.4137 },
+      "nearestCity": "North Bend",
+      "stats": {
+        "skiableAcres": 1965,
+        "liftsCount": 25,
+        "runsCount": 105,
+        "verticalDrop": 2280,
+        "baseElevation": 3000,
+        "summitElevation": 5420,
+        "avgAnnualSnowfall": 432
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://summitatsnoqualmie.com",
+      "description": "The closest ski resort to Seattle (just 45 minutes), The Summit combines four base areas: Summit West, Summit Central, Summit East, and Alpental. With extensive night skiing and terrain parks, it's the perfect after-work escape for Seattle residents.",
+      "tags": ["ikon-pass", "closest-to-seattle", "night-skiing", "four-base-areas", "terrain-parks", "family-friendly", "alpental"]
+    },
+    {
+      "name": "White Pass Ski Area",
+      "slug": "white-pass",
+      "status": "active",
+      "location": { "lat": 46.6375, "lng": -121.3906 },
+      "nearestCity": "Yakima",
+      "stats": {
+        "skiableAcres": 1500,
+        "liftsCount": 8,
+        "runsCount": 52,
+        "verticalDrop": 2000,
+        "baseElevation": 4500,
+        "summitElevation": 6500,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 20, "intermediate": 60, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://skiwhitepass.com",
+      "description": "Located on Highway 12 along the Pacific Crest Trail, White Pass offers a family-friendly atmosphere with views of Mount Rainier. Known for reliable snow conditions and a loyal local following, it provides excellent intermediate terrain and Nordic skiing.",
+      "tags": ["indy-pass", "family-friendly", "pacific-crest-trail", "nordic-skiing", "mount-rainier-views"]
+    },
+    {
+      "name": "Mission Ridge",
+      "slug": "mission-ridge",
+      "status": "active",
+      "location": { "lat": 47.2942, "lng": -120.4017 },
+      "nearestCity": "Wenatchee",
+      "stats": {
+        "skiableAcres": 2000,
+        "liftsCount": 4,
+        "runsCount": 36,
+        "verticalDrop": 2140,
+        "baseElevation": 4570,
+        "summitElevation": 6740,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 10, "intermediate": 55, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.missionridge.com",
+      "description": "Mission Ridge sits on the sunny, east side of the Cascades near Wenatchee, offering drier snow and more sunshine than western Washington resorts. Known for uncrowded slopes, excellent grooming, and authentic Pacific Northwest vibes.",
+      "tags": ["indy-pass", "sunny-side", "uncrowded", "east-cascades", "dry-snow", "backcountry"]
+    },
+    {
+      "name": "49 Degrees North",
+      "slug": "49-degrees-north",
+      "status": "active",
+      "location": { "lat": 48.7886, "lng": -117.5731 },
+      "nearestCity": "Spokane",
+      "stats": {
+        "skiableAcres": 2325,
+        "liftsCount": 6,
+        "runsCount": 82,
+        "verticalDrop": 1851,
+        "baseElevation": 3923,
+        "summitElevation": 5774,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.ski49n.com",
+      "description": "Eastern Washington's largest ski area, 49 Degrees North offers excellent terrain variety and uncrowded slopes. Named for its latitude (just south of the Canadian border), it provides great powder skiing and a welcoming, family-oriented atmosphere.",
+      "tags": ["indy-pass", "eastern-washington", "uncrowded", "family-friendly", "powder", "spokane-area"]
+    },
+    {
+      "name": "Ski Bluewood",
+      "slug": "bluewood",
+      "status": "active",
+      "location": { "lat": 46.0828, "lng": -117.8519 },
+      "nearestCity": "Dayton",
+      "stats": {
+        "skiableAcres": 563,
+        "liftsCount": 3,
+        "runsCount": 24,
+        "verticalDrop": 1125,
+        "baseElevation": 4545,
+        "summitElevation": 5670,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bluewood.com",
+      "description": "Located in the Blue Mountains of southeastern Washington, Bluewood is known for dry powder snow and uncrowded slopes. A local favorite serving the Walla Walla Valley, it offers excellent tree skiing and a laid-back atmosphere.",
+      "tags": ["indy-pass", "blue-mountains", "dry-powder", "uncrowded", "tree-skiing", "local-favorite"]
+    },
+    {
+      "name": "Hurricane Ridge",
+      "slug": "hurricane-ridge",
+      "status": "active",
+      "location": { "lat": 47.9719, "lng": -123.4981 },
+      "nearestCity": "Port Angeles",
+      "stats": {
+        "skiableAcres": 75,
+        "liftsCount": 2,
+        "runsCount": 10,
+        "verticalDrop": 500,
+        "baseElevation": 5000,
+        "summitElevation": 5500,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.hurricaneridge.com",
+      "description": "The westernmost ski area in the lower 48 states, Hurricane Ridge sits inside Olympic National Park. Operating Friday through Sunday and holidays, this small community-run ski area offers stunning views of the Olympic Mountains and Strait of Juan de Fuca.",
+      "tags": ["olympic-national-park", "westernmost", "scenic", "community-run", "weekend-only", "backcountry"]
+    },
+    {
+      "name": "Loup Loup Ski Bowl",
+      "slug": "loup-loup",
+      "status": "active",
+      "location": { "lat": 48.3925, "lng": -119.9106 },
+      "nearestCity": "Okanogan",
+      "stats": {
+        "skiableAcres": 250,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 1240,
+        "baseElevation": 4020,
+        "summitElevation": 5260,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skitheloup.com",
+      "description": "A hidden gem in the Okanogan Highlands, Loup Loup Ski Bowl is a non-profit community ski area offering affordable family skiing. Known for its dry inland snow and uncrowded slopes, it serves the rural communities of north-central Washington.",
+      "tags": ["non-profit", "community-run", "affordable", "okanogan", "uncrowded", "family-friendly"]
+    },
+    {
+      "name": "Mount Spokane Ski & Snowboard Park",
+      "slug": "mount-spokane",
+      "status": "active",
+      "location": { "lat": 47.9225, "lng": -117.1019 },
+      "nearestCity": "Spokane",
+      "stats": {
+        "skiableAcres": 1425,
+        "liftsCount": 6,
+        "runsCount": 55,
+        "verticalDrop": 2000,
+        "baseElevation": 4100,
+        "summitElevation": 5889,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 10, "intermediate": 38, "advanced": 52, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtspokane.com",
+      "description": "Located just 28 miles from downtown Spokane in Mount Spokane State Park, this non-profit ski area is Washington's largest night skiing operation. With challenging terrain and strong local support, it's a cornerstone of eastern Washington skiing.",
+      "tags": ["indy-pass", "night-skiing", "non-profit", "spokane", "state-park", "challenging-terrain"]
+    },
+    {
+      "name": "Echo Valley",
+      "slug": "echo-valley",
+      "status": "active",
+      "location": { "lat": 47.5500, "lng": -120.0833 },
+      "nearestCity": "Chelan",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 2,
+        "runsCount": 11,
+        "verticalDrop": 550,
+        "baseElevation": 2950,
+        "summitElevation": 3500,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.echovalley.org",
+      "description": "A tiny community ski area near Lake Chelan, Echo Valley is run by volunteers and offers the most affordable skiing in Washington. Perfect for families and beginners, it provides a genuine small-town ski experience.",
+      "tags": ["community-run", "volunteer-operated", "affordable", "beginner-friendly", "lake-chelan", "family-friendly"]
+    },
+    {
+      "name": "Badger Mountain Ski Area",
+      "slug": "badger-mountain",
+      "status": "active",
+      "location": { "lat": 47.0653, "lng": -117.7794 },
+      "nearestCity": "Waterville",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 1,
+        "runsCount": 8,
+        "verticalDrop": 500,
+        "baseElevation": 2700,
+        "summitElevation": 3200,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.badgermountainskiarea.com",
+      "description": "Washington's smallest ski area, Badger Mountain is a community hill serving the agricultural town of Waterville in Douglas County. Run by volunteers on weekends, it offers affordable skiing for local families.",
+      "tags": ["community-run", "volunteer-operated", "smallest", "affordable", "waterville", "weekend-only"]
+    },
+
+    {
+      "name": "Snoqualmie Pass (Original)",
+      "slug": "snoqualmie-pass-original",
+      "status": "defunct",
+      "notes": "Original ski area that evolved and combined with other areas to become The Summit at Snoqualmie",
+      "yearsOperated": "1937-1997",
+      "location": { "lat": 47.4284, "lng": -121.4257 },
+      "tags": ["historic", "now-summit-at-snoqualmie", "pioneer-era"]
+    },
+    {
+      "name": "Alpental",
+      "slug": "alpental",
+      "status": "defunct",
+      "notes": "Now operates as part of The Summit at Snoqualmie, known for expert terrain",
+      "yearsOperated": "1967-1997",
+      "location": { "lat": 47.4433, "lng": -121.4267 },
+      "tags": ["now-summit-at-snoqualmie", "expert-terrain", "merged"]
+    },
+    {
+      "name": "Ski Acres",
+      "slug": "ski-acres",
+      "status": "defunct",
+      "notes": "Now Summit Central, part of The Summit at Snoqualmie",
+      "yearsOperated": "1938-1997",
+      "location": { "lat": 47.4175, "lng": -121.4183 },
+      "tags": ["now-summit-at-snoqualmie", "historic", "merged"]
+    },
+    {
+      "name": "Hyak",
+      "slug": "hyak",
+      "status": "defunct",
+      "notes": "Now Summit East, part of The Summit at Snoqualmie tubing area",
+      "yearsOperated": "1960s-1997",
+      "location": { "lat": 47.3939, "lng": -121.3958 },
+      "tags": ["now-summit-at-snoqualmie", "tubing", "merged"]
+    },
+    {
+      "name": "Silver Skis",
+      "slug": "silver-skis",
+      "status": "defunct",
+      "notes": "Early Seattle-area ski area on Snoqualmie Pass, precursor to modern Summit development",
+      "yearsOperated": "1930s-1940s",
+      "location": { "lat": 47.42, "lng": -121.42 },
+      "tags": ["historic", "pioneer-era", "snoqualmie-pass"]
+    },
+    {
+      "name": "Squilchuck",
+      "slug": "squilchuck",
+      "status": "defunct",
+      "notes": "Former ski area near Wenatchee, closed due to lack of reliable snow",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 47.35, "lng": -120.35 },
+      "tags": ["historic", "wenatchee-area", "closed"]
+    },
+    {
+      "name": "Chewelah Peak",
+      "slug": "chewelah-peak",
+      "status": "defunct",
+      "notes": "Former community ski area in northeast Washington near Chewelah",
+      "yearsOperated": "1960s-2000s",
+      "location": { "lat": 48.3, "lng": -117.65 },
+      "tags": ["historic", "northeast-washington", "community-area"]
+    },
+    {
+      "name": "Tollgate",
+      "slug": "tollgate",
+      "status": "defunct",
+      "notes": "Former small ski area in the Blue Mountains of southeast Washington",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 46.05, "lng": -117.75 },
+      "tags": ["historic", "blue-mountains", "community-area"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-27T00:00:00Z"
+  }
+}

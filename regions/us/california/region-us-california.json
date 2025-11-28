@@ -1,0 +1,1020 @@
+{
+  "country": "US",
+  "state": "California",
+  "resorts": [
+    {
+      "name": "Mammoth Mountain",
+      "slug": "mammoth-mountain",
+      "status": "active",
+      "location": { "lat": 37.6308, "lng": -119.0326 },
+      "nearestCity": "Mammoth Lakes",
+      "stats": {
+        "skiableAcres": 3500,
+        "liftsCount": 28,
+        "runsCount": 150,
+        "verticalDrop": 3100,
+        "baseElevation": 7953,
+        "summitElevation": 11053,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 20, "expert": 15 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.mammothmountain.com",
+      "description": "Mammoth Mountain is California's highest ski resort and one of the largest in North America. Known for its legendary snowfall, long season (often into June), and world-class terrain parks, it's a favorite destination for Southern California skiers. The Eastern Sierra setting provides stunning volcanic scenery.",
+      "tags": ["highest-california", "ikon-pass", "long-season", "terrain-parks", "eastern-sierra", "powder", "volcanic"]
+    },
+    {
+      "name": "Palisades Tahoe",
+      "slug": "palisades-tahoe",
+      "status": "active",
+      "location": { "lat": 39.1969, "lng": -120.2358 },
+      "nearestCity": "Olympic Valley",
+      "stats": {
+        "skiableAcres": 6000,
+        "liftsCount": 42,
+        "runsCount": 270,
+        "verticalDrop": 2840,
+        "baseElevation": 6200,
+        "summitElevation": 9050,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.palisadestahoe.com",
+      "description": "Palisades Tahoe (formerly Squaw Valley and Alpine Meadows) hosted the 1960 Winter Olympics and remains one of North America's most iconic ski destinations. The combined resort offers diverse terrain from gentle groomers to extreme chutes, connected by the Base-to-Base Gondola.",
+      "tags": ["olympic-venue", "ikon-pass", "1960-olympics", "extreme-terrain", "lake-tahoe", "base-to-base-gondola"]
+    },
+    {
+      "name": "Heavenly Mountain Resort",
+      "slug": "heavenly",
+      "status": "active",
+      "location": { "lat": 38.9353, "lng": -119.9400 },
+      "nearestCity": "South Lake Tahoe",
+      "stats": {
+        "skiableAcres": 4800,
+        "liftsCount": 28,
+        "runsCount": 97,
+        "verticalDrop": 3500,
+        "baseElevation": 6540,
+        "summitElevation": 10067,
+        "avgAnnualSnowfall": 360
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.skiheavenly.com",
+      "description": "Heavenly straddles the California-Nevada border, offering breathtaking Lake Tahoe views and access to South Lake Tahoe's casinos and nightlife. With the largest vertical drop in the Tahoe area and terrain spanning two states, it's a true destination resort.",
+      "tags": ["lake-tahoe-views", "epic-pass", "california-nevada-border", "casinos-nearby", "biggest-vertical-tahoe"]
+    },
+    {
+      "name": "Northstar California",
+      "slug": "northstar",
+      "status": "active",
+      "location": { "lat": 39.2746, "lng": -120.1210 },
+      "nearestCity": "Truckee",
+      "stats": {
+        "skiableAcres": 3170,
+        "liftsCount": 20,
+        "runsCount": 100,
+        "verticalDrop": 2280,
+        "baseElevation": 6330,
+        "summitElevation": 8610,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 13, "intermediate": 60, "advanced": 27, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.northstarcalifornia.com",
+      "description": "Northstar is known for its perfectly groomed corduroy runs, upscale village, and excellent intermediate terrain. The Village at Northstar offers boutique shopping and dining, while the mountain provides reliable snow conditions and family-friendly skiing.",
+      "tags": ["groomed-corduroy", "epic-pass", "upscale-village", "intermediate-friendly", "family-friendly", "truckee"]
+    },
+    {
+      "name": "Kirkwood Mountain Resort",
+      "slug": "kirkwood",
+      "status": "active",
+      "location": { "lat": 38.6850, "lng": -120.0653 },
+      "nearestCity": "Kirkwood",
+      "stats": {
+        "skiableAcres": 2300,
+        "liftsCount": 15,
+        "runsCount": 86,
+        "verticalDrop": 2000,
+        "baseElevation": 7800,
+        "summitElevation": 9800,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 15, "intermediate": 50, "advanced": 20, "expert": 15 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.kirkwood.com",
+      "description": "Kirkwood is the Tahoe area's powder destination, receiving more snow than any other resort in the region. Its high elevation and remote location mean lighter crowds and drier snow. The challenging terrain attracts expert skiers seeking steep chutes and cliff drops.",
+      "tags": ["most-snow-tahoe", "epic-pass", "expert-terrain", "powder", "uncrowded", "high-elevation"]
+    },
+    {
+      "name": "Sugar Bowl",
+      "slug": "sugar-bowl",
+      "status": "active",
+      "location": { "lat": 39.3047, "lng": -120.3344 },
+      "nearestCity": "Norden",
+      "stats": {
+        "skiableAcres": 1650,
+        "liftsCount": 13,
+        "runsCount": 103,
+        "verticalDrop": 1500,
+        "baseElevation": 6883,
+        "summitElevation": 8383,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 17, "intermediate": 45, "advanced": 38, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.sugarbowl.com",
+      "description": "Sugar Bowl is one of Tahoe's oldest resorts, founded in 1939 by Walt Disney and accessed by its iconic gondola. The resort spans four peaks and offers excellent snow conditions, historic charm, and a European-inspired village with slopeside lodging.",
+      "tags": ["historic", "ikon-pass", "walt-disney-founded", "european-charm", "gondola-access", "four-peaks"]
+    },
+    {
+      "name": "Sierra-at-Tahoe",
+      "slug": "sierra-at-tahoe",
+      "status": "active",
+      "location": { "lat": 38.7997, "lng": -120.0803 },
+      "nearestCity": "Twin Bridges",
+      "stats": {
+        "skiableAcres": 2000,
+        "liftsCount": 14,
+        "runsCount": 46,
+        "verticalDrop": 2212,
+        "baseElevation": 6640,
+        "summitElevation": 8852,
+        "avgAnnualSnowfall": 480
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sierraattahoe.com",
+      "description": "Sierra-at-Tahoe offers affordable Tahoe skiing with excellent tree runs and terrain parks. Recovering from the 2021 Caldor Fire, the resort showcases mountain resilience while delivering quality skiing at a value price point.",
+      "tags": ["affordable", "ikon-pass", "tree-skiing", "terrain-parks", "recovering", "family-friendly"]
+    },
+    {
+      "name": "Bear Valley",
+      "slug": "bear-valley",
+      "status": "active",
+      "location": { "lat": 38.4697, "lng": -120.0417 },
+      "nearestCity": "Bear Valley",
+      "stats": {
+        "skiableAcres": 1900,
+        "liftsCount": 10,
+        "runsCount": 75,
+        "verticalDrop": 1900,
+        "baseElevation": 6600,
+        "summitElevation": 8500,
+        "avgAnnualSnowfall": 359
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bearvalley.com",
+      "description": "Bear Valley offers a throwback ski experience with affordable prices and an uncrowded, family-friendly atmosphere. Located in the central Sierra, it's a hidden gem with excellent intermediate terrain and a quaint village feel.",
+      "tags": ["hidden-gem", "ikon-pass", "affordable", "uncrowded", "family-friendly", "central-sierra"]
+    },
+    {
+      "name": "Dodge Ridge",
+      "slug": "dodge-ridge",
+      "status": "active",
+      "location": { "lat": 38.1894, "lng": -119.9556 },
+      "nearestCity": "Pinecrest",
+      "stats": {
+        "skiableAcres": 862,
+        "liftsCount": 12,
+        "runsCount": 67,
+        "verticalDrop": 1600,
+        "baseElevation": 6600,
+        "summitElevation": 8200,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.dodgeridge.com",
+      "description": "Dodge Ridge is the closest ski resort to the Bay Area, making it a favorite for San Francisco and Central Valley day-trippers. Family-owned and operated, it offers affordable skiing with a welcoming, unpretentious atmosphere.",
+      "tags": ["closest-to-bay-area", "indy-pass", "family-owned", "affordable", "day-trip", "central-valley"]
+    },
+    {
+      "name": "June Mountain",
+      "slug": "june-mountain",
+      "status": "active",
+      "location": { "lat": 37.7675, "lng": -119.0903 },
+      "nearestCity": "June Lake",
+      "stats": {
+        "skiableAcres": 1500,
+        "liftsCount": 7,
+        "runsCount": 35,
+        "verticalDrop": 2590,
+        "baseElevation": 7545,
+        "summitElevation": 10135,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.junemountain.com",
+      "description": "June Mountain is Mammoth's little sister, offering a mellower, uncrowded alternative just 20 minutes away. The charming June Lake village provides a throwback ski town vibe, and the mountain delivers excellent beginner and intermediate terrain.",
+      "tags": ["uncrowded", "ikon-pass", "mammoth-sister", "beginner-friendly", "june-lake-village", "mellow"]
+    },
+    {
+      "name": "Mountain High",
+      "slug": "mountain-high",
+      "status": "active",
+      "location": { "lat": 34.3722, "lng": -117.6914 },
+      "nearestCity": "Wrightwood",
+      "stats": {
+        "skiableAcres": 290,
+        "liftsCount": 16,
+        "runsCount": 59,
+        "verticalDrop": 1600,
+        "baseElevation": 6600,
+        "summitElevation": 8200,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mthigh.com",
+      "description": "Mountain High is Southern California's closest major ski resort to Los Angeles, just 90 minutes from downtown. With three separate base areas, night skiing, and extensive terrain parks, it's the go-to destination for LA skiers and snowboarders.",
+      "tags": ["closest-to-la", "ikon-pass", "night-skiing", "terrain-parks", "socal", "three-resorts"]
+    },
+    {
+      "name": "Snow Summit",
+      "slug": "snow-summit",
+      "status": "active",
+      "location": { "lat": 34.2319, "lng": -116.8900 },
+      "nearestCity": "Big Bear Lake",
+      "stats": {
+        "skiableAcres": 240,
+        "liftsCount": 14,
+        "runsCount": 31,
+        "verticalDrop": 1200,
+        "baseElevation": 7000,
+        "summitElevation": 8200,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 15, "intermediate": 55, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bigbearmountainresort.com",
+      "description": "Snow Summit is part of Big Bear Mountain Resort, offering Southern California skiing with beautiful views of Big Bear Lake. Night skiing and excellent snowmaking make it a reliable destination for LA and Orange County skiers.",
+      "tags": ["big-bear", "ikon-pass", "night-skiing", "socal", "lake-views", "snowmaking"]
+    },
+    {
+      "name": "Bear Mountain",
+      "slug": "bear-mountain-ca",
+      "status": "active",
+      "location": { "lat": 34.2272, "lng": -116.8603 },
+      "nearestCity": "Big Bear Lake",
+      "stats": {
+        "skiableAcres": 198,
+        "liftsCount": 12,
+        "runsCount": 32,
+        "verticalDrop": 1665,
+        "baseElevation": 7140,
+        "summitElevation": 8805,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 15, "intermediate": 25, "advanced": 35, "expert": 25 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bigbearmountainresort.com",
+      "description": "Bear Mountain is the terrain park capital of Southern California, hosting numerous pro snowboarding events and featuring world-class park features. Part of Big Bear Mountain Resort with Snow Summit, it's the go-to for freestyle riders.",
+      "tags": ["terrain-parks", "ikon-pass", "freestyle", "pro-events", "socal", "snowboarding"]
+    },
+    {
+      "name": "Snow Valley",
+      "slug": "snow-valley",
+      "status": "active",
+      "location": { "lat": 34.2253, "lng": -117.0369 },
+      "nearestCity": "Running Springs",
+      "stats": {
+        "skiableAcres": 240,
+        "liftsCount": 13,
+        "runsCount": 28,
+        "verticalDrop": 1141,
+        "baseElevation": 6800,
+        "summitElevation": 7841,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snow-valley.com",
+      "description": "Snow Valley is the oldest ski resort in Southern California, operating since 1924. Family-owned and offering affordable skiing with night operations, it provides a friendly alternative to the larger Big Bear resorts.",
+      "tags": ["oldest-socal", "indy-pass", "family-owned", "affordable", "night-skiing", "historic"]
+    },
+    {
+      "name": "Mt. Baldy",
+      "slug": "mt-baldy",
+      "status": "active",
+      "location": { "lat": 34.2383, "lng": -117.6461 },
+      "nearestCity": "Mt. Baldy",
+      "stats": {
+        "skiableAcres": 800,
+        "liftsCount": 4,
+        "runsCount": 26,
+        "verticalDrop": 2100,
+        "baseElevation": 6500,
+        "summitElevation": 8600,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtbaldyresort.com",
+      "description": "Mt. Baldy offers the steepest skiing in Southern California on the flanks of the highest peak in the San Gabriel Mountains. A favorite of expert skiers and backcountry enthusiasts, it provides challenging terrain just an hour from downtown LA.",
+      "tags": ["steepest-socal", "expert-terrain", "backcountry", "mt-san-antonio", "local", "challenging"]
+    },
+    {
+      "name": "Boreal Mountain Resort",
+      "slug": "boreal",
+      "status": "active",
+      "location": { "lat": 39.3319, "lng": -120.3483 },
+      "nearestCity": "Truckee",
+      "stats": {
+        "skiableAcres": 380,
+        "liftsCount": 8,
+        "runsCount": 41,
+        "verticalDrop": 600,
+        "baseElevation": 7200,
+        "summitElevation": 7800,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 30, "intermediate": 55, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.rideboreal.com",
+      "description": "Boreal is Tahoe's most accessible resort, located right off I-80 at Donner Summit. Famous for its extensive night skiing and terrain parks, it's a favorite for Bay Area day-trippers and park riders seeking affordable après options.",
+      "tags": ["i-80-accessible", "indy-pass", "night-skiing", "terrain-parks", "donner-summit", "affordable"]
+    },
+    {
+      "name": "Soda Springs",
+      "slug": "soda-springs",
+      "status": "active",
+      "location": { "lat": 39.3192, "lng": -120.3806 },
+      "nearestCity": "Soda Springs",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 4,
+        "runsCount": 16,
+        "verticalDrop": 652,
+        "baseElevation": 6700,
+        "summitElevation": 7352,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisodasprings.com",
+      "description": "Soda Springs is a family-focused resort perfect for beginners and kids. With tubing, a terrain park, and gentle learning terrain, it's an ideal first ski experience. Planet Kids offers childcare and lessons in a dedicated learning zone.",
+      "tags": ["beginner-friendly", "family-focused", "tubing", "planet-kids", "learning-terrain", "first-timers"]
+    },
+    {
+      "name": "Tahoe Donner",
+      "slug": "tahoe-donner",
+      "status": "active",
+      "location": { "lat": 39.3556, "lng": -120.2833 },
+      "nearestCity": "Truckee",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 5,
+        "runsCount": 14,
+        "verticalDrop": 600,
+        "baseElevation": 6750,
+        "summitElevation": 7350,
+        "avgAnnualSnowfall": 340
+      },
+      "terrain": { "beginner": 50, "intermediate": 35, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tahoedonner.com",
+      "description": "Tahoe Donner is a beloved family resort that consistently wins 'Best for Beginners' awards. The homeowner's association ski area offers gentle terrain, excellent lessons, and a welcoming atmosphere for first-time skiers and families.",
+      "tags": ["best-for-beginners", "family-resort", "learning-terrain", "truckee", "hoa-owned", "lessons"]
+    },
+    {
+      "name": "Donner Ski Ranch",
+      "slug": "donner-ski-ranch",
+      "status": "active",
+      "location": { "lat": 39.3181, "lng": -120.3297 },
+      "nearestCity": "Norden",
+      "stats": {
+        "skiableAcres": 505,
+        "liftsCount": 8,
+        "runsCount": 52,
+        "verticalDrop": 750,
+        "baseElevation": 7031,
+        "summitElevation": 7781,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.donnerskiranch.com",
+      "description": "Donner Ski Ranch is a no-frills, affordable ski area at Donner Summit. Operating since 1937, it offers old-school charm with affordable prices and a locals-focused atmosphere. Views of Donner Lake from the upper runs are spectacular.",
+      "tags": ["affordable", "indy-pass", "old-school", "donner-summit", "historic", "lake-views"]
+    },
+    {
+      "name": "Homewood Mountain Resort",
+      "slug": "homewood",
+      "status": "active",
+      "location": { "lat": 39.0833, "lng": -120.1583 },
+      "nearestCity": "Homewood",
+      "stats": {
+        "skiableAcres": 1260,
+        "liftsCount": 8,
+        "runsCount": 67,
+        "verticalDrop": 1650,
+        "baseElevation": 6230,
+        "summitElevation": 7880,
+        "avgAnnualSnowfall": 450
+      },
+      "terrain": { "beginner": 15, "intermediate": 50, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skihomewood.com",
+      "description": "Homewood offers the most stunning Lake Tahoe views of any resort, with runs descending toward the lake's crystal blue waters. A local favorite, it provides uncrowded skiing on Tahoe's West Shore with excellent intermediate and advanced terrain.",
+      "tags": ["best-lake-views", "ikon-pass", "west-shore", "uncrowded", "scenic", "local-favorite"]
+    },
+    {
+      "name": "Diamond Peak",
+      "slug": "diamond-peak",
+      "status": "active",
+      "location": { "lat": 39.2536, "lng": -119.9197 },
+      "nearestCity": "Incline Village",
+      "stats": {
+        "skiableAcres": 655,
+        "liftsCount": 7,
+        "runsCount": 31,
+        "verticalDrop": 1840,
+        "baseElevation": 6700,
+        "summitElevation": 8540,
+        "avgAnnualSnowfall": 325
+      },
+      "terrain": { "beginner": 18, "intermediate": 46, "advanced": 36, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.diamondpeak.com",
+      "description": "Diamond Peak is a community-owned resort in Incline Village on Tahoe's North Shore. Known for spectacular lake views, uncrowded slopes, and family-friendly prices, it offers a quieter alternative to the larger Tahoe resorts.",
+      "tags": ["lake-views", "community-owned", "north-shore", "uncrowded", "family-friendly", "affordable"]
+    },
+    {
+      "name": "Mt. Rose Ski Tahoe",
+      "slug": "mt-rose",
+      "status": "active",
+      "location": { "lat": 39.3297, "lng": -119.8803 },
+      "nearestCity": "Reno",
+      "stats": {
+        "skiableAcres": 1200,
+        "liftsCount": 8,
+        "runsCount": 60,
+        "verticalDrop": 1800,
+        "baseElevation": 8260,
+        "summitElevation": 9700,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 20, "intermediate": 30, "advanced": 40, "expert": 10 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skirose.com",
+      "description": "Mt. Rose has the highest base elevation in Tahoe, ensuring excellent snow conditions. Located just 25 minutes from Reno, it offers challenging terrain including The Chutes, some of the steepest inbounds runs in the region.",
+      "tags": ["highest-base-tahoe", "ikon-pass", "the-chutes", "steep-terrain", "reno-closest", "expert-terrain"]
+    },
+    {
+      "name": "China Peak",
+      "slug": "china-peak",
+      "status": "active",
+      "location": { "lat": 37.2328, "lng": -119.1569 },
+      "nearestCity": "Lakeshore",
+      "stats": {
+        "skiableAcres": 1679,
+        "liftsCount": 11,
+        "runsCount": 45,
+        "verticalDrop": 1673,
+        "baseElevation": 7030,
+        "summitElevation": 8709,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skichinapeak.com",
+      "description": "China Peak (formerly Sierra Summit) serves the Central Valley with convenient access from Fresno. Overlooking Huntington Lake, it offers diverse terrain and a family-friendly atmosphere at affordable prices.",
+      "tags": ["central-valley", "indy-pass", "fresno-closest", "huntington-lake", "family-friendly", "affordable"]
+    },
+    {
+      "name": "Badger Pass",
+      "slug": "badger-pass",
+      "status": "active",
+      "location": { "lat": 37.6628, "lng": -119.6636 },
+      "nearestCity": "Yosemite Valley",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 5,
+        "runsCount": 10,
+        "verticalDrop": 800,
+        "baseElevation": 7200,
+        "summitElevation": 8000,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 35, "intermediate": 50, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.travelyosemite.com/winter/badger-pass-ski-area/",
+      "description": "Badger Pass is California's oldest ski area (opened 1935) and the only one inside a national park. Located in Yosemite, it offers gentle terrain for beginners and serves as a gateway to spectacular cross-country skiing in Yosemite's high country.",
+      "tags": ["yosemite", "oldest-california", "national-park", "beginner-friendly", "cross-country", "historic"]
+    },
+    {
+      "name": "Mt. Shasta Ski Park",
+      "slug": "mt-shasta-ski-park",
+      "status": "active",
+      "location": { "lat": 41.3139, "lng": -122.2047 },
+      "nearestCity": "Mt. Shasta",
+      "stats": {
+        "skiableAcres": 425,
+        "liftsCount": 5,
+        "runsCount": 32,
+        "verticalDrop": 1435,
+        "baseElevation": 5500,
+        "summitElevation": 6890,
+        "avgAnnualSnowfall": 275
+      },
+      "terrain": { "beginner": 20, "intermediate": 55, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skipark.com",
+      "description": "Mt. Shasta Ski Park sits on the slopes of California's iconic volcanic peak. Offering affordable skiing with night operations and stunning views of the 14,179-foot Mount Shasta, it serves northern California with family-friendly terrain.",
+      "tags": ["volcanic-peak", "indy-pass", "night-skiing", "northern-california", "affordable", "mt-shasta-views"]
+    },
+    {
+      "name": "Alta Sierra",
+      "slug": "alta-sierra",
+      "status": "active",
+      "location": { "lat": 39.4842, "lng": -121.0719 },
+      "nearestCity": "Grass Valley",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 3,
+        "runsCount": 10,
+        "verticalDrop": 320,
+        "baseElevation": 5200,
+        "summitElevation": 5520,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.altasierraski.com",
+      "description": "Alta Sierra is a tiny, family-friendly ski area serving the Grass Valley and Nevada City communities. Perfect for beginners and families with young children, it offers the most affordable skiing in the Sierra Nevada.",
+      "tags": ["tiny", "beginner-friendly", "family-friendly", "grass-valley", "affordable", "local"]
+    },
+    {
+      "name": "Granlibakken",
+      "slug": "granlibakken",
+      "status": "active",
+      "location": { "lat": 39.1628, "lng": -120.1389 },
+      "nearestCity": "Tahoe City",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 2,
+        "verticalDrop": 175,
+        "baseElevation": 6310,
+        "summitElevation": 6485,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 80, "intermediate": 20, "advanced": 0, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.granlibakken.com",
+      "description": "Granlibakken is Tahoe's tiniest ski area, perfect for first-timers and families with young children. The resort and conference center offer lodging, sledding, and a gentle slope for learning, with no crowds and personal attention.",
+      "tags": ["tiniest-tahoe", "first-timers", "sledding", "conference-center", "lodge", "family-friendly"]
+    },
+    {
+      "name": "Lassen Volcanic Ski Area",
+      "slug": "lassen-volcanic",
+      "status": "active",
+      "location": { "lat": 40.4858, "lng": -121.5392 },
+      "nearestCity": "Mineral",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 1,
+        "runsCount": 8,
+        "verticalDrop": 700,
+        "baseElevation": 6700,
+        "summitElevation": 7400,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skilassen.org",
+      "description": "Lassen Volcanic Ski Area is a small, community-operated ski area near Lassen Volcanic National Park. Operated by volunteers, it offers affordable family skiing and serves as a gateway to backcountry touring in the volcanic landscape.",
+      "tags": ["volcanic", "community-operated", "volunteer-run", "lassen-national-park", "affordable", "backcountry-gateway"]
+    },
+
+    {
+      "name": "Squaw Valley USA",
+      "slug": "squaw-valley",
+      "status": "defunct",
+      "notes": "Renamed and merged into Palisades Tahoe in 2021",
+      "yearsOperated": "1949-2021",
+      "location": { "lat": 39.1969, "lng": -120.2358 },
+      "tags": ["renamed", "now-palisades-tahoe", "1960-olympics"]
+    },
+    {
+      "name": "Alpine Meadows",
+      "slug": "alpine-meadows",
+      "status": "defunct",
+      "notes": "Merged into Palisades Tahoe in 2021, still operates as connected terrain",
+      "yearsOperated": "1961-2021",
+      "location": { "lat": 39.1644, "lng": -120.2392 },
+      "tags": ["merged", "now-palisades-tahoe"]
+    },
+    {
+      "name": "Ski Sunrise",
+      "slug": "ski-sunrise",
+      "status": "defunct",
+      "notes": "Former small ski area near Wrightwood",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 34.38, "lng": -117.68 },
+      "tags": ["historic", "socal"]
+    },
+    {
+      "name": "Kratka Ridge",
+      "slug": "kratka-ridge",
+      "status": "defunct",
+      "notes": "Former ski area near Big Bear, closed 2003",
+      "yearsOperated": "1950s-2003",
+      "location": { "lat": 34.28, "lng": -117.58 },
+      "tags": ["historic", "socal", "big-bear-area"]
+    },
+    {
+      "name": "Holiday Hill",
+      "slug": "holiday-hill",
+      "status": "defunct",
+      "notes": "Former ski area near Wrightwood",
+      "yearsOperated": "1950s-1970s",
+      "location": { "lat": 34.36, "lng": -117.65 },
+      "tags": ["historic", "socal"]
+    },
+    {
+      "name": "Goldmine Ski Area",
+      "slug": "goldmine-ski-area",
+      "status": "defunct",
+      "notes": "Former small ski area in Big Bear area",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 34.24, "lng": -116.92 },
+      "tags": ["historic", "socal", "big-bear-area"]
+    },
+    {
+      "name": "Edelweiss Ski Area",
+      "slug": "edelweiss-ca",
+      "status": "defunct",
+      "notes": "Former ski area in Southern California",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 34.25, "lng": -117.05 },
+      "tags": ["historic", "socal"]
+    },
+    {
+      "name": "Iron Mountain",
+      "slug": "iron-mountain-ca",
+      "status": "defunct",
+      "notes": "Former ski area near Lake Arrowhead",
+      "yearsOperated": "1950s-1970s",
+      "location": { "lat": 34.27, "lng": -117.2 },
+      "tags": ["historic", "socal", "lake-arrowhead"]
+    },
+    {
+      "name": "Coppervale",
+      "slug": "coppervale",
+      "status": "defunct",
+      "notes": "Former ski area in the Sierra Nevada",
+      "yearsOperated": "1940s-1960s",
+      "location": { "lat": 39.3, "lng": -120.35 },
+      "tags": ["historic", "donner-area"]
+    },
+    {
+      "name": "Wolverton",
+      "slug": "wolverton",
+      "status": "defunct",
+      "notes": "Former ski area in Sequoia National Park",
+      "yearsOperated": "1930s-1970s",
+      "location": { "lat": 36.59, "lng": -118.77 },
+      "tags": ["historic", "national-park", "sequoia"]
+    },
+    {
+      "name": "Snow Crest",
+      "slug": "snow-crest",
+      "status": "defunct",
+      "notes": "Former ski area in the Sierra Nevada",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 38.5, "lng": -120.0 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Ski Green Valley",
+      "slug": "ski-green-valley",
+      "status": "defunct",
+      "notes": "Former ski area near Lake Tahoe",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 39.15, "lng": -120.2 },
+      "tags": ["historic", "tahoe-area"]
+    },
+    {
+      "name": "Mount Waterman",
+      "slug": "mount-waterman",
+      "status": "defunct",
+      "notes": "Former ski area in the San Gabriel Mountains, closed 2009",
+      "yearsOperated": "1940-2009",
+      "location": { "lat": 34.35, "lng": -117.93 },
+      "tags": ["historic", "socal", "san-gabriels"]
+    },
+    {
+      "name": "Table Mountain",
+      "slug": "table-mountain-ca",
+      "status": "defunct",
+      "notes": "Former ski area near Wrightwood",
+      "yearsOperated": "1950s-1980s",
+      "location": { "lat": 34.4, "lng": -117.75 },
+      "tags": ["historic", "socal", "wrightwood"]
+    },
+    {
+      "name": "Echo Summit",
+      "slug": "echo-summit",
+      "status": "defunct",
+      "notes": "Former ski area on Highway 50",
+      "yearsOperated": "1950s-1990s",
+      "location": { "lat": 38.81, "lng": -120.03 },
+      "tags": ["historic", "tahoe-area", "highway-50"]
+    },
+    {
+      "name": "Ski Incline",
+      "slug": "ski-incline",
+      "status": "defunct",
+      "notes": "Former ski area at Incline Village, now Diamond Peak area",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 39.25, "lng": -119.92 },
+      "tags": ["historic", "north-shore", "now-diamond-peak"]
+    },
+    {
+      "name": "Strawberry Lodge",
+      "slug": "strawberry-lodge",
+      "status": "defunct",
+      "notes": "Former ski area on Highway 50",
+      "yearsOperated": "1950s-1970s",
+      "location": { "lat": 38.79, "lng": -120.08 },
+      "tags": ["historic", "highway-50"]
+    },
+    {
+      "name": "Sno-Park",
+      "slug": "sno-park",
+      "status": "defunct",
+      "notes": "Former ski area operation",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 38.7, "lng": -120.1 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Papoose",
+      "slug": "papoose",
+      "status": "defunct",
+      "notes": "Former ski area near Tahoe, absorbed into larger resort operations",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 39.2, "lng": -120.15 },
+      "tags": ["historic", "tahoe-area"]
+    },
+    {
+      "name": "Powder Bowl",
+      "slug": "powder-bowl",
+      "status": "defunct",
+      "notes": "Former ski area in California",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 39.0, "lng": -120.1 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Ski Santa Fe",
+      "slug": "ski-santa-fe-ca",
+      "status": "defunct",
+      "notes": "Former small ski operation in California (not the New Mexico resort)",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 34.5, "lng": -117.5 },
+      "tags": ["historic", "socal"]
+    },
+    {
+      "name": "Rebel Ridge",
+      "slug": "rebel-ridge",
+      "status": "defunct",
+      "notes": "Former ski area operation",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 39.3, "lng": -120.3 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Signal Hill",
+      "slug": "signal-hill",
+      "status": "defunct",
+      "notes": "Former ski area operation",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 39.35, "lng": -120.35 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "PG&E Ski Area",
+      "slug": "pge-ski-area",
+      "status": "defunct",
+      "notes": "Former employee/private ski area operated by Pacific Gas & Electric",
+      "yearsOperated": "1940s-1970s",
+      "location": { "lat": 39.4, "lng": -120.4 },
+      "tags": ["historic", "private", "employee"]
+    },
+    {
+      "name": "Cisco Butte",
+      "slug": "cisco-butte",
+      "status": "defunct",
+      "notes": "Former ski area near Cisco Grove",
+      "yearsOperated": "1940s-1960s",
+      "location": { "lat": 39.31, "lng": -120.55 },
+      "tags": ["historic", "donner-area"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-26T21:30:00Z"
+  }
+}

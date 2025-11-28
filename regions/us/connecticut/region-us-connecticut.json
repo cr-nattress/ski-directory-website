@@ -1,0 +1,180 @@
+{
+  "country": "US",
+  "state": "Connecticut",
+  "resorts": [
+    {
+      "name": "Mohawk Mountain",
+      "slug": "mohawk-mountain",
+      "status": "active",
+      "location": { "lat": 41.8422, "lng": -73.3139 },
+      "nearestCity": "Cornwall",
+      "stats": {
+        "skiableAcres": 112,
+        "liftsCount": 5,
+        "runsCount": 26,
+        "verticalDrop": 650,
+        "baseElevation": 700,
+        "summitElevation": 1350,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mohawkmtn.com",
+      "description": "Mohawk Mountain is Connecticut's largest and oldest ski area, operating since 1947. Located in the Litchfield Hills, it offers the most vertical and terrain in the state, with reliable snowmaking and scenic New England character.",
+      "tags": ["largest-connecticut", "indy-pass", "litchfield-hills", "historic", "night-skiing"]
+    },
+    {
+      "name": "Mount Southington",
+      "slug": "mount-southington",
+      "status": "active",
+      "location": { "lat": 41.5767, "lng": -72.8903 },
+      "nearestCity": "Plantsville",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 6,
+        "runsCount": 14,
+        "verticalDrop": 425,
+        "baseElevation": 475,
+        "summitElevation": 900,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountsouthington.com",
+      "description": "Mount Southington serves central Connecticut with convenient access from Hartford and New Haven. Known for its extensive night skiing (100% lighted terrain), it's perfect for after-work sessions and weekend skiing.",
+      "tags": ["central-connecticut", "night-skiing", "100-percent-lighted", "hartford-accessible", "family-friendly"]
+    },
+    {
+      "name": "Ski Sundown",
+      "slug": "ski-sundown",
+      "status": "active",
+      "location": { "lat": 41.9533, "lng": -72.9203 },
+      "nearestCity": "New Hartford",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 6,
+        "runsCount": 16,
+        "verticalDrop": 625,
+        "baseElevation": 575,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 55
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisundown.com",
+      "description": "Ski Sundown offers challenging terrain for Connecticut, with the second-highest vertical in the state. The family-owned resort is known for its friendly atmosphere and solid mix of terrain for all abilities.",
+      "tags": ["family-owned", "challenging-terrain", "night-skiing", "new-hartford", "terrain-variety"]
+    },
+    {
+      "name": "Powder Ridge Mountain Park",
+      "slug": "powder-ridge",
+      "status": "active",
+      "location": { "lat": 41.5086, "lng": -72.7133 },
+      "nearestCity": "Middlefield",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 5,
+        "runsCount": 19,
+        "verticalDrop": 550,
+        "baseElevation": 250,
+        "summitElevation": 800,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.powderridgepark.com",
+      "description": "Powder Ridge reopened in 2013 after a decade-long closure, revitalized with a focus on terrain parks and progression. The mountain offers excellent freestyle terrain and is popular with young riders from the New Haven and Hartford areas.",
+      "tags": ["reopened", "terrain-parks", "freestyle-focus", "night-skiing", "middlefield"]
+    },
+
+    {
+      "name": "Powder Hill",
+      "slug": "powder-hill",
+      "status": "defunct",
+      "location": { "lat": 41.7500, "lng": -72.8200 },
+      "nearestCity": "Bloomfield",
+      "yearClosed": 1982,
+      "description": "Powder Hill was a small ski area in the Hartford suburbs that operated until the early 1980s. Development pressure and competition from larger areas led to its closure.",
+      "tags": ["closed", "hartford-suburbs", "suburban"]
+    },
+    {
+      "name": "Tapawingo Ski Area",
+      "slug": "tapawingo",
+      "status": "defunct",
+      "location": { "lat": 41.6500, "lng": -73.3000 },
+      "nearestCity": "Woodbury",
+      "yearClosed": 1985,
+      "description": "Tapawingo was a small family ski area in western Connecticut that operated through the mid-1980s. The area served the local community before economic challenges forced closure.",
+      "tags": ["closed", "woodbury-area", "family-area"]
+    },
+    {
+      "name": "Satan's Ridge",
+      "slug": "satans-ridge",
+      "status": "defunct",
+      "location": { "lat": 41.8900, "lng": -73.0500 },
+      "nearestCity": "Burlington",
+      "yearClosed": 1977,
+      "description": "Satan's Ridge was a small ski area with a memorable name that operated until the late 1970s. The area's challenging terrain and unique character made it a local favorite before closure.",
+      "tags": ["closed", "burlington", "memorable-name"]
+    },
+    {
+      "name": "Woodbury Ski Area",
+      "slug": "woodbury-ski-area",
+      "status": "defunct",
+      "location": { "lat": 41.5400, "lng": -73.2000 },
+      "nearestCity": "Woodbury",
+      "yearClosed": 1990,
+      "description": "Woodbury Ski Area was a community facility that served western Connecticut until around 1990. The small area provided local skiing before ceasing operations.",
+      "tags": ["closed", "woodbury", "community-area"]
+    },
+    {
+      "name": "Brodie Park",
+      "slug": "brodie-park-ct",
+      "status": "defunct",
+      "location": { "lat": 41.3200, "lng": -73.1500 },
+      "nearestCity": "Seymour",
+      "yearClosed": 1978,
+      "description": "Brodie Park was a small community ski area near Seymour that operated through the 1970s. The area provided affordable skiing for the Naugatuck Valley before closing.",
+      "tags": ["closed", "seymour", "naugatuck-valley"]
+    },
+    {
+      "name": "Pinnacle Ski Area",
+      "slug": "pinnacle",
+      "status": "defunct",
+      "location": { "lat": 41.8700, "lng": -72.9800 },
+      "nearestCity": "Canton",
+      "yearClosed": 1975,
+      "description": "Pinnacle was a small ski area near Canton that operated until the mid-1970s. Limited terrain and economic factors contributed to its closure.",
+      "tags": ["closed", "canton", "small-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-27T22:00:00Z" }
+}

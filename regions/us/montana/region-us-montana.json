@@ -1,0 +1,512 @@
+{
+  "country": "US",
+  "state": "Montana",
+  "resorts": [
+    {
+      "name": "Big Sky Resort",
+      "slug": "big-sky",
+      "status": "active",
+      "location": { "lat": 45.2862, "lng": -111.4015 },
+      "nearestCity": "Big Sky",
+      "stats": {
+        "skiableAcres": 5800,
+        "liftsCount": 39,
+        "runsCount": 317,
+        "verticalDrop": 4350,
+        "baseElevation": 6800,
+        "summitElevation": 11166,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 15, "intermediate": 25, "advanced": 42, "expert": 18 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.bigskyresort.com",
+      "description": "Big Sky is the largest ski resort in America by skiable terrain, offering 5,800 acres of uncrowded slopes. The iconic Lone Peak provides access to some of the most extreme inbounds terrain in North America, including the legendary Big Couloir. With an average of only 2 skiers per acre, it lives up to its 'Biggest Skiing in America' tagline.",
+      "tags": ["biggest-skiing", "lone-peak", "ikon-pass", "expert-terrain", "uncrowded", "big-couloir", "powder"]
+    },
+    {
+      "name": "Whitefish Mountain Resort",
+      "slug": "whitefish",
+      "status": "active",
+      "location": { "lat": 48.4815, "lng": -114.3553 },
+      "nearestCity": "Whitefish",
+      "stats": {
+        "skiableAcres": 3000,
+        "liftsCount": 14,
+        "runsCount": 107,
+        "verticalDrop": 2353,
+        "baseElevation": 4464,
+        "summitElevation": 6817,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.skiwhitefish.com",
+      "description": "Located near Glacier National Park, Whitefish Mountain Resort (formerly Big Mountain) offers stunning views and excellent tree skiing. The charming town of Whitefish was named Amtrak's Best Winter Destination, accessible by train on the Empire Builder route. Night skiing available on select nights.",
+      "tags": ["glacier-national-park", "ikon-pass", "tree-skiing", "train-access", "night-skiing", "charming-town"]
+    },
+    {
+      "name": "Bridger Bowl",
+      "slug": "bridger-bowl",
+      "status": "active",
+      "location": { "lat": 45.8175, "lng": -110.8972 },
+      "nearestCity": "Bozeman",
+      "stats": {
+        "skiableAcres": 2000,
+        "liftsCount": 9,
+        "runsCount": 79,
+        "verticalDrop": 2700,
+        "baseElevation": 6100,
+        "summitElevation": 8800,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 18, "intermediate": 28, "advanced": 29, "expert": 25 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bridgerbowl.com",
+      "description": "Bridger Bowl is a non-profit, community-owned ski area beloved by Bozeman locals and Montana State University students. Famous for its 'cold smoke' powder and challenging Ridge Terrain, it offers affordable skiing with an authentic Montana atmosphere. The ridge hike accesses expert-only terrain.",
+      "tags": ["non-profit", "cold-smoke", "ridge-terrain", "indy-pass", "affordable", "bozeman", "community-owned"]
+    },
+    {
+      "name": "Red Lodge Mountain",
+      "slug": "red-lodge",
+      "status": "active",
+      "location": { "lat": 45.1889, "lng": -109.3436 },
+      "nearestCity": "Red Lodge",
+      "stats": {
+        "skiableAcres": 1635,
+        "liftsCount": 8,
+        "runsCount": 70,
+        "verticalDrop": 2400,
+        "baseElevation": 7016,
+        "summitElevation": 9416,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 15, "intermediate": 40, "advanced": 30, "expert": 15 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.redlodgemountain.com",
+      "description": "Red Lodge Mountain sits at the base of the spectacular Beartooth Highway (America's most scenic drive) near Yellowstone's northeast entrance. The historic western town of Red Lodge offers old-time charm, and the mountain provides diverse terrain for all abilities with stunning Beartooth views.",
+      "tags": ["beartooth-highway", "indy-pass", "yellowstone-gateway", "western-town", "scenic", "family-friendly"]
+    },
+    {
+      "name": "Discovery Ski Area",
+      "slug": "discovery",
+      "status": "active",
+      "location": { "lat": 46.2492, "lng": -113.2372 },
+      "nearestCity": "Anaconda",
+      "stats": {
+        "skiableAcres": 2200,
+        "liftsCount": 6,
+        "runsCount": 78,
+        "verticalDrop": 2388,
+        "baseElevation": 6400,
+        "summitElevation": 8158,
+        "avgAnnualSnowfall": 215
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skidiscovery.com",
+      "description": "Discovery is a hidden gem in southwestern Montana's Anaconda-Pintler Wilderness area. Offering uncrowded slopes, affordable prices, and excellent powder, it's a favorite among locals who appreciate its no-frills, authentic Montana skiing experience.",
+      "tags": ["hidden-gem", "indy-pass", "uncrowded", "affordable", "powder", "anaconda-pintler"]
+    },
+    {
+      "name": "Montana Snowbowl",
+      "slug": "montana-snowbowl",
+      "status": "active",
+      "location": { "lat": 47.0111, "lng": -113.9967 },
+      "nearestCity": "Missoula",
+      "stats": {
+        "skiableAcres": 950,
+        "liftsCount": 4,
+        "runsCount": 39,
+        "verticalDrop": 2600,
+        "baseElevation": 5500,
+        "summitElevation": 8100,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 20, "expert": 20 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montanasnowbowl.com",
+      "description": "Montana Snowbowl serves the Missoula community with some of the steepest lift-served terrain in Montana. Located just 12 miles from downtown Missoula and the University of Montana, it offers a no-nonsense, locals-focused skiing experience with challenging expert terrain.",
+      "tags": ["steep-terrain", "indy-pass", "missoula", "university-town", "local-favorite", "affordable"]
+    },
+    {
+      "name": "Lost Trail Powder Mountain",
+      "slug": "lost-trail",
+      "status": "active",
+      "location": { "lat": 45.6933, "lng": -113.9500 },
+      "nearestCity": "Darby",
+      "stats": {
+        "skiableAcres": 1800,
+        "liftsCount": 6,
+        "runsCount": 62,
+        "verticalDrop": 1800,
+        "baseElevation": 6400,
+        "summitElevation": 8200,
+        "avgAnnualSnowfall": 325
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.losttrail.com",
+      "description": "Straddling the Montana-Idaho border at Lost Trail Pass, this ski area is known for its consistent powder and uncrowded runs. Operating since 1938, it offers family-friendly pricing and a laid-back atmosphere in the beautiful Bitterroot Mountains.",
+      "tags": ["powder", "uncrowded", "indy-pass", "montana-idaho-border", "bitterroot-mountains", "family-friendly"]
+    },
+    {
+      "name": "Blacktail Mountain",
+      "slug": "blacktail-mountain",
+      "status": "active",
+      "location": { "lat": 48.0028, "lng": -114.3667 },
+      "nearestCity": "Lakeside",
+      "stats": {
+        "skiableAcres": 1020,
+        "liftsCount": 4,
+        "runsCount": 34,
+        "verticalDrop": 1440,
+        "baseElevation": 4900,
+        "summitElevation": 6676,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.blacktailmountain.com",
+      "description": "Blacktail Mountain overlooks Flathead Lake, the largest natural freshwater lake west of the Mississippi. This community ski area offers panoramic views of Glacier National Park and the Mission Mountains, with a unique top-to-bottom layout where you park at the summit.",
+      "tags": ["flathead-lake-views", "park-at-summit", "glacier-views", "family-friendly", "affordable", "local"]
+    },
+    {
+      "name": "Showdown Montana",
+      "slug": "showdown",
+      "status": "active",
+      "location": { "lat": 46.8344, "lng": -110.7133 },
+      "nearestCity": "Great Falls",
+      "stats": {
+        "skiableAcres": 640,
+        "liftsCount": 4,
+        "runsCount": 34,
+        "verticalDrop": 1400,
+        "baseElevation": 6200,
+        "summitElevation": 7600,
+        "avgAnnualSnowfall": 240
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.showdownmontana.com",
+      "description": "Showdown Montana sits in the Little Belt Mountains of central Montana, serving Great Falls and the Hi-Line communities. One of Montana's oldest ski areas, it offers a classic Montana experience with family-friendly prices and a welcoming atmosphere.",
+      "tags": ["little-belt-mountains", "indy-pass", "great-falls", "family-friendly", "historic", "central-montana"]
+    },
+    {
+      "name": "Great Divide Ski Area",
+      "slug": "great-divide",
+      "status": "active",
+      "location": { "lat": 46.7675, "lng": -112.3389 },
+      "nearestCity": "Helena",
+      "stats": {
+        "skiableAcres": 1600,
+        "liftsCount": 6,
+        "runsCount": 107,
+        "verticalDrop": 1500,
+        "baseElevation": 5950,
+        "summitElevation": 7450,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skigd.com",
+      "description": "Great Divide serves Montana's capital city of Helena with extensive terrain on the Continental Divide. Known for its terrain parks and family-friendly atmosphere, it offers affordable skiing just 23 miles from downtown Helena with impressive acreage for a community area.",
+      "tags": ["continental-divide", "indy-pass", "helena", "terrain-parks", "family-friendly", "affordable"]
+    },
+    {
+      "name": "Lookout Pass",
+      "slug": "lookout-pass",
+      "status": "active",
+      "location": { "lat": 47.4539, "lng": -115.6819 },
+      "nearestCity": "Wallace",
+      "stats": {
+        "skiableAcres": 1150,
+        "liftsCount": 4,
+        "runsCount": 60,
+        "verticalDrop": 1150,
+        "baseElevation": 4820,
+        "summitElevation": 5650,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 15, "intermediate": 40, "advanced": 45, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skilookout.com",
+      "description": "Lookout Pass straddles the Montana-Idaho border on I-90, receiving more snow than any ski area in the region (400+ inches). Free ski school for beginners, affordable prices, and a welcoming atmosphere make it a great choice for families. The historic mining town of Wallace, Idaho is nearby.",
+      "tags": ["most-snow", "montana-idaho-border", "free-ski-school", "indy-pass", "affordable", "family-friendly"]
+    },
+    {
+      "name": "Turner Mountain",
+      "slug": "turner-mountain",
+      "status": "active",
+      "location": { "lat": 48.8528, "lng": -115.6692 },
+      "nearestCity": "Libby",
+      "stats": {
+        "skiableAcres": 960,
+        "liftsCount": 1,
+        "runsCount": 26,
+        "verticalDrop": 2110,
+        "baseElevation": 4600,
+        "summitElevation": 5952,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 15, "intermediate": 35, "advanced": 50, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiturnermountain.com",
+      "description": "Turner Mountain is Montana's best-kept secret, a tiny non-profit ski area with one T-bar lift serving surprisingly steep terrain. Operated by volunteers, it offers $15 lift tickets, incredible powder, and the most authentic Montana skiing experience available.",
+      "tags": ["secret-gem", "t-bar", "steep-terrain", "volunteer-run", "cheapest-skiing", "powder", "libby"]
+    },
+    {
+      "name": "Maverick Mountain",
+      "slug": "maverick-mountain",
+      "status": "active",
+      "location": { "lat": 45.4994, "lng": -113.2314 },
+      "nearestCity": "Dillon",
+      "stats": {
+        "skiableAcres": 205,
+        "liftsCount": 2,
+        "runsCount": 24,
+        "verticalDrop": 2120,
+        "baseElevation": 6430,
+        "summitElevation": 8550,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 35, "intermediate": 35, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skimaverick.com",
+      "description": "Maverick Mountain is a tiny family-owned ski area in the Pioneer Mountains near Dillon. With just two lifts serving impressive vertical, it offers an authentic, throwback skiing experience. Cash only, no snowmaking, and the most affordable skiing in southwest Montana.",
+      "tags": ["family-owned", "throwback", "pioneer-mountains", "affordable", "dillon", "authentic", "cash-only"]
+    },
+    {
+      "name": "Bear Paw Ski Bowl",
+      "slug": "bear-paw",
+      "status": "active",
+      "location": { "lat": 48.0458, "lng": -109.7317 },
+      "nearestCity": "Havre",
+      "stats": {
+        "skiableAcres": 150,
+        "liftsCount": 2,
+        "runsCount": 24,
+        "verticalDrop": 900,
+        "baseElevation": 5200,
+        "summitElevation": 6100,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibowl.org",
+      "description": "Bear Paw Ski Bowl serves the Hi-Line community of Havre in north-central Montana. This small, family-friendly area offers night skiing and serves one of the most remote populations of any ski area in the Lower 48, making skiing accessible to rural Montana.",
+      "tags": ["hi-line", "night-skiing", "havre", "family-friendly", "affordable", "rural-montana", "local"]
+    },
+    {
+      "name": "Teton Pass Ski Resort",
+      "slug": "teton-pass-ski",
+      "status": "active",
+      "location": { "lat": 47.9342, "lng": -112.5783 },
+      "nearestCity": "Choteau",
+      "stats": {
+        "skiableAcres": 125,
+        "liftsCount": 2,
+        "runsCount": 26,
+        "verticalDrop": 1000,
+        "baseElevation": 5600,
+        "summitElevation": 6600,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tetonpassresort.com",
+      "description": "Not to be confused with Wyoming's Teton Pass, this small ski area serves Montana's Rocky Mountain Front near Choteau. With views of the Bob Marshall Wilderness, it offers affordable family skiing and night operations on select nights.",
+      "tags": ["rocky-mountain-front", "bob-marshall-views", "night-skiing", "choteau", "family-friendly", "local"]
+    },
+
+    {
+      "name": "Moonlight Basin",
+      "slug": "moonlight-basin",
+      "status": "defunct",
+      "notes": "Merged into Big Sky Resort in 2013, now part of Big Sky's terrain",
+      "yearsOperated": "2003-2013",
+      "location": { "lat": 45.3056, "lng": -111.4500 },
+      "tags": ["merged", "now-big-sky"]
+    },
+    {
+      "name": "The Big Mountain",
+      "slug": "big-mountain",
+      "status": "defunct",
+      "notes": "Renamed to Whitefish Mountain Resort in 2007",
+      "yearsOperated": "1947-2007",
+      "location": { "lat": 48.4815, "lng": -114.3553 },
+      "tags": ["renamed", "now-whitefish"]
+    },
+    {
+      "name": "Marshall Mountain",
+      "slug": "marshall-mountain",
+      "status": "defunct",
+      "notes": "Former ski area near Missoula, closed 2004. The land is now used for hiking and mountain biking",
+      "yearsOperated": "1949-2004",
+      "location": { "lat": 46.9167, "lng": -113.9167 },
+      "tags": ["historic", "missoula", "closed-2004"]
+    },
+    {
+      "name": "Rainy Mountain",
+      "slug": "rainy-mountain",
+      "status": "defunct",
+      "notes": "Former small ski area in western Montana",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 47.0, "lng": -114.0 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Wraith Hill",
+      "slug": "wraith-hill",
+      "status": "defunct",
+      "notes": "Early Montana ski area that no longer operates",
+      "yearsOperated": "1940s-1970s",
+      "location": { "lat": 46.5, "lng": -112.0 },
+      "tags": ["historic", "early-montana-skiing"]
+    },
+    {
+      "name": "Diamond Mountain",
+      "slug": "diamond-mountain",
+      "status": "defunct",
+      "notes": "Former ski operation in Montana",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 46.0, "lng": -113.0 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Ptarmigan Mountain",
+      "slug": "ptarmigan-mountain",
+      "status": "defunct",
+      "notes": "Former ski area near Glacier National Park",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 48.5, "lng": -114.0 },
+      "tags": ["historic", "glacier-region"]
+    },
+    {
+      "name": "Deep Creek",
+      "slug": "deep-creek-mt",
+      "status": "defunct",
+      "notes": "Small former ski operation in Montana",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 46.0, "lng": -111.5 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Electric Peak",
+      "slug": "electric-peak",
+      "status": "defunct",
+      "notes": "Former ski area near Yellowstone National Park",
+      "yearsOperated": "1940s-1960s",
+      "location": { "lat": 45.1, "lng": -110.8 },
+      "tags": ["historic", "yellowstone-region", "early-montana-skiing"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-26T21:00:00Z"
+  }
+}

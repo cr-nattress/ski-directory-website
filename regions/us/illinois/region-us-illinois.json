@@ -1,0 +1,150 @@
+{
+  "country": "US",
+  "state": "Illinois",
+  "resorts": [
+    {
+      "name": "Chestnut Mountain Resort",
+      "slug": "chestnut-mountain",
+      "status": "active",
+      "location": { "lat": 42.3217, "lng": -90.3833 },
+      "nearestCity": "Galena",
+      "stats": {
+        "skiableAcres": 220,
+        "liftsCount": 8,
+        "runsCount": 19,
+        "verticalDrop": 475,
+        "baseElevation": 605,
+        "summitElevation": 1080,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.chestnutmtn.com",
+      "description": "Chestnut Mountain is Illinois' largest ski resort, perched on bluffs overlooking the Mississippi River near historic Galena. The resort offers the most vertical in the state and stunning river valley views, making it a destination resort for the Chicago market.",
+      "tags": ["largest-illinois", "mississippi-views", "galena", "destination-resort", "night-skiing"]
+    },
+    {
+      "name": "Villa Olivia",
+      "slug": "villa-olivia",
+      "status": "active",
+      "location": { "lat": 41.9939, "lng": -88.2178 },
+      "nearestCity": "Bartlett",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 4,
+        "runsCount": 8,
+        "verticalDrop": 180,
+        "baseElevation": 850,
+        "summitElevation": 1030,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.villaolivia.com",
+      "description": "Villa Olivia is a convenient ski area in Chicago's western suburbs, offering affordable skiing and snowboarding just 35 miles from downtown. The area is perfect for beginners and families looking for quick after-work or weekend sessions.",
+      "tags": ["chicago-suburbs", "beginner-friendly", "night-skiing", "affordable", "convenient"]
+    },
+    {
+      "name": "Four Lakes Ski Area",
+      "slug": "four-lakes",
+      "status": "active",
+      "location": { "lat": 42.4628, "lng": -88.0406 },
+      "nearestCity": "Lisle",
+      "stats": {
+        "skiableAcres": 20,
+        "liftsCount": 5,
+        "runsCount": 10,
+        "verticalDrop": 150,
+        "baseElevation": 800,
+        "summitElevation": 950,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.fourlakesskiarea.com",
+      "description": "Four Lakes serves the northern Chicago suburbs with convenient access and reliable snowmaking. The area focuses on learn-to-ski programs and family-friendly experiences, operating primarily during evening and weekend hours.",
+      "tags": ["chicago-area", "learn-to-ski", "family-friendly", "night-skiing", "suburban"]
+    },
+    {
+      "name": "Raging Buffalo Snowboard Park",
+      "slug": "raging-buffalo",
+      "status": "active",
+      "location": { "lat": 42.3000, "lng": -88.2500 },
+      "nearestCity": "Algonquin",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 3,
+        "runsCount": 6,
+        "verticalDrop": 100,
+        "baseElevation": 900,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.ragingbuffalo.com",
+      "description": "Raging Buffalo is a dedicated snowboard and freestyle park in the Chicago suburbs, specializing in terrain park features, rails, and jumps. It's the go-to spot for Chicago-area riders looking to progress their freestyle skills.",
+      "tags": ["snowboard-park", "freestyle", "terrain-parks", "halfpipe", "chicago-area"]
+    },
+
+    {
+      "name": "Nordic Hills",
+      "slug": "nordic-hills",
+      "status": "defunct",
+      "location": { "lat": 42.1500, "lng": -88.0000 },
+      "nearestCity": "Itasca",
+      "yearClosed": 1989,
+      "description": "Nordic Hills was a popular ski area in Chicago's western suburbs that operated until the late 1980s. The area was known for its convenient location before closing due to development pressure and mild winters.",
+      "tags": ["closed", "chicago-suburbs", "former-popular"]
+    },
+    {
+      "name": "Buffalo Park",
+      "slug": "buffalo-park",
+      "status": "defunct",
+      "location": { "lat": 42.4000, "lng": -88.2000 },
+      "nearestCity": "Algonquin",
+      "yearClosed": 2002,
+      "description": "Buffalo Park was a small ski area in the northwest Chicago suburbs that operated until 2002. The area served local families before economic challenges led to its closure.",
+      "tags": ["closed", "chicago-area", "family-area"]
+    },
+    {
+      "name": "Apple Canyon Lake",
+      "slug": "apple-canyon-lake",
+      "status": "defunct",
+      "location": { "lat": 42.4300, "lng": -90.1000 },
+      "nearestCity": "Apple River",
+      "yearClosed": 1985,
+      "description": "Apple Canyon Lake operated a small ski area as part of a private resort community near the Wisconsin border. The ski operations ended in the mid-1980s, though the community continues.",
+      "tags": ["closed", "private-community", "apple-river"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

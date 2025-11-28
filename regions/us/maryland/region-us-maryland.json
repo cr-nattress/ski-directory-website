@@ -1,0 +1,46 @@
+{
+  "country": "US",
+  "state": "Maryland",
+  "resorts": [
+    {
+      "name": "Wisp Resort",
+      "slug": "wisp",
+      "status": "active",
+      "location": { "lat": 39.5569, "lng": -79.3672 },
+      "nearestCity": "McHenry",
+      "stats": {
+        "skiableAcres": 172,
+        "liftsCount": 8,
+        "runsCount": 34,
+        "verticalDrop": 700,
+        "baseElevation": 2600,
+        "summitElevation": 3300,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.wispresort.com",
+      "description": "Wisp is Maryland's only ski resort, located in the western panhandle on Deep Creek Lake. The full-service resort offers skiing, golf, mountain biking, and lake activities, serving as a year-round destination for the Baltimore-Washington corridor.",
+      "tags": ["indy-pass", "only-in-maryland", "deep-creek-lake", "destination-resort", "four-season", "night-skiing"]
+    },
+
+    {
+      "name": "Braddock Heights",
+      "slug": "braddock-heights",
+      "status": "defunct",
+      "location": { "lat": 39.4100, "lng": -77.5000 },
+      "nearestCity": "Frederick",
+      "yearClosed": 1965,
+      "description": "Braddock Heights was a small ski area near Frederick that operated until the mid-1960s. The area was one of the earliest ski operations in Maryland before closing due to inconsistent snow and low elevation.",
+      "tags": ["closed", "frederick", "pioneer-area", "low-elevation"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

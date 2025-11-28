@@ -1,0 +1,74 @@
+{
+  "country": "CA",
+  "province": "Prince Edward Island",
+  "resorts": [
+    {
+      "name": "Brookvale Provincial Ski Park",
+      "slug": "brookvale",
+      "status": "active",
+      "location": { "lat": 46.2833, "lng": -63.5000 },
+      "nearestCity": "Brookvale",
+      "stats": {
+        "skiableAcres": 20,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 200,
+        "baseElevation": 50,
+        "summitElevation": 250,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.brookvaleski.ca",
+      "description": "Brookvale is Prince Edward Island's main ski area, operated as a provincial park. Despite the island's relatively flat terrain, Brookvale offers the most vertical on PEI and serves as the primary winter recreation destination for Islanders.",
+      "tags": ["provincial-park", "main-pei-resort", "night-skiing", "family-friendly"]
+    },
+    {
+      "name": "Mark Chicken Ski Hill",
+      "slug": "mark-chicken",
+      "status": "active",
+      "location": { "lat": 46.2500, "lng": -62.7000 },
+      "nearestCity": "Souris",
+      "stats": {
+        "skiableAcres": 8,
+        "liftsCount": 1,
+        "runsCount": 4,
+        "verticalDrop": 100,
+        "baseElevation": 50,
+        "summitElevation": 150,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.markchickenhill.ca",
+      "description": "Mark Chicken is a small community ski hill in eastern PEI near Souris, named after a beloved local community member. The nonprofit operation focuses on youth skiing and keeping winter sports accessible for rural Islanders.",
+      "tags": ["community-area", "souris", "nonprofit", "youth-focus", "eastern-pei"]
+    },
+
+    {
+      "name": "Cavendish Ski Area",
+      "slug": "cavendish",
+      "status": "defunct",
+      "location": { "lat": 46.4500, "lng": -63.4000 },
+      "nearestCity": "Cavendish",
+      "yearClosed": 1990,
+      "description": "Cavendish operated a small ski area near the famous beach destination until around 1990. The area closed due to inconsistent snow cover and limited terrain.",
+      "tags": ["closed", "cavendish", "beach-resort-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

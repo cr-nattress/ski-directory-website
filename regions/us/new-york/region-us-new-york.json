@@ -1,0 +1,1076 @@
+{
+  "country": "US",
+  "state": "New York",
+  "resorts": [
+    {
+      "name": "Whiteface Mountain",
+      "slug": "whiteface-mountain",
+      "status": "active",
+      "location": { "lat": 44.3656, "lng": -73.9028 },
+      "nearestCity": "Wilmington",
+      "stats": {
+        "skiableAcres": 288,
+        "liftsCount": 11,
+        "runsCount": 90,
+        "verticalDrop": 3430,
+        "baseElevation": 1220,
+        "summitElevation": 4650,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 20, "intermediate": 42, "advanced": 22, "expert": 16 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.whiteface.com",
+      "description": "Whiteface Mountain boasts the greatest vertical drop east of the Rockies at 3,430 feet. Host of the 1980 Winter Olympics alpine events, this state-owned mountain in the Adirondacks offers challenging terrain and stunning Lake Placid views.",
+      "tags": ["ikon-pass", "olympic-venue", "greatest-vertical-east", "lake-placid", "state-owned"]
+    },
+    {
+      "name": "Gore Mountain",
+      "slug": "gore-mountain",
+      "status": "active",
+      "location": { "lat": 43.6722, "lng": -74.0078 },
+      "nearestCity": "North Creek",
+      "stats": {
+        "skiableAcres": 447,
+        "liftsCount": 14,
+        "runsCount": 119,
+        "verticalDrop": 2537,
+        "baseElevation": 1580,
+        "summitElevation": 3600,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 16, "intermediate": 53, "advanced": 22, "expert": 9 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.goremountain.com",
+      "description": "Gore Mountain is New York's largest ski area by skiable acreage, spanning four peaks in the southern Adirondacks. State-owned and operated, it offers diverse terrain, excellent glades, and connects to the historic North Creek Ski Bowl.",
+      "tags": ["ikon-pass", "largest-ny", "four-peaks", "state-owned", "adirondacks", "glades"]
+    },
+    {
+      "name": "Hunter Mountain",
+      "slug": "hunter-mountain",
+      "status": "active",
+      "location": { "lat": 42.2003, "lng": -74.2253 },
+      "nearestCity": "Hunter",
+      "stats": {
+        "skiableAcres": 240,
+        "liftsCount": 13,
+        "runsCount": 67,
+        "verticalDrop": 1600,
+        "baseElevation": 1600,
+        "summitElevation": 3200,
+        "avgAnnualSnowfall": 125
+      },
+      "terrain": { "beginner": 25, "intermediate": 30, "advanced": 30, "expert": 15 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.huntermtn.com",
+      "description": "Hunter Mountain is the Catskills' most popular ski resort, known for aggressive snowmaking and challenging terrain. Just two hours from New York City, it's been a favorite destination for metropolitan skiers since 1960.",
+      "tags": ["epic-pass", "catskills", "nyc-accessible", "snowmaking-leader", "challenging"]
+    },
+    {
+      "name": "Windham Mountain",
+      "slug": "windham-mountain",
+      "status": "active",
+      "location": { "lat": 42.3014, "lng": -74.2625 },
+      "nearestCity": "Windham",
+      "stats": {
+        "skiableAcres": 285,
+        "liftsCount": 11,
+        "runsCount": 54,
+        "verticalDrop": 1600,
+        "baseElevation": 1500,
+        "summitElevation": 3100,
+        "avgAnnualSnowfall": 110
+      },
+      "terrain": { "beginner": 24, "intermediate": 52, "advanced": 16, "expert": 8 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.windhammountain.com",
+      "description": "Windham Mountain is an upscale Catskills resort known for excellent grooming, family-friendly atmosphere, and a charming village. Two hours from NYC, it offers a more refined experience than neighboring resorts.",
+      "tags": ["epic-pass", "catskills", "family-friendly", "excellent-grooming", "charming-village"]
+    },
+    {
+      "name": "Belleayre Mountain",
+      "slug": "belleayre-mountain",
+      "status": "active",
+      "location": { "lat": 42.1317, "lng": -74.5053 },
+      "nearestCity": "Highmount",
+      "stats": {
+        "skiableAcres": 171,
+        "liftsCount": 8,
+        "runsCount": 50,
+        "verticalDrop": 1404,
+        "baseElevation": 2025,
+        "summitElevation": 3429,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 22, "intermediate": 58, "advanced": 14, "expert": 6 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.belleayre.com",
+      "description": "Belleayre Mountain is a state-owned ski area in the central Catskills, offering excellent value and a family-friendly atmosphere. Known for its natural snow and challenging upper mountain terrain, it's a favorite of locals seeking uncrowded slopes.",
+      "tags": ["ikon-pass", "state-owned", "catskills", "value", "family-friendly", "uncrowded"]
+    },
+    {
+      "name": "Holiday Valley",
+      "slug": "holiday-valley",
+      "status": "active",
+      "location": { "lat": 42.2678, "lng": -78.6719 },
+      "nearestCity": "Ellicottville",
+      "stats": {
+        "skiableAcres": 290,
+        "liftsCount": 13,
+        "runsCount": 60,
+        "verticalDrop": 750,
+        "baseElevation": 1550,
+        "summitElevation": 2300,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 32, "intermediate": 40, "advanced": 23, "expert": 5 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.holidayvalley.com",
+      "description": "Holiday Valley is Western New York's premier ski resort, located in the charming village of Ellicottville. With excellent snowmaking, night skiing, and a vibrant après-ski scene, it draws skiers from Buffalo, Pittsburgh, and beyond.",
+      "tags": ["indy-pass", "ellicottville", "night-skiing", "snowbelt", "village-atmosphere", "western-ny"]
+    },
+    {
+      "name": "Bristol Mountain",
+      "slug": "bristol-mountain",
+      "status": "active",
+      "location": { "lat": 42.7500, "lng": -77.4111 },
+      "nearestCity": "Canandaigua",
+      "stats": {
+        "skiableAcres": 138,
+        "liftsCount": 5,
+        "runsCount": 36,
+        "verticalDrop": 1200,
+        "baseElevation": 1100,
+        "summitElevation": 2300,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bristolmountain.com",
+      "description": "Bristol Mountain offers the highest vertical drop between the Adirondacks and the Rockies, making it a favorite in the Finger Lakes region. Known for steep terrain and excellent conditions, it serves Rochester and Syracuse skiers.",
+      "tags": ["indy-pass", "finger-lakes", "highest-vertical-region", "night-skiing", "rochester-accessible"]
+    },
+    {
+      "name": "Greek Peak",
+      "slug": "greek-peak",
+      "status": "active",
+      "location": { "lat": 42.5089, "lng": -76.1494 },
+      "nearestCity": "Cortland",
+      "stats": {
+        "skiableAcres": 220,
+        "liftsCount": 7,
+        "runsCount": 55,
+        "verticalDrop": 952,
+        "baseElevation": 1500,
+        "summitElevation": 2452,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 28, "intermediate": 42, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.greekpeak.net",
+      "description": "Greek Peak is Central New York's largest ski resort, featuring a full-service resort with hotel, indoor waterpark, and adventure center. Popular with families, it offers diverse terrain and excellent snowmaking.",
+      "tags": ["indy-pass", "full-resort", "waterpark", "family-friendly", "central-ny", "night-skiing"]
+    },
+    {
+      "name": "Peek'n Peak",
+      "slug": "peek-n-peak",
+      "status": "active",
+      "location": { "lat": 42.0611, "lng": -79.7417 },
+      "nearestCity": "Clymer",
+      "stats": {
+        "skiableAcres": 130,
+        "liftsCount": 8,
+        "runsCount": 27,
+        "verticalDrop": 400,
+        "baseElevation": 1660,
+        "summitElevation": 2060,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.pknpk.com",
+      "description": "Peek'n Peak is a four-season resort in southwestern New York's snowbelt, receiving over 200 inches of lake-effect snow annually. With extensive facilities including golf, spa, and conference center, it's a complete destination resort.",
+      "tags": ["indy-pass", "four-season-resort", "lake-effect-snow", "spa", "southwestern-ny"]
+    },
+    {
+      "name": "Kissing Bridge",
+      "slug": "kissing-bridge",
+      "status": "active",
+      "location": { "lat": 42.6167, "lng": -78.7333 },
+      "nearestCity": "Glenwood",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 8,
+        "runsCount": 39,
+        "verticalDrop": 550,
+        "baseElevation": 1450,
+        "summitElevation": 2000,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.kbski.com",
+      "description": "Kissing Bridge is Western New York's closest ski area to Buffalo, offering affordable skiing with excellent snowmaking and night operations. Family-owned for decades, it's a community favorite for accessible skiing.",
+      "tags": ["buffalo-accessible", "family-owned", "night-skiing", "affordable", "western-ny"]
+    },
+    {
+      "name": "Plattekill Mountain",
+      "slug": "plattekill-mountain",
+      "status": "active",
+      "location": { "lat": 42.2794, "lng": -74.6506 },
+      "nearestCity": "Roxbury",
+      "stats": {
+        "skiableAcres": 75,
+        "liftsCount": 4,
+        "runsCount": 38,
+        "verticalDrop": 1100,
+        "baseElevation": 2300,
+        "summitElevation": 3400,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 30, "advanced": 35, "expert": 15 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.plattekill.com",
+      "description": "Plattekill Mountain is a family-owned Catskills gem known for natural snow, uncrowded slopes, and challenging terrain. Open only on weekends, it maintains an authentic, old-school ski atmosphere beloved by purists.",
+      "tags": ["indy-pass", "family-owned", "uncrowded", "natural-snow", "weekend-only", "authentic"]
+    },
+    {
+      "name": "Snow Ridge",
+      "slug": "snow-ridge",
+      "status": "active",
+      "location": { "lat": 43.6167, "lng": -75.4667 },
+      "nearestCity": "Turin",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 6,
+        "runsCount": 24,
+        "verticalDrop": 500,
+        "baseElevation": 1540,
+        "summitElevation": 2040,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 30, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowridge.com",
+      "description": "Snow Ridge receives more natural snow than any other ski area in the Eastern US, thanks to its location in the Tug Hill Plateau's intense lake-effect belt. When powder is the priority, Snow Ridge delivers.",
+      "tags": ["indy-pass", "most-snow-east", "lake-effect", "powder", "tug-hill", "natural-snow"]
+    },
+    {
+      "name": "Titus Mountain",
+      "slug": "titus-mountain",
+      "status": "active",
+      "location": { "lat": 44.8833, "lng": -74.3333 },
+      "nearestCity": "Malone",
+      "stats": {
+        "skiableAcres": 145,
+        "liftsCount": 5,
+        "runsCount": 50,
+        "verticalDrop": 1200,
+        "baseElevation": 1400,
+        "summitElevation": 2600,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.titusmountain.com",
+      "description": "Titus Mountain is a family-owned ski area in northern New York, popular with Canadian visitors and known for excellent value. With three distinct mountain areas and genuine family atmosphere, it's a hidden gem.",
+      "tags": ["indy-pass", "family-owned", "canadian-visitors", "value", "northern-ny", "three-mountains"]
+    },
+    {
+      "name": "McCauley Mountain",
+      "slug": "mccauley-mountain",
+      "status": "active",
+      "location": { "lat": 43.6833, "lng": -74.9333 },
+      "nearestCity": "Old Forge",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 2,
+        "runsCount": 21,
+        "verticalDrop": 633,
+        "baseElevation": 1900,
+        "summitElevation": 2533,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mccauleyny.com",
+      "description": "McCauley Mountain is a nonprofit community ski area in the heart of the Adirondacks at Old Forge. Operated by dedicated volunteers, it offers affordable skiing with stunning Adirondack scenery.",
+      "tags": ["nonprofit", "community-owned", "adirondacks", "old-forge", "affordable", "volunteer-run"]
+    },
+    {
+      "name": "West Mountain",
+      "slug": "west-mountain",
+      "status": "active",
+      "location": { "lat": 43.2875, "lng": -73.7703 },
+      "nearestCity": "Queensbury",
+      "stats": {
+        "skiableAcres": 126,
+        "liftsCount": 6,
+        "runsCount": 31,
+        "verticalDrop": 1010,
+        "baseElevation": 580,
+        "summitElevation": 1590,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 24, "intermediate": 51, "advanced": 18, "expert": 7 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.westmountain.com",
+      "description": "West Mountain is a family-friendly ski area near Lake George and the Adirondacks, offering excellent night skiing and easy access from Albany and the Capital District. It's been serving the community since 1961.",
+      "tags": ["indy-pass", "lake-george-area", "night-skiing", "albany-accessible", "family-friendly"]
+    },
+    {
+      "name": "Swain Resort",
+      "slug": "swain-resort",
+      "status": "active",
+      "location": { "lat": 42.4833, "lng": -77.8833 },
+      "nearestCity": "Swain",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 5,
+        "runsCount": 35,
+        "verticalDrop": 650,
+        "baseElevation": 1600,
+        "summitElevation": 2250,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.swain.com",
+      "description": "Swain Resort is a family-owned ski area in the Southern Tier, popular with Rochester and Buffalo skiers. Known for its friendly atmosphere and affordable skiing, it's been a regional favorite since 1954.",
+      "tags": ["family-owned", "southern-tier", "night-skiing", "affordable", "since-1954"]
+    },
+    {
+      "name": "Song Mountain",
+      "slug": "song-mountain",
+      "status": "active",
+      "location": { "lat": 42.8000, "lng": -76.2000 },
+      "nearestCity": "Tully",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 5,
+        "runsCount": 24,
+        "verticalDrop": 700,
+        "baseElevation": 1450,
+        "summitElevation": 2150,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.songmountain.com",
+      "description": "Song Mountain is a family-owned ski area south of Syracuse, part of the Three Valley ski alliance. Known for excellent beginner terrain and night skiing, it's a staple of Central New York skiing.",
+      "tags": ["family-owned", "syracuse-area", "night-skiing", "beginner-friendly", "three-valley"]
+    },
+    {
+      "name": "Labrador Mountain",
+      "slug": "labrador-mountain",
+      "status": "active",
+      "location": { "lat": 42.7167, "lng": -76.0833 },
+      "nearestCity": "Truxton",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 5,
+        "runsCount": 22,
+        "verticalDrop": 700,
+        "baseElevation": 1400,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.labradormountain.com",
+      "description": "Labrador Mountain is part of the Three Valley alliance, offering varied terrain and excellent snowmaking near Syracuse. The mountain features some of the steepest terrain in Central New York.",
+      "tags": ["syracuse-area", "night-skiing", "three-valley", "steep-terrain", "snowmaking"]
+    },
+    {
+      "name": "Toggenburg Mountain",
+      "slug": "toggenburg-mountain",
+      "status": "active",
+      "location": { "lat": 42.8500, "lng": -75.9667 },
+      "nearestCity": "Fabius",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 6,
+        "runsCount": 23,
+        "verticalDrop": 650,
+        "baseElevation": 1450,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skitog.com",
+      "description": "Toggenburg Mountain completes the Three Valley ski alliance near Syracuse, known for its Swiss heritage and family atmosphere. A favorite for its affordable skiing and welcoming community.",
+      "tags": ["swiss-heritage", "syracuse-area", "night-skiing", "three-valley", "family-friendly"]
+    },
+    {
+      "name": "Dry Hill Ski Area",
+      "slug": "dry-hill",
+      "status": "active",
+      "location": { "lat": 43.9500, "lng": -75.9167 },
+      "nearestCity": "Watertown",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 300,
+        "baseElevation": 700,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.dryhillskiarea.com",
+      "description": "Dry Hill Ski Area serves the Watertown community on the edge of the Tug Hill snowbelt. One of New York's most affordable options, it receives significant lake-effect snow and offers excellent family skiing.",
+      "tags": ["community-hill", "lake-effect", "watertown", "affordable", "night-skiing"]
+    },
+    {
+      "name": "Woods Valley",
+      "slug": "woods-valley",
+      "status": "active",
+      "location": { "lat": 43.4000, "lng": -75.2667 },
+      "nearestCity": "Westernville",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 3,
+        "runsCount": 21,
+        "verticalDrop": 500,
+        "baseElevation": 1150,
+        "summitElevation": 1650,
+        "avgAnnualSnowfall": 220
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.woodsvalleyskiarea.com",
+      "description": "Woods Valley is a family-owned ski area in the Tug Hill region benefiting from substantial lake-effect snowfall. With a friendly, unpretentious atmosphere, it's a local favorite for natural snow.",
+      "tags": ["family-owned", "tug-hill", "lake-effect", "natural-snow", "night-skiing"]
+    },
+    {
+      "name": "Mount Peter",
+      "slug": "mount-peter",
+      "status": "active",
+      "location": { "lat": 41.2056, "lng": -74.2867 },
+      "nearestCity": "Warwick",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 4,
+        "runsCount": 15,
+        "verticalDrop": 400,
+        "baseElevation": 1130,
+        "summitElevation": 1530,
+        "avgAnnualSnowfall": 65
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtpeter.com",
+      "description": "Mount Peter is one of New York's closest ski areas to New York City, operating since 1936. A historic family ski area, it offers accessible skiing for beginners and families from the metropolitan area.",
+      "tags": ["historic", "nyc-closest", "family-friendly", "night-skiing", "since-1936"]
+    },
+    {
+      "name": "Thunder Ridge",
+      "slug": "thunder-ridge",
+      "status": "active",
+      "location": { "lat": 41.5056, "lng": -73.5097 },
+      "nearestCity": "Patterson",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 6,
+        "runsCount": 22,
+        "verticalDrop": 500,
+        "baseElevation": 600,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.thunderridgeski.com",
+      "description": "Thunder Ridge is a convenient ski area in Putnam County serving the greater NYC metro area. With extensive snowmaking and night skiing, it's perfect for after-work skiing and family weekends.",
+      "tags": ["nyc-metro", "night-skiing", "learn-to-ski", "putnam-county", "snowmaking"]
+    },
+    {
+      "name": "Catamount Ski Area",
+      "slug": "catamount",
+      "status": "active",
+      "location": { "lat": 42.1694, "lng": -73.4861 },
+      "nearestCity": "Hillsdale",
+      "stats": {
+        "skiableAcres": 119,
+        "liftsCount": 7,
+        "runsCount": 36,
+        "verticalDrop": 1000,
+        "baseElevation": 1000,
+        "summitElevation": 2000,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 32, "intermediate": 38, "advanced": 23, "expert": 7 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.catamountski.com",
+      "description": "Catamount straddles the New York-Massachusetts border, offering diverse terrain with stunning Berkshire views. Under new ownership since 2018 with significant investments, it's become a top destination for skiers from the tri-state area.",
+      "tags": ["indy-pass", "ny-ma-border", "berkshires", "upgraded", "tri-state-accessible"]
+    },
+    {
+      "name": "Maple Ski Ridge",
+      "slug": "maple-ski-ridge",
+      "status": "active",
+      "location": { "lat": 42.7667, "lng": -73.9500 },
+      "nearestCity": "Rotterdam",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 350,
+        "baseElevation": 650,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 35, "intermediate": 50, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mapleskiridge.com",
+      "description": "Maple Ski Ridge is a small family ski area serving Schenectady and the Capital District. Perfect for beginners and families, it offers affordable skiing close to home with night operations.",
+      "tags": ["capital-district", "beginner-friendly", "night-skiing", "affordable", "schenectady"]
+    },
+    {
+      "name": "Oak Mountain",
+      "slug": "oak-mountain",
+      "status": "active",
+      "location": { "lat": 43.4167, "lng": -74.4333 },
+      "nearestCity": "Speculator",
+      "stats": {
+        "skiableAcres": 62,
+        "liftsCount": 3,
+        "runsCount": 22,
+        "verticalDrop": 650,
+        "baseElevation": 1750,
+        "summitElevation": 2400,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 32, "intermediate": 47, "advanced": 16, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.oakmountainski.com",
+      "description": "Oak Mountain is a charming Adirondack ski area in the hamlet of Speculator. Family-owned and operated, it offers affordable skiing in a beautiful setting with excellent natural snow.",
+      "tags": ["family-owned", "adirondacks", "speculator", "natural-snow", "affordable"]
+    },
+    {
+      "name": "Willard Mountain",
+      "slug": "willard-mountain",
+      "status": "active",
+      "location": { "lat": 42.9833, "lng": -73.4333 },
+      "nearestCity": "Greenwich",
+      "stats": {
+        "skiableAcres": 22,
+        "liftsCount": 3,
+        "runsCount": 14,
+        "verticalDrop": 505,
+        "baseElevation": 650,
+        "summitElevation": 1155,
+        "avgAnnualSnowfall": 70
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.willardmountain.com",
+      "description": "Willard Mountain is a family-owned ski area in Washington County, one of New York's most affordable options. With a genuine community atmosphere, it's been teaching locals to ski for decades.",
+      "tags": ["family-owned", "affordable", "community-hill", "night-skiing", "washington-county"]
+    },
+    {
+      "name": "Big Tupper Ski Area",
+      "slug": "big-tupper",
+      "status": "active",
+      "location": { "lat": 44.2333, "lng": -74.4833 },
+      "nearestCity": "Tupper Lake",
+      "stats": {
+        "skiableAcres": 36,
+        "liftsCount": 2,
+        "runsCount": 21,
+        "verticalDrop": 1152,
+        "baseElevation": 1600,
+        "summitElevation": 2752,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bigtupper.com",
+      "description": "Big Tupper Ski Area was revived through community effort after closing in 1999. This nonprofit Adirondack gem offers surprising vertical and challenging terrain, kept alive by dedicated volunteers.",
+      "tags": ["nonprofit", "revived", "adirondacks", "community-saved", "surprising-vertical"]
+    },
+    {
+      "name": "Mount Pisgah",
+      "slug": "mount-pisgah-ny",
+      "status": "active",
+      "location": { "lat": 44.4167, "lng": -73.8833 },
+      "nearestCity": "Saranac Lake",
+      "stats": {
+        "skiableAcres": 10,
+        "liftsCount": 1,
+        "runsCount": 8,
+        "verticalDrop": 300,
+        "baseElevation": 1600,
+        "summitElevation": 1900,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 45, "intermediate": 40, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.saranaclake.com/activities/mount-pisgah-recreation-center",
+      "description": "Mount Pisgah is a tiny municipal ski hill in Saranac Lake, one of the most affordable places to ski in the Adirondacks. Perfect for beginners and families, it's a community treasure.",
+      "tags": ["municipal", "most-affordable", "saranac-lake", "beginner-only", "community-treasure"]
+    },
+    {
+      "name": "Royal Mountain",
+      "slug": "royal-mountain",
+      "status": "active",
+      "location": { "lat": 43.1333, "lng": -74.5667 },
+      "nearestCity": "Caroga Lake",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 550,
+        "baseElevation": 1500,
+        "summitElevation": 2050,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.royalmountain.com",
+      "description": "Royal Mountain is a family-owned ski area in the southern Adirondacks, known for its friendly atmosphere and excellent value. A community favorite, it offers affordable skiing with night operations.",
+      "tags": ["family-owned", "southern-adirondacks", "affordable", "night-skiing", "community-favorite"]
+    },
+    {
+      "name": "Cockaigne",
+      "slug": "cockaigne",
+      "status": "active",
+      "location": { "lat": 42.3667, "lng": -78.4833 },
+      "nearestCity": "Cherry Creek",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 4,
+        "runsCount": 18,
+        "verticalDrop": 430,
+        "baseElevation": 1760,
+        "summitElevation": 2190,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cockaigne.com",
+      "description": "Cockaigne is a family-owned ski area in the Western New York snowbelt, receiving abundant lake-effect snow. With genuine character and affordable prices, it's a local favorite for uncrowded skiing.",
+      "tags": ["family-owned", "lake-effect", "snowbelt", "uncrowded", "night-skiing"]
+    },
+    {
+      "name": "Four Seasons",
+      "slug": "four-seasons-ny",
+      "status": "active",
+      "location": { "lat": 42.3833, "lng": -78.4333 },
+      "nearestCity": "Ashford",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 4,
+        "runsCount": 18,
+        "verticalDrop": 380,
+        "baseElevation": 1720,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.fourseasonsgolfandski.com",
+      "description": "Four Seasons is a Western New York family resort with skiing, golf, and year-round activities. Located in the snowbelt near Ellicottville, it benefits from substantial lake-effect snow.",
+      "tags": ["family-resort", "four-season", "lake-effect", "golf", "night-skiing"]
+    },
+    {
+      "name": "Hunt Hollow",
+      "slug": "hunt-hollow",
+      "status": "active",
+      "location": { "lat": 42.6833, "lng": -77.5500 },
+      "nearestCity": "Naples",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 4,
+        "runsCount": 12,
+        "verticalDrop": 750,
+        "baseElevation": 1200,
+        "summitElevation": 1950,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.hunthollow.com",
+      "description": "Hunt Hollow is a private ski club in the Finger Lakes region that offers limited public skiing. Members enjoy uncrowded slopes and excellent grooming on challenging terrain.",
+      "tags": ["private-club", "finger-lakes", "uncrowded", "members-only", "challenging"]
+    },
+
+    {
+      "name": "Big Birch",
+      "slug": "big-birch",
+      "status": "defunct",
+      "location": { "lat": 42.0667, "lng": -74.8333 },
+      "nearestCity": "Hancock",
+      "yearsOperated": "1964-2013",
+      "notes": "Small family ski area in Delaware County that operated for nearly 50 years before closing due to climate challenges and financial difficulties.",
+      "tags": ["delaware-county", "family-ski-area", "closed-2013"]
+    },
+    {
+      "name": "Bobcat Ski Center",
+      "slug": "bobcat-ski-center",
+      "status": "defunct",
+      "location": { "lat": 42.2167, "lng": -74.3167 },
+      "nearestCity": "Andes",
+      "yearsOperated": "1962-2014",
+      "notes": "Catskills ski area that operated for over 50 years. Closed in 2014 and was purchased by a land conservancy. Known for its old-school atmosphere.",
+      "tags": ["catskills", "conservancy-owned", "historic-area"]
+    },
+    {
+      "name": "Scotch Valley",
+      "slug": "scotch-valley",
+      "status": "defunct",
+      "location": { "lat": 42.1833, "lng": -74.7667 },
+      "nearestCity": "Stamford",
+      "yearsOperated": "1966-2006",
+      "notes": "Small family ski area in Delaware County that closed after 40 years of operation due to unreliable snow and financial pressures.",
+      "tags": ["delaware-county", "family-ski-area", "closed-2006"]
+    },
+    {
+      "name": "Ski Tamarack",
+      "slug": "ski-tamarack",
+      "status": "defunct",
+      "location": { "lat": 42.0333, "lng": -74.5833 },
+      "nearestCity": "Downsville",
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small ski area in Delaware County that operated for several decades before closing.",
+      "tags": ["delaware-county", "early-closure"]
+    },
+    {
+      "name": "Highmount",
+      "slug": "highmount",
+      "status": "defunct",
+      "location": { "lat": 42.1317, "lng": -74.5053 },
+      "nearestCity": "Highmount",
+      "yearsOperated": "1946-1996",
+      "notes": "Historic Catskills ski area now incorporated into Belleayre Mountain. The terrain and some infrastructure were absorbed when the state expanded Belleayre.",
+      "tags": ["catskills", "absorbed-belleayre", "historic"]
+    },
+    {
+      "name": "Big Vanilla",
+      "slug": "big-vanilla",
+      "status": "defunct",
+      "location": { "lat": 42.0500, "lng": -76.3000 },
+      "nearestCity": "Woodhull",
+      "yearsOperated": "1965-2002",
+      "notes": "Family ski area in the Southern Tier that operated for nearly 40 years. Closed due to financial difficulties and climate challenges.",
+      "tags": ["southern-tier", "family-ski-area", "closed-2002"]
+    },
+    {
+      "name": "Camillus Ski Area",
+      "slug": "camillus-ski-area",
+      "status": "defunct",
+      "location": { "lat": 43.0500, "lng": -76.3000 },
+      "nearestCity": "Camillus",
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small community ski hill near Syracuse that served local families for several decades.",
+      "tags": ["syracuse-area", "community-hill"]
+    },
+    {
+      "name": "Fahnestock State Park",
+      "slug": "fahnestock-ski-area",
+      "status": "defunct",
+      "location": { "lat": 41.4500, "lng": -73.8333 },
+      "nearestCity": "Cold Spring",
+      "yearsOperated": "1970s-1990s",
+      "notes": "Small state park ski area in the Hudson Highlands that closed due to unreliable snow at low elevation.",
+      "tags": ["state-park", "hudson-highlands", "low-elevation"]
+    },
+    {
+      "name": "Pines Hotel Ski Area",
+      "slug": "pines-hotel-ski-area",
+      "status": "defunct",
+      "location": { "lat": 41.6833, "lng": -74.6667 },
+      "nearestCity": "South Fallsburg",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Catskills resort hotel ski area that operated during the heyday of the Borscht Belt. Closed along with the hotel.",
+      "tags": ["borscht-belt", "hotel-ski-area", "catskills"]
+    },
+    {
+      "name": "Davos",
+      "slug": "davos-ny",
+      "status": "defunct",
+      "location": { "lat": 42.3500, "lng": -74.3000 },
+      "nearestCity": "Woodstock",
+      "yearsOperated": "1948-1998",
+      "notes": "Historic Catskills ski area near Woodstock with Swiss theming. Operated for 50 years before closing.",
+      "tags": ["catskills", "swiss-theme", "woodstock-area", "historic"]
+    },
+    {
+      "name": "Ski Valley",
+      "slug": "ski-valley-ny",
+      "status": "defunct",
+      "location": { "lat": 42.1833, "lng": -74.2167 },
+      "nearestCity": "Phoenicia",
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small Catskills ski area that operated for several decades before closing.",
+      "tags": ["catskills", "phoenicia-area"]
+    },
+    {
+      "name": "Sterling Forest Ski Area",
+      "slug": "sterling-forest-ski-area",
+      "status": "defunct",
+      "location": { "lat": 41.2000, "lng": -74.3000 },
+      "nearestCity": "Tuxedo",
+      "yearsOperated": "1959-1988",
+      "notes": "Popular ski area close to New York City that closed when the land was sold. Now preserved as Sterling Forest State Park.",
+      "tags": ["nyc-accessible", "now-state-park", "orange-county"]
+    },
+    {
+      "name": "Mount Cathalia",
+      "slug": "mount-cathalia",
+      "status": "defunct",
+      "location": { "lat": 42.5500, "lng": -73.7833 },
+      "nearestCity": "Cairo",
+      "yearsOperated": "1940s-1970s",
+      "notes": "Early Catskills ski area near Cairo that was a pioneer of the sport in the region before larger areas developed.",
+      "tags": ["catskills", "pioneer", "early-ski-area"]
+    },
+    {
+      "name": "North Creek Ski Bowl",
+      "slug": "north-creek-ski-bowl",
+      "status": "defunct",
+      "location": { "lat": 43.6833, "lng": -73.9833 },
+      "nearestCity": "North Creek",
+      "yearsOperated": "1932-2011",
+      "notes": "Historic Adirondack ski area, one of America's earliest. Now connected to Gore Mountain and operates as part of that resort with night skiing.",
+      "tags": ["historic", "now-gore-mountain", "night-skiing", "oldest-chairlift"]
+    }
+  ],
+  "meta": {
+    "totalActive": 33,
+    "totalDefunct": 14,
+    "lastUpdated": "2025-01-15"
+  }
+}

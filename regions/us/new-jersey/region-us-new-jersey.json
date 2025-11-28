@@ -1,0 +1,114 @@
+{
+  "country": "US",
+  "state": "New Jersey",
+  "resorts": [
+    {
+      "name": "Mountain Creek",
+      "slug": "mountain-creek",
+      "status": "active",
+      "location": { "lat": 41.1956, "lng": -74.5108 },
+      "nearestCity": "Vernon",
+      "stats": {
+        "skiableAcres": 167,
+        "liftsCount": 11,
+        "runsCount": 46,
+        "verticalDrop": 1040,
+        "baseElevation": 480,
+        "summitElevation": 1520,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.mountaincreek.com",
+      "description": "Mountain Creek is New Jersey's largest ski resort, located in the northern highlands just an hour from New York City. The resort combines the former Vernon Valley and Great Gorge ski areas, offering the most terrain and vertical in the state plus a full-service waterpark and spa.",
+      "tags": ["ikon-pass", "largest-new-jersey", "nyc-accessible", "terrain-parks", "night-skiing", "waterpark"]
+    },
+    {
+      "name": "Campgaw Mountain",
+      "slug": "campgaw",
+      "status": "active",
+      "location": { "lat": 41.0575, "lng": -74.1983 },
+      "nearestCity": "Mahwah",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 3,
+        "runsCount": 5,
+        "verticalDrop": 275,
+        "baseElevation": 500,
+        "summitElevation": 775,
+        "avgAnnualSnowfall": 40
+      },
+      "terrain": { "beginner": 40, "intermediate": 45, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.campgaw.com",
+      "description": "Campgaw Mountain is a county-operated ski area in Bergen County, providing affordable learn-to-ski programs just 30 miles from Manhattan. The area focuses on beginner instruction and family skiing, making winter sports accessible to the NYC metro area.",
+      "tags": ["county-owned", "beginner-friendly", "nyc-closest", "learn-to-ski", "night-skiing", "affordable"]
+    },
+
+    {
+      "name": "Vernon Valley/Great Gorge",
+      "slug": "vernon-valley-great-gorge",
+      "status": "defunct",
+      "location": { "lat": 41.1900, "lng": -74.5000 },
+      "nearestCity": "Vernon",
+      "yearClosed": 1998,
+      "description": "Vernon Valley and Great Gorge were adjacent ski areas that operated separately before merging and eventually becoming Mountain Creek in 1998. The combined resort now offers all the terrain from both original areas.",
+      "tags": ["closed", "merged", "now-mountain-creek"]
+    },
+    {
+      "name": "Craigmeur Ski Area",
+      "slug": "craigmeur",
+      "status": "defunct",
+      "location": { "lat": 41.0300, "lng": -74.3700 },
+      "nearestCity": "Newfoundland",
+      "yearClosed": 2000,
+      "description": "Craigmeur was a small ski area in Passaic County that operated until around 2000. The area served the northern New Jersey community before closing due to development pressure and economic challenges.",
+      "tags": ["closed", "passaic-county", "community-area"]
+    },
+    {
+      "name": "Belle Mountain Ski Area",
+      "slug": "belle-mountain",
+      "status": "defunct",
+      "location": { "lat": 40.3800, "lng": -74.7800 },
+      "nearestCity": "Hopewell",
+      "yearClosed": 2002,
+      "description": "Belle Mountain was a small ski area in central New Jersey that closed in 2002. The area provided convenient skiing for the Trenton and Princeton areas before economic pressures ended operations.",
+      "tags": ["closed", "central-new-jersey", "hopewell"]
+    },
+    {
+      "name": "Snow Bowl Ski Area",
+      "slug": "snow-bowl-nj",
+      "status": "defunct",
+      "location": { "lat": 40.7500, "lng": -74.3300 },
+      "nearestCity": "Milton",
+      "yearClosed": 1985,
+      "description": "Snow Bowl was a small ski area in Morris County that operated until the mid-1980s. The area served the local community before closing.",
+      "tags": ["closed", "morris-county", "community-area"]
+    },
+    {
+      "name": "High Point Ski Area",
+      "slug": "high-point-ski",
+      "status": "defunct",
+      "location": { "lat": 41.3100, "lng": -74.6600 },
+      "nearestCity": "Sussex",
+      "yearClosed": 1980,
+      "description": "High Point was a small ski area near New Jersey's highest point that operated through the 1970s. The area closed due to limited terrain and inconsistent snow cover.",
+      "tags": ["closed", "sussex-county", "high-point"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

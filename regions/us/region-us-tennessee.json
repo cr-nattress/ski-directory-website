@@ -1,9 +1,0 @@
-{
-  "country": "US",
-  "state": "Tennessee",
-  "resorts": [
-    { "name": "Ober Gatlinburg", "status": "active" },
-
-    { "name": "Cloudland Canyon", "status": "defunct" }
-  ]
-}

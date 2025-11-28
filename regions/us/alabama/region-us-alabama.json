@@ -1,0 +1,35 @@
+{
+  "country": "US",
+  "state": "Alabama",
+  "resorts": [
+    {
+      "name": "Cloudmont Ski and Golf Resort",
+      "slug": "cloudmont",
+      "status": "active",
+      "location": { "lat": 34.4200, "lng": -85.6100 },
+      "nearestCity": "Mentone",
+      "stats": {
+        "skiableAcres": 16,
+        "liftsCount": 2,
+        "runsCount": 4,
+        "verticalDrop": 150,
+        "baseElevation": 1650,
+        "summitElevation": 1800,
+        "avgAnnualSnowfall": 10
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cloudmont.com",
+      "description": "Cloudmont is the southernmost ski resort in the United States, located atop Lookout Mountain in northeastern Alabama. Despite limited natural snowfall, the resort uses snowmaking to offer skiing in the Deep South, providing a unique novelty for Southern skiers.",
+      "tags": ["southernmost-us-resort", "lookout-mountain", "mentone", "snowmaking-dependent", "novelty"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

@@ -1,0 +1,102 @@
+{
+  "country": "CA",
+  "province": "Newfoundland and Labrador",
+  "resorts": [
+    {
+      "name": "Marble Mountain",
+      "slug": "marble-mountain",
+      "status": "active",
+      "location": { "lat": 48.9333, "lng": -57.8500 },
+      "nearestCity": "Corner Brook",
+      "stats": {
+        "skiableAcres": 180,
+        "liftsCount": 4,
+        "runsCount": 39,
+        "verticalDrop": 1700,
+        "baseElevation": 100,
+        "summitElevation": 1800,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skimarble.com",
+      "description": "Marble Mountain is Atlantic Canada's largest ski resort, boasting the greatest vertical drop east of the Rockies at 1,700 feet. The resort receives massive snowfall from Atlantic storms and offers terrain rivaling much larger Western resorts.",
+      "tags": ["largest-atlantic-canada", "greatest-vertical-east", "massive-snowfall", "corner-brook", "night-skiing"]
+    },
+    {
+      "name": "White Hills Ski Resort",
+      "slug": "white-hills",
+      "status": "active",
+      "location": { "lat": 48.6167, "lng": -53.2833 },
+      "nearestCity": "Clarenville",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 22,
+        "verticalDrop": 550,
+        "baseElevation": 200,
+        "summitElevation": 750,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiwhitehills.com",
+      "description": "White Hills serves the Clarenville area and eastern Newfoundland, providing a convenient ski option for residents who can't make the trek to Corner Brook. The area benefits from excellent natural snowfall.",
+      "tags": ["eastern-newfoundland", "clarenville", "natural-snow", "night-skiing"]
+    },
+    {
+      "name": "Smokey Mountain Ski Club",
+      "slug": "smokey-mountain",
+      "status": "active",
+      "location": { "lat": 52.9500, "lng": -66.9000 },
+      "nearestCity": "Labrador City",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 2,
+        "runsCount": 14,
+        "verticalDrop": 500,
+        "baseElevation": 1800,
+        "summitElevation": 2300,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.smokeymountain.ca",
+      "description": "Smokey Mountain is one of Canada's most remote ski areas, located in Labrador City near the Quebec border. The subarctic climate brings cold, dry snow and a very long season, often operating into May.",
+      "tags": ["labrador", "remote", "subarctic", "long-season", "iron-ore-country", "night-skiing"]
+    },
+
+    {
+      "name": "Menihek Nordic Ski Club",
+      "slug": "menihek-nordic",
+      "status": "defunct",
+      "location": { "lat": 52.9000, "lng": -66.8500 },
+      "nearestCity": "Labrador City",
+      "yearClosed": 2000,
+      "description": "Menihek Nordic operated as a dedicated cross-country ski facility near Labrador City. The alpine operations ended around 2000, though cross-country skiing continues in the region.",
+      "tags": ["closed", "labrador", "nordic-focus"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

@@ -1,0 +1,572 @@
+{
+  "country": "US",
+  "state": "Minnesota",
+  "resorts": [
+    {
+      "name": "Lutsen Mountains",
+      "slug": "lutsen-mountains",
+      "status": "active",
+      "location": { "lat": 47.6631, "lng": -90.7150 },
+      "nearestCity": "Lutsen",
+      "stats": {
+        "skiableAcres": 1000,
+        "liftsCount": 8,
+        "runsCount": 95,
+        "verticalDrop": 948,
+        "baseElevation": 1088,
+        "summitElevation": 2036,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 18, "intermediate": 52, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.lutsen.com",
+      "description": "Lutsen Mountains is the largest ski resort in the Midwest, featuring four interconnected mountains overlooking Lake Superior. Known for its diverse terrain, stunning North Shore scenery, and consistent lake-effect snow, it's Minnesota's premier destination resort.",
+      "tags": ["largest-midwest", "lake-superior", "indy-pass", "destination-resort", "four-mountains", "north-shore"]
+    },
+    {
+      "name": "Spirit Mountain",
+      "slug": "spirit-mountain",
+      "status": "active",
+      "location": { "lat": 46.7186, "lng": -92.2172 },
+      "nearestCity": "Duluth",
+      "stats": {
+        "skiableAcres": 275,
+        "liftsCount": 8,
+        "runsCount": 22,
+        "verticalDrop": 700,
+        "baseElevation": 600,
+        "summitElevation": 1300,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.spiritmt.com",
+      "description": "Spirit Mountain overlooks Duluth and Lake Superior, offering one of the highest verticals in Minnesota. City-owned and operated, it provides excellent terrain variety and some of the best views of any Midwestern ski area. Popular for its accessible location and night skiing.",
+      "tags": ["duluth", "lake-superior-views", "city-owned", "night-skiing", "terrain-park"]
+    },
+    {
+      "name": "Giants Ridge",
+      "slug": "giants-ridge",
+      "status": "active",
+      "location": { "lat": 47.5833, "lng": -92.3667 },
+      "nearestCity": "Biwabik",
+      "stats": {
+        "skiableAcres": 175,
+        "liftsCount": 6,
+        "runsCount": 35,
+        "verticalDrop": 500,
+        "baseElevation": 1575,
+        "summitElevation": 2075,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.giantsridge.com",
+      "description": "Giants Ridge is a four-season resort on Minnesota's Iron Range, featuring quality skiing, excellent Nordic trails, and two championship golf courses. The area is known for good snow conditions and a relaxed, less-crowded atmosphere.",
+      "tags": ["iron-range", "four-season", "nordic-trails", "golf-resort", "uncrowded"]
+    },
+    {
+      "name": "Afton Alps",
+      "slug": "afton-alps",
+      "status": "active",
+      "location": { "lat": 44.8558, "lng": -92.7861 },
+      "nearestCity": "Hastings",
+      "stats": {
+        "skiableAcres": 300,
+        "liftsCount": 18,
+        "runsCount": 48,
+        "verticalDrop": 350,
+        "baseElevation": 720,
+        "summitElevation": 1070,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.aftonalps.com",
+      "description": "Afton Alps is a Vail Resorts property and Minnesota's only Epic Pass resort. With the most runs of any Minnesota ski area and extensive night skiing, it's the go-to destination for Twin Cities skiers seeking variety and lift-served terrain.",
+      "tags": ["epic-pass", "vail-resorts", "twin-cities", "most-runs-minnesota", "night-skiing", "terrain-parks"]
+    },
+    {
+      "name": "Buck Hill",
+      "slug": "buck-hill",
+      "status": "active",
+      "location": { "lat": 44.7261, "lng": -93.2858 },
+      "nearestCity": "Burnsville",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 8,
+        "runsCount": 16,
+        "verticalDrop": 306,
+        "baseElevation": 920,
+        "summitElevation": 1226,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.buckhill.com",
+      "description": "Buck Hill is famous as the home ski hill of Olympic champions Lindsey Vonn and Kristina Koznick. Located in the Twin Cities suburbs, it has produced more Olympic and World Cup skiers than any other U.S. ski area. Known for its competitive racing programs.",
+      "tags": ["olympic-training-ground", "lindsey-vonn", "racing-programs", "twin-cities", "night-skiing", "terrain-park"]
+    },
+    {
+      "name": "Wild Mountain",
+      "slug": "wild-mountain",
+      "status": "active",
+      "location": { "lat": 45.4953, "lng": -92.7314 },
+      "nearestCity": "Taylors Falls",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 5,
+        "runsCount": 26,
+        "verticalDrop": 300,
+        "baseElevation": 800,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.wildmountain.com",
+      "description": "Wild Mountain is a family-friendly resort in the scenic St. Croix River valley, offering skiing, snowboarding, and snow tubing. It's also a popular summer destination with a waterpark and alpine slide.",
+      "tags": ["family-friendly", "st-croix-valley", "waterpark", "tubing", "night-skiing", "four-season"]
+    },
+    {
+      "name": "Welch Village",
+      "slug": "welch-village",
+      "status": "active",
+      "location": { "lat": 44.5636, "lng": -92.7225 },
+      "nearestCity": "Welch",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 9,
+        "runsCount": 60,
+        "verticalDrop": 360,
+        "baseElevation": 720,
+        "summitElevation": 1080,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.welchvillage.com",
+      "description": "Welch Village packs 60 runs into its terrain, offering the most variety per acre in Minnesota. The resort is known for excellent grooming, quality terrain parks, and a dedicated following among Twin Cities skiers. Indy Pass affiliate.",
+      "tags": ["indy-pass", "terrain-variety", "excellent-grooming", "terrain-parks", "night-skiing", "twin-cities"]
+    },
+    {
+      "name": "Hyland Ski & Snowboard Area",
+      "slug": "hyland-hills",
+      "status": "active",
+      "location": { "lat": 44.8419, "lng": -93.3711 },
+      "nearestCity": "Bloomington",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 5,
+        "runsCount": 14,
+        "verticalDrop": 175,
+        "baseElevation": 920,
+        "summitElevation": 1095,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.threeriverspd.org/location/hyland-ski-snowboard-area",
+      "description": "Hyland is a Three Rivers Park District facility in the Twin Cities suburbs, known for producing Olympic-caliber freestyle skiers. The terrain park program is nationally recognized, making it a hub for aspiring freestyle athletes.",
+      "tags": ["park-district", "freestyle-training", "olympic-athletes", "terrain-park", "night-skiing", "twin-cities"]
+    },
+    {
+      "name": "Mount Kato",
+      "slug": "mount-kato",
+      "status": "active",
+      "location": { "lat": 44.1339, "lng": -94.0164 },
+      "nearestCity": "Mankato",
+      "stats": {
+        "skiableAcres": 75,
+        "liftsCount": 6,
+        "runsCount": 19,
+        "verticalDrop": 340,
+        "baseElevation": 800,
+        "summitElevation": 1140,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountkato.com",
+      "description": "Mount Kato serves southern Minnesota from the bluffs above the Minnesota River valley. With reliable snowmaking and night skiing, it provides convenient access for Mankato-area residents and visitors from southern Minnesota and northern Iowa.",
+      "tags": ["southern-minnesota", "mankato", "night-skiing", "minnesota-river-valley", "snowmaking"]
+    },
+    {
+      "name": "Powder Ridge",
+      "slug": "powder-ridge",
+      "status": "active",
+      "location": { "lat": 45.5275, "lng": -94.1964 },
+      "nearestCity": "Kimball",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 4,
+        "runsCount": 15,
+        "verticalDrop": 310,
+        "baseElevation": 1120,
+        "summitElevation": 1430,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.powderridge.com",
+      "description": "Powder Ridge is central Minnesota's ski destination, serving St. Cloud and the surrounding region. Family-owned since 1955, it offers a welcoming atmosphere, good terrain variety, and extensive night skiing.",
+      "tags": ["central-minnesota", "st-cloud", "family-owned", "night-skiing", "historic"]
+    },
+    {
+      "name": "Andes Tower Hills",
+      "slug": "andes-tower-hills",
+      "status": "active",
+      "location": { "lat": 45.9075, "lng": -95.7139 },
+      "nearestCity": "Alexandria",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 5,
+        "runsCount": 17,
+        "verticalDrop": 325,
+        "baseElevation": 1380,
+        "summitElevation": 1705,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.andestowerhills.com",
+      "description": "Andes Tower Hills serves west-central Minnesota's Lake Country region. Known for its friendly atmosphere and family focus, it offers good terrain variety and is a favorite weekend destination for families from the Alexandria area and beyond.",
+      "tags": ["lake-country", "alexandria", "family-friendly", "night-skiing", "west-central-minnesota"]
+    },
+    {
+      "name": "Buena Vista Ski Area",
+      "slug": "buena-vista",
+      "status": "active",
+      "location": { "lat": 46.4567, "lng": -95.0228 },
+      "nearestCity": "Bemidji",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 4,
+        "runsCount": 16,
+        "verticalDrop": 285,
+        "baseElevation": 1375,
+        "summitElevation": 1660,
+        "avgAnnualSnowfall": 55
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.buenavistaskiresort.com",
+      "description": "Buena Vista is a family-friendly ski area near Bemidji, serving northern Minnesota's lake country. With affordable prices and a welcoming atmosphere, it's a great option for families and beginners in the region.",
+      "tags": ["bemidji", "northern-minnesota", "family-friendly", "affordable", "night-skiing"]
+    },
+    {
+      "name": "Coffee Mill Ski Area",
+      "slug": "coffee-mill",
+      "status": "active",
+      "location": { "lat": 44.2683, "lng": -91.8753 },
+      "nearestCity": "Wabasha",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 425,
+        "baseElevation": 680,
+        "summitElevation": 1105,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.coffeemillskiarea.com",
+      "description": "Coffee Mill is nestled in the bluffs of the Mississippi River valley near Wabasha. The scenic location and surprising vertical make it a hidden gem for skiers in southeastern Minnesota and western Wisconsin.",
+      "tags": ["mississippi-bluffs", "hidden-gem", "wabasha", "scenic", "night-skiing"]
+    },
+    {
+      "name": "Detroit Mountain",
+      "slug": "detroit-mountain",
+      "status": "active",
+      "location": { "lat": 46.7853, "lng": -95.8550 },
+      "nearestCity": "Detroit Lakes",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 4,
+        "runsCount": 19,
+        "verticalDrop": 340,
+        "baseElevation": 1360,
+        "summitElevation": 1700,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.detroitmountain.com",
+      "description": "Detroit Mountain is a community ski area serving the Detroit Lakes region of western Minnesota. Rebuilt after a fire in 2016, the modern facilities offer a great family skiing experience in the lakes region.",
+      "tags": ["detroit-lakes", "community-owned", "family-friendly", "lakes-region", "night-skiing"]
+    },
+    {
+      "name": "Mount Frontenac",
+      "slug": "mount-frontenac",
+      "status": "active",
+      "location": { "lat": 44.5100, "lng": -92.3397 },
+      "nearestCity": "Frontenac",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 3,
+        "runsCount": 11,
+        "verticalDrop": 420,
+        "baseElevation": 680,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountfrontenac.com",
+      "description": "Mount Frontenac sits on the bluffs overlooking Lake Pepin and the Mississippi River, offering some of Minnesota's best views. The small ski area provides a scenic, uncrowded experience for southeastern Minnesota skiers.",
+      "tags": ["lake-pepin", "mississippi-bluffs", "scenic-views", "uncrowded", "night-skiing"]
+    },
+    {
+      "name": "Troll Hollow",
+      "slug": "troll-hollow",
+      "status": "active",
+      "location": { "lat": 46.6192, "lng": -94.7508 },
+      "nearestCity": "Dresser",
+      "stats": {
+        "skiableAcres": 20,
+        "liftsCount": 2,
+        "runsCount": 6,
+        "verticalDrop": 200,
+        "baseElevation": 1000,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.trollhaugen.com/troll-hollow",
+      "description": "Troll Hollow is the beginner-focused companion to Trollhaugen across the border in Wisconsin. It provides a perfect learning environment for new skiers before they progress to the larger terrain nearby.",
+      "tags": ["beginner-friendly", "learning-area", "trollhaugen-affiliate", "night-skiing"]
+    },
+    {
+      "name": "Elm Creek Park Reserve",
+      "slug": "elm-creek",
+      "status": "active",
+      "location": { "lat": 45.1600, "lng": -93.4483 },
+      "nearestCity": "Maple Grove",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 4,
+        "runsCount": 10,
+        "verticalDrop": 150,
+        "baseElevation": 970,
+        "summitElevation": 1120,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.threeriverspd.org/location/elm-creek-winter-recreation-area",
+      "description": "Elm Creek is a Three Rivers Park District facility offering affordable skiing and snowboarding in the northwest Twin Cities suburbs. The tubing hill and cross-country ski trails round out the winter recreation options.",
+      "tags": ["park-district", "twin-cities", "affordable", "tubing", "cross-country", "night-skiing"]
+    },
+    {
+      "name": "Theodore Wirth Park",
+      "slug": "theodore-wirth",
+      "status": "active",
+      "location": { "lat": 44.9958, "lng": -93.3258 },
+      "nearestCity": "Minneapolis",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 5,
+        "verticalDrop": 125,
+        "baseElevation": 875,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 50, "intermediate": 35, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.minneapolisparks.org/parks__destinations/parks__lakes/theodore_wirth_regional_park/",
+      "description": "Theodore Wirth is Minneapolis's urban ski area, offering accessible skiing within city limits. The Loppet Foundation operates the facility, which also hosts world-class cross-country skiing and mountain biking.",
+      "tags": ["urban-skiing", "minneapolis", "park-district", "cross-country", "accessible", "night-skiing"]
+    },
+
+    {
+      "name": "Quadna Mountain",
+      "slug": "quadna-mountain",
+      "status": "defunct",
+      "location": { "lat": 46.8558, "lng": -93.6503 },
+      "nearestCity": "Hill City",
+      "yearClosed": 2011,
+      "description": "Quadna Mountain was a resort in the lakes region that closed in 2011 due to financial difficulties. The area featured decent terrain and was part of a golf resort development that struggled to survive.",
+      "tags": ["closed", "resort", "lakes-region"]
+    },
+    {
+      "name": "Hidden Valley (Ely)",
+      "slug": "hidden-valley-ely",
+      "status": "defunct",
+      "location": { "lat": 47.9000, "lng": -91.8500 },
+      "nearestCity": "Ely",
+      "yearClosed": 2006,
+      "description": "Hidden Valley was a small community ski area near Ely in Minnesota's arrowhead region. The area served the local community and visitors to the Boundary Waters region before closing.",
+      "tags": ["closed", "community-area", "ely", "arrowhead-region"]
+    },
+    {
+      "name": "Como Park",
+      "slug": "como-park",
+      "status": "defunct",
+      "location": { "lat": 44.9800, "lng": -93.1500 },
+      "nearestCity": "St. Paul",
+      "yearClosed": 1970,
+      "description": "Como Park once featured a ski jump and small ski hill in the heart of St. Paul. The area was active in the mid-20th century before urban development and changing recreation patterns led to its closure.",
+      "tags": ["closed", "urban", "st-paul", "historic", "ski-jumping"]
+    },
+    {
+      "name": "Highland Hills",
+      "slug": "highland-hills",
+      "status": "defunct",
+      "location": { "lat": 44.7500, "lng": -93.4000 },
+      "nearestCity": "Bloomington",
+      "yearClosed": 1985,
+      "description": "Highland Hills was a small ski area in the Twin Cities suburbs that operated through the mid-1980s. Competition from larger areas and development pressure led to its closure.",
+      "tags": ["closed", "twin-cities", "suburban"]
+    },
+    {
+      "name": "Pine Bend",
+      "slug": "pine-bend",
+      "status": "defunct",
+      "location": { "lat": 44.7800, "lng": -93.0500 },
+      "nearestCity": "Inver Grove Heights",
+      "yearClosed": 1980,
+      "description": "Pine Bend was a small ski area in the southern Twin Cities suburbs. The area closed around 1980, and the land has since been developed for other uses.",
+      "tags": ["closed", "twin-cities", "suburban"]
+    },
+    {
+      "name": "Carver Park Reserve",
+      "slug": "carver-park",
+      "status": "defunct",
+      "location": { "lat": 44.8700, "lng": -93.7100 },
+      "nearestCity": "Victoria",
+      "yearClosed": 2000,
+      "description": "Carver Park Reserve operated a small ski area as part of the Three Rivers Park District. The skiing operations were discontinued around 2000, though the park continues as a recreation destination.",
+      "tags": ["closed", "park-district", "three-rivers", "suburban"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-27T20:30:00Z" }
+}

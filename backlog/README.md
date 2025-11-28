@@ -284,6 +284,42 @@ Populate complete data models for all 76 Colorado ski resorts and areas: 33 curr
 
 ---
 
+### Epic 12: National & International Resort Data Population
+**Status:** Ready
+**Priority:** Critical
+**Effort:** XX-Large
+
+Populate complete data models for all ski resorts and areas across North America (excluding Colorado). This includes 590 currently operating resorts and 242 former/lost ski areas across 37 US states and 11 Canadian provinces/territories.
+
+**User Stories:** 48 (one per state/province)
+📁 [View Epic Details](./epic-12-national-resort-data-population/user-stories.md)
+
+**Key Features:**
+- Complete data for 590 active ski resorts across North America
+- Historical data for 242 former/lost ski areas
+- Coverage of all 37 US states with ski areas
+- Coverage of all 11 Canadian provinces/territories with ski areas
+- Pass affiliations (Epic, Ikon, Indy, local) tracked
+
+**US Coverage (37 states, 614 resorts):**
+- Western US: CA (52), UT (34), WA (26), MT (24), ID (23), OR (19), WY (14), AK (11), NV (5), AZ (5), NM (15)
+- Midwest: MI (33), WI (28), MN (24), NY (48), PA (32), OH (10), IL (7), IN (5), IA (7), ND (6), SD (5), MO (3)
+- Eastern: VT (42), NH (32), ME (28), MA (23), CT (10), NJ (7), RI (3), NC (10), VA (6), WV (9), MD (2)
+- Southern: TN (2), AL (1), GA (1)
+
+**Canadian Coverage (11 provinces, 218 resorts):**
+- Western: BC (42), AB (23), SK (10), MB (9), YT (2)
+- Eastern: QC (65), ON (48), NB (6), NS (6), NL (4), PE (3)
+
+**Data Sources:**
+- Official resort websites
+- OnTheSnow.com
+- Regional ski associations
+- Wikipedia
+- OpenStreetMap for coordinates
+
+---
+
 ## Implementation Order (Recommended)
 
 1. **Epic 1** - Remove List Your Property Button (Quick win, cleanup)
@@ -297,14 +333,16 @@ Populate complete data models for all 76 Colorado ski resorts and areas: 33 curr
 9. **Epic 7** - A-Z Resort Directory Page (New page, high user value)
 10. **Epic 8** - Ski Links Directory Page (New page, external resources hub)
 11. **Epic 9** - Social Media Links Directory Page (New page, social accounts hub)
+12. **Epic 12** - National & International Resort Data Population (Massive data effort, expands coverage)
 
 ## Total Effort Estimate
 - **Small:** 2 epics (Epics 1, 5)
 - **Medium:** 3 epics (Epics 2, 3, 10)
 - **Large:** 5 epics (Epics 4, 6, 7, 8, 9)
 - **X-Large:** 1 epic (Epic 11)
+- **XX-Large:** 1 epic (Epic 12)
 
-**Total User Stories:** 154
+**Total User Stories:** 202
 
 ---
 
@@ -315,10 +353,12 @@ Populate complete data models for all 76 Colorado ski resorts and areas: 33 curr
 - Epic 9 adds a new social media accounts directory page
 - Epic 10 implements critical SEO infrastructure for search engine visibility
 - Epic 11 populates data for all 76 Colorado ski resorts and areas (33 active + 43 lost)
+- Epic 12 expands coverage to 832 additional resorts across 48 states/provinces (590 active + 242 lost)
 - Consider implementing in batches for iterative releases
 - Weather API will require API key and cost consideration
 - Trail map assets need to be sourced for each resort
 - Ski Links data file pre-populated with 150 curated industry links
 - Social Links data file contains 80+ curated social accounts
 - SEO implementation requires `NEXT_PUBLIC_BASE_URL` environment variable
-- Resort data population (Epic 11) is a prerequisite for comprehensive directory coverage
+- Resort data population (Epics 11 & 12) is a prerequisite for comprehensive directory coverage
+- Epic 12 priority tiers: Tier 1 (UT, CA, VT, WY, MT, WA), Tier 2 (BC, AB, QC, ON), Tier 3 (ID, OR, NH, NY, PA, MI, WI, MN)

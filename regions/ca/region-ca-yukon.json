@@ -1,9 +1,0 @@
-{
-  "country": "CA",
-  "province": "Yukon",
-  "resorts": [
-    { "name": "Mount Sima Ski Hill", "status": "active" },
-
-    { "name": "Watson Lake Ski Club", "status": "defunct" }
-  ]
-}

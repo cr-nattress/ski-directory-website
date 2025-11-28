@@ -1,8 +1,0 @@
-{
-  "country": "US",
-  "state": "Alabama",
-  "resorts": [
-    { "name": "Cloudmont Ski and Golf Resort", "slug": "cloudmont", "status": "active" }
-  ],
-  "meta": { "source": ["manual-research"], "snapshotAt": "2025-11-26" }
-}

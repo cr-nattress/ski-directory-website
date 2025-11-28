@@ -1,0 +1,114 @@
+{
+  "country": "US",
+  "state": "Arizona",
+  "resorts": [
+    {
+      "name": "Arizona Snowbowl",
+      "slug": "arizona-snowbowl",
+      "status": "active",
+      "location": { "lat": 35.3306, "lng": -111.7106 },
+      "nearestCity": "Flagstaff",
+      "stats": {
+        "skiableAcres": 777,
+        "liftsCount": 8,
+        "runsCount": 55,
+        "verticalDrop": 2300,
+        "baseElevation": 9200,
+        "summitElevation": 11500,
+        "avgAnnualSnowfall": 260
+      },
+      "terrain": { "beginner": 19, "intermediate": 41, "advanced": 24, "expert": 16 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowbowl.ski",
+      "description": "Arizona Snowbowl is the Southwest's premier ski destination, located on the San Francisco Peaks—the highest mountains in Arizona at 12,633 feet. Just minutes from historic downtown Flagstaff, Snowbowl offers surprisingly challenging terrain with sweeping views that extend to the Grand Canyon on clear days. The resort has invested heavily in snowmaking infrastructure to supplement natural snowfall, ensuring consistent conditions throughout the season. Sacred to many Native American tribes, the mountain's beauty is matched by its cultural significance.",
+      "tags": ["ikon-pass", "san-francisco-peaks", "flagstaff", "snowmaking", "southwest", "high-elevation"]
+    },
+    {
+      "name": "Sunrise Park Resort",
+      "slug": "sunrise-park",
+      "status": "active",
+      "location": { "lat": 33.9683, "lng": -109.5456 },
+      "nearestCity": "Pinetop-Lakeside",
+      "stats": {
+        "skiableAcres": 800,
+        "liftsCount": 8,
+        "runsCount": 65,
+        "verticalDrop": 1800,
+        "baseElevation": 9200,
+        "summitElevation": 11000,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sunriseskipark.com",
+      "description": "Sunrise Park Resort is owned and operated by the White Mountain Apache Tribe, making it one of the few tribally-owned ski resorts in America. Spread across three mountains in the White Mountains of eastern Arizona, Sunrise offers the most terrain in the state with excellent conditions for families and intermediate skiers. The resort features a full-service hotel, cross-country skiing, and stunning high-desert scenery. Sunrise provides an authentic Arizona skiing experience with warm hospitality and affordable prices.",
+      "tags": ["tribal-owned", "white-mountain-apache", "three-peaks", "family-friendly", "white-mountains", "pinetop"]
+    },
+    {
+      "name": "Mount Lemmon Ski Valley",
+      "slug": "mount-lemmon",
+      "status": "active",
+      "location": { "lat": 32.4436, "lng": -110.7778 },
+      "nearestCity": "Tucson",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 1,
+        "runsCount": 22,
+        "verticalDrop": 950,
+        "baseElevation": 8200,
+        "summitElevation": 9157,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skithelemmon.com",
+      "description": "Mount Lemmon Ski Valley is the southernmost ski area in the continental United States, perched atop the Santa Catalina Mountains just 45 minutes from downtown Tucson. This unique destination allows visitors to drive from saguaro cacti to snow-covered pines, experiencing five different climate zones along the scenic Catalina Highway. Though small with just one double chairlift, Mount Lemmon offers a charming introduction to skiing and a remarkable contrast to the Sonoran Desert below. The village of Summerhaven provides dining and shopping.",
+      "tags": ["southernmost-us", "tucson", "santa-catalina", "desert-contrast", "scenic-drive", "small-resort"]
+    },
+
+    {
+      "name": "Williams Ski Area",
+      "slug": "williams-ski-area",
+      "status": "defunct",
+      "location": { "lat": 35.2667, "lng": -112.2000 },
+      "yearsOperated": "1938-1980s",
+      "notes": "Small ski area near Williams on Bill Williams Mountain. Operated with rope tows and limited terrain. Snow reliability issues and competition from Snowbowl led to closure.",
+      "tags": ["defunct", "williams", "historic", "bill-williams-mountain", "rope-tow"]
+    },
+    {
+      "name": "Mormon Lake Ski Area",
+      "slug": "mormon-lake-ski-area",
+      "status": "defunct",
+      "location": { "lat": 34.9167, "lng": -111.4500 },
+      "yearsOperated": "1960s-1970s",
+      "notes": "Small ski area south of Flagstaff near Mormon Lake. Operated briefly before insufficient snowfall and access issues led to permanent closure.",
+      "tags": ["defunct", "mormon-lake", "flagstaff-area", "short-lived"]
+    }
+  ],
+  "meta": {
+    "totalActive": 3,
+    "totalDefunct": 2,
+    "lastUpdated": "2025-01-27"
+  }
+}

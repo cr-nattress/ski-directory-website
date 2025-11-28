@@ -1,0 +1,774 @@
+{
+  "country": "US",
+  "state": "Michigan",
+  "resorts": [
+    {
+      "name": "Boyne Mountain Resort",
+      "slug": "boyne-mountain",
+      "status": "active",
+      "location": { "lat": 45.1639, "lng": -84.9317 },
+      "nearestCity": "Boyne Falls",
+      "stats": {
+        "skiableAcres": 415,
+        "liftsCount": 12,
+        "runsCount": 60,
+        "verticalDrop": 500,
+        "baseElevation": 700,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.boynemountain.com",
+      "description": "Boyne Mountain Resort is a flagship property of Boyne Resorts, pioneers of snowmaking technology. With a full-service village, waterpark, and golf courses, it's one of the Midwest's premier four-season destinations.",
+      "tags": ["boyne-resorts", "snowmaking-pioneers", "four-season", "waterpark", "village-resort"]
+    },
+    {
+      "name": "Boyne Highlands",
+      "slug": "boyne-highlands",
+      "status": "active",
+      "location": { "lat": 45.4608, "lng": -84.9056 },
+      "nearestCity": "Harbor Springs",
+      "stats": {
+        "skiableAcres": 435,
+        "liftsCount": 10,
+        "runsCount": 55,
+        "verticalDrop": 550,
+        "baseElevation": 700,
+        "summitElevation": 1250,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 30, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.boynehighlands.com",
+      "description": "Boyne Highlands is another Boyne Resorts property known for its championship golf and diverse ski terrain. Sister resort to Boyne Mountain, it offers excellent grooming and a Scottish-themed village.",
+      "tags": ["boyne-resorts", "scottish-theme", "championship-golf", "harbor-springs", "night-skiing"]
+    },
+    {
+      "name": "Crystal Mountain",
+      "slug": "crystal-mountain-mi",
+      "status": "active",
+      "location": { "lat": 44.5239, "lng": -85.9953 },
+      "nearestCity": "Thompsonville",
+      "stats": {
+        "skiableAcres": 102,
+        "liftsCount": 7,
+        "runsCount": 58,
+        "verticalDrop": 375,
+        "baseElevation": 925,
+        "summitElevation": 1300,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.crystalmountain.com",
+      "description": "Crystal Mountain is an award-winning resort near the Sleeping Bear Dunes National Lakeshore. Known for its championship golf, spa, and excellent grooming, it's a top family destination in northwest Michigan.",
+      "tags": ["sleeping-bear-dunes", "spa-resort", "championship-golf", "family-friendly", "award-winning"]
+    },
+    {
+      "name": "Shanty Creek Resorts",
+      "slug": "shanty-creek",
+      "status": "active",
+      "location": { "lat": 44.9439, "lng": -85.1903 },
+      "nearestCity": "Bellaire",
+      "stats": {
+        "skiableAcres": 275,
+        "liftsCount": 11,
+        "runsCount": 48,
+        "verticalDrop": 450,
+        "baseElevation": 900,
+        "summitElevation": 1350,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.shantycreek.com",
+      "description": "Shanty Creek Resorts encompasses three villages - Summit, Schuss, and Cedar River - offering diverse terrain and extensive resort amenities. A longtime favorite for families and groups in northern Michigan.",
+      "tags": ["indy-pass", "three-villages", "bellaire", "family-resort", "night-skiing"]
+    },
+    {
+      "name": "Nub's Nob",
+      "slug": "nubs-nob",
+      "status": "active",
+      "location": { "lat": 45.4700, "lng": -84.8667 },
+      "nearestCity": "Harbor Springs",
+      "stats": {
+        "skiableAcres": 248,
+        "liftsCount": 10,
+        "runsCount": 53,
+        "verticalDrop": 427,
+        "baseElevation": 800,
+        "summitElevation": 1227,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.nubsnob.com",
+      "description": "Nub's Nob is a family-owned ski area known for exceptional grooming and friendly atmosphere. Near Harbor Springs, it consistently ranks among the best Midwest ski areas for snow conditions and customer service.",
+      "tags": ["indy-pass", "family-owned", "exceptional-grooming", "harbor-springs", "customer-service"]
+    },
+    {
+      "name": "Mount Bohemia",
+      "slug": "mount-bohemia",
+      "status": "active",
+      "location": { "lat": 47.3750, "lng": -88.0167 },
+      "nearestCity": "Lac La Belle",
+      "stats": {
+        "skiableAcres": 585,
+        "liftsCount": 3,
+        "runsCount": 102,
+        "verticalDrop": 900,
+        "baseElevation": 700,
+        "summitElevation": 1600,
+        "avgAnnualSnowfall": 273
+      },
+      "terrain": { "beginner": 0, "intermediate": 0, "advanced": 50, "expert": 50 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtbohemia.com",
+      "description": "Mount Bohemia is the Midwest's most extreme ski area, receiving the region's highest snowfall with steep, ungroomed terrain and zero beginner runs. Located in Michigan's remote Keweenaw Peninsula, it offers a raw, backcountry-style experience.",
+      "tags": ["indy-pass", "extreme-terrain", "most-snow-midwest", "expert-only", "keweenaw-peninsula", "ungroomed"]
+    },
+    {
+      "name": "Big Powderhorn Mountain",
+      "slug": "big-powderhorn",
+      "status": "active",
+      "location": { "lat": 46.5083, "lng": -90.1833 },
+      "nearestCity": "Bessemer",
+      "stats": {
+        "skiableAcres": 250,
+        "liftsCount": 9,
+        "runsCount": 45,
+        "verticalDrop": 622,
+        "baseElevation": 978,
+        "summitElevation": 1600,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 15, "intermediate": 50, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bigpowderhorn.net",
+      "description": "Big Powderhorn Mountain offers the greatest vertical drop in Michigan's Upper Peninsula outside of Mt. Bohemia. Located in the snowbelt along the Wisconsin border, it receives excellent lake-effect snow.",
+      "tags": ["indy-pass", "upper-peninsula", "lake-effect-snow", "greatest-vertical-up", "wisconsin-border"]
+    },
+    {
+      "name": "Indianhead Mountain",
+      "slug": "indianhead-mountain",
+      "status": "active",
+      "location": { "lat": 46.5000, "lng": -90.0667 },
+      "nearestCity": "Wakefield",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 9,
+        "runsCount": 38,
+        "verticalDrop": 638,
+        "baseElevation": 962,
+        "summitElevation": 1600,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.indianheadmtn.com",
+      "description": "Indianhead Mountain is a classic Upper Peninsula ski area near Big Powderhorn, offering excellent vertical and reliable lake-effect snow. Known for its cruising terrain and friendly Midwest atmosphere.",
+      "tags": ["indy-pass", "upper-peninsula", "lake-effect-snow", "cruising-terrain", "wakefield"]
+    },
+    {
+      "name": "Blackjack Ski Resort",
+      "slug": "blackjack",
+      "status": "active",
+      "location": { "lat": 46.4833, "lng": -90.0333 },
+      "nearestCity": "Bessemer",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 7,
+        "runsCount": 27,
+        "verticalDrop": 465,
+        "baseElevation": 1135,
+        "summitElevation": 1600,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 15, "intermediate": 55, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiblackjack.com",
+      "description": "Blackjack Ski Resort completes the Big Snow Resort trio with Indianhead and Big Powderhorn in Michigan's Upper Peninsula. Known for affordable skiing and excellent natural snow.",
+      "tags": ["big-snow-resort", "upper-peninsula", "affordable", "lake-effect-snow"]
+    },
+    {
+      "name": "Caberfae Peaks",
+      "slug": "caberfae-peaks",
+      "status": "active",
+      "location": { "lat": 44.2714, "lng": -85.6978 },
+      "nearestCity": "Cadillac",
+      "stats": {
+        "skiableAcres": 102,
+        "liftsCount": 5,
+        "runsCount": 34,
+        "verticalDrop": 485,
+        "baseElevation": 1200,
+        "summitElevation": 1685,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.caberfaepeaks.com",
+      "description": "Caberfae Peaks is Michigan's oldest ski area, operating since 1938. Known for challenging terrain and a historic lodge, it offers excellent value and is popular with skiers from Grand Rapids and Lansing.",
+      "tags": ["oldest-michigan", "historic", "challenging", "cadillac", "night-skiing"]
+    },
+    {
+      "name": "Ski Brule",
+      "slug": "ski-brule",
+      "status": "active",
+      "location": { "lat": 46.0556, "lng": -88.6667 },
+      "nearestCity": "Iron River",
+      "stats": {
+        "skiableAcres": 112,
+        "liftsCount": 8,
+        "runsCount": 34,
+        "verticalDrop": 500,
+        "baseElevation": 1200,
+        "summitElevation": 1700,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 25, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibrule.com",
+      "description": "Ski Brule is a family-owned resort in Michigan's Upper Peninsula known for extensive snowmaking and night skiing. With slopeside lodging and a welcoming atmosphere, it's a favorite family destination.",
+      "tags": ["family-owned", "upper-peninsula", "night-skiing", "slopeside-lodging", "family-friendly"]
+    },
+    {
+      "name": "Treetops Resort",
+      "slug": "treetops-resort",
+      "status": "active",
+      "location": { "lat": 45.0667, "lng": -84.5167 },
+      "nearestCity": "Gaylord",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 4,
+        "runsCount": 23,
+        "verticalDrop": 225,
+        "baseElevation": 1150,
+        "summitElevation": 1375,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 25, "intermediate": 55, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.treetops.com",
+      "description": "Treetops Resort is a four-season destination in Gaylord known for championship golf and a full-service spa. While modest in ski terrain, it offers excellent beginner and intermediate skiing with night operations.",
+      "tags": ["golf-resort", "spa", "four-season", "gaylord", "beginner-friendly"]
+    },
+    {
+      "name": "Pine Knob Ski Resort",
+      "slug": "pine-knob",
+      "status": "active",
+      "location": { "lat": 42.7500, "lng": -83.3667 },
+      "nearestCity": "Clarkston",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 8,
+        "runsCount": 17,
+        "verticalDrop": 300,
+        "baseElevation": 950,
+        "summitElevation": 1250,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skipineknob.com",
+      "description": "Pine Knob Ski Resort is one of metro Detroit's most popular ski areas, convenient to northern suburbs. With extensive snowmaking and night skiing, it offers accessible skiing for beginners and families.",
+      "tags": ["metro-detroit", "night-skiing", "beginner-friendly", "snowmaking", "accessible"]
+    },
+    {
+      "name": "Mount Brighton",
+      "slug": "mount-brighton",
+      "status": "active",
+      "location": { "lat": 42.5308, "lng": -83.8147 },
+      "nearestCity": "Brighton",
+      "stats": {
+        "skiableAcres": 130,
+        "liftsCount": 7,
+        "runsCount": 26,
+        "verticalDrop": 230,
+        "baseElevation": 970,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtbrighton.com",
+      "description": "Mount Brighton is a Vail Resorts property serving the Detroit and Ann Arbor metro areas. As an Epic Pass resort, it offers accessible skiing with excellent terrain parks and night operations.",
+      "tags": ["epic-pass", "vail-resorts", "metro-detroit", "terrain-parks", "night-skiing"]
+    },
+    {
+      "name": "Alpine Valley Ski Area",
+      "slug": "alpine-valley-mi",
+      "status": "active",
+      "location": { "lat": 42.7667, "lng": -83.5667 },
+      "nearestCity": "White Lake",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 5,
+        "runsCount": 25,
+        "verticalDrop": 300,
+        "baseElevation": 950,
+        "summitElevation": 1250,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skipineknob.com/alpine-valley",
+      "description": "Alpine Valley Ski Area serves the northwest Detroit suburbs with affordable skiing and extensive night operations. Part of the Pine Knob family of ski areas.",
+      "tags": ["metro-detroit", "night-skiing", "affordable", "pine-knob-family", "beginner-friendly"]
+    },
+    {
+      "name": "Mt. Holly",
+      "slug": "mt-holly",
+      "status": "active",
+      "location": { "lat": 42.8000, "lng": -83.4833 },
+      "nearestCity": "Holly",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 7,
+        "runsCount": 19,
+        "verticalDrop": 350,
+        "baseElevation": 900,
+        "summitElevation": 1250,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skimtholly.com",
+      "description": "Mt. Holly is a popular Detroit-area ski hill known for its terrain parks and racing programs. With extensive snowmaking and night skiing, it's a longtime favorite for local skiers.",
+      "tags": ["metro-detroit", "terrain-parks", "racing-programs", "night-skiing", "snowmaking"]
+    },
+    {
+      "name": "Snow Snake Mountain",
+      "slug": "snow-snake-mountain",
+      "status": "active",
+      "location": { "lat": 43.1167, "lng": -84.6000 },
+      "nearestCity": "Harrison",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 4,
+        "runsCount": 16,
+        "verticalDrop": 210,
+        "baseElevation": 1150,
+        "summitElevation": 1360,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowsnake.net",
+      "description": "Snow Snake Mountain is a family-owned ski area in central Michigan, convenient to Lansing and Saginaw. Known for affordable prices and friendly atmosphere, it's a community favorite.",
+      "tags": ["family-owned", "central-michigan", "affordable", "night-skiing", "community-favorite"]
+    },
+    {
+      "name": "Timber Ridge Ski Area",
+      "slug": "timber-ridge",
+      "status": "active",
+      "location": { "lat": 42.3333, "lng": -85.5333 },
+      "nearestCity": "Gobles",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 7,
+        "runsCount": 15,
+        "verticalDrop": 250,
+        "baseElevation": 750,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.timberridgeski.com",
+      "description": "Timber Ridge Ski Area serves southwest Michigan with affordable skiing and extensive night operations. Popular with families from Kalamazoo and Grand Rapids.",
+      "tags": ["southwest-michigan", "night-skiing", "affordable", "kalamazoo-accessible", "family-friendly"]
+    },
+    {
+      "name": "Cannonsburg Ski Area",
+      "slug": "cannonsburg",
+      "status": "active",
+      "location": { "lat": 43.0500, "lng": -85.4833 },
+      "nearestCity": "Belmont",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 6,
+        "runsCount": 22,
+        "verticalDrop": 250,
+        "baseElevation": 750,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cannonsburg.com",
+      "description": "Cannonsburg Ski Area is Grand Rapids' closest ski hill, offering convenient after-work and evening skiing. Family-owned and operated, it's a community staple for over 50 years.",
+      "tags": ["grand-rapids", "night-skiing", "family-owned", "convenient", "community-staple"]
+    },
+    {
+      "name": "Bittersweet Ski Area",
+      "slug": "bittersweet",
+      "status": "active",
+      "location": { "lat": 42.1833, "lng": -86.3167 },
+      "nearestCity": "Otsego",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 8,
+        "runsCount": 20,
+        "verticalDrop": 300,
+        "baseElevation": 700,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibittersweet.com",
+      "description": "Bittersweet Ski Area serves southwest Michigan with excellent snowmaking and night skiing. Popular with families from Kalamazoo and South Bend, Indiana.",
+      "tags": ["southwest-michigan", "night-skiing", "snowmaking", "kalamazoo-accessible", "south-bend-accessible"]
+    },
+    {
+      "name": "Swiss Valley Ski Area",
+      "slug": "swiss-valley",
+      "status": "active",
+      "location": { "lat": 41.8833, "lng": -86.0167 },
+      "nearestCity": "Jones",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 5,
+        "runsCount": 11,
+        "verticalDrop": 225,
+        "baseElevation": 775,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiswissvalley.com",
+      "description": "Swiss Valley Ski Area is a small family ski area in Michigan's southwestern corner, close to the Indiana and Ohio borders. Known for affordable prices and a welcoming atmosphere.",
+      "tags": ["southwest-michigan", "affordable", "night-skiing", "family-friendly", "indiana-border"]
+    },
+    {
+      "name": "Porcupine Mountains Ski Area",
+      "slug": "porcupine-mountains",
+      "status": "active",
+      "location": { "lat": 46.8167, "lng": -89.7500 },
+      "nearestCity": "Ontonagon",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 3,
+        "runsCount": 42,
+        "verticalDrop": 787,
+        "baseElevation": 800,
+        "summitElevation": 1587,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 15, "intermediate": 45, "advanced": 30, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.porkienoar.com",
+      "description": "Porcupine Mountains Ski Area is located in the Porcupine Mountains Wilderness State Park, offering some of the Upper Peninsula's most scenic skiing. Remote and rugged, it features excellent natural snow and lake views.",
+      "tags": ["state-park", "wilderness", "lake-superior-views", "natural-snow", "remote", "upper-peninsula"]
+    },
+    {
+      "name": "Mont Ripley",
+      "slug": "mont-ripley",
+      "status": "active",
+      "location": { "lat": 47.1167, "lng": -88.5500 },
+      "nearestCity": "Hancock",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 2,
+        "runsCount": 25,
+        "verticalDrop": 440,
+        "baseElevation": 900,
+        "summitElevation": 1340,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 30, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtu.edu/mont-ripley",
+      "description": "Mont Ripley is owned and operated by Michigan Technological University in Houghton. One of the oldest ski areas in Michigan, it offers affordable skiing for students and the local community.",
+      "tags": ["university-owned", "michigan-tech", "affordable", "night-skiing", "keweenaw-peninsula"]
+    },
+    {
+      "name": "Pine Mountain Ski Jump",
+      "slug": "pine-mountain-ski-jump",
+      "status": "active",
+      "location": { "lat": 45.8000, "lng": -88.0667 },
+      "nearestCity": "Iron Mountain",
+      "stats": {
+        "skiableAcres": 8,
+        "liftsCount": 1,
+        "runsCount": 6,
+        "verticalDrop": 500,
+        "baseElevation": 1100,
+        "summitElevation": 1600,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.pinemountainresort.com",
+      "description": "Pine Mountain is famous for hosting continental ski jumping competitions on one of the largest artificial ski jumps in the world. The small alpine area offers beginner-intermediate terrain alongside the historic jump complex.",
+      "tags": ["ski-jumping", "historic", "competition-venue", "iron-mountain", "upper-peninsula"]
+    },
+
+    {
+      "name": "Maplehurst",
+      "slug": "maplehurst",
+      "status": "defunct",
+      "location": { "lat": 42.5833, "lng": -84.0333 },
+      "nearestCity": "Howell",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Small ski area near Howell that served the Livingston County area before closing due to unreliable snow and development pressure.",
+      "tags": ["livingston-county", "closed-1990s"]
+    },
+    {
+      "name": "Thunder Mountain",
+      "slug": "thunder-mountain-mi",
+      "status": "defunct",
+      "location": { "lat": 45.0333, "lng": -84.7667 },
+      "nearestCity": "Boyne Falls",
+      "yearsOperated": "1967-2005",
+      "notes": "Operated near Boyne Mountain before being acquired by Boyne Resorts. Some terrain was incorporated into Boyne Mountain's expansion.",
+      "tags": ["near-boyne-mountain", "absorbed", "closed-2005"]
+    },
+    {
+      "name": "Apple Mountain",
+      "slug": "apple-mountain",
+      "status": "defunct",
+      "location": { "lat": 43.4500, "lng": -84.1667 },
+      "nearestCity": "Freeland",
+      "yearsOperated": "1969-2007",
+      "notes": "Popular ski area near Saginaw that operated for nearly 40 years. The site was converted to a golf course and event facility.",
+      "tags": ["saginaw-area", "now-golf-course", "closed-2007"]
+    },
+    {
+      "name": "Otsego Ski Club",
+      "slug": "otsego-ski-club",
+      "status": "defunct",
+      "location": { "lat": 44.9833, "lng": -84.7167 },
+      "nearestCity": "Gaylord",
+      "yearsOperated": "1930s-1980s",
+      "notes": "Historic private ski club in northern Michigan that was one of the region's earliest ski areas. Operated for over 50 years.",
+      "tags": ["private-club", "historic", "gaylord-area"]
+    },
+    {
+      "name": "Mt. Mancelona",
+      "slug": "mt-mancelona",
+      "status": "defunct",
+      "location": { "lat": 44.9000, "lng": -85.0667 },
+      "nearestCity": "Mancelona",
+      "yearsOperated": "1966-1998",
+      "notes": "Small ski area near Mancelona that operated for over 30 years before closing due to financial difficulties.",
+      "tags": ["mancelona", "closed-1998"]
+    },
+    {
+      "name": "Missaukee Mountain",
+      "slug": "missaukee-mountain",
+      "status": "defunct",
+      "location": { "lat": 44.3667, "lng": -85.1833 },
+      "nearestCity": "Lake City",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Community ski area in Lake City that served the Missaukee County area for several decades.",
+      "tags": ["lake-city", "community-hill", "missaukee-county"]
+    },
+    {
+      "name": "Mt. Maria",
+      "slug": "mt-maria",
+      "status": "defunct",
+      "location": { "lat": 44.2333, "lng": -84.9167 },
+      "nearestCity": "Spruce",
+      "yearsOperated": "1970s-2000s",
+      "notes": "Small ski area in the Huron National Forest that operated intermittently before closing permanently.",
+      "tags": ["huron-national-forest", "intermittent-operation"]
+    },
+    {
+      "name": "Sylvan Knob",
+      "slug": "sylvan-knob",
+      "status": "defunct",
+      "location": { "lat": 44.9500, "lng": -84.7500 },
+      "nearestCity": "Gaylord",
+      "yearsOperated": "1960s-1980s",
+      "notes": "Small rope tow operation near Gaylord that served the local community before larger resorts dominated the area.",
+      "tags": ["gaylord-area", "rope-tow", "community-hill"]
+    },
+    {
+      "name": "Mount Grampian",
+      "slug": "mount-grampian",
+      "status": "defunct",
+      "location": { "lat": 45.2500, "lng": -84.5500 },
+      "nearestCity": "Gaylord",
+      "yearsOperated": "1950s-1970s",
+      "notes": "Early ski area in northern Michigan that was a pioneer of the sport in the region before closing.",
+      "tags": ["pioneer", "northern-michigan", "early-ski-area"]
+    }
+  ],
+  "meta": {
+    "totalActive": 24,
+    "totalDefunct": 9,
+    "lastUpdated": "2025-01-15"
+  }
+}

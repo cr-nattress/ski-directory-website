@@ -1,0 +1,418 @@
+{
+  "country": "US",
+  "state": "Massachusetts",
+  "resorts": [
+    {
+      "name": "Wachusett Mountain",
+      "slug": "wachusett-mountain",
+      "status": "active",
+      "location": { "lat": 42.4864, "lng": -71.8867 },
+      "nearestCity": "Princeton",
+      "stats": {
+        "skiableAcres": 110,
+        "liftsCount": 8,
+        "runsCount": 27,
+        "verticalDrop": 1000,
+        "baseElevation": 1100,
+        "summitElevation": 2100,
+        "avgAnnualSnowfall": 70
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.wachusett.com",
+      "description": "Wachusett is Massachusetts' largest ski area and the closest significant mountain to Boston. With 1,000 feet of vertical, extensive snowmaking, and night skiing, it serves as the go-to destination for Greater Boston skiers looking for convenient terrain.",
+      "tags": ["largest-massachusetts", "indy-pass", "boston-accessible", "night-skiing", "high-speed-lifts"]
+    },
+    {
+      "name": "Jiminy Peak",
+      "slug": "jiminy-peak",
+      "status": "active",
+      "location": { "lat": 42.5444, "lng": -73.2778 },
+      "nearestCity": "Hancock",
+      "stats": {
+        "skiableAcres": 167,
+        "liftsCount": 9,
+        "runsCount": 45,
+        "verticalDrop": 1150,
+        "baseElevation": 1250,
+        "summitElevation": 2400,
+        "avgAnnualSnowfall": 75
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.jiminypeak.com",
+      "description": "Jiminy Peak is a full-service Berkshire resort offering skiing, lodging, and year-round recreation. Known for being the first ski resort in North America to be powered by a wind turbine, it combines environmental leadership with quality terrain.",
+      "tags": ["berkshires", "wind-powered", "full-resort", "lodging", "night-skiing", "environmentally-conscious"]
+    },
+    {
+      "name": "Berkshire East",
+      "slug": "berkshire-east",
+      "status": "active",
+      "location": { "lat": 42.6286, "lng": -72.8914 },
+      "nearestCity": "Charlemont",
+      "stats": {
+        "skiableAcres": 180,
+        "liftsCount": 6,
+        "runsCount": 45,
+        "verticalDrop": 1180,
+        "baseElevation": 580,
+        "summitElevation": 1760,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.berkshireeast.com",
+      "description": "Berkshire East offers some of the most challenging terrain in Southern New England, with the highest vertical in Massachusetts. The mountain also features extensive mountain biking trails in summer, making it a true four-season destination.",
+      "tags": ["indy-pass", "highest-vertical-ma", "challenging-terrain", "mountain-biking", "night-skiing"]
+    },
+    {
+      "name": "Ski Butternut",
+      "slug": "ski-butternut",
+      "status": "active",
+      "location": { "lat": 42.1903, "lng": -73.2847 },
+      "nearestCity": "Great Barrington",
+      "stats": {
+        "skiableAcres": 110,
+        "liftsCount": 6,
+        "runsCount": 22,
+        "verticalDrop": 1000,
+        "baseElevation": 900,
+        "summitElevation": 1900,
+        "avgAnnualSnowfall": 65
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibutternut.com",
+      "description": "Ski Butternut is a family-friendly resort in the southern Berkshires, known for excellent learning terrain and programs. Popular with NYC and Connecticut skiers, it offers a relaxed atmosphere and scenic mountain views.",
+      "tags": ["berkshires", "family-friendly", "learning-terrain", "great-barrington", "nyc-accessible"]
+    },
+    {
+      "name": "Bousquet Mountain",
+      "slug": "bousquet-mountain",
+      "status": "active",
+      "location": { "lat": 42.4528, "lng": -73.2564 },
+      "nearestCity": "Pittsfield",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 4,
+        "runsCount": 24,
+        "verticalDrop": 750,
+        "baseElevation": 1150,
+        "summitElevation": 1900,
+        "avgAnnualSnowfall": 65
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bousquets.com",
+      "description": "Bousquet is one of America's oldest ski areas, having operated since 1932. The affordable Berkshire mountain is a favorite for locals and has a rich history in ski racing and development. Night skiing adds to its accessibility.",
+      "tags": ["berkshires", "historic", "affordable", "pittsfield", "night-skiing", "racing-heritage"]
+    },
+    {
+      "name": "Nashoba Valley",
+      "slug": "nashoba-valley",
+      "status": "active",
+      "location": { "lat": 42.5358, "lng": -71.4536 },
+      "nearestCity": "Westford",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 6,
+        "runsCount": 17,
+        "verticalDrop": 240,
+        "baseElevation": 240,
+        "summitElevation": 480,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skinashoba.com",
+      "description": "Nashoba Valley is the closest ski area to Boston, offering convenient access for city skiers. With extensive night skiing and reliable snowmaking, it's perfect for after-work sessions and learning to ski.",
+      "tags": ["closest-to-boston", "night-skiing", "learning-terrain", "convenient", "after-work-skiing"]
+    },
+    {
+      "name": "Ski Ward",
+      "slug": "ski-ward",
+      "status": "active",
+      "location": { "lat": 42.3250, "lng": -71.9139 },
+      "nearestCity": "Shrewsbury",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 4,
+        "runsCount": 9,
+        "verticalDrop": 310,
+        "baseElevation": 490,
+        "summitElevation": 800,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiward.com",
+      "description": "Ski Ward is a family-owned area near Worcester, perfect for beginners and families. The affordable pricing and welcoming atmosphere have made it a local favorite for generations of central Massachusetts skiers.",
+      "tags": ["worcester-area", "family-owned", "affordable", "beginner-friendly", "night-skiing"]
+    },
+    {
+      "name": "Blue Hills Ski Area",
+      "slug": "blue-hills",
+      "status": "active",
+      "location": { "lat": 42.2139, "lng": -71.0847 },
+      "nearestCity": "Canton",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 4,
+        "runsCount": 12,
+        "verticalDrop": 309,
+        "baseElevation": 390,
+        "summitElevation": 699,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bluehillsski.com",
+      "description": "Blue Hills is located within the Blue Hills Reservation just minutes from downtown Boston. It's the closest ski area to Boston proper, making it ideal for quick after-work or weekend sessions for city dwellers.",
+      "tags": ["boston-closest", "urban-skiing", "blue-hills-reservation", "night-skiing", "convenient"]
+    },
+    {
+      "name": "Otis Ridge",
+      "slug": "otis-ridge",
+      "status": "active",
+      "location": { "lat": 42.1744, "lng": -73.0767 },
+      "nearestCity": "Otis",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 3,
+        "runsCount": 11,
+        "verticalDrop": 400,
+        "baseElevation": 1500,
+        "summitElevation": 1900,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.otisridge.com",
+      "description": "Otis Ridge is a small, family-friendly ski area in the Berkshires, known for its ski camp programs and summer camp. The area has been teaching people to ski since 1939, with a focus on youth development.",
+      "tags": ["berkshires", "ski-camps", "youth-programs", "historic", "family-friendly"]
+    },
+    {
+      "name": "Catamount Ski Area",
+      "slug": "catamount-ma",
+      "status": "active",
+      "location": { "lat": 42.1764, "lng": -73.4644 },
+      "nearestCity": "South Egremont",
+      "stats": {
+        "skiableAcres": 119,
+        "liftsCount": 7,
+        "runsCount": 36,
+        "verticalDrop": 1000,
+        "baseElevation": 1000,
+        "summitElevation": 2000,
+        "avgAnnualSnowfall": 65
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.catamountski.com",
+      "description": "Catamount straddles the Massachusetts-New York border, offering skiing in both states. Recent investment has modernized the resort, adding new lifts and snowmaking. The terrain offers good variety for all ability levels.",
+      "tags": ["ma-ny-border", "modernized", "night-skiing", "berkshires", "terrain-variety"]
+    },
+
+    {
+      "name": "Brodie Mountain",
+      "slug": "brodie-mountain",
+      "status": "defunct",
+      "location": { "lat": 42.5656, "lng": -73.2278 },
+      "nearestCity": "New Ashford",
+      "yearClosed": 2002,
+      "description": "Brodie Mountain was a beloved Berkshire resort that operated for over 60 years before closing in 2002. Known for its night skiing and family atmosphere, the property has been developed for other uses since closure.",
+      "tags": ["closed", "berkshires", "historic", "night-skiing-pioneer"]
+    },
+    {
+      "name": "Jug End",
+      "slug": "jug-end",
+      "status": "defunct",
+      "location": { "lat": 42.1400, "lng": -73.4300 },
+      "nearestCity": "South Egremont",
+      "yearClosed": 1987,
+      "description": "Jug End was a small Berkshire ski area that operated as part of a resort complex. The ski area closed in 1987, though some property remains used for other recreational purposes.",
+      "tags": ["closed", "berkshires", "resort"]
+    },
+    {
+      "name": "Mount Tom",
+      "slug": "mount-tom",
+      "status": "defunct",
+      "location": { "lat": 42.2508, "lng": -72.6322 },
+      "nearestCity": "Holyoke",
+      "yearClosed": 1998,
+      "description": "Mount Tom was a popular Pioneer Valley ski area visible from I-91. The distinctive mountain hosted skiing for decades before closing in 1998. Several redevelopment attempts have been unsuccessful.",
+      "tags": ["closed", "pioneer-valley", "holyoke", "i-91-visible", "iconic"]
+    },
+    {
+      "name": "Mt. Watatic",
+      "slug": "mt-watatic",
+      "status": "defunct",
+      "location": { "lat": 42.6939, "lng": -71.9011 },
+      "nearestCity": "Ashburnham",
+      "yearClosed": 1984,
+      "description": "Mt. Watatic operated a small ski area on the mountain that now features popular hiking trails. The ski operations ended in 1984, but the summit remains a destination for hikers.",
+      "tags": ["closed", "ashburnham", "hiking-destination"]
+    },
+    {
+      "name": "Prospect Hill",
+      "slug": "prospect-hill-ma",
+      "status": "defunct",
+      "location": { "lat": 42.2900, "lng": -71.8100 },
+      "nearestCity": "Princeton",
+      "yearClosed": 1980,
+      "description": "Prospect Hill was a small ski area near Wachusett Mountain that operated through the 1970s. Competition from the nearby larger resort and economic factors led to its closure.",
+      "tags": ["closed", "princeton", "small-area"]
+    },
+    {
+      "name": "Klein Innsbruck",
+      "slug": "klein-innsbruck",
+      "status": "defunct",
+      "location": { "lat": 42.4200, "lng": -73.3800 },
+      "nearestCity": "Hinsdale",
+      "yearClosed": 1975,
+      "description": "Klein Innsbruck was a Berkshire ski area with an Austrian theme that operated until the mid-1970s. The area was known for its European atmosphere and small-area charm.",
+      "tags": ["closed", "berkshires", "austrian-theme", "historic"]
+    },
+    {
+      "name": "Thunder Mountain",
+      "slug": "thunder-mountain-ma",
+      "status": "defunct",
+      "location": { "lat": 42.2800, "lng": -72.8700 },
+      "nearestCity": "Charlemont",
+      "yearClosed": 1999,
+      "description": "Thunder Mountain was a small ski area in Franklin County that operated until 1999. The challenging terrain attracted a dedicated following before economic challenges forced closure.",
+      "tags": ["closed", "franklin-county", "charlemont"]
+    },
+    {
+      "name": "Blandford Ski Area",
+      "slug": "blandford",
+      "status": "defunct",
+      "location": { "lat": 42.1900, "lng": -72.9600 },
+      "nearestCity": "Blandford",
+      "yearClosed": 1998,
+      "description": "Blandford was a small ski area in Hampden County that served the Springfield area. The area closed in 1998 after years of marginal operation in a challenging economic climate.",
+      "tags": ["closed", "hampden-county", "springfield-area"]
+    },
+    {
+      "name": "Indian Head",
+      "slug": "indian-head-ma",
+      "status": "defunct",
+      "location": { "lat": 42.5800, "lng": -72.7000 },
+      "nearestCity": "Greenfield",
+      "yearClosed": 1978,
+      "description": "Indian Head was a small ski area in the Pioneer Valley that operated through the 1970s. The area provided local skiing for Greenfield-area residents before closing.",
+      "tags": ["closed", "pioneer-valley", "greenfield"]
+    },
+    {
+      "name": "Boston Hill",
+      "slug": "boston-hill",
+      "status": "defunct",
+      "location": { "lat": 42.8500, "lng": -71.1000 },
+      "nearestCity": "North Andover",
+      "yearClosed": 1995,
+      "description": "Boston Hill was a small ski area north of Boston that served the Merrimack Valley region. The area closed in 1995, unable to compete with larger regional resorts.",
+      "tags": ["closed", "merrimack-valley", "north-andover"]
+    },
+    {
+      "name": "Mt. Greylock Ski Area",
+      "slug": "mt-greylock-ski",
+      "status": "defunct",
+      "location": { "lat": 42.6375, "lng": -73.1661 },
+      "nearestCity": "Adams",
+      "yearClosed": 1990,
+      "description": "Mt. Greylock Ski Area operated on the slopes of Massachusetts' highest peak. While the ski area closed, Greylock remains a popular destination for hiking and the Thunderbolt Ski Run, a historic racing trail.",
+      "tags": ["closed", "highest-ma-peak", "thunderbolt-trail", "historic"]
+    },
+    {
+      "name": "Chickley Alp",
+      "slug": "chickley-alp",
+      "status": "defunct",
+      "location": { "lat": 42.5500, "lng": -72.8900 },
+      "nearestCity": "Hawley",
+      "yearClosed": 1970,
+      "description": "Chickley Alp was a small, family-run ski area in Franklin County that operated until around 1970. The intimate area was a favorite among local skiers.",
+      "tags": ["closed", "franklin-county", "family-run"]
+    },
+    {
+      "name": "Eastover",
+      "slug": "eastover",
+      "status": "defunct",
+      "location": { "lat": 42.3700, "lng": -73.2500 },
+      "nearestCity": "Lenox",
+      "yearClosed": 2000,
+      "description": "Eastover Resort operated a small ski area as part of its resort amenities in Lenox. The ski operations ended around 2000, though the resort property continues in other uses.",
+      "tags": ["closed", "lenox", "resort", "berkshires"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-27T21:30:00Z" }
+}

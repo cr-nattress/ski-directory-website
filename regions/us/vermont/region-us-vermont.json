@@ -1,0 +1,788 @@
+{
+  "country": "US",
+  "state": "Vermont",
+  "resorts": [
+    {
+      "name": "Stowe Mountain Resort",
+      "slug": "stowe",
+      "status": "active",
+      "location": { "lat": 44.5303, "lng": -72.7814 },
+      "nearestCity": "Stowe",
+      "stats": {
+        "skiableAcres": 485,
+        "liftsCount": 13,
+        "runsCount": 116,
+        "verticalDrop": 2360,
+        "baseElevation": 1559,
+        "summitElevation": 3719,
+        "avgAnnualSnowfall": 314
+      },
+      "terrain": { "beginner": 16, "intermediate": 59, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.stowe.com",
+      "description": "Stowe is the 'Ski Capital of the East,' combining challenging terrain on Vermont's highest peak with a charming New England village. The iconic Spruce Peak and Mount Mansfield offer diverse skiing, while the pedestrian village and world-class spa define Eastern luxury skiing.",
+      "tags": ["ski-capital-east", "epic-pass", "mount-mansfield", "luxury", "charming-village", "highest-vermont"]
+    },
+    {
+      "name": "Killington Resort",
+      "slug": "killington",
+      "status": "active",
+      "location": { "lat": 43.6045, "lng": -72.8201 },
+      "nearestCity": "Killington",
+      "stats": {
+        "skiableAcres": 1509,
+        "liftsCount": 22,
+        "runsCount": 155,
+        "verticalDrop": 3050,
+        "baseElevation": 1165,
+        "summitElevation": 4241,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 28, "intermediate": 33, "advanced": 39, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.killington.com",
+      "description": "Killington is the largest ski resort in the East, known as 'The Beast of the East.' With the most extensive snowmaking in the world, it opens earliest and closes latest in the region. Six interconnected peaks offer terrain for all abilities and a legendary après scene.",
+      "tags": ["beast-of-east", "ikon-pass", "largest-east", "longest-season", "snowmaking", "six-peaks"]
+    },
+    {
+      "name": "Sugarbush Resort",
+      "slug": "sugarbush",
+      "status": "active",
+      "location": { "lat": 44.1361, "lng": -72.9053 },
+      "nearestCity": "Warren",
+      "stats": {
+        "skiableAcres": 578,
+        "liftsCount": 16,
+        "runsCount": 111,
+        "verticalDrop": 2600,
+        "baseElevation": 1483,
+        "summitElevation": 4083,
+        "avgAnnualSnowfall": 260
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.sugarbush.com",
+      "description": "Sugarbush spans two mountains—Lincoln Peak and Mount Ellen—connected by a shuttle. Known for its challenging natural terrain and lack of crowds, it offers an authentic Vermont experience in the Mad River Valley, home to ski-it-if-you-can Mad River Glen.",
+      "tags": ["two-mountains", "ikon-pass", "mad-river-valley", "natural-terrain", "uncrowded", "authentic"]
+    },
+    {
+      "name": "Jay Peak Resort",
+      "slug": "jay-peak",
+      "status": "active",
+      "location": { "lat": 44.9275, "lng": -72.5056 },
+      "nearestCity": "Jay",
+      "stats": {
+        "skiableAcres": 478,
+        "liftsCount": 9,
+        "runsCount": 81,
+        "verticalDrop": 2153,
+        "baseElevation": 1815,
+        "summitElevation": 3968,
+        "avgAnnualSnowfall": 355
+      },
+      "terrain": { "beginner": 22, "intermediate": 40, "advanced": 38, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.jaypeakresort.com",
+      "description": "Jay Peak receives the most snow in the East—355 inches annually—thanks to its position near the Canadian border catching 'Jay Cloud' lake-effect storms. Famous for glades and natural snow, it also features an indoor waterpark and ice arena.",
+      "tags": ["most-snow-east", "ikon-pass", "jay-cloud", "glades", "indoor-waterpark", "near-canada"]
+    },
+    {
+      "name": "Okemo Mountain Resort",
+      "slug": "okemo",
+      "status": "active",
+      "location": { "lat": 43.4017, "lng": -72.7172 },
+      "nearestCity": "Ludlow",
+      "stats": {
+        "skiableAcres": 667,
+        "liftsCount": 20,
+        "runsCount": 121,
+        "verticalDrop": 2200,
+        "baseElevation": 1144,
+        "summitElevation": 3344,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 32, "intermediate": 36, "advanced": 32, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.okemo.com",
+      "description": "Okemo is known for impeccable grooming and family-friendly service. Consistently rated the best groomed mountain in the East, it offers a welcoming atmosphere, excellent terrain parks, and a charming base village with Jackson Gore amenities.",
+      "tags": ["best-grooming", "epic-pass", "family-friendly", "terrain-parks", "jackson-gore", "ludlow"]
+    },
+    {
+      "name": "Mount Snow",
+      "slug": "mount-snow",
+      "status": "active",
+      "location": { "lat": 42.9603, "lng": -72.9214 },
+      "nearestCity": "West Dover",
+      "stats": {
+        "skiableAcres": 600,
+        "liftsCount": 20,
+        "runsCount": 86,
+        "verticalDrop": 1700,
+        "baseElevation": 1900,
+        "summitElevation": 3600,
+        "avgAnnualSnowfall": 156
+      },
+      "terrain": { "beginner": 14, "intermediate": 73, "advanced": 13, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.mountsnow.com",
+      "description": "Mount Snow is southern Vermont's largest resort and a favorite for New York and Boston day-trippers. The Carinthia terrain park complex is among the best in the East, and the Bluebird Express is New England's first six-pack chairlift.",
+      "tags": ["southern-vermont", "epic-pass", "carinthia-parks", "accessible", "bluebird-express", "terrain-parks"]
+    },
+    {
+      "name": "Stratton Mountain",
+      "slug": "stratton",
+      "status": "active",
+      "location": { "lat": 43.1139, "lng": -72.9083 },
+      "nearestCity": "Stratton Mountain",
+      "stats": {
+        "skiableAcres": 670,
+        "liftsCount": 11,
+        "runsCount": 99,
+        "verticalDrop": 2003,
+        "baseElevation": 1872,
+        "summitElevation": 3875,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 42, "intermediate": 31, "advanced": 27, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.stratton.com",
+      "description": "Stratton is the birthplace of snowboarding, where Jake Burton Carpenter first rode his boards in the 1970s. With Vermont's highest summit and a pedestrian village with upscale amenities, it attracts skiers seeking both terrain and lifestyle.",
+      "tags": ["birthplace-snowboarding", "ikon-pass", "highest-summit-vermont", "upscale-village", "jake-burton", "terrain-parks"]
+    },
+    {
+      "name": "Smugglers' Notch Resort",
+      "slug": "smugglers-notch",
+      "status": "active",
+      "location": { "lat": 44.5856, "lng": -72.7858 },
+      "nearestCity": "Jeffersonville",
+      "stats": {
+        "skiableAcres": 311,
+        "liftsCount": 8,
+        "runsCount": 78,
+        "verticalDrop": 2610,
+        "baseElevation": 1030,
+        "summitElevation": 3640,
+        "avgAnnualSnowfall": 286
+      },
+      "terrain": { "beginner": 25, "intermediate": 56, "advanced": 19, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.smuggs.com",
+      "description": "Smugglers' Notch is America's #1 family resort, winning the title 23 consecutive times. Three interconnected mountains offer terrain for all, while the village provides extensive children's programs, pools, and family activities.",
+      "tags": ["number-one-family", "indy-pass", "three-mountains", "childrens-programs", "family-village", "smugglers-notch"]
+    },
+    {
+      "name": "Mad River Glen",
+      "slug": "mad-river-glen",
+      "status": "active",
+      "location": { "lat": 44.2019, "lng": -72.9256 },
+      "nearestCity": "Waitsfield",
+      "stats": {
+        "skiableAcres": 115,
+        "liftsCount": 5,
+        "runsCount": 52,
+        "verticalDrop": 2037,
+        "baseElevation": 1600,
+        "summitElevation": 3637,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 30, "intermediate": 30, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.madriverglen.com",
+      "description": "Mad River Glen is a skiers-only cooperative, proudly banning snowboarding and featuring the only operating single chairlift in the country. 'Ski It If You Can' is the motto, with no snowmaking on most terrain and a fiercely loyal following of expert skiers.",
+      "tags": ["ski-only", "indy-pass", "cooperative-owned", "single-chair", "no-snowmaking", "expert-terrain", "cult-following"]
+    },
+    {
+      "name": "Bolton Valley",
+      "slug": "bolton-valley",
+      "status": "active",
+      "location": { "lat": 44.4186, "lng": -72.8500 },
+      "nearestCity": "Bolton",
+      "stats": {
+        "skiableAcres": 300,
+        "liftsCount": 6,
+        "runsCount": 71,
+        "verticalDrop": 1704,
+        "baseElevation": 2100,
+        "summitElevation": 3680,
+        "avgAnnualSnowfall": 312
+      },
+      "terrain": { "beginner": 35, "intermediate": 37, "advanced": 28, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.boltonvalley.com",
+      "description": "Bolton Valley is Vermont's highest base elevation resort, ensuring excellent snow preservation. A locals' favorite near Burlington, it offers night skiing, extensive backcountry access, and an authentic, uncommercial atmosphere.",
+      "tags": ["highest-base-vermont", "indy-pass", "night-skiing", "backcountry", "burlington-close", "locals-favorite"]
+    },
+    {
+      "name": "Bromley Mountain",
+      "slug": "bromley",
+      "status": "active",
+      "location": { "lat": 43.2236, "lng": -72.9369 },
+      "nearestCity": "Peru",
+      "stats": {
+        "skiableAcres": 178,
+        "liftsCount": 9,
+        "runsCount": 47,
+        "verticalDrop": 1334,
+        "baseElevation": 1950,
+        "summitElevation": 3284,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 32, "intermediate": 37, "advanced": 31, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bromley.com",
+      "description": "Bromley is Vermont's 'Sun Mountain,' with south-facing slopes that catch sun all day. Family-owned and operated, it offers a welcoming atmosphere for beginners and families, plus summer attractions including an alpine coaster.",
+      "tags": ["sun-mountain", "indy-pass", "south-facing", "family-owned", "beginner-friendly", "alpine-coaster"]
+    },
+    {
+      "name": "Pico Mountain",
+      "slug": "pico",
+      "status": "active",
+      "location": { "lat": 43.6611, "lng": -72.8436 },
+      "nearestCity": "Mendon",
+      "stats": {
+        "skiableAcres": 468,
+        "liftsCount": 7,
+        "runsCount": 58,
+        "verticalDrop": 1967,
+        "baseElevation": 1967,
+        "summitElevation": 3967,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 18, "intermediate": 46, "advanced": 36, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.picomountain.com",
+      "description": "Pico is Killington's smaller, mellower sister mountain, offering a more intimate experience. Owned by Killington but maintaining its own character, it provides uncrowded slopes and a throwback Vermont atmosphere.",
+      "tags": ["killington-sister", "ikon-pass", "uncrowded", "intimate", "throwback", "mellow"]
+    },
+    {
+      "name": "Burke Mountain",
+      "slug": "burke",
+      "status": "active",
+      "location": { "lat": 44.5789, "lng": -71.8967 },
+      "nearestCity": "East Burke",
+      "stats": {
+        "skiableAcres": 270,
+        "liftsCount": 5,
+        "runsCount": 50,
+        "verticalDrop": 2011,
+        "baseElevation": 1267,
+        "summitElevation": 3267,
+        "avgAnnualSnowfall": 220
+      },
+      "terrain": { "beginner": 10, "intermediate": 44, "advanced": 46, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.skiburke.com",
+      "description": "Burke Mountain is home to Burke Mountain Academy, which has produced more U.S. Olympic ski racers than any other program. The uncrowded slopes and challenging terrain attract serious skiers, while the hotel at the base provides slopeside convenience.",
+      "tags": ["burke-academy", "ikon-pass", "olympic-training", "uncrowded", "race-heritage", "northeast-kingdom"]
+    },
+    {
+      "name": "Magic Mountain",
+      "slug": "magic-mountain",
+      "status": "active",
+      "location": { "lat": 43.2039, "lng": -72.7817 },
+      "nearestCity": "Londonderry",
+      "stats": {
+        "skiableAcres": 205,
+        "liftsCount": 5,
+        "runsCount": 50,
+        "verticalDrop": 1700,
+        "baseElevation": 1150,
+        "summitElevation": 2850,
+        "avgAnnualSnowfall": 175
+      },
+      "terrain": { "beginner": 25, "intermediate": 30, "advanced": 45, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.magicmtn.com",
+      "description": "Magic Mountain is a throwback ski area beloved for its steep terrain, natural snow, and old-school atmosphere. Community-supported through ownership and volunteer efforts, it offers challenging skiing without the commercial polish.",
+      "tags": ["throwback", "indy-pass", "steep-terrain", "community-supported", "old-school", "natural-snow"]
+    },
+    {
+      "name": "Middlebury College Snow Bowl",
+      "slug": "middlebury-snow-bowl",
+      "status": "active",
+      "location": { "lat": 43.9456, "lng": -72.9428 },
+      "nearestCity": "Hancock",
+      "stats": {
+        "skiableAcres": 115,
+        "liftsCount": 3,
+        "runsCount": 17,
+        "verticalDrop": 1020,
+        "baseElevation": 1540,
+        "summitElevation": 2560,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 35, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.middlebury.edu/offices/student-life/ski-bowl",
+      "description": "Middlebury Snow Bowl is a college-owned ski area in the Green Mountain National Forest. Open to the public, it offers affordable skiing with no crowds, challenging terrain, and a genuine Vermont atmosphere.",
+      "tags": ["college-owned", "middlebury", "affordable", "uncrowded", "green-mountain", "public-access"]
+    },
+    {
+      "name": "Suicide Six",
+      "slug": "suicide-six",
+      "status": "active",
+      "location": { "lat": 43.6753, "lng": -72.5306 },
+      "nearestCity": "Woodstock",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 3,
+        "runsCount": 24,
+        "verticalDrop": 650,
+        "baseElevation": 918,
+        "summitElevation": 1570,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.suicide6.com",
+      "description": "Suicide Six is one of America's oldest ski areas, where the first rope tow was installed in 1934. Owned by the Woodstock Inn, it offers intimate skiing near the charming village of Woodstock, with a focus on families and beginners.",
+      "tags": ["historic", "first-rope-tow", "woodstock-inn", "family-friendly", "intimate", "oldest"]
+    },
+    {
+      "name": "Cochran's Ski Area",
+      "slug": "cochrans",
+      "status": "active",
+      "location": { "lat": 44.3561, "lng": -72.9381 },
+      "nearestCity": "Richmond",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 2,
+        "runsCount": 6,
+        "verticalDrop": 360,
+        "baseElevation": 700,
+        "summitElevation": 1060,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cochranskiarea.com",
+      "description": "Cochran's is a nonprofit family ski area founded by the legendary Cochran ski racing family, which produced Olympic champions. Offering the most affordable skiing in Vermont, it focuses on teaching children and preserving the family ski experience.",
+      "tags": ["nonprofit", "cochran-family", "olympic-heritage", "cheapest-vermont", "night-skiing", "family-focused"]
+    },
+    {
+      "name": "Northeast Slopes",
+      "slug": "northeast-slopes",
+      "status": "active",
+      "location": { "lat": 44.4494, "lng": -72.6867 },
+      "nearestCity": "East Corinth",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 340,
+        "baseElevation": 1060,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 45, "intermediate": 40, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.northeastslopes.org",
+      "description": "Northeast Slopes is a tiny nonprofit ski area serving the rural Northeast Kingdom. Operated by volunteers, it offers the most accessible and affordable skiing in the region with night skiing under the lights.",
+      "tags": ["nonprofit", "volunteer-run", "northeast-kingdom", "night-skiing", "affordable", "community"]
+    },
+    {
+      "name": "Lyndon Outing Club",
+      "slug": "lyndon-outing-club",
+      "status": "active",
+      "location": { "lat": 44.5342, "lng": -72.0153 },
+      "nearestCity": "Lyndonville",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 1,
+        "runsCount": 6,
+        "verticalDrop": 350,
+        "baseElevation": 1000,
+        "summitElevation": 1350,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 50, "intermediate": 35, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.lyndonoutingclub.org",
+      "description": "Lyndon Outing Club is a community ski hill in Vermont's Northeast Kingdom. This tiny, volunteer-operated area offers night skiing and serves as an affordable introduction to skiing for local families.",
+      "tags": ["community-hill", "volunteer-run", "northeast-kingdom", "night-skiing", "affordable", "local"]
+    },
+    {
+      "name": "Quechee Ski Area",
+      "slug": "quechee",
+      "status": "active",
+      "location": { "lat": 43.6428, "lng": -72.4339 },
+      "nearestCity": "Quechee",
+      "stats": {
+        "skiableAcres": 20,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 300,
+        "baseElevation": 600,
+        "summitElevation": 900,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 60, "intermediate": 30, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.quecheeclub.com/ski",
+      "description": "Quechee is a private club ski area that offers day passes to the public. Located near the scenic Quechee Gorge, it provides gentle terrain perfect for families and beginners learning to ski.",
+      "tags": ["private-club", "public-access", "beginner-friendly", "night-skiing", "quechee-gorge", "family"]
+    },
+    {
+      "name": "Saskadena Six",
+      "slug": "saskadena-six",
+      "status": "active",
+      "location": { "lat": 43.4528, "lng": -72.4900 },
+      "nearestCity": "South Pomfret",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 620,
+        "baseElevation": 950,
+        "summitElevation": 1570,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.saskadenasix.com",
+      "description": "Saskadena Six (formerly Sonnenberg) is a tiny community ski area serving the Woodstock area. With affordable prices and family-focused operations, it offers a genuine Vermont community skiing experience.",
+      "tags": ["community-hill", "affordable", "family-focused", "woodstock-area", "local", "renamed"]
+    },
+
+    {
+      "name": "Glen Ellen",
+      "slug": "glen-ellen",
+      "status": "defunct",
+      "notes": "Merged into Sugarbush Resort in 1979",
+      "yearsOperated": "1962-1979",
+      "location": { "lat": 44.14, "lng": -72.9 },
+      "tags": ["merged", "now-sugarbush"]
+    },
+    {
+      "name": "Sugarbush North",
+      "slug": "sugarbush-north",
+      "status": "defunct",
+      "notes": "Renamed to Lincoln Peak, now part of Sugarbush Resort",
+      "yearsOperated": "1963-1990s",
+      "location": { "lat": 44.13, "lng": -72.91 },
+      "tags": ["merged", "now-sugarbush"]
+    },
+    {
+      "name": "Dutch Hill",
+      "slug": "dutch-hill",
+      "status": "defunct",
+      "notes": "Former ski area in southern Vermont",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 43.0, "lng": -73.0 },
+      "tags": ["historic", "southern-vermont"]
+    },
+    {
+      "name": "Hogback Mountain",
+      "slug": "hogback-mountain",
+      "status": "defunct",
+      "notes": "Former ski area in southern Vermont, closed 1986",
+      "yearsOperated": "1946-1986",
+      "location": { "lat": 42.9, "lng": -72.85 },
+      "tags": ["historic", "southern-vermont"]
+    },
+    {
+      "name": "Round Top",
+      "slug": "round-top",
+      "status": "defunct",
+      "notes": "Former ski area in Plymouth, closed 1960s",
+      "yearsOperated": "1950s-1960s",
+      "location": { "lat": 43.5, "lng": -72.7 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Big Bromley",
+      "slug": "big-bromley",
+      "status": "defunct",
+      "notes": "Former expansion of Bromley Mountain, now consolidated",
+      "yearsOperated": "1970s-1990s",
+      "location": { "lat": 43.23, "lng": -72.94 },
+      "tags": ["merged", "now-bromley"]
+    },
+    {
+      "name": "Timber Ridge",
+      "slug": "timber-ridge-vt",
+      "status": "defunct",
+      "notes": "Former ski area in Vermont",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 43.3, "lng": -72.8 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Haystack",
+      "slug": "haystack",
+      "status": "defunct",
+      "notes": "Former ski area near Mount Snow, closed 2004",
+      "yearsOperated": "1961-2004",
+      "location": { "lat": 42.93, "lng": -72.94 },
+      "tags": ["historic", "mount-snow-area"]
+    },
+    {
+      "name": "Carinthia",
+      "slug": "carinthia",
+      "status": "defunct",
+      "notes": "Now Carinthia terrain park complex at Mount Snow",
+      "yearsOperated": "1960s-2000s",
+      "location": { "lat": 42.95, "lng": -72.92 },
+      "tags": ["merged", "now-mount-snow", "terrain-parks"]
+    },
+    {
+      "name": "Snow Lake Lodge",
+      "slug": "snow-lake-lodge",
+      "status": "defunct",
+      "notes": "Former small ski operation",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 43.0, "lng": -72.9 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Prospect Mountain",
+      "slug": "prospect-mountain-vt",
+      "status": "defunct",
+      "notes": "Former ski area in Bennington area, closed 1970s",
+      "yearsOperated": "1940s-1970s",
+      "location": { "lat": 42.88, "lng": -73.18 },
+      "tags": ["historic", "bennington"]
+    },
+    {
+      "name": "Maple Valley",
+      "slug": "maple-valley",
+      "status": "defunct",
+      "notes": "Former ski area in Vermont",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 43.4, "lng": -72.5 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Birdseye Mountain",
+      "slug": "birdseye-mountain",
+      "status": "defunct",
+      "notes": "Former ski area in Castleton area",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 43.6, "lng": -73.2 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Mount Tom",
+      "slug": "mount-tom-vt",
+      "status": "defunct",
+      "notes": "Former ski area in Woodstock",
+      "yearsOperated": "1930s-1960s",
+      "location": { "lat": 43.62, "lng": -72.52 },
+      "tags": ["historic", "woodstock"]
+    },
+    {
+      "name": "Living Memorial Park",
+      "slug": "living-memorial-park",
+      "status": "defunct",
+      "notes": "Former municipal ski area in Brattleboro",
+      "yearsOperated": "1950s-2000s",
+      "location": { "lat": 42.85, "lng": -72.56 },
+      "tags": ["historic", "municipal", "brattleboro"]
+    },
+    {
+      "name": "Pinnacle Ski Area",
+      "slug": "pinnacle-vt",
+      "status": "defunct",
+      "notes": "Former small ski area",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 43.5, "lng": -72.9 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Hard'ack",
+      "slug": "hardack",
+      "status": "defunct",
+      "notes": "Former ski area in St. Albans, now a town recreation area",
+      "yearsOperated": "1960s-2000s",
+      "location": { "lat": 44.8, "lng": -73.1 },
+      "tags": ["historic", "st-albans", "municipal"]
+    },
+    {
+      "name": "Sonnenberg",
+      "slug": "sonnenberg",
+      "status": "defunct",
+      "notes": "Renamed to Saskadena Six in 2019",
+      "yearsOperated": "1960s-2019",
+      "location": { "lat": 43.4528, "lng": -72.4900 },
+      "tags": ["renamed", "now-saskadena-six"]
+    },
+    {
+      "name": "Ascutney Mountain Resort",
+      "slug": "ascutney",
+      "status": "defunct",
+      "notes": "Former major resort, closed 2010. Now a backcountry touring area",
+      "yearsOperated": "1946-2010",
+      "location": { "lat": 43.4236, "lng": -72.4556 },
+      "tags": ["historic", "now-backcountry", "closed-2010"]
+    },
+    {
+      "name": "Maple Ridge Ski Area",
+      "slug": "maple-ridge",
+      "status": "defunct",
+      "notes": "Former small ski area",
+      "yearsOperated": "Unknown",
+      "location": { "lat": 44.0, "lng": -72.8 },
+      "tags": ["historic"]
+    },
+    {
+      "name": "Chittenden",
+      "slug": "chittenden",
+      "status": "defunct",
+      "notes": "Former ski area near Rutland",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 43.7, "lng": -72.9 },
+      "tags": ["historic", "rutland-area"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-26T22:00:00Z"
+  }
+}

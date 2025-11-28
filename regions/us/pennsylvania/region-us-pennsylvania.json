@@ -1,0 +1,670 @@
+{
+  "country": "US",
+  "state": "Pennsylvania",
+  "resorts": [
+    {
+      "name": "Seven Springs Mountain Resort",
+      "slug": "seven-springs",
+      "status": "active",
+      "location": { "lat": 40.0234, "lng": -79.2979 },
+      "nearestCity": "Champion",
+      "stats": {
+        "skiableAcres": 285,
+        "liftsCount": 12,
+        "runsCount": 33,
+        "verticalDrop": 750,
+        "baseElevation": 2240,
+        "summitElevation": 2994,
+        "avgAnnualSnowfall": 132
+      },
+      "terrain": { "beginner": 28, "intermediate": 42, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.7springs.com",
+      "description": "Seven Springs is Pennsylvania's largest ski resort and a year-round destination in the Laurel Highlands. With the most skiable terrain in the state, extensive snowmaking, and a full-service resort village, it's the premier ski destination in the Mid-Atlantic region.",
+      "tags": ["largest-pennsylvania", "full-resort", "laurel-highlands", "night-skiing", "terrain-park", "family-friendly"]
+    },
+    {
+      "name": "Blue Mountain Resort",
+      "slug": "blue-mountain",
+      "status": "active",
+      "location": { "lat": 40.8250, "lng": -75.5131 },
+      "nearestCity": "Palmerton",
+      "stats": {
+        "skiableAcres": 171,
+        "liftsCount": 16,
+        "runsCount": 40,
+        "verticalDrop": 1082,
+        "baseElevation": 520,
+        "summitElevation": 1602,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 24, "intermediate": 36, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibluemt.com",
+      "description": "Blue Mountain boasts the highest vertical drop in Pennsylvania at 1,082 feet. Located in the Poconos, it features challenging terrain, extensive night skiing, and high-speed lifts. The resort is a favorite for Philadelphia and New Jersey skiers seeking steeper runs.",
+      "tags": ["highest-vertical-pa", "poconos", "night-skiing", "challenging-terrain", "high-speed-lifts"]
+    },
+    {
+      "name": "Camelback Mountain Resort",
+      "slug": "camelback",
+      "status": "active",
+      "location": { "lat": 41.0519, "lng": -75.3578 },
+      "nearestCity": "Tannersville",
+      "stats": {
+        "skiableAcres": 166,
+        "liftsCount": 16,
+        "runsCount": 39,
+        "verticalDrop": 800,
+        "baseElevation": 1400,
+        "summitElevation": 2200,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 28, "intermediate": 40, "advanced": 32, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.camelbackresort.com",
+      "description": "Camelback is a major Pocono Mountains destination featuring extensive terrain parks, indoor waterpark, and full resort amenities. With 39 trails across 166 acres, it's one of the most visited ski resorts in the Mid-Atlantic, especially popular with families.",
+      "tags": ["poconos", "family-destination", "waterpark", "terrain-parks", "night-skiing", "full-resort"]
+    },
+    {
+      "name": "Jack Frost",
+      "slug": "jack-frost",
+      "status": "active",
+      "location": { "lat": 41.1058, "lng": -75.4681 },
+      "nearestCity": "White Haven",
+      "stats": {
+        "skiableAcres": 105,
+        "liftsCount": 8,
+        "runsCount": 21,
+        "verticalDrop": 600,
+        "baseElevation": 1600,
+        "summitElevation": 2200,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.jfbb.com",
+      "description": "Jack Frost is part of the Vail Resorts family, offering Epic Pass access in Pennsylvania. Combined with sister resort Big Boulder, it provides diverse terrain from beginner slopes to expert glades. The resort is known for quality grooming and reliable snowmaking.",
+      "tags": ["epic-pass", "vail-resorts", "poconos", "night-skiing", "combined-with-big-boulder"]
+    },
+    {
+      "name": "Big Boulder",
+      "slug": "big-boulder",
+      "status": "active",
+      "location": { "lat": 41.1019, "lng": -75.5133 },
+      "nearestCity": "Lake Harmony",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 7,
+        "runsCount": 16,
+        "verticalDrop": 475,
+        "baseElevation": 1725,
+        "summitElevation": 2200,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.jfbb.com",
+      "description": "Big Boulder is a terrain park mecca and the birthplace of snowboarding in Pennsylvania. Now part of Vail Resorts, it offers some of the best freestyle terrain in the East with multiple terrain parks and a superpipe. Shares ownership with Jack Frost.",
+      "tags": ["epic-pass", "vail-resorts", "terrain-parks", "freestyle", "snowboard-history", "superpipe"]
+    },
+    {
+      "name": "Elk Mountain",
+      "slug": "elk-mountain",
+      "status": "active",
+      "location": { "lat": 41.6847, "lng": -75.5736 },
+      "nearestCity": "Union Dale",
+      "stats": {
+        "skiableAcres": 180,
+        "liftsCount": 6,
+        "runsCount": 27,
+        "verticalDrop": 1000,
+        "baseElevation": 1500,
+        "summitElevation": 2500,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 15, "intermediate": 35, "advanced": 50, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.elkskier.com",
+      "description": "Elk Mountain is known as the 'Northern Exposure' with the most natural snowfall in Pennsylvania and some of the most challenging terrain. The independently owned resort is a favorite among expert skiers seeking steeper, less crowded slopes.",
+      "tags": ["indy-pass", "expert-terrain", "natural-snow", "challenging", "independent", "northern-pa"]
+    },
+    {
+      "name": "Montage Mountain",
+      "slug": "montage-mountain",
+      "status": "active",
+      "location": { "lat": 41.3397, "lng": -75.6464 },
+      "nearestCity": "Scranton",
+      "stats": {
+        "skiableAcres": 140,
+        "liftsCount": 7,
+        "runsCount": 26,
+        "verticalDrop": 1000,
+        "baseElevation": 840,
+        "summitElevation": 1840,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montagemountainresorts.com",
+      "description": "Montage Mountain offers 1,000 feet of vertical drop near Scranton, with a good mix of terrain and extensive night skiing. The resort also operates a popular waterpark in summer, making it a year-round destination.",
+      "tags": ["scranton", "night-skiing", "waterpark", "year-round", "family-friendly"]
+    },
+    {
+      "name": "Shawnee Mountain",
+      "slug": "shawnee-mountain",
+      "status": "active",
+      "location": { "lat": 41.0008, "lng": -75.0950 },
+      "nearestCity": "Shawnee on Delaware",
+      "stats": {
+        "skiableAcres": 125,
+        "liftsCount": 9,
+        "runsCount": 23,
+        "verticalDrop": 700,
+        "baseElevation": 440,
+        "summitElevation": 1140,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.shawneemt.com",
+      "description": "Shawnee Mountain is a family-friendly Pocono resort known for excellent learning terrain and programs. Located near the Delaware Water Gap, it offers a relaxed atmosphere and is one of the closest ski areas to New York City.",
+      "tags": ["poconos", "family-friendly", "learning-terrain", "delaware-water-gap", "nyc-accessible"]
+    },
+    {
+      "name": "Bear Creek Mountain Resort",
+      "slug": "bear-creek",
+      "status": "active",
+      "location": { "lat": 40.5267, "lng": -75.7031 },
+      "nearestCity": "Macungie",
+      "stats": {
+        "skiableAcres": 86,
+        "liftsCount": 7,
+        "runsCount": 21,
+        "verticalDrop": 510,
+        "baseElevation": 490,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 40
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.bcmountainresort.com",
+      "description": "Bear Creek is a full-service resort in the Lehigh Valley featuring skiing, a conference center, spa, and multiple dining options. It's popular with corporate groups and families seeking a complete resort experience close to Allentown.",
+      "tags": ["full-resort", "lehigh-valley", "spa", "conference-center", "family-friendly", "night-skiing"]
+    },
+    {
+      "name": "Hidden Valley Resort",
+      "slug": "hidden-valley-pa",
+      "status": "active",
+      "location": { "lat": 40.0500, "lng": -79.2500 },
+      "nearestCity": "Hidden Valley",
+      "stats": {
+        "skiableAcres": 110,
+        "liftsCount": 9,
+        "runsCount": 31,
+        "verticalDrop": 610,
+        "baseElevation": 2380,
+        "summitElevation": 2990,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 30, "intermediate": 42, "advanced": 28, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.hiddenvalleyresort.com",
+      "description": "Hidden Valley is a family-oriented resort in the Laurel Highlands near Seven Springs. With gentle terrain, excellent learning programs, and a village atmosphere, it's ideal for beginners and families. Part of the same ownership as Seven Springs.",
+      "tags": ["laurel-highlands", "family-friendly", "beginner-terrain", "resort-village", "night-skiing"]
+    },
+    {
+      "name": "Laurel Mountain",
+      "slug": "laurel-mountain",
+      "status": "active",
+      "location": { "lat": 40.1631, "lng": -79.1678 },
+      "nearestCity": "Ligonier",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 3,
+        "runsCount": 20,
+        "verticalDrop": 761,
+        "baseElevation": 2239,
+        "summitElevation": 3000,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 10, "intermediate": 45, "advanced": 45, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.laurelmountainski.com",
+      "description": "Laurel Mountain is a hidden gem in the Laurel Highlands known for its natural snow, steep terrain, and old-school vibe. After years of uncertain operation, it now operates on a limited schedule, beloved by locals for its challenging slopes.",
+      "tags": ["laurel-highlands", "natural-snow", "expert-terrain", "old-school", "local-favorite"]
+    },
+    {
+      "name": "Liberty Mountain Resort",
+      "slug": "liberty-mountain",
+      "status": "active",
+      "location": { "lat": 39.7503, "lng": -77.3731 },
+      "nearestCity": "Fairfield",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 8,
+        "runsCount": 16,
+        "verticalDrop": 620,
+        "baseElevation": 780,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.libertymountainresort.com",
+      "description": "Liberty Mountain is part of the Vail Resorts family, offering Epic Pass access in south-central Pennsylvania. Along with sister resorts Whitetail and Roundtop, it provides accessible skiing for the Baltimore-Washington corridor.",
+      "tags": ["epic-pass", "vail-resorts", "south-central-pa", "night-skiing", "dc-baltimore-accessible"]
+    },
+    {
+      "name": "Whitetail Resort",
+      "slug": "whitetail",
+      "status": "active",
+      "location": { "lat": 39.7317, "lng": -77.9353 },
+      "nearestCity": "Mercersburg",
+      "stats": {
+        "skiableAcres": 109,
+        "liftsCount": 9,
+        "runsCount": 23,
+        "verticalDrop": 935,
+        "baseElevation": 815,
+        "summitElevation": 1750,
+        "avgAnnualSnowfall": 36
+      },
+      "terrain": { "beginner": 22, "intermediate": 52, "advanced": 26, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiwhitetail.com",
+      "description": "Whitetail is a Vail Resorts property known for quality grooming and efficient operations. With nearly 1,000 feet of vertical, it offers some of the best intermediate skiing in the Mid-Atlantic region.",
+      "tags": ["epic-pass", "vail-resorts", "excellent-grooming", "intermediate-terrain", "night-skiing", "dc-accessible"]
+    },
+    {
+      "name": "Roundtop Mountain Resort",
+      "slug": "roundtop",
+      "status": "active",
+      "location": { "lat": 40.1075, "lng": -76.9283 },
+      "nearestCity": "Lewisberry",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 10,
+        "runsCount": 20,
+        "verticalDrop": 600,
+        "baseElevation": 600,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 36
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiroundtop.com",
+      "description": "Roundtop is a Vail Resorts property near Harrisburg, offering convenient access for central Pennsylvania and Baltimore-area skiers. Known for its terrain parks and racing programs, it's a solid all-around mountain.",
+      "tags": ["epic-pass", "vail-resorts", "terrain-parks", "racing-programs", "harrisburg-area", "night-skiing"]
+    },
+    {
+      "name": "Blue Knob",
+      "slug": "blue-knob",
+      "status": "active",
+      "location": { "lat": 40.2850, "lng": -78.5650 },
+      "nearestCity": "Claysburg",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 5,
+        "runsCount": 34,
+        "verticalDrop": 1072,
+        "baseElevation": 2100,
+        "summitElevation": 3172,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.blueknob.com",
+      "description": "Blue Knob is Pennsylvania's highest skiable mountain at 3,172 feet elevation, offering excellent natural snow and challenging terrain. Located in the Allegheny Mountains, it provides a more rugged, adventurous experience than most PA resorts.",
+      "tags": ["indy-pass", "highest-elevation-pa", "natural-snow", "challenging-terrain", "allegheny-mountains"]
+    },
+    {
+      "name": "Tussey Mountain",
+      "slug": "tussey-mountain",
+      "status": "active",
+      "location": { "lat": 40.7428, "lng": -77.7631 },
+      "nearestCity": "Boalsburg",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 5,
+        "runsCount": 8,
+        "verticalDrop": 500,
+        "baseElevation": 1200,
+        "summitElevation": 1700,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tusseymountain.com",
+      "description": "Tussey Mountain is a local favorite near Penn State University, offering affordable skiing and snowboarding for the State College community. It's a great learning mountain with a welcoming atmosphere.",
+      "tags": ["penn-state", "affordable", "learning-mountain", "local-favorite", "night-skiing"]
+    },
+    {
+      "name": "Ski Sawmill",
+      "slug": "ski-sawmill",
+      "status": "active",
+      "location": { "lat": 41.5678, "lng": -77.3019 },
+      "nearestCity": "Morris",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 3,
+        "runsCount": 11,
+        "verticalDrop": 515,
+        "baseElevation": 1685,
+        "summitElevation": 2200,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisawmill.com",
+      "description": "Ski Sawmill is a family-owned resort in the Pennsylvania Wilds, offering an authentic, uncrowded skiing experience. With affordable prices and a friendly atmosphere, it's a hidden gem in northern Pennsylvania.",
+      "tags": ["family-owned", "pennsylvania-wilds", "affordable", "uncrowded", "night-skiing"]
+    },
+    {
+      "name": "Spring Mountain",
+      "slug": "spring-mountain",
+      "status": "active",
+      "location": { "lat": 40.2961, "lng": -75.4578 },
+      "nearestCity": "Schwenksville",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 6,
+        "runsCount": 10,
+        "verticalDrop": 450,
+        "baseElevation": 300,
+        "summitElevation": 750,
+        "avgAnnualSnowfall": 30
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.springmountainadventures.com",
+      "description": "Spring Mountain is the closest ski area to Philadelphia, making it perfect for after-work sessions and quick getaways. Despite its small size, it offers quality terrain parks and a convenient location for city skiers.",
+      "tags": ["closest-to-philadelphia", "night-skiing", "terrain-parks", "convenient", "after-work-skiing"]
+    },
+    {
+      "name": "Boyce Park Ski Area",
+      "slug": "boyce-park",
+      "status": "active",
+      "location": { "lat": 40.4489, "lng": -79.7433 },
+      "nearestCity": "Plum",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 3,
+        "runsCount": 7,
+        "verticalDrop": 175,
+        "baseElevation": 1100,
+        "summitElevation": 1275,
+        "avgAnnualSnowfall": 40
+      },
+      "terrain": { "beginner": 50, "intermediate": 35, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.alleghenycounty.us/boyce-park",
+      "description": "Boyce Park is a county-run ski area near Pittsburgh, offering affordable skiing and tubing for the local community. It's a great place for beginners to learn and for families on a budget.",
+      "tags": ["county-park", "pittsburgh-area", "affordable", "beginner-friendly", "family-budget"]
+    },
+
+    {
+      "name": "Big Pocono",
+      "slug": "big-pocono",
+      "status": "defunct",
+      "location": { "lat": 41.0500, "lng": -75.3600 },
+      "nearestCity": "Tannersville",
+      "yearClosed": 1998,
+      "description": "Big Pocono State Park once hosted a popular ski area with panoramic views. The ski operations closed in 1998, but the mountain remains a scenic hiking destination with views of the Delaware Water Gap.",
+      "tags": ["closed", "state-park", "historic", "poconos"]
+    },
+    {
+      "name": "Doe Mountain",
+      "slug": "doe-mountain",
+      "status": "defunct",
+      "location": { "lat": 41.1200, "lng": -75.5600 },
+      "nearestCity": "Macungie",
+      "yearClosed": 2006,
+      "description": "Doe Mountain was a small family ski area that operated until 2006. Despite attempts to reopen, the property has remained closed to skiing operations.",
+      "tags": ["closed", "family-area", "poconos"]
+    },
+    {
+      "name": "Denton Hill State Park",
+      "slug": "denton-hill",
+      "status": "defunct",
+      "location": { "lat": 41.7447, "lng": -77.7817 },
+      "nearestCity": "Galeton",
+      "yearClosed": 2014,
+      "description": "Denton Hill was a state-run ski area in Potter County that closed in 2014 due to budget constraints. It offered 1,000 feet of vertical and was a favorite for skiers in the Pennsylvania Wilds region.",
+      "tags": ["closed", "state-park", "pennsylvania-wilds", "historic"]
+    },
+    {
+      "name": "Buck Hill",
+      "slug": "buck-hill",
+      "status": "defunct",
+      "location": { "lat": 41.0700, "lng": -75.4000 },
+      "nearestCity": "Buck Hill Falls",
+      "yearClosed": 2004,
+      "description": "Buck Hill Falls Ski Area was part of a historic Pocono resort community. The ski area closed in 2004, ending decades of operation at this once-prominent winter destination.",
+      "tags": ["closed", "historic-resort", "poconos"]
+    },
+    {
+      "name": "Fernwood",
+      "slug": "fernwood",
+      "status": "defunct",
+      "location": { "lat": 41.0300, "lng": -75.1000 },
+      "nearestCity": "Bushkill",
+      "yearClosed": 1998,
+      "description": "Fernwood Resort's ski area was a modest Pocono operation that closed in 1998. The resort property has since changed ownership multiple times.",
+      "tags": ["closed", "resort", "poconos"]
+    },
+    {
+      "name": "Split Rock Resort",
+      "slug": "split-rock",
+      "status": "defunct",
+      "location": { "lat": 41.0800, "lng": -75.4200 },
+      "nearestCity": "Lake Harmony",
+      "yearClosed": 2004,
+      "description": "Split Rock Resort operated a small ski area as part of its full-service resort. The ski operations closed in 2004, though the resort continued as a golf and vacation destination.",
+      "tags": ["closed", "resort", "poconos", "lake-harmony"]
+    },
+    {
+      "name": "Pocono Manor",
+      "slug": "pocono-manor",
+      "status": "defunct",
+      "location": { "lat": 41.1100, "lng": -75.3700 },
+      "nearestCity": "Pocono Manor",
+      "yearClosed": 1999,
+      "description": "Pocono Manor Inn & Golf Resort once included a small ski area. The ski operations ended in 1999, marking the end of an era for this historic Pocono property.",
+      "tags": ["closed", "historic-resort", "poconos"]
+    },
+    {
+      "name": "Mount Tone",
+      "slug": "mount-tone",
+      "status": "defunct",
+      "location": { "lat": 41.7500, "lng": -75.3500 },
+      "nearestCity": "Lake Como",
+      "yearClosed": 1988,
+      "description": "Mount Tone was a small ski area in Wayne County that operated until the late 1980s. It served the local community and summer camps in the region.",
+      "tags": ["closed", "local-area", "wayne-county"]
+    },
+    {
+      "name": "Mount Airy Lodge",
+      "slug": "mount-airy-lodge",
+      "status": "defunct",
+      "location": { "lat": 41.0600, "lng": -75.4300 },
+      "nearestCity": "Mount Pocono",
+      "yearClosed": 2001,
+      "description": "Mount Airy Lodge was a famous Pocono honeymoon resort that featured a ski area. The lodge and ski area closed in 2001, later replaced by the Mount Airy Casino Resort.",
+      "tags": ["closed", "honeymoon-resort", "poconos", "iconic"]
+    },
+    {
+      "name": "Tamiment",
+      "slug": "tamiment",
+      "status": "defunct",
+      "location": { "lat": 41.1400, "lng": -74.9500 },
+      "nearestCity": "Tamiment",
+      "yearClosed": 1980,
+      "description": "Tamiment Resort included a small ski operation that served guests at this historic Pocono resort, which had roots in the labor movement. Ski operations ended around 1980.",
+      "tags": ["closed", "historic-resort", "poconos"]
+    },
+    {
+      "name": "Sterling Mountain",
+      "slug": "sterling-mountain",
+      "status": "defunct",
+      "location": { "lat": 41.2200, "lng": -75.4200 },
+      "nearestCity": "Sterling",
+      "yearClosed": 1982,
+      "description": "Sterling Mountain was a small Pocono ski area that operated through the early 1980s before closing due to economic challenges.",
+      "tags": ["closed", "poconos"]
+    },
+    {
+      "name": "Alpine Mountain",
+      "slug": "alpine-mountain-pa",
+      "status": "defunct",
+      "location": { "lat": 41.1200, "lng": -75.3000 },
+      "nearestCity": "Analomink",
+      "yearClosed": 2013,
+      "description": "Alpine Mountain was a small, affordable ski area that closed in 2013. It was known for budget-friendly lift tickets and a family atmosphere before financial difficulties led to its closure.",
+      "tags": ["closed", "family-area", "budget-friendly", "poconos"]
+    },
+    {
+      "name": "Eagle Rock Resort",
+      "slug": "eagle-rock-defunct",
+      "status": "defunct",
+      "location": { "lat": 40.9400, "lng": -75.9000 },
+      "nearestCity": "Hazleton",
+      "yearClosed": 2004,
+      "description": "Eagle Rock Resort once featured a ski area as part of its four-season development. The ski operations closed in 2004, though the residential community continues.",
+      "tags": ["closed", "resort-community", "hazleton-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-27T20:00:00Z" }
+}

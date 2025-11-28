@@ -1,0 +1,94 @@
+{
+  "country": "US",
+  "state": "Indiana",
+  "resorts": [
+    {
+      "name": "Perfect North Slopes",
+      "slug": "perfect-north-slopes",
+      "status": "active",
+      "location": { "lat": 39.1483, "lng": -84.8392 },
+      "nearestCity": "Lawrenceburg",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 8,
+        "runsCount": 23,
+        "verticalDrop": 400,
+        "baseElevation": 500,
+        "summitElevation": 900,
+        "avgAnnualSnowfall": 35
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.perfectnorth.com",
+      "description": "Perfect North Slopes is Indiana's largest ski area, located near the Ohio River on Indiana's border with Ohio. Serving the Cincinnati metropolitan area, it offers the most terrain and vertical in the region with extensive snowmaking and night skiing.",
+      "tags": ["indy-pass", "largest-indiana", "cincinnati-area", "night-skiing", "ohio-river"]
+    },
+    {
+      "name": "Paoli Peaks",
+      "slug": "paoli-peaks",
+      "status": "active",
+      "location": { "lat": 38.5614, "lng": -86.4533 },
+      "nearestCity": "Paoli",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 8,
+        "runsCount": 17,
+        "verticalDrop": 300,
+        "baseElevation": 800,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 30
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.paolipeaks.com",
+      "description": "Paoli Peaks is a Vail Resorts property in southern Indiana's hill country, offering Epic Pass skiing to the Indianapolis and Louisville markets. The resort features extensive terrain parks and is known for its welcoming atmosphere.",
+      "tags": ["epic-pass", "vail-resorts", "indianapolis-area", "louisville-area", "terrain-parks", "night-skiing"]
+    },
+
+    {
+      "name": "Mt. Wawasee",
+      "slug": "mt-wawasee",
+      "status": "defunct",
+      "location": { "lat": 41.3800, "lng": -85.6500 },
+      "nearestCity": "Syracuse",
+      "yearClosed": 1990,
+      "description": "Mt. Wawasee was a small ski area in northern Indiana near Lake Wawasee that operated until around 1990. The area served the Fort Wayne region before closing due to inconsistent winters.",
+      "tags": ["closed", "northern-indiana", "lake-wawasee"]
+    },
+    {
+      "name": "Ski World",
+      "slug": "ski-world-in",
+      "status": "defunct",
+      "location": { "lat": 38.5200, "lng": "-86.5000" },
+      "nearestCity": "Nashville",
+      "yearClosed": 2007,
+      "description": "Ski World was a small ski area in Brown County near Nashville, Indiana. The area operated seasonally until closing in 2007, serving the Indianapolis market before economic challenges ended operations.",
+      "tags": ["closed", "brown-county", "nashville-indiana"]
+    },
+    {
+      "name": "The Pines Ski Area",
+      "slug": "the-pines",
+      "status": "defunct",
+      "location": { "lat": 41.4500, "lng": -86.8000 },
+      "nearestCity": "Valparaiso",
+      "yearClosed": 1985,
+      "description": "The Pines was a small community ski area near Valparaiso that operated through the mid-1980s. The area provided skiing for the northwest Indiana and Chicago south suburbs before closing.",
+      "tags": ["closed", "valparaiso", "community-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

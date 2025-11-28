@@ -1,0 +1,648 @@
+{
+  "country": "US",
+  "state": "Wisconsin",
+  "resorts": [
+    {
+      "name": "Granite Peak",
+      "slug": "granite-peak",
+      "status": "active",
+      "location": { "lat": 44.9289, "lng": -89.6831 },
+      "nearestCity": "Wausau",
+      "stats": {
+        "skiableAcres": 400,
+        "liftsCount": 7,
+        "runsCount": 75,
+        "verticalDrop": 700,
+        "baseElevation": 1200,
+        "summitElevation": 1900,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 18, "intermediate": 52, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skigranitepeak.com",
+      "description": "Granite Peak is Wisconsin's largest ski area, featuring the highest vertical in the state at 700 feet. Built on Rib Mountain, it offers challenging terrain, excellent terrain parks, and reliable snowmaking. A favorite for serious skiers in the Midwest.",
+      "tags": ["largest-wisconsin", "highest-vertical", "indy-pass", "rib-mountain", "terrain-parks", "night-skiing"]
+    },
+    {
+      "name": "Devil's Head Resort",
+      "slug": "devils-head",
+      "status": "active",
+      "location": { "lat": 43.4178, "lng": -89.7233 },
+      "nearestCity": "Merrimac",
+      "stats": {
+        "skiableAcres": 300,
+        "liftsCount": 11,
+        "runsCount": 30,
+        "verticalDrop": 500,
+        "baseElevation": 900,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 55
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.devilsheadresort.com",
+      "description": "Devil's Head is a full-service resort in the Baraboo Range, offering skiing, lodging, and year-round recreation. With 30 runs and extensive snowmaking, it's a popular destination for Madison and Milwaukee skiers seeking a complete resort experience.",
+      "tags": ["full-resort", "baraboo-range", "lodging", "night-skiing", "southern-wisconsin"]
+    },
+    {
+      "name": "Cascade Mountain",
+      "slug": "cascade-mountain",
+      "status": "active",
+      "location": { "lat": 43.5953, "lng": -89.6536 },
+      "nearestCity": "Portage",
+      "stats": {
+        "skiableAcres": 175,
+        "liftsCount": 10,
+        "runsCount": 47,
+        "verticalDrop": 460,
+        "baseElevation": 920,
+        "summitElevation": 1380,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cascademountain.com",
+      "description": "Cascade Mountain offers the most trails of any Wisconsin ski area, spread across 47 runs. The family-friendly resort near Portage provides excellent learning terrain, quality terrain parks, and extensive night skiing options.",
+      "tags": ["most-trails-wisconsin", "family-friendly", "night-skiing", "terrain-parks", "portage"]
+    },
+    {
+      "name": "Whitecap Mountains",
+      "slug": "whitecap-mountains",
+      "status": "active",
+      "location": { "lat": 46.3936, "lng": -90.2200 },
+      "nearestCity": "Upson",
+      "stats": {
+        "skiableAcres": 400,
+        "liftsCount": 7,
+        "runsCount": 43,
+        "verticalDrop": 650,
+        "baseElevation": 1350,
+        "summitElevation": 2000,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.whitecapresort.com",
+      "description": "Whitecap Mountains in Wisconsin's northwoods receives some of the best natural snow in the Midwest. Spanning three peaks with 43 runs, it offers genuine ski resort character and uncrowded slopes in a remote setting.",
+      "tags": ["northwoods", "natural-snow", "indy-pass", "three-peaks", "uncrowded", "remote"]
+    },
+    {
+      "name": "Trollhaugen",
+      "slug": "trollhaugen",
+      "status": "active",
+      "location": { "lat": 45.4314, "lng": -92.5933 },
+      "nearestCity": "Dresser",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 6,
+        "runsCount": 24,
+        "verticalDrop": 260,
+        "baseElevation": 1020,
+        "summitElevation": 1280,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.trollhaugen.com",
+      "description": "Trollhaugen is known as the 'Troll' and serves the Twin Cities market with extensive night skiing and a legendary terrain park scene. The resort has fostered a strong freestyle culture and produced numerous competitive riders.",
+      "tags": ["twin-cities", "terrain-parks", "freestyle-culture", "night-skiing", "legendary-park"]
+    },
+    {
+      "name": "Tyrol Basin",
+      "slug": "tyrol-basin",
+      "status": "active",
+      "location": { "lat": 43.0794, "lng": -89.8500 },
+      "nearestCity": "Mt. Horeb",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 5,
+        "runsCount": 17,
+        "verticalDrop": 370,
+        "baseElevation": 930,
+        "summitElevation": 1300,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tyrolbasin.com",
+      "description": "Tyrol Basin is a family-owned ski area near Madison, offering a welcoming atmosphere and solid terrain variety. Known for its friendly staff and community feel, it's been serving Wisconsin skiers since 1969.",
+      "tags": ["madison-area", "family-owned", "community-feel", "night-skiing", "mt-horeb"]
+    },
+    {
+      "name": "Christmas Mountain Village",
+      "slug": "christmas-mountain",
+      "status": "active",
+      "location": { "lat": 43.5694, "lng": -89.8383 },
+      "nearestCity": "Wisconsin Dells",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 4,
+        "runsCount": 13,
+        "verticalDrop": 250,
+        "baseElevation": 950,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.christmasmountainvillage.com",
+      "description": "Christmas Mountain Village is a family resort near Wisconsin Dells, combining skiing with lodging and other winter activities. Perfect for families wanting a complete getaway, it offers gentle terrain ideal for beginners and children.",
+      "tags": ["wisconsin-dells", "family-resort", "beginner-friendly", "lodging", "tubing"]
+    },
+    {
+      "name": "Little Switzerland",
+      "slug": "little-switzerland",
+      "status": "active",
+      "location": { "lat": 43.0458, "lng": -90.8608 },
+      "nearestCity": "Hazel Green",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 3,
+        "runsCount": 18,
+        "verticalDrop": 475,
+        "baseElevation": 700,
+        "summitElevation": 1175,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.littleswitzerland.com",
+      "description": "Little Switzerland is nestled in the Driftless Area of southwest Wisconsin, offering surprisingly good vertical in rolling terrain that escaped glaciation. The scenic area provides a unique skiing experience in the state.",
+      "tags": ["driftless-area", "southwest-wisconsin", "scenic", "night-skiing", "unique-terrain"]
+    },
+    {
+      "name": "Wilmot Mountain",
+      "slug": "wilmot-mountain",
+      "status": "active",
+      "location": { "lat": 42.5061, "lng": -88.1917 },
+      "nearestCity": "Wilmot",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 8,
+        "runsCount": 23,
+        "verticalDrop": 230,
+        "baseElevation": 800,
+        "summitElevation": 1030,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.wilmotmountain.com",
+      "description": "Wilmot Mountain is a Vail Resorts property and Wisconsin's only Epic Pass ski area. Located near the Illinois border, it serves the Chicago market with accessible terrain and reliable snowmaking.",
+      "tags": ["epic-pass", "vail-resorts", "chicago-accessible", "night-skiing", "southern-wisconsin"]
+    },
+    {
+      "name": "The Rock Snowpark",
+      "slug": "the-rock-snowpark",
+      "status": "active",
+      "location": { "lat": 42.7942, "lng": -88.9786 },
+      "nearestCity": "Franklin",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 4,
+        "runsCount": 12,
+        "verticalDrop": 225,
+        "baseElevation": 900,
+        "summitElevation": 1125,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.therocksnowpark.com",
+      "description": "The Rock is dedicated to freestyle skiing and snowboarding, with an emphasis on terrain park features. Located near Milwaukee, it's a hub for the local freestyle community and riders looking to progress their park skills.",
+      "tags": ["freestyle", "terrain-parks", "milwaukee-area", "night-skiing", "park-focused"]
+    },
+    {
+      "name": "Alpine Valley Resort",
+      "slug": "alpine-valley-wi",
+      "status": "active",
+      "location": { "lat": 42.6703, "lng": -88.4275 },
+      "nearestCity": "East Troy",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 13,
+        "runsCount": 20,
+        "verticalDrop": 388,
+        "baseElevation": 862,
+        "summitElevation": 1250,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.alpinevalleyresort.com",
+      "description": "Alpine Valley serves the Milwaukee and Chicago markets with reliable skiing close to major populations. The resort is known for extensive snowmaking, night skiing, and efficient lift operations for quick laps.",
+      "tags": ["milwaukee-area", "chicago-accessible", "night-skiing", "snowmaking", "efficient-lifts"]
+    },
+    {
+      "name": "Nordic Mountain",
+      "slug": "nordic-mountain",
+      "status": "active",
+      "location": { "lat": 44.2383, "lng": -89.1831 },
+      "nearestCity": "Wild Rose",
+      "stats": {
+        "skiableAcres": 85,
+        "liftsCount": 5,
+        "runsCount": 16,
+        "verticalDrop": 265,
+        "baseElevation": 1000,
+        "summitElevation": 1265,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.nordicmountain.com",
+      "description": "Nordic Mountain is a family resort in central Wisconsin offering skiing, lodging, and tubing. The welcoming atmosphere and good mix of terrain make it popular with families from the Fox Valley and Green Bay areas.",
+      "tags": ["central-wisconsin", "family-resort", "lodging", "tubing", "night-skiing"]
+    },
+    {
+      "name": "Sunburst Ski Area",
+      "slug": "sunburst",
+      "status": "active",
+      "location": { "lat": 43.4522, "lng": -88.2889 },
+      "nearestCity": "Kewaskum",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 4,
+        "runsCount": 11,
+        "verticalDrop": 215,
+        "baseElevation": 975,
+        "summitElevation": 1190,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisunburst.com",
+      "description": "Sunburst is a community ski area in the Kettle Moraine region, serving the Milwaukee and Fond du Lac areas. Known for its friendly atmosphere and popular tubing hill, it's a great option for families.",
+      "tags": ["kettle-moraine", "family-friendly", "tubing", "night-skiing", "milwaukee-area"]
+    },
+    {
+      "name": "Ausblick Ski Club",
+      "slug": "ausblick",
+      "status": "active",
+      "location": { "lat": 43.2383, "lng": -88.3267 },
+      "nearestCity": "Sussex",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 3,
+        "runsCount": 6,
+        "verticalDrop": 120,
+        "baseElevation": 990,
+        "summitElevation": 1110,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.ausblick.org",
+      "description": "Ausblick is a private ski club that offers limited public skiing. One of the few ski clubs in the Midwest, it provides an intimate skiing experience for members and guests in the Milwaukee suburbs.",
+      "tags": ["private-club", "milwaukee-suburbs", "intimate", "night-skiing"]
+    },
+    {
+      "name": "Mt. Ashwabay",
+      "slug": "mt-ashwabay",
+      "status": "active",
+      "location": { "lat": 46.6856, "lng": -90.9111 },
+      "nearestCity": "Bayfield",
+      "stats": {
+        "skiableAcres": 75,
+        "liftsCount": 3,
+        "runsCount": 13,
+        "verticalDrop": 317,
+        "baseElevation": 683,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtashwabay.org",
+      "description": "Mt. Ashwabay is a nonprofit ski area overlooking Lake Superior and the Apostle Islands. The northwoods location receives excellent natural snow, and the views are among the best in the Midwest.",
+      "tags": ["nonprofit", "lake-superior-views", "apostle-islands", "natural-snow", "northwoods"]
+    },
+    {
+      "name": "Christie Mountain",
+      "slug": "christie-mountain",
+      "status": "active",
+      "location": { "lat": 45.8100, "lng": -91.0647 },
+      "nearestCity": "Bruce",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 350,
+        "baseElevation": 1150,
+        "summitElevation": 1500,
+        "avgAnnualSnowfall": 70
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.christiemountain.com",
+      "description": "Christie Mountain serves the Eau Claire and Chippewa Valley region with solid terrain and a friendly atmosphere. The family-owned resort has been a northwestern Wisconsin staple since 1962.",
+      "tags": ["northwestern-wisconsin", "family-owned", "chippewa-valley", "night-skiing"]
+    },
+    {
+      "name": "Hidden Valley Ski Area",
+      "slug": "hidden-valley-wi",
+      "status": "active",
+      "location": { "lat": 43.4008, "lng": -87.9528 },
+      "nearestCity": "Grafton",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 2,
+        "runsCount": 5,
+        "verticalDrop": 100,
+        "baseElevation": 750,
+        "summitElevation": 850,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 50, "intermediate": 35, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.hiddenvalleyskiarea.com",
+      "description": "Hidden Valley is a small community ski area north of Milwaukee, perfect for beginners and families. The affordable prices and low-key atmosphere make it ideal for learning to ski.",
+      "tags": ["beginner-friendly", "affordable", "milwaukee-area", "learning-hill", "night-skiing"]
+    },
+    {
+      "name": "Mt. La Crosse",
+      "slug": "mt-la-crosse",
+      "status": "active",
+      "location": { "lat": 43.7856, "lng": -91.2414 },
+      "nearestCity": "La Crosse",
+      "stats": {
+        "skiableAcres": 75,
+        "liftsCount": 4,
+        "runsCount": 18,
+        "verticalDrop": 516,
+        "baseElevation": 680,
+        "summitElevation": 1196,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtlacrosse.com",
+      "description": "Mt. La Crosse sits on the bluffs above the Mississippi River, offering some of the steepest runs in Wisconsin. The terrain is challenging by Midwest standards, making it a favorite for advanced skiers in the region.",
+      "tags": ["indy-pass", "mississippi-bluffs", "steep-terrain", "challenging", "night-skiing"]
+    },
+    {
+      "name": "Highlands of Olympia",
+      "slug": "highlands-olympia",
+      "status": "active",
+      "location": { "lat": 43.2689, "lng": -89.4775 },
+      "nearestCity": "Oconomowoc",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 4,
+        "runsCount": 10,
+        "verticalDrop": 175,
+        "baseElevation": 900,
+        "summitElevation": 1075,
+        "avgAnnualSnowfall": 45
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.highlandsofolympia.com",
+      "description": "Highlands of Olympia is part of the Olympia Resort complex near Oconomowoc. It offers convenient skiing for Milwaukee-area residents, combined with resort amenities and conference facilities.",
+      "tags": ["resort-complex", "milwaukee-area", "conferences", "night-skiing"]
+    },
+    {
+      "name": "Skyline Ski Area",
+      "slug": "skyline",
+      "status": "active",
+      "location": { "lat": 44.6172, "lng": -89.4039 },
+      "nearestCity": "Friendship",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 2,
+        "runsCount": 8,
+        "verticalDrop": 175,
+        "baseElevation": 1000,
+        "summitElevation": 1175,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skylineskiarea.com",
+      "description": "Skyline is a small community ski area in central Wisconsin, serving the local community with affordable skiing and a welcoming atmosphere. It's been family-owned for generations.",
+      "tags": ["community-area", "affordable", "family-owned", "central-wisconsin", "night-skiing"]
+    },
+
+    {
+      "name": "Hardscrabble",
+      "slug": "hardscrabble",
+      "status": "defunct",
+      "location": { "lat": 42.9200, "lng": -89.2800 },
+      "nearestCity": "Rice Lake",
+      "yearClosed": 2010,
+      "description": "Hardscrabble was a small ski area that served the Rice Lake community for many years before closing. The area was known for its local character and affordable prices.",
+      "tags": ["closed", "community-area", "rice-lake"]
+    },
+    {
+      "name": "Telemark Lodge",
+      "slug": "telemark-lodge",
+      "status": "defunct",
+      "location": { "lat": 46.2100, "lng": -91.0000 },
+      "nearestCity": "Cable",
+      "yearClosed": 2013,
+      "description": "Telemark Lodge was a legendary Wisconsin ski destination, famous for hosting cross-country ski events and the American Birkebeiner. The alpine area closed in 2013, though the Nordic trails continue.",
+      "tags": ["closed", "legendary", "birkebeiner", "cross-country-heritage", "cable"]
+    },
+    {
+      "name": "Mt. Telemark",
+      "slug": "mt-telemark",
+      "status": "defunct",
+      "location": { "lat": 46.2050, "lng": -91.0050 },
+      "nearestCity": "Cable",
+      "yearClosed": 2013,
+      "description": "Mt. Telemark was the alpine component of the Telemark Resort complex. The downhill skiing operations closed alongside the lodge, though the property's Nordic skiing legacy continues.",
+      "tags": ["closed", "telemark-resort", "alpine", "cable"]
+    },
+    {
+      "name": "Navarino Slopes",
+      "slug": "navarino-slopes",
+      "status": "defunct",
+      "location": { "lat": 44.7200, "lng": -88.8300 },
+      "nearestCity": "Navarino",
+      "yearClosed": 1995,
+      "description": "Navarino Slopes was a small ski area that served the Shawano County area. Economic challenges and limited snowfall led to its closure in the mid-1990s.",
+      "tags": ["closed", "shawano-county", "small-area"]
+    },
+    {
+      "name": "Pine View",
+      "slug": "pine-view",
+      "status": "defunct",
+      "location": { "lat": 44.3500, "lng": -89.5500 },
+      "nearestCity": "Stevens Point",
+      "yearClosed": 2000,
+      "description": "Pine View was a community ski area near Stevens Point that operated for several decades before closing around 2000. It served the local university and community.",
+      "tags": ["closed", "stevens-point", "community-area"]
+    },
+    {
+      "name": "Bruce Mound",
+      "slug": "bruce-mound",
+      "status": "defunct",
+      "location": { "lat": 44.5400, "lng": -90.6200 },
+      "nearestCity": "Merrillan",
+      "yearClosed": 2015,
+      "description": "Bruce Mound was a county-operated ski area in Clark County that closed in 2015. Despite community efforts to save it, the area could not continue operations.",
+      "tags": ["closed", "county-operated", "clark-county"]
+    },
+    {
+      "name": "Calumet County Park",
+      "slug": "calumet-county-park",
+      "status": "defunct",
+      "location": { "lat": 44.0900, "lng": -88.2800 },
+      "nearestCity": "Stockbridge",
+      "yearClosed": 1990,
+      "description": "Calumet County Park operated a small ski hill as part of its winter recreation offerings. The ski operations were discontinued around 1990.",
+      "tags": ["closed", "county-park", "small-hill"]
+    },
+    {
+      "name": "Standing Rocks",
+      "slug": "standing-rocks",
+      "status": "defunct",
+      "location": { "lat": 44.4200, "lng": -89.5500 },
+      "nearestCity": "Stevens Point",
+      "yearClosed": 2005,
+      "description": "Standing Rocks was a county park ski area near Stevens Point. The area closed in the mid-2000s, though the park continues to offer other recreational activities.",
+      "tags": ["closed", "county-park", "portage-county"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-27T21:00:00Z" }
+}

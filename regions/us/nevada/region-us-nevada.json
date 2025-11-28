@@ -1,0 +1,94 @@
+{
+  "country": "US",
+  "state": "Nevada",
+  "resorts": [
+    {
+      "name": "Mt. Rose Ski Tahoe",
+      "slug": "mt-rose",
+      "status": "active",
+      "location": { "lat": 39.3297, "lng": -119.8856 },
+      "nearestCity": "Reno",
+      "stats": {
+        "skiableAcres": 1200,
+        "liftsCount": 8,
+        "runsCount": 60,
+        "verticalDrop": 1800,
+        "baseElevation": 8260,
+        "summitElevation": 9700,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 20, "intermediate": 30, "advanced": 40, "expert": 10 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skirose.com",
+      "description": "Mt. Rose is the closest major ski resort to Reno and Lake Tahoe's highest base elevation at 8,260 feet. Known for its advanced terrain including the Chutes, it offers consistent snow conditions and easy access from the Reno-Tahoe International Airport.",
+      "tags": ["ikon-pass", "highest-base-tahoe", "reno-closest", "the-chutes", "expert-terrain", "lake-tahoe"]
+    },
+    {
+      "name": "Lee Canyon",
+      "slug": "lee-canyon",
+      "status": "active",
+      "location": { "lat": 36.3086, "lng": -115.6772 },
+      "nearestCity": "Las Vegas",
+      "stats": {
+        "skiableAcres": 445,
+        "liftsCount": 4,
+        "runsCount": 30,
+        "verticalDrop": 1000,
+        "baseElevation": 8510,
+        "summitElevation": 9510,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.leecanyonlv.com",
+      "description": "Lee Canyon is Las Vegas's ski area, located just 45 minutes from the Strip in the Spring Mountains. It's one of the southernmost ski resorts in the US, offering a surreal contrast of desert and alpine environments with views of the Vegas skyline.",
+      "tags": ["ikon-pass", "las-vegas", "spring-mountains", "desert-skiing", "unique-location", "vegas-accessible"]
+    },
+
+    {
+      "name": "Ski Incline",
+      "slug": "ski-incline",
+      "status": "defunct",
+      "location": { "lat": 39.2600, "lng": -119.9400 },
+      "nearestCity": "Incline Village",
+      "yearClosed": 2004,
+      "description": "Ski Incline was a small community ski area at Incline Village on Lake Tahoe's north shore. The area operated as a small, family-friendly resort before closing due to economic pressures and competition from larger Tahoe resorts.",
+      "tags": ["closed", "lake-tahoe", "incline-village", "community-area"]
+    },
+    {
+      "name": "Slide Mountain",
+      "slug": "slide-mountain",
+      "status": "defunct",
+      "location": { "lat": 39.3200, "lng": -119.8600 },
+      "nearestCity": "Reno",
+      "yearClosed": 1987,
+      "description": "Slide Mountain was a ski area adjacent to Mt. Rose that operated independently before closing. Some of its terrain was later incorporated into Mt. Rose's expansion.",
+      "tags": ["closed", "reno-area", "incorporated-into-mt-rose"]
+    },
+    {
+      "name": "Reno Ski Bowl",
+      "slug": "reno-ski-bowl",
+      "status": "defunct",
+      "location": { "lat": 39.3400, "lng": -119.9200 },
+      "nearestCity": "Reno",
+      "yearClosed": 1969,
+      "description": "Reno Ski Bowl was one of the original ski areas serving Reno, operating from the 1930s through 1969. It was an important part of early Tahoe-area ski history before modern resorts developed.",
+      "tags": ["closed", "historic", "reno", "pioneer-ski-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

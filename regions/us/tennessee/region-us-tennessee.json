@@ -1,0 +1,46 @@
+{
+  "country": "US",
+  "state": "Tennessee",
+  "resorts": [
+    {
+      "name": "Ober Gatlinburg",
+      "slug": "ober-gatlinburg",
+      "status": "active",
+      "location": { "lat": 35.7083, "lng": -83.5303 },
+      "nearestCity": "Gatlinburg",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 4,
+        "runsCount": 9,
+        "verticalDrop": 600,
+        "baseElevation": 2900,
+        "summitElevation": 3500,
+        "avgAnnualSnowfall": 25
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.obergatlinburg.com",
+      "description": "Ober Gatlinburg (recently rebranded as Ober Mountain) is Tennessee's only ski area, perched above the tourist town of Gatlinburg in the Great Smoky Mountains. Accessed by aerial tramway from downtown, it combines skiing with year-round attractions including an alpine coaster and ice skating.",
+      "tags": ["only-tennessee-resort", "gatlinburg", "great-smokies", "aerial-tramway", "tourist-attraction"]
+    },
+
+    {
+      "name": "Cloudland Canyon",
+      "slug": "cloudland-canyon",
+      "status": "defunct",
+      "location": { "lat": 34.8400, "lng": -85.4800 },
+      "nearestCity": "Rising Fawn",
+      "yearClosed": 1985,
+      "description": "Cloudland Canyon was a small ski operation near the Georgia border that operated briefly in the 1980s. The limited snowfall and short seasons made sustained operations impossible.",
+      "tags": ["closed", "short-lived", "georgia-border"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

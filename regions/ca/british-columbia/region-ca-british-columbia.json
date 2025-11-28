@@ -1,0 +1,905 @@
+{
+  "country": "CA",
+  "province": "British Columbia",
+  "resorts": [
+    {
+      "name": "Whistler Blackcomb",
+      "slug": "whistler-blackcomb",
+      "status": "active",
+      "location": { "lat": 50.1163, "lng": -122.9574 },
+      "nearestCity": "Whistler",
+      "stats": {
+        "skiableAcres": 8171,
+        "liftsCount": 37,
+        "runsCount": 200,
+        "verticalDrop": 5280,
+        "baseElevation": 2214,
+        "summitElevation": 7494,
+        "avgAnnualSnowfall": 460
+      },
+      "terrain": { "beginner": 18, "intermediate": 55, "advanced": 27, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.whistlerblackcomb.com",
+      "description": "North America's largest ski resort, Whistler Blackcomb combines two mountains connected by the record-breaking Peak 2 Peak Gondola. Host of the 2010 Winter Olympics alpine events, it offers world-class terrain, a vibrant village, and over 8,000 skiable acres spanning glaciers to groomers.",
+      "tags": ["largest-in-north-america", "epic-pass", "olympic-venue", "peak-2-peak-gondola", "glacier-skiing", "village", "world-class"]
+    },
+    {
+      "name": "Big White Ski Resort",
+      "slug": "big-white",
+      "status": "active",
+      "location": { "lat": 49.7286, "lng": -118.9325 },
+      "nearestCity": "Kelowna",
+      "stats": {
+        "skiableAcres": 2765,
+        "liftsCount": 16,
+        "runsCount": 118,
+        "verticalDrop": 2550,
+        "baseElevation": 5760,
+        "summitElevation": 7606,
+        "avgAnnualSnowfall": 295
+      },
+      "terrain": { "beginner": 18, "intermediate": 54, "advanced": 28, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.bigwhite.com",
+      "description": "Big White is Canada's largest totally ski-in, ski-out resort, known for its champagne powder and snow ghost trees. The family-friendly village offers night skiing, excellent terrain parks, and a welcoming atmosphere in British Columbia's Okanagan region.",
+      "tags": ["epic-pass", "ski-in-ski-out", "champagne-powder", "snow-ghosts", "night-skiing", "family-friendly", "okanagan"]
+    },
+    {
+      "name": "Sun Peaks Resort",
+      "slug": "sun-peaks",
+      "status": "active",
+      "location": { "lat": 50.8833, "lng": -119.9000 },
+      "nearestCity": "Kamloops",
+      "stats": {
+        "skiableAcres": 4270,
+        "liftsCount": 13,
+        "runsCount": 137,
+        "verticalDrop": 2894,
+        "baseElevation": 4117,
+        "summitElevation": 6824,
+        "avgAnnualSnowfall": 236
+      },
+      "terrain": { "beginner": 10, "intermediate": 58, "advanced": 32, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.sunpeaksresort.com",
+      "description": "Canada's second-largest ski resort by area, Sun Peaks spans three mountains with a charming European-style pedestrian village. Known for dry interior powder, uncrowded slopes, and excellent grooming, it offers a welcoming family atmosphere and diverse terrain.",
+      "tags": ["ikon-pass", "second-largest-canada", "three-mountains", "uncrowded", "dry-powder", "european-village", "family-friendly"]
+    },
+    {
+      "name": "Revelstoke Mountain Resort",
+      "slug": "revelstoke",
+      "status": "active",
+      "location": { "lat": 51.0064, "lng": -118.1592 },
+      "nearestCity": "Revelstoke",
+      "stats": {
+        "skiableAcres": 3121,
+        "liftsCount": 7,
+        "runsCount": 75,
+        "verticalDrop": 5620,
+        "baseElevation": 1680,
+        "summitElevation": 7300,
+        "avgAnnualSnowfall": 354
+      },
+      "terrain": { "beginner": 7, "intermediate": 45, "advanced": 48, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.revelstokemountainresort.com",
+      "description": "Revelstoke boasts North America's greatest vertical drop at 5,620 feet. The legendary powder, cat-skiing history, and challenging terrain make it a destination for advanced skiers. The authentic mountain town offers heli-skiing access and a thriving backcountry culture.",
+      "tags": ["ikon-pass", "greatest-vertical-drop", "legendary-powder", "cat-skiing", "heli-skiing", "backcountry", "expert-terrain"]
+    },
+    {
+      "name": "Kicking Horse Mountain Resort",
+      "slug": "kicking-horse",
+      "status": "active",
+      "location": { "lat": 51.2975, "lng": -117.0481 },
+      "nearestCity": "Golden",
+      "stats": {
+        "skiableAcres": 2825,
+        "liftsCount": 5,
+        "runsCount": 128,
+        "verticalDrop": 4133,
+        "baseElevation": 3900,
+        "summitElevation": 8033,
+        "avgAnnualSnowfall": 295
+      },
+      "terrain": { "beginner": 20, "intermediate": 20, "advanced": 60, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.kickinghorseresort.com",
+      "description": "Kicking Horse is known as 'Champagne Powder Capital of Canada' with steep, challenging terrain and breathtaking views. The Golden Eagle Express gondola provides access to over 4,000 feet of vertical, while the Eagles Eye restaurant sits at 7,700 feet elevation.",
+      "tags": ["ikon-pass", "champagne-powder", "steep-terrain", "golden-eagle-gondola", "eagles-eye-restaurant", "expert-terrain"]
+    },
+    {
+      "name": "Fernie Alpine Resort",
+      "slug": "fernie",
+      "status": "active",
+      "location": { "lat": 49.4625, "lng": -115.0878 },
+      "nearestCity": "Fernie",
+      "stats": {
+        "skiableAcres": 2504,
+        "liftsCount": 10,
+        "runsCount": 142,
+        "verticalDrop": 2816,
+        "baseElevation": 3543,
+        "summitElevation": 6316,
+        "avgAnnualSnowfall": 354
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skifernie.com",
+      "description": "Fernie is legendary for its powder, spanning five alpine bowls in the Canadian Rockies. The historic coal-mining town offers authentic mountain culture, while the resort delivers consistent snowfall and excellent tree skiing. A true powder destination.",
+      "tags": ["ikon-pass", "legendary-powder", "five-bowls", "tree-skiing", "historic-town", "canadian-rockies", "authentic"]
+    },
+    {
+      "name": "Panorama Mountain Resort",
+      "slug": "panorama",
+      "status": "active",
+      "location": { "lat": 50.4589, "lng": -116.2397 },
+      "nearestCity": "Invermere",
+      "stats": {
+        "skiableAcres": 2975,
+        "liftsCount": 10,
+        "runsCount": 129,
+        "verticalDrop": 4019,
+        "baseElevation": 3800,
+        "summitElevation": 7800,
+        "avgAnnualSnowfall": 177
+      },
+      "terrain": { "beginner": 20, "intermediate": 55, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.panoramaresort.com",
+      "description": "Panorama offers one of the longest fall lines in North America with over 4,000 vertical feet. The ski-in, ski-out village features natural hot springs, and the resort is known for excellent grooming, sunny weather, and sweeping valley views.",
+      "tags": ["ikon-pass", "longest-fall-line", "ski-in-ski-out", "hot-springs", "sunny", "groomed", "purcell-mountains"]
+    },
+    {
+      "name": "Silver Star Mountain Resort",
+      "slug": "silver-star",
+      "status": "active",
+      "location": { "lat": 50.3600, "lng": -119.0608 },
+      "nearestCity": "Vernon",
+      "stats": {
+        "skiableAcres": 3282,
+        "liftsCount": 12,
+        "runsCount": 132,
+        "verticalDrop": 2500,
+        "baseElevation": 5280,
+        "summitElevation": 6280,
+        "avgAnnualSnowfall": 275
+      },
+      "terrain": { "beginner": 15, "intermediate": 40, "advanced": 45, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.skisilverstar.com",
+      "description": "Silver Star features a colorful Victorian-era village and diverse terrain spanning two mountains. Known as 'Canada's Family Mountain,' it offers excellent night skiing, extensive cross-country trails, and a welcoming atmosphere in the Okanagan.",
+      "tags": ["ikon-pass", "victorian-village", "family-friendly", "night-skiing", "cross-country", "colorful-village", "okanagan"]
+    },
+    {
+      "name": "RED Mountain Resort",
+      "slug": "red-mountain",
+      "status": "active",
+      "location": { "lat": 49.1047, "lng": -117.8419 },
+      "nearestCity": "Rossland",
+      "stats": {
+        "skiableAcres": 3850,
+        "liftsCount": 8,
+        "runsCount": 110,
+        "verticalDrop": 2919,
+        "baseElevation": 3888,
+        "summitElevation": 6807,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 14, "intermediate": 41, "advanced": 45, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.redresort.com",
+      "description": "RED Mountain is a locals' favorite known for steep, challenging terrain and authentic ski culture. The historic mining town of Rossland offers old-school Canadian hospitality, while the resort spans three mountains with excellent tree skiing and powder stashes.",
+      "tags": ["ikon-pass", "steep-terrain", "tree-skiing", "locals-favorite", "historic-rossland", "authentic", "three-mountains"]
+    },
+    {
+      "name": "Apex Mountain Resort",
+      "slug": "apex",
+      "status": "active",
+      "location": { "lat": 49.3917, "lng": -119.9003 },
+      "nearestCity": "Penticton",
+      "stats": {
+        "skiableAcres": 1112,
+        "liftsCount": 4,
+        "runsCount": 79,
+        "verticalDrop": 2001,
+        "baseElevation": 5197,
+        "summitElevation": 7187,
+        "avgAnnualSnowfall": 236
+      },
+      "terrain": { "beginner": 16, "intermediate": 48, "advanced": 36, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.apexresort.com",
+      "description": "Apex is a local gem in the Okanagan known for dry champagne powder and challenging terrain. The tight-knit community and slopeside village offer an intimate ski experience, with excellent advanced terrain and consistent snow conditions.",
+      "tags": ["indy-pass", "champagne-powder", "local-gem", "okanagan", "slopeside-village", "uncrowded", "advanced-terrain"]
+    },
+    {
+      "name": "Grouse Mountain",
+      "slug": "grouse-mountain",
+      "status": "active",
+      "location": { "lat": 49.3806, "lng": -123.0822 },
+      "nearestCity": "Vancouver",
+      "stats": {
+        "skiableAcres": 212,
+        "liftsCount": 4,
+        "runsCount": 33,
+        "verticalDrop": 1200,
+        "baseElevation": 2800,
+        "summitElevation": 4100,
+        "avgAnnualSnowfall": 236
+      },
+      "terrain": { "beginner": 28, "intermediate": 52, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.grousemountain.com",
+      "description": "Grouse Mountain is Vancouver's closest ski area, accessible via the famous Skyride aerial tramway. Offering spectacular city and ocean views, it provides convenient after-work skiing and year-round attractions including wildlife refuge and ziplines.",
+      "tags": ["closest-to-vancouver", "skyride-tramway", "night-skiing", "city-views", "ocean-views", "year-round", "urban"]
+    },
+    {
+      "name": "Cypress Mountain",
+      "slug": "cypress-mountain",
+      "status": "active",
+      "location": { "lat": 49.3953, "lng": -123.2044 },
+      "nearestCity": "Vancouver",
+      "stats": {
+        "skiableAcres": 600,
+        "liftsCount": 6,
+        "runsCount": 53,
+        "verticalDrop": 1750,
+        "baseElevation": 3000,
+        "summitElevation": 4724,
+        "avgAnnualSnowfall": 394
+      },
+      "terrain": { "beginner": 17, "intermediate": 42, "advanced": 41, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cypressmountain.com",
+      "description": "Cypress Mountain hosted freestyle skiing and snowboarding events for the 2010 Winter Olympics. The largest ski area in Metro Vancouver, it offers excellent terrain parks, night skiing, and spectacular views of the city and surrounding mountains.",
+      "tags": ["olympic-venue-2010", "largest-vancouver-area", "terrain-parks", "night-skiing", "city-views", "freestyle"]
+    },
+    {
+      "name": "Mt. Seymour",
+      "slug": "mt-seymour",
+      "status": "active",
+      "location": { "lat": 49.3675, "lng": -122.9481 },
+      "nearestCity": "Vancouver",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 5,
+        "runsCount": 40,
+        "verticalDrop": 1042,
+        "baseElevation": 3508,
+        "summitElevation": 4265,
+        "avgAnnualSnowfall": 394
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtseymour.ca",
+      "description": "Mt. Seymour is Vancouver's family mountain, offering affordable skiing within 30 minutes of downtown. The beginner-friendly terrain, excellent ski and snowboard school, and tubing park make it perfect for learning, while backcountry access attracts experienced riders.",
+      "tags": ["family-friendly", "beginner-friendly", "closest-to-vancouver", "night-skiing", "affordable", "tubing", "backcountry-access"]
+    },
+    {
+      "name": "Mt. Washington Alpine Resort",
+      "slug": "mt-washington",
+      "status": "active",
+      "location": { "lat": 49.7375, "lng": -125.3039 },
+      "nearestCity": "Courtenay",
+      "stats": {
+        "skiableAcres": 1700,
+        "liftsCount": 8,
+        "runsCount": 81,
+        "verticalDrop": 1657,
+        "baseElevation": 3600,
+        "summitElevation": 5200,
+        "avgAnnualSnowfall": 472
+      },
+      "terrain": { "beginner": 25, "intermediate": 40, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountwashington.ca",
+      "description": "Vancouver Island's largest ski resort, Mt. Washington receives abundant snowfall from Pacific storms. The family-friendly resort offers diverse terrain, extensive Nordic trails, and ocean views on clear days. A true island ski destination.",
+      "tags": ["vancouver-island", "largest-on-island", "pacific-snowfall", "ocean-views", "family-friendly", "nordic-skiing"]
+    },
+    {
+      "name": "Whitewater Ski Resort",
+      "slug": "whitewater",
+      "status": "active",
+      "location": { "lat": 49.4339, "lng": -117.1419 },
+      "nearestCity": "Nelson",
+      "stats": {
+        "skiableAcres": 1184,
+        "liftsCount": 4,
+        "runsCount": 82,
+        "verticalDrop": 2044,
+        "baseElevation": 5400,
+        "summitElevation": 6660,
+        "avgAnnualSnowfall": 472
+      },
+      "terrain": { "beginner": 18, "intermediate": 42, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiwhitewater.com",
+      "description": "Whitewater is a cult favorite known for legendary powder, laid-back vibes, and the famous Fresh Tracks Cafe. The funky town of Nelson and the resort's no-frills approach attract skiers seeking authentic powder skiing without the crowds or pretense.",
+      "tags": ["indy-pass", "legendary-powder", "cult-favorite", "fresh-tracks-cafe", "nelson", "authentic", "no-frills"]
+    },
+    {
+      "name": "Kimberley Alpine Resort",
+      "slug": "kimberley",
+      "status": "active",
+      "location": { "lat": 49.6608, "lng": -116.0008 },
+      "nearestCity": "Kimberley",
+      "stats": {
+        "skiableAcres": 1800,
+        "liftsCount": 5,
+        "runsCount": 80,
+        "verticalDrop": 2465,
+        "baseElevation": 4035,
+        "summitElevation": 6500,
+        "avgAnnualSnowfall": 177
+      },
+      "terrain": { "beginner": 20, "intermediate": 42, "advanced": 38, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skikimberley.com",
+      "description": "Kimberley is one of BC's sunniest ski resorts, averaging 2,000+ hours of sunshine annually. The quirky Bavarian-themed town, ski-through village, and excellent grooming make it a family favorite with stunning Rocky Mountain views.",
+      "tags": ["indy-pass", "sunniest-in-bc", "bavarian-theme", "ski-through-village", "family-friendly", "sunny", "rocky-mountains"]
+    },
+    {
+      "name": "Sasquatch Mountain Resort",
+      "slug": "sasquatch-mountain",
+      "status": "active",
+      "location": { "lat": 49.3628, "lng": -121.9478 },
+      "nearestCity": "Agassiz",
+      "stats": {
+        "skiableAcres": 174,
+        "liftsCount": 4,
+        "runsCount": 30,
+        "verticalDrop": 1400,
+        "baseElevation": 2953,
+        "summitElevation": 4380,
+        "avgAnnualSnowfall": 394
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sasquatchmountain.ca",
+      "description": "Formerly Hemlock Valley, Sasquatch Mountain is the closest destination resort to Vancouver. Reopened in 2014 after redevelopment, it offers diverse terrain and significant annual snowfall in the Coast Mountains.",
+      "tags": ["closest-destination-to-vancouver", "formerly-hemlock", "coast-mountains", "redeveloped", "family-friendly"]
+    },
+    {
+      "name": "Manning Park Resort",
+      "slug": "manning-park",
+      "status": "active",
+      "location": { "lat": 49.0656, "lng": -120.8092 },
+      "nearestCity": "Manning Park",
+      "stats": {
+        "skiableAcres": 195,
+        "liftsCount": 3,
+        "runsCount": 36,
+        "verticalDrop": 1476,
+        "baseElevation": 4790,
+        "summitElevation": 5970,
+        "avgAnnualSnowfall": 354
+      },
+      "terrain": { "beginner": 20, "intermediate": 60, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.manningpark.com",
+      "description": "Manning Park Resort sits within E.C. Manning Provincial Park, offering affordable family skiing with extensive Nordic trails. The rustic resort provides a wilderness skiing experience close to the Lower Mainland with consistent snow.",
+      "tags": ["provincial-park", "nordic-skiing", "affordable", "wilderness", "family-friendly", "cross-country"]
+    },
+    {
+      "name": "Mt. Baldy",
+      "slug": "mt-baldy",
+      "status": "active",
+      "location": { "lat": 49.1175, "lng": -119.2314 },
+      "nearestCity": "Oliver",
+      "stats": {
+        "skiableAcres": 500,
+        "liftsCount": 3,
+        "runsCount": 29,
+        "verticalDrop": 1600,
+        "baseElevation": 5300,
+        "summitElevation": 6900,
+        "avgAnnualSnowfall": 197
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtbaldy.com",
+      "description": "Mt. Baldy is a community ski area in the South Okanagan known for affordable skiing and a welcoming local atmosphere. The dry interior snow and uncrowded slopes make it a hidden gem for South Okanagan residents.",
+      "tags": ["community-run", "affordable", "south-okanagan", "uncrowded", "hidden-gem", "local-favorite"]
+    },
+    {
+      "name": "Phoenix Mountain",
+      "slug": "phoenix-mountain",
+      "status": "active",
+      "location": { "lat": 49.0767, "lng": -118.6200 },
+      "nearestCity": "Grand Forks",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 2,
+        "runsCount": 18,
+        "verticalDrop": 760,
+        "baseElevation": 4450,
+        "summitElevation": 5210,
+        "avgAnnualSnowfall": 177
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.phoenixmountain.com",
+      "description": "Phoenix Mountain is a small community ski hill serving Grand Forks and the Boundary region. Operated by volunteers, it offers affordable family skiing with a friendly, grassroots atmosphere.",
+      "tags": ["community-run", "volunteer-operated", "affordable", "family-friendly", "boundary-region"]
+    },
+    {
+      "name": "Harper Mountain",
+      "slug": "harper-mountain",
+      "status": "active",
+      "location": { "lat": 50.7483, "lng": -120.3022 },
+      "nearestCity": "Kamloops",
+      "stats": {
+        "skiableAcres": 260,
+        "liftsCount": 3,
+        "runsCount": 24,
+        "verticalDrop": 1060,
+        "baseElevation": 4350,
+        "summitElevation": 5410,
+        "avgAnnualSnowfall": 142
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.harpermountain.com",
+      "description": "Harper Mountain is Kamloops' local ski hill, offering affordable family skiing just 25 minutes from downtown. Night skiing, terrain parks, and a learn-to-ski program make it accessible for beginners and families.",
+      "tags": ["local-hill", "affordable", "night-skiing", "family-friendly", "kamloops", "beginner-friendly"]
+    },
+    {
+      "name": "Mt. Cain",
+      "slug": "mt-cain",
+      "status": "active",
+      "location": { "lat": 50.2247, "lng": -126.3467 },
+      "nearestCity": "Port McNeill",
+      "stats": {
+        "skiableAcres": 450,
+        "liftsCount": 2,
+        "runsCount": 23,
+        "verticalDrop": 1476,
+        "baseElevation": 3478,
+        "summitElevation": 4954,
+        "avgAnnualSnowfall": 600
+      },
+      "terrain": { "beginner": 15, "intermediate": 55, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mtcain.com",
+      "description": "Mt. Cain is Vancouver Island's highest ski area and a community-operated hidden gem. Known for incredible snowfall and authentic local atmosphere, it's operated by volunteers and offers genuine backcountry-style skiing.",
+      "tags": ["highest-on-vancouver-island", "community-run", "volunteer-operated", "massive-snowfall", "hidden-gem", "backcountry"]
+    },
+    {
+      "name": "Shames Mountain",
+      "slug": "shames-mountain",
+      "status": "active",
+      "location": { "lat": 54.4714, "lng": -128.9697 },
+      "nearestCity": "Terrace",
+      "stats": {
+        "skiableAcres": 278,
+        "liftsCount": 2,
+        "runsCount": 28,
+        "verticalDrop": 1600,
+        "baseElevation": 2650,
+        "summitElevation": 4250,
+        "avgAnnualSnowfall": 472
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.shamesmountain.com",
+      "description": "Shames Mountain is Northern BC's premier ski destination, serving Terrace and the Northwest region. Known for epic snowfall and uncrowded slopes, this community-owned area offers authentic powder skiing far from the crowds.",
+      "tags": ["northern-bc", "community-owned", "epic-snowfall", "uncrowded", "powder", "remote"]
+    },
+    {
+      "name": "Hudson Bay Mountain",
+      "slug": "hudson-bay-mountain",
+      "status": "active",
+      "location": { "lat": 54.7817, "lng": -127.1492 },
+      "nearestCity": "Smithers",
+      "stats": {
+        "skiableAcres": 325,
+        "liftsCount": 2,
+        "runsCount": 33,
+        "verticalDrop": 1745,
+        "baseElevation": 4100,
+        "summitElevation": 5380,
+        "avgAnnualSnowfall": 500
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.hudsonbaymountain.ca",
+      "description": "Hudson Bay Mountain serves Smithers in Northern BC with excellent snowfall and stunning mountain views. The community-oriented ski area offers varied terrain with a remote, authentic experience.",
+      "tags": ["northern-bc", "community-run", "excellent-snowfall", "smithers", "remote", "authentic"]
+    },
+    {
+      "name": "Troll Ski Resort",
+      "slug": "troll-resort",
+      "status": "active",
+      "location": { "lat": 53.8469, "lng": -122.5811 },
+      "nearestCity": "Quesnel",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 420,
+        "baseElevation": 3100,
+        "summitElevation": 3520,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.trollresort.com",
+      "description": "Troll Ski Resort is a small community hill serving Quesnel in the Cariboo region. With night skiing and affordable prices, it provides accessible family skiing for local residents.",
+      "tags": ["community-run", "affordable", "night-skiing", "family-friendly", "cariboo", "quesnel"]
+    },
+    {
+      "name": "Murray Ridge Ski Area",
+      "slug": "murray-ridge",
+      "status": "active",
+      "location": { "lat": 54.0506, "lng": -124.8672 },
+      "nearestCity": "Fort St. James",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 2,
+        "runsCount": 15,
+        "verticalDrop": 500,
+        "baseElevation": 3200,
+        "summitElevation": 3700,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.murrayridge.ca",
+      "description": "Murray Ridge is a small community ski area serving Fort St. James in central BC. Operated by volunteers, it provides affordable winter recreation for one of BC's most remote communities.",
+      "tags": ["community-run", "volunteer-operated", "affordable", "remote", "family-friendly"]
+    },
+    {
+      "name": "Mt. Timothy",
+      "slug": "mt-timothy",
+      "status": "active",
+      "location": { "lat": 51.8833, "lng": -121.3833 },
+      "nearestCity": "Lac La Hache",
+      "stats": {
+        "skiableAcres": 200,
+        "liftsCount": 2,
+        "runsCount": 22,
+        "verticalDrop": 675,
+        "baseElevation": 4800,
+        "summitElevation": 5475,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mttimothy.com",
+      "description": "Mt. Timothy is a family-friendly ski area in the Cariboo region of central BC. Known for affordable skiing and a welcoming community atmosphere, it serves 100 Mile House and Williams Lake.",
+      "tags": ["family-friendly", "affordable", "cariboo", "community-run", "central-bc"]
+    },
+    {
+      "name": "Fairmont Hot Springs Resort",
+      "slug": "fairmont-hot-springs",
+      "status": "active",
+      "location": { "lat": 50.3333, "lng": -115.8667 },
+      "nearestCity": "Fairmont Hot Springs",
+      "stats": {
+        "skiableAcres": 300,
+        "liftsCount": 3,
+        "runsCount": 13,
+        "verticalDrop": 1000,
+        "baseElevation": 3600,
+        "summitElevation": 4600,
+        "avgAnnualSnowfall": 118
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.fairmonthotsprings.com",
+      "description": "Fairmont Hot Springs combines skiing with natural hot springs for a unique mountain experience. The small ski area offers family-friendly terrain with the bonus of soaking in hot mineral pools after a day on the slopes.",
+      "tags": ["hot-springs", "family-friendly", "beginner-friendly", "relaxation", "columbia-valley"]
+    },
+    {
+      "name": "Powder King Mountain Resort",
+      "slug": "powder-king",
+      "status": "active",
+      "location": { "lat": 55.4250, "lng": -122.6272 },
+      "nearestCity": "Mackenzie",
+      "stats": {
+        "skiableAcres": 1520,
+        "liftsCount": 3,
+        "runsCount": 64,
+        "verticalDrop": 2030,
+        "baseElevation": 4100,
+        "summitElevation": 6130,
+        "avgAnnualSnowfall": 472
+      },
+      "terrain": { "beginner": 10, "intermediate": 60, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.powderking.com",
+      "description": "Powder King is BC's most northerly lift-serviced resort, famous for deep powder and uncrowded slopes. The remote location means fresh tracks are the norm, and the resort receives some of the best snow in the province.",
+      "tags": ["indy-pass", "northernmost-bc", "powder", "uncrowded", "remote", "deep-snow", "hidden-gem"]
+    },
+    {
+      "name": "Tabor Mountain",
+      "slug": "tabor-mountain",
+      "status": "active",
+      "location": { "lat": 53.9167, "lng": -122.5500 },
+      "nearestCity": "Prince George",
+      "stats": {
+        "skiableAcres": 170,
+        "liftsCount": 2,
+        "runsCount": 26,
+        "verticalDrop": 600,
+        "baseElevation": 2700,
+        "summitElevation": 3300,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tabormountain.com",
+      "description": "Tabor Mountain is Prince George's local ski hill, offering night skiing and affordable family recreation. Located just 20 minutes from the city, it provides accessible winter fun for Northern BC's largest city.",
+      "tags": ["local-hill", "night-skiing", "affordable", "family-friendly", "prince-george"]
+    },
+
+    {
+      "name": "Blackcomb Mountain",
+      "slug": "blackcomb",
+      "status": "defunct",
+      "notes": "Merged with Whistler Mountain in 1997 (operations combined) to form Whistler Blackcomb; now operated as one resort",
+      "yearsOperated": "1980-1997",
+      "location": { "lat": 50.1000, "lng": -122.9450 },
+      "tags": ["merged", "now-whistler-blackcomb", "olympic-venue"]
+    },
+    {
+      "name": "Tod Mountain",
+      "slug": "tod-mountain",
+      "status": "defunct",
+      "notes": "Renamed and expanded to become Sun Peaks Resort in 1993",
+      "yearsOperated": "1961-1993",
+      "location": { "lat": 50.8833, "lng": -119.9000 },
+      "tags": ["renamed", "now-sun-peaks", "historic"]
+    },
+    {
+      "name": "Purden Ski Village",
+      "slug": "purden",
+      "status": "defunct",
+      "notes": "Community ski area east of Prince George, closed due to financial difficulties",
+      "yearsOperated": "1970s-2010s",
+      "location": { "lat": 53.95, "lng": -122.0 },
+      "tags": ["historic", "prince-george-area", "community-area"]
+    },
+    {
+      "name": "Forbidden Plateau",
+      "slug": "forbidden-plateau",
+      "status": "defunct",
+      "notes": "Vancouver Island ski area destroyed by wildfire in 1999, never rebuilt",
+      "yearsOperated": "1940s-1999",
+      "location": { "lat": 49.65, "lng": -125.2 },
+      "tags": ["historic", "vancouver-island", "destroyed-by-fire"]
+    },
+    {
+      "name": "Gibson Pass Ski Area",
+      "slug": "gibson-pass",
+      "status": "defunct",
+      "notes": "Small ski area in Manning Park that operated independently before closing",
+      "yearsOperated": "1970s-1990s",
+      "location": { "lat": 49.08, "lng": -120.75 },
+      "tags": ["historic", "manning-park-area", "closed"]
+    },
+    {
+      "name": "Hemlock Valley",
+      "slug": "hemlock-valley",
+      "status": "defunct",
+      "notes": "Closed in 2012, reopened as Sasquatch Mountain Resort in 2014 after major redevelopment",
+      "yearsOperated": "1969-2012",
+      "location": { "lat": 49.3628, "lng": -121.9478 },
+      "tags": ["renamed", "now-sasquatch-mountain", "redeveloped"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-27T00:15:00Z"
+  }
+}

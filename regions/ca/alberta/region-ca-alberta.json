@@ -1,0 +1,579 @@
+{
+  "country": "CA",
+  "province": "Alberta",
+  "resorts": [
+    {
+      "name": "Lake Louise Ski Resort",
+      "slug": "lake-louise",
+      "status": "active",
+      "location": { "lat": 51.4254, "lng": -116.1773 },
+      "nearestCity": "Lake Louise",
+      "stats": {
+        "skiableAcres": 4200,
+        "liftsCount": 10,
+        "runsCount": 164,
+        "verticalDrop": 3250,
+        "baseElevation": 5400,
+        "summitElevation": 8650,
+        "avgAnnualSnowfall": 168
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skilouise.com",
+      "description": "Lake Louise is one of the most scenic ski resorts in the world, offering panoramic views of the Canadian Rockies and Victoria Glacier. With vast terrain spanning four mountain faces, it's known for consistent cold smoke powder and wide-open bowls.",
+      "tags": ["ikon-pass", "scenic", "canadian-rockies", "banff-area", "victoria-glacier-views", "cold-smoke-powder", "big-mountain"]
+    },
+    {
+      "name": "Sunshine Village",
+      "slug": "sunshine-village",
+      "status": "active",
+      "location": { "lat": 51.1150, "lng": -115.7575 },
+      "nearestCity": "Banff",
+      "stats": {
+        "skiableAcres": 3358,
+        "liftsCount": 12,
+        "runsCount": 145,
+        "verticalDrop": 3514,
+        "baseElevation": 5440,
+        "summitElevation": 8954,
+        "avgAnnualSnowfall": 360
+      },
+      "terrain": { "beginner": 20, "intermediate": 55, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.skibanff.com",
+      "description": "Sunshine Village sits at 7,200 feet with Canada's longest ski season (November to late May). Straddling the Continental Divide across three mountains, it receives more snow than any other Canadian Rockies resort and offers ski-in, ski-out accommodation.",
+      "tags": ["ikon-pass", "longest-season", "continental-divide", "banff-area", "high-elevation", "most-snow-canadian-rockies", "three-mountains"]
+    },
+    {
+      "name": "Mt. Norquay",
+      "slug": "mt-norquay",
+      "status": "active",
+      "location": { "lat": 51.2033, "lng": -115.6011 },
+      "nearestCity": "Banff",
+      "stats": {
+        "skiableAcres": 190,
+        "liftsCount": 5,
+        "runsCount": 60,
+        "verticalDrop": 1650,
+        "baseElevation": 5350,
+        "summitElevation": 7000,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 28, "intermediate": 36, "advanced": 36, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.banffnorquay.com",
+      "description": "Mt. Norquay is Banff's original ski area, known as the 'Town Hill' since 1926. Just 6 minutes from Banff, it offers challenging terrain, night skiing, and tubing. The historic chairlift and local vibe make it a Banff institution.",
+      "tags": ["historic", "banff-town-hill", "night-skiing", "steep-terrain", "tubing", "local-favorite", "closest-to-banff"]
+    },
+    {
+      "name": "Marmot Basin",
+      "slug": "marmot-basin",
+      "status": "active",
+      "location": { "lat": 52.8069, "lng": -118.0828 },
+      "nearestCity": "Jasper",
+      "stats": {
+        "skiableAcres": 1720,
+        "liftsCount": 7,
+        "runsCount": 91,
+        "verticalDrop": 3000,
+        "baseElevation": 5570,
+        "summitElevation": 8570,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 30, "intermediate": 30, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skimarmot.com",
+      "description": "Marmot Basin is Jasper's ski resort, offering uncrowded slopes in the heart of Jasper National Park. Known for light, dry snow and a relaxed atmosphere, it provides spectacular mountain scenery and one of the highest base elevations in Canada.",
+      "tags": ["ikon-pass", "jasper-national-park", "uncrowded", "dry-powder", "high-elevation", "scenic", "relaxed"]
+    },
+    {
+      "name": "Nakiska",
+      "slug": "nakiska",
+      "status": "active",
+      "location": { "lat": 50.9422, "lng": -115.1508 },
+      "nearestCity": "Kananaskis",
+      "stats": {
+        "skiableAcres": 1021,
+        "liftsCount": 6,
+        "runsCount": 79,
+        "verticalDrop": 2412,
+        "baseElevation": 5020,
+        "summitElevation": 7432,
+        "avgAnnualSnowfall": 127
+      },
+      "terrain": { "beginner": 16, "intermediate": 70, "advanced": 14, "expert": 0 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skinakiska.com",
+      "description": "Nakiska was built for the 1988 Calgary Winter Olympics alpine events. Located in Kananaskis Country, it's known for excellent grooming, consistent snow conditions, and family-friendly terrain just 45 minutes from Calgary.",
+      "tags": ["epic-pass", "olympic-venue-1988", "kananaskis", "groomed", "family-friendly", "calgary-area"]
+    },
+    {
+      "name": "Castle Mountain Resort",
+      "slug": "castle-mountain",
+      "status": "active",
+      "location": { "lat": 49.2972, "lng": -114.4089 },
+      "nearestCity": "Pincher Creek",
+      "stats": {
+        "skiableAcres": 3592,
+        "liftsCount": 6,
+        "runsCount": 94,
+        "verticalDrop": 2833,
+        "baseElevation": 4700,
+        "summitElevation": 7463,
+        "avgAnnualSnowfall": 354
+      },
+      "terrain": { "beginner": 15, "intermediate": 45, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skicastle.ca",
+      "description": "Castle Mountain is Alberta's hidden powder destination, receiving over 350 inches of snow annually. The sprawling terrain, steep chutes, and authentic local vibe attract skiers seeking an uncrowded, ungroomed experience in southwest Alberta.",
+      "tags": ["indy-pass", "powder", "uncrowded", "steep-chutes", "hidden-gem", "backcountry-style", "southwest-alberta"]
+    },
+    {
+      "name": "WinSport Canada Olympic Park",
+      "slug": "winsport",
+      "status": "active",
+      "location": { "lat": 51.0817, "lng": -114.2019 },
+      "nearestCity": "Calgary",
+      "stats": {
+        "skiableAcres": 88,
+        "liftsCount": 4,
+        "runsCount": 10,
+        "verticalDrop": 305,
+        "baseElevation": 3800,
+        "summitElevation": 4100,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.winsport.ca",
+      "description": "WinSport is the site of the 1988 Winter Olympics, located in Calgary. While small, it offers convenient access for city residents with night skiing, terrain parks, and ski jumping facilities. A great place for beginners and freestyle training.",
+      "tags": ["olympic-venue-1988", "calgary", "urban", "night-skiing", "terrain-parks", "beginner-friendly", "freestyle"]
+    },
+    {
+      "name": "Snow Valley Edmonton",
+      "slug": "snow-valley-edmonton",
+      "status": "active",
+      "location": { "lat": 53.4825, "lng": -113.4728 },
+      "nearestCity": "Edmonton",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 4,
+        "runsCount": 12,
+        "verticalDrop": 200,
+        "baseElevation": 2100,
+        "summitElevation": 2300,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowvalley.ab.ca",
+      "description": "Snow Valley is Edmonton's river valley ski area, offering convenient city skiing in the North Saskatchewan River valley. Perfect for beginners and families, it provides affordable skiing, lessons, and night skiing within city limits.",
+      "tags": ["urban", "edmonton", "night-skiing", "beginner-friendly", "family-friendly", "affordable", "river-valley"]
+    },
+    {
+      "name": "Sunridge Ski Area",
+      "slug": "sunridge",
+      "status": "active",
+      "location": { "lat": 53.5439, "lng": -113.3133 },
+      "nearestCity": "Edmonton",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 4,
+        "runsCount": 14,
+        "verticalDrop": 220,
+        "baseElevation": 2100,
+        "summitElevation": 2320,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sunridgeskiarea.com",
+      "description": "Sunridge is another of Edmonton's urban ski hills, located on the city's east side. Offering night skiing, terrain parks, and lessons, it provides accessible skiing for Edmonton families and beginners.",
+      "tags": ["urban", "edmonton", "night-skiing", "terrain-parks", "family-friendly", "beginner-friendly"]
+    },
+    {
+      "name": "Rabbit Hill Snow Resort",
+      "slug": "rabbit-hill",
+      "status": "active",
+      "location": { "lat": 53.4172, "lng": -113.6419 },
+      "nearestCity": "Edmonton",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 4,
+        "runsCount": 15,
+        "verticalDrop": 200,
+        "baseElevation": 2200,
+        "summitElevation": 2400,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 45, "intermediate": 35, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.rabbithill.com",
+      "description": "Rabbit Hill is Edmonton's south-side ski hill, focusing on beginner and family programs. With excellent ski school, tubing, and night skiing, it's a popular destination for families introducing kids to skiing.",
+      "tags": ["family-friendly", "beginner-friendly", "edmonton", "night-skiing", "tubing", "ski-school", "south-edmonton"]
+    },
+    {
+      "name": "Canyon Ski Resort",
+      "slug": "canyon-ski",
+      "status": "active",
+      "location": { "lat": 52.0811, "lng": -113.8322 },
+      "nearestCity": "Red Deer",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 4,
+        "runsCount": 22,
+        "verticalDrop": 450,
+        "baseElevation": 2800,
+        "summitElevation": 3250,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.canyonski.ca",
+      "description": "Canyon Ski Resort is central Alberta's largest ski area, serving Red Deer and surrounding communities. Set in the Red Deer River valley, it offers varied terrain, night skiing, and terrain parks for families and intermediate skiers.",
+      "tags": ["central-alberta", "red-deer", "night-skiing", "terrain-parks", "family-friendly", "river-valley"]
+    },
+    {
+      "name": "Tawatinaw Valley Ski Hill",
+      "slug": "tawatinaw-valley",
+      "status": "active",
+      "location": { "lat": 54.2297, "lng": -113.6000 },
+      "nearestCity": "Westlock",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 300,
+        "baseElevation": 2100,
+        "summitElevation": 2400,
+        "avgAnnualSnowfall": 55
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.tawatinaw.ca",
+      "description": "Tawatinaw Valley is a community ski area north of Edmonton, offering affordable family skiing. The friendly atmosphere and night skiing make it a popular destination for families in Alberta's parkland region.",
+      "tags": ["community-run", "family-friendly", "night-skiing", "affordable", "north-of-edmonton", "parkland"]
+    },
+    {
+      "name": "Pass Powderkeg",
+      "slug": "pass-powderkeg",
+      "status": "active",
+      "location": { "lat": 49.6000, "lng": -114.4000 },
+      "nearestCity": "Crowsnest Pass",
+      "stats": {
+        "skiableAcres": 150,
+        "liftsCount": 2,
+        "runsCount": 18,
+        "verticalDrop": 815,
+        "baseElevation": 4400,
+        "summitElevation": 5215,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.passpowderkeg.com",
+      "description": "Pass Powderkeg is a community ski area in Crowsnest Pass, offering affordable skiing close to the BC border. The friendly, local atmosphere and consistent snow make it a hidden gem in southwest Alberta.",
+      "tags": ["community-run", "affordable", "crowsnest-pass", "hidden-gem", "family-friendly", "southwest-alberta"]
+    },
+    {
+      "name": "Kinosoo Ridge",
+      "slug": "kinosoo-ridge",
+      "status": "active",
+      "location": { "lat": 54.2494, "lng": -110.1789 },
+      "nearestCity": "Cold Lake",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 250,
+        "baseElevation": 1800,
+        "summitElevation": 2050,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.kinosoo.com",
+      "description": "Kinosoo Ridge serves the Cold Lake area in northeastern Alberta. This community ski area offers night skiing, terrain parks, and family programs for residents of this oil-patch and military community.",
+      "tags": ["community-run", "cold-lake", "night-skiing", "family-friendly", "northeastern-alberta"]
+    },
+    {
+      "name": "Hidden Valley Ski Resort",
+      "slug": "hidden-valley-ab",
+      "status": "active",
+      "location": { "lat": 50.5783, "lng": -113.9758 },
+      "nearestCity": "Nanton",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 500,
+        "baseElevation": 3800,
+        "summitElevation": 4300,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skihiddenvalley.com",
+      "description": "Hidden Valley is a small community ski area south of Calgary in the foothills. Offering affordable family skiing with a relaxed atmosphere, it's a local favorite for families in southern Alberta.",
+      "tags": ["community-run", "affordable", "family-friendly", "foothills", "southern-alberta", "local-favorite"]
+    },
+    {
+      "name": "Vista Ridge",
+      "slug": "vista-ridge",
+      "status": "active",
+      "location": { "lat": 56.6933, "lng": -111.3408 },
+      "nearestCity": "Fort McMurray",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 400,
+        "baseElevation": 1000,
+        "summitElevation": 1400,
+        "avgAnnualSnowfall": 55
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.vistaridge.ca",
+      "description": "Vista Ridge serves Fort McMurray's oil sands community in northern Alberta. This year-round recreation facility offers skiing, tubing, and mountain biking for this remote northern community.",
+      "tags": ["fort-mcmurray", "northern-alberta", "night-skiing", "tubing", "year-round", "oil-sands-community"]
+    },
+    {
+      "name": "Nitehawk Year-Round Adventure Park",
+      "slug": "nitehawk",
+      "status": "active",
+      "location": { "lat": 56.2475, "lng": -117.3114 },
+      "nearestCity": "Grande Prairie",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 3,
+        "runsCount": 18,
+        "verticalDrop": 550,
+        "baseElevation": 1900,
+        "summitElevation": 2450,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.gonitehawk.com",
+      "description": "Nitehawk is northwestern Alberta's ski destination, serving Grande Prairie and the Peace Region. With night skiing, terrain parks, and summer activities, it's a year-round recreation hub for northern Alberta.",
+      "tags": ["grande-prairie", "peace-region", "night-skiing", "year-round", "northern-alberta", "family-friendly"]
+    },
+    {
+      "name": "Misery Mountain",
+      "slug": "misery-mountain",
+      "status": "active",
+      "location": { "lat": 56.5000, "lng": -117.3833 },
+      "nearestCity": "Peace River",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 2,
+        "runsCount": 10,
+        "verticalDrop": 400,
+        "baseElevation": 1100,
+        "summitElevation": 1500,
+        "avgAnnualSnowfall": 65
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.miserymountain.com",
+      "description": "Misery Mountain is a small community ski area serving Peace River and northern Alberta. Despite the name, it offers fun family skiing with night operations and a welcoming community atmosphere.",
+      "tags": ["community-run", "peace-river", "night-skiing", "family-friendly", "northern-alberta", "affordable"]
+    },
+    {
+      "name": "Little Smoky Ski Area",
+      "slug": "little-smoky",
+      "status": "active",
+      "location": { "lat": 54.5833, "lng": -117.0833 },
+      "nearestCity": "Valleyview",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 1,
+        "runsCount": 8,
+        "verticalDrop": 280,
+        "baseElevation": 2100,
+        "summitElevation": 2380,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.littlesmokyskiresort.com",
+      "description": "Little Smoky is a tiny community ski area near Valleyview, serving rural northwestern Alberta. Run by volunteers, it offers basic family skiing at affordable prices.",
+      "tags": ["community-run", "volunteer-operated", "affordable", "family-friendly", "valleyview", "rural"]
+    },
+
+    {
+      "name": "Westcastle Mountain Resort",
+      "slug": "westcastle",
+      "status": "defunct",
+      "notes": "Rebranded and expanded as Castle Mountain Resort",
+      "yearsOperated": "1966-2014",
+      "location": { "lat": 49.2972, "lng": -114.4089 },
+      "tags": ["renamed", "now-castle-mountain"]
+    },
+    {
+      "name": "Fortress Mountain",
+      "slug": "fortress-mountain",
+      "status": "defunct",
+      "notes": "Kananaskis resort closed in 2004 due to liability and infrastructure issues; occasionally hosts events",
+      "yearsOperated": "1968-2004",
+      "location": { "lat": 50.8500, "lng": -115.2000 },
+      "tags": ["historic", "kananaskis", "liability-closure", "occasionally-events"]
+    },
+    {
+      "name": "Wintergreen Ski Resort",
+      "slug": "wintergreen",
+      "status": "defunct",
+      "notes": "Former ski area near Bragg Creek, closed due to unreliable snow conditions",
+      "yearsOperated": "1980s-2000s",
+      "location": { "lat": 50.9500, "lng": -114.6000 },
+      "tags": ["historic", "bragg-creek", "unreliable-snow"]
+    },
+    {
+      "name": "Paskapoo Ski Hill",
+      "slug": "paskapoo",
+      "status": "defunct",
+      "notes": "Calgary's original ski hill, site now occupied by WinSport/Canada Olympic Park",
+      "yearsOperated": "1950s-1980s",
+      "location": { "lat": 51.08, "lng": -114.20 },
+      "tags": ["historic", "calgary-original", "now-winsport"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-27T00:30:00Z"
+  }
+}

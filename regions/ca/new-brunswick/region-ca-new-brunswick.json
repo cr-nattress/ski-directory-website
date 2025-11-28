@@ -1,0 +1,140 @@
+{
+  "country": "CA",
+  "province": "New Brunswick",
+  "resorts": [
+    {
+      "name": "Crabbe Mountain",
+      "slug": "crabbe-mountain",
+      "status": "active",
+      "location": { "lat": 45.8833, "lng": -66.8667 },
+      "nearestCity": "Fredericton",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 4,
+        "runsCount": 30,
+        "verticalDrop": 853,
+        "baseElevation": 600,
+        "summitElevation": 1453,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.crabbemountain.com",
+      "description": "Crabbe Mountain is the largest ski resort in the Maritimes, featuring the most vertical drop east of Quebec. Located near Fredericton, it offers challenging terrain and consistently good snow thanks to its interior location.",
+      "tags": ["largest-maritimes", "most-vertical-maritimes", "fredericton", "night-skiing"]
+    },
+    {
+      "name": "Poley Mountain",
+      "slug": "poley-mountain",
+      "status": "active",
+      "location": { "lat": 45.7333, "lng": -65.4167 },
+      "nearestCity": "Sussex",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 4,
+        "runsCount": 31,
+        "verticalDrop": 650,
+        "baseElevation": 400,
+        "summitElevation": 1050,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.poleymountain.com",
+      "description": "Poley Mountain is located in the Fundy Highlands near Sussex, serving the Saint John and Moncton areas. The area is known for its family-friendly atmosphere and consistent snowmaking.",
+      "tags": ["fundy-highlands", "saint-john-area", "family-friendly", "night-skiing"]
+    },
+    {
+      "name": "Sugarloaf Provincial Park",
+      "slug": "sugarloaf",
+      "status": "active",
+      "location": { "lat": 47.8833, "lng": -66.4500 },
+      "nearestCity": "Campbellton",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 500,
+        "baseElevation": 400,
+        "summitElevation": 900,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sugarloaf.ca",
+      "description": "Sugarloaf is located in a provincial park near Campbellton on the Quebec border. The northern location brings excellent natural snowfall and the area offers both alpine and cross-country skiing.",
+      "tags": ["provincial-park", "campbellton", "natural-snow", "cross-country"]
+    },
+    {
+      "name": "Mont Farlagne",
+      "slug": "mont-farlagne",
+      "status": "active",
+      "location": { "lat": 47.2833, "lng": -68.3333 },
+      "nearestCity": "Edmundston",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 550,
+        "baseElevation": 700,
+        "summitElevation": 1250,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.montfarlagne.com",
+      "description": "Mont Farlagne serves the Edmundston region in the Madawaska area near the Quebec and Maine borders. The area receives excellent snowfall and caters to the local Francophone community.",
+      "tags": ["edmundston", "madawaska", "francophone", "night-skiing", "excellent-snow"]
+    },
+
+    {
+      "name": "Fundy Highlands Golf & Ski",
+      "slug": "fundy-highlands",
+      "status": "defunct",
+      "location": { "lat": 45.6000, "lng": -64.8500 },
+      "nearestCity": "Alma",
+      "yearClosed": 1995,
+      "description": "Fundy Highlands was a small ski operation near Fundy National Park that closed in the mid-1990s. The area served visitors to the Bay of Fundy region.",
+      "tags": ["closed", "fundy-region", "resort-amenity"]
+    },
+    {
+      "name": "Silver Falls Ski Area",
+      "slug": "silver-falls",
+      "status": "defunct",
+      "location": { "lat": 45.9500, "lng": -66.6000 },
+      "nearestCity": "Fredericton",
+      "yearClosed": 1985,
+      "description": "Silver Falls was a small ski area near Fredericton that operated until the mid-1980s before Crabbe Mountain became the region's primary destination.",
+      "tags": ["closed", "fredericton", "community-area"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

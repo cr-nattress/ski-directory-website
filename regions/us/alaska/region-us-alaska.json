@@ -1,0 +1,244 @@
+{
+  "country": "US",
+  "state": "Alaska",
+  "resorts": [
+    {
+      "name": "Alyeska Resort",
+      "slug": "alyeska",
+      "status": "active",
+      "location": { "lat": 60.9697, "lng": -149.0981 },
+      "nearestCity": "Girdwood",
+      "stats": {
+        "skiableAcres": 1610,
+        "liftsCount": 9,
+        "runsCount": 76,
+        "verticalDrop": 2500,
+        "baseElevation": 250,
+        "summitElevation": 2750,
+        "avgAnnualSnowfall": 669
+      },
+      "terrain": { "beginner": 11, "intermediate": 52, "advanced": 37, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.alyeskaresort.com",
+      "description": "Alyeska is Alaska's premier ski resort and one of the snowiest in North America, averaging over 650 inches annually. Located 40 miles south of Anchorage, it offers massive vertical, stunning glacial views, and world-class heli-skiing access. The Hotel Alyeska provides luxury accommodations at the base.",
+      "tags": ["ikon-pass", "highest-snowfall", "heli-skiing", "glacial-views", "destination-resort", "night-skiing"]
+    },
+    {
+      "name": "Eaglecrest Ski Area",
+      "slug": "eaglecrest",
+      "status": "active",
+      "location": { "lat": 58.2833, "lng": -134.5167 },
+      "nearestCity": "Juneau",
+      "stats": {
+        "skiableAcres": 640,
+        "liftsCount": 4,
+        "runsCount": 36,
+        "verticalDrop": 1540,
+        "baseElevation": 1200,
+        "summitElevation": 2740,
+        "avgAnnualSnowfall": 350
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skijuneau.com",
+      "description": "Eaglecrest is a city-owned ski area near Alaska's capital, accessible only by air or sea. With stunning views of the Inside Passage and excellent natural snow, it offers a unique Alaska skiing experience at affordable prices.",
+      "tags": ["indy-pass", "city-owned", "juneau", "inside-passage", "affordable", "remote"]
+    },
+    {
+      "name": "Hilltop Ski Area",
+      "slug": "hilltop",
+      "status": "active",
+      "location": { "lat": 61.1383, "lng": -149.7772 },
+      "nearestCity": "Anchorage",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 2,
+        "runsCount": 11,
+        "verticalDrop": 294,
+        "baseElevation": 1380,
+        "summitElevation": 1674,
+        "avgAnnualSnowfall": 75
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.hilltopskiarea.org",
+      "description": "Hilltop is Anchorage's neighborhood ski area, perfect for learning and quick after-work sessions. The nonprofit operation focuses on youth programs and accessibility, making skiing affordable for local families.",
+      "tags": ["anchorage", "nonprofit", "learning-area", "youth-programs", "night-skiing", "affordable"]
+    },
+    {
+      "name": "Arctic Valley",
+      "slug": "arctic-valley",
+      "status": "active",
+      "location": { "lat": 61.2458, "lng": -149.5383 },
+      "nearestCity": "Anchorage",
+      "stats": {
+        "skiableAcres": 500,
+        "liftsCount": 2,
+        "runsCount": 18,
+        "verticalDrop": 1009,
+        "baseElevation": 2450,
+        "summitElevation": 3459,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 15, "intermediate": 40, "advanced": 45, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.arcticvalley.org",
+      "description": "Arctic Valley is a member-owned ski area in the Chugach Mountains above Anchorage, accessible via Arctic Valley Road. Known for challenging terrain and stunning alpine scenery, it's a favorite among serious Anchorage skiers.",
+      "tags": ["member-owned", "chugach-mountains", "challenging-terrain", "backcountry-access", "alpine-scenery"]
+    },
+    {
+      "name": "Moose Mountain Ski Area",
+      "slug": "moose-mountain",
+      "status": "active",
+      "location": { "lat": 64.7556, "lng": -147.1944 },
+      "nearestCity": "Fairbanks",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 2,
+        "runsCount": 7,
+        "verticalDrop": 325,
+        "baseElevation": 900,
+        "summitElevation": 1225,
+        "avgAnnualSnowfall": 50
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.moosemountainskiarea.com",
+      "description": "Moose Mountain serves the Fairbanks community with affordable skiing in Interior Alaska. Night skiing is popular during the long winter nights, and the northern lights often make appearances over the slopes.",
+      "tags": ["fairbanks", "interior-alaska", "night-skiing", "northern-lights", "family-friendly"]
+    },
+    {
+      "name": "Skiland",
+      "slug": "skiland",
+      "status": "active",
+      "location": { "lat": 64.9217, "lng": -147.5861 },
+      "nearestCity": "Fairbanks",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 2,
+        "runsCount": 8,
+        "verticalDrop": 355,
+        "baseElevation": 1440,
+        "summitElevation": 1795,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiland.org",
+      "description": "Skiland is a community ski area north of Fairbanks, offering some of the coldest skiing in America. The area is known for its natural snow, challenging terrain, and views of the aurora borealis during night sessions.",
+      "tags": ["fairbanks", "coldest-skiing", "aurora-borealis", "night-skiing", "community-owned"]
+    },
+    {
+      "name": "Mt. Eyak",
+      "slug": "mt-eyak",
+      "status": "active",
+      "location": { "lat": 60.5422, "lng": -145.7492 },
+      "nearestCity": "Cordova",
+      "stats": {
+        "skiableAcres": 220,
+        "liftsCount": 1,
+        "runsCount": 30,
+        "verticalDrop": 800,
+        "baseElevation": 200,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mteyak.org",
+      "description": "Mt. Eyak is one of America's most unique ski areas, accessible only by plane or ferry to Cordova. The single-chair lift was built in 1939 and is the oldest operating single chair in North America. Heavy snowfall and remote location create an authentic Alaska experience.",
+      "tags": ["remote", "historic-lift", "oldest-chairlift", "cordova", "fly-in", "authentic-alaska"]
+    },
+
+    {
+      "name": "Alpenglow at Arctic Valley",
+      "slug": "alpenglow",
+      "status": "defunct",
+      "location": { "lat": 61.2400, "lng": -149.5300 },
+      "nearestCity": "Anchorage",
+      "yearClosed": 1995,
+      "description": "Alpenglow was a smaller operation adjacent to Arctic Valley that merged with the main ski area. The separate ski area identity was discontinued in the 1990s.",
+      "tags": ["closed", "anchorage", "merged"]
+    },
+    {
+      "name": "Birch Hill Ski Area",
+      "slug": "birch-hill",
+      "status": "defunct",
+      "location": { "lat": 64.8633, "lng": -147.7000 },
+      "nearestCity": "Fairbanks",
+      "yearClosed": 2003,
+      "description": "Birch Hill was a small ski area on Fort Wainwright military base near Fairbanks. The area closed in 2003 when the military discontinued recreation operations.",
+      "tags": ["closed", "military-base", "fairbanks"]
+    },
+    {
+      "name": "Cleary Summit",
+      "slug": "cleary-summit",
+      "status": "defunct",
+      "location": { "lat": 64.9800, "lng": -147.4700 },
+      "nearestCity": "Fairbanks",
+      "yearClosed": 1980,
+      "description": "Cleary Summit was a community ski area north of Fairbanks that operated through the 1970s. The remote location and limited facilities led to its closure.",
+      "tags": ["closed", "fairbanks-area", "community-area"]
+    },
+    {
+      "name": "Majestic Valley",
+      "slug": "majestic-valley",
+      "status": "defunct",
+      "location": { "lat": 62.3200, "lng": -150.1000 },
+      "nearestCity": "Talkeetna",
+      "yearClosed": 1985,
+      "description": "Majestic Valley was a small ski area in the Matanuska-Susitna Valley that operated briefly in the 1980s. Limited infrastructure and access challenges prevented long-term success.",
+      "tags": ["closed", "mat-su-valley", "short-lived"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}

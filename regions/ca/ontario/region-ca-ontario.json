@@ -1,0 +1,1017 @@
+{
+  "country": "CA",
+  "province": "Ontario",
+  "resorts": [
+    {
+      "name": "Blue Mountain Resort",
+      "slug": "blue-mountain",
+      "status": "active",
+      "location": { "lat": 44.5012, "lng": -80.3167 },
+      "nearestCity": "Collingwood",
+      "stats": {
+        "skiableAcres": 364,
+        "liftsCount": 16,
+        "runsCount": 43,
+        "verticalDrop": 720,
+        "baseElevation": 610,
+        "summitElevation": 1483,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 23, "intermediate": 49, "advanced": 28, "expert": 0 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.bluemountain.ca",
+      "description": "Blue Mountain is Ontario's largest and most popular ski resort, featuring a pedestrian village and year-round activities. Located on the Niagara Escarpment near Collingwood, it offers extensive terrain, night skiing, and terrain parks just two hours from Toronto.",
+      "tags": ["ikon-pass", "largest-ontario", "pedestrian-village", "night-skiing", "toronto-accessible", "niagara-escarpment", "four-season"]
+    },
+    {
+      "name": "Horseshoe Resort",
+      "slug": "horseshoe-resort",
+      "status": "active",
+      "location": { "lat": 44.4500, "lng": -79.6167 },
+      "nearestCity": "Barrie",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 8,
+        "runsCount": 29,
+        "verticalDrop": 301,
+        "baseElevation": 1000,
+        "summitElevation": 1301,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 25, "intermediate": 47, "advanced": 28, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.horseshoeresort.com",
+      "description": "Horseshoe Resort is a year-round destination north of Barrie, offering skiing, golf, and adventure activities. The resort features night skiing, terrain parks, and on-site accommodation, making it a convenient getaway from Toronto.",
+      "tags": ["family-friendly", "night-skiing", "year-round", "toronto-accessible", "barrie-area", "resort-accommodation"]
+    },
+    {
+      "name": "Mount St. Louis Moonstone",
+      "slug": "mount-st-louis-moonstone",
+      "status": "active",
+      "location": { "lat": 44.5667, "lng": -79.4500 },
+      "nearestCity": "Coldwater",
+      "stats": {
+        "skiableAcres": 400,
+        "liftsCount": 13,
+        "runsCount": 40,
+        "verticalDrop": 550,
+        "baseElevation": 900,
+        "summitElevation": 1450,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountstlouis.com",
+      "description": "Mount St. Louis Moonstone is one of Ontario's largest ski resorts, formed by the merger of two areas. Known for excellent terrain parks, racing programs, and reliable snowmaking, it's a favorite for Toronto-area skiers seeking variety.",
+      "tags": ["terrain-parks", "racing", "snowmaking", "toronto-accessible", "family-friendly", "two-mountains"]
+    },
+    {
+      "name": "Calabogie Peaks",
+      "slug": "calabogie-peaks",
+      "status": "active",
+      "location": { "lat": 45.2833, "lng": -76.7500 },
+      "nearestCity": "Calabogie",
+      "stats": {
+        "skiableAcres": 195,
+        "liftsCount": 7,
+        "runsCount": 24,
+        "verticalDrop": 777,
+        "baseElevation": 650,
+        "summitElevation": 1427,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 25, "intermediate": 42, "advanced": 33, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.calabogie.com",
+      "description": "Calabogie Peaks offers Ontario's highest vertical drop at 777 feet. Located in the Ottawa Valley, it provides challenging terrain, lake views, and a full-service resort experience with accommodation and spa.",
+      "tags": ["indy-pass", "highest-vertical-ontario", "ottawa-valley", "night-skiing", "resort-accommodation", "lake-views"]
+    },
+    {
+      "name": "Searchmont Resort",
+      "slug": "searchmont",
+      "status": "active",
+      "location": { "lat": 46.7667, "lng": -84.0167 },
+      "nearestCity": "Sault Ste. Marie",
+      "stats": {
+        "skiableAcres": 134,
+        "liftsCount": 3,
+        "runsCount": 18,
+        "verticalDrop": 700,
+        "baseElevation": 900,
+        "summitElevation": 1600,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.searchmont.com",
+      "description": "Searchmont is Northern Ontario's largest ski resort, receiving abundant lake-effect snow from Lake Superior. The remote location and consistent snowfall make it a destination for Ontario skiers seeking real powder.",
+      "tags": ["indy-pass", "northern-ontario", "lake-effect-snow", "night-skiing", "powder", "remote"]
+    },
+    {
+      "name": "Sir Sam's Ski Area",
+      "slug": "sir-sams",
+      "status": "active",
+      "location": { "lat": 45.0833, "lng": -78.3833 },
+      "nearestCity": "Haliburton",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 4,
+        "runsCount": 14,
+        "verticalDrop": 350,
+        "baseElevation": 1100,
+        "summitElevation": 1450,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.sirsams.com",
+      "description": "Sir Sam's is a charming ski area in Haliburton Highlands, featuring lake views and a relaxed atmosphere. Connected to the historic Sir Sam's Inn, it offers intimate skiing with a cottage-country feel.",
+      "tags": ["haliburton", "lake-views", "historic-inn", "cottage-country", "family-friendly", "intimate"]
+    },
+    {
+      "name": "Loch Lomond Ski Area",
+      "slug": "loch-lomond",
+      "status": "active",
+      "location": { "lat": 48.4667, "lng": -89.2500 },
+      "nearestCity": "Thunder Bay",
+      "stats": {
+        "skiableAcres": 85,
+        "liftsCount": 4,
+        "runsCount": 16,
+        "verticalDrop": 550,
+        "baseElevation": 800,
+        "summitElevation": 1350,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.lochlomond.ca",
+      "description": "Loch Lomond serves Thunder Bay and Northwestern Ontario, offering reliable lake-effect snow from Lake Superior. The community-oriented ski area provides family skiing and night operations.",
+      "tags": ["thunder-bay", "northwestern-ontario", "lake-effect-snow", "night-skiing", "family-friendly"]
+    },
+    {
+      "name": "Earl Bales Ski Hill",
+      "slug": "earl-bales",
+      "status": "active",
+      "location": { "lat": 43.7500, "lng": -79.4333 },
+      "nearestCity": "Toronto",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 4,
+        "verticalDrop": 140,
+        "baseElevation": 550,
+        "summitElevation": 690,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 50, "intermediate": 35, "advanced": 15, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.toronto.ca/earlbales",
+      "description": "Earl Bales is Toronto's urban ski hill, located in the North York ravine system. City-operated and affordable, it provides accessible learn-to-ski programs and night skiing within Toronto proper.",
+      "tags": ["toronto", "urban", "city-operated", "beginner-friendly", "night-skiing", "affordable", "accessible"]
+    },
+    {
+      "name": "Centennial Park Ski Hill",
+      "slug": "centennial-park",
+      "status": "active",
+      "location": { "lat": 43.6333, "lng": -79.5833 },
+      "nearestCity": "Toronto",
+      "stats": {
+        "skiableAcres": 10,
+        "liftsCount": 2,
+        "runsCount": 3,
+        "verticalDrop": 100,
+        "baseElevation": 480,
+        "summitElevation": 580,
+        "avgAnnualSnowfall": 60
+      },
+      "terrain": { "beginner": 60, "intermediate": 30, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.toronto.ca/centennialpark",
+      "description": "Centennial Park is another of Toronto's urban ski hills, located in Etobicoke. The city-operated facility offers affordable skiing and night operations for Torontonians learning to ski.",
+      "tags": ["toronto", "urban", "city-operated", "beginner-friendly", "night-skiing", "affordable"]
+    },
+    {
+      "name": "Chicopee Ski Resort",
+      "slug": "chicopee",
+      "status": "active",
+      "location": { "lat": 43.4500, "lng": -80.5333 },
+      "nearestCity": "Kitchener",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 6,
+        "runsCount": 18,
+        "verticalDrop": 210,
+        "baseElevation": 1100,
+        "summitElevation": 1310,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.chicopee.ca",
+      "description": "Chicopee is a non-profit ski club in Kitchener-Waterloo, offering accessible skiing with extensive night operations. Known for excellent terrain parks and youth programs, it serves the Region of Waterloo community.",
+      "tags": ["non-profit", "kitchener-waterloo", "night-skiing", "terrain-parks", "youth-programs", "community"]
+    },
+    {
+      "name": "Glen Eden",
+      "slug": "glen-eden",
+      "status": "active",
+      "location": { "lat": 43.5083, "lng": -79.9333 },
+      "nearestCity": "Milton",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 9,
+        "runsCount": 13,
+        "verticalDrop": 330,
+        "baseElevation": 850,
+        "summitElevation": 1180,
+        "avgAnnualSnowfall": 80
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.gleneden.ca",
+      "description": "Glen Eden is part of Kelso Conservation Area in Milton, offering skiing on the Niagara Escarpment. With excellent terrain parks and night skiing, it's a popular after-work destination for GTA skiers.",
+      "tags": ["conservation-area", "niagara-escarpment", "night-skiing", "terrain-parks", "gta-accessible", "milton"]
+    },
+    {
+      "name": "Hockley Valley Resort",
+      "slug": "hockley-valley",
+      "status": "active",
+      "location": { "lat": 44.0167, "lng": -80.0167 },
+      "nearestCity": "Orangeville",
+      "stats": {
+        "skiableAcres": 55,
+        "liftsCount": 4,
+        "runsCount": 15,
+        "verticalDrop": 350,
+        "baseElevation": 1350,
+        "summitElevation": 1700,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.hockley.com",
+      "description": "Hockley Valley Resort is a full-service destination in the Headwaters region north of Toronto. The resort offers skiing, spa, golf, and dining, making it a popular weekend getaway.",
+      "tags": ["full-service-resort", "night-skiing", "spa", "golf", "headwaters", "weekend-getaway"]
+    },
+    {
+      "name": "Hidden Valley Highlands Ski Area",
+      "slug": "hidden-valley-highlands",
+      "status": "active",
+      "location": { "lat": 45.0333, "lng": -79.3333 },
+      "nearestCity": "Huntsville",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 5,
+        "runsCount": 15,
+        "verticalDrop": 325,
+        "baseElevation": 1100,
+        "summitElevation": 1425,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 30, "intermediate": 40, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skihiddenvalley.ca",
+      "description": "Hidden Valley Highlands is in Muskoka near Huntsville, offering family skiing in cottage country. The resort combines skiing with the Muskoka lifestyle, popular with families who own cottages in the region.",
+      "tags": ["muskoka", "cottage-country", "family-friendly", "night-skiing", "huntsville"]
+    },
+    {
+      "name": "Dagmar Ski Resort",
+      "slug": "dagmar",
+      "status": "active",
+      "location": { "lat": 43.9500, "lng": -79.0333 },
+      "nearestCity": "Uxbridge",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 4,
+        "runsCount": 18,
+        "verticalDrop": 228,
+        "baseElevation": 900,
+        "summitElevation": 1128,
+        "avgAnnualSnowfall": 85
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.dagmarresort.com",
+      "description": "Dagmar is east of Toronto in the Oak Ridges Moraine, offering accessible skiing with night operations. The family-oriented resort has strong youth programs and is close to eastern GTA communities.",
+      "tags": ["oak-ridges-moraine", "family-friendly", "night-skiing", "youth-programs", "eastern-gta"]
+    },
+    {
+      "name": "Devil's Elbow Ski Area",
+      "slug": "devils-elbow",
+      "status": "active",
+      "location": { "lat": 44.0333, "lng": -78.0667 },
+      "nearestCity": "Bethany",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 270,
+        "baseElevation": 800,
+        "summitElevation": 1070,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.devilselbow.com",
+      "description": "Devil's Elbow is in the Kawarthas near Peterborough, offering family skiing with night operations. The intimate setting and affordable prices make it popular with local families.",
+      "tags": ["kawarthas", "family-friendly", "night-skiing", "affordable", "peterborough-area"]
+    },
+    {
+      "name": "Mount Pakenham",
+      "slug": "mount-pakenham",
+      "status": "active",
+      "location": { "lat": 45.3167, "lng": -76.2833 },
+      "nearestCity": "Pakenham",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 4,
+        "runsCount": 15,
+        "verticalDrop": 280,
+        "baseElevation": 500,
+        "summitElevation": 780,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountpakenham.com",
+      "description": "Mount Pakenham serves the Ottawa Valley west of Ottawa, offering family skiing with night operations. The community-oriented ski area provides affordable skiing for rural Ottawa-area families.",
+      "tags": ["ottawa-valley", "family-friendly", "night-skiing", "affordable", "community"]
+    },
+    {
+      "name": "Batawa Ski Hill",
+      "slug": "batawa",
+      "status": "active",
+      "location": { "lat": 44.1500, "lng": -77.3500 },
+      "nearestCity": "Batawa",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 300,
+        "baseElevation": 500,
+        "summitElevation": 800,
+        "avgAnnualSnowfall": 110
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.batawaski.com",
+      "description": "Batawa is in the Quinte region near Trenton, offering family skiing with night operations. The historic Bata shoe company town's ski area serves the Bay of Quinte communities.",
+      "tags": ["quinte-region", "family-friendly", "night-skiing", "historic", "community"]
+    },
+    {
+      "name": "Skyloft Ski Resort",
+      "slug": "skyloft",
+      "status": "active",
+      "location": { "lat": 44.2500, "lng": -79.1500 },
+      "nearestCity": "Port Perry",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 3,
+        "runsCount": 11,
+        "verticalDrop": 240,
+        "baseElevation": 800,
+        "summitElevation": 1040,
+        "avgAnnualSnowfall": 95
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skyloft.ca",
+      "description": "Skyloft is north of Uxbridge on the Oak Ridges Moraine, offering family skiing close to the eastern GTA. Night skiing and terrain parks attract younger riders.",
+      "tags": ["oak-ridges-moraine", "family-friendly", "night-skiing", "terrain-parks", "eastern-gta"]
+    },
+    {
+      "name": "Snow Valley Barrie",
+      "slug": "snow-valley-barrie",
+      "status": "active",
+      "location": { "lat": 44.3500, "lng": -79.6833 },
+      "nearestCity": "Barrie",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 6,
+        "runsCount": 25,
+        "verticalDrop": 250,
+        "baseElevation": 850,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 100
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skisnowvalley.com",
+      "description": "Snow Valley is close to Barrie, offering excellent terrain parks and night skiing. The high-capacity lift system and accessible location make it popular with Toronto-area day trippers.",
+      "tags": ["barrie-area", "terrain-parks", "night-skiing", "toronto-accessible", "high-capacity-lifts"]
+    },
+    {
+      "name": "Beaver Valley Ski Club",
+      "slug": "beaver-valley",
+      "status": "active",
+      "location": { "lat": 44.5333, "lng": -80.4500 },
+      "nearestCity": "Thornbury",
+      "stats": {
+        "skiableAcres": 115,
+        "liftsCount": 4,
+        "runsCount": 18,
+        "verticalDrop": 500,
+        "baseElevation": 700,
+        "summitElevation": 1200,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.beavervalley.ca",
+      "description": "Beaver Valley is a private ski club near Thornbury on the Niagara Escarpment. Known for challenging terrain and racing programs, it's one of Ontario's premier private skiing destinations.",
+      "tags": ["private-club", "niagara-escarpment", "racing", "challenging-terrain", "thornbury"]
+    },
+    {
+      "name": "Craigleith Ski Club",
+      "slug": "craigleith",
+      "status": "active",
+      "location": { "lat": 44.5000, "lng": -80.3333 },
+      "nearestCity": "Collingwood",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 3,
+        "runsCount": 14,
+        "verticalDrop": 670,
+        "baseElevation": 620,
+        "summitElevation": 1290,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.craigleith.com",
+      "description": "Craigleith is a historic private ski club adjacent to Blue Mountain. One of Ontario's oldest ski clubs, it maintains a traditional atmosphere with excellent terrain on the Niagara Escarpment.",
+      "tags": ["private-club", "historic", "niagara-escarpment", "collingwood", "traditional"]
+    },
+    {
+      "name": "Osler Bluff Ski Club",
+      "slug": "osler-bluff",
+      "status": "active",
+      "location": { "lat": 44.5167, "lng": -80.3833 },
+      "nearestCity": "Collingwood",
+      "stats": {
+        "skiableAcres": 100,
+        "liftsCount": 3,
+        "runsCount": 20,
+        "verticalDrop": 740,
+        "baseElevation": 600,
+        "summitElevation": 1340,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 20, "intermediate": 40, "advanced": 40, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.oslerbluff.com",
+      "description": "Osler Bluff is a private ski club in the Collingwood area known for some of Ontario's most challenging terrain. The high-vertical private club attracts serious skiers seeking expert runs.",
+      "tags": ["private-club", "challenging-terrain", "high-vertical", "collingwood", "expert-runs"]
+    },
+    {
+      "name": "Alpine Ski Club",
+      "slug": "alpine-ski-club",
+      "status": "active",
+      "location": { "lat": 44.5083, "lng": -80.4167 },
+      "nearestCity": "Collingwood",
+      "stats": {
+        "skiableAcres": 70,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 600,
+        "baseElevation": 650,
+        "summitElevation": 1250,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.alpineskiclub.ca",
+      "description": "Alpine Ski Club is a private club in the Georgian Bay area, offering family skiing and racing programs. The traditional club atmosphere attracts multi-generational skiing families.",
+      "tags": ["private-club", "family-friendly", "racing", "georgian-bay", "traditional"]
+    },
+    {
+      "name": "Caledon Ski Club",
+      "slug": "caledon-ski-club",
+      "status": "active",
+      "location": { "lat": 43.9833, "lng": -80.0333 },
+      "nearestCity": "Caledon",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 250,
+        "baseElevation": 1300,
+        "summitElevation": 1550,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.caledonskiclub.com",
+      "description": "Caledon Ski Club is a private club northwest of Toronto, offering family skiing and racing programs. The close proximity to the GTA makes it convenient for member families.",
+      "tags": ["private-club", "family-friendly", "racing", "night-skiing", "gta-accessible"]
+    },
+    {
+      "name": "Mansfield Ski Club",
+      "slug": "mansfield-ski-club",
+      "status": "active",
+      "location": { "lat": 44.2000, "lng": -80.0167 },
+      "nearestCity": "Mansfield",
+      "stats": {
+        "skiableAcres": 65,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 370,
+        "baseElevation": 1350,
+        "summitElevation": 1720,
+        "avgAnnualSnowfall": 110
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mansfieldskiclub.com",
+      "description": "Mansfield Ski Club is a private family-oriented club in the Mulmur Hills. The close-knit community and terrain variety make it popular with families north of Toronto.",
+      "tags": ["private-club", "family-friendly", "mulmur-hills", "community"]
+    },
+    {
+      "name": "Brimacombe",
+      "slug": "brimacombe",
+      "status": "active",
+      "location": { "lat": 44.1000, "lng": -78.8667 },
+      "nearestCity": "Orono",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 4,
+        "runsCount": 20,
+        "verticalDrop": 220,
+        "baseElevation": 700,
+        "summitElevation": 920,
+        "avgAnnualSnowfall": 95
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.brimacombe.ca",
+      "description": "Brimacombe is in Durham Region east of Toronto, offering family skiing with night operations. The accessible location and terrain variety serve the eastern GTA communities.",
+      "tags": ["durham-region", "family-friendly", "night-skiing", "eastern-gta"]
+    },
+    {
+      "name": "Uplands Ski Centre",
+      "slug": "uplands",
+      "status": "active",
+      "location": { "lat": 43.9833, "lng": -78.7000 },
+      "nearestCity": "Thornhill",
+      "stats": {
+        "skiableAcres": 25,
+        "liftsCount": 3,
+        "runsCount": 8,
+        "verticalDrop": 200,
+        "baseElevation": 700,
+        "summitElevation": 900,
+        "avgAnnualSnowfall": 90
+      },
+      "terrain": { "beginner": 40, "intermediate": 40, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.uplandsgolfandski.ca",
+      "description": "Uplands is a small ski area east of Toronto offering family skiing and night operations. The golf club operates winter skiing, providing year-round recreation.",
+      "tags": ["family-friendly", "night-skiing", "beginner-friendly", "golf-club", "year-round"]
+    },
+    {
+      "name": "Adanac Ski Hill",
+      "slug": "adanac",
+      "status": "active",
+      "location": { "lat": 46.5333, "lng": -81.0167 },
+      "nearestCity": "Sudbury",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 3,
+        "runsCount": 12,
+        "verticalDrop": 190,
+        "baseElevation": 1000,
+        "summitElevation": 1190,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.adanac.ca",
+      "description": "Adanac serves Sudbury and northeastern Ontario, offering family skiing with night operations. The community ski area provides accessible winter recreation for Northern Ontario's largest city.",
+      "tags": ["sudbury", "northern-ontario", "family-friendly", "night-skiing", "community"]
+    },
+    {
+      "name": "Mount Jamieson Resort",
+      "slug": "mount-jamieson",
+      "status": "active",
+      "location": { "lat": 47.3333, "lng": -79.7000 },
+      "nearestCity": "Timmins",
+      "stats": {
+        "skiableAcres": 50,
+        "liftsCount": 3,
+        "runsCount": 15,
+        "verticalDrop": 450,
+        "baseElevation": 900,
+        "summitElevation": 1350,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountjamieson.ca",
+      "description": "Mount Jamieson serves Timmins and the Cochrane District in Northern Ontario. The resort offers good vertical and reliable snow for the remote northern communities.",
+      "tags": ["timmins", "northern-ontario", "night-skiing", "remote", "community"]
+    },
+    {
+      "name": "Antoine Mountain",
+      "slug": "antoine-mountain",
+      "status": "active",
+      "location": { "lat": 46.5667, "lng": -79.1167 },
+      "nearestCity": "Mattawa",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 3,
+        "runsCount": 16,
+        "verticalDrop": 620,
+        "baseElevation": 650,
+        "summitElevation": 1270,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.antoinemountain.com",
+      "description": "Antoine Mountain is in the Ottawa Valley near Mattawa, offering good vertical and night skiing. The resort serves communities along the TransCanada Highway between North Bay and Ottawa.",
+      "tags": ["ottawa-valley", "night-skiing", "mattawa", "transcanada", "good-vertical"]
+    },
+    {
+      "name": "Boler Mountain",
+      "slug": "boler-mountain",
+      "status": "active",
+      "location": { "lat": 42.9833, "lng": -81.3000 },
+      "nearestCity": "London",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 5,
+        "runsCount": 15,
+        "verticalDrop": 200,
+        "baseElevation": 800,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 75
+      },
+      "terrain": { "beginner": 30, "intermediate": 45, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bolermountain.com",
+      "description": "Boler Mountain serves London and Southwestern Ontario, offering city-accessible skiing with night operations. The community ski area provides winter recreation for the region.",
+      "tags": ["london", "southwestern-ontario", "night-skiing", "family-friendly", "community"]
+    },
+    {
+      "name": "Mount Baldy (Ontario)",
+      "slug": "mount-baldy-ontario",
+      "status": "active",
+      "location": { "lat": 48.7500, "lng": -89.1167 },
+      "nearestCity": "Thunder Bay",
+      "stats": {
+        "skiableAcres": 60,
+        "liftsCount": 3,
+        "runsCount": 14,
+        "verticalDrop": 480,
+        "baseElevation": 750,
+        "summitElevation": 1230,
+        "avgAnnualSnowfall": 170
+      },
+      "terrain": { "beginner": 25, "intermediate": 45, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.mountbaldy.ca",
+      "description": "Mount Baldy is near Thunder Bay, offering family skiing with lake-effect snow from Lake Superior. The community ski area provides winter recreation for Northwestern Ontario.",
+      "tags": ["thunder-bay", "lake-effect-snow", "northwestern-ontario", "family-friendly"]
+    },
+    {
+      "name": "Kamiskotia Snow Resort",
+      "slug": "kamiskotia",
+      "status": "active",
+      "location": { "lat": 48.6333, "lng": -81.5667 },
+      "nearestCity": "Timmins",
+      "stats": {
+        "skiableAcres": 35,
+        "liftsCount": 2,
+        "runsCount": 12,
+        "verticalDrop": 250,
+        "baseElevation": 850,
+        "summitElevation": 1100,
+        "avgAnnualSnowfall": 160
+      },
+      "terrain": { "beginner": 35, "intermediate": 40, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.kamiskotia.com",
+      "description": "Kamiskotia serves Timmins and the surrounding region, offering family skiing with night operations. The community resort provides accessible winter recreation for Northern Ontario.",
+      "tags": ["timmins", "northern-ontario", "night-skiing", "family-friendly", "community"]
+    },
+    {
+      "name": "Georgian Peaks Club",
+      "slug": "georgian-peaks",
+      "status": "active",
+      "location": { "lat": 44.5250, "lng": -80.3667 },
+      "nearestCity": "Thornbury",
+      "stats": {
+        "skiableAcres": 90,
+        "liftsCount": 4,
+        "runsCount": 16,
+        "verticalDrop": 720,
+        "baseElevation": 600,
+        "summitElevation": 1320,
+        "avgAnnualSnowfall": 130
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 35, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.georgianpeaks.ca",
+      "description": "Georgian Peaks is a private ski club near Thornbury with challenging terrain on the Niagara Escarpment. The club is known for strong racing programs and family skiing tradition.",
+      "tags": ["private-club", "racing", "niagara-escarpment", "thornbury", "challenging-terrain"]
+    },
+
+    {
+      "name": "Talisman Resort",
+      "slug": "talisman",
+      "status": "defunct",
+      "notes": "Closed in 2014, Beaver Valley resort that operated for decades before financial difficulties",
+      "yearsOperated": "1963-2014",
+      "location": { "lat": 44.55, "lng": -80.47 },
+      "tags": ["historic", "beaver-valley", "closed"]
+    },
+    {
+      "name": "Devil's Glen Country Club",
+      "slug": "devils-glen",
+      "status": "defunct",
+      "notes": "Private ski club that ceased operations; some facilities remain for golf",
+      "yearsOperated": "1960s-2000s",
+      "location": { "lat": 44.48, "lng": -80.32 },
+      "tags": ["historic", "private-club", "collingwood-area"]
+    },
+    {
+      "name": "Moonstone Ski Resort",
+      "slug": "moonstone",
+      "status": "defunct",
+      "notes": "Merged with Mt. St. Louis to form Mount St. Louis Moonstone",
+      "yearsOperated": "1960s-1980s",
+      "location": { "lat": 44.58, "lng": -79.48 },
+      "tags": ["merged", "now-mt-st-louis-moonstone"]
+    },
+    {
+      "name": "Big Thunder Ski Jump",
+      "slug": "big-thunder",
+      "status": "defunct",
+      "notes": "Historic ski jump facility in Thunder Bay, hosted major competitions",
+      "yearsOperated": "1970s-1990s",
+      "location": { "lat": 48.35, "lng": -89.35 },
+      "tags": ["historic", "ski-jumping", "thunder-bay", "competition-venue"]
+    },
+    {
+      "name": "Glen Manor Ski Club",
+      "slug": "glen-manor",
+      "status": "defunct",
+      "notes": "Former private ski club in the Collingwood area",
+      "yearsOperated": "1960s-1990s",
+      "location": { "lat": 44.5, "lng": -80.35 },
+      "tags": ["historic", "private-club", "collingwood-area"]
+    },
+    {
+      "name": "Kirby Ski Club",
+      "slug": "kirby",
+      "status": "defunct",
+      "notes": "Former small community ski club in Ontario",
+      "yearsOperated": "1970s-2000s",
+      "location": { "lat": 44.3, "lng": -79.5 },
+      "tags": ["historic", "community", "closed"]
+    }
+  ],
+  "meta": {
+    "source": ["epic-12-research", "onthesnow.com", "wikipedia", "resort-websites"],
+    "snapshotAt": "2025-11-27T01:30:00Z"
+  }
+}

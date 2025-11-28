@@ -1,0 +1,530 @@
+{
+  "country": "US",
+  "state": "Idaho",
+  "resorts": [
+    {
+      "name": "Sun Valley Resort",
+      "slug": "sun-valley",
+      "status": "active",
+      "location": { "lat": 43.6803, "lng": -114.3511 },
+      "nearestCity": "Ketchum",
+      "stats": {
+        "skiableAcres": 2154,
+        "liftsCount": 13,
+        "runsCount": 121,
+        "verticalDrop": 3400,
+        "baseElevation": 5750,
+        "summitElevation": 9150,
+        "avgAnnualSnowfall": 220
+      },
+      "terrain": { "beginner": 36, "intermediate": 42, "advanced": 14, "expert": 8 },
+      "passAffiliations": ["epic"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.sunvalley.com",
+      "description": "Sun Valley is America's first destination ski resort, opening in 1936 with the world's first chairlift. This legendary resort offers wide-open cruisers, a charming village, and world-class amenities that have attracted celebrities and ski enthusiasts for decades.",
+      "tags": ["epic-pass", "first-chairlift", "historic", "celebrity-destination", "luxury-resort", "ketchum"]
+    },
+    {
+      "name": "Schweitzer Mountain Resort",
+      "slug": "schweitzer",
+      "status": "active",
+      "location": { "lat": 48.3683, "lng": -116.6233 },
+      "nearestCity": "Sandpoint",
+      "stats": {
+        "skiableAcres": 2900,
+        "liftsCount": 9,
+        "runsCount": 92,
+        "verticalDrop": 2400,
+        "baseElevation": 4000,
+        "summitElevation": 6400,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 10, "intermediate": 40, "advanced": 35, "expert": 15 },
+      "passAffiliations": ["ikon"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.schweitzer.com",
+      "description": "Schweitzer is Idaho's largest ski resort, offering stunning views of Lake Pend Oreille and surrounding mountains. With terrain spanning two bowls and excellent powder snow, it's a hidden gem in the northern Idaho panhandle.",
+      "tags": ["ikon-pass", "largest-idaho", "lake-views", "two-bowls", "powder", "sandpoint"]
+    },
+    {
+      "name": "Tamarack Resort",
+      "slug": "tamarack",
+      "status": "active",
+      "location": { "lat": 44.7506, "lng": -116.1314 },
+      "nearestCity": "Donnelly",
+      "stats": {
+        "skiableAcres": 1100,
+        "liftsCount": 7,
+        "runsCount": 50,
+        "verticalDrop": 2800,
+        "baseElevation": 4900,
+        "summitElevation": 7700,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 15, "intermediate": 45, "advanced": 25, "expert": 15 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.tamarackidaho.com",
+      "description": "Tamarack Resort is a year-round destination on the shores of Lake Cascade, featuring excellent powder and a ski-in/ski-out village. After bankruptcy and closure, it reopened in 2011 and has been expanding ever since.",
+      "tags": ["indy-pass", "revived", "lake-cascade", "ski-in-ski-out", "four-season"]
+    },
+    {
+      "name": "Brundage Mountain",
+      "slug": "brundage-mountain",
+      "status": "active",
+      "location": { "lat": 45.0456, "lng": -116.1544 },
+      "nearestCity": "McCall",
+      "stats": {
+        "skiableAcres": 1920,
+        "liftsCount": 5,
+        "runsCount": 54,
+        "verticalDrop": 1800,
+        "baseElevation": 5840,
+        "summitElevation": 7640,
+        "avgAnnualSnowfall": 320
+      },
+      "terrain": { "beginner": 20, "intermediate": 55, "advanced": 15, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.brundage.com",
+      "description": "Brundage Mountain is known as 'Idaho's Powder Mountain,' famous for exceptional tree skiing and consistent powder. Near the charming town of McCall, it offers an authentic Idaho ski experience.",
+      "tags": ["indy-pass", "powder-mountain", "tree-skiing", "mccall", "consistent-snow"]
+    },
+    {
+      "name": "Bogus Basin",
+      "slug": "bogus-basin",
+      "status": "active",
+      "location": { "lat": 43.7628, "lng": -116.1017 },
+      "nearestCity": "Boise",
+      "stats": {
+        "skiableAcres": 2600,
+        "liftsCount": 9,
+        "runsCount": 91,
+        "verticalDrop": 1800,
+        "baseElevation": 5800,
+        "summitElevation": 7590,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 21, "intermediate": 37, "advanced": 27, "expert": 15 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": true,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.bogusbasin.org",
+      "description": "Bogus Basin is a nonprofit ski area just 16 miles from downtown Boise, offering extensive terrain and night skiing. As a community-owned resort, it provides affordable skiing with excellent facilities for Idaho's capital city.",
+      "tags": ["indy-pass", "nonprofit", "boise-accessible", "night-skiing", "community-owned"]
+    },
+    {
+      "name": "Silver Mountain Resort",
+      "slug": "silver-mountain",
+      "status": "active",
+      "location": { "lat": 47.5383, "lng": -116.1383 },
+      "nearestCity": "Kellogg",
+      "stats": {
+        "skiableAcres": 1600,
+        "liftsCount": 6,
+        "runsCount": 73,
+        "verticalDrop": 2200,
+        "baseElevation": 4100,
+        "summitElevation": 6300,
+        "avgAnnualSnowfall": 250
+      },
+      "terrain": { "beginner": 20, "intermediate": 45, "advanced": 25, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": true
+      },
+      "websiteUrl": "https://www.silvermt.com",
+      "description": "Silver Mountain Resort features the world's longest gondola (3.1 miles), whisking skiers from the historic mining town of Kellogg to the mountain. With an indoor waterpark and slopeside village, it's a complete family destination.",
+      "tags": ["indy-pass", "worlds-longest-gondola", "indoor-waterpark", "mining-history", "kellogg"]
+    },
+    {
+      "name": "Lookout Pass",
+      "slug": "lookout-pass",
+      "status": "active",
+      "location": { "lat": 47.4558, "lng": -115.7039 },
+      "nearestCity": "Wallace",
+      "stats": {
+        "skiableAcres": 540,
+        "liftsCount": 4,
+        "runsCount": 34,
+        "verticalDrop": 850,
+        "baseElevation": 4725,
+        "summitElevation": 5650,
+        "avgAnnualSnowfall": 400
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skilookout.com",
+      "description": "Lookout Pass straddles the Idaho-Montana border, receiving the most snowfall of any ski area in Idaho. Known for powder skiing and free ski school for kids, it offers exceptional value.",
+      "tags": ["indy-pass", "most-snow-idaho", "idaho-montana-border", "free-ski-school", "powder"]
+    },
+    {
+      "name": "Soldier Mountain",
+      "slug": "soldier-mountain",
+      "status": "active",
+      "location": { "lat": 43.4667, "lng": -114.8167 },
+      "nearestCity": "Fairfield",
+      "stats": {
+        "skiableAcres": 1150,
+        "liftsCount": 2,
+        "runsCount": 36,
+        "verticalDrop": 1425,
+        "baseElevation": 5950,
+        "summitElevation": 7175,
+        "avgAnnualSnowfall": 210
+      },
+      "terrain": { "beginner": 15, "intermediate": 55, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["indy"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.soldiermountain.com",
+      "description": "Soldier Mountain is a locals' secret with uncrowded slopes and affordable skiing. Revived in 2004 after bankruptcy, it offers excellent powder and a relaxed atmosphere in the Soldier Mountains.",
+      "tags": ["indy-pass", "uncrowded", "revived", "affordable", "locals-secret"]
+    },
+    {
+      "name": "Pomerelle Mountain Resort",
+      "slug": "pomerelle",
+      "status": "active",
+      "location": { "lat": 42.0711, "lng": -113.6133 },
+      "nearestCity": "Albion",
+      "stats": {
+        "skiableAcres": 500,
+        "liftsCount": 3,
+        "runsCount": 24,
+        "verticalDrop": 1000,
+        "baseElevation": 7280,
+        "summitElevation": 8762,
+        "avgAnnualSnowfall": 260
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 20, "expert": 10 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.pomerelle.com",
+      "description": "Pomerelle Mountain Resort is southern Idaho's highest ski area, located in the Sawtooth National Forest. Known for consistent powder and a family-friendly atmosphere, it serves the Twin Falls region.",
+      "tags": ["southern-idaho", "highest-south-idaho", "night-skiing", "twin-falls-accessible", "family-friendly"]
+    },
+    {
+      "name": "Magic Mountain",
+      "slug": "magic-mountain-id",
+      "status": "active",
+      "location": { "lat": 43.2892, "lng": -114.3089 },
+      "nearestCity": "Kimberly",
+      "stats": {
+        "skiableAcres": 120,
+        "liftsCount": 2,
+        "runsCount": 24,
+        "verticalDrop": 700,
+        "baseElevation": 6600,
+        "summitElevation": 7300,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 20, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.magicmountainresort.com",
+      "description": "Magic Mountain is a small, family-oriented ski area near Twin Falls. With affordable prices and uncrowded slopes, it's perfect for families and beginners in the Magic Valley region.",
+      "tags": ["family-friendly", "affordable", "uncrowded", "magic-valley", "twin-falls-area"]
+    },
+    {
+      "name": "Kelly Canyon Ski Area",
+      "slug": "kelly-canyon",
+      "status": "active",
+      "location": { "lat": 43.5000, "lng": -111.5667 },
+      "nearestCity": "Ririe",
+      "stats": {
+        "skiableAcres": 640,
+        "liftsCount": 4,
+        "runsCount": 26,
+        "verticalDrop": 938,
+        "baseElevation": 5800,
+        "summitElevation": 6618,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skikelly.com",
+      "description": "Kelly Canyon Ski Area serves eastern Idaho with affordable skiing and extensive night operations. Family-owned since 1961, it's a community favorite near Idaho Falls.",
+      "tags": ["family-owned", "night-skiing", "affordable", "idaho-falls-area", "since-1961"]
+    },
+    {
+      "name": "Pebble Creek Ski Area",
+      "slug": "pebble-creek",
+      "status": "active",
+      "location": { "lat": 42.5167, "lng": -112.0833 },
+      "nearestCity": "Inkom",
+      "stats": {
+        "skiableAcres": 1100,
+        "liftsCount": 3,
+        "runsCount": 54,
+        "verticalDrop": 2100,
+        "baseElevation": 6500,
+        "summitElevation": 8600,
+        "avgAnnualSnowfall": 300
+      },
+      "terrain": { "beginner": 15, "intermediate": 40, "advanced": 30, "expert": 15 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": true,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.pebblecreekskiarea.com",
+      "description": "Pebble Creek Ski Area is a hidden gem near Pocatello with surprising vertical and challenging terrain. Known for steep chutes and excellent powder, it's a favorite of advanced skiers.",
+      "tags": ["hidden-gem", "steep-terrain", "powder", "pocatello-area", "challenging"]
+    },
+    {
+      "name": "Snowhaven",
+      "slug": "snowhaven",
+      "status": "active",
+      "location": { "lat": 44.4000, "lng": -116.0167 },
+      "nearestCity": "Council",
+      "stats": {
+        "skiableAcres": 55,
+        "liftsCount": 2,
+        "runsCount": 15,
+        "verticalDrop": 500,
+        "baseElevation": 5500,
+        "summitElevation": 6000,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 15, "expert": 5 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.snowhaven.org",
+      "description": "Snowhaven is a nonprofit community ski area near Council, operating since 1940. Run entirely by volunteers, it offers affordable skiing for families in the remote mountains of western Idaho.",
+      "tags": ["nonprofit", "volunteer-run", "community-owned", "affordable", "since-1940"]
+    },
+    {
+      "name": "Cottonwood Butte",
+      "slug": "cottonwood-butte",
+      "status": "active",
+      "location": { "lat": 46.0167, "lng": -116.3667 },
+      "nearestCity": "Cottonwood",
+      "stats": {
+        "skiableAcres": 30,
+        "liftsCount": 2,
+        "runsCount": 10,
+        "verticalDrop": 600,
+        "baseElevation": 4000,
+        "summitElevation": 4600,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 30, "intermediate": 50, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cottonwoodbutte.org",
+      "description": "Cottonwood Butte is a tiny nonprofit community ski area in Idaho County. With extremely affordable lift tickets, it serves families in the remote Camas Prairie region.",
+      "tags": ["nonprofit", "community-hill", "most-affordable", "camas-prairie", "night-skiing"]
+    },
+    {
+      "name": "Little Ski Hill",
+      "slug": "little-ski-hill",
+      "status": "active",
+      "location": { "lat": 44.9000, "lng": -116.1333 },
+      "nearestCity": "McCall",
+      "stats": {
+        "skiableAcres": 20,
+        "liftsCount": 2,
+        "runsCount": 6,
+        "verticalDrop": 405,
+        "baseElevation": 5100,
+        "summitElevation": 5505,
+        "avgAnnualSnowfall": 200
+      },
+      "terrain": { "beginner": 40, "intermediate": 50, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.littleskihill.org",
+      "description": "Little Ski Hill is a nonprofit community ski area in McCall, perfect for beginners and families. Operating since 1937, it's one of Idaho's oldest ski areas and offers affordable night skiing.",
+      "tags": ["nonprofit", "historic", "beginner-friendly", "night-skiing", "mccall", "since-1937"]
+    },
+    {
+      "name": "Bear Gulch",
+      "slug": "bear-gulch",
+      "status": "active",
+      "location": { "lat": 43.7500, "lng": -113.2333 },
+      "nearestCity": "Ashton",
+      "stats": {
+        "skiableAcres": 12,
+        "liftsCount": 1,
+        "runsCount": 5,
+        "verticalDrop": 250,
+        "baseElevation": 5700,
+        "summitElevation": 5950,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 50, "intermediate": 40, "advanced": 10, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.cityofashton.com",
+      "description": "Bear Gulch is a tiny municipal ski area in Ashton near Yellowstone. With just one T-bar lift, it's Idaho's smallest ski area but offers affordable family skiing near the national park.",
+      "tags": ["municipal", "smallest-idaho", "near-yellowstone", "t-bar", "affordable"]
+    },
+
+    {
+      "name": "Bald Mountain (defunct)",
+      "slug": "bald-mountain-id",
+      "status": "defunct",
+      "location": { "lat": 43.8333, "lng": -115.5000 },
+      "nearestCity": "Pierce",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Small community ski area in the Boise National Forest that closed due to access issues and financial challenges.",
+      "tags": ["boise-national-forest", "community-hill"]
+    },
+    {
+      "name": "Jackass Ski Bowl",
+      "slug": "jackass-ski-bowl",
+      "status": "defunct",
+      "location": { "lat": 43.5833, "lng": -115.0833 },
+      "nearestCity": "Idaho City",
+      "yearsOperated": "1950s-1980s",
+      "notes": "Early ski area near Idaho City that was popular with Boise skiers before Bogus Basin expanded. Known for its colorful name.",
+      "tags": ["boise-area", "historic", "colorful-name"]
+    },
+    {
+      "name": "Midas Gold Ski Area",
+      "slug": "midas-gold-ski-area",
+      "status": "defunct",
+      "location": { "lat": 44.8333, "lng": -115.9833 },
+      "nearestCity": "Yellow Pine",
+      "yearsOperated": "1940s-1960s",
+      "notes": "Mining-era ski area in the remote backcountry of central Idaho. Closed when mining declined and access roads deteriorated.",
+      "tags": ["mining-era", "remote", "backcountry"]
+    },
+    {
+      "name": "Dollar Mountain",
+      "slug": "dollar-mountain",
+      "status": "defunct",
+      "location": { "lat": 43.6833, "lng": -114.3500 },
+      "nearestCity": "Sun Valley",
+      "yearsOperated": "1936-present (integrated)",
+      "notes": "Original Sun Valley ski area that still operates as the resort's beginner/family mountain. Now part of Sun Valley Resort rather than a separate area.",
+      "tags": ["sun-valley", "integrated", "beginner-mountain"]
+    },
+    {
+      "name": "Skyline Ski Area",
+      "slug": "skyline-ski-area-id",
+      "status": "defunct",
+      "location": { "lat": 42.1833, "lng": -111.2833 },
+      "nearestCity": "Pocatello",
+      "yearsOperated": "1960s-1990s",
+      "notes": "Small community ski area near Pocatello that closed as Pebble Creek became the dominant area.",
+      "tags": ["pocatello-area", "community-hill"]
+    },
+    {
+      "name": "North-South Ski Bowl",
+      "slug": "north-south-ski-bowl",
+      "status": "defunct",
+      "location": { "lat": 43.7333, "lng": -116.1500 },
+      "nearestCity": "Boise",
+      "yearsOperated": "1940s-1970s",
+      "notes": "Early Boise-area ski area that was absorbed by Bogus Basin's expansion. Located on adjacent terrain.",
+      "tags": ["boise-area", "absorbed-bogus-basin", "early-ski-area"]
+    },
+    {
+      "name": "Rotarun",
+      "slug": "rotarun",
+      "status": "defunct",
+      "location": { "lat": 43.6500, "lng": -114.3667 },
+      "nearestCity": "Hailey",
+      "yearsOperated": "1940s-1990s",
+      "notes": "Small community ski area near Sun Valley that served locals seeking an alternative to the resort. Closed due to liability concerns.",
+      "tags": ["sun-valley-alternative", "community-hill", "hailey"]
+    }
+  ],
+  "meta": {
+    "totalActive": 16,
+    "totalDefunct": 7,
+    "lastUpdated": "2025-01-15"
+  }
+}

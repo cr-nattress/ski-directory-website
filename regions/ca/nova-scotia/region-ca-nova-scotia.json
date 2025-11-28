@@ -1,0 +1,140 @@
+{
+  "country": "CA",
+  "province": "Nova Scotia",
+  "resorts": [
+    {
+      "name": "Ski Martock",
+      "slug": "ski-martock",
+      "status": "active",
+      "location": { "lat": 44.9167, "lng": -64.1167 },
+      "nearestCity": "Windsor",
+      "stats": {
+        "skiableAcres": 45,
+        "liftsCount": 4,
+        "runsCount": 23,
+        "verticalDrop": 600,
+        "baseElevation": 150,
+        "summitElevation": 750,
+        "avgAnnualSnowfall": 120
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.martock.com",
+      "description": "Ski Martock is Nova Scotia's largest and most popular ski area, conveniently located between Halifax and Windsor. The area offers reliable snowmaking and night skiing, making it the primary destination for Halifax-area skiers.",
+      "tags": ["largest-nova-scotia", "halifax-area", "night-skiing", "family-friendly"]
+    },
+    {
+      "name": "Ski Wentworth",
+      "slug": "ski-wentworth",
+      "status": "active",
+      "location": { "lat": 45.5833, "lng": -63.5500 },
+      "nearestCity": "Wentworth",
+      "stats": {
+        "skiableAcres": 80,
+        "liftsCount": 4,
+        "runsCount": 33,
+        "verticalDrop": 800,
+        "baseElevation": 200,
+        "summitElevation": 1000,
+        "avgAnnualSnowfall": 180
+      },
+      "terrain": { "beginner": 20, "intermediate": 50, "advanced": 30, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skiwentworth.ca",
+      "description": "Ski Wentworth offers the most terrain and vertical in Nova Scotia, located in the Cobequid Mountains. The higher elevation and interior location bring excellent natural snowfall, making it the most reliable snow in the province.",
+      "tags": ["most-terrain-nova-scotia", "cobequid-mountains", "natural-snow", "night-skiing"]
+    },
+    {
+      "name": "Ski Ben Eoin",
+      "slug": "ski-ben-eoin",
+      "status": "active",
+      "location": { "lat": 46.0000, "lng": -60.5333 },
+      "nearestCity": "Ben Eoin",
+      "stats": {
+        "skiableAcres": 40,
+        "liftsCount": 4,
+        "runsCount": 19,
+        "verticalDrop": 700,
+        "baseElevation": 50,
+        "summitElevation": 750,
+        "avgAnnualSnowfall": 150
+      },
+      "terrain": { "beginner": 25, "intermediate": 50, "advanced": 25, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": true,
+        "hasHalfpipe": false,
+        "hasNightSkiing": true,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skibeneoin.com",
+      "description": "Ski Ben Eoin serves Cape Breton Island from a scenic location overlooking the Bras d'Or Lake. The area offers the only alpine skiing on Cape Breton and features excellent natural snow from Atlantic systems.",
+      "tags": ["cape-breton", "bras-dor-lake", "scenic", "night-skiing", "atlantic-snow"]
+    },
+    {
+      "name": "Ski Tuonela",
+      "slug": "ski-tuonela",
+      "status": "active",
+      "location": { "lat": 45.6000, "lng": -63.8000 },
+      "nearestCity": "Tatamagouche",
+      "stats": {
+        "skiableAcres": 15,
+        "liftsCount": 2,
+        "runsCount": 8,
+        "verticalDrop": 300,
+        "baseElevation": 150,
+        "summitElevation": 450,
+        "avgAnnualSnowfall": 140
+      },
+      "terrain": { "beginner": 35, "intermediate": 45, "advanced": 20, "expert": 0 },
+      "passAffiliations": ["local"],
+      "features": {
+        "hasPark": false,
+        "hasHalfpipe": false,
+        "hasNightSkiing": false,
+        "hasBackcountryAccess": false,
+        "hasSpaVillage": false
+      },
+      "websiteUrl": "https://www.skituonela.com",
+      "description": "Ski Tuonela is a small community ski area near Tatamagouche serving the Northumberland Shore region. The Finnish-themed area offers affordable skiing for local families.",
+      "tags": ["community-area", "tatamagouche", "finnish-heritage", "affordable"]
+    },
+
+    {
+      "name": "Cape Smokey Ski Area",
+      "slug": "cape-smokey",
+      "status": "defunct",
+      "location": { "lat": 46.6333, "lng": -60.6167 },
+      "nearestCity": "Ingonish",
+      "yearClosed": 1970,
+      "description": "Cape Smokey was a ski area on the iconic Cabot Trail that operated until around 1970. The area featured spectacular ocean views but closed due to limited access and economic challenges.",
+      "tags": ["closed", "cabot-trail", "ocean-views", "historic"]
+    },
+    {
+      "name": "Keltic Lodge Ski Area",
+      "slug": "keltic-lodge",
+      "status": "defunct",
+      "location": { "lat": 46.6500, "lng": -60.6000 },
+      "nearestCity": "Ingonish",
+      "yearClosed": 1985,
+      "description": "Keltic Lodge operated a small ski area as part of its resort amenities in Cape Breton Highlands. The ski operations ended in the mid-1980s, though the lodge continues as a summer resort.",
+      "tags": ["closed", "resort-amenity", "ingonish", "cape-breton-highlands"]
+    }
+  ],
+  "meta": { "source": ["web-research", "onthesnow", "resort-websites"], "snapshotAt": "2025-11-28T00:00:00Z" }
+}
