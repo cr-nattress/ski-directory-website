@@ -320,6 +320,40 @@ Populate complete data models for all ski resorts and areas across North America
 
 ---
 
+### Epic 13: GCP Cloud Storage Setup for Resort Assets
+**Status:** Ready
+**Priority:** High
+**Effort:** Medium
+
+Set up Google Cloud Platform (GCP) Cloud Storage infrastructure for hosting resort assets (images, trail maps, logos, documents) with public read access for website delivery and admin access for internal tools.
+
+**User Stories:** 12
+📁 [View Epic Details](./epic-13-gcp-cloud-storage/user-stories.md)
+📄 [GCP Setup Guide](../GCP-SETUP.md)
+
+**Key Features:**
+- Single production bucket: `gs://sda-assets-prod`
+- US multi-region for low latency
+- Public read access for website asset delivery
+- Admin service account for internal tools
+- CORS configuration for browser access
+- Lifecycle rules for cost optimization
+- Object versioning for recovery
+
+**Phases:**
+- Phase 1: GCP project setup and authentication
+- Phase 2: Bucket creation and configuration
+- Phase 3: Bucket policies (CORS, lifecycle)
+- Phase 4: Initial data migration
+- Phase 5: Migration tooling design (future implementation)
+
+**Prerequisites:**
+- Google Cloud project with billing enabled
+- Google Cloud SDK installed (`gcloud`, `gsutil`)
+- IAM permissions to create buckets and service accounts
+
+---
+
 ## Implementation Order (Recommended)
 
 1. **Epic 1** - Remove List Your Property Button (Quick win, cleanup)
@@ -334,15 +368,16 @@ Populate complete data models for all ski resorts and areas across North America
 10. **Epic 8** - Ski Links Directory Page (New page, external resources hub)
 11. **Epic 9** - Social Media Links Directory Page (New page, social accounts hub)
 12. **Epic 12** - National & International Resort Data Population (Massive data effort, expands coverage)
+13. **Epic 13** - GCP Cloud Storage Setup (Infrastructure for scalable asset hosting)
 
 ## Total Effort Estimate
 - **Small:** 2 epics (Epics 1, 5)
-- **Medium:** 3 epics (Epics 2, 3, 10)
+- **Medium:** 4 epics (Epics 2, 3, 10, 13)
 - **Large:** 5 epics (Epics 4, 6, 7, 8, 9)
 - **X-Large:** 1 epic (Epic 11)
 - **XX-Large:** 1 epic (Epic 12)
 
-**Total User Stories:** 202
+**Total User Stories:** 214
 
 ---
 
@@ -354,6 +389,7 @@ Populate complete data models for all ski resorts and areas across North America
 - Epic 10 implements critical SEO infrastructure for search engine visibility
 - Epic 11 populates data for all 76 Colorado ski resorts and areas (33 active + 43 lost)
 - Epic 12 expands coverage to 832 additional resorts across 48 states/provinces (590 active + 242 lost)
+- Epic 13 sets up GCP Cloud Storage for scalable asset hosting
 - Consider implementing in batches for iterative releases
 - Weather API will require API key and cost consideration
 - Trail map assets need to be sourced for each resort
@@ -362,3 +398,71 @@ Populate complete data models for all ski resorts and areas across North America
 - SEO implementation requires `NEXT_PUBLIC_BASE_URL` environment variable
 - Resort data population (Epics 11 & 12) is a prerequisite for comprehensive directory coverage
 - Epic 12 priority tiers: Tier 1 (UT, CA, VT, WY, MT, WA), Tier 2 (BC, AB, QC, ON), Tier 3 (ID, OR, NH, NY, PA, MI, WI, MN)
+- GCP Cloud Storage (Epic 13) requires Google Cloud project with billing enabled
+
+---
+
+### Epic 14: Initial Resort Asset Migration
+**Status:** Complete
+**Priority:** High
+**Effort:** Medium
+
+Migrate local ski resort images and assets to GCP Cloud Storage, establishing cloud-hosted asset delivery for the application.
+
+**User Stories:** 10
+📁 [View Migration Plan](../MIGRATION-PLAN.md)
+📄 [GCP Project Info](../GCP-PROJECT-INFO.md)
+
+**Key Features:**
+- Migrated 10 local images for 6 Colorado resorts
+- Created asset manifest files for each resort
+- Set up GCS URL helper utilities
+- Updated resort data with GCS references
+- Created ResortImage component with fallback support
+
+**Completed Tasks:**
+- Created staging directory structure
+- Uploaded assets to `gs://sda-assets-prod`
+- Set Cache-Control headers (1 year for images, 5 min for JSON)
+- Updated resorts.ts with GCS URLs
+- Verified public URL access
+
+---
+
+### Epic 15: National Resort Data Migration to GCP Cloud Storage
+**Status:** Ready
+**Priority:** High
+**Effort:** Large
+
+Migrate all US and Canadian ski resort data models and JSON files to GCP Cloud Storage, establishing a scalable cloud-hosted data layer.
+
+**User Stories:** 20
+📁 [View Epic Details](./epic-15-national-data-migration/README.md)
+
+**Key Features:**
+- Migrate resort data for 16 states/provinces
+- ~74 active resorts across US and Canada
+- Create reusable migration script
+- Generate region indexes and metadata
+- Update application to fetch from GCS
+
+**Phase Breakdown:**
+- Phase 1: US Western Region (CO, CA, UT, AK, AZ, ID, MT, NV, NM, WY)
+- Phase 2: US Eastern Region (VT, AL)
+- Phase 3: Canada (BC, AB, ON, QC)
+- Phase 4: Infrastructure & Tooling
+
+**Story Index:**
+| Story | State/Province | Resorts | Priority |
+|-------|---------------|---------|----------|
+| 15.1 | Colorado | 76 | High |
+| 15.2 | California | 26 | High |
+| 15.3 | Utah | 6 | High |
+| 15.4-15.10 | Other US States | 20 | Medium |
+| 15.11-15.12 | Eastern US | 6 | Medium-Low |
+| 15.13-15.16 | Canada | 9 | High-Medium |
+| 15.17-15.20 | Infrastructure | - | High-Medium |
+
+**Dependencies:**
+- Epic 13: GCP Infrastructure ✅
+- Epic 14: Initial Asset Migration ✅

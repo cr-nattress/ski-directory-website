@@ -41,14 +41,16 @@ export const mockResorts: Resort[] = [
     reviewCount: 2347,
     heroImage: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800',
     images: [
-      { url: '/images/vail-listing.jpg', alt: 'Vail Ski Resort mountain view', priority: 1, isCardImage: true, isHeroImage: false },
+      { url: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/vail/images/card.jpg', alt: 'Vail Ski Resort mountain view', priority: 1, isCardImage: true, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Vail Back Bowls panorama', priority: 2, isCardImage: false, isHeroImage: true },
       { url: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800', alt: 'Vail Village at sunset', priority: 3, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Skiers on Vail slopes', priority: 4, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Vail gondola lift', priority: 5, isCardImage: false, isHeroImage: false },
     ],
-    trailMapUrl: '/images/vail-trailmap.jpg',
+    trailMapUrl: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/vail/trailmaps/current.jpg',
     websiteUrl: 'https://www.vail.com',
+    assetLocation: { country: 'us', state: 'colorado', slug: 'vail' },
+    hasGcsAssets: true,
     weather: {
       current: {
         temp: 28,
@@ -215,14 +217,16 @@ export const mockResorts: Resort[] = [
     reviewCount: 3142,
     heroImage: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800',
     images: [
-      { url: '/images/breckenridge-listing.jpg', alt: 'Breckenridge Ski Resort peaks', priority: 1, isCardImage: true, isHeroImage: false },
+      { url: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/breckenridge/images/card.jpg', alt: 'Breckenridge Ski Resort peaks', priority: 1, isCardImage: true, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800', alt: 'Breckenridge historic Main Street', priority: 2, isCardImage: false, isHeroImage: true },
       { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Breckenridge ski runs', priority: 3, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Breckenridge gondola', priority: 4, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Breckenridge powder skiing', priority: 5, isCardImage: false, isHeroImage: false },
     ],
-    trailMapUrl: '/images/breckenridge-trailmap.jpg',
+    trailMapUrl: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/breckenridge/trailmaps/current.jpg',
     websiteUrl: 'https://www.breckenridge.com',
+    assetLocation: { country: 'us', state: 'colorado', slug: 'breckenridge' },
+    hasGcsAssets: true,
     weather: {
       current: {
         temp: 26,
@@ -392,13 +396,15 @@ export const mockResorts: Resort[] = [
     reviewCount: 1456,
     heroImage: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800',
     images: [
-      { url: '/images/snowmass-listing.jpg', alt: 'Snowmass mountain landscape', priority: 1, isCardImage: true, isHeroImage: false },
+      { url: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/snowmass/images/card.jpg', alt: 'Snowmass mountain landscape', priority: 1, isCardImage: true, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Snowmass Village', priority: 2, isCardImage: false, isHeroImage: true },
       { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Big Burn powder field', priority: 3, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Snowmass powder day', priority: 4, isCardImage: false, isHeroImage: false },
     ],
-    trailMapUrl: '/images/snowmass-trailmap.jpg',
+    trailMapUrl: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/snowmass/trailmaps/current.jpg',
     websiteUrl: 'https://www.aspensnowmass.com/four-mountains/snowmass',
+    assetLocation: { country: 'us', state: 'colorado', slug: 'snowmass' },
+    hasGcsAssets: true,
     weather: {
       current: {
         temp: 24,
@@ -618,14 +624,16 @@ export const mockResorts: Resort[] = [
     reviewCount: 1654,
     heroImage: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800',
     images: [
-      { url: '/images/steamboat-listing.jpg', alt: 'Steamboat Resort Champagne Powder', priority: 1, isCardImage: true, isHeroImage: false },
-      { url: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=800', alt: 'Steamboat Springs town', priority: 2, isCardImage: false, isHeroImage: true },
+      { url: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/steamboat/images/card.jpg', alt: 'Steamboat Resort Champagne Powder', priority: 1, isCardImage: true, isHeroImage: false },
+      { url: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/steamboat/images/hero.jpg', alt: 'Steamboat Springs town and mountain', priority: 2, isCardImage: false, isHeroImage: true },
       { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Steamboat gondola ride', priority: 3, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Steamboat tree skiing', priority: 4, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Steamboat hot springs', priority: 5, isCardImage: false, isHeroImage: false },
     ],
     trailMapUrl: 'https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?w=1200',
     websiteUrl: 'https://www.steamboat.com',
+    assetLocation: { country: 'us', state: 'colorado', slug: 'steamboat' },
+    hasGcsAssets: true,
     weather: {
       current: {
         temp: 22,
@@ -1274,7 +1282,7 @@ export const mockResorts: Resort[] = [
     reviewCount: 1432,
     heroImage: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800',
     images: [
-      { url: '/images/beavercreek-listing.jpg', alt: 'Beaver Creek Resort village', priority: 1, isCardImage: true, isHeroImage: false },
+      { url: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/beaver-creek/images/card.jpg', alt: 'Beaver Creek Resort village', priority: 1, isCardImage: true, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800', alt: 'Beaver Creek slopes', priority: 2, isCardImage: false, isHeroImage: true },
       { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Beaver Creek groomed runs', priority: 3, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800', alt: 'Beaver Creek village center', priority: 4, isCardImage: false, isHeroImage: false },
@@ -1282,6 +1290,8 @@ export const mockResorts: Resort[] = [
     ],
     trailMapUrl: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1200',
     websiteUrl: 'https://www.beavercreek.com',
+    assetLocation: { country: 'us', state: 'colorado', slug: 'beaver-creek' },
+    hasGcsAssets: true,
     weather: {
       current: {
         temp: 26,
@@ -1444,7 +1454,7 @@ export const mockResorts: Resort[] = [
     reviewCount: 1087,
     heroImage: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800',
     images: [
-      { url: '/images/crestedbutte-listing.jpg', alt: 'Crested Butte mountain view', priority: 1, isCardImage: true, isHeroImage: false },
+      { url: 'https://storage.googleapis.com/sda-assets-prod/resorts/us/colorado/crested-butte/images/card.jpg', alt: 'Crested Butte mountain view', priority: 1, isCardImage: true, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=800', alt: 'Crested Butte downtown', priority: 2, isCardImage: false, isHeroImage: true },
       { url: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800', alt: 'Crested Butte extreme terrain', priority: 3, isCardImage: false, isHeroImage: false },
       { url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800', alt: 'Crested Butte slopes', priority: 4, isCardImage: false, isHeroImage: false },
@@ -1452,6 +1462,8 @@ export const mockResorts: Resort[] = [
     ],
     trailMapUrl: 'https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=1200',
     websiteUrl: 'https://www.skicb.com',
+    assetLocation: { country: 'us', state: 'colorado', slug: 'crested-butte' },
+    hasGcsAssets: true,
     weather: {
       current: {
         temp: 22,

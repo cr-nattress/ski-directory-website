@@ -101,6 +101,14 @@ export interface Resort {
   // Website
   websiteUrl?: string;
 
+  // GCS Asset Location (for resorts with cloud-hosted assets)
+  assetLocation?: {
+    country: string; // e.g., 'us'
+    state: string; // e.g., 'colorado'
+    slug: string; // matches resort slug
+  };
+  hasGcsAssets?: boolean; // true if assets are hosted on GCS
+
   // Social Media
   socialMedia?: {
     facebook?: string;

@@ -1,0 +1,24 @@
+# Service account keys - NEVER commit these
+gcp/service-account-key.json
+**/service-account-key.json
+*.key.json
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+.next/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

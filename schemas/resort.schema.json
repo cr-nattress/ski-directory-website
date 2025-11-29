@@ -1,0 +1,265 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sda-assets-prod.storage.googleapis.com/schemas/resort.schema.json",
+  "title": "Resort",
+  "description": "Schema for ski resort data in the State Ski Resort Directory",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "name",
+    "country",
+    "countryName",
+    "state",
+    "stateName",
+    "status",
+    "isActive",
+    "isLost",
+    "assetLocation",
+    "lastUpdated"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier in format 'resort:{slug}'",
+      "pattern": "^resort:[a-z0-9-]+$",
+      "examples": ["resort:vail", "resort:whistler-blackcomb"]
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly identifier (lowercase, hyphens, no spaces)",
+      "pattern": "^[a-z0-9-]+$",
+      "examples": ["vail", "mammoth-mountain", "mont-tremblant"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Official resort name",
+      "minLength": 1,
+      "examples": ["Vail Ski Resort", "Mammoth Mountain", "Whistler Blackcomb"]
+    },
+    "country": {
+      "type": "string",
+      "description": "Two-letter country code (lowercase)",
+      "enum": ["us", "ca"],
+      "examples": ["us", "ca"]
+    },
+    "countryName": {
+      "type": "string",
+      "description": "Full country name",
+      "enum": ["United States", "Canada"]
+    },
+    "state": {
+      "type": "string",
+      "description": "State/province slug (lowercase, hyphens)",
+      "pattern": "^[a-z-]+$",
+      "examples": ["colorado", "california", "british-columbia", "quebec"]
+    },
+    "stateName": {
+      "type": "string",
+      "description": "Full state/province name",
+      "examples": ["Colorado", "California", "British Columbia", "Quebec"]
+    },
+    "status": {
+      "type": "string",
+      "description": "Operating status of the resort",
+      "enum": ["active", "defunct"]
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "True if resort is currently operating (status === 'active')"
+    },
+    "isLost": {
+      "type": "boolean",
+      "description": "True if resort is no longer operating (status === 'defunct')"
+    },
+    "location": {
+      "type": "object",
+      "description": "Geographic coordinates of the resort",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude in decimal degrees",
+          "minimum": -90,
+          "maximum": 90,
+          "examples": [39.6403, 37.6308]
+        },
+        "lng": {
+          "type": "number",
+          "description": "Longitude in decimal degrees",
+          "minimum": -180,
+          "maximum": 180,
+          "examples": [-106.3742, -119.0326]
+        }
+      },
+      "required": ["lat", "lng"]
+    },
+    "nearestCity": {
+      "type": "string",
+      "description": "Nearest major city or town for reference",
+      "examples": ["Denver", "San Francisco", "Vancouver"]
+    },
+    "stats": {
+      "type": "object",
+      "description": "Resort statistics and measurements",
+      "properties": {
+        "skiableAcres": {
+          "type": "number",
+          "description": "Total skiable terrain in acres",
+          "minimum": 0,
+          "examples": [5317, 3500, 1000]
+        },
+        "liftsCount": {
+          "type": "integer",
+          "description": "Total number of ski lifts",
+          "minimum": 0,
+          "examples": [31, 28, 12]
+        },
+        "runsCount": {
+          "type": "integer",
+          "description": "Total number of marked runs/trails",
+          "minimum": 0,
+          "examples": [195, 150, 80]
+        },
+        "verticalDrop": {
+          "type": "number",
+          "description": "Vertical drop in feet",
+          "minimum": 0,
+          "examples": [3450, 3100, 2500]
+        },
+        "baseElevation": {
+          "type": "number",
+          "description": "Base elevation in feet above sea level",
+          "minimum": 0,
+          "examples": [8120, 7953, 6800]
+        },
+        "summitElevation": {
+          "type": "number",
+          "description": "Summit elevation in feet above sea level",
+          "minimum": 0,
+          "examples": [11570, 11053, 9300]
+        },
+        "avgAnnualSnowfall": {
+          "type": "number",
+          "description": "Average annual snowfall in inches",
+          "minimum": 0,
+          "examples": [350, 400, 250]
+        }
+      }
+    },
+    "terrain": {
+      "type": "object",
+      "description": "Terrain breakdown by difficulty (percentages should sum to 100)",
+      "properties": {
+        "beginner": {
+          "type": "number",
+          "description": "Percentage of beginner (green) terrain",
+          "minimum": 0,
+          "maximum": 100,
+          "examples": [18, 25, 15]
+        },
+        "intermediate": {
+          "type": "number",
+          "description": "Percentage of intermediate (blue) terrain",
+          "minimum": 0,
+          "maximum": 100,
+          "examples": [29, 40, 35]
+        },
+        "advanced": {
+          "type": "number",
+          "description": "Percentage of advanced (black diamond) terrain",
+          "minimum": 0,
+          "maximum": 100,
+          "examples": [36, 25, 30]
+        },
+        "expert": {
+          "type": "number",
+          "description": "Percentage of expert (double black diamond) terrain",
+          "minimum": 0,
+          "maximum": 100,
+          "examples": [17, 10, 20]
+        }
+      }
+    },
+    "passAffiliations": {
+      "type": "array",
+      "description": "Ski pass programs the resort participates in",
+      "items": {
+        "type": "string",
+        "enum": ["epic", "ikon", "indy", "mountain-collective", "powder-alliance"]
+      },
+      "examples": [["epic"], ["ikon"], ["indy", "powder-alliance"]]
+    },
+    "features": {
+      "type": "object",
+      "description": "Available amenities and features",
+      "properties": {
+        "hasPark": {
+          "type": "boolean",
+          "description": "Has terrain park"
+        },
+        "hasHalfpipe": {
+          "type": "boolean",
+          "description": "Has halfpipe"
+        },
+        "hasNightSkiing": {
+          "type": "boolean",
+          "description": "Offers night skiing"
+        },
+        "hasBackcountryAccess": {
+          "type": "boolean",
+          "description": "Provides backcountry access gates"
+        },
+        "hasSpaVillage": {
+          "type": "boolean",
+          "description": "Has spa and village amenities"
+        }
+      }
+    },
+    "websiteUrl": {
+      "type": "string",
+      "description": "Official resort website URL",
+      "format": "uri",
+      "examples": ["https://www.vail.com", "https://www.mammothmountain.com"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the resort (1-3 sentences)",
+      "examples": ["World-renowned resort in the Colorado Rockies featuring legendary Back Bowls and over 5,300 acres of terrain."]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Searchable tags for categorization",
+      "items": {
+        "type": "string"
+      },
+      "examples": [["family-friendly", "expert-terrain", "village"], ["backcountry", "steep"]]
+    },
+    "assetLocation": {
+      "type": "object",
+      "description": "GCS asset path components",
+      "required": ["country", "state", "slug"],
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country code for GCS path",
+          "enum": ["us", "ca"]
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province slug for GCS path"
+        },
+        "slug": {
+          "type": "string",
+          "description": "Resort slug for GCS path"
+        }
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "description": "ISO 8601 timestamp of last update",
+      "format": "date-time",
+      "examples": ["2025-11-28T22:08:04.763Z"]
+    }
+  },
+  "additionalProperties": false
+}
