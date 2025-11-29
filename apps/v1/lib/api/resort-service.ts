@@ -1,16 +1,10 @@
 /**
  * Resort API Service
  *
- * This service simulates API calls to a backend. When you're ready to connect
- * to a real API, replace the implementation of each method with actual fetch calls.
+ * This service provides resort data from either Supabase or mock data.
+ * Set USE_SUPABASE to true to fetch from the database.
  *
- * Example real API implementation:
- * ```
- * async getResortBySlug(slug: string): Promise<ApiResponse<Resort>> {
- *   const response = await fetch(`${API_BASE_URL}/resorts/${slug}`);
- *   return response.json();
- * }
- * ```
+ * The service implements a unified interface so components work with either backend.
  */
 
 import { mockResorts } from '../mock-data/resorts';
@@ -24,6 +18,10 @@ import {
   ResortQueryOptions,
   RegionalStats,
 } from './types';
+import { supabaseResortService } from './supabase-resort-service';
+
+// Feature flag: Set to true to use Supabase, false for mock data
+const USE_SUPABASE = process.env.NEXT_PUBLIC_USE_SUPABASE === 'true';
 
 // Simulated network delay (ms) - set to 0 for instant responses
 const SIMULATED_DELAY = 300;
@@ -52,6 +50,10 @@ class ResortService {
    * Fetch a single resort by its slug
    */
   async getResortBySlug(slug: string): Promise<ApiResponse<Resort | null>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getResortBySlug(slug);
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -83,6 +85,10 @@ class ResortService {
    * Fetch a single resort by its ID
    */
   async getResortById(id: string): Promise<ApiResponse<Resort | null>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getResortById(id);
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -114,6 +120,10 @@ class ResortService {
    * Fetch all resorts with optional filtering, sorting, and pagination
    */
   async getResorts(options: ResortQueryOptions = {}): Promise<PaginatedResponse<Resort>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getResorts(options);
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -172,6 +182,10 @@ class ResortService {
    * Fetch all active resorts without pagination (useful for dropdowns, maps, etc.)
    */
   async getAllResorts(): Promise<ApiResponse<Resort[]>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getAllResorts();
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -193,6 +207,10 @@ class ResortService {
    * Search resorts by name, description, or location
    */
   async searchResorts(query: string): Promise<ApiResponse<Resort[]>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.searchResorts(query);
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -230,6 +248,10 @@ class ResortService {
    * Get regional statistics for all resorts
    */
   async getRegionalStats(): Promise<ApiResponse<RegionalStats>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getRegionalStats();
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -269,6 +291,10 @@ class ResortService {
    * Get featured resorts (e.g., highest rated, most snow, etc.)
    */
   async getFeaturedResorts(limit: number = 3): Promise<ApiResponse<Resort[]>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getFeaturedResorts(limit);
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -301,6 +327,10 @@ class ResortService {
    * Get resorts within a radius of a location (simplified using distance from Denver)
    */
   async getNearbyResorts(maxDistance: number): Promise<ApiResponse<Resort[]>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getNearbyResorts(maxDistance);
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
@@ -326,6 +356,10 @@ class ResortService {
    * Get resorts by pass affiliation
    */
   async getResortsByPass(passType: string): Promise<ApiResponse<Resort[]>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getResortsByPass(passType);
+    }
+
     await delay(SIMULATED_DELAY);
 
     if (shouldFail()) {
