@@ -68,16 +68,16 @@ export function ResortStructuredData({ resort }: ResortStructuredDataProps) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'SkiResort',
-    '@id': `${BASE_URL}/colorado/${resort.slug}#skiresort`,
+    '@id': `${BASE_URL}/${resort.stateCode}/${resort.slug}#skiresort`,
     name: resort.name,
     description: resort.description,
-    url: `${BASE_URL}/colorado/${resort.slug}`,
+    url: `${BASE_URL}/${resort.stateCode}/${resort.slug}`,
     image: images,
     priceRange: '$$-$$$',
     address: {
       '@type': 'PostalAddress',
       addressLocality: resort.nearestCity,
-      addressRegion: 'CO',
+      addressRegion: resort.stateCode?.toUpperCase() || 'CO',
       addressCountry: 'US',
     },
     geo: {

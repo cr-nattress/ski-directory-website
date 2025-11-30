@@ -249,6 +249,7 @@ function transformResort(raw: RawResort, idx: number): Resort {
     tags,
     isActive: true,
     isLost: false,
+    stateCode: 'colorado',
   };
 }
 

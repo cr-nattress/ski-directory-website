@@ -409,7 +409,7 @@ class ResortService {
         latitude: r.location.lat,
         longitude: r.location.lng,
         nearestCity: r.nearestCity,
-        stateCode: 'CO', // Currently Colorado only for mock data
+        stateCode: r.stateCode || r.assetLocation?.state || 'colorado',
         passAffiliations: r.passAffiliations,
         rating: r.rating,
         status: r.conditions.status,

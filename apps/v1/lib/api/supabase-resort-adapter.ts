@@ -51,6 +51,9 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
     isActive: supabaseResort.is_active,
     isLost: supabaseResort.is_lost,
 
+    // State code for URL routing (e.g., 'colorado', 'utah')
+    stateCode: supabaseResort.state,
+
     // Location
     location: {
       lat: supabaseResort.lat || 0,

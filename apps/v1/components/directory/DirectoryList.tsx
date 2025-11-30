@@ -46,7 +46,7 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
             )}
           >
             <Link
-              href={`/colorado/${resort.slug}`}
+              href={`/${resort.stateCode}/${resort.slug}`}
               className={cn(
                 'block p-4',
                 'hover:bg-gray-50 transition-colors'
@@ -248,7 +248,7 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
 
                 {/* View Resort Link */}
                 <Link
-                  href={`/colorado/${resort.slug}`}
+                  href={`/${resort.stateCode}/${resort.slug}`}
                   className="mt-4 inline-flex items-center gap-1 text-ski-blue hover:underline font-medium text-sm focus:outline-none focus:ring-2 focus:ring-ski-blue focus:ring-offset-2 rounded"
                 >
                   View full resort details

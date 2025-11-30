@@ -30,7 +30,7 @@ export function ResortCard({ resort }: ResortCardProps) {
 
   return (
     <Link
-      href={`/colorado/${resort.slug}`}
+      href={`/${resort.stateCode}/${resort.slug}`}
       className="card group cursor-pointer"
     >
       {/* Image */}

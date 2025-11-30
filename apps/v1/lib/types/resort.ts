@@ -1,14 +1,17 @@
-// Types based on our data model
+/**
+ * Resort Types
+ * Core data models for ski resorts
+ */
 
 export type PassAffiliation = 'epic' | 'ikon' | 'indy' | 'local';
 
-// Generic item with name and URL (for nearby places, base areas, etc.)
+/** Generic item with name and URL (for nearby places, base areas, etc.) */
 export interface NamedItem {
   name: string;
   url?: string;
 }
 
-// Collection of items with count
+/** Collection of items with count */
 export interface ItemCollection {
   count: number;
   items: NamedItem[];
@@ -147,42 +150,4 @@ export interface Resort {
     hotels?: ItemCollection;
     motels?: ItemCollection;
   };
-}
-
-export interface Category {
-  id: string;
-  label: string;
-  icon: string;
-  filter: (resort: Resort) => boolean;
-}
-
-export interface Article {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  readTime: number; // minutes
-  image: string;
-  publishedAt: string;
-}
-
-/**
- * Lightweight resort data optimized for map pin display
- * Used by the interactive map view on the landing page
- */
-export interface ResortMapPin {
-  id: string;
-  slug: string;
-  name: string;
-  latitude: number;
-  longitude: number;
-  nearestCity: string;
-  stateCode: string;
-  passAffiliations: PassAffiliation[];
-  rating: number;
-  status: 'open' | 'closed' | 'opening-soon';
-  isActive: boolean;
-  isLost: boolean;
-  terrainOpenPercent?: number;
-  snowfall24h?: number;
 }

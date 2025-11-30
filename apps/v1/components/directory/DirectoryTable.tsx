@@ -185,7 +185,7 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
                   {/* Resort Name */}
                   <td className="px-4 py-4" role="gridcell">
                     <Link
-                      href={`/colorado/${resort.slug}`}
+                      href={`/${resort.stateCode}/${resort.slug}`}
                       className="font-semibold text-gray-900 hover:text-ski-blue transition-colors focus:outline-none focus:ring-2 focus:ring-ski-blue focus:ring-offset-2 rounded"
                     >
                       {resort.name}
@@ -363,7 +363,7 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
                       {/* View Resort Link */}
                       <div className="pl-8 mt-4">
                         <Link
-                          href={`/colorado/${resort.slug}`}
+                          href={`/${resort.stateCode}/${resort.slug}`}
                           className="inline-flex items-center gap-1 text-ski-blue hover:underline font-medium focus:outline-none focus:ring-2 focus:ring-ski-blue focus:ring-offset-2 rounded"
                         >
                           View full resort details

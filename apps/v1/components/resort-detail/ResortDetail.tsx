@@ -1,4 +1,4 @@
-import { Resort } from '@/lib/mock-data';
+import type { Resort } from '@/lib/types';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
 import { Breadcrumb } from './Breadcrumb';
@@ -18,10 +18,15 @@ interface ResortDetailProps {
 
 export function ResortDetail({ resort }: ResortDetailProps) {
   // Breadcrumb data for JSON-LD structured data
+  // Capitalize state name for display (e.g., 'colorado' -> 'Colorado')
+  const stateName = resort.stateCode
+    ? resort.stateCode.charAt(0).toUpperCase() + resort.stateCode.slice(1)
+    : 'Colorado';
+
   const breadcrumbItems = [
     { name: 'Home', url: BASE_URL },
-    { name: 'Colorado Resorts', url: `${BASE_URL}/directory` },
-    { name: resort.name, url: `${BASE_URL}/colorado/${resort.slug}` },
+    { name: `${stateName} Resorts`, url: `${BASE_URL}/directory` },
+    { name: resort.name, url: `${BASE_URL}/${resort.stateCode}/${resort.slug}` },
   ];
 
   return (
@@ -33,8 +38,8 @@ export function ResortDetail({ resort }: ResortDetailProps) {
 
       <Breadcrumb
         items={[
-          { label: 'Colorado', href: '/' },
-          { label: resort.name, href: `/colorado/${resort.slug}` },
+          { label: stateName, href: '/' },
+          { label: resort.name, href: `/${resort.stateCode}/${resort.slug}` },
         ]}
       />
 
