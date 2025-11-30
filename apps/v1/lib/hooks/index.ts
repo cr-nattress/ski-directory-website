@@ -16,6 +16,11 @@ export { useEventBanner } from './useEventBanner';
 export { useMapPins } from './useMapPins';
 export { useViewMode } from './useViewMode';
 export type { ViewMode } from './useViewMode';
+export {
+  useImpressionTracking,
+  useClickTracking,
+  useResortTracking,
+} from './useImpressionTracking';
 
 // Re-export types for convenience
 export type {
