@@ -633,3 +633,37 @@ Fix broken breadcrumb links on resort detail pages. When a user clicks on the st
 
 **Dependencies:**
 - Epic 20: Remove Mock Data ✅
+
+---
+
+### Epic 22: Feature Flag System
+**Status:** Ready
+**Priority:** Medium
+**Effort:** Small
+
+Implement a configuration-based feature flag system to toggle UI components on/off without code changes. Enables gradual rollouts, easy feature disabling, and hiding incomplete features.
+
+**User Stories:** 7
+📁 [View Epic Details](./epic-22-feature-flags/README.md)
+
+**Key Features:**
+- Centralized feature flag configuration file
+- Type-safe `useFeatureFlag` hook
+- `<FeatureFlag>` wrapper component for declarative toggling
+- All flags default to `true` (backward compatible)
+
+**Initial Flags:**
+- `planYourVisitCard` - Toggle Plan Your Visit card on resort detail
+- `trailMapCard` - Toggle Trail Map card on resort detail
+- `alertBanner` - Toggle global alert banner system
+- `weatherForecastCard` - Toggle Weather Forecast card
+- `socialMediaCard` - Toggle Social Media card
+- `locationMapCard` - Toggle Location Map card
+
+**Files to Create:**
+- `lib/config/feature-flags.ts` (flag definitions)
+- `lib/hooks/useFeatureFlag.ts` (React hook)
+- `components/FeatureFlag.tsx` (wrapper component)
+
+**Dependencies:**
+- None (foundational infrastructure)

@@ -193,14 +193,12 @@ export function ResortSection() {
                           totalCount={totalCount}
                         />
 
-                        {/* Invisible sentinel element to trigger loading */}
-                        {hasMore && !isLoadingMore && (
-                          <div
-                            ref={sentinelRef}
-                            className="h-1"
-                            aria-hidden="true"
-                          />
-                        )}
+                        {/* Invisible sentinel element to trigger loading - always rendered when showLoadMoreUI */}
+                        <div
+                          ref={sentinelRef}
+                          className="h-4"
+                          aria-hidden="true"
+                        />
                       </>
                     )}
                   </>

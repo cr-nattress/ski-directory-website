@@ -21,7 +21,7 @@ interface UseIntersectionObserverOptions {
  */
 interface UseIntersectionObserverResult<T extends HTMLElement> {
   /** Ref to attach to the element to observe */
-  ref: React.RefObject<T>;
+  ref: React.RefCallback<T>;
   /** Whether the element is currently intersecting */
   isIntersecting: boolean;
   /** The IntersectionObserverEntry if available */
@@ -31,26 +31,10 @@ interface UseIntersectionObserverResult<T extends HTMLElement> {
 /**
  * Hook to observe when an element enters or leaves the viewport
  *
+ * Uses a callback ref pattern to properly handle conditionally rendered elements.
+ *
  * @param options - Configuration options
  * @returns Object with ref to attach and intersection state
- *
- * @example
- * ```tsx
- * function LoadMoreTrigger({ onLoadMore }: { onLoadMore: () => void }) {
- *   const { ref, isIntersecting } = useIntersectionObserver<HTMLDivElement>({
- *     rootMargin: '200px',
- *     enabled: hasMore,
- *   });
- *
- *   useEffect(() => {
- *     if (isIntersecting) {
- *       onLoadMore();
- *     }
- *   }, [isIntersecting, onLoadMore]);
- *
- *   return <div ref={ref} />;
- * }
- * ```
  */
 export function useIntersectionObserver<T extends HTMLElement = HTMLDivElement>(
   options: UseIntersectionObserverOptions = {}
@@ -62,25 +46,35 @@ export function useIntersectionObserver<T extends HTMLElement = HTMLDivElement>(
     triggerOnce = false,
   } = options;
 
-  const ref = useRef<T>(null);
   const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null);
   const [hasTriggered, setHasTriggered] = useState(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const elementRef = useRef<T | null>(null);
 
   // Track if we should stop observing (for triggerOnce)
   const frozen = triggerOnce && hasTriggered;
 
-  useEffect(() => {
-    // Skip if not enabled, no element, or already triggered (for triggerOnce)
-    if (!enabled || !ref.current || frozen) {
-      return;
+  // Cleanup function
+  const cleanup = useCallback(() => {
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+      observerRef.current = null;
+    }
+  }, []);
+
+  // Create observer
+  const createObserver = useCallback(() => {
+    // Skip if not enabled or already triggered (for triggerOnce)
+    if (!enabled || frozen) {
+      return null;
     }
 
     // Check for IntersectionObserver support (SSR safety)
     if (typeof IntersectionObserver === 'undefined') {
-      return;
+      return null;
     }
 
-    const observer = new IntersectionObserver(
+    return new IntersectionObserver(
       ([observerEntry]) => {
         setEntry(observerEntry);
 
@@ -93,13 +87,44 @@ export function useIntersectionObserver<T extends HTMLElement = HTMLDivElement>(
         rootMargin,
       }
     );
-
-    observer.observe(ref.current);
-
-    return () => {
-      observer.disconnect();
-    };
   }, [enabled, frozen, rootMargin, threshold, triggerOnce]);
+
+  // Callback ref - called when element is mounted/unmounted
+  const ref = useCallback(
+    (node: T | null) => {
+      // Cleanup previous observer
+      cleanup();
+
+      // Store the element reference
+      elementRef.current = node;
+
+      // If we have a node and should observe, create new observer
+      if (node && enabled && !frozen) {
+        observerRef.current = createObserver();
+        if (observerRef.current) {
+          observerRef.current.observe(node);
+        }
+      }
+    },
+    [cleanup, createObserver, enabled, frozen]
+  );
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return cleanup;
+  }, [cleanup]);
+
+  // Re-observe when options change
+  useEffect(() => {
+    // Re-attach observer when options change and we have an element
+    if (elementRef.current && enabled && !frozen) {
+      cleanup();
+      observerRef.current = createObserver();
+      if (observerRef.current) {
+        observerRef.current.observe(elementRef.current);
+      }
+    }
+  }, [enabled, frozen, rootMargin, threshold, cleanup, createObserver]);
 
   const isIntersecting = entry?.isIntersecting ?? false;
 
@@ -115,66 +140,54 @@ export function useIntersectionObserver<T extends HTMLElement = HTMLDivElement>(
  *
  * @param callback - Function to call when element enters viewport
  * @param options - Configuration options
- * @returns Ref to attach to the sentinel element
- *
- * @example
- * ```tsx
- * function InfiniteList({ loadMore, hasMore }) {
- *   const sentinelRef = useIntersectionCallback(
- *     () => loadMore(),
- *     { enabled: hasMore, rootMargin: '200px' }
- *   );
- *
- *   return (
- *     <>
- *       {items.map(item => <Item key={item.id} {...item} />)}
- *       <div ref={sentinelRef} />
- *     </>
- *   );
- * }
- * ```
+ * @returns Ref callback to attach to the sentinel element
  */
 export function useIntersectionCallback<T extends HTMLElement = HTMLDivElement>(
   callback: () => void,
   options: Omit<UseIntersectionObserverOptions, 'triggerOnce'> = {}
-): React.RefObject<T> {
+): React.RefCallback<T> {
   const { threshold = 0, rootMargin = '0px', enabled = true } = options;
 
-  const ref = useRef<T>(null);
   const callbackRef = useRef(callback);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   // Keep callback ref updated
   useEffect(() => {
     callbackRef.current = callback;
   }, [callback]);
 
-  useEffect(() => {
-    if (!enabled || !ref.current) {
-      return;
-    }
-
-    if (typeof IntersectionObserver === 'undefined') {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          callbackRef.current();
-        }
-      },
-      {
-        threshold,
-        rootMargin,
+  // Callback ref - called when element is mounted/unmounted
+  const ref = useCallback(
+    (node: T | null) => {
+      // Cleanup previous observer
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
       }
-    );
 
-    observer.observe(ref.current);
+      // If we have a node and should observe
+      if (node && enabled) {
+        if (typeof IntersectionObserver === 'undefined') {
+          return;
+        }
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [enabled, rootMargin, threshold]);
+        observerRef.current = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              callbackRef.current();
+            }
+          },
+          {
+            threshold,
+            rootMargin,
+          }
+        );
+
+        observerRef.current.observe(node);
+      }
+    },
+    [enabled, rootMargin, threshold]
+  );
 
   return ref;
 }
