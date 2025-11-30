@@ -41,6 +41,16 @@ export const featureFlags = {
   alertBanner: true,
 
   // ============================================
+  // Landing Page Features
+  // ============================================
+
+  /** Infinite scroll on landing page resort cards */
+  infiniteScroll: true,
+
+  /** "Latest from the slopes" articles section */
+  contentSection: false,
+
+  // ============================================
   // Directory Page Components
   // ============================================
 
