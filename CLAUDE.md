@@ -21,155 +21,178 @@ rm -rf .next && npm run dev
 
 ## Architecture Overview
 
-### Data Layer Architecture (CRITICAL)
+### Data Layer Architecture
 
-**The app has TWO data sources - make sure you're using the right one:**
+The app uses **Supabase as the primary data source** with mock data as fallback:
 
-1. **`lib/mock-data/resorts.ts`** - Enhanced data with weather, trail maps, social media
-2. **`lib/mock-data/resorts-from-json.ts`** - Basic data from JSON export
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Client Components                        │
+│                    (use React hooks)                         │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────┐
+│               lib/hooks/ (useMapPins, useViewMode, etc.)     │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────┐
+│           lib/api/resort-service.ts (feature flag router)    │
+│           USE_SUPABASE = env.NEXT_PUBLIC_USE_SUPABASE        │
+└─────────────┬───────────────────────────────┬───────────────┘
+              │                               │
+    ┌─────────▼─────────┐          ┌─────────▼─────────┐
+    │ supabase-resort-  │          │   mock-data/      │
+    │ service.ts        │          │   index.ts        │
+    └─────────┬─────────┘          └───────────────────┘
+              │
+    ┌─────────▼─────────┐
+    │ supabase-resort-  │  ← Transforms DB schema to Resort type
+    │ adapter.ts        │
+    └───────────────────┘
+```
 
-**IMPORTANT:** `lib/mock-data/index.ts` controls which source is active:
-- Currently imports from `resorts.ts` (enhanced data)
-- Previously imported from `resorts-from-json.ts` (caused missing weather cards bug)
-- When adding new features to resorts, ALWAYS update `resorts.ts`, not the JSON file
+**Key files:**
+- `lib/supabase.ts` - Supabase client (public + server clients)
+- `lib/api/supabase-resort-service.ts` - Supabase queries
+- `lib/api/supabase-resort-adapter.ts` - DB → Frontend type conversion
+- `lib/services/resort-service.ts` - Server-side data access (for server components)
+
+**Environment variables** (`.env.local`):
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+NEXT_PUBLIC_USE_SUPABASE=true
+```
 
 ### Next.js App Router Structure
 
 ```
 app/
 ├── layout.tsx              # Root layout with fonts (Inter, Poppins)
-├── page.tsx                # Landing page with hero, filters, resort grid
-├── globals.css             # Tailwind imports + custom styles
-└── colorado/
-    └── [slug]/
-        └── page.tsx        # Dynamic resort detail pages
+├── page.tsx                # Landing page with hero, map/cards toggle
+├── globals.css             # Tailwind + Leaflet styles
+├── directory/page.tsx      # A-Z directory view
+├── ski-links/page.tsx      # External ski resources
+├── social-links/page.tsx   # Social media directory
+└── [state]/[slug]/         # Dynamic resort detail (ALL states)
+    └── page.tsx
 ```
 
-**Key patterns:**
-- Uses App Router (not Pages Router)
-- Static generation via `generateStaticParams()` for all resort slugs
-- SEO metadata generated per-resort via `generateMetadata()`
-- Resort data fetched via `getResortBySlug(slug)` from mock-data layer
+**Routing pattern:**
+- Routes are `/{state}/{slug}` (e.g., `/colorado/vail`, `/utah/park-city`)
+- `generateStaticParams()` fetches all state+slug pairs from Supabase
+- State validation: page returns 404 if URL state doesn't match resort's actual state
 
-### Resort Detail Pages
+### Hooks Layer (`lib/hooks/`)
 
-Located in `components/resort-detail/`:
+Client-side data fetching with caching:
 
-**Main Component:** `ResortDetail.tsx`
-- Two-column layout: main content (left) + action rail (right, sticky)
-- Left: Overview, Mountain Stats, Terrain Breakdown, Trail Map
-- Right: Plan Your Visit card, Weather, Location Map, Social Media
+| Hook | Purpose |
+|------|---------|
+| `useMapPins()` | Lightweight map pin data with 5-min localStorage cache |
+| `useViewMode()` | Cards/map toggle with localStorage persistence |
+| `useResorts(options)` | Paginated resort list with filters |
+| `useResort(slug)` | Single resort fetch |
+| `useResortSearch(query)` | Full-text search |
 
-**Enhanced Components:**
-- `WeatherForecastCard.tsx` - Current conditions + 7-day forecast with weather icons
-- `LocationMapCard.tsx` - Leaflet map with resort marker
-- `LocationMapCardWrapper.tsx` - Dynamic import wrapper (prevents SSR issues with Leaflet)
-- `TrailMapCard.tsx` - Trail map image with resort stats
-- `SocialMediaCard.tsx` - Links to Facebook, Instagram, YouTube, TikTok, X
+### Interactive Map (`ResortMapView`)
 
-**Pattern for map components:**
-- Leaflet maps must use dynamic imports with `ssr: false`
-- Wrapper pattern prevents "window is not defined" errors
-- See `LocationMapCardWrapper.tsx` for reference
+Full-screen Leaflet map with resort pins:
+- Marker colors by pass type (Epic=red, Ikon=orange, Local=blue, Lost=gray)
+- Popups with resort info + "View Details" link
+- Centers on North America (44°N, 98°W, zoom 4)
+
+**SSR Safety:** Always use dynamic import:
+```tsx
+const ResortMapView = dynamic(
+  () => import('@/components/ResortMapView').then(mod => ({ default: mod.ResortMapView })),
+  { ssr: false }
+);
+```
 
 ### Resort Data Model
 
-Every resort in `resorts.ts` has:
-
+**Frontend type** (`lib/mock-data/types.ts`):
 ```typescript
-{
-  id, slug, name, tagline, description,
+interface Resort {
+  id, slug, name, description,
   location: { lat, lng },
-  nearestCity, distanceFromDenver, driveTimeFromDenver,
-  stats: { skiableAcres, liftsCount, runsCount, verticalDrop, elevations, avgAnnualSnowfall },
-  terrain: { beginner, intermediate, advanced, expert }, // percentages
+  nearestCity,
+  stats: { skiableAcres, liftsCount, runsCount, verticalDrop, baseElevation, summitElevation, avgAnnualSnowfall },
+  terrain: { beginner, intermediate, advanced, expert },
   conditions: { snowfall24h, snowfall72h, baseDepth, terrainOpen, liftsOpen, status },
-  passAffiliations: ['epic' | 'ikon' | 'indy' | 'local'],
+  passAffiliations: ('epic' | 'ikon' | 'indy' | 'local')[],
   rating, reviewCount,
-  heroImage, trailMapUrl?,
-  weather?: { current, forecast[] }, // Added in enhancement
-  socialMedia?: { facebook, instagram, youtube, tiktok, x },
+  heroImage, trailMapUrl?, images?,
+  isActive, isLost,
   features: { hasPark, hasHalfpipe, hasNightSkiing, hasBackcountryAccess, hasSpaVillage },
   tags: string[]
 }
 ```
 
+**Map pin type** (lightweight):
+```typescript
+interface ResortMapPin {
+  id, slug, name,
+  latitude, longitude,
+  nearestCity, stateCode,
+  passAffiliations, rating, status,
+  isActive, isLost,
+  terrainOpenPercent?, snowfall24h?
+}
+```
+
 ### Styling System
 
-**Tailwind Configuration:**
-- Custom colors: `ski-blue`, `powder-blue`, `epic-red`, `ikon-orange`
-- Fonts: `font-display` (Poppins for headings), `font-sans` (Inter for body)
-- Utility: `clsx` + `tailwind-merge` via `cn()` helper in `lib/utils.ts`
+**Tailwind custom values:**
+- Colors: `ski-blue`, `powder-blue`, `epic-red`, `ikon-orange`
+- Fonts: `font-display` (Poppins), `font-sans` (Inter)
+- Utility: `cn()` helper in `lib/utils.ts`
 
-**Responsive Breakpoints:**
-- Mobile-first approach
-- sm: 640px, md: 768px, lg: 1024px, xl: 1280px
+### GCS Image Assets
 
-**Design Philosophy:**
-- Airbnb: Prominent search, minimal nav, one primary action
-- AllTrails: Clean simplicity, scannable info
-- Yelp: Practical directory, ratings front-and-center
-
-### Data Utilities (lib/mock-data/index.ts)
-
+Resort images stored in Google Cloud Storage:
 ```typescript
-getResortBySlug(slug)           // Find resort by slug
-filterResorts(resorts, filters)  // Filter by search, distance, pass type
-sortResorts(resorts, sortBy)     // Sort by distance, rating, snow, name
-getRegionalStats()               // Aggregate stats for hero section
+// lib/supabase.ts helpers
+getCardImageUrl(assetPath)   // → /cards/main.jpg
+getHeroImageUrl(assetPath)   // → /hero/main.jpg
+getTrailMapUrl(assetPath)    // → /trailmaps/current.jpg
 ```
 
-### Component Patterns
-
-**Conditional Rendering:**
-- Weather/Social cards return `null` if no data (not empty divs)
-- Use `if (!data) return null;` pattern at component top
-
-**Pass Badges:**
-```tsx
-{resort.passAffiliations.map((pass) => (
-  <span className={pass === 'epic' ? 'bg-epic-red' : 'bg-ikon-orange'}>
-    {pass} Pass
-  </span>
-))}
-```
-
-**Terrain Progress Bars:**
-- Show percentage with colored bars (green/blue/orange/red)
-- Use Tailwind arbitrary values: `style={{ width: \`\${percentage}%\` }}`
+**next.config.js** must include `storage.googleapis.com` in `remotePatterns`.
 
 ## Common Gotchas
 
-1. **Missing weather/social cards?** Check `lib/mock-data/index.ts` imports from `resorts.ts` not `resorts-from-json.ts`
+1. **Leaflet "window is not defined"** - Use dynamic import with `ssr: false`
 
-2. **Leaflet "window is not defined" error?** Use dynamic import with `ssr: false`:
-   ```tsx
-   const MapComponent = dynamic(() => import('./Map'), { ssr: false })
-   ```
+2. **Resort not showing on map** - Check if `location` is null in Supabase (needs lat/lng)
 
-3. **Hydration mismatch?** Avoid random values that differ between server/client. Use seeded random if needed.
+3. **Wrong state in URL** - The `[state]/[slug]` route validates state matches DB; mismatches return 404
 
-4. **Tailwind classes not applying?** Ensure file is in `content` array in `tailwind.config.ts`
+4. **Supabase types out of sync** - Regenerate with `npx supabase gen types typescript`
 
-5. **TypeScript errors in resorts.ts?** All weather/social fields are optional (`?:`). Don't forget to add to type definition in `types.ts` first.
+5. **GCS images 404** - Image may not exist; check `asset_path` in Supabase and actual GCS bucket
 
-## Adding New Resort Features
+6. **Hydration mismatch with view toggle** - `useViewMode` has `isHydrated` flag to prevent this
 
-1. Update `Resort` interface in `lib/mock-data/types.ts`
-2. Add data to resorts in `lib/mock-data/resorts.ts` (NOT resorts-from-json.ts)
-3. Create component in `components/resort-detail/`
-4. Import and use in `ResortDetail.tsx`
-5. Make component return `null` if optional data missing
+## Adding New Resort Fields
+
+1. Add column to Supabase `resorts` table
+2. Update `resorts_full` view if needed
+3. Add to `ResortFull` type in `types/supabase.ts`
+4. Update `adaptResortFromSupabase()` in `lib/api/supabase-resort-adapter.ts`
+5. Add to frontend `Resort` type in `lib/mock-data/types.ts`
+6. Use in components
 
 ## Repository Structure
 
-- `apps/v1/` - Main Next.js application (work here)
+- `apps/v1/` - Main Next.js application
 - `backlog/` - Epic/story/task planning docs
-- `full-ski-directory-architecture.md` - Overall platform vision
-- `ski-directory-data-model.md` - Database schema documentation
+- `gcp/` - Google Cloud Platform configuration
+- `migration/` - Data migration scripts
 
 ## Git Workflow
 
 - Main branch: `master`
-- Commit messages use conventional format with AI attribution footer
-- Always commit with: `🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`
+- Commit footer: `🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`

@@ -1,0 +1,23 @@
+{
+  "slug": "vail",
+  "country": "us",
+  "state": "colorado",
+  "lastUpdated": "2025-11-28T00:00:00Z",
+  "images": {
+    "card": {
+      "path": "images/card.jpg",
+      "contentType": "image/jpeg",
+      "description": "Vail ski resort listing card image"
+    }
+  },
+  "trailMaps": {
+    "current": {
+      "path": "trailmaps/current.jpg",
+      "contentType": "image/jpeg",
+      "season": "2024-2025",
+      "description": "Vail trail map"
+    }
+  },
+  "logos": {},
+  "totalAssets": 2
+}

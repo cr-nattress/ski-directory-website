@@ -13,6 +13,9 @@ export {
 export { useResortSearch, useInstantResortSearch } from './useResortSearch';
 export { useRegionalStats } from './useRegionalStats';
 export { useEventBanner } from './useEventBanner';
+export { useMapPins } from './useMapPins';
+export { useViewMode } from './useViewMode';
+export type { ViewMode } from './useViewMode';
 
 // Re-export types for convenience
 export type {

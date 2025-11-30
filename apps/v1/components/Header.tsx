@@ -34,7 +34,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
               )}
             >
               <span>⛷️</span>
-              <span>Ski Colorado</span>
+              <span>Ski Directory</span>
             </a>
           </div>
 

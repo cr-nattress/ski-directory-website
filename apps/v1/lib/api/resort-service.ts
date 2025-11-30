@@ -8,7 +8,7 @@
  */
 
 import { mockResorts } from '../mock-data/resorts';
-import { Resort } from '../mock-data/types';
+import { Resort, ResortMapPin } from '../mock-data/types';
 import {
   ApiResponse,
   PaginatedResponse,
@@ -376,6 +376,51 @@ class ResortService {
 
     return {
       data: resorts,
+      status: 'success',
+    };
+  }
+
+  /**
+   * GET /api/resorts/map-pins
+   * Get optimized data for map pin display
+   */
+  async getMapPins(): Promise<ApiResponse<ResortMapPin[]>> {
+    if (USE_SUPABASE) {
+      return supabaseResortService.getMapPins();
+    }
+
+    await delay(SIMULATED_DELAY);
+
+    if (shouldFail()) {
+      return {
+        data: [],
+        status: 'error',
+        message: 'Failed to fetch map pins. Please try again.',
+      };
+    }
+
+    // Extract minimal data from full resort objects for mock fallback
+    const pins: ResortMapPin[] = mockResorts
+      .filter((r) => r.isActive || r.isLost)
+      .map((r) => ({
+        id: r.id,
+        slug: r.slug,
+        name: r.name,
+        latitude: r.location.lat,
+        longitude: r.location.lng,
+        nearestCity: r.nearestCity,
+        stateCode: 'CO', // Currently Colorado only for mock data
+        passAffiliations: r.passAffiliations,
+        rating: r.rating,
+        status: r.conditions.status,
+        isActive: r.isActive,
+        isLost: r.isLost,
+        terrainOpenPercent: r.conditions.terrainOpen,
+        snowfall24h: r.conditions.snowfall24h,
+      }));
+
+    return {
+      data: pins,
       status: 'success',
     };
   }

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     canonical: '/directory',
   },
   openGraph: {
-    title: 'Colorado Ski Resorts A-Z Directory | Ski Colorado',
+    title: 'Colorado Ski Resorts A-Z Directory | Ski Directory',
     description:
       'Compare all Colorado ski resorts at a glance. View real-time snow conditions, terrain open, skiable acres, vertical drop, and pass information.',
     type: 'website',

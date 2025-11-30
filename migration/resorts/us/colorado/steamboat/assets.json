@@ -1,0 +1,21 @@
+{
+  "slug": "steamboat",
+  "country": "us",
+  "state": "colorado",
+  "lastUpdated": "2025-11-28T00:00:00Z",
+  "images": {
+    "card": {
+      "path": "images/card.jpg",
+      "contentType": "image/jpeg",
+      "description": "Steamboat ski resort listing card image"
+    },
+    "hero": {
+      "path": "images/hero.jpg",
+      "contentType": "image/jpeg",
+      "description": "Steamboat town and mountain view"
+    }
+  },
+  "trailMaps": {},
+  "logos": {},
+  "totalAssets": 2
+}

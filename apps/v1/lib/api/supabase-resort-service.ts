@@ -9,7 +9,7 @@
 import { supabase } from "@/lib/supabase";
 import type { ResortFull } from "@/types/supabase";
 import { adaptResortFromSupabase, adaptResortsFromSupabase } from "./supabase-resort-adapter";
-import type { Resort } from "../mock-data/types";
+import type { Resort, ResortMapPin, PassAffiliation } from "../mock-data/types";
 import type {
   ApiResponse,
   PaginatedResponse,
@@ -376,6 +376,55 @@ class SupabaseResortService {
     }
 
     return data?.map((r: { slug: string }) => r.slug) || [];
+  }
+
+  /**
+   * GET /api/resorts/map-pins
+   * Fetch optimized data for map pin display
+   */
+  async getMapPins(): Promise<ApiResponse<ResortMapPin[]>> {
+    // Query the resorts_map_pins view - using explicit type since view isn't in generated types
+    const { data, error } = await supabase
+      .from("resorts_map_pins" as any)
+      .select("*");
+
+    if (error) {
+      return {
+        data: [],
+        status: "error",
+        message: error.message || "Failed to fetch map pins. Please try again.",
+      };
+    }
+
+    // Transform snake_case database fields to camelCase
+    const pins: ResortMapPin[] = ((data as any[]) || []).map((row) => ({
+      id: row.id,
+      slug: row.slug,
+      name: row.name,
+      latitude: row.latitude,
+      longitude: row.longitude,
+      nearestCity: row.nearest_city || "",
+      stateCode: row.state_code || "",
+      passAffiliations: (row.pass_affiliations || []) as PassAffiliation[],
+      rating: row.rating || 0,
+      status: this.mapStatus(row.status),
+      isActive: row.is_active,
+      isLost: row.is_lost,
+      terrainOpenPercent: row.terrain_open_percent,
+      snowfall24h: row.snowfall_24h,
+    }));
+
+    return {
+      data: pins,
+      status: "success",
+    };
+  }
+
+  // Helper to map database status to frontend status type
+  private mapStatus(status: string): 'open' | 'closed' | 'opening-soon' {
+    if (status === 'active') return 'open';
+    if (status === 'defunct') return 'closed';
+    return 'closed';
   }
 
   // Helper to map frontend sort fields to database columns

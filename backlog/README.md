@@ -466,3 +466,85 @@ Migrate all US and Canadian ski resort data models and JSON files to GCP Cloud S
 **Dependencies:**
 - Epic 13: GCP Infrastructure ✅
 - Epic 14: Initial Asset Migration ✅
+
+---
+
+### Epic 18: Interactive Ski Resort Map
+**Status:** Ready
+**Priority:** High
+**Effort:** Medium
+**Branch:** `epic-18-interactive-map`
+
+Add an interactive map view to the landing page as an alternative to the resort card grid. Users can toggle between "Cards" and "Map" views with color-coded markers by pass type and popups with quick resort info.
+
+**User Stories:** 14
+📁 [View Epic Details](./epic-18-interactive-map/user-stories.md)
+📄 [Implementation Plan](../PLAN-interactive-map.md)
+
+**Key Features:**
+- Interactive Leaflet map centered on Colorado
+- Color-coded markers by pass type (Epic=red, Ikon=orange, Local=blue, Lost=gray)
+- Click popups with resort summary and "View Details" navigation
+- Cards/Map view toggle with localStorage persistence
+- Optimized Supabase view for fast map data loading
+- Browser caching with 5-minute TTL
+
+**Phases:**
+- Phase 1: Data Layer (Supabase view, TypeScript types, service methods)
+- Phase 2: Browser Caching (useMapPins hook)
+- Phase 3: Map Component (ResortMapView, popups, legend)
+- Phase 4: View Toggle (ViewToggle component, useViewMode hook)
+- Phase 5: Page Integration (ResortSection, landing page update)
+- Phase 6: Styling (Leaflet CSS, custom styles)
+
+**Dependencies:**
+- Leaflet (already installed)
+- react-leaflet (already installed)
+- Supabase client (already configured)
+- Epic 17: Supabase Migration ✅
+
+---
+
+### Epic 19: Distance from Major City Feature
+**Status:** Ready
+**Priority:** High
+**Effort:** Medium
+
+Replace the hardcoded "Distance from Denver" references throughout the codebase with a dynamic "Distance from Major City" feature. Each state/province will have a designated major city, and resorts will display their distance from that city.
+
+**User Stories:** 15
+📁 [View Epic Details](./epic-19-distance-from-major-city/user-stories.md)
+
+**Key Features:**
+- New `major_cities` reference table mapping states to their primary city
+- Dynamic distance display based on resort's state (not hardcoded Denver)
+- Support for states with multiple major cities (e.g., California: LA + SF)
+- Updated UI components: ResortCard, LocationCard, DirectoryTable
+- Backward-compatible migration preserving existing Colorado/Denver data
+
+**Phases:**
+- Phase 1: Database schema updates (major_cities table, resort fields)
+- Phase 2: TypeScript type updates (Resort type, adapters)
+- Phase 3: UI component updates (cards, tables, filters)
+- Phase 4: Service layer updates (filtering, sorting)
+- Phase 5: Documentation and cleanup
+
+**Major Cities by State (Examples):**
+| State | Major City |
+|-------|------------|
+| Colorado | Denver |
+| Utah | Salt Lake City |
+| California | Los Angeles / San Francisco |
+| Vermont | Burlington |
+| British Columbia | Vancouver |
+| Alberta | Calgary |
+
+**Files to Modify:**
+- Database: 4 new migration files
+- Types: `types.ts`, `supabase.ts`
+- Components: `ResortCard.tsx`, `LocationCard.tsx`, `DirectoryTable.tsx`, `DirectoryFilters.tsx`
+- Services: `resort-service.ts`, `supabase-resort-adapter.ts`
+- Mock Data: `resorts.ts` (~50 occurrences)
+
+**Dependencies:**
+- Epic 17: Supabase Migration ✅

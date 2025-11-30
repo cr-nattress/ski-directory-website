@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com'),
   title: {
     default: 'Colorado Ski Resorts | Find Your Perfect Mountain',
-    template: '%s | Ski Colorado',
+    template: '%s | Ski Directory',
   },
   description: 'Discover 30+ Colorado ski resorts with real-time conditions, expert reviews, and detailed mountain stats. Find your perfect Colorado ski destination.',
   keywords: ['Colorado ski resorts', 'skiing Colorado', 'snowboarding', 'ski conditions', 'trail maps', 'Epic Pass', 'Ikon Pass'],
-  authors: [{ name: 'Ski Colorado' }],
-  creator: 'Ski Colorado',
+  authors: [{ name: 'Ski Directory' }],
+  creator: 'Ski Directory',
   robots: {
     index: true,
     follow: true,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Ski Colorado',
+    siteName: 'Ski Directory',
   },
 };
 

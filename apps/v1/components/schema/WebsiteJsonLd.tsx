@@ -11,7 +11,7 @@ export function WebsiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${BASE_URL}#website`,
-    name: 'Ski Colorado',
+    name: 'Ski Directory',
     url: BASE_URL,
     description: 'Discover 30+ Colorado ski resorts with real-time conditions, expert reviews, and detailed mountain stats.',
     potentialAction: {

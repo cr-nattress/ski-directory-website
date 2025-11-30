@@ -1,0 +1,16 @@
+{
+  "slug": "crested-butte",
+  "country": "us",
+  "state": "colorado",
+  "lastUpdated": "2025-11-28T00:00:00Z",
+  "images": {
+    "card": {
+      "path": "images/card.jpg",
+      "contentType": "image/jpeg",
+      "description": "Crested Butte ski resort listing card image"
+    }
+  },
+  "trailMaps": {},
+  "logos": {},
+  "totalAssets": 1
+}

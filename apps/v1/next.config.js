@@ -17,6 +17,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'picsum.photos',
       },
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+        pathname: '/sda-assets-prod/**',
+      },
     ],
     // Responsive image sizes
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],

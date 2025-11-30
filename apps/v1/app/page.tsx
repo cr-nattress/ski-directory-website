@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Hero } from '@/components/Hero';
-import { ResortGrid } from '@/components/ResortGrid';
+import { ResortSection } from '@/components/ResortSection';
 import { ContentSection } from '@/components/ContentSection';
 import { Footer } from '@/components/Footer';
 import { WebsiteJsonLd } from '@/components/schema';
@@ -18,7 +18,7 @@ export default function Home() {
       <WebsiteJsonLd />
       <PageWrapper headerVariant="overlay" />
       <Hero />
-      <ResortGrid />
+      <ResortSection />
       <ContentSection />
       <Footer />
     </main>

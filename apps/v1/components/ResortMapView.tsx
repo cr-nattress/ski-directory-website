@@ -1,0 +1,205 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useRouter } from 'next/navigation';
+import { useMapPins } from '@/lib/hooks/useMapPins';
+import { cn } from '@/lib/utils';
+import 'leaflet/dist/leaflet.css';
+
+// Marker colors by pass type
+const PASS_COLORS = {
+  epic: '#dc2626',    // red-600
+  ikon: '#f97316',    // orange-500
+  indy: '#8b5cf6',    // violet-500
+  local: '#3b82f6',   // blue-500
+  lost: '#6b7280',    // gray-500
+};
+
+/**
+ * Creates a custom Leaflet divIcon marker with dynamic color
+ */
+function createMarkerIcon(passType: string, isLost: boolean) {
+  if (typeof window === 'undefined') return null;
+
+  const L = require('leaflet');
+  const color = isLost
+    ? PASS_COLORS.lost
+    : PASS_COLORS[passType as keyof typeof PASS_COLORS] || PASS_COLORS.local;
+
+  return L.divIcon({
+    className: 'custom-marker',
+    html: `
+      <div style="
+        background: ${color};
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        border: 2px solid white;
+      ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m10 20 4-16m2 14L7.5 6.5"/>
+        </svg>
+      </div>
+    `,
+    iconSize: [28, 28],
+    iconAnchor: [14, 28],
+    popupAnchor: [0, -28],
+  });
+}
+
+export function ResortMapView() {
+  const router = useRouter();
+  const { pins, isLoading, error } = useMapPins();
+  const [mapReady, setMapReady] = useState(false);
+
+  // Fix Leaflet default icon issue and signal map is ready
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const L = require('leaflet');
+      delete (L.Icon.Default.prototype as any)._getIconUrl;
+      setMapReady(true);
+    }
+  }, []);
+
+  if (isLoading || !mapReady) {
+    return (
+      <div className="w-full h-[500px] lg:h-[600px] bg-neutral-100 rounded-xl animate-pulse flex items-center justify-center">
+        <span className="text-neutral-500">Loading map...</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full h-[500px] lg:h-[600px] bg-neutral-100 rounded-xl flex items-center justify-center">
+        <span className="text-red-500">Failed to load map</span>
+      </div>
+    );
+  }
+
+  // Center on North America to show lower 48 US states + southern Canada
+  // Lat 44°N is roughly the US-Canada border in the middle
+  // Lng 98°W is central North America
+  const center: [number, number] = [44.0, -98.0];
+
+  return (
+    <div className="relative w-full h-[500px] lg:h-[600px] rounded-xl overflow-hidden border border-neutral-200 shadow-sm">
+      <MapContainer
+        center={center}
+        zoom={4}
+        className="w-full h-full"
+        scrollWheelZoom={true}
+        minZoom={3}
+        maxZoom={12}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {pins.map((pin) => {
+          // Skip pins without valid coordinates
+          if (!pin.latitude || !pin.longitude) return null;
+
+          const primaryPass = pin.passAffiliations[0] || 'local';
+          const icon = createMarkerIcon(primaryPass, pin.isLost);
+
+          if (!icon) return null;
+
+          return (
+            <Marker
+              key={pin.id}
+              position={[pin.latitude, pin.longitude]}
+              icon={icon}
+            >
+              <Popup>
+                <div className="min-w-[200px] space-y-2 p-1">
+                  <h3 className="font-semibold text-base">{pin.name}</h3>
+                  <p className="text-sm text-neutral-600">{pin.nearestCity}</p>
+
+                  <div className="flex items-center gap-2 text-sm">
+                    <span className="text-yellow-500">&#9733;</span>
+                    <span>{pin.rating.toFixed(1)}</span>
+                    {pin.status === 'open' && !pin.isLost && (
+                      <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs font-medium">
+                        Open
+                      </span>
+                    )}
+                    {pin.isLost && (
+                      <span className="bg-neutral-100 text-neutral-600 px-2 py-0.5 rounded text-xs font-medium">
+                        Closed
+                      </span>
+                    )}
+                  </div>
+
+                  {pin.snowfall24h && pin.snowfall24h > 0 && (
+                    <p className="text-sm text-sky-600">
+                      &#10052; {pin.snowfall24h}&quot; new snow
+                    </p>
+                  )}
+
+                  {pin.passAffiliations.length > 0 && (
+                    <div className="flex gap-1 flex-wrap">
+                      {pin.passAffiliations.map((pass) => (
+                        <span
+                          key={pass}
+                          className={cn(
+                            'text-xs px-2 py-0.5 rounded text-white capitalize',
+                            pass === 'epic' && 'bg-red-600',
+                            pass === 'ikon' && 'bg-orange-500',
+                            pass === 'indy' && 'bg-violet-500',
+                            pass === 'local' && 'bg-neutral-600'
+                          )}
+                        >
+                          {pass}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => router.push(`/${pin.stateCode}/${pin.slug}`)}
+                    className="w-full mt-2 bg-sky-600 text-white text-sm py-2 rounded-lg hover:bg-sky-700 transition-colors font-medium"
+                  >
+                    View Details &rarr;
+                  </button>
+                </div>
+              </Popup>
+            </Marker>
+          );
+        })}
+      </MapContainer>
+
+      {/* Map Legend */}
+      <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-[1000]">
+        <div className="text-xs font-semibold mb-2 text-neutral-700">Pass Types</div>
+        <div className="space-y-1.5 text-xs">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-600" />
+            <span className="text-neutral-600">Epic</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-orange-500" />
+            <span className="text-neutral-600">Ikon</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-blue-500" />
+            <span className="text-neutral-600">Local/Indy</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-neutral-400" />
+            <span className="text-neutral-600">Lost</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
