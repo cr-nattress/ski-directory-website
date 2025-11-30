@@ -5,6 +5,7 @@ import { ResortSection } from '@/components/ResortSection';
 import { ContentSection } from '@/components/ContentSection';
 import { Footer } from '@/components/Footer';
 import { WebsiteJsonLd } from '@/components/schema';
+import { FeatureFlag } from '@/components/FeatureFlag';
 
 export const metadata: Metadata = {
   alternates: {
@@ -19,7 +20,9 @@ export default function Home() {
       <PageWrapper headerVariant="overlay" />
       <Hero />
       <ResortSection />
-      <ContentSection />
+      <FeatureFlag name="contentSection">
+        <ContentSection />
+      </FeatureFlag>
       <Footer />
     </main>
   );
