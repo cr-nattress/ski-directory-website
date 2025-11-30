@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { ViewToggle, ViewMode } from './ViewToggle';
 import { ResortMapViewWrapper } from './ResortMapViewWrapper';
 import { useViewMode } from '@/lib/hooks/useViewMode';
-import { mockCategories } from '@/lib/mock-data';
+import { categories } from '@/lib/data/categories';
 import { useAllResorts } from '@/lib/hooks';
 import { ResortCard } from './ResortCard';
 import { CategoryChips } from './CategoryChips';
@@ -20,7 +20,7 @@ export function ResortSection() {
       return resorts;
     }
 
-    const category = mockCategories.find((c) => c.id === selectedCategory);
+    const category = categories.find((c) => c.id === selectedCategory);
     if (!category) {
       return resorts;
     }
@@ -45,8 +45,8 @@ export function ResortSection() {
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
                 {mode === 'cards' && selectedCategory
-                  ? `${mockCategories.find((c) => c.id === selectedCategory)?.label} Resorts`
-                  : 'Colorado Ski Resorts'}
+                  ? `${categories.find((c) => c.id === selectedCategory)?.icon} ${categories.find((c) => c.id === selectedCategory)?.label} Resorts`
+                  : '🗺️ All Ski Resorts'}
               </h2>
               {mode === 'cards' && !isLoading && (
                 <p className="text-gray-600 mt-2">

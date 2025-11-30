@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { mockCategories } from '@/lib/mock-data';
+import { categories } from '@/lib/data/categories';
 import { useAllResorts, Resort } from '@/lib/hooks';
 import { ResortCard } from './ResortCard';
 import { CategoryChips } from './CategoryChips';
@@ -15,7 +15,7 @@ export function ResortGrid() {
       return resorts;
     }
 
-    const category = mockCategories.find((c) => c.id === selectedCategory);
+    const category = categories.find((c) => c.id === selectedCategory);
     if (!category) {
       return resorts;
     }
@@ -36,7 +36,7 @@ export function ResortGrid() {
           <div className="mb-8">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
               {selectedCategory
-                ? `${mockCategories.find((c) => c.id === selectedCategory)?.label} Resorts`
+                ? `${categories.find((c) => c.id === selectedCategory)?.label} Resorts`
                 : 'All Colorado Resorts'}
             </h2>
             {!isLoading && (

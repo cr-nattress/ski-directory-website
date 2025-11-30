@@ -10,7 +10,7 @@ import {
   SocialRegion,
   SkillLevel,
   SOCIAL_TOPIC_ORDER,
-} from './social-links-types';
+} from '@/lib/types/social-links';
 
 export const socialLinks: SocialLink[] = [
   // ============================================

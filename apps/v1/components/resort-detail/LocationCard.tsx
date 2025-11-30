@@ -1,4 +1,4 @@
-import { Resort } from '@/lib/mock-data';
+import type { Resort } from '@/lib/types';
 import { MapPin, Navigation } from 'lucide-react';
 
 interface LocationCardProps {
@@ -19,10 +19,10 @@ export function LocationCard({ resort }: LocationCardProps) {
             <div>
               <p className="font-medium">{resort.nearestCity}</p>
               <p className="text-sm text-gray-600">
-                {resort.distanceFromDenver} miles from Denver
+                {resort.distanceFromMajorCity} miles from {resort.majorCityName}
               </p>
               <p className="text-sm text-gray-600">
-                {resort.driveTimeFromDenver} minute drive
+                {resort.driveTimeToMajorCity} minute drive
               </p>
             </div>
           </div>

@@ -1,6 +1,7 @@
-import { Category, Resort } from './types';
+import { Category } from '@/lib/types/category';
+import { Resort } from '@/lib/types';
 
-export const mockCategories: Category[] = [
+export const categories: Category[] = [
   {
     id: 'epic-pass',
     label: 'Epic Pass',

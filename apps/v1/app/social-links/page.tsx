@@ -4,7 +4,7 @@ import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
 import { SocialLinksHero } from '@/components/social-links/SocialLinksHero';
 import { SocialLinksContent } from '@/components/social-links/SocialLinksContent';
-import { getSocialLinks, getUniquePlatformCount } from '@/lib/mock-data/social-links';
+import { getSocialLinks, getUniquePlatformCount } from '@/lib/data/social-links';
 
 export const metadata: Metadata = {
   title: 'Ski Social Media Directory | YouTube, Instagram, TikTok & More',

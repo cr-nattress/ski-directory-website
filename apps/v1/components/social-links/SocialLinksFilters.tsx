@@ -9,7 +9,7 @@ import {
   SOCIAL_PLATFORM_LABELS,
   SOCIAL_TOPIC_LABELS,
   SOCIAL_REGION_LABELS,
-} from '@/lib/mock-data/social-links-types';
+} from '@/lib/types/social-links';
 
 export type PlatformFilter = SocialPlatform | 'all';
 export type TopicFilter = SocialTopic | 'all';

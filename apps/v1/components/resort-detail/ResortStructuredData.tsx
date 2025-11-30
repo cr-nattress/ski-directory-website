@@ -1,4 +1,4 @@
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
 
@@ -68,10 +68,10 @@ export function ResortStructuredData({ resort }: ResortStructuredDataProps) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'SkiResort',
-    '@id': `${BASE_URL}/${resort.stateCode}/${resort.slug}#skiresort`,
+    '@id': `${BASE_URL}/${resort.countryCode}/${resort.stateCode}/${resort.slug}#skiresort`,
     name: resort.name,
     description: resort.description,
-    url: `${BASE_URL}/${resort.stateCode}/${resort.slug}`,
+    url: `${BASE_URL}/${resort.countryCode}/${resort.stateCode}/${resort.slug}`,
     image: images,
     priceRange: '$$-$$$',
     address: {

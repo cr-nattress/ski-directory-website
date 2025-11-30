@@ -1,4 +1,4 @@
-import { Resort } from '@/lib/mock-data';
+import type { Resort } from '@/lib/types';
 import { PhotoGallery } from './PhotoGallery';
 import { Star, ExternalLink } from 'lucide-react';
 

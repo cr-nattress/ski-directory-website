@@ -1,6 +1,6 @@
 'use client';
 
-import { mockCategories } from '@/lib/mock-data';
+import { categories } from '@/lib/data/categories';
 import { cn } from '@/lib/utils';
 
 interface CategoryChipsProps {
@@ -34,7 +34,7 @@ export function CategoryChips({
             <span>All Resorts</span>
           </button>
 
-          {mockCategories.map((category) => (
+          {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => onSelectCategory(category.id)}

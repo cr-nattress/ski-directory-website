@@ -4,7 +4,7 @@ import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
 import { SkiLinksHero } from '@/components/ski-links/SkiLinksHero';
 import { SkiLinksContent } from '@/components/ski-links/SkiLinksContent';
-import { getSkiLinks, getSkiLinkStats } from '@/lib/mock-data/ski-links';
+import { getSkiLinks, getSkiLinkStats } from '@/lib/data/ski-links';
 
 export const metadata: Metadata = {
   title: 'Skiing Websites & Resources Directory',

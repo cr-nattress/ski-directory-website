@@ -1,4 +1,4 @@
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 import { Map, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 

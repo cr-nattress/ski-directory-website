@@ -1,4 +1,4 @@
-import { mockArticles } from '@/lib/mock-data';
+import { articles } from '@/lib/data/articles';
 import { Clock, ArrowRight } from 'lucide-react';
 
 export function ContentSection() {
@@ -26,7 +26,7 @@ export function ContentSection() {
 
         {/* Articles grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mockArticles.map((article) => (
+          {articles.map((article) => (
             <a
               key={article.id}
               href={`#article-${article.slug}`}

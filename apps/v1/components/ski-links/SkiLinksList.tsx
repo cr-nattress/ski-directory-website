@@ -8,7 +8,7 @@ import {
   Users,
   Newspaper,
 } from 'lucide-react';
-import { SkiLink, SkiLinkType, SKI_LINK_TYPE_LABELS } from '@/lib/mock-data/ski-links-types';
+import { SkiLink, SkiLinkType, SKI_LINK_TYPE_LABELS } from '@/lib/types/ski-links';
 import { SkiLinkCard } from './SkiLinkCard';
 
 interface SkiLinksListProps {

@@ -37,7 +37,7 @@ const sortOptions: { value: SortOption; label: string }[] = [
   { value: 'acres', label: 'Largest Resort' },
   { value: 'vertical', label: 'Most Vertical' },
   { value: 'rating', label: 'Highest Rated' },
-  { value: 'distance', label: 'Nearest to Denver' },
+  { value: 'distance', label: 'Nearest' },
 ];
 
 const passOptions: { value: PassFilter; label: string }[] = [

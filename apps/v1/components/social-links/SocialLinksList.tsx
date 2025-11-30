@@ -13,7 +13,7 @@ import {
   BookOpen,
   Users,
 } from 'lucide-react';
-import { SocialLink, SocialTopic, SOCIAL_TOPIC_LABELS } from '@/lib/mock-data/social-links-types';
+import { SocialLink, SocialTopic, SOCIAL_TOPIC_LABELS } from '@/lib/types/social-links';
 import { SocialLinkCard } from './SocialLinkCard';
 
 interface SocialLinksListProps {

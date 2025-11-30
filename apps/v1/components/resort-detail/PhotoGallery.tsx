@@ -1,6 +1,7 @@
 'use client';
 
-import { Resort, getSortedImages, ResortImage } from '@/lib/mock-data';
+import { Resort, ResortImage } from '@/lib/types';
+import { getSortedImages } from '@/lib/utils/resort-images';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 

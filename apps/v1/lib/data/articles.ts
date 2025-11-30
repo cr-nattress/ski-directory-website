@@ -1,6 +1,6 @@
-import { Article } from './types';
+import { Article } from '@/lib/types/article';
 
-export const mockArticles: Article[] = [
+export const articles: Article[] = [
   {
     id: 'article:best-beginner-resorts',
     slug: 'best-beginner-resorts-colorado',

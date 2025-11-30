@@ -6,8 +6,8 @@ import {
   SkiLink,
   SkiLinkType,
   SKI_LINK_TYPE_ORDER,
-} from '@/lib/mock-data/ski-links-types';
-import { filterSkiLinks, sortSkiLinks, groupSkiLinksByType } from '@/lib/mock-data/ski-links';
+} from '@/lib/types/ski-links';
+import { filterSkiLinks, sortSkiLinks, groupSkiLinksByType } from '@/lib/data/ski-links';
 import {
   SkiLinksFilters,
   TypeFilter,

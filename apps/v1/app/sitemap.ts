@@ -1,20 +1,20 @@
 import type { MetadataRoute } from 'next';
-import { mockResorts } from '@/lib/mock-data';
-import { getSkiLinks } from '@/lib/mock-data/ski-links';
-import { getSocialLinks } from '@/lib/mock-data/social-links';
+import { getResorts } from '@/lib/services/resort-service';
+import { getSkiLinks } from '@/lib/data/ski-links';
+import { getSocialLinks } from '@/lib/data/social-links';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  // Get all active resorts
-  const resortUrls = mockResorts
-    .filter((r) => r.isActive)
-    .map((resort) => ({
-      url: `${BASE_URL}/colorado/${resort.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    }));
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Get all active resorts from Supabase
+  const resorts = await getResorts({ status: 'active' });
+
+  const resortUrls = resorts.map((resort) => ({
+    url: `${BASE_URL}/${resort.country || 'us'}/${resort.state}/${resort.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

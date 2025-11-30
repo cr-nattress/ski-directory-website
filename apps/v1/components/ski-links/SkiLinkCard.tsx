@@ -6,8 +6,8 @@ import {
   SKI_LINK_REGION_LABELS,
   SKI_LINK_AUDIENCE_LABELS,
   SkiLinkType,
-} from '@/lib/mock-data/ski-links-types';
-import { getDisplayDomain } from '@/lib/mock-data/ski-links';
+} from '@/lib/types/ski-links';
+import { getDisplayDomain } from '@/lib/data/ski-links';
 
 interface SkiLinkCardProps {
   link: SkiLink;

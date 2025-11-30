@@ -23,10 +23,14 @@ export function ResortDetail({ resort }: ResortDetailProps) {
     ? resort.stateCode.charAt(0).toUpperCase() + resort.stateCode.slice(1)
     : 'Colorado';
 
+  // Country display name (e.g., 'us' -> 'US', 'ca' -> 'CA')
+  const countryName = resort.countryCode?.toUpperCase() || 'US';
+
   const breadcrumbItems = [
     { name: 'Home', url: BASE_URL },
-    { name: `${stateName} Resorts`, url: `${BASE_URL}/directory` },
-    { name: resort.name, url: `${BASE_URL}/${resort.stateCode}/${resort.slug}` },
+    { name: countryName, url: `${BASE_URL}/${resort.countryCode}` },
+    { name: `${stateName} Resorts`, url: `${BASE_URL}/${resort.countryCode}/${resort.stateCode}` },
+    { name: resort.name, url: `${BASE_URL}/${resort.countryCode}/${resort.stateCode}/${resort.slug}` },
   ];
 
   return (
@@ -38,8 +42,9 @@ export function ResortDetail({ resort }: ResortDetailProps) {
 
       <Breadcrumb
         items={[
-          { label: stateName, href: '/' },
-          { label: resort.name, href: `/${resort.stateCode}/${resort.slug}` },
+          { label: countryName, href: '/' },
+          { label: stateName, href: `/${resort.countryCode}/${resort.stateCode}` },
+          { label: resort.name, href: `/${resort.countryCode}/${resort.stateCode}/${resort.slug}` },
         ]}
       />
 
@@ -163,8 +168,8 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                     </div>
 
                     <div>
-                      <p className="text-sm text-gray-600 mb-2">Distance from Denver</p>
-                      <p className="font-semibold">{resort.distanceFromDenver} mi • {resort.driveTimeFromDenver} min drive</p>
+                      <p className="text-sm text-gray-600 mb-2">Distance from {resort.majorCityName}</p>
+                      <p className="font-semibold">{resort.distanceFromMajorCity} mi • {resort.driveTimeToMajorCity} min drive</p>
                     </div>
                   </div>
 

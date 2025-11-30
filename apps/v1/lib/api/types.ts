@@ -1,4 +1,4 @@
-import { Resort, ResortImage } from '../mock-data/types';
+import { Resort, ResortImage } from '@/lib/types';
 
 // API Response types
 export interface ApiResponse<T> {
@@ -88,7 +88,7 @@ export interface UseRegionalStatsResult {
   refetch: () => Promise<void>;
 }
 
-// Re-export types from mock-data for convenience
+// Re-export types for convenience
 export type { Resort, ResortImage };
 
 // ============================================

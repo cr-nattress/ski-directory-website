@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Resort, getCardImage } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
+import { getCardImage } from '@/lib/utils/resort-images';
 import { Star, MapPin, Snowflake } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -30,7 +31,7 @@ export function ResortCard({ resort }: ResortCardProps) {
 
   return (
     <Link
-      href={`/${resort.stateCode}/${resort.slug}`}
+      href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
       className="card group cursor-pointer"
     >
       {/* Image */}
@@ -97,7 +98,7 @@ export function ResortCard({ resort }: ResortCardProps) {
         <div className={cn("flex items-center gap-3 text-sm text-gray-600", resort.isLost && "mt-2")}>
           <div className="flex items-center gap-1">
             <MapPin className="w-4 h-4" />
-            <span>{formatDistance(resort.distanceFromDenver)}</span>
+            <span>{formatDistance(resort.distanceFromMajorCity)}</span>
           </div>
           {!resort.isLost && (
             <>

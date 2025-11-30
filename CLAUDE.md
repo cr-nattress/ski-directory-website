@@ -117,8 +117,12 @@ const ResortMapView = dynamic(
 ```typescript
 interface Resort {
   id, slug, name, description,
+  stateCode,  // e.g., 'colorado', 'utah' - used for URL routing
   location: { lat, lng },
   nearestCity,
+  majorCityName,  // e.g., 'Denver', 'Salt Lake City' - state-specific major city
+  distanceFromMajorCity,  // miles
+  driveTimeToMajorCity,   // minutes
   stats: { skiableAcres, liftsCount, runsCount, verticalDrop, baseElevation, summitElevation, avgAnnualSnowfall },
   terrain: { beginner, intermediate, advanced, expert },
   conditions: { snowfall24h, snowfall72h, baseDepth, terrainOpen, liftsOpen, status },
@@ -137,11 +141,27 @@ interface ResortMapPin {
   id, slug, name,
   latitude, longitude,
   nearestCity, stateCode,
+  majorCityName?, distanceFromMajorCity?,
   passAffiliations, rating, status,
   isActive, isLost,
   terrainOpenPercent?, snowfall24h?
 }
 ```
+
+### Major Cities Reference
+
+Each state has a designated major city for distance calculations:
+
+| State | Major City | Notes |
+|-------|------------|-------|
+| Colorado | Denver | Front Range population center |
+| Utah | Salt Lake City | Main airport and population hub |
+| California | Los Angeles / San Francisco | Split by region |
+| Vermont | Burlington | Largest city, airport |
+| Washington | Seattle | Major population center |
+| Oregon | Portland | Major population center |
+
+The `major_cities` Supabase table stores coordinates and allows states to have multiple cities (with `is_primary` flag).
 
 ### Styling System
 
@@ -195,4 +215,10 @@ getTrailMapUrl(assetPath)    // → /trailmaps/current.jpg
 ## Git Workflow
 
 - Main branch: `master`
+- **Epic branches:** Every epic MUST be developed on a dedicated branch named `epic-{number}-{short-description}` (e.g., `epic-20-remove-mock-data`)
+- **Branch workflow:**
+  1. Create new branch from `master` before starting an epic: `git checkout -b epic-{N}-{name}`
+  2. All commits for that epic go on the branch
+  3. When epic is complete, user will manually merge to `master`
+  4. Do NOT auto-merge or push to `master` without explicit user approval
 - Commit footer: `🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`

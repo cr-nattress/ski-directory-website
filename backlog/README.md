@@ -548,3 +548,58 @@ Replace the hardcoded "Distance from Denver" references throughout the codebase 
 
 **Dependencies:**
 - Epic 17: Supabase Migration ✅
+
+---
+
+### Epic 20: Remove Mock Data and Mock Classes
+**Status:** Ready
+**Priority:** High
+**Effort:** Medium-Large
+
+Remove all mock data files, mock resort arrays, and related utility functions from the codebase. Replace with Supabase data sources and clean type exports. Ensures the application fully relies on the Supabase database.
+
+**User Stories:** 22
+📁 [View Epic Details](./epic-20-remove-mock-data/user-stories.md)
+
+**Key Features:**
+- Centralized types in new `lib/types/` directory
+- Move utility functions to `lib/api/` services
+- Delete all mock data files (~11 files)
+- Update ~45+ component imports
+- Full verification of all features with Supabase-only data
+
+**Phases:**
+- Phase 1: Type relocation (create `lib/types/` directory)
+- Phase 2: Update component imports (23+ components)
+- Phase 3: Move utility functions (image helpers, ski-links, social-links)
+- Phase 4: Update pages and services
+- Phase 5: Database migrations (optional - ski-links, social-links tables)
+- Phase 6: Cleanup and file deletion
+- Phase 7: Full application verification
+
+**Files to Delete:**
+- `lib/mock-data/resorts.ts` (hardcoded Colorado resorts)
+- `lib/mock-data/resorts-from-json.ts`
+- `lib/mock-data/resorts_rows.json`
+- `lib/mock-data/index.ts`
+- `lib/mock-data/types.ts`
+- `lib/mock-data/categories.ts`
+- `lib/mock-data/articles.ts`
+- `lib/mock-data/ski-links.ts` + types
+- `lib/mock-data/social-links.ts` + types
+
+**Files to Create:**
+- `lib/types/index.ts` (centralized type exports)
+- `lib/types/resort.ts`, `category.ts`, `article.ts`, `map.ts`
+- `lib/types/ski-links.ts`, `social-links.ts`
+- `lib/utils/resort-images.ts`
+- `lib/api/ski-links-service.ts`
+- `lib/api/social-links-service.ts`
+
+**Decision Points:**
+- Keep ski-links/social-links as static data or migrate to Supabase?
+- Delete unused articles feature or migrate?
+
+**Dependencies:**
+- Epic 17: Supabase Migration ✅
+- Epic 18: Interactive Map ✅

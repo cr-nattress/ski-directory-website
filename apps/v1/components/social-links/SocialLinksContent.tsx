@@ -2,12 +2,12 @@
 
 import { useState, useMemo } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { SocialLink, SocialTopic } from '@/lib/mock-data/social-links-types';
+import { SocialLink, SocialTopic } from '@/lib/types/social-links';
 import {
   filterSocialLinks,
   sortSocialLinks,
   groupSocialLinksByTopic,
-} from '@/lib/mock-data/social-links';
+} from '@/lib/data/social-links';
 import {
   SocialLinksFilters,
   PlatformFilter,

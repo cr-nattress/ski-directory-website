@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 
 const LocationMapCardDynamic = dynamic(
   () => import('./LocationMapCard').then((mod) => mod.LocationMapCard),

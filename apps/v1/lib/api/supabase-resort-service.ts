@@ -9,7 +9,7 @@
 import { supabase } from "@/lib/supabase";
 import type { ResortFull } from "@/types/supabase";
 import { adaptResortFromSupabase, adaptResortsFromSupabase } from "./supabase-resort-adapter";
-import type { Resort, ResortMapPin, PassAffiliation } from "../mock-data/types";
+import type { Resort, ResortMapPin, PassAffiliation } from "@/lib/types";
 import type {
   ApiResponse,
   PaginatedResponse,
@@ -404,6 +404,7 @@ class SupabaseResortService {
       latitude: row.latitude,
       longitude: row.longitude,
       nearestCity: row.nearest_city || "",
+      countryCode: row.country_code || "us",
       stateCode: row.state_code || "",
       passAffiliations: (row.pass_affiliations || []) as PassAffiliation[],
       rating: row.rating || 0,

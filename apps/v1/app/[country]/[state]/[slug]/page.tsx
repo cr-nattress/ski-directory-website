@@ -11,6 +11,7 @@ export const dynamicParams = true;
 
 interface ResortPageProps {
   params: {
+    country: string;
     state: string;
     slug: string;
   };
@@ -39,7 +40,7 @@ export async function generateMetadata({
     title: `${resortData.name} Ski Resort`,
     description,
     alternates: {
-      canonical: `/${params.state}/${params.slug}`,
+      canonical: `/${params.country}/${params.state}/${params.slug}`,
     },
     openGraph: {
       title: `${resortData.name} | ${stateName} Ski Resort`,
@@ -56,10 +57,10 @@ export async function generateMetadata({
 
 // Generate static paths for all resorts at build time
 export async function generateStaticParams() {
-  // Fetch all resorts with state and slug for static generation
+  // Fetch all resorts with country, state, and slug for static generation
   const { data, error } = await supabase
     .from('resorts')
-    .select('slug, state_slug')
+    .select('slug, state_slug, country_code')
     .order('slug');
 
   if (error) {
@@ -67,8 +68,10 @@ export async function generateStaticParams() {
     return [];
   }
 
-  // Return array of { state, slug } params
-  return (data || []).map((item) => ({
+  // Return array of { country, state, slug } params
+  type ResortSlugRow = { slug: string; state_slug: string; country_code: string };
+  return ((data || []) as ResortSlugRow[]).map((item) => ({
+    country: item.country_code,
     state: item.state_slug,
     slug: item.slug,
   }));
@@ -81,8 +84,8 @@ export default async function ResortPage({ params }: ResortPageProps) {
     notFound();
   }
 
-  // Verify the state matches (for canonical URLs)
-  if (resortData.state !== params.state) {
+  // Verify the country and state match (for canonical URLs)
+  if (resortData.country !== params.country || resortData.state !== params.state) {
     notFound();
   }
 

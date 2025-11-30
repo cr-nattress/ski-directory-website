@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { resortService } from '@/lib/api/resort-service';
-import { ResortMapPin } from '@/lib/mock-data/types';
+import { ResortMapPin } from '@/lib/types';
 
 const CACHE_KEY = 'ski-map-pins';
 const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes

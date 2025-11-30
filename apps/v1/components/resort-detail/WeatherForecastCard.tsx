@@ -1,4 +1,4 @@
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 import { Cloud, CloudSnow, Sun, CloudRain, Wind, Droplets } from 'lucide-react';
 
 interface WeatherForecastCardProps {

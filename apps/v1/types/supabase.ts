@@ -107,6 +107,9 @@ export interface Database {
           is_active: boolean;
           is_lost: boolean;
           fts: unknown | null; // tsvector
+          major_city_id: string | null;
+          distance_from_major_city: number | null;
+          drive_time_to_major_city: number | null;
         };
         Insert: {
           id: string;
@@ -125,6 +128,9 @@ export interface Database {
           asset_path: string;
           created_at?: string;
           updated_at?: string;
+          major_city_id?: string | null;
+          distance_from_major_city?: number | null;
+          drive_time_to_major_city?: number | null;
         };
         Update: {
           id?: string;
@@ -143,6 +149,9 @@ export interface Database {
           asset_path?: string;
           created_at?: string;
           updated_at?: string;
+          major_city_id?: string | null;
+          distance_from_major_city?: number | null;
+          drive_time_to_major_city?: number | null;
         };
         Relationships: [
           {
@@ -215,6 +224,49 @@ export interface Database {
           }
         ];
       };
+      major_cities: {
+        Row: {
+          id: string;
+          city_name: string;
+          state_slug: string;
+          latitude: number;
+          longitude: number;
+          is_primary: boolean;
+          region: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          city_name: string;
+          state_slug: string;
+          latitude: number;
+          longitude: number;
+          is_primary?: boolean;
+          region?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          city_name?: string;
+          state_slug?: string;
+          latitude?: number;
+          longitude?: number;
+          is_primary?: boolean;
+          region?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "major_cities_state_slug_fkey";
+            columns: ["state_slug"];
+            referencedRelation: "states";
+            referencedColumns: ["slug"];
+          }
+        ];
+      };
     };
     Views: {
       resorts_full: {
@@ -240,6 +292,9 @@ export interface Database {
           asset_path: string;
           created_at: string;
           updated_at: string;
+          major_city_name: string | null;
+          distance_from_major_city: number | null;
+          drive_time_to_major_city: number | null;
           pass_affiliations: string[];
           tags: string[];
         };
@@ -261,6 +316,9 @@ export interface Database {
           vertical_drop: string | null;
           lifts_count: string | null;
           asset_path: string;
+          major_city_name: string | null;
+          distance_from_major_city: number | null;
+          drive_time_to_major_city: number | null;
           pass_affiliations: string[];
         };
       };
@@ -320,6 +378,7 @@ export type PassProgram = Database["public"]["Tables"]["pass_programs"]["Row"];
 export type Resort = Database["public"]["Tables"]["resorts"]["Row"];
 export type ResortPass = Database["public"]["Tables"]["resort_passes"]["Row"];
 export type ResortTag = Database["public"]["Tables"]["resort_tags"]["Row"];
+export type MajorCity = Database["public"]["Tables"]["major_cities"]["Row"];
 
 export type ResortFull = Database["public"]["Views"]["resorts_full"]["Row"];
 export type ResortListItem = Database["public"]["Views"]["resorts_list"]["Row"];

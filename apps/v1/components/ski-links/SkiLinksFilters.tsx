@@ -9,7 +9,7 @@ import {
   SKI_LINK_TYPE_LABELS,
   SKI_LINK_REGION_LABELS,
   SKI_LINK_AUDIENCE_LABELS,
-} from '@/lib/mock-data/ski-links-types';
+} from '@/lib/types/ski-links';
 
 export type TypeFilter = SkiLinkType | 'all';
 export type RegionFilter = SkiLinkRegion | 'all';

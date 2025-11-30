@@ -166,7 +166,7 @@ export function ResortMapView() {
                   )}
 
                   <button
-                    onClick={() => router.push(`/${pin.stateCode}/${pin.slug}`)}
+                    onClick={() => router.push(`/${pin.countryCode}/${pin.stateCode}/${pin.slug}`)}
                     className="w-full mt-2 bg-sky-600 text-white text-sm py-2 rounded-lg hover:bg-sky-700 transition-colors font-medium"
                   >
                     View Details &rarr;

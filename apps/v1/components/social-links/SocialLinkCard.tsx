@@ -8,7 +8,7 @@ import {
   SOCIAL_TOPIC_LABELS,
   SOCIAL_REGION_LABELS,
   SocialTopic,
-} from '@/lib/mock-data/social-links-types';
+} from '@/lib/types/social-links';
 
 interface SocialLinkCardProps {
   link: SocialLink;

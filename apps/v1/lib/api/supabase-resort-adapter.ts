@@ -7,7 +7,7 @@
  */
 
 import type { ResortFull } from "@/types/supabase";
-import type { Resort, ResortImage, PassAffiliation } from "../mock-data/types";
+import type { Resort, ResortImage, PassAffiliation } from "@/lib/types";
 import { getCardImageUrl, getHeroImageUrl, getTrailMapUrl } from "@/lib/supabase";
 
 /**
@@ -51,7 +51,8 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
     isActive: supabaseResort.is_active,
     isLost: supabaseResort.is_lost,
 
-    // State code for URL routing (e.g., 'colorado', 'utah')
+    // Country and state codes for URL routing
+    countryCode: supabaseResort.country,
     stateCode: supabaseResort.state,
 
     // Location
@@ -60,8 +61,15 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
       lng: supabaseResort.lng || 0,
     },
     nearestCity: supabaseResort.nearest_city || "",
-    distanceFromDenver: 0, // Would need calculation or stored value
-    driveTimeFromDenver: 0, // Would need calculation or stored value
+
+    // Distance from major city (dynamic based on state)
+    majorCityName: supabaseResort.major_city_name || "Denver",
+    distanceFromMajorCity: supabaseResort.distance_from_major_city || 0,
+    driveTimeToMajorCity: supabaseResort.drive_time_to_major_city || 0,
+
+    // Deprecated fields (kept for backward compatibility)
+    distanceFromDenver: supabaseResort.distance_from_major_city || 0,
+    driveTimeFromDenver: supabaseResort.drive_time_to_major_city || 0,
 
     // Stats from JSONB
     stats: {

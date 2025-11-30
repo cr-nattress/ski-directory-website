@@ -1,4 +1,4 @@
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 import { Facebook, Instagram, Youtube, Music, Twitter } from 'lucide-react';
 
 interface SocialMediaCardProps {

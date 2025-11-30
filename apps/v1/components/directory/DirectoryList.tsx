@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Snowflake, MapPin, Star, ChevronRight, ChevronDown, Mountain, Thermometer } from 'lucide-react';
 import { StatusBadge } from './StatusBadge';
@@ -46,7 +46,7 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
             )}
           >
             <Link
-              href={`/${resort.stateCode}/${resort.slug}`}
+              href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
               className={cn(
                 'block p-4',
                 'hover:bg-gray-50 transition-colors'
@@ -139,7 +139,7 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
             <div className="flex items-center justify-between pt-2 border-t border-gray-100">
               <div className="flex items-center gap-1 text-sm text-gray-500">
                 <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>{resort.distanceFromDenver} mi from Denver</span>
+                <span>{resort.distanceFromMajorCity} mi from {resort.majorCityName}</span>
               </div>
               <ChevronRight className="w-4 h-4 text-gray-400" aria-hidden="true" />
             </div>
@@ -248,7 +248,7 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
 
                 {/* View Resort Link */}
                 <Link
-                  href={`/${resort.stateCode}/${resort.slug}`}
+                  href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
                   className="mt-4 inline-flex items-center gap-1 text-ski-blue hover:underline font-medium text-sm focus:outline-none focus:ring-2 focus:ring-ski-blue focus:ring-offset-2 rounded"
                 >
                   View full resort details

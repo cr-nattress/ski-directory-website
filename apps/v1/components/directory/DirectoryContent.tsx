@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 import { DirectoryFilters, SortOption, PassFilter, StatusFilter } from './DirectoryFilters';
 import { DirectoryTable } from './DirectoryTable';
 import { DirectoryList } from './DirectoryList';
@@ -93,7 +93,7 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
         result.sort((a, b) => b.rating - a.rating);
         break;
       case 'distance':
-        result.sort((a, b) => a.distanceFromDenver - b.distanceFromDenver);
+        result.sort((a, b) => a.distanceFromMajorCity - b.distanceFromMajorCity);
         break;
     }
 

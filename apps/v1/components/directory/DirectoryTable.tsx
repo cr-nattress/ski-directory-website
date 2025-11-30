@@ -2,7 +2,7 @@
 
 import { useState, Fragment } from 'react';
 import Link from 'next/link';
-import { Resort } from '@/lib/mock-data';
+import { Resort } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { ChevronUp, ChevronDown, Snowflake, ChevronRight, Mountain, Thermometer } from 'lucide-react';
 import { SortOption } from './DirectoryFilters';
@@ -185,13 +185,13 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
                   {/* Resort Name */}
                   <td className="px-4 py-4" role="gridcell">
                     <Link
-                      href={`/${resort.stateCode}/${resort.slug}`}
+                      href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
                       className="font-semibold text-gray-900 hover:text-ski-blue transition-colors focus:outline-none focus:ring-2 focus:ring-ski-blue focus:ring-offset-2 rounded"
                     >
                       {resort.name}
                     </Link>
                     <div className="text-xs text-gray-500 mt-0.5">
-                      {resort.distanceFromDenver} mi from Denver
+                      {resort.distanceFromMajorCity} mi from {resort.majorCityName}
                     </div>
                   </td>
 
@@ -363,7 +363,7 @@ export function DirectoryTable({ resorts, sortBy, onSortChange }: DirectoryTable
                       {/* View Resort Link */}
                       <div className="pl-8 mt-4">
                         <Link
-                          href={`/${resort.stateCode}/${resort.slug}`}
+                          href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
                           className="inline-flex items-center gap-1 text-ski-blue hover:underline font-medium focus:outline-none focus:ring-2 focus:ring-ski-blue focus:ring-offset-2 rounded"
                         >
                           View full resort details

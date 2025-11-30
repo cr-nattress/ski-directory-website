@@ -9,7 +9,7 @@ import {
   SkiLinkRegion,
   SkiLinkAudience,
   SKI_LINK_TYPE_ORDER,
-} from './ski-links-types';
+} from '@/lib/types/ski-links';
 
 export const skiLinks: SkiLink[] = [
   // ============================================

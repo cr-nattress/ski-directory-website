@@ -1,6 +1,6 @@
 'use client';
 
-import { Resort } from '@/lib/mock-data';
+import type { Resort } from '@/lib/types';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useState } from 'react';
@@ -80,8 +80,8 @@ export function LocationMapCard({ resort }: LocationMapCardProps) {
 
       <div className="p-6 pt-4 bg-gray-50 border-t border-gray-200">
         <div className="flex justify-between items-center text-sm">
-          <span className="text-gray-600">Distance from Denver</span>
-          <span className="font-semibold">{resort.distanceFromDenver} miles • {resort.driveTimeFromDenver} min</span>
+          <span className="text-gray-600">Distance from {resort.majorCityName}</span>
+          <span className="font-semibold">{resort.distanceFromMajorCity} miles • {resort.driveTimeToMajorCity} min</span>
         </div>
       </div>
     </div>

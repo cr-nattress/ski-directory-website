@@ -17,6 +17,7 @@ export interface ResortMapPin {
   longitude: number;
   nearestCity: string;
   stateCode: string;
+  countryCode: string;
   passAffiliations: PassAffiliation[];
   rating: number;
   status: 'open' | 'closed' | 'opening-soon';

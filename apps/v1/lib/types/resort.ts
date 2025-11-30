@@ -34,6 +34,9 @@ export interface Resort {
   isActive: boolean; // Whether the resort is visible in the UI
   isLost: boolean; // false = currently operating, true = non-operational/closed permanently
 
+  // Country code for URL routing (e.g., 'us', 'ca')
+  countryCode: string;
+
   // State code for URL routing (e.g., 'colorado', 'utah', 'vermont')
   stateCode: string;
 
@@ -43,8 +46,16 @@ export interface Resort {
     lng: number;
   };
   nearestCity: string;
-  distanceFromDenver: number; // miles
-  driveTimeFromDenver: number; // minutes
+
+  // Distance from major city (state-specific, e.g., Denver for CO, Salt Lake City for UT)
+  majorCityName: string;
+  distanceFromMajorCity: number; // miles
+  driveTimeToMajorCity: number; // minutes
+
+  /** @deprecated Use distanceFromMajorCity instead */
+  distanceFromDenver?: number;
+  /** @deprecated Use driveTimeToMajorCity instead */
+  driveTimeFromDenver?: number;
 
   // Stats
   stats: {

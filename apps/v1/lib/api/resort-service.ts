@@ -1,14 +1,11 @@
 /**
  * Resort API Service
  *
- * This service provides resort data from either Supabase or mock data.
- * Set USE_SUPABASE to true to fetch from the database.
- *
- * The service implements a unified interface so components work with either backend.
+ * This service provides resort data from Supabase.
+ * It wraps the Supabase service to provide a consistent interface.
  */
 
-import { mockResorts } from '../mock-data/resorts';
-import { Resort, ResortMapPin } from '../mock-data/types';
+import { Resort, ResortMapPin } from '@/lib/types';
 import {
   ApiResponse,
   PaginatedResponse,
@@ -20,64 +17,13 @@ import {
 } from './types';
 import { supabaseResortService } from './supabase-resort-service';
 
-// Feature flag: Set to true to use Supabase, false for mock data
-const USE_SUPABASE = process.env.NEXT_PUBLIC_USE_SUPABASE === 'true';
-
-// Simulated network delay (ms) - set to 0 for instant responses
-const SIMULATED_DELAY = 300;
-
-// Helper to simulate network latency
-function delay(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-// Helper to get only active resorts
-function getActiveResorts(): Resort[] {
-  return mockResorts.filter((r) => r.isActive);
-}
-
-// Helper to simulate random failures (for testing error handling)
-// Set to 0 to disable, or a value like 0.1 for 10% failure rate
-const FAILURE_RATE = 0;
-
-function shouldFail(): boolean {
-  return Math.random() < FAILURE_RATE;
-}
-
 class ResortService {
   /**
    * GET /api/resorts/:slug
    * Fetch a single resort by its slug
    */
   async getResortBySlug(slug: string): Promise<ApiResponse<Resort | null>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getResortBySlug(slug);
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: null,
-        status: 'error',
-        message: 'Failed to fetch resort. Please try again.',
-      };
-    }
-
-    const resort = mockResorts.find((r) => r.slug === slug) || null;
-
-    if (!resort) {
-      return {
-        data: null,
-        status: 'error',
-        message: `Resort with slug "${slug}" not found.`,
-      };
-    }
-
-    return {
-      data: resort,
-      status: 'success',
-    };
+    return supabaseResortService.getResortBySlug(slug);
   }
 
   /**
@@ -85,34 +31,7 @@ class ResortService {
    * Fetch a single resort by its ID
    */
   async getResortById(id: string): Promise<ApiResponse<Resort | null>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getResortById(id);
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: null,
-        status: 'error',
-        message: 'Failed to fetch resort. Please try again.',
-      };
-    }
-
-    const resort = mockResorts.find((r) => r.id === id) || null;
-
-    if (!resort) {
-      return {
-        data: null,
-        status: 'error',
-        message: `Resort with ID "${id}" not found.`,
-      };
-    }
-
-    return {
-      data: resort,
-      status: 'success',
-    };
+    return supabaseResortService.getResortById(id);
   }
 
   /**
@@ -120,61 +39,7 @@ class ResortService {
    * Fetch all resorts with optional filtering, sorting, and pagination
    */
   async getResorts(options: ResortQueryOptions = {}): Promise<PaginatedResponse<Resort>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getResorts(options);
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: [],
-        pagination: {
-          page: 1,
-          pageSize: 10,
-          totalItems: 0,
-          totalPages: 0,
-          hasNextPage: false,
-          hasPreviousPage: false,
-        },
-        status: 'error',
-        message: 'Failed to fetch resorts. Please try again.',
-      };
-    }
-
-    const {
-      filters = {},
-      sortBy = 'name',
-      sortOrder = 'asc',
-      page = 1,
-      pageSize = 10,
-    } = options;
-
-    // Apply filters (start with only active resorts)
-    let filtered = this.applyFilters(getActiveResorts(), filters);
-
-    // Apply sorting
-    filtered = this.applySorting(filtered, sortBy, sortOrder);
-
-    // Calculate pagination
-    const totalItems = filtered.length;
-    const totalPages = Math.ceil(totalItems / pageSize);
-    const startIndex = (page - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
-    const paginatedData = filtered.slice(startIndex, endIndex);
-
-    return {
-      data: paginatedData,
-      pagination: {
-        page,
-        pageSize,
-        totalItems,
-        totalPages,
-        hasNextPage: page < totalPages,
-        hasPreviousPage: page > 1,
-      },
-      status: 'success',
-    };
+    return supabaseResortService.getResorts(options);
   }
 
   /**
@@ -182,24 +47,7 @@ class ResortService {
    * Fetch all active resorts without pagination (useful for dropdowns, maps, etc.)
    */
   async getAllResorts(): Promise<ApiResponse<Resort[]>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getAllResorts();
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: [],
-        status: 'error',
-        message: 'Failed to fetch resorts. Please try again.',
-      };
-    }
-
-    return {
-      data: getActiveResorts(),
-      status: 'success',
-    };
+    return supabaseResortService.getAllResorts();
   }
 
   /**
@@ -207,40 +55,7 @@ class ResortService {
    * Search resorts by name, description, or location
    */
   async searchResorts(query: string): Promise<ApiResponse<Resort[]>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.searchResorts(query);
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: [],
-        status: 'error',
-        message: 'Search failed. Please try again.',
-      };
-    }
-
-    if (!query || query.trim().length === 0) {
-      return {
-        data: [],
-        status: 'success',
-      };
-    }
-
-    const normalizedQuery = query.toLowerCase().trim();
-    const results = getActiveResorts().filter(
-      (resort) =>
-        resort.name.toLowerCase().includes(normalizedQuery) ||
-        resort.description.toLowerCase().includes(normalizedQuery) ||
-        resort.nearestCity.toLowerCase().includes(normalizedQuery) ||
-        resort.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery))
-    );
-
-    return {
-      data: results,
-      status: 'success',
-    };
+    return supabaseResortService.searchResorts(query);
   }
 
   /**
@@ -248,42 +63,7 @@ class ResortService {
    * Get regional statistics for all resorts
    */
   async getRegionalStats(): Promise<ApiResponse<RegionalStats>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getRegionalStats();
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: {
-          totalResorts: 0,
-          openResorts: 0,
-          avgSnowfall24h: 0,
-          avgAnnualSnowfall: 0,
-        },
-        status: 'error',
-        message: 'Failed to fetch statistics. Please try again.',
-      };
-    }
-
-    const activeResorts = getActiveResorts();
-    const totalResorts = activeResorts.length;
-    const openResorts = activeResorts.filter((r) => r.conditions.status === 'open').length;
-    const avgSnowfall24h =
-      activeResorts.reduce((sum, r) => sum + r.conditions.snowfall24h, 0) / totalResorts;
-    const avgAnnualSnowfall =
-      activeResorts.reduce((sum, r) => sum + r.stats.avgAnnualSnowfall, 0) / totalResorts;
-
-    return {
-      data: {
-        totalResorts,
-        openResorts,
-        avgSnowfall24h: Math.round(avgSnowfall24h),
-        avgAnnualSnowfall: Math.round(avgAnnualSnowfall),
-      },
-      status: 'success',
-    };
+    return supabaseResortService.getRegionalStats();
   }
 
   /**
@@ -291,64 +71,15 @@ class ResortService {
    * Get featured resorts (e.g., highest rated, most snow, etc.)
    */
   async getFeaturedResorts(limit: number = 3): Promise<ApiResponse<Resort[]>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getFeaturedResorts(limit);
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: [],
-        status: 'error',
-        message: 'Failed to fetch featured resorts. Please try again.',
-      };
-    }
-
-    // Get top-rated active resorts with recent snowfall
-    const featured = getActiveResorts()
-      .sort((a, b) => {
-        // Sort by rating first, then by recent snowfall
-        if (b.rating !== a.rating) {
-          return b.rating - a.rating;
-        }
-        return b.conditions.snowfall24h - a.conditions.snowfall24h;
-      })
-      .slice(0, limit);
-
-    return {
-      data: featured,
-      status: 'success',
-    };
+    return supabaseResortService.getFeaturedResorts(limit);
   }
 
   /**
    * GET /api/resorts/nearby?lat=:lat&lng=:lng&radius=:radius
-   * Get resorts within a radius of a location (simplified using distance from Denver)
+   * Get resorts within a radius of a location
    */
   async getNearbyResorts(maxDistance: number): Promise<ApiResponse<Resort[]>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getNearbyResorts(maxDistance);
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: [],
-        status: 'error',
-        message: 'Failed to fetch nearby resorts. Please try again.',
-      };
-    }
-
-    const nearby = getActiveResorts()
-      .filter((r) => r.distanceFromDenver <= maxDistance)
-      .sort((a, b) => a.distanceFromDenver - b.distanceFromDenver);
-
-    return {
-      data: nearby,
-      status: 'success',
-    };
+    return supabaseResortService.getNearbyResorts(maxDistance);
   }
 
   /**
@@ -356,28 +87,7 @@ class ResortService {
    * Get resorts by pass affiliation
    */
   async getResortsByPass(passType: string): Promise<ApiResponse<Resort[]>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getResortsByPass(passType);
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: [],
-        status: 'error',
-        message: 'Failed to fetch resorts. Please try again.',
-      };
-    }
-
-    const resorts = getActiveResorts().filter((r) =>
-      r.passAffiliations.includes(passType as any)
-    );
-
-    return {
-      data: resorts,
-      status: 'success',
-    };
+    return supabaseResortService.getResortsByPass(passType);
   }
 
   /**
@@ -385,138 +95,7 @@ class ResortService {
    * Get optimized data for map pin display
    */
   async getMapPins(): Promise<ApiResponse<ResortMapPin[]>> {
-    if (USE_SUPABASE) {
-      return supabaseResortService.getMapPins();
-    }
-
-    await delay(SIMULATED_DELAY);
-
-    if (shouldFail()) {
-      return {
-        data: [],
-        status: 'error',
-        message: 'Failed to fetch map pins. Please try again.',
-      };
-    }
-
-    // Extract minimal data from full resort objects for mock fallback
-    const pins: ResortMapPin[] = mockResorts
-      .filter((r) => r.isActive || r.isLost)
-      .map((r) => ({
-        id: r.id,
-        slug: r.slug,
-        name: r.name,
-        latitude: r.location.lat,
-        longitude: r.location.lng,
-        nearestCity: r.nearestCity,
-        stateCode: r.stateCode || r.assetLocation?.state || 'colorado',
-        passAffiliations: r.passAffiliations,
-        rating: r.rating,
-        status: r.conditions.status,
-        isActive: r.isActive,
-        isLost: r.isLost,
-        terrainOpenPercent: r.conditions.terrainOpen,
-        snowfall24h: r.conditions.snowfall24h,
-      }));
-
-    return {
-      data: pins,
-      status: 'success',
-    };
-  }
-
-  // Private helper methods
-
-  private applyFilters(resorts: Resort[], filters: ResortFilters): Resort[] {
-    let filtered = [...resorts];
-
-    if (filters.search) {
-      const query = filters.search.toLowerCase();
-      filtered = filtered.filter(
-        (resort) =>
-          resort.name.toLowerCase().includes(query) ||
-          resort.description.toLowerCase().includes(query) ||
-          resort.nearestCity.toLowerCase().includes(query)
-      );
-    }
-
-    if (filters.passAffiliation && filters.passAffiliation.length > 0) {
-      filtered = filtered.filter((resort) =>
-        filters.passAffiliation!.some((pass) =>
-          resort.passAffiliations.includes(pass as any)
-        )
-      );
-    }
-
-    if (filters.maxDistance !== undefined) {
-      filtered = filtered.filter(
-        (resort) => resort.distanceFromDenver <= filters.maxDistance!
-      );
-    }
-
-    if (filters.minRating !== undefined) {
-      filtered = filtered.filter((resort) => resort.rating >= filters.minRating!);
-    }
-
-    if (filters.status) {
-      filtered = filtered.filter((resort) => resort.conditions.status === filters.status);
-    }
-
-    if (filters.features) {
-      const { features } = filters;
-      if (features.hasPark !== undefined) {
-        filtered = filtered.filter((r) => r.features.hasPark === features.hasPark);
-      }
-      if (features.hasHalfpipe !== undefined) {
-        filtered = filtered.filter((r) => r.features.hasHalfpipe === features.hasHalfpipe);
-      }
-      if (features.hasNightSkiing !== undefined) {
-        filtered = filtered.filter((r) => r.features.hasNightSkiing === features.hasNightSkiing);
-      }
-      if (features.hasBackcountryAccess !== undefined) {
-        filtered = filtered.filter(
-          (r) => r.features.hasBackcountryAccess === features.hasBackcountryAccess
-        );
-      }
-      if (features.hasSpaVillage !== undefined) {
-        filtered = filtered.filter((r) => r.features.hasSpaVillage === features.hasSpaVillage);
-      }
-    }
-
-    if (filters.tags && filters.tags.length > 0) {
-      filtered = filtered.filter((resort) =>
-        filters.tags!.some((tag) => resort.tags.includes(tag))
-      );
-    }
-
-    return filtered;
-  }
-
-  private applySorting(
-    resorts: Resort[],
-    sortBy: ResortSortBy,
-    sortOrder: SortOrder
-  ): Resort[] {
-    const sorted = [...resorts];
-    const multiplier = sortOrder === 'asc' ? 1 : -1;
-
-    switch (sortBy) {
-      case 'distance':
-        return sorted.sort(
-          (a, b) => multiplier * (a.distanceFromDenver - b.distanceFromDenver)
-        );
-      case 'rating':
-        return sorted.sort((a, b) => multiplier * (a.rating - b.rating));
-      case 'snow':
-        return sorted.sort(
-          (a, b) => multiplier * (a.conditions.snowfall24h - b.conditions.snowfall24h)
-        );
-      case 'reviewCount':
-        return sorted.sort((a, b) => multiplier * (a.reviewCount - b.reviewCount));
-      case 'name':
-      default:
-        return sorted.sort((a, b) => multiplier * a.name.localeCompare(b.name));
-    }
+    return supabaseResortService.getMapPins();
   }
 }
 
