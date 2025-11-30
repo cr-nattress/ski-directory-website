@@ -603,3 +603,33 @@ Remove all mock data files, mock resort arrays, and related utility functions fr
 **Dependencies:**
 - Epic 17: Supabase Migration ✅
 - Epic 18: Interactive Map ✅
+
+---
+
+### Epic 21: Breadcrumb Navigation to Filtered Directory
+**Status:** Ready
+**Priority:** High
+**Effort:** Small-Medium
+
+Fix broken breadcrumb links on resort detail pages. When a user clicks on the state or country in the breadcrumb, navigate to the A-Z Resort Directory filtered to show only resorts from that state/country. Update the directory header to reflect the active filter.
+
+**User Stories:** 4
+📁 [View Epic Details](./epic-21-breadcrumb-directory-filter/README.md)
+
+**Key Features:**
+- State breadcrumb links to `/directory?state={stateCode}`
+- Country breadcrumb links to `/directory?country={countryCode}`
+- Directory page accepts `state` and `country` URL parameters
+- Directory header updates to show "[State] Ski Resorts" when filtered
+- State/country dropdown filters in DirectoryFilters component
+- URL is shareable and bookmarkable
+
+**Files to Modify:**
+- `components/resort-detail/ResortDetail.tsx` (breadcrumb hrefs)
+- `components/directory/DirectoryContent.tsx` (URL param handling)
+- `components/directory/DirectoryHero.tsx` (dynamic header)
+- `components/directory/DirectoryFilters.tsx` (new dropdowns)
+- `lib/data/geo-mappings.ts` (new file: state/country names)
+
+**Dependencies:**
+- Epic 20: Remove Mock Data ✅

@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
 import { DirectoryContent } from '@/components/directory/DirectoryContent';
-import { DirectoryHero } from '@/components/directory/DirectoryHero';
 import { resortService } from '@/lib/api/resort-service';
 
 export const metadata: Metadata = {
@@ -26,15 +25,9 @@ async function DirectoryPageContent() {
   const response = await resortService.getAllResorts();
   const resorts = response.data.filter((r) => r.isActive);
 
-  return (
-    <>
-      <DirectoryHero resortCount={resorts.length} />
-
-      <div className="container-custom py-8">
-        <DirectoryContent resorts={resorts} />
-      </div>
-    </>
-  );
+  // DirectoryContent now renders DirectoryHero internally
+  // to support dynamic header updates based on URL filters
+  return <DirectoryContent resorts={resorts} />;
 }
 
 export default function DirectoryPage() {

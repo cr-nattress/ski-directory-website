@@ -6,6 +6,8 @@ import { Resort } from '@/lib/types';
 import { DirectoryFilters, SortOption, PassFilter, StatusFilter } from './DirectoryFilters';
 import { DirectoryTable } from './DirectoryTable';
 import { DirectoryList } from './DirectoryList';
+import { DirectoryHero } from './DirectoryHero';
+import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 
 interface DirectoryContentProps {
   resorts: Resort[];
@@ -19,17 +21,29 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
   const initialSort = (searchParams.get('sort') as SortOption) || 'name';
   const initialPass = (searchParams.get('pass') as PassFilter) || 'all';
   const initialStatus = (searchParams.get('status') as StatusFilter) || 'all';
+  const initialState = searchParams.get('state') || '';
+  const initialCountry = searchParams.get('country') || '';
 
   const [sortBy, setSortBy] = useState<SortOption>(initialSort);
   const [passFilter, setPassFilter] = useState<PassFilter>(initialPass);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>(initialStatus);
+  const [stateFilter, setStateFilter] = useState<string>(initialState);
+  const [countryFilter, setCountryFilter] = useState<string>(initialCountry);
 
   // Update URL when filters change
-  const updateURL = (sort: SortOption, pass: PassFilter, status: StatusFilter) => {
+  const updateURL = (
+    sort: SortOption,
+    pass: PassFilter,
+    status: StatusFilter,
+    state: string = stateFilter,
+    country: string = countryFilter
+  ) => {
     const params = new URLSearchParams();
     if (sort !== 'name') params.set('sort', sort);
     if (pass !== 'all') params.set('pass', pass);
     if (status !== 'all') params.set('status', status);
+    if (state) params.set('state', state);
+    if (country) params.set('country', country);
 
     const queryString = params.toString();
     router.push(queryString ? `/directory?${queryString}` : '/directory', { scroll: false });
@@ -50,9 +64,65 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
     updateURL(sortBy, passFilter, status);
   };
 
+  const handleStateFilterChange = (state: string) => {
+    setStateFilter(state);
+    // Clear country filter when state is selected (state is more specific)
+    if (state) {
+      setCountryFilter('');
+      updateURL(sortBy, passFilter, statusFilter, state, '');
+    } else {
+      updateURL(sortBy, passFilter, statusFilter, state, countryFilter);
+    }
+  };
+
+  const handleCountryFilterChange = (country: string) => {
+    setCountryFilter(country);
+    // Clear state filter when country is selected (unless state is within that country)
+    updateURL(sortBy, passFilter, statusFilter, stateFilter, country);
+  };
+
+  // Get unique states and countries from resorts for dropdown options
+  const availableStates = useMemo(() => {
+    const states = new Set<string>();
+    resorts.forEach((resort) => {
+      if (resort.stateCode) {
+        states.add(resort.stateCode);
+      }
+    });
+    return Array.from(states)
+      .map((code) => ({ code, name: getStateName(code) }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [resorts]);
+
+  const availableCountries = useMemo(() => {
+    const countries = new Set<string>();
+    resorts.forEach((resort) => {
+      if (resort.countryCode) {
+        countries.add(resort.countryCode);
+      }
+    });
+    return Array.from(countries)
+      .map((code) => ({ code, name: getCountryName(code) }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [resorts]);
+
   // Filter and sort resorts
   const filteredAndSortedResorts = useMemo(() => {
     let result = [...resorts];
+
+    // Apply state filter
+    if (stateFilter) {
+      result = result.filter(
+        (resort) => resort.stateCode?.toLowerCase() === stateFilter.toLowerCase()
+      );
+    }
+
+    // Apply country filter (only if no state filter, or if filtering within country)
+    if (countryFilter && !stateFilter) {
+      result = result.filter(
+        (resort) => resort.countryCode?.toLowerCase() === countryFilter.toLowerCase()
+      );
+    }
 
     // Apply pass filter
     if (passFilter !== 'all') {
@@ -98,50 +168,87 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
     }
 
     return result;
-  }, [resorts, sortBy, passFilter, statusFilter]);
+  }, [resorts, sortBy, passFilter, statusFilter, stateFilter, countryFilter]);
+
+  // Get display names for current filters
+  const stateDisplayName = stateFilter ? getStateName(stateFilter) : null;
+
+  // When filtering by state, determine the country from the filtered resorts
+  // This ensures the breadcrumb shows: Directory / US / Washington
+  const inferredCountryCode = useMemo(() => {
+    if (countryFilter) return countryFilter;
+    if (stateFilter && filteredAndSortedResorts.length > 0) {
+      // Get the country from the first filtered resort
+      return filteredAndSortedResorts[0]?.countryCode || null;
+    }
+    return null;
+  }, [countryFilter, stateFilter, filteredAndSortedResorts]);
+
+  const countryDisplayName = inferredCountryCode ? getCountryName(inferredCountryCode) : null;
 
   return (
-    <div className="space-y-6">
-      <DirectoryFilters
-        sortBy={sortBy}
-        passFilter={passFilter}
-        statusFilter={statusFilter}
-        onSortChange={handleSortChange}
-        onPassFilterChange={handlePassFilterChange}
-        onStatusFilterChange={handleStatusFilterChange}
+    <>
+      <DirectoryHero
+        resortCount={filteredAndSortedResorts.length}
         totalResorts={resorts.length}
-        filteredCount={filteredAndSortedResorts.length}
+        stateName={stateDisplayName}
+        countryName={countryDisplayName}
+        stateCode={stateFilter}
+        countryCode={inferredCountryCode || undefined}
       />
 
-      {/* Desktop Table View */}
-      <div className="hidden lg:block">
-        <DirectoryTable
-          resorts={filteredAndSortedResorts}
-          sortBy={sortBy}
-          onSortChange={handleSortChange}
-        />
-      </div>
+      <div className="container-custom py-8">
+        <div className="space-y-6">
+          <DirectoryFilters
+            sortBy={sortBy}
+            passFilter={passFilter}
+            statusFilter={statusFilter}
+            stateFilter={stateFilter}
+            countryFilter={countryFilter}
+            onSortChange={handleSortChange}
+            onPassFilterChange={handlePassFilterChange}
+            onStatusFilterChange={handleStatusFilterChange}
+            onStateFilterChange={handleStateFilterChange}
+            onCountryFilterChange={handleCountryFilterChange}
+            totalResorts={resorts.length}
+            filteredCount={filteredAndSortedResorts.length}
+            availableStates={availableStates}
+            availableCountries={availableCountries}
+          />
 
-      {/* Mobile List View */}
-      <div className="lg:hidden">
-        <DirectoryList resorts={filteredAndSortedResorts} />
-      </div>
+          {/* Desktop Table View */}
+          <div className="hidden lg:block">
+            <DirectoryTable
+              resorts={filteredAndSortedResorts}
+              sortBy={sortBy}
+              onSortChange={handleSortChange}
+            />
+          </div>
 
-      {filteredAndSortedResorts.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">No resorts match your filters.</p>
-          <button
-            onClick={() => {
-              setPassFilter('all');
-              setStatusFilter('all');
-              updateURL(sortBy, 'all', 'all');
-            }}
-            className="mt-4 text-ski-blue hover:underline"
-          >
-            Clear filters
-          </button>
+          {/* Mobile List View */}
+          <div className="lg:hidden">
+            <DirectoryList resorts={filteredAndSortedResorts} />
+          </div>
+
+          {filteredAndSortedResorts.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">No resorts match your filters.</p>
+              <button
+                onClick={() => {
+                  setPassFilter('all');
+                  setStatusFilter('all');
+                  setStateFilter('');
+                  setCountryFilter('');
+                  updateURL(sortBy, 'all', 'all', '', '');
+                }}
+                className="mt-4 text-ski-blue hover:underline"
+              >
+                Clear filters
+              </button>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 }

@@ -9,6 +9,7 @@ import { LocationMapCardWrapper } from './LocationMapCardWrapper';
 import { TrailMapCard } from './TrailMapCard';
 import { WeatherForecastCard } from './WeatherForecastCard';
 import { BreadcrumbJsonLd } from '@/components/schema';
+import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
 
@@ -17,19 +18,16 @@ interface ResortDetailProps {
 }
 
 export function ResortDetail({ resort }: ResortDetailProps) {
+  // Get proper display names for state and country
+  const stateName = resort.stateCode ? getStateName(resort.stateCode) : 'Colorado';
+  const countryName = resort.countryCode ? getCountryName(resort.countryCode) : 'United States';
+
   // Breadcrumb data for JSON-LD structured data
-  // Capitalize state name for display (e.g., 'colorado' -> 'Colorado')
-  const stateName = resort.stateCode
-    ? resort.stateCode.charAt(0).toUpperCase() + resort.stateCode.slice(1)
-    : 'Colorado';
-
-  // Country display name (e.g., 'us' -> 'US', 'ca' -> 'CA')
-  const countryName = resort.countryCode?.toUpperCase() || 'US';
-
+  // These URLs point to the filtered directory pages
   const breadcrumbItems = [
     { name: 'Home', url: BASE_URL },
-    { name: countryName, url: `${BASE_URL}/${resort.countryCode}` },
-    { name: `${stateName} Resorts`, url: `${BASE_URL}/${resort.countryCode}/${resort.stateCode}` },
+    { name: countryName, url: `${BASE_URL}/directory?country=${resort.countryCode}` },
+    { name: stateName, url: `${BASE_URL}/directory?state=${resort.stateCode}` },
     { name: resort.name, url: `${BASE_URL}/${resort.countryCode}/${resort.stateCode}/${resort.slug}` },
   ];
 
@@ -42,8 +40,8 @@ export function ResortDetail({ resort }: ResortDetailProps) {
 
       <Breadcrumb
         items={[
-          { label: countryName, href: '/' },
-          { label: stateName, href: `/${resort.countryCode}/${resort.stateCode}` },
+          { label: countryName, href: `/directory?country=${resort.countryCode}` },
+          { label: stateName, href: `/directory?state=${resort.stateCode}` },
           { label: resort.name, href: `/${resort.countryCode}/${resort.stateCode}/${resort.slug}` },
         ]}
       />
