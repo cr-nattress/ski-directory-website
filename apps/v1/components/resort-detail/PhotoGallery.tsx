@@ -1,8 +1,8 @@
 'use client';
 
 import { Resort, ResortImage } from '@/lib/types';
-import { getSortedImages } from '@/lib/utils/resort-images';
-import { useState } from 'react';
+import { getSortedImages, PLACEHOLDER_IMAGE } from '@/lib/utils/resort-images';
+import { useState, useCallback } from 'react';
 import { X } from 'lucide-react';
 
 interface PhotoGalleryProps {
@@ -12,6 +12,17 @@ interface PhotoGalleryProps {
 export function PhotoGallery({ resort }: PhotoGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+
+  // Handle image error by tracking failed URLs
+  const handleImageError = useCallback((url: string) => {
+    setFailedImages(prev => new Set(prev).add(url));
+  }, []);
+
+  // Get image URL with fallback for failed images
+  const getImageUrl = useCallback((url: string) => {
+    return failedImages.has(url) ? PLACEHOLDER_IMAGE : url;
+  }, [failedImages]);
 
   // Get images sorted by priority, falling back to heroImage if no images array
   const sortedImages = getSortedImages(resort);
@@ -38,9 +49,10 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
           className="col-span-2 row-span-2 relative group overflow-hidden"
         >
           <img
-            src={images[0].url}
+            src={getImageUrl(images[0].url)}
             alt={images[0].alt}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            onError={() => handleImageError(images[0].url)}
           />
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
         </button>
@@ -53,9 +65,10 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
             className="relative group overflow-hidden aspect-square"
           >
             <img
-              src={image.url}
+              src={getImageUrl(image.url)}
               alt={image.alt}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onError={() => handleImageError(image.url)}
             />
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
           </button>
@@ -73,9 +86,10 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
       {/* Mobile Gallery - Single swipeable image */}
       <div className="sm:hidden relative rounded-lg overflow-hidden">
         <img
-          src={images[0].url}
+          src={getImageUrl(images[0].url)}
           alt={images[0].alt}
           className="w-full h-64 object-cover"
+          onError={() => handleImageError(images[0].url)}
         />
         <button
           onClick={() => openLightbox(0)}
@@ -100,9 +114,10 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
 
           <div className="relative max-w-7xl max-h-screen p-4" onClick={(e) => e.stopPropagation()}>
             <img
-              src={images[currentImageIndex].url}
+              src={getImageUrl(images[currentImageIndex].url)}
               alt={images[currentImageIndex].alt}
               className="max-w-full max-h-[90vh] object-contain mx-auto"
+              onError={() => handleImageError(images[currentImageIndex].url)}
             />
 
             {/* Image counter */}

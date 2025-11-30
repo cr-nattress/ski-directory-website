@@ -50,6 +50,9 @@ export const featureFlags = {
   /** "Latest from the slopes" articles section */
   contentSection: false,
 
+  /** Intelligent resort listing with ranked ordering (Epic 24) */
+  intelligentListing: true,
+
   // ============================================
   // Directory Page Components
   // ============================================

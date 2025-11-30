@@ -1,6 +1,9 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Resort } from '@/lib/types';
-import { getCardImage } from '@/lib/utils/resort-images';
+import { getCardImageUrl, PLACEHOLDER_IMAGE } from '@/lib/utils/resort-images';
 import { Star, MapPin, Snowflake } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -10,9 +13,22 @@ interface ResortCardProps {
 }
 
 export function ResortCard({ resort }: ResortCardProps) {
-  const cardImage = getCardImage(resort);
-  const imageUrl = cardImage?.url || resort.heroImage;
-  const imageAlt = cardImage?.alt || `${resort.name} ski resort`;
+  const originalImageUrl = getCardImageUrl(resort);
+  const [imageUrl, setImageUrl] = useState(originalImageUrl);
+  const imageAlt = `${resort.name} ski resort`;
+
+  // Check if image exists, fallback to placeholder on error
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      // Image exists, keep URL
+    };
+    img.onerror = () => {
+      // Image doesn't exist, use placeholder
+      setImageUrl(PLACEHOLDER_IMAGE);
+    };
+    img.src = originalImageUrl;
+  }, [originalImageUrl]);
 
   const getPassBadgeStyles = (pass: string) => {
     switch (pass) {

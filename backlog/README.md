@@ -667,3 +667,70 @@ Implement a configuration-based feature flag system to toggle UI components on/o
 
 **Dependencies:**
 - None (foundational infrastructure)
+
+---
+
+### Epic 23: Infinite Scroll for Landing Page
+**Status:** Complete
+**Priority:** High
+**Effort:** Medium
+
+Implement infinite scroll pagination on the landing page resort cards with configurable initial page size and fast API performance.
+
+**User Stories:** 7
+📁 [View Epic Details](./epic-23-infinite-scroll/README.md)
+
+**Key Features:**
+- Configurable initial page size via environment variable
+- IntersectionObserver-based scroll detection
+- LoadingMore component with spinner and completion message
+- Feature flag to toggle between infinite scroll and legacy load-all
+- Callback ref pattern for reliable sentinel detection
+
+**Files Created:**
+- `lib/config/pagination.ts`
+- `lib/hooks/useIntersectionObserver.ts`
+- `lib/hooks/useInfiniteResorts.ts`
+- `components/LoadingMore.tsx`
+
+**Dependencies:**
+- Epic 22: Feature Flags ✅
+
+---
+
+### Epic 24: Intelligent Resort Listing & Discovery Engine
+**Status:** Ready
+**Priority:** High
+**Effort:** X-Large
+
+Transform the landing page from alphabetical infinite scroll into a dynamic, intelligent discovery engine that captivates users immediately and encourages deep exploration—even with zero user personalization.
+
+**User Stories:** 12
+📁 [View Epic Details](./epic-24-intelligent-resort-listing/README.md)
+
+**Key Features:**
+- Multi-factor engagement scoring for intelligent ordering
+- Netflix-style themed sections ("Top Destinations", "Hidden Gems", etc.)
+- Diversity constraints to prevent Colorado/Epic domination
+- Light randomness to keep discovery fresh
+- Foundation for future engagement-based optimization
+
+**Phases:**
+- Phase 1: Foundation (scoring algorithm, content completeness, database view)
+- Phase 2: Ranked Infinite Scroll (replace alphabetical with intelligent ranking)
+- Phase 3: Themed Sections (Netflix-style discovery rows)
+- Phase 4: Diversity & Polish (constraints, randomness)
+- Phase 5: Future Enhancements (engagement tracking foundation)
+
+**New Components (created, not modified):**
+- `lib/scoring/resort-score.ts` - Scoring algorithm
+- `lib/hooks/useRankedResorts.ts` - Fetch ranked resorts
+- `lib/hooks/useThemedResorts.ts` - Fetch themed sections
+- `components/discovery/ResortRow.tsx` - Horizontal scrolling row
+- `components/discovery/ResortRowCard.tsx` - Compact card for rows
+- `components/discovery/DiscoverySections.tsx` - Netflix-style container
+- `components/IntelligentResortSection.tsx` - New landing page orchestrator
+
+**Dependencies:**
+- Epic 22: Feature Flags ✅
+- Epic 23: Infinite Scroll ✅

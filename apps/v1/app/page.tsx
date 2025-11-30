@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Hero } from '@/components/Hero';
 import { ResortSection } from '@/components/ResortSection';
+import { IntelligentResortSection } from '@/components/IntelligentResortSection';
 import { ContentSection } from '@/components/ContentSection';
 import { Footer } from '@/components/Footer';
 import { WebsiteJsonLd } from '@/components/schema';
@@ -19,7 +20,9 @@ export default function Home() {
       <WebsiteJsonLd />
       <PageWrapper headerVariant="overlay" />
       <Hero />
-      <ResortSection />
+      <FeatureFlag name="intelligentListing" fallback={<ResortSection />}>
+        <IntelligentResortSection />
+      </FeatureFlag>
       <FeatureFlag name="contentSection">
         <ContentSection />
       </FeatureFlag>

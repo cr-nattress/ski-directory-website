@@ -5,51 +5,45 @@ import { ViewToggle } from './ViewToggle';
 import { ResortMapViewWrapper } from './ResortMapViewWrapper';
 import { useViewMode } from '@/lib/hooks/useViewMode';
 import { categories } from '@/lib/data/categories';
-import { useAllResorts } from '@/lib/hooks';
-import { useInfiniteResorts } from '@/lib/hooks/useInfiniteResorts';
 import { useRankedResorts } from '@/lib/hooks/useRankedResorts';
 import { useIntersectionObserver } from '@/lib/hooks/useIntersectionObserver';
 import { ResortCard } from './ResortCard';
 import { CategoryChips } from './CategoryChips';
 import { LoadingMore } from './LoadingMore';
+import { DiscoverySections } from './discovery';
 import { cn } from '@/lib/utils';
-import { featureFlags } from '@/lib/config/feature-flags';
 import { paginationConfig } from '@/lib/config/pagination';
 
-export function ResortSection() {
+/**
+ * Intelligent Resort Section
+ *
+ * A Netflix-style landing page with:
+ * 1. Themed discovery sections (Top Destinations, Hidden Gems, etc.)
+ * 2. Category filter chips
+ * 3. Ranked infinite scroll of all resorts
+ *
+ * Discovery sections only show when viewing "All" (no category selected).
+ */
+export function IntelligentResortSection() {
   const { mode, setMode, isHydrated } = useViewMode('cards');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Feature flags determine data loading approach
-  const useInfiniteScrollMode = featureFlags.infiniteScroll;
-  const useIntelligentListing = featureFlags.intelligentListing;
-
-  // Legacy: Load all resorts at once (when infinite scroll disabled)
-  const legacyData = useAllResorts();
-
-  // Standard infinite scroll pagination (alphabetical)
-  const infiniteData = useInfiniteResorts({
+  // Ranked resorts with infinite scroll
+  const {
+    resorts,
+    isLoading,
+    isLoadingMore,
+    hasMore,
+    error,
+    totalCount,
+    loadMore,
+    reset,
+  } = useRankedResorts({
     pageSize: paginationConfig.landing.initialPageSize,
-    enabled: useInfiniteScrollMode && !useIntelligentListing,
+    enabled: true,
   });
 
-  // Intelligent listing: infinite scroll with ranked ordering
-  const rankedData = useRankedResorts({
-    pageSize: paginationConfig.landing.initialPageSize,
-    enabled: useInfiniteScrollMode && useIntelligentListing,
-  });
-
-  // Choose data source based on feature flags
-  // Priority: intelligentListing > infiniteScroll > legacy
-  const activeData = useIntelligentListing ? rankedData : infiniteData;
-  const resorts = useInfiniteScrollMode ? activeData.resorts : legacyData.resorts;
-  const isLoading = useInfiniteScrollMode ? activeData.isLoading : legacyData.isLoading;
-  const error = useInfiniteScrollMode ? activeData.error : legacyData.error;
-
-  // Infinite scroll specific state (works for both ranked and standard)
-  const { isLoadingMore, hasMore, totalCount, loadMore } = activeData;
-
-  // Filter resorts by category (client-side for both modes)
+  // Filter resorts by category (client-side)
   const filteredResorts = useMemo(() => {
     if (!selectedCategory) {
       return resorts;
@@ -63,33 +57,36 @@ export function ResortSection() {
     return resorts.filter(category.filter);
   }, [selectedCategory, resorts]);
 
-  // Load more callback for intersection observer
+  // Load more callback
   const handleLoadMore = useCallback(() => {
-    if (useInfiniteScrollMode && hasMore && !isLoadingMore && !selectedCategory) {
+    if (hasMore && !isLoadingMore && !selectedCategory) {
       loadMore();
     }
-  }, [useInfiniteScrollMode, hasMore, isLoadingMore, selectedCategory, loadMore]);
+  }, [hasMore, isLoadingMore, selectedCategory, loadMore]);
 
-  // Intersection observer for infinite scroll trigger
+  // Intersection observer for infinite scroll
   const { ref: sentinelRef, isIntersecting } = useIntersectionObserver<HTMLDivElement>({
     rootMargin: `${paginationConfig.landing.scrollThreshold}px`,
-    enabled: useInfiniteScrollMode && hasMore && !isLoadingMore && !selectedCategory,
+    enabled: hasMore && !isLoadingMore && !selectedCategory,
   });
 
-  // Trigger load when sentinel becomes visible
+  // Trigger load when sentinel is visible
   useEffect(() => {
     if (isIntersecting) {
       handleLoadMore();
     }
   }, [isIntersecting, handleLoadMore]);
 
-  // Display count - for infinite scroll, show total if available
-  const displayCount = useInfiniteScrollMode && !selectedCategory
+  // Show discovery sections only when viewing all (no category selected)
+  const showDiscoverySections = !selectedCategory && mode === 'cards';
+
+  // Display count
+  const displayCount = !selectedCategory
     ? totalCount || filteredResorts.length
     : filteredResorts.length;
 
-  // Determine if we should show "load more" UI
-  const showLoadMoreUI = useInfiniteScrollMode && !selectedCategory && mode === 'cards';
+  // Show load more UI
+  const showLoadMoreUI = !selectedCategory && mode === 'cards';
 
   return (
     <>
@@ -99,6 +96,15 @@ export function ResortSection() {
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
         />
+      )}
+
+      {/* Discovery Sections - only when viewing "All" in cards mode */}
+      {showDiscoverySections && !isLoading && (
+        <section className="py-8 bg-white">
+          <div className="container-custom">
+            <DiscoverySections />
+          </div>
+        </section>
       )}
 
       <section className="py-12 bg-bg-light">
@@ -114,32 +120,25 @@ export function ResortSection() {
               {mode === 'cards' && !isLoading && (
                 <p className="text-gray-600 mt-2">
                   {selectedCategory ? (
-                    // When filtering, show filtered count
                     <>
                       {filteredResorts.length} resort{filteredResorts.length !== 1 ? 's' : ''} found
-                    </>
-                  ) : useInfiniteScrollMode ? (
-                    // Infinite scroll: show loaded of total
-                    <>
-                      Showing {filteredResorts.length} of {displayCount} resort{displayCount !== 1 ? 's' : ''}
                     </>
                   ) : (
-                    // Legacy mode: just show total
                     <>
-                      {filteredResorts.length} resort{filteredResorts.length !== 1 ? 's' : ''} found
+                      Showing {filteredResorts.length} of {displayCount} resort{displayCount !== 1 ? 's' : ''}
                     </>
                   )}
                 </p>
               )}
             </div>
 
-            {/* View Toggle - only show after hydration to prevent flash */}
+            {/* View Toggle */}
             {isHydrated && (
               <ViewToggle value={mode} onChange={setMode} />
             )}
           </div>
 
-          {/* View content with transition */}
+          {/* View content */}
           <div
             className={cn(
               'transition-opacity duration-300',
@@ -148,10 +147,10 @@ export function ResortSection() {
           >
             {mode === 'cards' ? (
               <>
-                {/* Loading state - initial load */}
+                {/* Loading state */}
                 {isLoading && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {[...Array(useInfiniteScrollMode ? paginationConfig.landing.initialPageSize : 8)].map((_, i) => (
+                    {[...Array(paginationConfig.landing.initialPageSize)].map((_, i) => (
                       <div
                         key={i}
                         className="h-[420px] bg-gray-100 rounded-xl animate-pulse"
@@ -166,14 +165,12 @@ export function ResortSection() {
                     <p className="text-red-500 mb-4">
                       Failed to load resorts. Please try again.
                     </p>
-                    {useInfiniteScrollMode && (
-                      <button
-                        onClick={() => activeData.reset()}
-                        className="px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-blue-700 transition-colors"
-                      >
-                        Retry
-                      </button>
-                    )}
+                    <button
+                      onClick={() => reset()}
+                      className="px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Retry
+                    </button>
                   </div>
                 )}
 
@@ -193,7 +190,7 @@ export function ResortSection() {
                       ))}
                     </div>
 
-                    {/* Infinite scroll: Loading more indicator and sentinel */}
+                    {/* Infinite scroll UI */}
                     {showLoadMoreUI && (
                       <>
                         <LoadingMore
@@ -203,7 +200,7 @@ export function ResortSection() {
                           totalCount={totalCount}
                         />
 
-                        {/* Invisible sentinel element to trigger loading - always rendered when showLoadMoreUI */}
+                        {/* Sentinel element */}
                         <div
                           ref={sentinelRef}
                           className="h-4"
