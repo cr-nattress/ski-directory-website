@@ -19,10 +19,10 @@ export const featureFlags = {
   // ============================================
 
   /** Plan Your Visit card with conditions and save button */
-  planYourVisitCard: true,
+  planYourVisitCard: false,
 
   /** Trail Map card showing resort trail map image */
-  trailMapCard: true,
+  trailMapCard: false,
 
   /** Weather Forecast card with 7-day forecast */
   weatherForecastCard: true,
@@ -38,7 +38,7 @@ export const featureFlags = {
   // ============================================
 
   /** Global alert banner system (snow reports, weather alerts, etc.) */
-  alertBanner: true,
+  alertBanner: false,
 
   // ============================================
   // Landing Page Features
