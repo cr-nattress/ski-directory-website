@@ -10,6 +10,7 @@ import { TrailMapCard } from './TrailMapCard';
 import { WeatherForecastCard } from './WeatherForecastCard';
 import { BreadcrumbJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
+import { FeatureFlag } from '@/components/FeatureFlag';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
 
@@ -132,76 +133,86 @@ export function ResortDetail({ resort }: ResortDetailProps) {
               </section>
 
               {/* Trail Map */}
-              <section className="border-t border-gray-200 pt-8">
-                <TrailMapCard resort={resort} />
-              </section>
+              <FeatureFlag name="trailMapCard">
+                <section className="border-t border-gray-200 pt-8">
+                  <TrailMapCard resort={resort} />
+                </section>
+              </FeatureFlag>
             </div>
           </div>
 
           {/* Right Column - Action Rail (Sticky) */}
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-4 space-y-6">
-              {/* Action Card - hidden for lost ski areas */}
-              {!resort.isLost && (
-                <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6">
-                  <h3 className="text-lg font-semibold mb-4">Plan Your Visit</h3>
+              {/* Action Card - hidden for lost ski areas and controlled by feature flag */}
+              <FeatureFlag name="planYourVisitCard">
+                {!resort.isLost && (
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6">
+                    <h3 className="text-lg font-semibold mb-4">Plan Your Visit</h3>
 
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-2">Current Conditions</p>
-                      <div className="space-y-1 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-gray-700">New Snow (24h)</span>
-                          <span className="font-semibold">{resort.conditions.snowfall24h}&quot;</span>
+                    <div className="space-y-4 mb-6">
+                      <div>
+                        <p className="text-sm text-gray-600 mb-2">Current Conditions</p>
+                        <div className="space-y-1 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">New Snow (24h)</span>
+                            <span className="font-semibold">{resort.conditions.snowfall24h}&quot;</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Base Depth</span>
+                            <span className="font-semibold">{resort.conditions.baseDepth}&quot;</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Terrain Open</span>
+                            <span className="font-semibold">{resort.conditions.terrainOpen}%</span>
+                          </div>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-700">Base Depth</span>
-                          <span className="font-semibold">{resort.conditions.baseDepth}&quot;</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-700">Terrain Open</span>
-                          <span className="font-semibold">{resort.conditions.terrainOpen}%</span>
-                        </div>
+                      </div>
+
+                      <div>
+                        <p className="text-sm text-gray-600 mb-2">Distance from {resort.majorCityName}</p>
+                        <p className="font-semibold">{resort.distanceFromMajorCity} mi • {resort.driveTimeToMajorCity} min drive</p>
                       </div>
                     </div>
 
-                    <div>
-                      <p className="text-sm text-gray-600 mb-2">Distance from {resort.majorCityName}</p>
-                      <p className="font-semibold">{resort.distanceFromMajorCity} mi • {resort.driveTimeToMajorCity} min drive</p>
+                    <button className="w-full bg-ski-blue text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                      Save Resort
+                    </button>
+
+                    <div className="mt-4 flex gap-2">
+                      {resort.passAffiliations.map((pass) => (
+                        <span
+                          key={pass}
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            pass === 'epic'
+                              ? 'bg-epic-red text-white'
+                              : pass === 'ikon'
+                              ? 'bg-ikon-orange text-white'
+                              : 'bg-gray-200 text-gray-700'
+                          }`}
+                        >
+                          {pass.charAt(0).toUpperCase() + pass.slice(1)} Pass
+                        </span>
+                      ))}
                     </div>
                   </div>
-
-                  <button className="w-full bg-ski-blue text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                    Save Resort
-                  </button>
-
-                  <div className="mt-4 flex gap-2">
-                    {resort.passAffiliations.map((pass) => (
-                      <span
-                        key={pass}
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          pass === 'epic'
-                            ? 'bg-epic-red text-white'
-                            : pass === 'ikon'
-                            ? 'bg-ikon-orange text-white'
-                            : 'bg-gray-200 text-gray-700'
-                        }`}
-                      >
-                        {pass.charAt(0).toUpperCase() + pass.slice(1)} Pass
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
+                )}
+              </FeatureFlag>
 
               {/* Weather Forecast Card - hidden for lost ski areas */}
-              {!resort.isLost && <WeatherForecastCard resort={resort} />}
+              <FeatureFlag name="weatherForecastCard">
+                {!resort.isLost && <WeatherForecastCard resort={resort} />}
+              </FeatureFlag>
 
               {/* Location Map Card */}
-              <LocationMapCardWrapper resort={resort} />
+              <FeatureFlag name="locationMapCard">
+                <LocationMapCardWrapper resort={resort} />
+              </FeatureFlag>
 
               {/* Social Media Card */}
-              <SocialMediaCard resort={resort} />
+              <FeatureFlag name="socialMediaCard">
+                <SocialMediaCard resort={resort} />
+              </FeatureFlag>
             </div>
           </div>
         </div>

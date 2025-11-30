@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { EventAlert, UseEventBannerResult } from '@/lib/api/types';
 import { alertService } from '@/lib/api/alert-service';
+import { featureFlags } from '@/lib/config/feature-flags';
 
 interface UseEventBannerOptions {
   resortSlug?: string;
@@ -14,11 +15,19 @@ export function useEventBanner(
 ): UseEventBannerResult {
   const { resortSlug, pollInterval = 5 * 60 * 1000 } = options;
 
+  // Check feature flag - if disabled, return empty state immediately
+  const isAlertBannerEnabled = featureFlags.alertBanner;
+
   const [alerts, setAlerts] = useState<EventAlert[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(isAlertBannerEnabled);
   const [error, setError] = useState<Error | null>(null);
 
   const fetchAlerts = useCallback(async () => {
+    // Skip fetching if feature flag is disabled
+    if (!isAlertBannerEnabled) {
+      setIsLoading(false);
+      return;
+    }
     try {
       setIsLoading(true);
       const response = await alertService.getActiveAlerts({ resortSlug });
@@ -33,7 +42,7 @@ export function useEventBanner(
     } finally {
       setIsLoading(false);
     }
-  }, [resortSlug]);
+  }, [resortSlug, isAlertBannerEnabled]);
 
   // Initial fetch
   useEffect(() => {

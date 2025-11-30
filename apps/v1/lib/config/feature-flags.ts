@@ -1,0 +1,90 @@
+/**
+ * Feature Flags Configuration
+ *
+ * Toggle UI components on/off without code changes.
+ * All flags default to `true` for backward compatibility.
+ *
+ * Usage:
+ *   import { featureFlags } from '@/lib/config/feature-flags';
+ *   if (featureFlags.planYourVisitCard) { ... }
+ *
+ * Or use the hook:
+ *   import { useFeatureFlag } from '@/lib/hooks/useFeatureFlag';
+ *   const isEnabled = useFeatureFlag('planYourVisitCard');
+ */
+
+export const featureFlags = {
+  // ============================================
+  // Resort Detail Page Components
+  // ============================================
+
+  /** Plan Your Visit card with conditions and save button */
+  planYourVisitCard: true,
+
+  /** Trail Map card showing resort trail map image */
+  trailMapCard: true,
+
+  /** Weather Forecast card with 7-day forecast */
+  weatherForecastCard: true,
+
+  /** Social Media card with resort social links */
+  socialMediaCard: true,
+
+  /** Location Map card with interactive Leaflet map */
+  locationMapCard: true,
+
+  // ============================================
+  // Global Components
+  // ============================================
+
+  /** Global alert banner system (snow reports, weather alerts, etc.) */
+  alertBanner: true,
+
+  // ============================================
+  // Directory Page Components
+  // ============================================
+
+  /** Filter dropdowns on directory page */
+  directoryFilters: true,
+
+  /** State filter dropdown */
+  stateFilter: true,
+
+  /** Country filter dropdown */
+  countryFilter: true,
+
+  // ============================================
+  // Future Features (disabled by default)
+  // ============================================
+
+  /** User authentication system */
+  userAuthentication: false,
+
+  /** Resort reviews and ratings by users */
+  resortReviews: false,
+
+  /** Save/favorite resorts feature */
+  savedResorts: false,
+
+  /** Compare multiple resorts side-by-side */
+  compareResorts: false,
+} as const;
+
+/**
+ * Type representing all available feature flag names
+ */
+export type FeatureFlag = keyof typeof featureFlags;
+
+/**
+ * Get a specific feature flag value
+ */
+export function getFeatureFlag(flag: FeatureFlag): boolean {
+  return featureFlags[flag];
+}
+
+/**
+ * Check if a feature flag is enabled
+ */
+export function isFeatureEnabled(flag: FeatureFlag): boolean {
+  return featureFlags[flag] === true;
+}
