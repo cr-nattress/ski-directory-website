@@ -8,6 +8,7 @@
 import { supabase } from '@/lib/supabase';
 import { adaptResortFromSupabase } from './supabase-resort-adapter';
 import type { Resort } from '@/lib/types';
+import { applyDiversityConstraints, DEFAULT_DIVERSITY_CONFIG } from '@/lib/scoring/diversity';
 
 /**
  * Themed section configuration
@@ -68,22 +69,38 @@ export interface ThemedSections {
 
 class ThemedResortsService {
   /**
-   * Get top destinations (highest ranking score)
+   * Get top destinations (highest ranking score with diversity constraints)
+   *
+   * Applies diversity algorithm to ensure variety:
+   * - Max 3 resorts from same state
+   * - Max 5 from same pass program
+   * - Mix of large/medium/small resorts
    */
   async getTopDestinations(limit: number = 12): Promise<Resort[]> {
+    // Fetch more than needed to allow diversity filtering
+    const fetchLimit = Math.max(limit * 3, 36);
+
     const { data, error } = await supabase
       .from('resorts_ranked' as 'resorts_full')
       .select('*')
       .eq('is_active', true)
       .order('ranking_score', { ascending: false })
-      .limit(limit);
+      .limit(fetchLimit);
 
     if (error) {
       console.error('Error fetching top destinations:', error);
       return [];
     }
 
-    return (data || []).map(adaptResortFromSupabase);
+    const resorts = (data || []).map(adaptResortFromSupabase);
+
+    // Apply diversity constraints
+    const diversifiedResorts = applyDiversityConstraints(resorts, {
+      ...DEFAULT_DIVERSITY_CONFIG,
+      resultLimit: limit,
+    });
+
+    return diversifiedResorts;
   }
 
   /**

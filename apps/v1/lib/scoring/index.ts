@@ -6,3 +6,4 @@
 
 export * from './resort-score';
 export * from './scoring-config';
+export * from './diversity';
