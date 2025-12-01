@@ -7,6 +7,13 @@ import { formatReadme } from './formatter.js';
 import { uploadReadmeToGcs, uploadWikiDataToGcs } from './gcs.js';
 
 /**
+ * Sleep for a specified duration
+ */
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
  * Processing statistics
  */
 interface ProcessingStats {
@@ -90,6 +97,8 @@ async function main(): Promise<void> {
   const skip = skipArg ? parseInt(skipArg.split('=')[1], 10) : 0;
   const filterArg = args.find(a => a.startsWith('--filter='));
   const filter = filterArg ? filterArg.split('=')[1].toLowerCase() : undefined;
+  const delayArg = args.find(a => a.startsWith('--delay='));
+  const delayBetweenResorts = delayArg ? parseInt(delayArg.split('=')[1], 10) * 1000 : 0; // Convert seconds to ms
 
   // Fetch all resorts from Supabase
   let resorts: Resort[];
@@ -124,6 +133,9 @@ async function main(): Promise<void> {
 
   console.log(`\nProcessing ${resorts.length} resorts...`);
   console.log(`Rate limit: ${config.wikipedia.rateLimitMs}ms between Wikipedia requests`);
+  if (delayBetweenResorts > 0) {
+    console.log(`Delay between resorts: ${delayBetweenResorts / 1000} seconds`);
+  }
   console.log('');
 
   // Initialize stats
@@ -156,6 +168,12 @@ async function main(): Promise<void> {
       }
     } else {
       stats.failed++;
+    }
+
+    // Wait between resorts if delay is specified (skip delay after last resort)
+    if (delayBetweenResorts > 0 && i < resorts.length - 1) {
+      console.log(`  Waiting ${delayBetweenResorts / 1000} seconds before next resort...`);
+      await sleep(delayBetweenResorts);
     }
   }
 
