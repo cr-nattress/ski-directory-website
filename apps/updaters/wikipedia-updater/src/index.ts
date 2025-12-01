@@ -42,12 +42,15 @@ async function processResort(
       return { success: false, hasWikiData: false };
     }
 
-    // Fetch Wikipedia data
+    // Fetch Wikipedia data - only returns data if a dedicated article exists
     const wikiData = await fetchWikipediaData(resort.name, resort.state_name);
 
-    if (wikiData) {
-      console.log(`  Found Wikipedia article: "${wikiData.title}"`);
+    if (!wikiData) {
+      console.log(`  No dedicated Wikipedia article found - skipping upload`);
+      return { success: true, hasWikiData: false };
     }
+
+    console.log(`  Found dedicated Wikipedia article: "${wikiData.title}"`);
 
     // Format README
     const readmeContent = formatReadme(resort, wikiData);
@@ -55,12 +58,10 @@ async function processResort(
     // Upload README to GCS
     await uploadReadmeToGcs(resort.asset_path, readmeContent);
 
-    // Also upload raw wiki data as JSON (for potential future use)
-    if (wikiData) {
-      await uploadWikiDataToGcs(resort.asset_path, wikiData);
-    }
+    // Also upload raw wiki data as JSON
+    await uploadWikiDataToGcs(resort.asset_path, wikiData);
 
-    return { success: true, hasWikiData: !!wikiData };
+    return { success: true, hasWikiData: true };
   } catch (error) {
     console.error(`  Error processing ${resort.name}:`, error);
     return { success: false, hasWikiData: false };

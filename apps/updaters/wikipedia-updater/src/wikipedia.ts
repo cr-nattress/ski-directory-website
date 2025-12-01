@@ -76,7 +76,56 @@ async function wikiApiRequest<T>(params: Record<string, string>): Promise<T> {
 }
 
 /**
- * Search Wikipedia for a ski resort
+ * Check if a Wikipedia article title is a generic list/comparison page (not a dedicated resort article)
+ */
+function isGenericListArticle(title: string): boolean {
+  const titleLower = title.toLowerCase();
+  const genericPatterns = [
+    'list of',
+    'comparison of',
+    'lists of',
+    'category:',
+    'ski areas and resorts in',
+    'ski resorts in',
+    '(disambiguation)',
+  ];
+  return genericPatterns.some(pattern => titleLower.includes(pattern));
+}
+
+/**
+ * Check if the article title is likely a dedicated article for this resort
+ * by comparing the resort name against the article title
+ */
+function isDedicatedResortArticle(resortName: string, articleTitle: string, snippet: string): boolean {
+  const resortLower = resortName.toLowerCase();
+  const titleLower = articleTitle.toLowerCase();
+  const snippetLower = snippet.toLowerCase();
+
+  // Remove common suffixes for comparison
+  const cleanResort = resortLower
+    .replace(/\s*(ski\s*)?(resort|area|mountain|ski area|ski resort)$/i, '')
+    .trim();
+  const cleanTitle = titleLower
+    .replace(/\s*\([^)]+\)$/i, '') // Remove parenthetical like "(ski area)"
+    .replace(/\s*(ski\s*)?(resort|area|mountain|ski area|ski resort)$/i, '')
+    .trim();
+
+  // The title must contain the core resort name (or vice versa)
+  const nameMatches = cleanTitle.includes(cleanResort) || cleanResort.includes(cleanTitle);
+  if (!nameMatches) {
+    return false;
+  }
+
+  // The article must be about skiing/resorts (check title or snippet)
+  const skiRelatedTerms = ['ski', 'resort', 'skiing', 'slopes', 'lifts', 'snowboard', 'mountain resort', 'ski area'];
+  const combined = titleLower + ' ' + snippetLower;
+  const isSkiRelated = skiRelatedTerms.some(term => combined.includes(term));
+
+  return isSkiRelated;
+}
+
+/**
+ * Search Wikipedia for a ski resort - only returns dedicated resort articles
  */
 async function searchWikipedia(resortName: string, stateName: string): Promise<WikipediaSearchResult | null> {
   // Try different search queries in order of specificity
@@ -85,6 +134,7 @@ async function searchWikipedia(resortName: string, stateName: string): Promise<W
     `${resortName} ski area ${stateName}`,
     `${resortName} ${stateName} skiing`,
     `${resortName} ski resort`,
+    `${resortName} ski area`,
     resortName,
   ];
 
@@ -95,32 +145,22 @@ async function searchWikipedia(resortName: string, stateName: string): Promise<W
       action: 'query',
       list: 'search',
       srsearch: query,
-      srlimit: '5',
+      srlimit: '10',
     });
 
     const searchResults = result.query?.search ?? [];
 
-    // Look for a result that seems relevant to skiing
+    // Look for a dedicated resort article (not a generic list)
     for (const item of searchResults) {
-      const titleLower = item.title.toLowerCase();
-      const snippetLower = item.snippet.toLowerCase();
-      const combined = titleLower + ' ' + snippetLower;
+      // Skip generic list/comparison articles
+      if (isGenericListArticle(item.title)) {
+        continue;
+      }
 
-      // Check if it's likely a ski resort article
-      if (
-        combined.includes('ski') ||
-        combined.includes('resort') ||
-        combined.includes('skiing') ||
-        combined.includes('mountain') ||
-        combined.includes('slopes')
-      ) {
+      // Check if this appears to be a dedicated article for this resort
+      if (isDedicatedResortArticle(resortName, item.title, item.snippet)) {
         return item;
       }
-    }
-
-    // If no skiing-related result found, take the first result from the most specific query
-    if (searchResults.length > 0 && query === searchQueries[0]) {
-      return searchResults[0];
     }
   }
 
