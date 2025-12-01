@@ -423,7 +423,10 @@ class SupabaseResortService {
     }
 
     // Transform snake_case database fields to camelCase
-    const pins: ResortMapPin[] = ((data as any[]) || []).map((row) => ({
+    // Filter to only include active resorts (exclude lost/defunct)
+    const pins: ResortMapPin[] = ((data as any[]) || [])
+      .filter((row) => row.is_active === true)
+      .map((row) => ({
       id: row.id,
       slug: row.slug,
       name: row.name,
