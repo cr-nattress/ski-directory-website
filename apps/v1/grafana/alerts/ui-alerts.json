@@ -1,0 +1,217 @@
+{
+  "apiVersion": 1,
+  "groups": [
+    {
+      "name": "ski-directory-ui-alerts",
+      "folder": "Ski Directory",
+      "interval": "1m",
+      "rules": [
+        {
+          "uid": "ski-ui-high-error-rate",
+          "title": "High Error Rate - Ski Directory UI",
+          "condition": "C",
+          "data": [
+            {
+              "refId": "A",
+              "datasourceUid": "loki",
+              "model": {
+                "expr": "sum(rate({app=\"ski-directory-ui\"} |= `\"level\":\"error\"` [5m]))",
+                "instant": true,
+                "refId": "A"
+              }
+            },
+            {
+              "refId": "B",
+              "datasourceUid": "loki",
+              "model": {
+                "expr": "sum(rate({app=\"ski-directory-ui\"} [5m]))",
+                "instant": true,
+                "refId": "B"
+              }
+            },
+            {
+              "refId": "C",
+              "datasourceUid": "__expr__",
+              "model": {
+                "conditions": [
+                  {
+                    "evaluator": {
+                      "params": [0.05],
+                      "type": "gt"
+                    },
+                    "operator": {
+                      "type": "and"
+                    },
+                    "query": {
+                      "params": ["C"]
+                    },
+                    "reducer": {
+                      "params": [],
+                      "type": "last"
+                    },
+                    "type": "query"
+                  }
+                ],
+                "expression": "$A / $B",
+                "refId": "C",
+                "type": "math"
+              }
+            }
+          ],
+          "noDataState": "OK",
+          "execErrState": "Error",
+          "for": "5m",
+          "annotations": {
+            "summary": "High error rate detected in Ski Directory UI",
+            "description": "Error rate is above 5% for the last 5 minutes. Current rate: {{ $values.C }}%"
+          },
+          "labels": {
+            "severity": "warning",
+            "team": "frontend",
+            "app": "ski-directory-ui"
+          }
+        },
+        {
+          "uid": "ski-ui-no-logs",
+          "title": "No Logs Received - Ski Directory UI",
+          "condition": "A",
+          "data": [
+            {
+              "refId": "A",
+              "datasourceUid": "loki",
+              "model": {
+                "expr": "absent_over_time({app=\"ski-directory-ui\"} [10m])",
+                "instant": true,
+                "refId": "A"
+              }
+            }
+          ],
+          "noDataState": "Alerting",
+          "execErrState": "Error",
+          "for": "10m",
+          "annotations": {
+            "summary": "No logs received from Ski Directory UI",
+            "description": "No logs have been received from ski-directory-ui for the last 10 minutes. The application may be down or logging may be broken."
+          },
+          "labels": {
+            "severity": "critical",
+            "team": "frontend",
+            "app": "ski-directory-ui"
+          }
+        },
+        {
+          "uid": "ski-ui-high-lcp",
+          "title": "High LCP - Ski Directory UI",
+          "condition": "B",
+          "data": [
+            {
+              "refId": "A",
+              "datasourceUid": "loki",
+              "model": {
+                "expr": "quantile_over_time(0.95, {app=\"ski-directory-ui\"} |= `Core Web Vital: LCP` | json | unwrap value [10m])",
+                "instant": true,
+                "refId": "A"
+              }
+            },
+            {
+              "refId": "B",
+              "datasourceUid": "__expr__",
+              "model": {
+                "conditions": [
+                  {
+                    "evaluator": {
+                      "params": [4000],
+                      "type": "gt"
+                    },
+                    "operator": {
+                      "type": "and"
+                    },
+                    "query": {
+                      "params": ["B"]
+                    },
+                    "reducer": {
+                      "params": [],
+                      "type": "last"
+                    },
+                    "type": "query"
+                  }
+                ],
+                "expression": "$A",
+                "refId": "B",
+                "type": "threshold"
+              }
+            }
+          ],
+          "noDataState": "OK",
+          "execErrState": "Error",
+          "for": "10m",
+          "annotations": {
+            "summary": "High LCP detected in Ski Directory UI",
+            "description": "95th percentile LCP is above 4 seconds for the last 10 minutes. Current p95: {{ $values.A }}ms"
+          },
+          "labels": {
+            "severity": "warning",
+            "team": "frontend",
+            "app": "ski-directory-ui"
+          }
+        },
+        {
+          "uid": "ski-ui-api-failures",
+          "title": "Elevated API Failures - Ski Directory UI",
+          "condition": "B",
+          "data": [
+            {
+              "refId": "A",
+              "datasourceUid": "loki",
+              "model": {
+                "expr": "sum(rate({app=\"ski-directory-ui\"} |= `Failed to fetch` [5m])) * 60",
+                "instant": true,
+                "refId": "A"
+              }
+            },
+            {
+              "refId": "B",
+              "datasourceUid": "__expr__",
+              "model": {
+                "conditions": [
+                  {
+                    "evaluator": {
+                      "params": [10],
+                      "type": "gt"
+                    },
+                    "operator": {
+                      "type": "and"
+                    },
+                    "query": {
+                      "params": ["B"]
+                    },
+                    "reducer": {
+                      "params": [],
+                      "type": "last"
+                    },
+                    "type": "query"
+                  }
+                ],
+                "expression": "$A",
+                "refId": "B",
+                "type": "threshold"
+              }
+            }
+          ],
+          "noDataState": "OK",
+          "execErrState": "Error",
+          "for": "5m",
+          "annotations": {
+            "summary": "Elevated API failures in Ski Directory UI",
+            "description": "More than 10 API failures per minute detected. Current rate: {{ $values.A }} failures/min"
+          },
+          "labels": {
+            "severity": "warning",
+            "team": "frontend",
+            "app": "ski-directory-ui"
+          }
+        }
+      ]
+    }
+  ]
+}

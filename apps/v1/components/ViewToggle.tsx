@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { LayoutGrid, Map } from 'lucide-react';
+import { useLogger } from '@/lib/hooks/useLogger';
 
 export type ViewMode = 'cards' | 'map';
 
@@ -11,10 +12,22 @@ interface ViewToggleProps {
 }
 
 export function ViewToggle({ value, onChange }: ViewToggleProps) {
+  const log = useLogger({ component: 'ViewToggle' });
+
+  const handleModeChange = (newMode: ViewMode) => {
+    if (newMode !== value) {
+      log.info('View mode changed', {
+        previousMode: value,
+        newMode,
+      });
+    }
+    onChange(newMode);
+  };
+
   return (
     <div className="inline-flex items-center bg-neutral-100 rounded-lg p-1">
       <button
-        onClick={() => onChange('cards')}
+        onClick={() => handleModeChange('cards')}
         className={cn(
           'flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all',
           value === 'cards'
@@ -27,7 +40,7 @@ export function ViewToggle({ value, onChange }: ViewToggleProps) {
         Cards
       </button>
       <button
-        onClick={() => onChange('map')}
+        onClick={() => handleModeChange('map')}
         className={cn(
           'flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all',
           value === 'map'

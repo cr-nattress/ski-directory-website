@@ -6,6 +6,8 @@ import { adaptResortFromSupabase } from '@/lib/api/supabase-resort-adapter';
 import type { Resort } from '@/lib/types';
 import { paginationConfig } from '@/lib/config/pagination';
 import { featureFlags } from '@/lib/config/feature-flags';
+import { useLogger } from '@/lib/hooks/useLogger';
+import { getObservabilityConfig } from '@/lib/config/observability';
 
 /**
  * Extended Resort type that includes ranking score
@@ -119,6 +121,10 @@ export function useRankedResorts(
   // Check feature flag - if disabled, return empty state
   const isFeatureEnabled = featureFlags.intelligentListing;
 
+  // Logger for this hook
+  const log = useLogger({ component: 'useRankedResorts' });
+  const { thresholds } = getObservabilityConfig();
+
   // State
   const [resorts, setResorts] = useState<RankedResort[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -148,6 +154,7 @@ export function useRankedResorts(
       }
 
       isFetchingRef.current = true;
+      const startTime = performance.now();
 
       // Set appropriate loading state
       if (append) {
@@ -156,6 +163,8 @@ export function useRankedResorts(
         setIsLoading(true);
         setError(null);
       }
+
+      log.info('Fetching ranked resorts', { page, pageSize, append, includeLost });
 
       try {
         const from = (page - 1) * pageSize;
@@ -180,6 +189,7 @@ export function useRankedResorts(
           .range(from, to);
 
         const { data, error: queryError, count } = await query;
+        const durationMs = Math.round(performance.now() - startTime);
 
         if (queryError) {
           throw new Error(queryError.message || 'Failed to fetch ranked resorts');
@@ -189,6 +199,24 @@ export function useRankedResorts(
         const total = count || 0;
         const hasMorePages = from + newResorts.length < total;
 
+        // Log successful fetch
+        log.info('Ranked resorts fetch completed', {
+          page,
+          count: newResorts.length,
+          totalCount: total,
+          hasMore: hasMorePages,
+          durationMs,
+        });
+
+        // Warn if response was slow
+        if (durationMs > thresholds.slowApiThreshold) {
+          log.warn('Slow response detected for ranked resorts', {
+            page,
+            durationMs,
+            threshold: thresholds.slowApiThreshold,
+          });
+        }
+
         // Update state
         setResorts((prev) => (append ? [...prev, ...newResorts] : newResorts));
         setHasMore(hasMorePages);
@@ -196,6 +224,15 @@ export function useRankedResorts(
         setCurrentPage(page);
         setError(null);
       } catch (err) {
+        const durationMs = Math.round(performance.now() - startTime);
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
+
+        log.error('Failed to fetch ranked resorts', {
+          page,
+          error: errorMessage,
+          durationMs,
+        });
+
         setError(
           err instanceof Error ? err : new Error('An unexpected error occurred')
         );
@@ -211,7 +248,7 @@ export function useRankedResorts(
         isFetchingRef.current = false;
       }
     },
-    [pageSize, includeLost, isFeatureEnabled]
+    [pageSize, includeLost, isFeatureEnabled, log, thresholds.slowApiThreshold]
   );
 
   /**

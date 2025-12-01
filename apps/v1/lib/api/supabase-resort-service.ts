@@ -19,6 +19,10 @@ import type {
   ResortQueryOptions,
   RegionalStats,
 } from "./types";
+import { createLogger } from "@/lib/hooks/useLogger";
+
+// Create a logger for this service
+const log = createLogger('SupabaseResortService');
 
 class SupabaseResortService {
   /**
@@ -26,6 +30,8 @@ class SupabaseResortService {
    * Fetch a single resort by its slug
    */
   async getResortBySlug(slug: string): Promise<ApiResponse<Resort | null>> {
+    log.info('Fetching resort by slug', { slug });
+
     const { data, error } = await supabase
       .from("resorts_full")
       .select("*")
@@ -34,12 +40,18 @@ class SupabaseResortService {
 
     if (error) {
       if (error.code === "PGRST116") {
+        log.warn('Resort not found', { slug, errorCode: error.code });
         return {
           data: null,
           status: "error",
           message: `Resort with slug "${slug}" not found.`,
         };
       }
+      log.error('Failed to fetch resort by slug', {
+        slug,
+        errorCode: error.code,
+        errorMessage: error.message,
+      });
       return {
         data: null,
         status: "error",
@@ -47,6 +59,7 @@ class SupabaseResortService {
       };
     }
 
+    log.info('Resort fetched successfully', { slug, hasData: !!data });
     return {
       data: adaptResortFromSupabase(data),
       status: "success",
@@ -365,17 +378,24 @@ class SupabaseResortService {
    * Get all resort slugs for static generation
    */
   async getAllResortSlugs(): Promise<string[]> {
+    log.info('Fetching all resort slugs');
+
     const { data, error } = await supabase
       .from("resorts")
       .select("slug")
       .order("slug");
 
     if (error) {
-      console.error("Error fetching resort slugs:", error);
+      log.error('Failed to fetch resort slugs', {
+        errorCode: error.code,
+        errorMessage: error.message,
+      });
       return [];
     }
 
-    return data?.map((r: { slug: string }) => r.slug) || [];
+    const slugs = data?.map((r: { slug: string }) => r.slug) || [];
+    log.info('Resort slugs fetched', { count: slugs.length });
+    return slugs;
   }
 
   /**
@@ -383,12 +403,18 @@ class SupabaseResortService {
    * Fetch optimized data for map pin display
    */
   async getMapPins(): Promise<ApiResponse<ResortMapPin[]>> {
+    log.info('Fetching map pins');
+
     // Query the resorts_map_pins view - using explicit type since view isn't in generated types
     const { data, error } = await supabase
       .from("resorts_map_pins" as any)
       .select("*");
 
     if (error) {
+      log.error('Failed to fetch map pins', {
+        errorCode: error.code,
+        errorMessage: error.message,
+      });
       return {
         data: [],
         status: "error",

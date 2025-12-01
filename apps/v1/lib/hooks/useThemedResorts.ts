@@ -7,6 +7,8 @@ import {
   THEMED_SECTIONS,
 } from '@/lib/api/themed-resorts-service';
 import { featureFlags } from '@/lib/config/feature-flags';
+import { useLogger } from '@/lib/hooks/useLogger';
+import { getObservabilityConfig } from '@/lib/config/observability';
 
 /**
  * Result from the useThemedResorts hook
@@ -59,6 +61,10 @@ export function useThemedResorts(): UseThemedResortsResult {
   // Check feature flag
   const isEnabled = featureFlags.intelligentListing;
 
+  // Logger for this hook
+  const log = useLogger({ component: 'useThemedResorts' });
+  const { thresholds } = getObservabilityConfig();
+
   const fetchSections = useCallback(async () => {
     if (!isEnabled) {
       setIsLoading(false);
@@ -67,11 +73,46 @@ export function useThemedResorts(): UseThemedResortsResult {
 
     setIsLoading(true);
     setError(null);
+    const startTime = performance.now();
+
+    log.info('Fetching themed resort sections');
 
     try {
       const data = await themedResortsService.getAllThemedSections();
+      const durationMs = Math.round(performance.now() - startTime);
+
+      // Count resorts in each section for logging
+      const sectionCounts = {
+        topDestinations: data.topDestinations.length,
+        hiddenGems: data.hiddenGems.length,
+        nightAndPark: data.nightAndPark.length,
+        powderAndSteeps: data.powderAndSteeps.length,
+        lostSkiAreas: data.lostSkiAreas.length,
+      };
+
+      log.info('Themed sections fetch completed', {
+        ...sectionCounts,
+        totalResorts: Object.values(sectionCounts).reduce((a, b) => a + b, 0),
+        durationMs,
+      });
+
+      if (durationMs > thresholds.slowApiThreshold) {
+        log.warn('Slow response detected for themed sections', {
+          durationMs,
+          threshold: thresholds.slowApiThreshold,
+        });
+      }
+
       setSections(data);
     } catch (err) {
+      const durationMs = Math.round(performance.now() - startTime);
+      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch themed sections';
+
+      log.error('Failed to fetch themed sections', {
+        error: errorMessage,
+        durationMs,
+      });
+
       setError(
         err instanceof Error ? err : new Error('Failed to fetch themed sections')
       );
@@ -79,7 +120,7 @@ export function useThemedResorts(): UseThemedResortsResult {
     } finally {
       setIsLoading(false);
     }
-  }, [isEnabled]);
+  }, [isEnabled, log, thresholds.slowApiThreshold]);
 
   // Track if initial fetch has been done for this mount
   const hasFetchedRef = useRef<boolean>(false);

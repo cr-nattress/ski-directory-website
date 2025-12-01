@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Resort } from '@/lib/types';
 import { getCardImageUrl, PLACEHOLDER_IMAGE } from '@/lib/utils/resort-images';
 import { Star, MapPin, Snowflake } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
+import { useLogger } from '@/lib/hooks/useLogger';
 
 interface ResortCardProps {
   resort: Resort;
@@ -16,19 +17,31 @@ export function ResortCard({ resort }: ResortCardProps) {
   const originalImageUrl = getCardImageUrl(resort);
   const [imageUrl, setImageUrl] = useState(originalImageUrl);
   const imageAlt = `${resort.name} ski resort`;
+  const log = useLogger({ component: 'ResortCard' });
+  const hasLoggedError = useRef(false);
 
   // Check if image exists, fallback to placeholder on error
   useEffect(() => {
+    hasLoggedError.current = false;
     const img = new Image();
     img.onload = () => {
       // Image exists, keep URL
     };
     img.onerror = () => {
-      // Image doesn't exist, use placeholder
+      // Only log once per resort to avoid spam
+      if (!hasLoggedError.current) {
+        hasLoggedError.current = true;
+        log.warn('Image failed to load, using placeholder', {
+          resortId: resort.id,
+          resortName: resort.name,
+          imageUrl: originalImageUrl,
+          fallbackUsed: PLACEHOLDER_IMAGE,
+        });
+      }
       setImageUrl(PLACEHOLDER_IMAGE);
     };
     img.src = originalImageUrl;
-  }, [originalImageUrl]);
+  }, [originalImageUrl, resort.id, resort.name, log]);
 
   const getPassBadgeStyles = (pass: string) => {
     switch (pass) {

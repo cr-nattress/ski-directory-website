@@ -734,3 +734,47 @@ Transform the landing page from alphabetical infinite scroll into a dynamic, int
 **Dependencies:**
 - Epic 22: Feature Flags ✅
 - Epic 23: Infinite Scroll ✅
+
+---
+
+### Epic 25: Grafana Cloud Observability for UI
+**Status:** Ready
+**Priority:** High
+**Effort:** Large
+
+Implement comprehensive observability for the ski resort directory frontend using Grafana Cloud. This includes structured logging with info/warn/error levels, performance monitoring, error tracking, and real-time dashboards.
+
+**User Stories:** 13
+📁 [View Epic Details](./epic-25-grafana-observability/README.md)
+📄 [Grafana Implementation Guide](../GRAFANA-IMPLEMENTATION.md)
+
+**Key Features:**
+- Centralized BrowserLokiLogger service for client-side logging
+- Log levels: debug, info, warn, error
+- Automatic batching and sendBeacon delivery
+- Session context tracking (anonymous, no PII)
+- useLogger React hook for component logging
+- ErrorBoundary component with automatic error reporting
+- Core Web Vitals and performance monitoring
+- Grafana dashboards for application health and performance
+- Alert configuration for critical errors
+
+**Phases:**
+- Phase 1: Foundation (BrowserLogger, LogContext, environment config)
+- Phase 2: Hook & Service Logging (useLogger hook, data fetching hooks, API services)
+- Phase 3: Component Logging (ErrorBoundary, interactions, image loading)
+- Phase 4: Performance & Dashboards (Web Vitals, Grafana dashboards, alerts)
+
+**Files to Create:**
+- `lib/logging/browser-logger.ts` - Client-side log collection
+- `lib/logging/log-context.ts` - Session management
+- `lib/logging/performance.ts` - Core Web Vitals tracking
+- `lib/config/observability.ts` - Grafana configuration
+- `lib/hooks/useLogger.ts` - React logging hook
+- `components/ErrorBoundary.tsx` - Error boundary with logging
+- `grafana/dashboards/*.json` - Dashboard configurations
+- `grafana/alerts/*.json` - Alert rules
+
+**Dependencies:**
+- Epic 22: Feature Flags ✅
+- Grafana Cloud account (free tier sufficient)

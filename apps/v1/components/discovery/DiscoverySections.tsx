@@ -30,9 +30,25 @@ export function DiscoverySections() {
   }
 
   // Error state - fail silently, don't block the page
-  if (error || !sections) {
+  if (error) {
+    console.error('DiscoverySections error:', error);
     return null;
   }
+
+  // No sections data
+  if (!sections) {
+    console.warn('DiscoverySections: sections is null/undefined');
+    return null;
+  }
+
+  // Debug: log section counts
+  console.log('DiscoverySections loaded:', {
+    topDestinations: sections.topDestinations?.length ?? 0,
+    hiddenGems: sections.hiddenGems?.length ?? 0,
+    nightAndPark: sections.nightAndPark?.length ?? 0,
+    powderAndSteeps: sections.powderAndSteeps?.length ?? 0,
+    lostSkiAreas: sections.lostSkiAreas?.length ?? 0,
+  });
 
   const sectionConfig = THEMED_SECTIONS;
 
