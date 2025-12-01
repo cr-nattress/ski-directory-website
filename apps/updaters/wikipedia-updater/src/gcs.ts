@@ -41,6 +41,7 @@ export async function uploadReadmeToGcs(
   const filePath = `resorts/${assetPath}/README.md`;
   const file = bucket.file(filePath);
 
+  // file.save() overwrites any existing file with the same name
   await file.save(content, {
     contentType: 'text/markdown; charset=utf-8',
     metadata: {
@@ -87,6 +88,7 @@ export async function uploadWikiDataToGcs(
   const filePath = `resorts/${assetPath}/wiki-data.json`;
   const file = bucket.file(filePath);
 
+  // file.save() overwrites any existing file with the same name
   await file.save(JSON.stringify(data, null, 2), {
     contentType: 'application/json',
     metadata: {
@@ -94,5 +96,8 @@ export async function uploadWikiDataToGcs(
     },
   });
 
-  return `https://storage.googleapis.com/${config.gcs.bucketName}/${filePath}`;
+  const publicUrl = `https://storage.googleapis.com/${config.gcs.bucketName}/${filePath}`;
+  console.log(`  Uploaded wiki-data.json to: ${publicUrl}`);
+
+  return publicUrl;
 }
