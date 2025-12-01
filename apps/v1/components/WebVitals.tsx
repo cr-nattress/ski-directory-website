@@ -1,41 +1,33 @@
 'use client';
 
 import { useReportWebVitals } from 'next/web-vitals';
+import { logger } from '@/lib/logging';
 
 /**
  * Core Web Vitals monitoring component
  * Captures LCP, INP, CLS, FCP, and TTFB metrics
  *
- * In development: Logs to console
- * In production: Can be extended to send to analytics
+ * Logs metrics to:
+ * - Console in development
+ * - Grafana Cloud Loki when observability logging is enabled
  */
 export function WebVitals() {
   useReportWebVitals((metric) => {
-    // Log metrics in development for debugging
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`[Web Vitals] ${metric.name}:`, {
-        value: metric.value,
-        rating: metric.rating, // 'good', 'needs-improvement', or 'poor'
-        id: metric.id,
-      });
-    }
+    // Format value for logging (CLS is a decimal, others are milliseconds)
+    const value = metric.name === 'CLS'
+      ? Math.round(metric.value * 1000) / 1000
+      : Math.round(metric.value);
 
-    // In production, you can send to analytics
-    // Example: Send to Google Analytics
-    // window.gtag?.('event', metric.name, {
-    //   value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-    //   event_label: metric.id,
-    //   non_interaction: true,
-    // });
-
-    // Example: Send to custom analytics endpoint
-    // if (process.env.NODE_ENV === 'production') {
-    //   fetch('/api/analytics/vitals', {
-    //     method: 'POST',
-    //     body: JSON.stringify(metric),
-    //     headers: { 'Content-Type': 'application/json' },
-    //   });
-    // }
+    // Log to our observability system
+    logger.info(`Core Web Vital: ${metric.name}`, {
+      metric: metric.name,
+      value,
+      rating: metric.rating,
+      delta: Math.round(metric.delta),
+      id: metric.id,
+      navigationType: metric.navigationType,
+      page: typeof window !== 'undefined' ? window.location.pathname : '',
+    });
   });
 
   return null;

@@ -87,6 +87,13 @@ export const featureFlags = {
 
   /** Compare multiple resorts side-by-side */
   compareResorts: false,
+
+  // ============================================
+  // Observability & Monitoring (Epic 25)
+  // ============================================
+
+  /** Ship logs to Grafana Cloud Loki */
+  observabilityLogging: false,
 } as const;
 
 /**

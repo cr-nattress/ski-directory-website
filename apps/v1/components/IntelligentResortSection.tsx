@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { ViewToggle } from './ViewToggle';
 import { ResortMapViewWrapper } from './ResortMapViewWrapper';
 import { useViewMode } from '@/lib/hooks/useViewMode';
@@ -12,6 +12,7 @@ import { LoadingMore } from './LoadingMore';
 import { DiscoverySections } from './discovery';
 import { cn } from '@/lib/utils';
 import { paginationConfig } from '@/lib/config/pagination';
+import { useLogger } from '@/lib/hooks/useLogger';
 
 /**
  * Intelligent Resort Section
@@ -26,6 +27,8 @@ import { paginationConfig } from '@/lib/config/pagination';
 export function IntelligentResortSection() {
   const { mode, setMode, isHydrated } = useViewMode('map');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const log = useLogger({ component: 'IntelligentResortSection' });
+  const loadMoreCountRef = useRef(0);
 
   // Ranked resorts with infinite scroll
   const {
@@ -59,9 +62,33 @@ export function IntelligentResortSection() {
   // Load more callback
   const handleLoadMore = useCallback(() => {
     if (hasMore && !isLoadingMore && !selectedCategory) {
+      loadMoreCountRef.current += 1;
+      log.info('Infinite scroll triggered', {
+        loadMoreCount: loadMoreCountRef.current,
+        currentCount: resorts.length,
+        totalCount,
+      });
       loadMore();
     }
-  }, [hasMore, isLoadingMore, selectedCategory, loadMore]);
+  }, [hasMore, isLoadingMore, selectedCategory, loadMore, resorts.length, totalCount, log]);
+
+  // Handle category selection with logging
+  const handleCategorySelect = useCallback((categoryId: string | null) => {
+    const previousCategory = selectedCategory;
+    const categoryLabel = categoryId
+      ? categories.find(c => c.id === categoryId)?.label
+      : 'All';
+    const previousLabel = previousCategory
+      ? categories.find(c => c.id === previousCategory)?.label
+      : 'All';
+
+    log.info('Category filter changed', {
+      previousCategory: previousLabel,
+      newCategory: categoryLabel,
+    });
+
+    setSelectedCategory(categoryId);
+  }, [selectedCategory, log]);
 
   // Intersection observer for infinite scroll
   const { ref: sentinelRef, isIntersecting } = useIntersectionObserver<HTMLDivElement>({
@@ -133,7 +160,7 @@ export function IntelligentResortSection() {
           <div className="flex flex-wrap justify-center gap-2 mb-8">
               {/* All Resorts chip */}
               <button
-                onClick={() => setSelectedCategory(null)}
+                onClick={() => handleCategorySelect(null)}
                 className={cn(
                   'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
                   selectedCategory === null
@@ -148,7 +175,7 @@ export function IntelligentResortSection() {
               {categories.map((category) => (
                 <button
                   key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
+                  onClick={() => handleCategorySelect(category.id)}
                   className={cn(
                     'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
                     selectedCategory === category.id

@@ -80,6 +80,8 @@ class ThemedResortsService {
     // Fetch more than needed to allow diversity filtering
     const fetchLimit = Math.max(limit * 3, 36);
 
+    console.log('[ThemedResortsService] Fetching top destinations...');
+
     const { data, error } = await supabase
       .from('resorts_ranked' as 'resorts_full')
       .select('*')
@@ -88,9 +90,11 @@ class ThemedResortsService {
       .limit(fetchLimit);
 
     if (error) {
-      console.error('Error fetching top destinations:', error);
+      console.error('[ThemedResortsService] Error fetching top destinations:', error);
       return [];
     }
+
+    console.log('[ThemedResortsService] Top destinations raw data count:', data?.length ?? 0);
 
     const resorts = (data || []).map(adaptResortFromSupabase);
 
@@ -100,73 +104,107 @@ class ThemedResortsService {
       resultLimit: limit,
     });
 
+    console.log('[ThemedResortsService] Top destinations after diversity:', diversifiedResorts.length);
+
     return diversifiedResorts;
   }
 
   /**
    * Get hidden gems (high score + smaller size)
-   * Smaller resorts (< 1000 acres, < 2000 vertical) with good scores
+   * Smaller resorts (< 1000 acres) with good scores
+   *
+   * Note: JSON field filtering isn't well supported in PostgREST,
+   * so we fetch more data and filter client-side.
    */
   async getHiddenGems(limit: number = 12): Promise<Resort[]> {
-    // Query for smaller resorts with decent data completeness
+    // Fetch more to allow client-side filtering
+    const fetchLimit = limit * 5;
+
     const { data, error } = await supabase
       .from('resorts_ranked' as 'resorts_full')
       .select('*')
       .eq('is_active', true)
-      .lt('stats->skiableAcres', 1000) // Smaller acreage
-      .gt('content_score', 0.3) // Has decent content
       .order('ranking_score', { ascending: false })
-      .limit(limit);
+      .limit(fetchLimit);
 
     if (error) {
       console.error('Error fetching hidden gems:', error);
       return [];
     }
 
-    return (data || []).map(adaptResortFromSupabase);
+    // Client-side filter for smaller resorts
+    const resorts = (data || [])
+      .map(adaptResortFromSupabase)
+      .filter(resort => resort.stats.skiableAcres < 1000)
+      .slice(0, limit);
+
+    return resorts;
   }
 
   /**
    * Get night skiing and terrain park resorts
+   *
+   * Note: JSON field filtering isn't well supported in PostgREST,
+   * so we fetch more data and filter client-side.
    */
   async getNightAndPark(limit: number = 12): Promise<Resort[]> {
-    // Query for resorts with night skiing or terrain parks
+    // Fetch more to allow client-side filtering
+    const fetchLimit = limit * 5;
+
     const { data, error } = await supabase
       .from('resorts_ranked' as 'resorts_full')
       .select('*')
       .eq('is_active', true)
-      .or('features->hasPark.eq.true,features->hasNightSkiing.eq.true')
       .order('ranking_score', { ascending: false })
-      .limit(limit);
+      .limit(fetchLimit);
 
     if (error) {
       console.error('Error fetching night/park resorts:', error);
       return [];
     }
 
-    return (data || []).map(adaptResortFromSupabase);
+    // Client-side filter for night skiing or terrain parks
+    const resorts = (data || [])
+      .map(adaptResortFromSupabase)
+      .filter(resort => resort.features.hasPark || resort.features.hasNightSkiing)
+      .slice(0, limit);
+
+    return resorts;
   }
 
   /**
    * Get powder and steep terrain resorts
-   * High expert percentage (> 15%) or high snowfall
+   * High expert percentage (> 15%) or high snowfall (> 300")
+   *
+   * Note: JSON field filtering isn't well supported in PostgREST,
+   * so we fetch more data and filter client-side.
    */
   async getPowderAndSteeps(limit: number = 12): Promise<Resort[]> {
-    // Query for expert terrain or high snowfall
+    // Fetch more to allow client-side filtering
+    const fetchLimit = limit * 5;
+
     const { data, error } = await supabase
       .from('resorts_ranked' as 'resorts_full')
       .select('*')
       .eq('is_active', true)
-      .or('terrain->expert.gt.15,stats->avgAnnualSnowfall.gt.300')
       .order('ranking_score', { ascending: false })
-      .limit(limit);
+      .limit(fetchLimit);
 
     if (error) {
       console.error('Error fetching powder/steep resorts:', error);
       return [];
     }
 
-    return (data || []).map(adaptResortFromSupabase);
+    // Client-side filter for expert terrain or high snowfall
+    const resorts = (data || [])
+      .map(adaptResortFromSupabase)
+      .filter(resort =>
+        resort.terrain.expert > 15 ||
+        resort.stats.avgAnnualSnowfall > 300
+      )
+      .slice(0, limit);
+
+    return resorts;
   }
 
   /**
@@ -193,23 +231,38 @@ class ThemedResortsService {
    * More efficient than individual calls for initial page load
    */
   async getAllThemedSections(): Promise<ThemedSections> {
-    // Run all queries in parallel
-    const [topDestinations, hiddenGems, nightAndPark, powderAndSteeps, lostSkiAreas] =
-      await Promise.all([
-        this.getTopDestinations(),
-        this.getHiddenGems(),
-        this.getNightAndPark(),
-        this.getPowderAndSteeps(),
-        this.getLostSkiAreas(),
-      ]);
+    console.log('[ThemedResortsService] Starting getAllThemedSections');
 
-    return {
-      topDestinations,
-      hiddenGems,
-      nightAndPark,
-      powderAndSteeps,
-      lostSkiAreas,
-    };
+    try {
+      // Run all queries in parallel
+      const [topDestinations, hiddenGems, nightAndPark, powderAndSteeps, lostSkiAreas] =
+        await Promise.all([
+          this.getTopDestinations(),
+          this.getHiddenGems(),
+          this.getNightAndPark(),
+          this.getPowderAndSteeps(),
+          this.getLostSkiAreas(),
+        ]);
+
+      console.log('[ThemedResortsService] Completed getAllThemedSections:', {
+        topDestinations: topDestinations.length,
+        hiddenGems: hiddenGems.length,
+        nightAndPark: nightAndPark.length,
+        powderAndSteeps: powderAndSteeps.length,
+        lostSkiAreas: lostSkiAreas.length,
+      });
+
+      return {
+        topDestinations,
+        hiddenGems,
+        nightAndPark,
+        powderAndSteeps,
+        lostSkiAreas,
+      };
+    } catch (error) {
+      console.error('[ThemedResortsService] Error in getAllThemedSections:', error);
+      throw error;
+    }
   }
 }
 
