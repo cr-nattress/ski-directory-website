@@ -8,7 +8,8 @@
 
 import type { ResortFull } from "@/types/supabase";
 import type { Resort, ResortImage, PassAffiliation } from "@/lib/types";
-import { getCardImageUrl, getHeroImageUrl, getTrailMapUrl } from "@/lib/supabase";
+import { getHeroImageUrl, getTrailMapUrl } from "@/lib/supabase";
+import { PLACEHOLDER_IMAGE } from "@/lib/utils/resort-images";
 
 /**
  * Convert a Supabase ResortFull record to the frontend Resort type
@@ -17,16 +18,19 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
   const assetPath = supabaseResort.asset_path;
 
   // Build images array from GCS assets
+  // Note: Card images use the default placeholder since individual resort card images don't exist
   const images: ResortImage[] = [];
 
+  // Card image always uses the default placeholder
+  images.push({
+    url: PLACEHOLDER_IMAGE,
+    alt: `${supabaseResort.name} ski resort card image`,
+    priority: 1,
+    isCardImage: true,
+    isHeroImage: false,
+  });
+
   if (assetPath) {
-    images.push({
-      url: getCardImageUrl(assetPath),
-      alt: `${supabaseResort.name} ski resort card image`,
-      priority: 1,
-      isCardImage: true,
-      isHeroImage: false,
-    });
     images.push({
       url: getHeroImageUrl(assetPath),
       alt: `${supabaseResort.name} ski resort hero image`,

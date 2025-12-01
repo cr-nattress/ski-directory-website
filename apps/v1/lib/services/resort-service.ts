@@ -5,7 +5,7 @@
  * Use these functions in server components and API routes.
  */
 
-import { supabase, createServerClient, getCardImageUrl } from "@/lib/supabase";
+import { supabase, createServerClient } from "@/lib/supabase";
 import type { ResortFull, ResortListItem, StateStats, PassProgram } from "@/types/supabase";
 
 // ============================================================================

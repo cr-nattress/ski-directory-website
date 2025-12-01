@@ -8,7 +8,6 @@ import { categories } from '@/lib/data/categories';
 import { useRankedResorts } from '@/lib/hooks/useRankedResorts';
 import { useIntersectionObserver } from '@/lib/hooks/useIntersectionObserver';
 import { ResortCard } from './ResortCard';
-import { CategoryChips } from './CategoryChips';
 import { LoadingMore } from './LoadingMore';
 import { DiscoverySections } from './discovery';
 import { cn } from '@/lib/utils';
@@ -25,7 +24,7 @@ import { paginationConfig } from '@/lib/config/pagination';
  * Discovery sections only show when viewing "All" (no category selected).
  */
 export function IntelligentResortSection() {
-  const { mode, setMode, isHydrated } = useViewMode('cards');
+  const { mode, setMode, isHydrated } = useViewMode('map');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   // Ranked resorts with infinite scroll
@@ -77,8 +76,8 @@ export function IntelligentResortSection() {
     }
   }, [isIntersecting, handleLoadMore]);
 
-  // Show discovery sections only when viewing all (no category selected)
-  const showDiscoverySections = !selectedCategory && mode === 'cards';
+  // Show discovery sections when viewing all (no category selected) - visible in both cards and map mode
+  const showDiscoverySections = !selectedCategory;
 
   // Display count
   const displayCount = !selectedCategory
@@ -90,14 +89,6 @@ export function IntelligentResortSection() {
 
   return (
     <>
-      {/* Category Chips - only show in cards mode */}
-      {mode === 'cards' && (
-        <CategoryChips
-          selectedCategory={selectedCategory}
-          onSelectCategory={setSelectedCategory}
-        />
-      )}
-
       {/* Discovery Sections - only when viewing "All" in cards mode */}
       {showDiscoverySections && !isLoading && (
         <section className="py-8 bg-white">
@@ -110,7 +101,7 @@ export function IntelligentResortSection() {
       <section className="py-12 bg-bg-light">
         <div className="container-custom">
           {/* Header with View Toggle */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
                 {mode === 'cards' && selectedCategory
@@ -136,6 +127,39 @@ export function IntelligentResortSection() {
             {isHydrated && (
               <ViewToggle value={mode} onChange={setMode} />
             )}
+          </div>
+
+          {/* Category Chips - centered, smaller size, visible in both cards and map mode */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {/* All Resorts chip */}
+              <button
+                onClick={() => setSelectedCategory(null)}
+                className={cn(
+                  'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
+                  selectedCategory === null
+                    ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
+                    : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
+                )}
+              >
+                <span>🗺️</span>
+                <span>All</span>
+              </button>
+
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={cn(
+                    'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
+                    selectedCategory === category.id
+                      ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
+                      : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
+                  )}
+                >
+                  <span>{category.icon}</span>
+                  <span>{category.label}</span>
+                </button>
+              ))}
           </div>
 
           {/* View content */}

@@ -237,15 +237,30 @@ export function useRankedResorts(
     await fetchPage(1, false);
   }, [fetchPage, isFeatureEnabled]);
 
-  // Initial fetch
+  // Track if initial fetch has been done for this mount
+  const hasFetchedRef = useRef<boolean>(false);
+
+  // Initial fetch - runs on every mount
   useEffect(() => {
+    // Reset fetch tracking on mount
+    hasFetchedRef.current = false;
+
     if (!enabled || !isFeatureEnabled) {
       setIsLoading(false);
       return;
     }
-    fetchPage(1, false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [enabled, isFeatureEnabled]);
+
+    // Only fetch if we haven't already for this mount
+    if (!hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+      fetchPage(1, false);
+    }
+
+    // Cleanup on unmount to ensure refetch on next mount
+    return () => {
+      hasFetchedRef.current = false;
+    };
+  }, [enabled, isFeatureEnabled, fetchPage]);
 
   return {
     resorts,

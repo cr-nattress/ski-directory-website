@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { resortService } from '../api/resort-service';
 import {
   Resort,
@@ -81,8 +81,20 @@ export function useResorts(options: ResortQueryOptions = {}): UseResortsResult {
     }
   }, [memoizedOptions]);
 
+  // Track if initial fetch has been done for this mount
+  const hasFetchedRef = useRef<boolean>(false);
+
   useEffect(() => {
-    fetchResorts();
+    hasFetchedRef.current = false;
+
+    if (!hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+      fetchResorts();
+    }
+
+    return () => {
+      hasFetchedRef.current = false;
+    };
   }, [fetchResorts]);
 
   return {
@@ -128,8 +140,20 @@ export function useAllResorts(): Omit<UseResortsResult, 'pagination'> {
     }
   }, []);
 
+  // Track if initial fetch has been done for this mount
+  const hasFetchedRef = useRef<boolean>(false);
+
   useEffect(() => {
-    fetchResorts();
+    hasFetchedRef.current = false;
+
+    if (!hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+      fetchResorts();
+    }
+
+    return () => {
+      hasFetchedRef.current = false;
+    };
   }, [fetchResorts]);
 
   return {
@@ -173,8 +197,19 @@ export function useFeaturedResorts(limit: number = 3): Omit<UseResortsResult, 'p
     }
   }, [limit]);
 
+  const hasFetchedRef = useRef<boolean>(false);
+
   useEffect(() => {
-    fetchResorts();
+    hasFetchedRef.current = false;
+
+    if (!hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+      fetchResorts();
+    }
+
+    return () => {
+      hasFetchedRef.current = false;
+    };
   }, [fetchResorts]);
 
   return {
@@ -218,8 +253,19 @@ export function useNearbyResorts(maxDistance: number): Omit<UseResortsResult, 'p
     }
   }, [maxDistance]);
 
+  const hasFetchedRef = useRef<boolean>(false);
+
   useEffect(() => {
-    fetchResorts();
+    hasFetchedRef.current = false;
+
+    if (!hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+      fetchResorts();
+    }
+
+    return () => {
+      hasFetchedRef.current = false;
+    };
   }, [fetchResorts]);
 
   return {
@@ -264,8 +310,19 @@ export function useResortsByPass(passType: string): Omit<UseResortsResult, 'pagi
     }
   }, [passType]);
 
+  const hasFetchedRef = useRef<boolean>(false);
+
   useEffect(() => {
-    fetchResorts();
+    hasFetchedRef.current = false;
+
+    if (!hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+      fetchResorts();
+    }
+
+    return () => {
+      hasFetchedRef.current = false;
+    };
   }, [fetchResorts]);
 
   return {

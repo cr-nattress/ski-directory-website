@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   themedResortsService,
   type ThemedSections,
@@ -81,8 +81,21 @@ export function useThemedResorts(): UseThemedResortsResult {
     }
   }, [isEnabled]);
 
+  // Track if initial fetch has been done for this mount
+  const hasFetchedRef = useRef<boolean>(false);
+
+  // Initial fetch - runs on every mount
   useEffect(() => {
-    fetchSections();
+    hasFetchedRef.current = false;
+
+    if (!hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+      fetchSections();
+    }
+
+    return () => {
+      hasFetchedRef.current = false;
+    };
   }, [fetchSections]);
 
   return {

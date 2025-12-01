@@ -45,7 +45,7 @@ export function getAssetUrl(assetPath: string, fileName: string): string {
  * Get card image URL for a resort
  */
 export function getCardImageUrl(assetPath: string): string {
-  return getAssetUrl(assetPath, "images/card.jpg");
+  return getAssetUrl(assetPath, "images/card.png");
 }
 
 /**

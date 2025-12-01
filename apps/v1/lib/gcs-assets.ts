@@ -32,7 +32,7 @@ export function getResortAssetUrl(location: AssetLocation, path: string): string
  * Get the card/listing image URL for a resort
  */
 export function getCardImageUrl(location: AssetLocation): string {
-  return getResortAssetUrl(location, 'images/card.jpg');
+  return getResortAssetUrl(location, 'images/card.png');
 }
 
 /**

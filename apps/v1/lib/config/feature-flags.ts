@@ -47,6 +47,9 @@ export const featureFlags = {
   /** Infinite scroll on landing page resort cards */
   infiniteScroll: true,
 
+  /** Hero search form widget */
+  heroSearchForm: false,
+
   /** "Latest from the slopes" articles section */
   contentSection: false,
 
