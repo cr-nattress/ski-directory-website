@@ -39,33 +39,44 @@ export function formatReadme(resort: Resort, wikiData: WikipediaResortData | nul
       lines.push('|-----------|-------|');
 
       const infoboxFields = [
+        { key: 'status', label: 'Status' },
         { key: 'location', label: 'Location' },
-        { key: 'elevation', label: 'Elevation' },
+        { key: 'nearest_city', label: 'Nearest City' },
+        { key: 'summit_elevation', label: 'Summit Elevation' },
         { key: 'top_elevation', label: 'Summit Elevation' },
         { key: 'base_elevation', label: 'Base Elevation' },
+        { key: 'vertical_drop', label: 'Vertical Drop' },
         { key: 'vertical', label: 'Vertical Drop' },
         { key: 'skiable_area', label: 'Skiable Area' },
-        { key: 'skiable_terrain', label: 'Skiable Terrain' },
         { key: 'trails', label: 'Trails' },
+        { key: 'number_trails', label: 'Trails' },
         { key: 'runs', label: 'Runs' },
         { key: 'lifts', label: 'Lifts' },
+        { key: 'liftsystem', label: 'Lifts' },
+        { key: 'longest_run', label: 'Longest Run' },
+        { key: 'terrain_parks', label: 'Terrain Parks' },
+        { key: 'terrainparks', label: 'Terrain Parks' },
         { key: 'snowfall', label: 'Annual Snowfall' },
+        { key: 'snowmaking', label: 'Snowmaking' },
+        { key: 'night_skiing', label: 'Night Skiing' },
+        { key: 'nightskiing', label: 'Night Skiing' },
         { key: 'season', label: 'Season' },
-        { key: 'opening', label: 'Opening Date' },
         { key: 'opened', label: 'Opened' },
         { key: 'closed', label: 'Closed' },
         { key: 'owner', label: 'Owner' },
         { key: 'operator', label: 'Operator' },
-        { key: 'passholder', label: 'Pass Holder' },
         { key: 'website', label: 'Website' },
       ];
 
+      // Track which labels we've already added to avoid duplicates
+      const addedLabels = new Set<string>();
       for (const field of infoboxFields) {
         const value = wikiData.infobox[field.key];
-        if (value) {
+        if (value && !addedLabels.has(field.label)) {
           // Clean up the value for table display
           const cleanValue = value.replace(/\|/g, '\\|').replace(/\n/g, ' ');
           lines.push(`| ${field.label} | ${cleanValue} |`);
+          addedLabels.add(field.label);
         }
       }
       lines.push('');

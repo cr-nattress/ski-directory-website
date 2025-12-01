@@ -174,8 +174,13 @@ async function getIntroExtract(pageid: number): Promise<string> {
  * Parse infobox data from the page wikitext
  */
 async function getInfobox(title: string): Promise<WikipediaInfobox> {
+  interface RevisionData {
+    slots?: { main?: { '*': string } };
+    '*'?: string;
+  }
+
   const result = await wikiApiRequest<{
-    query?: { pages?: Record<string, { revisions?: Array<{ '*': string }> }> };
+    query?: { pages?: Record<string, { revisions?: RevisionData[] }> };
   }>({
     action: 'query',
     titles: title,
@@ -189,9 +194,71 @@ async function getInfobox(title: string): Promise<WikipediaInfobox> {
   if (!pages) return {};
 
   const pageData = Object.values(pages)[0];
-  const wikitext = pageData?.revisions?.[0]?.['*'] ?? '';
+  const revision = pageData?.revisions?.[0];
+  // Handle both old and new API response formats
+  const wikitext = revision?.slots?.main?.['*'] ?? revision?.['*'] ?? '';
 
   return parseInfobox(wikitext);
+}
+
+/**
+ * Process {{convert|value|unit|...}} templates to readable text
+ */
+function processConvertTemplate(template: string): string {
+  // Match {{convert|value|fromUnit|toUnit|...}} or {{convert|value|unit|...}}
+  const match = template.match(/\{\{convert\|([^|]+)\|([^|}]+)(?:\|([^|}]+))?/i);
+  if (!match) return template;
+
+  const value = match[1].trim();
+  const unit = match[2].trim();
+
+  // Map common unit abbreviations
+  const unitMap: Record<string, string> = {
+    ft: 'ft',
+    m: 'm',
+    mi: 'miles',
+    km: 'km',
+    acre: 'acres',
+    in: 'inches',
+    cm: 'cm',
+  };
+
+  const displayUnit = unitMap[unit] || unit;
+  return `${value} ${displayUnit}`;
+}
+
+/**
+ * Clean wiki markup from a value
+ */
+function cleanWikiMarkup(value: string): string {
+  let cleaned = value;
+
+  // Process {{convert|...}} templates first (before removing all templates)
+  cleaned = cleaned.replace(/\{\{convert\|[^}]+\}\}/gi, (match) => processConvertTemplate(match));
+
+  // Process {{spaces|N}} template - just remove it
+  cleaned = cleaned.replace(/\{\{spaces\|\d+\}\}/gi, '');
+
+  // Extract URL from external links [http://url text] -> url
+  cleaned = cleaned.replace(/\[https?:\/\/([^\s\]]+)\s*([^\]]*)\]/gi, (_, url, text) => {
+    return text.trim() || `https://${url}`;
+  });
+
+  // Clean up wiki markup
+  cleaned = cleaned
+    .replace(/\[\[File:[^\]]+\]\]/g, '') // Remove file links
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2') // [[link|text]] -> text
+    .replace(/\[\[([^\]]+)\]\]/g, '$1') // [[link]] -> link
+    .replace(/\{\{coord\|[^}]+\}\}/gi, '') // Remove coord templates (we get coords separately)
+    .replace(/\{\{[^}]+\}\}/g, '') // Remove remaining templates
+    .replace(/<br\s*\/?>/gi, ', ') // Convert <br> to comma
+    .replace(/<[^>]+>/g, '') // Remove HTML tags
+    .replace(/&nbsp;/g, ' ')
+    .replace(/''+/g, '') // Remove wiki bold/italic markers
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
+
+  return cleaned;
 }
 
 /**
@@ -200,32 +267,76 @@ async function getInfobox(title: string): Promise<WikipediaInfobox> {
 function parseInfobox(wikitext: string): WikipediaInfobox {
   const infobox: WikipediaInfobox = {};
 
-  // Match infobox template
-  const infoboxMatch = wikitext.match(/\{\{[Ii]nfobox[^}]*\n([\s\S]*?)\n\}\}/);
-  if (!infoboxMatch) return infobox;
+  // Find the start of the infobox
+  const infoboxStart = wikitext.search(/\{\{[Ii]nfobox\s+[^|]+/);
+  if (infoboxStart === -1) return infobox;
 
-  const content = infoboxMatch[1];
-
-  // Parse key-value pairs
-  const lines = content.split('\n');
-  for (const line of lines) {
-    const match = line.match(/^\s*\|\s*(\w+)\s*=\s*(.*)$/);
-    if (match) {
-      const key = match[1].trim().toLowerCase();
-      let value = match[2].trim();
-
-      // Clean up wiki markup
-      value = value
-        .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2') // [[link|text]] -> text
-        .replace(/\[\[([^\]]+)\]\]/g, '$1') // [[link]] -> link
-        .replace(/\{\{[^}]+\}\}/g, '') // Remove templates
-        .replace(/<[^>]+>/g, '') // Remove HTML tags
-        .replace(/&nbsp;/g, ' ')
-        .trim();
-
-      if (value) {
-        infobox[key] = value;
+  // Find the matching closing braces by counting brace depth
+  let depth = 0;
+  let infoboxEnd = infoboxStart;
+  for (let i = infoboxStart; i < wikitext.length - 1; i++) {
+    if (wikitext[i] === '{' && wikitext[i + 1] === '{') {
+      depth++;
+      i++; // Skip next char
+    } else if (wikitext[i] === '}' && wikitext[i + 1] === '}') {
+      depth--;
+      i++; // Skip next char
+      if (depth === 0) {
+        infoboxEnd = i + 1;
+        break;
       }
+    }
+  }
+
+  const infoboxContent = wikitext.substring(infoboxStart, infoboxEnd);
+
+  // Parse key-value pairs - handle multi-line values
+  const lines = infoboxContent.split('\n');
+  let currentKey: string | null = null;
+  let currentValue = '';
+
+  for (const line of lines) {
+    // Check if this line starts a new key-value pair
+    const keyMatch = line.match(/^\s*\|\s*([\w_]+)\s*=\s*(.*)$/);
+    if (keyMatch) {
+      // Save previous key-value pair if exists
+      if (currentKey && currentValue) {
+        infobox[currentKey] = cleanWikiMarkup(currentValue);
+      }
+      currentKey = keyMatch[1].trim().toLowerCase();
+      currentValue = keyMatch[2];
+    } else if (currentKey && !line.match(/^\s*\|/) && !line.match(/^\s*\}\}/)) {
+      // Continue previous value (multi-line)
+      currentValue += ' ' + line.trim();
+    }
+  }
+
+  // Don't forget the last key-value pair
+  if (currentKey && currentValue) {
+    infobox[currentKey] = cleanWikiMarkup(currentValue);
+  }
+
+  // Map Wikipedia ski resort infobox field names to our standardized names
+  const fieldMappings: Record<string, string> = {
+    number_trails: 'trails',
+    liftsystem: 'lifts',
+    lift_system: 'lifts',
+    terrainparks: 'terrain_parks',
+    terrain_parks: 'terrain_parks',
+    nightskiing: 'night_skiing',
+    night_skiing: 'night_skiing',
+    skiable_area: 'skiable_area',
+    top_elevation: 'summit_elevation',
+    base_elevation: 'base_elevation',
+    vertical: 'vertical_drop',
+    longest_run: 'longest_run',
+    nearest_city: 'nearest_city',
+  };
+
+  // Create mapped aliases
+  for (const [wikiField, ourField] of Object.entries(fieldMappings)) {
+    if (infobox[wikiField] && !infobox[ourField]) {
+      infobox[ourField] = infobox[wikiField];
     }
   }
 
