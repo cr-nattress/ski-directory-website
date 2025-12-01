@@ -56,6 +56,14 @@ export function getHeroImageUrl(assetPath: string): string {
 }
 
 /**
+ * Get primary image URL for a resort (Wikipedia-sourced image)
+ * This is the main image uploaded by the wikipedia-updater
+ */
+export function getPrimaryImageUrl(assetPath: string): string {
+  return getAssetUrl(assetPath, "wikipedia/primary.jpg");
+}
+
+/**
  * Get trail map URL for a resort
  */
 export function getTrailMapUrl(assetPath: string): string {

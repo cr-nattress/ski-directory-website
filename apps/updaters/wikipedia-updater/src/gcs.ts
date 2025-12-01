@@ -1,4 +1,5 @@
 import { Storage } from '@google-cloud/storage';
+import sharp from 'sharp';
 import { config } from './config.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -100,4 +101,89 @@ export async function uploadWikiDataToGcs(
   console.log(`  Uploaded wiki-data.json to: ${publicUrl}`);
 
   return publicUrl;
+}
+
+/**
+ * Download an image from a URL and upload it to GCS
+ *
+ * @param assetPath - The resort's asset path (e.g., "us/colorado/vail")
+ * @param imageUrl - The URL of the image to download
+ * @param filename - The filename to save as (e.g., "hero.jpg", "gallery-1.jpg")
+ * @returns The GCS URL of the uploaded file, or null if failed
+ */
+export async function uploadImageToGcs(
+  assetPath: string,
+  imageUrl: string,
+  filename: string
+): Promise<string | null> {
+  if (config.dryRun) {
+    console.log(`  [DRY RUN] Would upload image to: resorts/${assetPath}/wikipedia/${filename}`);
+    return `gs://${config.gcs.bucketName}/resorts/${assetPath}/wikipedia/${filename}`;
+  }
+
+  try {
+    // Download the image
+    const response = await fetch(imageUrl, {
+      headers: {
+        'User-Agent': 'SkiDirectoryBot/1.0 (https://skidirectory.com)',
+      },
+    });
+
+    if (!response.ok) {
+      console.log(`  Failed to download image: ${response.status} ${response.statusText}`);
+      return null;
+    }
+
+    const arrayBuffer = await response.arrayBuffer();
+    const inputBuffer = Buffer.from(arrayBuffer);
+
+    // Convert image to JPEG format using sharp
+    // This ensures consistent format regardless of source (PNG, WebP, etc.)
+    const jpegBuffer = await sharp(inputBuffer)
+      .jpeg({ quality: 85 })
+      .toBuffer();
+
+    // Upload to GCS
+    const storage = getStorageClient();
+    const bucket = storage.bucket(config.gcs.bucketName);
+    const filePath = `resorts/${assetPath}/wikipedia/${filename}`;
+    const file = bucket.file(filePath);
+
+    // file.save() overwrites any existing file with the same name
+    await file.save(jpegBuffer, {
+      contentType: 'image/jpeg',
+      metadata: {
+        cacheControl: 'public, max-age=604800', // 7 day cache for images
+      },
+    });
+
+    const publicUrl = `https://storage.googleapis.com/${config.gcs.bucketName}/${filePath}`;
+    return publicUrl;
+  } catch (error) {
+    console.error(`  Error uploading image ${filename}:`, error);
+    return null;
+  }
+}
+
+/**
+ * Upload multiple images to GCS for a resort
+ *
+ * @param assetPath - The resort's asset path
+ * @param images - Array of { url, filename } objects
+ * @returns Array of successfully uploaded image URLs
+ */
+export async function uploadImagesToGcs(
+  assetPath: string,
+  images: Array<{ url: string; filename: string }>
+): Promise<string[]> {
+  const uploadedUrls: string[] = [];
+
+  for (const image of images) {
+    const url = await uploadImageToGcs(assetPath, image.url, image.filename);
+    if (url) {
+      uploadedUrls.push(url);
+    }
+  }
+
+  return uploadedUrls;
 }

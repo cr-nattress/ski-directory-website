@@ -90,14 +90,14 @@ export function DiscoverySections() {
         />
       )}
 
-      {/* Lost Ski Areas */}
-      {sections.lostSkiAreas.length > 0 && (
+      {/* Lost Ski Areas - hidden for now */}
+      {/* {sections.lostSkiAreas.length > 0 && (
         <ResortRow
           title={sectionConfig[4].title}
           icon={sectionConfig[4].icon}
           resorts={sections.lostSkiAreas}
         />
-      )}
+      )} */}
     </div>
   );
 }

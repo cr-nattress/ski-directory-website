@@ -29,6 +29,21 @@ interface WikipediaInfobox {
 }
 
 /**
+ * Wikipedia media item from the REST API
+ */
+export interface WikipediaMediaItem {
+  title: string;
+  type: string;
+  leadImage: boolean;
+  sectionId: number;
+  caption?: string;
+  srcset: Array<{
+    src: string;
+    scale: string;
+  }>;
+}
+
+/**
  * Parsed Wikipedia data for a ski resort
  */
 export interface WikipediaResortData {
@@ -40,6 +55,7 @@ export interface WikipediaResortData {
   categories: string[];
   coordinates: { lat: number; lng: number } | null;
   infobox: WikipediaInfobox;
+  media: WikipediaMediaItem[];
   lastUpdated: string;
 }
 
@@ -242,6 +258,93 @@ async function getInfobox(title: string): Promise<WikipediaInfobox> {
 }
 
 /**
+ * Fetch media list from Wikipedia REST API
+ * Uses the /page/media-list/{title} endpoint
+ */
+async function fetchMediaList(title: string): Promise<WikipediaMediaItem[]> {
+  try {
+    // Use REST API instead of Action API for media list
+    const encodedTitle = encodeURIComponent(title.replace(/ /g, '_'));
+    const url = `https://en.wikipedia.org/api/rest_v1/page/media-list/${encodedTitle}`;
+
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': config.wikipedia.userAgent,
+      },
+    });
+
+    if (!response.ok) {
+      console.log(`  Media list API returned ${response.status} for "${title}"`);
+      return [];
+    }
+
+    interface MediaListResponse {
+      items?: Array<{
+        title: string;
+        type: string;
+        leadImage?: boolean;
+        section_id?: number;
+        caption?: { text?: string };
+        showInGallery?: boolean;
+        srcset?: Array<{
+          src: string;
+          scale: string;
+        }>;
+      }>;
+    }
+
+    const data = await response.json() as MediaListResponse;
+    const items = data.items ?? [];
+
+    // Filter to only images that should show in gallery and have srcset
+    const mediaItems: WikipediaMediaItem[] = items
+      .filter(item =>
+        item.type === 'image' &&
+        item.showInGallery &&
+        item.srcset &&
+        item.srcset.length > 0 &&
+        // Skip SVG logos and icons
+        !item.title.toLowerCase().includes('logo') &&
+        !item.title.toLowerCase().includes('icon') &&
+        !item.title.toLowerCase().endsWith('.svg')
+      )
+      .map(item => ({
+        title: item.title,
+        type: item.type,
+        leadImage: item.leadImage ?? false,
+        sectionId: item.section_id ?? 0,
+        caption: item.caption?.text,
+        srcset: item.srcset!.map(s => ({
+          src: s.src.startsWith('//') ? `https:${s.src}` : s.src,
+          scale: s.scale,
+        })),
+      }));
+
+    return mediaItems;
+  } catch (error) {
+    console.error(`  Error fetching media list for "${title}":`, error);
+    return [];
+  }
+}
+
+/**
+ * Get the highest resolution image URL from srcset
+ */
+export function getBestImageUrl(media: WikipediaMediaItem): string | null {
+  if (!media.srcset || media.srcset.length === 0) return null;
+
+  // Prefer 2x scale, then 1.5x, then 1x
+  const scales = ['2x', '1.5x', '1x'];
+  for (const scale of scales) {
+    const src = media.srcset.find(s => s.scale === scale);
+    if (src) return src.src;
+  }
+
+  // Fallback to first available
+  return media.srcset[0]?.src ?? null;
+}
+
+/**
  * Process {{convert|value|unit|...}} templates to readable text
  */
 function processConvertTemplate(template: string): string {
@@ -420,6 +523,12 @@ export async function fetchWikipediaData(
     // Get infobox data
     const infobox = await getInfobox(searchResult.title);
 
+    // Rate limiting
+    await sleep(config.wikipedia.rateLimitMs);
+
+    // Get media list from REST API
+    const media = await fetchMediaList(searchResult.title);
+
     // Parse categories
     const categories = (page.categories ?? [])
       .map(c => c.title.replace('Category:', ''))
@@ -438,6 +547,7 @@ export async function fetchWikipediaData(
       categories,
       coordinates,
       infobox,
+      media,
       lastUpdated: new Date().toISOString(),
     };
   } catch (error) {

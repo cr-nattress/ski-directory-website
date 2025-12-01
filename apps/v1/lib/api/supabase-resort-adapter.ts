@@ -8,7 +8,7 @@
 
 import type { ResortFull } from "@/types/supabase";
 import type { Resort, ResortImage, PassAffiliation } from "@/lib/types";
-import { getHeroImageUrl, getTrailMapUrl } from "@/lib/supabase";
+import { getTrailMapUrl, getPrimaryImageUrl } from "@/lib/supabase";
 import { PLACEHOLDER_IMAGE } from "@/lib/utils/resort-images";
 
 /**
@@ -18,25 +18,28 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
   const assetPath = supabaseResort.asset_path;
 
   // Build images array from GCS assets
-  // Note: Card images use the default placeholder since individual resort card images don't exist
+  // Primary images are sourced from Wikipedia via the wikipedia-updater
   const images: ResortImage[] = [];
 
-  // Card image always uses the default placeholder
-  images.push({
-    url: PLACEHOLDER_IMAGE,
-    alt: `${supabaseResort.name} ski resort card image`,
-    priority: 1,
-    isCardImage: true,
-    isHeroImage: false,
-  });
-
   if (assetPath) {
+    // Use the Wikipedia-sourced primary image for both card and hero
+    const primaryImageUrl = getPrimaryImageUrl(assetPath);
+
     images.push({
-      url: getHeroImageUrl(assetPath),
-      alt: `${supabaseResort.name} ski resort hero image`,
-      priority: 2,
-      isCardImage: false,
+      url: primaryImageUrl,
+      alt: `${supabaseResort.name} ski resort`,
+      priority: 1,
+      isCardImage: true,
       isHeroImage: true,
+    });
+  } else {
+    // Fallback to placeholder if no asset path
+    images.push({
+      url: PLACEHOLDER_IMAGE,
+      alt: `${supabaseResort.name} ski resort`,
+      priority: 1,
+      isCardImage: true,
+      isHeroImage: false,
     });
   }
 
@@ -112,7 +115,7 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
     reviewCount: 100,
 
     // Images
-    heroImage: assetPath ? getHeroImageUrl(assetPath) : "/images/placeholder-resort.jpg",
+    heroImage: assetPath ? getPrimaryImageUrl(assetPath) : PLACEHOLDER_IMAGE,
     images: images.length > 0 ? images : undefined,
     trailMapUrl: assetPath ? getTrailMapUrl(assetPath) : undefined,
 

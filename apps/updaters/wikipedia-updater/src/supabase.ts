@@ -88,3 +88,25 @@ export async function fetchActiveResorts(): Promise<Resort[]> {
   const allResorts = await fetchAllResorts();
   return allResorts.filter(r => r.is_active && !r.is_lost);
 }
+
+/**
+ * Update a resort's status in Supabase
+ * Note: is_active is a generated column based on status, so we update status instead
+ */
+export async function updateResortStatus(
+  resortId: string,
+  isActive: boolean
+): Promise<void> {
+  const client = getSupabaseClient();
+
+  const status = isActive ? 'active' : 'defunct';
+
+  const { error } = await client
+    .from('resorts')
+    .update({ status })
+    .eq('id', resortId);
+
+  if (error) {
+    throw new Error(`Failed to update resort status: ${error.message}`);
+  }
+}

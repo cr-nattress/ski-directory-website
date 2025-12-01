@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import { config, validateConfig } from './config.js';
-import { fetchAllResorts, type Resort } from './supabase.js';
-import { fetchWikipediaData, type WikipediaResortData } from './wikipedia.js';
+import { fetchAllResorts, updateResortStatus, type Resort } from './supabase.js';
+import { fetchWikipediaData, getBestImageUrl, type WikipediaResortData } from './wikipedia.js';
 import { formatReadme } from './formatter.js';
-import { uploadReadmeToGcs, uploadWikiDataToGcs } from './gcs.js';
+import { uploadReadmeToGcs, uploadWikiDataToGcs, uploadImagesToGcs } from './gcs.js';
 
 /**
  * Sleep for a specified duration
@@ -47,10 +47,29 @@ async function processResort(
 
     if (!wikiData) {
       console.log(`  No dedicated Wikipedia article found - skipping upload`);
+      // Mark resort as inactive since no Wikipedia page exists
+      if (!config.dryRun) {
+        console.log(`  Marking resort as inactive (no Wikipedia page)`);
+        await updateResortStatus(resort.id, false);
+      } else {
+        console.log(`  [DRY RUN] Would mark resort as inactive (no Wikipedia page)`);
+      }
       return { success: true, hasWikiData: false };
     }
 
     console.log(`  Found dedicated Wikipedia article: "${wikiData.title}"`);
+    console.log(`  Found ${wikiData.media.length} images`);
+
+    // Determine if resort should be active based on having a Wikipedia page AND images
+    const hasImages = wikiData.media.length > 0;
+    const shouldBeActive = hasImages;
+
+    if (!config.dryRun) {
+      console.log(`  Marking resort as ${shouldBeActive ? 'active' : 'inactive'} (Wikipedia page: yes, images: ${hasImages ? 'yes' : 'no'})`);
+      await updateResortStatus(resort.id, shouldBeActive);
+    } else {
+      console.log(`  [DRY RUN] Would mark resort as ${shouldBeActive ? 'active' : 'inactive'} (Wikipedia page: yes, images: ${hasImages ? 'yes' : 'no'})`);
+    }
 
     // Format README
     const readmeContent = formatReadme(resort, wikiData);
@@ -60,6 +79,22 @@ async function processResort(
 
     // Also upload raw wiki data as JSON
     await uploadWikiDataToGcs(resort.asset_path, wikiData);
+
+    // Upload only the first image (hero image) from Wikipedia
+    if (wikiData.media.length > 0) {
+      // Find lead image first, otherwise use the first available image
+      const leadImage = wikiData.media.find(m => m.leadImage) || wikiData.media[0];
+      const url = getBestImageUrl(leadImage);
+
+      if (url) {
+        // Always save as primary.jpg for consistency (GCS will serve correct content-type)
+        const imagesToUpload = [{ url, filename: 'primary.jpg' }];
+
+        console.log(`  Uploading primary image...`);
+        const uploadedUrls = await uploadImagesToGcs(resort.asset_path, imagesToUpload);
+        console.log(`  Uploaded ${uploadedUrls.length} image to GCS`);
+      }
+    }
 
     return { success: true, hasWikiData: true };
   } catch (error) {
