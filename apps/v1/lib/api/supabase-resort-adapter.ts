@@ -97,14 +97,14 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
       expert: supabaseResort.terrain?.expert || 0,
     },
 
-    // Conditions - static defaults for now (would come from weather API)
+    // Conditions - uses is_open from database for seasonal status
     conditions: {
       snowfall24h: 0,
       snowfall72h: 0,
       baseDepth: 0,
-      terrainOpen: supabaseResort.is_active ? 100 : 0,
-      liftsOpen: supabaseResort.stats?.liftsCount || 0,
-      status: supabaseResort.is_active ? "open" : "closed",
+      terrainOpen: supabaseResort.is_open ? 100 : 0,
+      liftsOpen: supabaseResort.is_open ? (supabaseResort.stats?.liftsCount || 0) : 0,
+      status: supabaseResort.is_open ? "open" : "closed",
     },
 
     // Pass information

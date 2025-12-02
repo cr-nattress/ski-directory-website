@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Resort } from '@/lib/types';
 import { getCardImageUrl, PLACEHOLDER_IMAGE } from '@/lib/utils/resort-images';
 import { Star, MapPin, Snowflake } from 'lucide-react';
@@ -51,10 +52,37 @@ export function ResortCard({ resort }: ResortCardProps) {
         return 'bg-ikon-orange text-white';
       case 'indy':
         return 'bg-purple-600 text-white';
+      case 'mountain-collective':
+        return 'bg-emerald-600 text-white';
+      case 'powder-alliance':
+        return 'bg-cyan-600 text-white';
+      case 'ny-ski3':
+        return 'bg-blue-600 text-white';
+      case 'rcr-rockies':
+        return 'bg-violet-600 text-white';
+      case 'lest-go':
+        return 'bg-pink-600 text-white';
       case 'local':
         return 'bg-mountain-gray text-white';
       default:
         return 'bg-gray-200 text-gray-700';
+    }
+  };
+
+  const getPassLabel = (pass: string) => {
+    switch (pass) {
+      case 'mountain-collective':
+        return 'Mtn Collective';
+      case 'powder-alliance':
+        return 'Powder Alliance';
+      case 'ny-ski3':
+        return 'NY SKI3';
+      case 'rcr-rockies':
+        return 'RCR Rockies';
+      case 'lest-go':
+        return "L'EST GO";
+      default:
+        return pass;
     }
   };
 
@@ -65,13 +93,13 @@ export function ResortCard({ resort }: ResortCardProps) {
     >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-          }}
-          role="img"
-          aria-label={imageAlt}
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-110"
+          unoptimized={imageUrl.startsWith('https://')}
         />
 
         {/* Pass badges */}
@@ -84,7 +112,7 @@ export function ResortCard({ resort }: ResortCardProps) {
                 getPassBadgeStyles(pass)
               )}
             >
-              {pass}
+              {getPassLabel(pass)}
             </span>
           ))}
         </div>

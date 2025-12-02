@@ -26,7 +26,7 @@ export function formatRating(rating: number): string {
 // Alert Dismissal localStorage Utilities
 // ============================================
 
-const DISMISSED_ALERTS_KEY = 'skicolorado_dismissed_alerts';
+const DISMISSED_ALERTS_KEY = 'skidirectory_dismissed_alerts';
 
 interface DismissedAlert {
   id: string;

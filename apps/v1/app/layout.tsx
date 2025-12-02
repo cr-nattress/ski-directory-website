@@ -18,13 +18,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://skidirectory.org'),
   title: {
-    default: 'Colorado Ski Resorts | Find Your Perfect Mountain',
+    default: 'Ski Directory | Find Your Perfect Ski Resort in North America',
     template: '%s | Ski Directory',
   },
-  description: 'Discover 30+ Colorado ski resorts with real-time conditions, expert reviews, and detailed mountain stats. Find your perfect Colorado ski destination.',
-  keywords: ['Colorado ski resorts', 'skiing Colorado', 'snowboarding', 'ski conditions', 'trail maps', 'Epic Pass', 'Ikon Pass'],
+  description: 'Discover 100+ ski resorts across the US and Canada. Compare terrain stats, real-time snow conditions, trail maps, and pass information. Find your perfect mountain.',
+  keywords: ['ski resorts', 'skiing', 'snowboarding', 'ski conditions', 'trail maps', 'Epic Pass', 'Ikon Pass', 'Colorado ski resorts', 'Utah ski resorts', 'Canada skiing'],
   authors: [{ name: 'Ski Directory' }],
   creator: 'Ski Directory',
   robots: {
@@ -42,6 +42,19 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Ski Directory',
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ski Directory - Find Your Perfect Ski Resort',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@skidirectory',
+    images: ['/images/og-default.jpg'],
   },
 };
 

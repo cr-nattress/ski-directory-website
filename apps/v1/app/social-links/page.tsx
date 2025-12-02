@@ -18,6 +18,18 @@ export const metadata: Metadata = {
     description:
       'Discover the best ski YouTube channels, Instagram accounts, TikTok creators, and communities. Curated social media for skiers.',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ski Directory - Social Media Directory',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/og-default.jpg'],
   },
 };
 

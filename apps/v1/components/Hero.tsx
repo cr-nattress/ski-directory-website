@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
 import { useRegionalStats, useAllResorts } from '@/lib/hooks';
 import { featureFlags } from '@/lib/config/feature-flags';
@@ -23,11 +24,13 @@ export function Hero() {
     <section className="relative h-[420px] md:h-[490px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(/images/steamboat-town-mtn.jpg)',
-          }}
+        <Image
+          src="/images/steamboat-town-mtn.jpg"
+          alt="Scenic ski resort mountain with snow-covered slopes"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
@@ -61,7 +64,7 @@ export function Hero() {
                   onChange={(e) => setWhereValue(e.target.value)}
                   className="w-full text-sm text-gray-900 border-none outline-none focus:ring-0 p-0 bg-transparent"
                 >
-                  <option value="">All Colorado Resorts</option>
+                  <option value="">All Resorts</option>
                   {resorts.map((resort) => (
                     <option key={resort.id} value={resort.slug}>
                       {resort.name}

@@ -4,6 +4,7 @@ import { getResortBySlug } from '@/lib/services/resort-service';
 import { supabase } from '@/lib/supabase';
 import { ResortDetail } from '@/components/resort-detail/ResortDetail';
 import { adaptResortFromSupabase } from '@/lib/api/supabase-resort-adapter';
+import { getHeroImageUrl } from '@/lib/supabase';
 
 // ISR: Regenerate pages every hour for fresh snow conditions
 export const revalidate = 3600;
@@ -36,6 +37,11 @@ export async function generateMetadata({
 
   const description = `${resortData.name} ski resort in ${resortData.nearest_city || stateName}. ${skiableAcres.toLocaleString()} skiable acres, ${verticalDrop.toLocaleString()}' vertical drop, ${runsCount} runs. Current conditions and trail maps.`;
 
+  // Get hero image URL for OG image
+  const heroImageUrl = resortData.asset_path
+    ? getHeroImageUrl(resortData.asset_path)
+    : '/images/og-default.jpg';
+
   return {
     title: `${resortData.name} Ski Resort`,
     description,
@@ -46,11 +52,20 @@ export async function generateMetadata({
       title: `${resortData.name} | ${stateName} Ski Resort`,
       description,
       type: 'website',
+      images: [
+        {
+          url: heroImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${resortData.name} ski resort`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${resortData.name} | ${stateName} Ski Resort`,
       description,
+      images: [heroImageUrl],
     },
   };
 }

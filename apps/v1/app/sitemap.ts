@@ -3,7 +3,7 @@ import { getResorts } from '@/lib/services/resort-service';
 import { getSkiLinks } from '@/lib/data/ski-links';
 import { getSocialLinks } from '@/lib/data/social-links';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skidirectory.org';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Get all active resorts from Supabase

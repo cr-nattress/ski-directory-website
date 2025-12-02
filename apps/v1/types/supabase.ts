@@ -106,6 +106,7 @@ export interface Database {
           updated_at: string;
           is_active: boolean;
           is_lost: boolean;
+          is_open: boolean;
           fts: unknown | null; // tsvector
           major_city_id: string | null;
           distance_from_major_city: number | null;

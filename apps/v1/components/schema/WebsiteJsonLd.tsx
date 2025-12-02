@@ -1,6 +1,6 @@
 import { JsonLd } from './JsonLd';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skidirectory.org';
 
 /**
  * WebSite JSON-LD structured data
@@ -13,7 +13,7 @@ export function WebsiteJsonLd() {
     '@id': `${BASE_URL}#website`,
     name: 'Ski Directory',
     url: BASE_URL,
-    description: 'Discover 30+ Colorado ski resorts with real-time conditions, expert reviews, and detailed mountain stats.',
+    description: 'Discover 100+ ski resorts across the US and Canada. Compare terrain stats, real-time snow conditions, trail maps, and pass information.',
     potentialAction: {
       '@type': 'SearchAction',
       target: {

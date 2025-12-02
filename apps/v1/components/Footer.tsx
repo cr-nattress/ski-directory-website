@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function Footer() {
   return (
     <footer className="bg-bg-dark text-white py-12">
@@ -5,11 +7,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="font-display text-2xl font-bold mb-4">
+            <Link href="/" className="font-display text-2xl font-bold mb-4 block hover:text-gray-200 transition-colors">
               ⛷️ Ski Directory
-            </div>
+            </Link>
             <p className="text-gray-400 text-sm">
-              Your complete guide to Colorado ski resorts.
+              Your complete guide to ski resorts across North America.
             </p>
           </div>
 
@@ -18,24 +20,24 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Resorts</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/directory" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/directory" className="text-gray-400 hover:text-white transition-colors">
                   A-Z Directory
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  I-70 Corridor
-                </a>
+                <Link href="/directory?state=colorado" className="text-gray-400 hover:text-white transition-colors">
+                  Colorado
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Summit County
-                </a>
+                <Link href="/directory?state=utah" className="text-gray-400 hover:text-white transition-colors">
+                  Utah
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Front Range
-                </a>
+                <Link href="/directory?state=california" className="text-gray-400 hover:text-white transition-colors">
+                  California
+                </Link>
               </li>
             </ul>
           </div>
@@ -45,59 +47,28 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/ski-links" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/ski-links" className="text-gray-400 hover:text-white transition-colors">
                   Ski Links Directory
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/social-links" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/social-links" className="text-gray-400 hover:text-white transition-colors">
                   Social Media Directory
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Articles
-                </a>
+                <Link href="/directory?pass=epic" className="text-gray-400 hover:text-white transition-colors">
+                  Epic Pass Resorts
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Pass Guide
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Conditions
-                </a>
+                <Link href="/directory?pass=ikon" className="text-gray-400 hover:text-white transition-colors">
+                  Ikon Pass Resorts
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Terms
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom */}
@@ -108,7 +79,9 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href="#"
+                href="https://instagram.com/skidirectory"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
@@ -117,7 +90,9 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://twitter.com/skidirectory"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Twitter"
               >
@@ -126,7 +101,9 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://facebook.com/skidirectory"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Facebook"
               >

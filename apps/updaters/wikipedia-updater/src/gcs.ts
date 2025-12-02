@@ -187,3 +187,50 @@ export async function uploadImagesToGcs(
 
   return uploadedUrls;
 }
+
+/**
+ * Copy the default image to a resort's wikipedia folder as primary.jpg
+ *
+ * @param assetPath - The resort's asset path (e.g., "us/new-hampshire/bretton-woods")
+ * @returns The GCS URL of the copied file
+ */
+export async function copyDefaultImage(assetPath: string): Promise<string> {
+  const sourcePath = 'defaults/card.png';
+  const destPath = `resorts/${assetPath}/wikipedia/primary.jpg`;
+
+  if (config.dryRun) {
+    console.log(`  [DRY RUN] Would copy default image to: ${destPath}`);
+    return `gs://${config.gcs.bucketName}/${destPath}`;
+  }
+
+  try {
+    const storage = getStorageClient();
+    const bucket = storage.bucket(config.gcs.bucketName);
+
+    // Download the default image
+    const sourceFile = bucket.file(sourcePath);
+    const [sourceBuffer] = await sourceFile.download();
+
+    // Convert to JPEG using sharp for consistency
+    const jpegBuffer = await sharp(sourceBuffer)
+      .jpeg({ quality: 85 })
+      .toBuffer();
+
+    // Upload to the resort's wikipedia folder
+    const destFile = bucket.file(destPath);
+    await destFile.save(jpegBuffer, {
+      contentType: 'image/jpeg',
+      metadata: {
+        cacheControl: 'public, max-age=604800', // 7 day cache
+      },
+    });
+
+    const publicUrl = `https://storage.googleapis.com/${config.gcs.bucketName}/${destPath}`;
+    console.log(`  Copied default image to: ${publicUrl}`);
+
+    return publicUrl;
+  } catch (error) {
+    console.error(`  Error copying default image:`, error);
+    throw error;
+  }
+}

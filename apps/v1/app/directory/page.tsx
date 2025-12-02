@@ -17,6 +17,18 @@ export const metadata: Metadata = {
     description:
       'Compare all ski resorts at a glance. View real-time snow conditions, terrain open, skiable acres, vertical drop, and pass information.',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-directory.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ski Directory - A-Z Resort Directory',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/og-directory.jpg'],
   },
 };
 

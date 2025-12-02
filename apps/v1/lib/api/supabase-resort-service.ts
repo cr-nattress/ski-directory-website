@@ -132,12 +132,9 @@ class SupabaseResortService {
     }
 
     if (filters.status) {
-      const statusMap = {
-        open: true,
-        closed: false,
-        "opening-soon": true,
-      };
-      query = query.eq("is_active", statusMap[filters.status] ?? true);
+      // Filter by is_open for seasonal open/closed status
+      const isOpen = filters.status === "open" || filters.status === "opening-soon";
+      query = query.eq("is_open", isOpen);
     }
 
     if (filters.tags && filters.tags.length > 0) {
@@ -437,7 +434,7 @@ class SupabaseResortService {
       stateCode: row.state_code || "",
       passAffiliations: (row.pass_affiliations || []) as PassAffiliation[],
       rating: row.rating || 0,
-      status: this.mapStatus(row.status),
+      status: this.mapStatus(row.is_open ?? false),
       isActive: row.is_active,
       isLost: row.is_lost,
       terrainOpenPercent: row.terrain_open_percent,
@@ -450,11 +447,9 @@ class SupabaseResortService {
     };
   }
 
-  // Helper to map database status to frontend status type
-  private mapStatus(status: string): 'open' | 'closed' | 'opening-soon' {
-    if (status === 'active') return 'open';
-    if (status === 'defunct') return 'closed';
-    return 'closed';
+  // Helper to map database is_open to frontend status type
+  private mapStatus(isOpen: boolean): 'open' | 'closed' | 'opening-soon' {
+    return isOpen ? 'open' : 'closed';
   }
 
   // Helper to map frontend sort fields to database columns

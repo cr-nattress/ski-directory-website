@@ -12,7 +12,7 @@ import { BreadcrumbJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 import { FeatureFlag } from '@/components/FeatureFlag';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skidirectory.org';
 
 interface ResortDetailProps {
   resort: Resort;

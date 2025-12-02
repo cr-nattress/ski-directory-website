@@ -14,7 +14,7 @@ export type SortOption =
   | 'rating'
   | 'distance';
 
-export type PassFilter = 'all' | 'epic' | 'ikon' | 'indy' | 'local';
+export type PassFilter = 'all' | 'epic' | 'ikon' | 'indy' | 'mountain-collective' | 'powder-alliance' | 'ny-ski3' | 'rcr-rockies' | 'lest-go' | 'local';
 export type StatusFilter = 'all' | 'open' | 'closed';
 
 interface StateOption {
@@ -61,6 +61,11 @@ const passOptions: { value: PassFilter; label: string }[] = [
   { value: 'epic', label: 'Epic Pass' },
   { value: 'ikon', label: 'Ikon Pass' },
   { value: 'indy', label: 'Indy Pass' },
+  { value: 'mountain-collective', label: 'Mountain Collective' },
+  { value: 'powder-alliance', label: 'Powder Alliance' },
+  { value: 'ny-ski3', label: 'NY SKI3' },
+  { value: 'rcr-rockies', label: 'RCR Rockies' },
+  { value: 'lest-go', label: "L'EST GO" },
   { value: 'local', label: 'Local/Independent' },
 ];
 

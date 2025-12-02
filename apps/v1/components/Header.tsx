@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -26,7 +27,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a
+            <Link
               href="/"
               className={cn(
                 'font-display text-2xl font-bold flex items-center gap-2',
@@ -35,7 +36,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
             >
               <span>⛷️</span>
               <span>Ski Directory</span>
-            </a>
+            </Link>
           </div>
 
           {/* Menu button */}
@@ -55,49 +56,27 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
         {/* Dropdown menu */}
         {mobileMenuOpen && (
           <div className="absolute right-4 top-14 w-48 py-2 bg-white rounded-lg shadow-lg border border-gray-200">
-            <a
+            <Link
               href="/directory"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Directory
-            </a>
-            <a
-              href="/weather"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
-            >
-              Weather
-            </a>
-            <a
-              href="/articles"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
-            >
-              Articles
-            </a>
-            <a
+            </Link>
+            <Link
               href="/ski-links"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Ski Links
-            </a>
-            <a
+            </Link>
+            <Link
               href="/social-links"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Social Media
-            </a>
-            <a
-              href="/shops"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
-            >
-              Shops
-            </a>
-            <div className="border-t border-gray-200 my-1"></div>
-            <a
-              href="#"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
-            >
-              Login
-            </a>
+            </Link>
           </div>
         )}
       </nav>

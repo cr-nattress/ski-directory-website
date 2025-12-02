@@ -1,6 +1,6 @@
 import { Resort } from '@/lib/types';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skicolorado.com';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skidirectory.org';
 
 interface ResortStructuredDataProps {
   resort: Resort;

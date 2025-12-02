@@ -9,11 +9,16 @@ import 'leaflet/dist/leaflet.css';
 
 // Marker colors by pass type
 const PASS_COLORS = {
-  epic: '#dc2626',    // red-600
-  ikon: '#f97316',    // orange-500
-  indy: '#8b5cf6',    // violet-500
-  local: '#3b82f6',   // blue-500
-  lost: '#6b7280',    // gray-500
+  epic: '#dc2626',              // red-600
+  ikon: '#f97316',              // orange-500
+  indy: '#8b5cf6',              // violet-500
+  'mountain-collective': '#059669',  // emerald-600
+  'powder-alliance': '#0891b2',      // cyan-600
+  'ny-ski3': '#2563eb',              // blue-600
+  'rcr-rockies': '#7c3aed',          // violet-600
+  'lest-go': '#db2777',              // pink-600
+  local: '#3b82f6',             // blue-500
+  lost: '#6b7280',              // gray-500
 };
 
 /**
@@ -152,14 +157,24 @@ export function ResortMapView() {
                         <span
                           key={pass}
                           className={cn(
-                            'text-xs px-2 py-0.5 rounded text-white capitalize',
+                            'text-xs px-2 py-0.5 rounded text-white',
                             pass === 'epic' && 'bg-red-600',
                             pass === 'ikon' && 'bg-orange-500',
                             pass === 'indy' && 'bg-violet-500',
+                            pass === 'mountain-collective' && 'bg-emerald-600',
+                            pass === 'powder-alliance' && 'bg-cyan-600',
+                            pass === 'ny-ski3' && 'bg-blue-600',
+                            pass === 'rcr-rockies' && 'bg-violet-600',
+                            pass === 'lest-go' && 'bg-pink-600',
                             pass === 'local' && 'bg-neutral-600'
                           )}
                         >
-                          {pass}
+                          {pass === 'mountain-collective' ? 'Mtn Collective' :
+                           pass === 'powder-alliance' ? 'Powder Alliance' :
+                           pass === 'ny-ski3' ? 'NY SKI3' :
+                           pass === 'rcr-rockies' ? 'RCR Rockies' :
+                           pass === 'lest-go' ? "L'EST GO" :
+                           pass.charAt(0).toUpperCase() + pass.slice(1)}
                         </span>
                       ))}
                     </div>
@@ -181,7 +196,7 @@ export function ResortMapView() {
       {/* Map Legend */}
       <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-[1000]">
         <div className="text-xs font-semibold mb-2 text-neutral-700">Pass Types</div>
-        <div className="space-y-1.5 text-xs">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-red-600" />
             <span className="text-neutral-600">Epic</span>
@@ -191,8 +206,32 @@ export function ResortMapView() {
             <span className="text-neutral-600">Ikon</span>
           </div>
           <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-violet-500" />
+            <span className="text-neutral-600">Indy</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-emerald-600" />
+            <span className="text-neutral-600">Mtn Collective</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-cyan-600" />
+            <span className="text-neutral-600">Powder Alliance</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-blue-600" />
+            <span className="text-neutral-600">NY SKI3</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-violet-600" />
+            <span className="text-neutral-600">RCR Rockies</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-pink-600" />
+            <span className="text-neutral-600">L'EST GO</span>
+          </div>
+          <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-blue-500" />
-            <span className="text-neutral-600">Local/Indy</span>
+            <span className="text-neutral-600">Local</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-neutral-400" />

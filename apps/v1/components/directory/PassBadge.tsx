@@ -26,6 +26,36 @@ export function PassBadge({ pass, size = 'md' }: PassBadgeProps) {
           bgColor: 'bg-purple-600',
           textColor: 'text-white',
         };
+      case 'mountain-collective':
+        return {
+          label: 'Mtn Collective',
+          bgColor: 'bg-emerald-600',
+          textColor: 'text-white',
+        };
+      case 'powder-alliance':
+        return {
+          label: 'Powder Alliance',
+          bgColor: 'bg-cyan-600',
+          textColor: 'text-white',
+        };
+      case 'ny-ski3':
+        return {
+          label: 'NY SKI3',
+          bgColor: 'bg-blue-600',
+          textColor: 'text-white',
+        };
+      case 'rcr-rockies':
+        return {
+          label: 'RCR Rockies',
+          bgColor: 'bg-violet-600',
+          textColor: 'text-white',
+        };
+      case 'lest-go':
+        return {
+          label: "L'EST GO",
+          bgColor: 'bg-pink-600',
+          textColor: 'text-white',
+        };
       case 'local':
         return {
           label: 'Local',
@@ -34,7 +64,7 @@ export function PassBadge({ pass, size = 'md' }: PassBadgeProps) {
         };
       default:
         return {
-          label: pass.charAt(0).toUpperCase() + pass.slice(1),
+          label: pass.charAt(0).toUpperCase() + pass.slice(1).replace(/-/g, ' '),
           bgColor: 'bg-gray-200',
           textColor: 'text-gray-700',
         };

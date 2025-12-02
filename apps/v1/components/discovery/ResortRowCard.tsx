@@ -41,10 +41,37 @@ export function ResortRowCard({ resort }: ResortRowCardProps) {
         return 'bg-ikon-orange text-white';
       case 'indy':
         return 'bg-purple-600 text-white';
+      case 'mountain-collective':
+        return 'bg-emerald-600 text-white';
+      case 'powder-alliance':
+        return 'bg-cyan-600 text-white';
+      case 'ny-ski3':
+        return 'bg-blue-600 text-white';
+      case 'rcr-rockies':
+        return 'bg-violet-600 text-white';
+      case 'lest-go':
+        return 'bg-pink-600 text-white';
       case 'local':
         return 'bg-mountain-gray text-white';
       default:
         return 'bg-gray-200 text-gray-700';
+    }
+  };
+
+  const getPassLabel = (pass: string) => {
+    switch (pass) {
+      case 'mountain-collective':
+        return 'MTN COLL';
+      case 'powder-alliance':
+        return 'PWD ALL';
+      case 'ny-ski3':
+        return 'SKI3';
+      case 'rcr-rockies':
+        return 'RCR';
+      case 'lest-go':
+        return 'LEST GO';
+      default:
+        return pass.toUpperCase();
     }
   };
 
@@ -73,7 +100,7 @@ export function ResortRowCard({ resort }: ResortRowCardProps) {
                 getPassBadgeStyles(resort.passAffiliations[0])
               )}
             >
-              {resort.passAffiliations[0]}
+              {getPassLabel(resort.passAffiliations[0])}
             </span>
           </div>
         )}

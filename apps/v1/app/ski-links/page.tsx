@@ -18,6 +18,18 @@ export const metadata: Metadata = {
     description:
       'Curated links to the best ski websites: resorts, snow reports, webcams, trail maps, lodging, gear reviews, communities, and more.',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ski Directory - Skiing Resources',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/og-default.jpg'],
   },
 };
 
