@@ -7,7 +7,7 @@
 -- ============================================================================
 CREATE TABLE IF NOT EXISTS resort_conditions (
   -- Primary key and foreign key
-  resort_id UUID PRIMARY KEY REFERENCES resorts(id) ON DELETE CASCADE,
+  resort_id TEXT PRIMARY KEY REFERENCES resorts(id) ON DELETE CASCADE,
 
   -- Lift status
   lifts_open INTEGER DEFAULT 0,
