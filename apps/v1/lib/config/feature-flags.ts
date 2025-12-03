@@ -41,6 +41,19 @@ export const featureFlags = {
   alertBanner: false,
 
   // ============================================
+  // Resort Card Components
+  // ============================================
+
+  /** Star rating and review count on resort cards */
+  resortCardRating: false,
+
+  /** Distance and snowfall stats row on resort cards */
+  resortCardSnowfall: false,
+
+  /** Terrain open progress bar on resort cards */
+  resortCardTerrainOpen: false,
+
+  // ============================================
   // Landing Page Features
   // ============================================
 

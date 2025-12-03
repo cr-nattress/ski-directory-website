@@ -7,7 +7,6 @@ import type { Resort } from '@/lib/types';
 import { paginationConfig } from '@/lib/config/pagination';
 import { featureFlags } from '@/lib/config/feature-flags';
 import { useLogger } from '@/lib/hooks/useLogger';
-import { getObservabilityConfig } from '@/lib/config/observability';
 
 /**
  * Extended Resort type that includes ranking score
@@ -123,7 +122,8 @@ export function useRankedResorts(
 
   // Logger for this hook
   const log = useLogger({ component: 'useRankedResorts' });
-  const { thresholds } = getObservabilityConfig();
+  // Use a stable reference to avoid re-creating fetchPage on every render
+  const slowApiThreshold = 2000; // ms - same as observability config default
 
   // State
   const [resorts, setResorts] = useState<RankedResort[]>([]);
@@ -209,11 +209,11 @@ export function useRankedResorts(
         });
 
         // Warn if response was slow
-        if (durationMs > thresholds.slowApiThreshold) {
+        if (durationMs > slowApiThreshold) {
           log.warn('Slow response detected for ranked resorts', {
             page,
             durationMs,
-            threshold: thresholds.slowApiThreshold,
+            threshold: slowApiThreshold,
           });
         }
 
@@ -248,7 +248,7 @@ export function useRankedResorts(
         isFetchingRef.current = false;
       }
     },
-    [pageSize, includeLost, isFeatureEnabled, log, thresholds.slowApiThreshold]
+    [pageSize, includeLost, isFeatureEnabled, log, slowApiThreshold]
   );
 
   /**
@@ -274,29 +274,20 @@ export function useRankedResorts(
     await fetchPage(1, false);
   }, [fetchPage, isFeatureEnabled]);
 
-  // Track if initial fetch has been done for this mount
-  const hasFetchedRef = useRef<boolean>(false);
+  // Initial fetch - only runs once on mount
+  const hasMountedRef = useRef<boolean>(false);
 
-  // Initial fetch - runs on every mount
   useEffect(() => {
-    // Reset fetch tracking on mount
-    hasFetchedRef.current = false;
-
     if (!enabled || !isFeatureEnabled) {
       setIsLoading(false);
       return;
     }
 
-    // Only fetch if we haven't already for this mount
-    if (!hasFetchedRef.current) {
-      hasFetchedRef.current = true;
+    // Only fetch on first mount, not on dependency changes
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
       fetchPage(1, false);
     }
-
-    // Cleanup on unmount to ensure refetch on next mount
-    return () => {
-      hasFetchedRef.current = false;
-    };
   }, [enabled, isFeatureEnabled, fetchPage]);
 
   return {

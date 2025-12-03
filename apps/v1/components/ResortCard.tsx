@@ -9,6 +9,7 @@ import { Star, MapPin, Snowflake } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { useLogger } from '@/lib/hooks/useLogger';
+import { featureFlags } from '@/lib/config/feature-flags';
 
 interface ResortCardProps {
   resort: Resort;
@@ -24,7 +25,7 @@ export function ResortCard({ resort }: ResortCardProps) {
   // Check if image exists, fallback to placeholder on error
   useEffect(() => {
     hasLoggedError.current = false;
-    const img = new Image();
+    const img = new window.Image();
     img.onload = () => {
       // Image exists, keep URL
     };
@@ -138,8 +139,8 @@ export function ResortCard({ resort }: ResortCardProps) {
           {resort.name}
         </h3>
 
-        {/* Rating - hidden for lost ski areas */}
-        {!resort.isLost && (
+        {/* Rating - hidden for lost ski areas and controlled by feature flag */}
+        {featureFlags.resortCardRating && !resort.isLost && (
           <div className="flex items-center gap-1.5 mb-3">
             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
             <span className="font-semibold text-sm">
@@ -151,25 +152,35 @@ export function ResortCard({ resort }: ResortCardProps) {
           </div>
         )}
 
-        {/* Stats - show location for all, snow only for active resorts */}
-        <div className={cn("flex items-center gap-3 text-sm text-gray-600", resort.isLost && "mt-2")}>
-          <div className="flex items-center gap-1">
-            <MapPin className="w-4 h-4" />
-            <span>{formatDistance(resort.distanceFromMajorCity)}</span>
-          </div>
-          {!resort.isLost && (
-            <>
-              <span>•</span>
-              <div className="flex items-center gap-1">
-                <Snowflake className="w-4 h-4" />
-                <span>{formatSnowfall(resort.conditions.snowfall24h)}</span>
-              </div>
-            </>
-          )}
+        {/* Location - town, state */}
+        <div className="flex items-center gap-1 text-sm text-gray-500">
+          <MapPin className="w-4 h-4 flex-shrink-0" />
+          <span className="truncate">
+            {resort.nearestCity}, {resort.stateCode?.toUpperCase()}
+          </span>
         </div>
 
-        {/* Terrain open - hidden for lost ski areas */}
-        {!resort.isLost && (
+        {/* Stats - distance and snowfall - controlled by feature flag */}
+        {featureFlags.resortCardSnowfall && (
+          <div className={cn("flex items-center gap-3 text-sm text-gray-600 mt-2")}>
+            <div className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" />
+              <span>{formatDistance(resort.distanceFromMajorCity)}</span>
+            </div>
+            {!resort.isLost && (
+              <>
+                <span>•</span>
+                <div className="flex items-center gap-1">
+                  <Snowflake className="w-4 h-4" />
+                  <span>{formatSnowfall(resort.conditions.snowfall24h)}</span>
+                </div>
+              </>
+            )}
+          </div>
+        )}
+
+        {/* Terrain open - hidden for lost ski areas and controlled by feature flag */}
+        {featureFlags.resortCardTerrainOpen && !resort.isLost && (
           <>
             <div className="mt-3 flex items-center justify-between">
               <span className="text-xs text-gray-500">Terrain Open</span>
