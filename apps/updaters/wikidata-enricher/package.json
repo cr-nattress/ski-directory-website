@@ -1,0 +1,24 @@
+{
+  "name": "wikidata-enricher",
+  "version": "1.0.0",
+  "description": "Enriches ski resort data using OpenAI to extract and format Wikipedia data from GCS",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.7.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.3.1",
+    "openai": "^4.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.2"
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Wikipedia to Resort Mapping Schema",
+  "description": "Defines how Wikipedia data fields map to Resort.ts fields",
+  "version": "1.0.0",
+  "mappings": {
+    "directMappings": {
+      "description": "Fields that can be directly extracted from Wikipedia without LLM",
+      "fields": {
+        "location.lat": {
+          "source": "coordinates.lat",
+          "type": "number",
+          "confidence": "high",
+          "notes": "Direct 1:1 mapping from Wikipedia geolocation"
+        },
+        "location.lng": {
+          "source": "coordinates.lng",
+          "type": "number",
+          "confidence": "high",
+          "notes": "Direct 1:1 mapping from Wikipedia geolocation"
+        },
+        "websiteUrl": {
+          "source": "infobox.website",
+          "type": "string",
+          "confidence": "high",
+          "transform": "normalizeUrl",
+          "notes": "May need 'https://' prefix added"
+        }
+      }
+    },
+    "parsedMappings": {
+      "description": "Fields that require parsing/extraction from infobox strings",
+      "fields": {
+        "stats.skiableAcres": {
+          "source": "infobox.skiable_area",
+          "type": "number",
+          "confidence": "high",
+          "transform": "extractNumber",
+          "example": {
+            "input": "5317 acres",
+            "output": 5317
+          }
+        },
+        "stats.verticalDrop": {
+          "source": ["infobox.vertical_drop", "infobox.vertical"],
+          "type": "number",
+          "confidence": "high",
+          "transform": "extractFeet",
+          "example": {
+            "input": "3450 ft",
+            "output": 3450
+          }
+        },
+        "stats.baseElevation": {
+          "source": "infobox.base_elevation",
+          "type": "number",
+          "confidence": "high",
+          "transform": "extractFeet",
+          "example": {
+            "input": "8120 ft",
+            "output": 8120
+          }
+        },
+        "stats.summitElevation": {
+          "source": ["infobox.summit_elevation", "infobox.top_elevation"],
+          "type": "number",
+          "confidence": "high",
+          "transform": "extractFeet",
+          "example": {
+            "input": "11570 ft",
+            "output": 11570
+          }
+        },
+        "stats.avgAnnualSnowfall": {
+          "source": "infobox.snowfall",
+          "type": "number",
+          "confidence": "high",
+          "transform": "extractInches",
+          "example": {
+            "input": "354 inches",
+            "output": 354
+          }
+        },
+        "stats.liftsCount": {
+          "source": ["infobox.lifts", "infobox.liftsystem", "infobox.lift_system"],
+          "type": "number",
+          "confidence": "medium",
+          "transform": "extractTotalCount",
+          "example": {
+            "input": "31 total (2 gondolas, 4 high speed six's...)",
+            "output": 31
+          }
+        },
+        "stats.runsCount": {
+          "source": ["infobox.trails", "infobox.number_trails"],
+          "type": "number",
+          "confidence": "medium",
+          "transform": "extractTotalCount",
+          "example": {
+            "input": "195 total, 18% beginner, 29% intermediate, 53% advanced",
+            "output": 195
+          }
+        },
+        "terrain.beginner": {
+          "source": ["infobox.trails", "infobox.number_trails"],
+          "type": "number",
+          "confidence": "medium",
+          "transform": "extractTerrainPercent('beginner')",
+          "example": {
+            "input": "195 total, 18% beginner, 29% intermediate, 53% advanced",
+            "output": 18
+          }
+        },
+        "terrain.intermediate": {
+          "source": ["infobox.trails", "infobox.number_trails"],
+          "type": "number",
+          "confidence": "medium",
+          "transform": "extractTerrainPercent('intermediate')",
+          "example": {
+            "input": "195 total, 18% beginner, 29% intermediate, 53% advanced",
+            "output": 29
+          }
+        },
+        "terrain.advanced": {
+          "source": ["infobox.trails", "infobox.number_trails"],
+          "type": "number",
+          "confidence": "medium",
+          "transform": "extractTerrainPercent('advanced')",
+          "notes": "May include 'expert' in some articles",
+          "example": {
+            "input": "195 total, 18% beginner, 29% intermediate, 53% advanced",
+            "output": 53
+          }
+        },
+        "terrain.expert": {
+          "source": ["infobox.trails", "infobox.number_trails"],
+          "type": "number",
+          "confidence": "low",
+          "transform": "extractTerrainPercent('expert')",
+          "notes": "Often combined with 'advanced' in Wikipedia"
+        },
+        "features.hasPark": {
+          "source": ["infobox.terrain_parks", "infobox.terrainparks"],
+          "type": "boolean",
+          "confidence": "high",
+          "transform": "parseYesNo",
+          "example": {
+            "input": "Yes, 2, 1 Super-Pipe",
+            "output": true
+          }
+        },
+        "features.hasHalfpipe": {
+          "source": ["infobox.terrain_parks", "infobox.terrainparks"],
+          "type": "boolean",
+          "confidence": "medium",
+          "transform": "containsKeyword(['halfpipe', 'super-pipe', 'superpipe', 'half-pipe'])",
+          "example": {
+            "input": "Yes, 2, 1 Super-Pipe",
+            "output": true
+          }
+        },
+        "features.hasNightSkiing": {
+          "source": ["infobox.night_skiing", "infobox.nightskiing"],
+          "type": "boolean",
+          "confidence": "high",
+          "transform": "parseYesNo",
+          "example": {
+            "input": "No",
+            "output": false
+          }
+        },
+        "nearestCity": {
+          "source": "infobox.nearest_city",
+          "type": "string",
+          "confidence": "medium",
+          "transform": "extractCityName",
+          "example": {
+            "input": "Vail, Denver – 100 miles, (via Interstate 70)",
+            "output": "Vail"
+          }
+        }
+      }
+    },
+    "llmMappings": {
+      "description": "Fields that require LLM interpretation of article content",
+      "fields": {
+        "tagline": {
+          "source": ["extract", "fullExtract", "infobox"],
+          "type": "string",
+          "confidence": "llm-generated",
+          "notes": "Creative 5-10 word phrase capturing resort identity"
+        },
+        "description": {
+          "source": ["extract", "fullExtract"],
+          "type": "string",
+          "confidence": "llm-generated",
+          "notes": "300-500 word marketing description"
+        },
+        "features.hasBackcountryAccess": {
+          "source": "fullExtract",
+          "type": "boolean",
+          "confidence": "llm-inferred",
+          "notes": "Look for mentions of backcountry gates, sidecountry, out-of-bounds access"
+        },
+        "features.hasSpaVillage": {
+          "source": "fullExtract",
+          "type": "boolean",
+          "confidence": "llm-inferred",
+          "notes": "Look for mentions of spa, luxury village, resort amenities"
+        }
+      }
+    },
+    "imageMappings": {
+      "description": "Image-related mappings",
+      "fields": {
+        "heroImage": {
+          "source": "media[leadImage=true] || media[0]",
+          "transform": "getBestImageUrl (prefer 2x scale)",
+          "notes": "Primary image uploaded to GCS as primary.jpg by wikipedia-updater",
+          "gcsPath": "resorts/{country}/{state}/{slug}/images/primary.jpg"
+        }
+      }
+    },
+    "unmappedWikipediaFields": {
+      "description": "Wikipedia data available but not currently mapped to Resort",
+      "fields": {
+        "infobox.owner": {
+          "example": "Vail Resorts",
+          "notes": "Could be added as owner field or tag"
+        },
+        "infobox.status": {
+          "example": "Operating",
+          "notes": "Could validate/set isActive and isLost flags"
+        },
+        "infobox.longest_run": {
+          "example": "Riva Ridge – 4 miles",
+          "notes": "Could add as new stat: longestRun"
+        },
+        "infobox.lift_capacity": {
+          "example": "53,700 skiers/hour",
+          "notes": "Could add as new stat: liftCapacity"
+        },
+        "infobox.snowmaking": {
+          "example": "Yes",
+          "notes": "Could add as new feature: hasSnowmaking"
+        },
+        "categories": {
+          "example": ["Ski areas and resorts in Colorado", "Vail Resorts"],
+          "notes": "Could be used for auto-tagging"
+        },
+        "media[1..n]": {
+          "notes": "Additional images beyond the primary/lead image"
+        }
+      }
+    },
+    "unmappedResortFields": {
+      "description": "Resort fields that have no Wikipedia source",
+      "fields": {
+        "conditions": {
+          "fields": ["snowfall24h", "snowfall72h", "baseDepth", "terrainOpen", "liftsOpen", "status"],
+          "notes": "Real-time data, not available from Wikipedia"
+        },
+        "weather": {
+          "notes": "Real-time weather data, not available from Wikipedia"
+        },
+        "passAffiliations": {
+          "notes": "Not typically in Wikipedia, requires separate data source"
+        },
+        "rating": {
+          "notes": "User ratings, not from Wikipedia"
+        },
+        "reviewCount": {
+          "notes": "User reviews, not from Wikipedia"
+        },
+        "distanceFromMajorCity": {
+          "notes": "Calculated field, though Wikipedia sometimes mentions distance"
+        },
+        "driveTimeToMajorCity": {
+          "notes": "Calculated field, requires routing API"
+        },
+        "socialMedia": {
+          "fields": ["facebook", "instagram", "youtube", "tiktok", "x"],
+          "notes": "Not available from Wikipedia"
+        },
+        "trailMapUrl": {
+          "notes": "Not typically in Wikipedia"
+        },
+        "nearby": {
+          "fields": ["bars", "restaurants", "skiShops", "shops", "groceryStores", "hotels", "motels"],
+          "notes": "Requires separate POI data source"
+        },
+        "baseAreas": {
+          "notes": "Sometimes mentioned in article text, inconsistent"
+        },
+        "highSpeedLifts": {
+          "notes": "Could be parsed from liftsystem, but inconsistent format"
+        }
+      }
+    }
+  },
+  "transforms": {
+    "extractNumber": "Parse first number from string (regex: /[\\d,]+/)",
+    "extractFeet": "Extract number, handle 'ft', 'm' conversion to feet",
+    "extractInches": "Extract number, handle 'in', 'cm' conversion to inches",
+    "extractTotalCount": "Extract first number before 'total' or first number in string",
+    "extractTerrainPercent": "Extract percentage associated with terrain type keyword",
+    "parseYesNo": "Return true for 'Yes'/'yes'/truthy, false for 'No'/'no'/falsy",
+    "containsKeyword": "Return true if string contains any of the provided keywords",
+    "extractCityName": "Extract first city name from location string",
+    "normalizeUrl": "Add 'https://' if missing, remove trailing slashes"
+  }
+}

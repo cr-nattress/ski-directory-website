@@ -158,7 +158,9 @@ async function main(): Promise<void> {
     resorts = resorts.filter(r =>
       r.name.toLowerCase().includes(filter) ||
       r.state_name.toLowerCase().includes(filter) ||
-      r.slug.toLowerCase().includes(filter)
+      r.slug.toLowerCase().includes(filter) ||
+      r.country.toLowerCase().includes(filter) ||
+      r.country_name.toLowerCase().includes(filter)
     );
     console.log(`Filtered to ${resorts.length} resorts matching "${filter}"`);
   }
