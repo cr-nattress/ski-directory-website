@@ -3,7 +3,18 @@
  * Core data models for ski resorts
  */
 
-export type PassAffiliation = 'epic' | 'ikon' | 'indy' | 'local';
+export type PassAffiliation =
+  | 'epic'
+  | 'ikon'
+  | 'indy'
+  | 'mountain-collective'
+  | 'powder-alliance'
+  | 'ny-ski3'
+  | 'rcr-rockies'
+  | 'lest-go'
+  | 'freedom'
+  | 'ski-big-3'
+  | 'local';
 
 /** Generic item with name and URL (for nearby places, base areas, etc.) */
 export interface NamedItem {
