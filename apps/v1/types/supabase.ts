@@ -282,6 +282,7 @@ export interface Database {
           status: "active" | "defunct";
           is_active: boolean;
           is_lost: boolean;
+          is_open: boolean;
           lat: number | null;
           lng: number | null;
           nearest_city: string | null;
@@ -310,6 +311,7 @@ export interface Database {
           state_name: string;
           status: "active" | "defunct";
           is_active: boolean;
+          is_open: boolean;
           lat: number | null;
           lng: number | null;
           nearest_city: string | null;
