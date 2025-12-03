@@ -495,7 +495,7 @@ class SupabaseResortService {
       .from("resorts")
       .select("id")
       .eq("slug", slug)
-      .single();
+      .single<{ id: string }>();
 
     if (resortError || !resort) {
       log.warn('Resort not found for conditions', { slug });

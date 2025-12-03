@@ -8,10 +8,10 @@ const supabase = createClient(
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = params;
+    const { slug } = await params;
 
     // First get the resort ID from the slug
     const { data: resort, error: resortError } = await supabase

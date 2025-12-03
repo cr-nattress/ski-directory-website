@@ -8,6 +8,7 @@ import { SocialMediaCard } from './SocialMediaCard';
 import { LocationMapCardWrapper } from './LocationMapCardWrapper';
 import { TrailMapCard } from './TrailMapCard';
 import { WeatherForecastCard } from './WeatherForecastCard';
+import { ConditionsSection } from './ConditionsSection';
 import { BreadcrumbJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 import { FeatureFlag } from '@/components/FeatureFlag';
@@ -144,6 +145,11 @@ export function ResortDetail({ resort }: ResortDetailProps) {
           {/* Right Column - Action Rail (Sticky) */}
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-4 space-y-6">
+              {/* Live Conditions - hidden for lost ski areas */}
+              {!resort.isLost && (
+                <ConditionsSection slug={resort.slug} />
+              )}
+
               {/* Action Card - hidden for lost ski areas and controlled by feature flag */}
               <FeatureFlag name="planYourVisitCard">
                 {!resort.isLost && (
