@@ -74,7 +74,7 @@ export const config: Config = {
     serviceRoleKey: getEnvVar('SUPABASE_SERVICE_ROLE_KEY'),
   },
   gcs: {
-    bucket: getEnvVar('GCS_BUCKET'),
+    bucket: process.env.GCS_BUCKET || process.env.GCS_BUCKET_NAME || 'sda-assets-prod',
   },
   processing: {
     dryRun: args.dryRun,
