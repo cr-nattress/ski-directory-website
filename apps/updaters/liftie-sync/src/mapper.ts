@@ -3,6 +3,7 @@ import type {
   ResortConditionsInsert,
   LiftStatus,
 } from './types.js';
+import type { LiftieApiResponse } from './liftie-api.js';
 
 /**
  * Calculate total lifts from stats
@@ -104,6 +105,70 @@ export function hasConditionsChanged(
   if (existingWebcamCount !== updatedWebcamCount) return true;
 
   return false;
+}
+
+/**
+ * Map Liftie API response to resort_conditions table format
+ */
+export function mapLiftieApiToConditions(
+  resortId: string,
+  data: LiftieApiResponse
+): ResortConditionsInsert {
+  // Calculate lift stats from API response
+  let liftsOpen = 0;
+  let liftsTotal = 0;
+  let liftsPercentage = 0;
+  let liftsStatus: Record<string, LiftStatus> = {};
+
+  if (data.lifts) {
+    liftsOpen = data.lifts.stats.open;
+    liftsTotal = getTotalLifts(data.lifts.stats);
+    liftsPercentage = data.lifts.stats.percentage?.open ?? 0;
+    liftsStatus = data.lifts.status as Record<string, LiftStatus>;
+  }
+
+  // Map weather data
+  const weatherHigh = data.weather?.temperature?.max ?? null;
+  const weatherCondition = data.weather?.conditions ?? null;
+  const weatherText = data.weather?.text ?? null;
+  const weatherIcon = data.weather?.icon ?? [];
+  const weatherDate = data.weather?.date ?? null;
+
+  // Map webcams
+  const webcamsList = data.webcams ?? [];
+  const hasWebcams = webcamsList.length > 0;
+
+  // Feature flags
+  const hasLifts = liftsTotal > 0;
+  const hasWeather = weatherCondition !== null;
+
+  // Source tracking - use most recent timestamp
+  const timestamps = data.timestamp;
+  const latestTimestamp = Math.max(
+    timestamps?.lifts ?? 0,
+    timestamps?.weather ?? 0,
+    timestamps?.webcams ?? 0
+  );
+  const sourceTimestamp = latestTimestamp > 0 ? new Date(latestTimestamp).toISOString() : null;
+
+  return {
+    resort_id: resortId,
+    lifts_open: liftsOpen,
+    lifts_total: liftsTotal,
+    lifts_percentage: liftsPercentage,
+    lifts_status: liftsStatus,
+    weather_high: weatherHigh,
+    weather_condition: weatherCondition,
+    weather_text: weatherText,
+    weather_icon: weatherIcon,
+    weather_date: weatherDate,
+    webcams: webcamsList,
+    has_webcams: hasWebcams,
+    has_lifts: hasLifts,
+    has_weather: hasWeather,
+    liftie_id: data.id,
+    source_timestamp: sourceTimestamp,
+  };
 }
 
 /**

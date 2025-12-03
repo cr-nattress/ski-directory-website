@@ -4,14 +4,36 @@
  * Liftie Sync
  *
  * Syncs real-time lift status, weather, and webcam data
- * from Liftie (stored in GCS) to Supabase resort_conditions table.
+ * from Liftie.info API to Supabase resort_conditions table.
  */
 
 import { config } from './config.js';
 import { fetchAllResorts, upsertConditions, getExistingConditions } from './supabase.js';
-import { fetchLiftieData, hasLiftieData } from './gcs.js';
-import { mapLiftieToConditions, hasConditionsChanged, formatConditionsSummary } from './mapper.js';
+import { fetchLiftieResort } from './liftie-api.js';
+import { mapLiftieApiToConditions, hasConditionsChanged, formatConditionsSummary } from './mapper.js';
 import type { Resort, SyncStats } from './types.js';
+
+// Mapping from our resort slugs to Liftie resort IDs
+// Many match, but some differ
+const SLUG_TO_LIFTIE_ID: Record<string, string> = {
+  // Add mappings where slug differs from Liftie ID
+  'park-city': 'park-city',
+  'deer-valley': 'deer-valley',
+  'snowbird': 'snowbird',
+  'alta': 'alta',
+  'brighton': 'brighton',
+  'solitude': 'solitude',
+  'snowbasin': 'snowbasin',
+  'powder-mountain': 'powder-mountain',
+};
+
+/**
+ * Get Liftie ID for a resort
+ * First checks mapping, then tries the slug directly
+ */
+function getLiftieId(resort: Resort): string {
+  return SLUG_TO_LIFTIE_ID[resort.slug] || resort.slug;
+}
 
 /**
  * Process a single resort
@@ -21,47 +43,38 @@ async function processResort(
   stats: SyncStats
 ): Promise<void> {
   const logPrefix = config.processing.verbose ? `  [${resort.slug}]` : '';
+  const liftieId = getLiftieId(resort);
 
   try {
-    // Check if resort has Liftie data
-    const hasData = await hasLiftieData(resort.asset_path);
+    // Fetch from Liftie API
+    const liftieData = await fetchLiftieResort(liftieId);
 
-    if (!hasData) {
+    if (!liftieData) {
       if (config.processing.verbose) {
-        console.log(`${logPrefix} No Liftie data found`);
+        console.log(`${logPrefix} No Liftie data found (tried: ${liftieId})`);
       }
       stats.noLiftieData++;
       stats.skipped++;
       return;
     }
 
-    // Fetch Liftie data from GCS
-    const liftieData = await fetchLiftieData(resort.asset_path);
-
-    // Check if we got any meaningful data
-    if (!liftieData.summary && !liftieData.lifts && !liftieData.weather) {
-      if (config.processing.verbose) {
-        console.log(`${logPrefix} Liftie files empty or invalid`);
-      }
-      stats.skipped++;
-      return;
-    }
-
     // Map to conditions format
-    const conditions = mapLiftieToConditions(resort.id, liftieData);
+    const conditions = mapLiftieApiToConditions(resort.id, liftieData);
 
-    // Check if update is needed
-    const existing = await getExistingConditions(resort.id);
-    if (!hasConditionsChanged(existing, conditions)) {
-      if (config.processing.verbose) {
-        console.log(`${logPrefix} No changes detected`);
+    // Check if update is needed (skip if dry run)
+    if (!config.processing.dryRun) {
+      const existing = await getExistingConditions(resort.id);
+      if (!hasConditionsChanged(existing, conditions)) {
+        if (config.processing.verbose) {
+          console.log(`${logPrefix} No changes detected`);
+        }
+        stats.skipped++;
+        return;
       }
-      stats.skipped++;
-      return;
-    }
 
-    // Upsert conditions
-    await upsertConditions(conditions);
+      // Upsert conditions
+      await upsertConditions(conditions);
+    }
 
     if (config.processing.verbose || config.processing.dryRun) {
       console.log(`${logPrefix} ${formatConditionsSummary(conditions)}`);

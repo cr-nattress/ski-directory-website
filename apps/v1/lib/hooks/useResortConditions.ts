@@ -18,12 +18,22 @@ export function useResortConditions(slug: string): UseResortConditionsResult {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    // Skip if no slug or not in browser
+    if (!slug || typeof window === 'undefined') {
+      setLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+
     async function fetchConditions() {
       try {
         setLoading(true);
         setError(null);
 
         const response = await fetch(`/api/resorts/${slug}/conditions`);
+
+        if (cancelled) return;
 
         if (!response.ok) {
           if (response.status === 404) {
@@ -35,18 +45,26 @@ export function useResortConditions(slug: string): UseResortConditionsResult {
         }
 
         const data = await response.json();
-        setConditions(data.conditions);
+        if (!cancelled) {
+          setConditions(data.conditions);
+        }
       } catch (err) {
-        setError(err instanceof Error ? err : new Error('Unknown error'));
-        setConditions(null);
+        if (!cancelled) {
+          setError(err instanceof Error ? err : new Error('Unknown error'));
+          setConditions(null);
+        }
       } finally {
-        setLoading(false);
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
     }
 
-    if (slug) {
-      fetchConditions();
-    }
+    fetchConditions();
+
+    return () => {
+      cancelled = true;
+    };
   }, [slug]);
 
   return { conditions, loading, error };
