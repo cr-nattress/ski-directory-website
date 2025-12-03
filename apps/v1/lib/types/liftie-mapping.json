@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Liftie to Resort Mapping Schema",
+  "description": "Defines how Liftie data fields map to resort_conditions table and Resort.ts",
+  "version": "1.0.0",
+  "source": {
+    "description": "Liftie data is stored in GCS at resorts/{country}/{state}/{slug}/liftie/",
+    "files": ["summary.json", "lifts.json", "weather.json", "webcams.json"],
+    "coverage": "86 resorts have Liftie data as of December 2025"
+  },
+  "mappings": {
+    "summaryToConditions": {
+      "description": "Mappings from summary.json to resort_conditions table",
+      "fields": {
+        "id": {
+          "target": "liftie_id",
+          "type": "text",
+          "notes": "Liftie's internal resort identifier"
+        },
+        "hasLifts": {
+          "target": "has_lifts",
+          "type": "boolean"
+        },
+        "hasWeather": {
+          "target": "has_weather",
+          "type": "boolean"
+        },
+        "hasWebcams": {
+          "target": "has_webcams",
+          "type": "boolean"
+        },
+        "liftStats.open": {
+          "target": "lifts_open",
+          "type": "integer"
+        },
+        "liftStats.percentage.open": {
+          "target": "lifts_percentage",
+          "type": "numeric",
+          "notes": "Already a percentage (0-100)"
+        },
+        "timestamp": {
+          "target": "source_timestamp",
+          "type": "timestamptz",
+          "notes": "ISO timestamp from Liftie data collection"
+        }
+      }
+    },
+    "liftsToConditions": {
+      "description": "Mappings from lifts.json to resort_conditions table",
+      "fields": {
+        "status": {
+          "target": "lifts_status",
+          "type": "jsonb",
+          "notes": "Map of lift name to status (open/closed/hold/scheduled)"
+        },
+        "stats.open + stats.hold + stats.scheduled + stats.closed": {
+          "target": "lifts_total",
+          "type": "integer",
+          "notes": "Calculated sum of all lift counts"
+        }
+      }
+    },
+    "weatherToConditions": {
+      "description": "Mappings from weather.json to resort_conditions table",
+      "fields": {
+        "temperature.max": {
+          "target": "weather_high",
+          "type": "integer",
+          "notes": "Fahrenheit"
+        },
+        "conditions": {
+          "target": "weather_condition",
+          "type": "text",
+          "example": "Snow Showers"
+        },
+        "text": {
+          "target": "weather_text",
+          "type": "text",
+          "notes": "Full NOAA forecast text"
+        },
+        "icon": {
+          "target": "weather_icon",
+          "type": "text[]",
+          "notes": "Array of CSS class names for weather icons"
+        },
+        "date": {
+          "target": "weather_date",
+          "type": "date",
+          "notes": "Forecast date"
+        }
+      }
+    },
+    "webcamsToConditions": {
+      "description": "Mappings from webcams.json to resort_conditions table",
+      "fields": {
+        "webcams": {
+          "target": "webcams",
+          "type": "jsonb",
+          "notes": "Array of {name, source, image} objects"
+        }
+      }
+    },
+    "conditionsToResort": {
+      "description": "Mappings from resort_conditions to Resort.ts fields",
+      "fields": {
+        "lifts_open": {
+          "target": "conditions.liftsOpen",
+          "notes": "Direct map"
+        },
+        "lifts_percentage": {
+          "target": "conditions.liftsPercentage",
+          "notes": "New field to add to Resort conditions"
+        },
+        "weather_high": {
+          "target": "weather.current.temp",
+          "notes": "Maps to existing weather structure"
+        },
+        "weather_condition": {
+          "target": "weather.current.condition",
+          "notes": "Maps to existing weather structure"
+        },
+        "weather_text": {
+          "target": "weather.forecastText",
+          "notes": "New field for full NOAA forecast"
+        },
+        "webcams": {
+          "target": "webcams",
+          "notes": "New array field on Resort"
+        }
+      }
+    }
+  },
+  "liftStatusValues": {
+    "description": "Possible values for individual lift status",
+    "values": {
+      "open": "Lift is currently running",
+      "closed": "Lift is not running",
+      "hold": "Lift is temporarily stopped (weather, wind)",
+      "scheduled": "Lift is scheduled to open later"
+    }
+  },
+  "weatherIcons": {
+    "description": "Common weather icon classes from Liftie",
+    "examples": [
+      ["basecloud", "icon-snowy"],
+      ["basecloud", "icon-sunny"],
+      ["basecloud", "icon-cloudy"],
+      ["basecloud", "icon-rainy"]
+    ]
+  },
+  "dataFreshness": {
+    "description": "Guidelines for data freshness indicators",
+    "fresh": {
+      "threshold": "< 60 minutes",
+      "display": "Updated X min ago"
+    },
+    "normal": {
+      "threshold": "1-2 hours",
+      "display": "Updated X hr ago"
+    },
+    "stale": {
+      "threshold": "> 2 hours",
+      "display": "Updated X hr ago (with warning)",
+      "styling": "Show warning indicator"
+    }
+  }
+}

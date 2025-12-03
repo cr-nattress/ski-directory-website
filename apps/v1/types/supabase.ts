@@ -268,6 +268,76 @@ export interface Database {
           }
         ];
       };
+      resort_conditions: {
+        Row: {
+          resort_id: string;
+          lifts_open: number;
+          lifts_total: number;
+          lifts_percentage: number;
+          lifts_status: Record<string, 'open' | 'closed' | 'hold' | 'scheduled'>;
+          weather_high: number | null;
+          weather_condition: string | null;
+          weather_text: string | null;
+          weather_icon: string[];
+          weather_date: string | null;
+          webcams: Array<{ name: string; source: string; image: string }>;
+          has_webcams: boolean;
+          has_lifts: boolean;
+          has_weather: boolean;
+          liftie_id: string | null;
+          source_timestamp: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          resort_id: string;
+          lifts_open?: number;
+          lifts_total?: number;
+          lifts_percentage?: number;
+          lifts_status?: Record<string, 'open' | 'closed' | 'hold' | 'scheduled'>;
+          weather_high?: number | null;
+          weather_condition?: string | null;
+          weather_text?: string | null;
+          weather_icon?: string[];
+          weather_date?: string | null;
+          webcams?: Array<{ name: string; source: string; image: string }>;
+          has_webcams?: boolean;
+          has_lifts?: boolean;
+          has_weather?: boolean;
+          liftie_id?: string | null;
+          source_timestamp?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          resort_id?: string;
+          lifts_open?: number;
+          lifts_total?: number;
+          lifts_percentage?: number;
+          lifts_status?: Record<string, 'open' | 'closed' | 'hold' | 'scheduled'>;
+          weather_high?: number | null;
+          weather_condition?: string | null;
+          weather_text?: string | null;
+          weather_icon?: string[];
+          weather_date?: string | null;
+          webcams?: Array<{ name: string; source: string; image: string }>;
+          has_webcams?: boolean;
+          has_lifts?: boolean;
+          has_weather?: boolean;
+          liftie_id?: string | null;
+          source_timestamp?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "resort_conditions_resort_id_fkey";
+            columns: ["resort_id"];
+            referencedRelation: "resorts";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
     };
     Views: {
       resorts_full: {
@@ -382,6 +452,7 @@ export type Resort = Database["public"]["Tables"]["resorts"]["Row"];
 export type ResortPass = Database["public"]["Tables"]["resort_passes"]["Row"];
 export type ResortTag = Database["public"]["Tables"]["resort_tags"]["Row"];
 export type MajorCity = Database["public"]["Tables"]["major_cities"]["Row"];
+export type ResortConditionsRow = Database["public"]["Tables"]["resort_conditions"]["Row"];
 
 export type ResortFull = Database["public"]["Views"]["resorts_full"]["Row"];
 export type ResortListItem = Database["public"]["Views"]["resorts_list"]["Row"];

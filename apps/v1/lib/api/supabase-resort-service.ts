@@ -463,6 +463,47 @@ class SupabaseResortService {
     };
     return sortMap[sortBy] || "name";
   }
+
+  /**
+   * Fetch resort conditions by resort ID
+   */
+  async getResortConditions(resortId: string) {
+    log.info('Fetching resort conditions', { resortId });
+
+    const { data, error } = await supabase
+      .from("resort_conditions")
+      .select("*")
+      .eq("resort_id", resortId)
+      .single();
+
+    if (error && error.code !== "PGRST116") {
+      log.error('Failed to fetch conditions', { resortId, error: error.message });
+      return null;
+    }
+
+    return data;
+  }
+
+  /**
+   * Fetch resort conditions by slug
+   */
+  async getResortConditionsBySlug(slug: string) {
+    log.info('Fetching resort conditions by slug', { slug });
+
+    // First get the resort ID
+    const { data: resort, error: resortError } = await supabase
+      .from("resorts")
+      .select("id")
+      .eq("slug", slug)
+      .single();
+
+    if (resortError || !resort) {
+      log.warn('Resort not found for conditions', { slug });
+      return null;
+    }
+
+    return this.getResortConditions(resort.id);
+  }
 }
 
 // Export singleton instance

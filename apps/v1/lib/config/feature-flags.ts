@@ -53,6 +53,22 @@ export const featureFlags = {
   /** Terrain open progress bar on resort cards */
   resortCardTerrainOpen: false,
 
+  /** Live lift status on resort cards (Liftie integration) */
+  resortCardLiftStatus: false,
+
+  // ============================================
+  // Resort Detail Page - Conditions Components
+  // ============================================
+
+  /** Live conditions section on resort detail (Liftie data) */
+  liveConditions: true,
+
+  /** Individual lift status list on resort detail */
+  liftStatusList: true,
+
+  /** Webcam gallery on resort detail */
+  webcamGallery: true,
+
   // ============================================
   // Landing Page Features
   // ============================================

@@ -57,3 +57,40 @@ export {
   SOCIAL_TOPIC_ORDER,
   SOCIAL_PLATFORM_ORDER,
 } from './social-links';
+
+// Liftie (real-time conditions) types
+export type {
+  LiftStatus,
+  LiftStats,
+  LiftStatsWithPercentage,
+  LiftieSummary,
+  LiftieLifts,
+  LiftieWeather,
+  LiftieWebcam,
+  LiftieWebcams,
+  LiftieResortData,
+  ResortConditions,
+} from './liftie';
+
+export {
+  getTotalLifts,
+  getLiftStatusColor,
+  getLiftStatusBgColor,
+  getLiftStatusStyle,
+  getWeatherIconClass,
+  isConditionsStale,
+  formatUpdatedAgo,
+} from './liftie';
+
+// Wikipedia types
+export type {
+  WikipediaMediaItem,
+  WikipediaInfobox,
+  WikipediaResortData,
+} from './wikipedia';
+
+export {
+  getBestImageUrl,
+  getPrimaryImage,
+  getPrimaryImageUrl,
+} from './wikipedia';
