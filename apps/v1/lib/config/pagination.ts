@@ -1,12 +1,15 @@
 /**
- * Pagination Configuration
+ * @module PaginationConfig
+ * @purpose Centralized pagination settings for the application
+ * @context Used by hooks and components that need page sizes
  *
- * Centralized settings for pagination across the application.
- * Values can be overridden via environment variables.
+ * @decision
+ * Values configurable via environment variables to allow deployment-time
+ * tuning without code changes. Defaults optimized for typical viewport sizes.
  *
- * Usage:
- *   import { paginationConfig } from '@/lib/config/pagination';
- *   const pageSize = paginationConfig.landing.initialPageSize;
+ * @example
+ * import { paginationConfig } from '@/lib/config/pagination';
+ * const pageSize = paginationConfig.landing.initialPageSize; // 12
  */
 
 export const paginationConfig = {

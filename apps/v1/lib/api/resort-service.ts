@@ -1,8 +1,15 @@
 /**
- * Resort API Service
+ * @module ResortService
+ * @purpose Facade for resort data operations
+ * @context Main entry point for fetching resort data in client components
  *
- * This service provides resort data from Supabase.
- * It wraps the Supabase service to provide a consistent interface.
+ * @pattern Facade - Wraps supabaseResortService for a cleaner API
+ *
+ * @sideeffects Network requests to Supabase
+ *
+ * @example
+ * import { resortService } from '@/lib/api';
+ * const { data: resort } = await resortService.getResortBySlug('vail');
  */
 
 import { Resort, ResortMapPin } from '@/lib/types';

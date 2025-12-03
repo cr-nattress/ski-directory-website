@@ -1,3 +1,14 @@
+/**
+ * @module ResortCard
+ * @purpose Display resort summary card in listings/grid views
+ * @context Landing page grid, directory listings, search results
+ *
+ * @pattern Card component with feature-flagged optional sections
+ *
+ * @sideeffects
+ * - Image preload via new Image() to detect 404s
+ * - Logs image failures via useLogger
+ */
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -5,17 +16,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Resort } from '@/lib/types';
 import { getCardImageUrl, PLACEHOLDER_IMAGE } from '@/lib/utils/resort-images';
-import { Star, MapPin, Snowflake } from 'lucide-react';
+import { Star, MapPin, Snowflake, Gauge } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { useLogger } from '@/lib/hooks/useLogger';
 import { featureFlags } from '@/lib/config/feature-flags';
 
-interface ResortCardProps {
-  resort: Resort;
+/** Lift conditions data from Liftie integration */
+export interface LiftConditions {
+  liftsOpen: number;
+  liftsTotal: number;
+  liftsPercentage: number;
 }
 
-export function ResortCard({ resort }: ResortCardProps) {
+interface ResortCardProps {
+  /** Resort data to display */
+  resort: Resort;
+  /** Optional real-time lift conditions (from Liftie) */
+  liftConditions?: LiftConditions | null;
+}
+
+/**
+ * Resort card component for listing views
+ *
+ * Displays resort image, name, location, and optional stats.
+ * Feature flags control which optional sections are shown:
+ * - resortCardRating: Star rating and review count
+ * - resortCardSnowfall: Distance and snowfall stats
+ * - resortCardTerrainOpen: Terrain open progress bar
+ * - resortCardLiftStatus: Real-time lift status from Liftie
+ */
+export function ResortCard({ resort, liftConditions }: ResortCardProps) {
   const originalImageUrl = getCardImageUrl(resort);
   const [imageUrl, setImageUrl] = useState(originalImageUrl);
   const imageAlt = `${resort.name} ski resort`;
@@ -85,6 +116,19 @@ export function ResortCard({ resort }: ResortCardProps) {
       default:
         return pass;
     }
+  };
+
+  // Get lift status color based on percentage
+  const getLiftStatusColor = (percentage: number) => {
+    if (percentage >= 75) return 'text-green-600';
+    if (percentage >= 25) return 'text-yellow-600';
+    return 'text-red-600';
+  };
+
+  const getLiftStatusBgColor = (percentage: number) => {
+    if (percentage >= 75) return 'bg-green-500';
+    if (percentage >= 25) return 'bg-yellow-500';
+    return 'bg-red-500';
   };
 
   return (
@@ -192,6 +236,33 @@ export function ResortCard({ resort }: ResortCardProps) {
               <div
                 className="h-full bg-success-green rounded-full transition-all"
                 style={{ width: `${resort.conditions.terrainOpen}%` }}
+              />
+            </div>
+          </>
+        )}
+
+        {/* Lift status - from Liftie real-time data */}
+        {featureFlags.resortCardLiftStatus && !resort.isLost && liftConditions && liftConditions.liftsTotal > 0 && (
+          <>
+            <div className="mt-3 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <Gauge className="w-3.5 h-3.5 text-gray-400" />
+                <span className="text-xs text-gray-500">Lifts Open</span>
+              </div>
+              <span className={cn(
+                'text-xs font-semibold',
+                getLiftStatusColor(liftConditions.liftsPercentage)
+              )}>
+                {liftConditions.liftsOpen}/{liftConditions.liftsTotal}
+              </span>
+            </div>
+            <div className="mt-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+              <div
+                className={cn(
+                  'h-full rounded-full transition-all',
+                  getLiftStatusBgColor(liftConditions.liftsPercentage)
+                )}
+                style={{ width: `${liftConditions.liftsPercentage}%` }}
               />
             </div>
           </>

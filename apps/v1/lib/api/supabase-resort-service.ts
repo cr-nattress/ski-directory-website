@@ -419,27 +419,59 @@ class SupabaseResortService {
       };
     }
 
+    // Fetch conditions for all resorts in a single query
+    // Type assertion needed because Supabase client doesn't properly type partial selects
+    const { data: conditionsData } = await supabase
+      .from("resort_conditions")
+      .select("resort_id, lifts_open, lifts_total, lifts_percentage, weather_condition, weather_high") as {
+        data: Array<{
+          resort_id: string;
+          lifts_open: number;
+          lifts_total: number;
+          lifts_percentage: number;
+          weather_condition: string | null;
+          weather_high: number | null;
+        }> | null
+      };
+
+    // Create a map of resort_id to conditions for quick lookup
+    const conditionsMap = new Map<string, typeof conditionsData extends Array<infer T> ? T : never>();
+    if (conditionsData) {
+      for (const cond of conditionsData) {
+        conditionsMap.set(cond.resort_id, cond);
+      }
+    }
+
     // Transform snake_case database fields to camelCase
     // Filter to only include active resorts (exclude lost/defunct)
     const pins: ResortMapPin[] = ((data as any[]) || [])
       .filter((row) => row.is_active === true)
-      .map((row) => ({
-      id: row.id,
-      slug: row.slug,
-      name: row.name,
-      latitude: row.latitude,
-      longitude: row.longitude,
-      nearestCity: row.nearest_city || "",
-      countryCode: row.country_code || "us",
-      stateCode: row.state_code || "",
-      passAffiliations: (row.pass_affiliations || []) as PassAffiliation[],
-      rating: row.rating || 0,
-      status: this.mapStatus(row.is_open ?? false),
-      isActive: row.is_active,
-      isLost: row.is_lost,
-      terrainOpenPercent: row.terrain_open_percent,
-      snowfall24h: row.snowfall_24h,
-    }));
+      .map((row) => {
+        const conditions = conditionsMap.get(row.id);
+        return {
+          id: row.id,
+          slug: row.slug,
+          name: row.name,
+          latitude: row.latitude,
+          longitude: row.longitude,
+          nearestCity: row.nearest_city || "",
+          countryCode: row.country_code || "us",
+          stateCode: row.state_code || "",
+          passAffiliations: (row.pass_affiliations || []) as PassAffiliation[],
+          rating: row.rating || 0,
+          status: this.mapStatus(row.is_open ?? false),
+          isActive: row.is_active,
+          isLost: row.is_lost,
+          terrainOpenPercent: row.terrain_open_percent,
+          snowfall24h: row.snowfall_24h,
+          // Add conditions data if available
+          liftsOpen: conditions?.lifts_open,
+          liftsTotal: conditions?.lifts_total,
+          liftsPercentage: conditions?.lifts_percentage,
+          weatherCondition: conditions?.weather_condition,
+          weatherHigh: conditions?.weather_high,
+        };
+      });
 
     return {
       data: pins,

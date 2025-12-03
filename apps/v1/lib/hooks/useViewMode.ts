@@ -1,20 +1,44 @@
+/**
+ * @module useViewMode
+ * @purpose Manage cards/map view toggle with localStorage persistence
+ * @context Landing page view mode toggle
+ *
+ * @sideeffects
+ * - Reads from localStorage on mount
+ * - Writes to localStorage on mode change
+ */
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 
+/** Available view modes for resort listings */
 export type ViewMode = 'cards' | 'map';
 
 const STORAGE_KEY = 'ski-directory-view-mode';
 
 interface UseViewModeResult {
+  /** Current view mode */
   mode: ViewMode;
+  /** Update view mode (persists to localStorage) */
   setMode: (mode: ViewMode) => void;
+  /** True after initial localStorage read - use to prevent hydration mismatch */
   isHydrated: boolean;
 }
 
 /**
  * Hook for managing view mode preference with localStorage persistence
- * Returns isHydrated to prevent hydration mismatches
+ *
+ * @param defaultMode - Initial mode before localStorage is read (default: 'cards')
+ * @returns View mode state with persistence
+ *
+ * @decision
+ * Return isHydrated flag to allow components to render a skeleton
+ * until localStorage is read, preventing hydration mismatches.
+ *
+ * @example
+ * const { mode, setMode, isHydrated } = useViewMode('cards');
+ * if (!isHydrated) return <Skeleton />;
+ * return mode === 'map' ? <MapView /> : <CardsView />;
  */
 export function useViewMode(defaultMode: ViewMode = 'cards'): UseViewModeResult {
   const [mode, setModeState] = useState<ViewMode>(defaultMode);

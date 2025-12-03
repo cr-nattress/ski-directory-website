@@ -1,3 +1,16 @@
+/**
+ * @module ConditionsAPI
+ * @purpose API endpoint for fetching real-time resort conditions
+ * @context GET /api/resorts/[slug]/conditions
+ *
+ * @sideeffects
+ * - Database queries to resorts and resort_conditions tables
+ * - Response caching (5 min fresh, 15 min stale-while-revalidate)
+ *
+ * @decision
+ * PGRST116 (no rows) is treated as "no conditions available" (returns null),
+ * not as an error. This allows UI to gracefully hide conditions section.
+ */
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
@@ -6,6 +19,11 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
+/**
+ * Fetch resort conditions by slug
+ *
+ * @returns {conditions: ResortConditionsRow | null} with cache headers
+ */
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ slug: string }> }

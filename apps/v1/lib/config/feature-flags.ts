@@ -54,7 +54,7 @@ export const featureFlags = {
   resortCardTerrainOpen: false,
 
   /** Live lift status on resort cards (Liftie integration) */
-  resortCardLiftStatus: false,
+  resortCardLiftStatus: true,
 
   // ============================================
   // Resort Detail Page - Conditions Components

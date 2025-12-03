@@ -1,6 +1,17 @@
 /**
- * Centralized Type Exports
- * All shared types for the ski resort directory
+ * @module Types
+ * @purpose Centralized type exports for the ski resort directory
+ * @context Imported throughout the application for type safety
+ *
+ * @exports
+ * - Resort types: Core data models for ski resorts (Resort, ResortImage, PassAffiliation)
+ * - Map types: Lightweight types optimized for map display (ResortMapPin)
+ * - Category types: Filter categories for resort discovery
+ * - Article types: Editorial content models
+ * - Ski Links types: External resource directory models
+ * - Social Links types: Social media profile directory models
+ * - Liftie types: Real-time lift/weather conditions from Liftie.info
+ * - Wikipedia types: Resort data from Wikipedia articles
  */
 
 // Resort types

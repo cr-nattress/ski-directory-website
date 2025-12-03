@@ -1,3 +1,18 @@
+/**
+ * @module ResortMapView
+ * @purpose Interactive Leaflet map showing all ski resorts
+ * @context Landing page map view toggle option
+ *
+ * @pattern Client component with dynamic Leaflet import
+ *
+ * @sideeffects
+ * - Uses useMapPins() hook (network + localStorage)
+ * - Programmatic navigation via router.push()
+ *
+ * @decision
+ * Must use dynamic import with ssr: false due to Leaflet's window dependency.
+ * Markers colored by primary pass affiliation for quick visual identification.
+ */
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -7,7 +22,7 @@ import { useMapPins } from '@/lib/hooks/useMapPins';
 import { cn } from '@/lib/utils';
 import 'leaflet/dist/leaflet.css';
 
-// Marker colors by pass type
+/** Marker colors indexed by pass type */
 const PASS_COLORS = {
   epic: '#dc2626',              // red-600
   ikon: '#f97316',              // orange-500
@@ -22,7 +37,11 @@ const PASS_COLORS = {
 };
 
 /**
- * Creates a custom Leaflet divIcon marker with dynamic color
+ * Create custom Leaflet divIcon marker with pass-type color
+ *
+ * @param passType - Primary pass affiliation ('epic', 'ikon', etc.)
+ * @param isLost - Whether resort is permanently closed
+ * @returns Leaflet DivIcon or null if window unavailable
  */
 function createMarkerIcon(passType: string, isLost: boolean) {
   if (typeof window === 'undefined') return null;
@@ -60,6 +79,19 @@ function createMarkerIcon(passType: string, isLost: boolean) {
   });
 }
 
+/**
+ * Interactive map view of all ski resorts
+ *
+ * Features:
+ * - Color-coded markers by pass type
+ * - Popup with resort info, rating, status, lift conditions
+ * - Click-through to resort detail page
+ * - Legend showing pass type colors
+ *
+ * @remarks
+ * Centers on North America (44°N, 98°W) at zoom 4.
+ * Popups show Liftie real-time data when available.
+ */
 export function ResortMapView() {
   const router = useRouter();
   const { pins, isLoading, error } = useMapPins();
@@ -149,6 +181,29 @@ export function ResortMapView() {
                     <p className="text-sm text-sky-600">
                       &#10052; {pin.snowfall24h}&quot; new snow
                     </p>
+                  )}
+
+                  {/* Lift conditions from Liftie */}
+                  {!pin.isLost && pin.liftsTotal && pin.liftsTotal > 0 && (
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className={cn(
+                        'font-medium',
+                        pin.liftsPercentage && pin.liftsPercentage >= 75 ? 'text-green-600' :
+                        pin.liftsPercentage && pin.liftsPercentage >= 25 ? 'text-yellow-600' :
+                        'text-red-600'
+                      )}>
+                        {pin.liftsOpen}/{pin.liftsTotal} lifts
+                      </span>
+                      {pin.weatherCondition && (
+                        <>
+                          <span className="text-neutral-300">|</span>
+                          <span className="text-neutral-600">
+                            {pin.weatherCondition}
+                            {pin.weatherHigh !== undefined && ` ${pin.weatherHigh}°F`}
+                          </span>
+                        </>
+                      )}
+                    </div>
                   )}
 
                   {pin.passAffiliations.length > 0 && (

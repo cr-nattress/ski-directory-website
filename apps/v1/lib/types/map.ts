@@ -25,4 +25,10 @@ export interface ResortMapPin {
   isLost: boolean;
   terrainOpenPercent?: number;
   snowfall24h?: number;
+  // Liftie real-time conditions (optional)
+  liftsOpen?: number;
+  liftsTotal?: number;
+  liftsPercentage?: number;
+  weatherCondition?: string;
+  weatherHigh?: number;
 }

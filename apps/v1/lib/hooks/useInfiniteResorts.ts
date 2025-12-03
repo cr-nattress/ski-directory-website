@@ -1,3 +1,16 @@
+/**
+ * @module useInfiniteResorts
+ * @purpose Infinite scroll pagination for resort listings
+ * @context Landing page resort cards with scroll-to-load-more
+ *
+ * @sideeffects
+ * - Network requests to Supabase (paginated)
+ * - Accumulates results in memory across pages
+ *
+ * @pattern
+ * Uses intersection observer sentinel element pattern.
+ * Filter changes automatically reset pagination.
+ */
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -6,7 +19,7 @@ import { Resort, ResortFilters, ResortSortBy, SortOrder } from '../api/types';
 import { paginationConfig } from '../config/pagination';
 
 /**
- * Options for the useInfiniteResorts hook
+ * Options for useInfiniteResorts hook
  */
 interface UseInfiniteResortsOptions {
   /** Number of items per page (defaults to config value) */

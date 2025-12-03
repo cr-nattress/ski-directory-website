@@ -1,23 +1,47 @@
+/**
+ * @module Utils
+ * @purpose General utility functions for the application
+ * @context Shared helpers for styling, formatting, and localStorage
+ *
+ * @exports
+ * - cn: Tailwind class name merger (clsx + tailwind-merge)
+ * - Formatters: formatNumber, formatSnowfall, formatDistance, formatRating
+ * - Alert utilities: getDismissedAlertIds, addDismissedAlertId, clearDismissedAlerts
+ */
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+/**
+ * Merge Tailwind class names with intelligent conflict resolution
+ *
+ * @param inputs - Class values (strings, arrays, objects)
+ * @returns Merged class string with conflicts resolved
+ *
+ * @example
+ * cn('px-2 py-1', 'px-4') // => 'py-1 px-4' (px-4 wins)
+ * cn('text-red-500', condition && 'text-blue-500')
+ */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/** Format number with locale-appropriate separators */
 export function formatNumber(num: number): string {
   return num.toLocaleString();
 }
 
+/** Format snowfall in inches (e.g., '6" new' or 'No new snow') */
 export function formatSnowfall(inches: number): string {
   if (inches === 0) return 'No new snow';
   return `${inches}" new`;
 }
 
+/** Format distance in miles (e.g., '75 mi') */
 export function formatDistance(miles: number): string {
   return `${miles} mi`;
 }
 
+/** Format rating to one decimal place (e.g., '4.5') */
 export function formatRating(rating: number): string {
   return rating.toFixed(1);
 }

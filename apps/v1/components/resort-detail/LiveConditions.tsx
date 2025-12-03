@@ -1,3 +1,15 @@
+/**
+ * @module LiveConditions
+ * @purpose Display real-time lift and weather conditions from Liftie
+ * @context Resort detail page - conditions section
+ *
+ * @pattern Collapsible card with feature sections
+ *
+ * @decision
+ * - Shows stale data warning if > 2 hours old
+ * - Gracefully hides if no conditions available
+ * - Full NOAA forecast is collapsible to reduce visual noise
+ */
 'use client';
 
 import { useState } from 'react';
@@ -11,10 +23,22 @@ import {
 import type { ResortConditionsRow } from '@/types/supabase';
 
 interface LiveConditionsProps {
+  /** Conditions data from resort_conditions table */
   conditions: ResortConditionsRow | null;
+  /** Additional CSS classes */
   className?: string;
 }
 
+/**
+ * Live conditions card showing lift status and weather
+ *
+ * Displays:
+ * - Lift open count with color-coded progress bar
+ * - Weather condition and temperature
+ * - Collapsible full NOAA forecast text
+ * - Webcam availability indicator
+ * - Data freshness timestamp with stale warning
+ */
 export function LiveConditions({ conditions, className }: LiveConditionsProps) {
   const [showFullForecast, setShowFullForecast] = useState(false);
 

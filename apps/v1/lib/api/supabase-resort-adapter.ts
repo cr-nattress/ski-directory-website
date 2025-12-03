@@ -1,9 +1,18 @@
 /**
- * Supabase Resort Adapter
+ * @module SupabaseResortAdapter
+ * @purpose Convert between Supabase database types and frontend Resort types
+ * @context Data transformation layer between database and UI
  *
- * Converts between Supabase database types and the frontend Resort types.
- * This adapter allows components to continue using the existing Resort interface
- * while data comes from Supabase.
+ * @pattern Adapter - Transforms ResortFull (DB) → Resort (Frontend)
+ *
+ * @decision
+ * Keep database types (snake_case) separate from frontend types (camelCase)
+ * to allow independent evolution and maintain backward compatibility.
+ *
+ * @assumes
+ * - ResortFull matches the `resorts_full` view in Supabase
+ * - GCS asset paths are structured as: resorts/{country}/{state}/{slug}/
+ * - Wikipedia-sourced images are preferred for hero/card display
  */
 
 import type { ResortFull } from "@/types/supabase";
@@ -13,6 +22,14 @@ import { PLACEHOLDER_IMAGE } from "@/lib/utils/resort-images";
 
 /**
  * Convert a Supabase ResortFull record to the frontend Resort type
+ *
+ * @param supabaseResort - Raw database record from `resorts_full` view
+ * @returns Resort object ready for UI consumption
+ *
+ * @decision
+ * - Default ratings to 4.5/100 reviews until user ratings are implemented
+ * - Use PLACEHOLDER_IMAGE when no GCS assets exist
+ * - Map `is_open` boolean to 'open'/'closed' status enum
  */
 export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
   const assetPath = supabaseResort.asset_path;

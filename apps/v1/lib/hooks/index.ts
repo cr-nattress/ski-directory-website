@@ -1,6 +1,24 @@
-// Resort Hooks - React hooks for fetching resort data
-// These hooks simulate API behavior and will work seamlessly when
-// connected to a real backend.
+/**
+ * @module Hooks
+ * @purpose React hooks for data fetching and state management
+ * @context Client-side hooks for use in 'use client' components
+ *
+ * @exports
+ * - Data fetching: useResort, useResorts, useMapPins, useResortSearch
+ * - UI state: useViewMode, useEventBanner
+ * - Analytics: useImpressionTracking, useClickTracking, useResortTracking
+ * - Utilities: useRegionalStats, useInfiniteResorts, useRankedResorts
+ *
+ * @pattern
+ * All data hooks follow a consistent pattern:
+ * - Return { data, isLoading, error, refetch }
+ * - Handle loading states internally
+ * - Support optional caching (localStorage for map pins, view mode)
+ *
+ * @sideeffects
+ * - Network requests to Supabase
+ * - localStorage reads/writes (useMapPins, useViewMode)
+ */
 
 export { useResort, useResortById } from './useResort';
 export {

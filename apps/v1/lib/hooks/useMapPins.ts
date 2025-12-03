@@ -1,3 +1,17 @@
+/**
+ * @module useMapPins
+ * @purpose Fetch optimized map pin data with localStorage caching
+ * @context Interactive map view on landing page
+ *
+ * @sideeffects
+ * - Network request to Supabase for map pins
+ * - localStorage read/write for caching (5-minute TTL)
+ *
+ * @decision
+ * Use localStorage caching to reduce API calls when users toggle
+ * between cards and map views frequently. 5-minute TTL balances
+ * freshness with performance.
+ */
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
@@ -5,7 +19,8 @@ import { resortService } from '@/lib/api/resort-service';
 import { ResortMapPin } from '@/lib/types';
 
 const CACHE_KEY = 'ski-map-pins';
-const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes
+/** Cache TTL: 5 minutes */
+const CACHE_DURATION_MS = 5 * 60 * 1000;
 
 interface CachedData {
   pins: ResortMapPin[];
@@ -13,15 +28,25 @@ interface CachedData {
 }
 
 interface UseMapPinsResult {
+  /** Array of resort map pins */
   pins: ResortMapPin[];
+  /** True while fetching data */
   isLoading: boolean;
+  /** Error if fetch failed */
   error: Error | null;
+  /** Bypass cache and refetch from API */
   refetch: () => void;
 }
 
 /**
  * Hook for fetching map pin data with localStorage caching
- * Cache expires after 5 minutes to balance freshness with performance
+ *
+ * @returns Map pins with loading/error states
+ *
+ * @example
+ * const { pins, isLoading, error, refetch } = useMapPins();
+ * if (isLoading) return <MapSkeleton />;
+ * return <ResortMapView pins={pins} />;
  */
 export function useMapPins(): UseMapPinsResult {
   const [pins, setPins] = useState<ResortMapPin[]>([]);

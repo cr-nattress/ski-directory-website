@@ -1,3 +1,10 @@
+/**
+ * @module useResort
+ * @purpose Fetch single resort data by slug or ID
+ * @context Resort detail pages and components needing full resort data
+ *
+ * @sideeffects Network request to Supabase
+ */
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
@@ -7,8 +14,10 @@ import { Resort, UseResortResult } from '../api/types';
 /**
  * Hook to fetch a single resort by slug
  *
+ * @param slug - Resort URL slug (e.g., 'vail', 'breckenridge')
+ * @returns Resort data with loading/error states
+ *
  * @example
- * ```tsx
  * const { resort, isLoading, error, refetch } = useResort('vail');
  *
  * if (isLoading) return <Spinner />;
@@ -16,7 +25,6 @@ import { Resort, UseResortResult } from '../api/types';
  * if (!resort) return <NotFound />;
  *
  * return <ResortDetail resort={resort} />;
- * ```
  */
 export function useResort(slug: string | undefined): UseResortResult {
   const [resort, setResort] = useState<Resort | null>(null);
@@ -64,10 +72,11 @@ export function useResort(slug: string | undefined): UseResortResult {
 /**
  * Hook to fetch a single resort by ID
  *
+ * @param id - Resort UUID from database
+ * @returns Resort data with loading/error states
+ *
  * @example
- * ```tsx
- * const { resort, isLoading, error } = useResortById('resort:vail');
- * ```
+ * const { resort, isLoading, error } = useResortById('123e4567-e89b-...');
  */
 export function useResortById(id: string | undefined): UseResortResult {
   const [resort, setResort] = useState<Resort | null>(null);

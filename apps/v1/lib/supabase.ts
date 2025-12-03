@@ -1,9 +1,28 @@
+/**
+ * @module Supabase
+ * @purpose Supabase client initialization and GCS asset URL helpers
+ * @context Database access and image/asset URL construction
+ *
+ * @exports
+ * - supabase: Client-side Supabase client (uses anon key, respects RLS)
+ * - createServerClient: Server-side client factory (uses service role key)
+ * - GCS URL helpers: getCardImageUrl, getHeroImageUrl, getTrailMapUrl
+ *
+ * @sideeffects
+ * - Throws at module load if environment variables missing
+ *
+ * @dependencies
+ * - NEXT_PUBLIC_SUPABASE_URL (required)
+ * - NEXT_PUBLIC_SUPABASE_ANON_KEY (required)
+ * - SUPABASE_SERVICE_ROLE_KEY (optional, for server-side)
+ */
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
+// Guard: Ensure required environment variables are set
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error("Missing Supabase environment variables");
 }
