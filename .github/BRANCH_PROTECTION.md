@@ -2,13 +2,19 @@
 
 This document describes the recommended branch protection rules for the `master` branch.
 
+## Current Status: DISABLED
+
+Branch protection is currently **disabled** for this repository to allow for rapid development. The settings below are documented for future implementation when the project matures.
+
+---
+
 ## Manual Configuration Required
 
 Branch protection rules must be configured manually in GitHub:
 
 **Settings > Branches > Add branch protection rule**
 
-## Recommended Settings for `master`
+## Recommended Settings for `master` (Future Implementation)
 
 ### Branch name pattern
 ```
@@ -18,9 +24,9 @@ master
 ### Protect matching branches
 
 #### Require a pull request before merging
-- [x] **Enabled**
-- [x] Require approvals: **1**
-- [x] Dismiss stale pull request approvals when new commits are pushed
+- [] **Enabled**
+- [] Require approvals: **1**
+- [] Dismiss stale pull request approvals when new commits are pushed
 - [ ] Require review from Code Owners (enable after CODEOWNERS is tested)
 - [ ] Require approval of the most recent reviewable push
 
@@ -34,7 +40,7 @@ master
 - `Build`
 
 #### Require conversation resolution before merging
-- [x] **Enabled**
+- [] **Enabled**
 
 #### Require signed commits
 - [ ] Optional (enable for higher security)
