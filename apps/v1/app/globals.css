@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    /* Prevent browser's native pull-to-refresh on mobile */
+    overscroll-behavior-y: contain;
+  }
   body {
     @apply bg-white text-gray-900 antialiased;
   }
@@ -99,4 +103,14 @@
 
 .leaflet-container {
   font-family: inherit;
+}
+
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

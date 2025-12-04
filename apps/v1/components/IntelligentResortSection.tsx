@@ -7,9 +7,13 @@ import { useViewMode } from '@/lib/hooks/useViewMode';
 import { categories } from '@/lib/data/categories';
 import { useRankedResorts } from '@/lib/hooks/useRankedResorts';
 import { useIntersectionObserver } from '@/lib/hooks/useIntersectionObserver';
+import { usePullToRefresh } from '@/lib/hooks/usePullToRefresh';
 import { ResortCard } from './ResortCard';
 import { LoadingMore } from './LoadingMore';
 import { DiscoverySections } from './discovery';
+import { PullToRefreshIndicator } from './ui/PullToRefreshIndicator';
+import { HorizontalScrollChips } from './ui/HorizontalScrollChips';
+import { ResortGridSkeleton } from './skeletons';
 import { cn } from '@/lib/utils';
 import { paginationConfig } from '@/lib/config/pagination';
 import { useLogger } from '@/lib/hooks/useLogger';
@@ -115,6 +119,20 @@ export function IntelligentResortSection() {
   // Show load more UI
   const showLoadMoreUI = !selectedCategory && mode === 'cards';
 
+  // Pull-to-refresh hook - only active on mobile in cards mode
+  const {
+    containerRef: pullToRefreshRef,
+    isPulling,
+    isRefreshing,
+    pullProgress,
+  } = usePullToRefresh({
+    onRefresh: async () => {
+      log.info('Pull-to-refresh triggered');
+      await reset();
+    },
+    disabled: mode !== 'cards',
+  });
+
   return (
     <>
       {/* Discovery Sections - only when viewing "All" */}
@@ -161,9 +179,46 @@ export function IntelligentResortSection() {
             )}
           </div>
 
-          {/* Category Chips - centered, smaller size, visible in both cards and map mode */}
+          {/* Category Chips - horizontal scroll on mobile, centered wrap on desktop */}
           {featureFlags.categoryChips && (
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <>
+              {/* Mobile: Horizontal scroll */}
+              <div className="md:hidden mb-8">
+                <HorizontalScrollChips fadeColor="from-bg-light">
+                  {/* All Resorts chip */}
+                  <button
+                    onClick={() => handleCategorySelect(null)}
+                    className={cn(
+                      'flex-shrink-0 snap-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs min-h-[40px]',
+                      selectedCategory === null
+                        ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
+                        : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
+                    )}
+                  >
+                    <span>🗺️</span>
+                    <span>All</span>
+                  </button>
+
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => handleCategorySelect(category.id)}
+                      className={cn(
+                        'flex-shrink-0 snap-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs min-h-[40px]',
+                        selectedCategory === category.id
+                          ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
+                          : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
+                      )}
+                    >
+                      <span>{category.icon}</span>
+                      <span>{category.label}</span>
+                    </button>
+                  ))}
+                </HorizontalScrollChips>
+              </div>
+
+              {/* Desktop: Centered wrap */}
+              <div className="hidden md:flex flex-wrap justify-center gap-2 mb-8">
                 {/* All Resorts chip */}
                 <button
                   onClick={() => handleCategorySelect(null)}
@@ -193,7 +248,8 @@ export function IntelligentResortSection() {
                     <span>{category.label}</span>
                   </button>
                 ))}
-            </div>
+              </div>
+            </>
           )}
 
           {/* View content */}
@@ -204,17 +260,19 @@ export function IntelligentResortSection() {
             )}
           >
             {mode === 'cards' ? (
-              <>
+              <div ref={pullToRefreshRef}>
+                {/* Pull-to-refresh indicator (mobile only) */}
+                <div className="md:hidden">
+                  <PullToRefreshIndicator
+                    pullProgress={pullProgress}
+                    isRefreshing={isRefreshing}
+                    isPulling={isPulling}
+                  />
+                </div>
+
                 {/* Loading state */}
                 {isLoading && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {[...Array(paginationConfig.landing.initialPageSize)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="h-[420px] bg-gray-100 rounded-xl animate-pulse"
-                      />
-                    ))}
-                  </div>
+                  <ResortGridSkeleton count={paginationConfig.landing.initialPageSize} />
                 )}
 
                 {/* Error state */}
@@ -268,7 +326,7 @@ export function IntelligentResortSection() {
                     )}
                   </>
                 )}
-              </>
+              </div>
             ) : (
               <ResortMapViewWrapper />
             )}

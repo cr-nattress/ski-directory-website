@@ -15,12 +15,15 @@
  */
 'use client';
 
-import { useEffect, useState, useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useEffect, useState, useMemo, useCallback } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { useRouter } from 'next/navigation';
 import { useMapPins } from '@/lib/hooks/useMapPins';
 import { cn } from '@/lib/utils';
+import { Navigation, Loader2, X, ChevronUp, ChevronDown } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
+
+const MAP_GESTURE_HINT_KEY = 'ski-directory-map-gesture-hint-shown';
 
 /** Marker colors indexed by pass type */
 const PASS_COLORS = {
@@ -38,6 +41,7 @@ const PASS_COLORS = {
 
 /**
  * Create custom Leaflet divIcon marker with pass-type color
+ * Larger size (40px) for better touch target on mobile
  *
  * @param passType - Primary pass affiliation ('epic', 'ikon', etc.)
  * @param isLost - Whether resort is permanently closed
@@ -56,27 +60,184 @@ function createMarkerIcon(passType: string, isLost: boolean) {
     html: `
       <div style="
         background: ${color};
-        width: 28px;
-        height: 28px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bold;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        border: 2px solid white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+        border: 3px solid white;
       ">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="m10 20 4-16m2 14L7.5 6.5"/>
         </svg>
       </div>
     `,
-    iconSize: [28, 28],
-    iconAnchor: [14, 28],
-    popupAnchor: [0, -28],
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+    popupAnchor: [0, -36],
   });
+}
+
+/**
+ * Locate Me floating action button component
+ */
+function LocateMeButton() {
+  const map = useMap();
+  const [isLocating, setIsLocating] = useState(false);
+
+  const handleLocate = useCallback(() => {
+    if (!navigator.geolocation) {
+      alert('Geolocation is not supported by your browser');
+      return;
+    }
+
+    setIsLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        map.setView([latitude, longitude], 8);
+        setIsLocating(false);
+      },
+      (error) => {
+        console.error('Geolocation error:', error);
+        setIsLocating(false);
+      }
+    );
+  }, [map]);
+
+  return (
+    <button
+      onClick={handleLocate}
+      disabled={isLocating}
+      className={cn(
+        'absolute bottom-4 right-4 z-[1000]',
+        'w-12 h-12 rounded-full bg-white shadow-lg',
+        'flex items-center justify-center',
+        'hover:bg-gray-50 active:bg-gray-100',
+        'transition-colors'
+      )}
+      aria-label="Find my location"
+    >
+      {isLocating ? (
+        <Loader2 className="w-5 h-5 text-sky-600 animate-spin" />
+      ) : (
+        <Navigation className="w-5 h-5 text-sky-600" />
+      )}
+    </button>
+  );
+}
+
+/**
+ * Gesture hint overlay for first-time touch users
+ */
+function MapGestureHint() {
+  const [showHint, setShowHint] = useState(false);
+
+  useEffect(() => {
+    // Only show on touch devices, first visit
+    const isTouchDevice = 'ontouchstart' in window;
+    const hasSeenHint = localStorage.getItem(MAP_GESTURE_HINT_KEY);
+
+    if (isTouchDevice && !hasSeenHint) {
+      setShowHint(true);
+      // Auto-hide after 4 seconds
+      const timer = setTimeout(() => {
+        setShowHint(false);
+        localStorage.setItem(MAP_GESTURE_HINT_KEY, 'true');
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const dismissHint = useCallback(() => {
+    setShowHint(false);
+    localStorage.setItem(MAP_GESTURE_HINT_KEY, 'true');
+  }, []);
+
+  if (!showHint) return null;
+
+  return (
+    <div className="absolute inset-0 z-[1001] flex items-center justify-center bg-black/40">
+      <div className="relative bg-white rounded-xl px-6 py-4 shadow-xl text-center max-w-[200px]">
+        <button
+          onClick={dismissHint}
+          className="absolute top-2 right-2 p-1 min-h-[44px] min-w-[44px] flex items-center justify-center"
+          aria-label="Dismiss"
+        >
+          <X className="w-4 h-4 text-gray-400" />
+        </button>
+        <div className="text-4xl mb-2">👆👆</div>
+        <p className="text-sm text-gray-700">
+          Use two fingers to zoom and pan the map
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Collapsible map legend component
+ * Collapsed by default on mobile, expanded on desktop
+ */
+function MapLegend() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const legendItems = [
+    { color: 'bg-red-600', label: 'Epic' },
+    { color: 'bg-orange-500', label: 'Ikon' },
+    { color: 'bg-violet-500', label: 'Indy' },
+    { color: 'bg-emerald-600', label: 'Mtn Collective' },
+    { color: 'bg-cyan-600', label: 'Powder Alliance' },
+    { color: 'bg-blue-600', label: 'NY SKI3' },
+    { color: 'bg-violet-600', label: 'RCR Rockies' },
+    { color: 'bg-pink-600', label: "L'EST GO" },
+    { color: 'bg-blue-500', label: 'Local' },
+    { color: 'bg-neutral-400', label: 'Lost' },
+  ];
+
+  return (
+    <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg z-[1000]">
+      {/* Mobile: Collapsed by default with toggle button */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="md:hidden flex items-center gap-2 px-3 py-2 min-h-[44px] w-full"
+        aria-expanded={isExpanded}
+      >
+        <span className="text-xs font-semibold text-neutral-700">Legend</span>
+        {isExpanded ? (
+          <ChevronDown className="w-4 h-4 text-neutral-500" />
+        ) : (
+          <ChevronUp className="w-4 h-4 text-neutral-500" />
+        )}
+      </button>
+
+      {/* Legend content */}
+      <div
+        className={cn(
+          'px-3 pb-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs',
+          // Desktop: always visible with top padding
+          'md:pt-3',
+          // Mobile: collapsible
+          !isExpanded && 'hidden md:grid'
+        )}
+      >
+        <div className="col-span-2 text-xs font-semibold mb-1 text-neutral-700 hidden md:block">
+          Pass Types
+        </div>
+        {legendItems.map((item) => (
+          <div key={item.label} className="flex items-center gap-2">
+            <div className={cn('w-3 h-3 rounded-full', item.color)} />
+            <span className="text-neutral-600">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 /**
@@ -148,13 +309,18 @@ export function ResortMapView() {
 
   return (
     <div className="relative w-full h-[500px] lg:h-[600px] rounded-xl overflow-hidden border border-neutral-200 shadow-sm">
+      {/* Gesture hint for first-time touch users */}
+      <MapGestureHint />
+
       <MapContainer
         center={center}
         zoom={4}
         className="w-full h-full"
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
         minZoom={3}
         maxZoom={12}
+        touchZoom={true}
+        dragging={true}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -280,54 +446,13 @@ export function ResortMapView() {
             </Marker>
           );
         })}
+
+        {/* Locate Me button */}
+        <LocateMeButton />
       </MapContainer>
 
-      {/* Map Legend - hidden on mobile */}
-      <div className="hidden md:block absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-[1000]">
-        <div className="text-xs font-semibold mb-2 text-neutral-700">Pass Types</div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-600" />
-            <span className="text-neutral-600">Epic</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-orange-500" />
-            <span className="text-neutral-600">Ikon</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-violet-500" />
-            <span className="text-neutral-600">Indy</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-emerald-600" />
-            <span className="text-neutral-600">Mtn Collective</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-cyan-600" />
-            <span className="text-neutral-600">Powder Alliance</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-blue-600" />
-            <span className="text-neutral-600">NY SKI3</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-violet-600" />
-            <span className="text-neutral-600">RCR Rockies</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-pink-600" />
-            <span className="text-neutral-600">L&apos;EST GO</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-blue-500" />
-            <span className="text-neutral-600">Local</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-neutral-400" />
-            <span className="text-neutral-600">Lost</span>
-          </div>
-        </div>
-      </div>
+      {/* Map Legend - collapsible on mobile, always expanded on desktop */}
+      <MapLegend />
     </div>
   );
 }
