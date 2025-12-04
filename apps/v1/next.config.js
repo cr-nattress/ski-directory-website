@@ -71,16 +71,16 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              // Scripts: self, inline for Next.js, eval for dev
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+              // Scripts: self, inline for Next.js, eval for dev, Google Analytics
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
               // Styles: self, inline for Tailwind
               "style-src 'self' 'unsafe-inline'",
-              // Images: self, data URIs, and approved domains
-              "img-src 'self' data: blob: https://storage.googleapis.com https://images.unsplash.com https://source.unsplash.com https://picsum.photos https://unpkg.com https://*.tile.openstreetmap.org",
+              // Images: self, data URIs, and approved domains (including Google Analytics)
+              "img-src 'self' data: blob: https://storage.googleapis.com https://images.unsplash.com https://source.unsplash.com https://picsum.photos https://unpkg.com https://*.tile.openstreetmap.org https://www.google-analytics.com https://www.googletagmanager.com",
               // Fonts: self and common CDNs
               "font-src 'self' https://fonts.gstatic.com",
-              // Connect: API endpoints
-              "connect-src 'self' https://*.supabase.co https://*.grafana.net https://liftie.info wss://*.supabase.co",
+              // Connect: API endpoints (including Google Analytics)
+              "connect-src 'self' https://*.supabase.co https://*.grafana.net https://liftie.info wss://*.supabase.co https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com",
               // Frame ancestors: none (no iframes)
               "frame-ancestors 'none'",
               // Base URI
