@@ -16,6 +16,12 @@ tags:
 
 **The comprehensive guide to ski resorts across North America**
 
+<!-- CI/CD Status Badges -->
+[![CI](https://github.com/your-username/state-ski-resort-directory/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/state-ski-resort-directory/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/your-username/state-ski-resort-directory/actions/workflows/codeql.yml/badge.svg)](https://github.com/your-username/state-ski-resort-directory/actions/workflows/codeql.yml)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+
+<!-- Technology Stack Badges -->
 ![Next.js](https://img.shields.io/badge/Next.js-14.1-black?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?logo=typescript)
 ![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E?logo=supabase)

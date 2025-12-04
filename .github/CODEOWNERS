@@ -1,0 +1,86 @@
+# CODEOWNERS - Automatic review assignment
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# The last matching pattern takes precedence.
+# Use team handles (@org/team-name) when working with organizations.
+
+# =============================================================================
+# DEFAULT OWNER
+# These owners will be requested for review on all PRs unless a more specific
+# rule below matches.
+# =============================================================================
+
+*                                   @your-username
+
+# =============================================================================
+# APPLICATION CODE
+# =============================================================================
+
+# Main Next.js application
+/apps/v1/                           @your-username
+
+# Components
+/apps/v1/components/                @your-username
+
+# API and data layer
+/apps/v1/lib/api/                   @your-username
+/apps/v1/lib/hooks/                 @your-username
+/apps/v1/lib/services/              @your-username
+
+# Scoring and algorithms
+/apps/v1/lib/scoring/               @your-username
+
+# =============================================================================
+# UPDATER SERVICES
+# =============================================================================
+
+/apps/updaters/                     @your-username
+
+# =============================================================================
+# INFRASTRUCTURE & CONFIGURATION
+# =============================================================================
+
+# Google Cloud Platform configuration
+/gcp/                               @your-username
+
+# Database migrations
+/migration/                         @your-username
+
+# Schemas
+/schemas/                           @your-username
+
+# =============================================================================
+# DOCUMENTATION
+# =============================================================================
+
+/docs/                              @your-username
+*.md                                @your-username
+
+# =============================================================================
+# PROTECTED FILES
+# These files have significant impact and require careful review
+# =============================================================================
+
+# GitHub configuration - critical for CI/CD and automation
+/.github/                           @your-username
+/.github/CODEOWNERS                 @your-username
+/.github/workflows/                 @your-username
+
+# Project configuration
+/apps/v1/package.json               @your-username
+/apps/v1/package-lock.json          @your-username
+/apps/v1/tsconfig.json              @your-username
+/apps/v1/next.config.js             @your-username
+/apps/v1/tailwind.config.ts         @your-username
+
+# Environment templates
+/apps/v1/.env.example               @your-username
+
+# Security-sensitive files
+/SECURITY.md                        @your-username
+/.gitignore                         @your-username
+
+# Root configuration
+/.editorconfig                      @your-username
+/.gitattributes                     @your-username
+/netlify.toml                       @your-username
