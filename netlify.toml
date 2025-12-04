@@ -1,7 +1,12 @@
 [build]
   base = "apps/v1"
-  command = "npm run build"
+  command = "echo \"SUPABASE_URL exists: ${NEXT_PUBLIC_SUPABASE_URL:+yes}\" && npm run build"
   publish = ".next"
+
+[build.environment]
+  # These will be overridden by Netlify UI environment variables
+  # but serve as fallback documentation
+  NEXT_PUBLIC_USE_SUPABASE = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
