@@ -1,6 +1,6 @@
 [build]
   base = "apps/v1"
-  command = "echo \"SUPABASE_URL exists: ${NEXT_PUBLIC_SUPABASE_URL:+yes}\" && npm run build"
+  command = "printenv | grep -i supabase && npm run build"
   publish = ".next"
 
 [build.environment]
