@@ -3,12 +3,6 @@
  * @purpose React hooks for data fetching and state management
  * @context Client-side hooks for use in 'use client' components
  *
- * @exports
- * - Data fetching: useResort, useResorts, useMapPins, useResortSearch
- * - UI state: useViewMode, useEventBanner
- * - Analytics: useImpressionTracking, useClickTracking, useResortTracking
- * - Utilities: useRegionalStats, useInfiniteResorts, useRankedResorts
- *
  * @pattern
  * All data hooks follow a consistent pattern:
  * - Return { data, isLoading, error, refetch }
@@ -20,6 +14,10 @@
  * - localStorage reads/writes (useMapPins, useViewMode)
  */
 
+// =============================================================================
+// Data Fetching - Resort Data
+// =============================================================================
+
 export { useResort, useResortById } from './useResort';
 export {
   useResorts,
@@ -30,17 +28,47 @@ export {
 } from './useResorts';
 export { useResortSearch, useInstantResortSearch } from './useResortSearch';
 export { useRegionalStats } from './useRegionalStats';
-export { useEventBanner } from './useEventBanner';
 export { useMapPins } from './useMapPins';
+export { useResortConditions } from './useResortConditions';
+
+// =============================================================================
+// Data Fetching - Themed Sections
+// =============================================================================
+
+export { useThemedResorts } from './useThemedResorts';
+export { useRankedResorts } from './useRankedResorts';
+export { useInfiniteResorts } from './useInfiniteResorts';
+
+// =============================================================================
+// UI State Management
+// =============================================================================
+
 export { useViewMode } from './useViewMode';
 export type { ViewMode } from './useViewMode';
+export { useEventBanner } from './useEventBanner';
+export { useFeatureFlag } from './useFeatureFlag';
+
+// =============================================================================
+// Analytics & Tracking
+// =============================================================================
+
 export {
   useImpressionTracking,
   useClickTracking,
   useResortTracking,
 } from './useImpressionTracking';
 
-// Re-export types for convenience
+// =============================================================================
+// Utilities
+// =============================================================================
+
+export { useIntersectionObserver } from './useIntersectionObserver';
+export { useLogger, createLogger } from './useLogger';
+
+// =============================================================================
+// Type Exports
+// =============================================================================
+
 export type {
   Resort,
   ResortImage,
