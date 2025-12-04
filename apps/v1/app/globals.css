@@ -9,6 +9,12 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-semibold;
   }
+  /* Improve touch responsiveness on mobile */
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+  }
 }
 
 @layer components {

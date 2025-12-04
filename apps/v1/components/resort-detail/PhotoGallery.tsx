@@ -59,7 +59,7 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
   return (
     <>
       {/* Desktop Gallery Grid */}
-      <div className="hidden sm:grid sm:grid-cols-4 gap-2 rounded-lg overflow-hidden">
+      <div className="hidden sm:grid sm:grid-cols-4 sm:grid-rows-2 gap-2 rounded-lg overflow-hidden relative" style={{ height: '400px' }}>
         {/* Large main image */}
         <button
           onClick={() => openLightbox(0)}
@@ -85,7 +85,7 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
             key={index}
             onClick={() => openLightbox(index + 1)}
             aria-label={`View ${image.alt} in full screen`}
-            className="relative group overflow-hidden aspect-square"
+            className="relative group overflow-hidden"
           >
             <Image
               src={getImageUrl(image.url)}
@@ -100,17 +100,14 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
           </button>
         ))}
 
-        {/* View All Photos Button (overlay on last image) */}
-        <button
-          onClick={() => openLightbox(0)}
-          className="absolute bottom-4 right-4 bg-white text-gray-900 px-4 py-2 rounded-lg font-medium text-sm hover:bg-gray-100 transition-colors shadow-md"
-        >
-          View all photos
-        </button>
       </div>
 
-      {/* Mobile Gallery - Single swipeable image */}
-      <div className="sm:hidden relative rounded-lg overflow-hidden h-64">
+      {/* Mobile Gallery - Single image, tap to open lightbox */}
+      <button
+        onClick={() => openLightbox(0)}
+        className="sm:hidden relative rounded-lg overflow-hidden h-64 w-full"
+        aria-label={`View ${images[0].alt} in full screen`}
+      >
         <Image
           src={getImageUrl(images[0].url)}
           alt={images[0].alt}
@@ -121,13 +118,7 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
           sizes="100vw"
           priority
         />
-        <button
-          onClick={() => openLightbox(0)}
-          className="absolute bottom-4 right-4 bg-white text-gray-900 px-4 py-2 rounded-lg font-medium text-sm shadow-md"
-        >
-          View all photos
-        </button>
-      </div>
+      </button>
 
       {/* Lightbox Modal */}
       {lightboxOpen && (

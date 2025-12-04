@@ -25,31 +25,31 @@ export function ViewToggle({ value, onChange }: ViewToggleProps) {
   };
 
   return (
-    <div className="inline-flex items-center bg-neutral-100 rounded-lg p-1">
+    <div className="flex w-full sm:inline-flex sm:w-auto items-center bg-neutral-100 rounded-lg p-1">
       <button
         onClick={() => handleModeChange('cards')}
         className={cn(
-          'flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all',
+          'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-md text-sm font-medium transition-all',
           value === 'cards'
             ? 'bg-white text-neutral-900 shadow-sm'
             : 'text-neutral-600 hover:text-neutral-900'
         )}
         aria-pressed={value === 'cards'}
       >
-        <LayoutGrid className="w-4 h-4" />
+        <LayoutGrid className="w-4 h-4" aria-hidden="true" />
         Cards
       </button>
       <button
         onClick={() => handleModeChange('map')}
         className={cn(
-          'flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all',
+          'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-md text-sm font-medium transition-all',
           value === 'map'
             ? 'bg-white text-neutral-900 shadow-sm'
             : 'text-neutral-600 hover:text-neutral-900'
         )}
         aria-pressed={value === 'map'}
       >
-        <Map className="w-4 h-4" />
+        <Map className="w-4 h-4" aria-hidden="true" />
         Map
       </button>
     </div>

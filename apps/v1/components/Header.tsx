@@ -15,13 +15,18 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
 
   const isOverlay = variant === 'overlay';
 
+  const navLinkClasses = cn(
+    'font-medium transition-colors',
+    'text-white/90 hover:text-white'
+  );
+
   return (
     <header
       className={cn(
         'z-50',
         isOverlay
           ? 'bg-black/20 backdrop-blur-sm'
-          : 'relative bg-white border-b border-gray-200'
+          : 'relative bg-bg-dark'
       )}
     >
       <nav className="container-custom py-1.5">
@@ -43,9 +48,22 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
             </Link>
           </div>
 
-          {/* Menu button */}
+          {/* Desktop Navigation - hidden on mobile */}
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/directory" className={navLinkClasses}>
+              Directory
+            </Link>
+            <Link href="/ski-links" className={navLinkClasses}>
+              Links
+            </Link>
+            <Link href="/social-links" className={navLinkClasses}>
+              Social
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button - hidden on desktop */}
           <button
-            className={cn('p-2', isOverlay ? 'text-white' : 'text-gray-700')}
+            className="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={mobileMenuOpen}
@@ -59,33 +77,33 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
           </button>
         </div>
 
-        {/* Dropdown menu */}
+        {/* Mobile Dropdown menu - only on mobile */}
         {mobileMenuOpen && (
           <nav
             id="navigation-menu"
-            className="absolute right-4 top-14 w-48 py-2 bg-white rounded-lg shadow-lg border border-gray-200"
+            className="md:hidden absolute right-4 top-14 w-48 py-2 bg-white rounded-lg shadow-lg border border-gray-200"
             aria-label="Main navigation"
           >
             <Link
               href="/directory"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+              className="block px-4 py-3 min-h-[44px] text-gray-700 hover:bg-gray-100 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Directory
             </Link>
             <Link
               href="/ski-links"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+              className="block px-4 py-3 min-h-[44px] text-gray-700 hover:bg-gray-100 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Ski Links
+              Links
             </Link>
             <Link
               href="/social-links"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors font-medium"
+              className="block px-4 py-3 min-h-[44px] text-gray-700 hover:bg-gray-100 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Social Media
+              Social
             </Link>
           </nav>
         )}

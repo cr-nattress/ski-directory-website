@@ -42,6 +42,7 @@ interface ResortMapPinRow {
   is_open: boolean | null;
   terrain_open_percent: number | null;
   snowfall_24h: number | null;
+  website_url: string | null;
 }
 
 // Create a logger for this service
@@ -500,6 +501,7 @@ class SupabaseResortService {
           isLost: row.is_lost,
           terrainOpenPercent: row.terrain_open_percent ?? undefined,
           snowfall24h: row.snowfall_24h ?? undefined,
+          websiteUrl: row.website_url ?? undefined,
           // Add conditions data if available (convert null to undefined for type safety)
           liftsOpen: conditions?.lifts_open,
           liftsTotal: conditions?.lifts_total,

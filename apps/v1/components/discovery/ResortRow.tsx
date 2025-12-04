@@ -70,7 +70,7 @@ export function ResortRow({
   }
 
   return (
-    <section className="relative py-6">
+    <section className="relative">
       {/* Header */}
       <div className="flex items-center justify-between mb-4 px-4 sm:px-0">
         <h3 className="text-xl font-display font-bold text-gray-900">
@@ -154,7 +154,7 @@ export function ResortRow({
  */
 export function ResortRowSkeleton() {
   return (
-    <section className="py-6">
+    <section>
       <div className="h-7 w-48 bg-gray-200 rounded animate-pulse mb-4" />
       <div className="flex gap-4 overflow-hidden">
         {[...Array(6)].map((_, i) => (

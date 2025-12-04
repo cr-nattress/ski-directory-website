@@ -1,6 +1,6 @@
 import type { Resort } from '@/lib/types';
 import { PhotoGallery } from './PhotoGallery';
-import { Star, ExternalLink } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface ResortHeroProps {
   resort: Resort;
@@ -19,66 +19,97 @@ export function ResortHero({ resort }: ResortHeroProps) {
           <p className="text-xl text-gray-600">{resort.tagline}</p>
         )}
 
-        {resort.websiteUrl && (
-          <a
-            href={resort.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-ski-blue hover:text-blue-700 transition-colors text-sm font-medium"
-          >
-            <ExternalLink className="w-4 h-4" />
-            <span>Visit Official Website</span>
-          </a>
-        )}
-
-        {/* Quick Stats Row */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+        {/* Pass Types and Website Chips */}
+        <div className="flex flex-wrap gap-2">
           {/* Lost ski area indicator */}
           {resort.isLost && (
-            <>
-              <span className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 px-2.5 py-1 rounded-full text-xs font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-gray-500" />
-                Former Ski Area
-              </span>
-              <span className="text-gray-300">·</span>
-            </>
-          )}
-
-          {/* Rating - hidden for lost ski areas */}
-          {!resort.isLost && (
-            <>
-              <div className="flex items-center gap-1">
-                <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span className="font-semibold">{resort.rating}</span>
-                <span className="text-gray-600">
-                  ({resort.reviewCount.toLocaleString()} reviews)
-                </span>
-              </div>
-              <span className="text-gray-300">·</span>
-            </>
-          )}
-
-          {/* Pass Type */}
-          {resort.passAffiliations.length > 0 && (
-            <>
-              <span className="font-medium text-gray-700">
-                {resort.passAffiliations
-                  .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
-                  .join(', ')}{' '}
-                Pass
-              </span>
-              <span className="text-gray-300">·</span>
-            </>
-          )}
-
-          {/* Terrain Distribution - hidden for lost ski areas */}
-          {!resort.isLost && (
-            <span className="text-gray-700">
-              Beginner {resort.terrain.beginner}% · Intermediate{' '}
-              {resort.terrain.intermediate}% · Advanced {resort.terrain.advanced}%
+            <span className="inline-flex items-center gap-1.5 bg-gray-500 text-white px-3 py-1 rounded text-xs font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+              Former Ski Area
             </span>
           )}
+
+          {/* Pass Type Chips */}
+          {resort.passAffiliations.map((pass) => (
+            <span
+              key={pass}
+              className={cn(
+                'text-xs px-3 py-1 rounded text-white font-medium',
+                pass === 'epic' && 'bg-red-600',
+                pass === 'ikon' && 'bg-orange-500',
+                pass === 'indy' && 'bg-violet-500',
+                pass === 'mountain-collective' && 'bg-emerald-600',
+                pass === 'powder-alliance' && 'bg-cyan-600',
+                pass === 'ny-ski3' && 'bg-blue-600',
+                pass === 'rcr-rockies' && 'bg-violet-600',
+                pass === 'lest-go' && 'bg-pink-600',
+                pass === 'local' && 'bg-neutral-600'
+              )}
+            >
+              {pass === 'mountain-collective' ? 'Mtn Collective' :
+               pass === 'powder-alliance' ? 'Powder Alliance' :
+               pass === 'ny-ski3' ? 'NY SKI3' :
+               pass === 'rcr-rockies' ? 'RCR Rockies' :
+               pass === 'lest-go' ? "L'EST GO" :
+               pass.charAt(0).toUpperCase() + pass.slice(1)}
+            </span>
+          ))}
+
+          {/* Website Chip */}
+          {resort.websiteUrl && (
+            <a
+              href={resort.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 transition-colors inline-flex items-center gap-1.5"
+              style={{ color: 'white' }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span style={{ color: 'white' }}>Website</span>
+            </a>
+          )}
         </div>
+
+        {/* Terrain Distribution - hidden for lost ski areas */}
+        {!resort.isLost && (
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-700">
+            {/* Beginner - Green Circle */}
+            <span className="inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="7" cy="7" r="6" fill="#22c55e"/>
+              </svg>
+              {resort.terrain.beginner}%
+            </span>
+            {/* Intermediate - Blue Square */}
+            <span className="inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="12" height="12" fill="#3b82f6"/>
+              </svg>
+              {resort.terrain.intermediate}%
+            </span>
+            {/* Advanced - Black Diamond */}
+            <span className="inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0L14 7L7 14L0 7L7 0Z" fill="#000000"/>
+              </svg>
+              {resort.terrain.advanced}%
+            </span>
+            {/* Expert - Double Black Diamond */}
+            {resort.terrain.expert > 0 && (
+              <span className="inline-flex items-center gap-1.5">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 0L10 7L5 14L0 7L5 0Z" fill="#000000"/>
+                  <path d="M15 0L20 7L15 14L10 7L15 0Z" fill="#000000"/>
+                </svg>
+                {resort.terrain.expert}%
+              </span>
+            )}
+          </div>
+        )}
 
         {/* Elevation */}
         <div className="text-sm text-gray-600">

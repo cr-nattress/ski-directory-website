@@ -85,6 +85,9 @@ export const featureFlags = {
   /** Intelligent resort listing with ranked ordering (Epic 24) */
   intelligentListing: true,
 
+  /** Category chips filter buttons ("Browse by experience") */
+  categoryChips: false,
+
   /** Engagement tracking for resort impressions/clicks (Epic 24) */
   engagementTracking: false,
 

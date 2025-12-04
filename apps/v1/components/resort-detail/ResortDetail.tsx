@@ -9,6 +9,7 @@ import { LocationMapCardWrapper } from './LocationMapCardWrapper';
 import { TrailMapCard } from './TrailMapCard';
 import { WeatherForecastCard } from './WeatherForecastCard';
 import { ConditionsSection } from './ConditionsSection';
+import { MobileResortSections } from './MobileResortSections';
 import { BreadcrumbJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 import { FeatureFlag } from '@/components/FeatureFlag';
@@ -49,11 +50,16 @@ export function ResortDetail({ resort }: ResortDetailProps) {
       />
 
       <div className="container-custom py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Resort Hero - always visible */}
+        <ResortHero resort={resort} />
+
+        {/* Mobile: Collapsible accordion sections */}
+        <MobileResortSections resort={resort} />
+
+        {/* Desktop: Original expanded layout */}
+        <div className="hidden lg:grid lg:grid-cols-12 gap-8 mt-8">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-8 space-y-12">
-            <ResortHero resort={resort} />
-
             {/* Placeholder for future sections */}
             <div className="space-y-8">
               {/* Overview + Map Split */}

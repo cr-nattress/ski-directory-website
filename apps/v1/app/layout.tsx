@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { WebVitals } from "@/components/WebVitals";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,11 +66,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans pb-20 md:pb-0">
         <WebVitals />
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
+        <MobileBottomNav />
       </body>
     </html>
   );

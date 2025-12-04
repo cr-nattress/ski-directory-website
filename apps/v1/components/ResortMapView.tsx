@@ -184,8 +184,6 @@ export function ResortMapView() {
                   <p className="text-sm text-neutral-600">{pin.nearestCity}</p>
 
                   <div className="flex items-center gap-2 text-sm">
-                    <span className="text-yellow-500">&#9733;</span>
-                    <span>{pin.rating.toFixed(1)}</span>
                     {pin.status === 'open' && !pin.isLost && (
                       <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs font-medium">
                         Open
@@ -227,34 +225,49 @@ export function ResortMapView() {
                     </div>
                   )}
 
-                  {pin.passAffiliations.length > 0 && (
-                    <div className="flex gap-1 flex-wrap">
-                      {pin.passAffiliations.map((pass) => (
-                        <span
-                          key={pass}
-                          className={cn(
-                            'text-xs px-2 py-0.5 rounded text-white',
-                            pass === 'epic' && 'bg-red-600',
-                            pass === 'ikon' && 'bg-orange-500',
-                            pass === 'indy' && 'bg-violet-500',
-                            pass === 'mountain-collective' && 'bg-emerald-600',
-                            pass === 'powder-alliance' && 'bg-cyan-600',
-                            pass === 'ny-ski3' && 'bg-blue-600',
-                            pass === 'rcr-rockies' && 'bg-violet-600',
-                            pass === 'lest-go' && 'bg-pink-600',
-                            pass === 'local' && 'bg-neutral-600'
-                          )}
-                        >
-                          {pass === 'mountain-collective' ? 'Mtn Collective' :
-                           pass === 'powder-alliance' ? 'Powder Alliance' :
-                           pass === 'ny-ski3' ? 'NY SKI3' :
-                           pass === 'rcr-rockies' ? 'RCR Rockies' :
-                           pass === 'lest-go' ? "L'EST GO" :
-                           pass.charAt(0).toUpperCase() + pass.slice(1)}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex gap-1 flex-wrap">
+                    {pin.passAffiliations.map((pass) => (
+                      <span
+                        key={pass}
+                        className={cn(
+                          'text-xs px-2 py-0.5 rounded text-white',
+                          pass === 'epic' && 'bg-red-600',
+                          pass === 'ikon' && 'bg-orange-500',
+                          pass === 'indy' && 'bg-violet-500',
+                          pass === 'mountain-collective' && 'bg-emerald-600',
+                          pass === 'powder-alliance' && 'bg-cyan-600',
+                          pass === 'ny-ski3' && 'bg-blue-600',
+                          pass === 'rcr-rockies' && 'bg-violet-600',
+                          pass === 'lest-go' && 'bg-pink-600',
+                          pass === 'local' && 'bg-neutral-600'
+                        )}
+                      >
+                        {pass === 'mountain-collective' ? 'Mtn Collective' :
+                         pass === 'powder-alliance' ? 'Powder Alliance' :
+                         pass === 'ny-ski3' ? 'NY SKI3' :
+                         pass === 'rcr-rockies' ? 'RCR Rockies' :
+                         pass === 'lest-go' ? "L'EST GO" :
+                         pass.charAt(0).toUpperCase() + pass.slice(1)}
+                      </span>
+                    ))}
+                    {pin.websiteUrl && (
+                      <a
+                        href={pin.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs px-2 py-0.5 rounded bg-sky-600 hover:bg-sky-700 transition-colors inline-flex items-center gap-1"
+                        style={{ color: 'white' }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="2" y1="12" x2="22" y2="12"/>
+                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span style={{ color: 'white' }}>Website</span>
+                      </a>
+                    )}
+                  </div>
 
                   <button
                     onClick={() => router.push(`/${pin.countryCode}/${pin.stateCode}/${pin.slug}`)}
@@ -269,8 +282,8 @@ export function ResortMapView() {
         })}
       </MapContainer>
 
-      {/* Map Legend */}
-      <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-[1000]">
+      {/* Map Legend - hidden on mobile */}
+      <div className="hidden md:block absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-[1000]">
         <div className="text-xs font-semibold mb-2 text-neutral-700">Pass Types</div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs">
           <div className="flex items-center gap-2">

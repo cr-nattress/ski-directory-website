@@ -13,6 +13,7 @@ import { DiscoverySections } from './discovery';
 import { cn } from '@/lib/utils';
 import { paginationConfig } from '@/lib/config/pagination';
 import { useLogger } from '@/lib/hooks/useLogger';
+import { featureFlags } from '@/lib/config/feature-flags';
 
 /**
  * Intelligent Resort Section
@@ -116,8 +117,8 @@ export function IntelligentResortSection() {
 
   return (
     <>
-      {/* Discovery Sections - only when viewing "All" in cards mode */}
-      {showDiscoverySections && !isLoading && (
+      {/* Discovery Sections - only when viewing "All" */}
+      {showDiscoverySections && (
         <section className="py-8 bg-white">
           <div className="container-custom">
             <DiscoverySections />
@@ -125,7 +126,7 @@ export function IntelligentResortSection() {
         </section>
       )}
 
-      <section className="py-12 bg-bg-light">
+      <section className="py-8 bg-bg-light">
         <div className="container-custom">
           {/* Header with View Toggle */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
@@ -133,11 +134,15 @@ export function IntelligentResortSection() {
               <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
                 {mode === 'cards' && selectedCategory
                   ? `${categories.find((c) => c.id === selectedCategory)?.icon} ${categories.find((c) => c.id === selectedCategory)?.label} Resorts`
-                  : '🗺️ All Ski Resorts'}
+                  : '🗺️ North America'}
               </h2>
-              {mode === 'cards' && !isLoading && (
+              {!isLoading && (
                 <p className="text-gray-600 mt-2">
-                  {selectedCategory ? (
+                  {mode === 'map' ? (
+                    <>
+                      Showing {displayCount} resort{displayCount !== 1 ? 's' : ''}
+                    </>
+                  ) : selectedCategory ? (
                     <>
                       {filteredResorts.length} resort{filteredResorts.length !== 1 ? 's' : ''} found
                     </>
@@ -157,37 +162,39 @@ export function IntelligentResortSection() {
           </div>
 
           {/* Category Chips - centered, smaller size, visible in both cards and map mode */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-              {/* All Resorts chip */}
-              <button
-                onClick={() => handleCategorySelect(null)}
-                className={cn(
-                  'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
-                  selectedCategory === null
-                    ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
-                    : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
-                )}
-              >
-                <span>🗺️</span>
-                <span>All</span>
-              </button>
-
-              {categories.map((category) => (
+          {featureFlags.categoryChips && (
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+                {/* All Resorts chip */}
                 <button
-                  key={category.id}
-                  onClick={() => handleCategorySelect(category.id)}
+                  onClick={() => handleCategorySelect(null)}
                   className={cn(
                     'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
-                    selectedCategory === category.id
+                    selectedCategory === null
                       ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
                       : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
                   )}
                 >
-                  <span>{category.icon}</span>
-                  <span>{category.label}</span>
+                  <span>🗺️</span>
+                  <span>All</span>
                 </button>
-              ))}
-          </div>
+
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategorySelect(category.id)}
+                    className={cn(
+                      'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
+                      selectedCategory === category.id
+                        ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
+                        : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
+                    )}
+                  >
+                    <span>{category.icon}</span>
+                    <span>{category.label}</span>
+                  </button>
+                ))}
+            </div>
+          )}
 
           {/* View content */}
           <div

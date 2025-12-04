@@ -93,8 +93,8 @@ export function ResortSection() {
 
   return (
     <>
-      {/* Category Chips - only show in cards mode */}
-      {mode === 'cards' && (
+      {/* Category Chips - only show in cards mode when feature flag enabled */}
+      {featureFlags.categoryChips && mode === 'cards' && (
         <CategoryChips
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
@@ -109,7 +109,7 @@ export function ResortSection() {
               <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
                 {mode === 'cards' && selectedCategory
                   ? `${categories.find((c) => c.id === selectedCategory)?.icon} ${categories.find((c) => c.id === selectedCategory)?.label} Resorts`
-                  : '🗺️ All Ski Resorts'}
+                  : '🗺️ North America'}
               </h2>
               {mode === 'cards' && !isLoading && (
                 <p className="text-gray-600 mt-2">
