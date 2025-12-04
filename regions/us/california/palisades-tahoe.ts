@@ -5,7 +5,7 @@ export const palisadesTahoe: Resort = {
   slug: 'palisades-tahoe',
   name: 'Palisades Tahoe',
   tagline: 'Olympic heritage and legendary Lake Tahoe terrain',
-  description: 'Palisades Tahoe, formerly known as Squaw Valley and Alpine Meadows, is a legendary California ski destination that hosted the 1960 Winter Olympics. The combined resort now offers over 6,000 acres of skiable terrain across two interconnected mountains linked by the Gondola. Squaw Valley is renowned for its Olympic-caliber terrain, including the iconic KT-22 and Headwall, while Alpine Meadows offers a more intimate, tree-skiing experience. The resort\'s proximity to Lake Tahoe provides stunning alpine and lake views throughout.',
+  description: 'Palisades Tahoe is a legendary California ski destination that hosted the 1960 Winter Olympics. The combined resort now offers over 6,000 acres of skiable terrain across two interconnected mountains linked by the Base-to-Base Gondola. The resort is renowned for its Olympic-caliber terrain, including the iconic KT-22 and Headwall, while the Alpine Meadows side offers a more intimate, tree-skiing experience. The resort\'s proximity to Lake Tahoe provides stunning alpine and lake views throughout.',
   isActive: true,
   isLost: false,
   location: { lat: 39.1969, lng: -120.2358 },
