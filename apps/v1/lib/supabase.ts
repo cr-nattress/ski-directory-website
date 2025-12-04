@@ -18,34 +18,30 @@
  */
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
-// Guard: Ensure required environment variables are set
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("Missing Supabase environment variables");
-}
+import { env } from "@/lib/config/env";
 
 /**
  * Supabase client for client-side usage
  * Uses the anon key which respects Row Level Security
  */
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient<Database>(
+  env.supabase.url,
+  env.supabase.anonKey
+);
 
 /**
  * Create a Supabase client for server-side usage
  * This should only be used in server components or API routes
  */
 export function createServerClient() {
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const serviceRoleKey = env.supabase.serviceRoleKey;
 
   if (!serviceRoleKey) {
     // Fall back to anon key if service role not available
     return supabase;
   }
 
-  return createClient<Database>(supabaseUrl, serviceRoleKey, {
+  return createClient<Database>(env.supabase.url, serviceRoleKey, {
     auth: {
       autoRefreshToken: false,
       persistSession: false,

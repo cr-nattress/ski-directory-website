@@ -21,6 +21,29 @@ import type {
 } from "./types";
 import { createLogger } from "@/lib/hooks/useLogger";
 
+/**
+ * Database row type for the resorts_map_pins view
+ * This view isn't in the generated Supabase types, so we define it explicitly
+ */
+interface ResortMapPinRow {
+  id: string;
+  slug: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+  nearest_city: string | null;
+  state_code: string | null;
+  country_code: string | null;
+  pass_affiliations: string[] | null;
+  rating: number | null;
+  status: string | null;
+  is_active: boolean;
+  is_lost: boolean;
+  is_open: boolean | null;
+  terrain_open_percent: number | null;
+  snowfall_24h: number | null;
+}
+
 // Create a logger for this service
 const log = createLogger('SupabaseResortService');
 
@@ -402,10 +425,13 @@ class SupabaseResortService {
   async getMapPins(): Promise<ApiResponse<ResortMapPin[]>> {
     log.info('Fetching map pins');
 
-    // Query the resorts_map_pins view - using explicit type since view isn't in generated types
-    const { data, error } = await supabase
-      .from("resorts_map_pins" as any)
+    // Query the resorts_map_pins view
+    // Note: View isn't in generated types, so we cast the result to our explicit type
+    const result = await supabase
+      .from("resorts_map_pins")
       .select("*");
+    const data = result.data as ResortMapPinRow[] | null;
+    const error = result.error;
 
     if (error) {
       log.error('Failed to fetch map pins', {
@@ -454,8 +480,8 @@ class SupabaseResortService {
 
     // Transform snake_case database fields to camelCase
     // Filter to only include active resorts (exclude lost/defunct)
-    const pins: ResortMapPin[] = ((data as any[]) || [])
-      .filter((row) => row.is_active === true)
+    const pins: ResortMapPin[] = (data || [])
+      .filter((row: ResortMapPinRow) => row.is_active === true)
       .map((row) => {
         const conditions = conditionsMap.get(row.id);
         return {
@@ -472,8 +498,8 @@ class SupabaseResortService {
           status: this.mapStatus(row.is_open ?? false),
           isActive: row.is_active,
           isLost: row.is_lost,
-          terrainOpenPercent: row.terrain_open_percent,
-          snowfall24h: row.snowfall_24h,
+          terrainOpenPercent: row.terrain_open_percent ?? undefined,
+          snowfall24h: row.snowfall_24h ?? undefined,
           // Add conditions data if available (convert null to undefined for type safety)
           liftsOpen: conditions?.lifts_open,
           liftsTotal: conditions?.lifts_total,

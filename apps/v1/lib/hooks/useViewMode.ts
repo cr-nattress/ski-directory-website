@@ -6,10 +6,13 @@
  * @sideeffects
  * - Reads from localStorage on mount
  * - Writes to localStorage on mode change
+ *
+ * Uses Zod schema validation to ensure stored values are valid view modes.
  */
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { viewModeSchema } from '@/lib/validation/api-schemas';
 
 /** Available view modes for resort listings */
 export type ViewMode = 'cards' | 'map';
@@ -49,8 +52,15 @@ export function useViewMode(defaultMode: ViewMode = 'cards'): UseViewModeResult 
     if (typeof window !== 'undefined') {
       try {
         const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored === 'cards' || stored === 'map') {
-          setModeState(stored);
+        if (stored) {
+          // Validate stored value with Zod schema
+          const result = viewModeSchema.safeParse(stored);
+          if (result.success) {
+            setModeState(result.data);
+          } else {
+            // Invalid value stored, remove it
+            localStorage.removeItem(STORAGE_KEY);
+          }
         }
       } catch {
         // localStorage might be disabled, ignore

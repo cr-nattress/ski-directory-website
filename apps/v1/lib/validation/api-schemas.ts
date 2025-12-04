@@ -63,3 +63,74 @@ export type EventType = z.infer<typeof eventTypeSchema>;
 export type EventContext = z.infer<typeof eventContextSchema>;
 export type EngagementEvent = z.infer<typeof engagementEventSchema>;
 export type EngagementRequest = z.infer<typeof engagementRequestSchema>;
+
+// =============================================================================
+// localStorage Cache Schemas
+// =============================================================================
+
+/**
+ * Pass affiliation enum for validation
+ */
+const passAffiliationSchema = z.enum([
+  'epic',
+  'ikon',
+  'indy',
+  'mountain-collective',
+  'powder-alliance',
+  'ny-ski3',
+  'rcr-rockies',
+  'lest-go',
+  'freedom',
+  'ski-big-3',
+  'local',
+]);
+
+/**
+ * Resort status enum for validation
+ */
+const resortStatusSchema = z.enum(['open', 'closed', 'opening-soon']);
+
+/**
+ * Map pin schema for cached data validation
+ */
+export const mapPinSchema = z.object({
+  id: z.string(),
+  slug: z.string(),
+  name: z.string(),
+  latitude: z.number(),
+  longitude: z.number(),
+  nearestCity: z.string(),
+  stateCode: z.string(),
+  countryCode: z.string(),
+  passAffiliations: z.array(passAffiliationSchema),
+  rating: z.number(),
+  status: resortStatusSchema,
+  isActive: z.boolean(),
+  isLost: z.boolean(),
+  terrainOpenPercent: z.number().optional(),
+  snowfall24h: z.number().optional(),
+  liftsOpen: z.number().optional(),
+  liftsTotal: z.number().optional(),
+  liftsPercentage: z.number().optional(),
+  weatherCondition: z.string().optional(),
+  weatherHigh: z.number().optional(),
+});
+
+/**
+ * Cached map pins data schema with timestamp
+ */
+export const cachedMapPinsSchema = z.object({
+  pins: z.array(mapPinSchema),
+  timestamp: z.number(),
+});
+
+/**
+ * View mode enum for localStorage validation
+ */
+export const viewModeSchema = z.enum(['cards', 'map']);
+
+/**
+ * Type exports for localStorage cache
+ */
+export type CachedMapPins = z.infer<typeof cachedMapPinsSchema>;
+export type ValidatedViewMode = z.infer<typeof viewModeSchema>;

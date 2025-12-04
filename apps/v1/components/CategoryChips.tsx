@@ -19,10 +19,15 @@ export function CategoryChips({
           Browse by experience
         </h2>
 
-        <div className="flex flex-wrap gap-3">
+        <div
+          className="flex flex-wrap gap-3"
+          role="group"
+          aria-label="Filter resorts by experience type"
+        >
           {/* All Resorts chip */}
           <button
             onClick={() => onSelectCategory(null)}
+            aria-pressed={selectedCategory === null}
             className={cn(
               'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 transition-all whitespace-nowrap font-medium text-sm',
               selectedCategory === null
@@ -30,7 +35,7 @@ export function CategoryChips({
                 : 'bg-white border-gray-200 text-gray-700 hover:border-ski-blue hover:text-ski-blue'
             )}
           >
-            <span>🗺️</span>
+            <span aria-hidden="true">🗺️</span>
             <span>All Resorts</span>
           </button>
 
@@ -38,6 +43,7 @@ export function CategoryChips({
             <button
               key={category.id}
               onClick={() => onSelectCategory(category.id)}
+              aria-pressed={selectedCategory === category.id}
               className={cn(
                 'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 transition-all whitespace-nowrap font-medium text-sm',
                 selectedCategory === category.id
@@ -45,7 +51,7 @@ export function CategoryChips({
                   : 'bg-white border-gray-200 text-gray-700 hover:border-ski-blue hover:text-ski-blue'
               )}
             >
-              <span>{category.icon}</span>
+              <span aria-hidden="true">{category.icon}</span>
               <span>{category.label}</span>
             </button>
           ))}

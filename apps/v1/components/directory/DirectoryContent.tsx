@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Resort } from '@/lib/types';
+import { Resort, PassAffiliation } from '@/lib/types';
 import { DirectoryFilters, SortOption, PassFilter, StatusFilter } from './DirectoryFilters';
 import { DirectoryTable } from './DirectoryTable';
 import { DirectoryList } from './DirectoryList';
@@ -127,7 +127,7 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
     // Apply pass filter
     if (passFilter !== 'all') {
       result = result.filter((resort) =>
-        resort.passAffiliations.includes(passFilter as any)
+        resort.passAffiliations.includes(passFilter as PassAffiliation)
       );
     }
 

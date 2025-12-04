@@ -15,7 +15,7 @@
  */
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useRouter } from 'next/navigation';
 import { useMapPins } from '@/lib/hooks/useMapPins';
@@ -97,11 +97,30 @@ export function ResortMapView() {
   const { pins, isLoading, error } = useMapPins();
   const [mapReady, setMapReady] = useState(false);
 
+  // Memoize marker icons to avoid recreating them on every render
+  // Key format: "{passType}:{isLost}" -> Icon
+  const markerIcons = useMemo(() => {
+    if (typeof window === 'undefined' || !mapReady) return new Map();
+
+    const iconCache = new Map<string, ReturnType<typeof createMarkerIcon>>();
+    pins.forEach((pin) => {
+      const primaryPass = pin.passAffiliations[0] || 'local';
+      const key = `${primaryPass}:${pin.isLost}`;
+      if (!iconCache.has(key)) {
+        iconCache.set(key, createMarkerIcon(primaryPass, pin.isLost));
+      }
+    });
+    return iconCache;
+  }, [pins, mapReady]);
+
   // Fix Leaflet default icon issue and signal map is ready
+  // Note: _getIconUrl is an internal Leaflet property not in TypeScript types.
+  // This workaround is documented: https://github.com/Leaflet/Leaflet/issues/4968
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const L = require('leaflet');
-      delete (L.Icon.Default.prototype as any)._getIconUrl;
+      type LeafletIconPrototype = { _getIconUrl?: string };
+      delete (L.Icon.Default.prototype as LeafletIconPrototype)._getIconUrl;
       setMapReady(true);
     }
   }, []);
@@ -146,8 +165,10 @@ export function ResortMapView() {
           // Skip pins without valid coordinates
           if (!pin.latitude || !pin.longitude) return null;
 
+          // Use memoized icon from cache
           const primaryPass = pin.passAffiliations[0] || 'local';
-          const icon = createMarkerIcon(primaryPass, pin.isLost);
+          const iconKey = `${primaryPass}:${pin.isLost}`;
+          const icon = markerIcons.get(iconKey);
 
           if (!icon) return null;
 

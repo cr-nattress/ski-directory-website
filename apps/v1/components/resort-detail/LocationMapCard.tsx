@@ -4,13 +4,14 @@ import type { Resort } from '@/lib/types';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useState } from 'react';
+import type { Icon } from 'leaflet';
 
 interface LocationMapCardProps {
   resort: Resort;
 }
 
 export function LocationMapCard({ resort }: LocationMapCardProps) {
-  const [icon, setIcon] = useState<any>(null);
+  const [icon, setIcon] = useState<Icon | null>(null);
 
   useEffect(() => {
     // Only run on client side
@@ -18,7 +19,10 @@ export function LocationMapCard({ resort }: LocationMapCardProps) {
       const L = require('leaflet');
 
       // Fix for default marker icon in Leaflet with Next.js
-      delete (L.Icon.Default.prototype as any)._getIconUrl;
+      // Note: _getIconUrl is an internal Leaflet property not in TypeScript types.
+      // This workaround is documented: https://github.com/Leaflet/Leaflet/issues/4968
+      type LeafletIconPrototype = { _getIconUrl?: string };
+      delete (L.Icon.Default.prototype as LeafletIconPrototype)._getIconUrl;
 
       const customIcon = L.icon({
         iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',

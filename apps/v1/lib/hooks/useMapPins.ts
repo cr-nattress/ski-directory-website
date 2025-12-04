@@ -11,21 +11,20 @@
  * Use localStorage caching to reduce API calls when users toggle
  * between cards and map views frequently. 5-minute TTL balances
  * freshness with performance.
+ *
+ * Cache data is validated with Zod schemas to ensure data integrity
+ * and handle schema migrations gracefully.
  */
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 import { resortService } from '@/lib/api/resort-service';
 import { ResortMapPin } from '@/lib/types';
+import { cachedMapPinsSchema, type CachedMapPins } from '@/lib/validation/api-schemas';
 
 const CACHE_KEY = 'ski-map-pins';
 /** Cache TTL: 5 minutes */
 const CACHE_DURATION_MS = 5 * 60 * 1000;
-
-interface CachedData {
-  pins: ResortMapPin[];
-  timestamp: number;
-}
 
 interface UseMapPinsResult {
   /** Array of resort map pins */
@@ -60,14 +59,22 @@ export function useMapPins(): UseMapPinsResult {
         const cached = localStorage.getItem(CACHE_KEY);
         if (cached) {
           try {
-            const { pins: cachedPins, timestamp }: CachedData = JSON.parse(cached);
-            if (Date.now() - timestamp < CACHE_DURATION_MS) {
-              setPins(cachedPins);
-              setIsLoading(false);
-              return;
+            const parsed = JSON.parse(cached);
+            // Validate cached data structure with Zod
+            const result = cachedMapPinsSchema.safeParse(parsed);
+            if (result.success) {
+              const { pins: cachedPins, timestamp } = result.data;
+              if (Date.now() - timestamp < CACHE_DURATION_MS) {
+                setPins(cachedPins as ResortMapPin[]);
+                setIsLoading(false);
+                return;
+              }
+            } else {
+              // Schema validation failed - cache is outdated or corrupted
+              localStorage.removeItem(CACHE_KEY);
             }
           } catch {
-            // Invalid cache, continue to fetch
+            // Invalid JSON, remove cache and continue to fetch
             localStorage.removeItem(CACHE_KEY);
           }
         }
