@@ -2,52 +2,28 @@
  * Environment Variable Configuration
  *
  * Centralized, type-safe access to environment variables with validation.
- * Provides compile-time type checking and runtime validation.
+ *
+ * IMPORTANT: For Next.js client-side env vars (NEXT_PUBLIC_*), we must use
+ * direct process.env.NEXT_PUBLIC_X access so the values get inlined at build time.
+ * Using dynamic key access like process.env[key] doesn't work for client bundles.
  */
 
-/**
- * Get a required environment variable, throwing if not set
- */
-function getRequiredEnv(key: string): string {
-  const value = process.env[key];
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${key}`);
-  }
-  return value;
-}
-
-/**
- * Get an optional environment variable with a default value
- */
-function getOptionalEnv(key: string, defaultValue: string): string {
-  return process.env[key] || defaultValue;
-}
-
-/**
- * Parse a boolean environment variable
- */
-function getBooleanEnv(key: string, defaultValue: boolean): boolean {
-  const value = process.env[key];
-  if (value === undefined) return defaultValue;
-  return value === 'true' || value === '1';
-}
-
-/**
- * Parse a numeric environment variable
- */
-function getNumberEnv(key: string, defaultValue: number): number {
-  const value = process.env[key];
-  if (value === undefined) return defaultValue;
-  const parsed = parseInt(value, 10);
-  return isNaN(parsed) ? defaultValue : parsed;
-}
+// Direct access to NEXT_PUBLIC_ vars - these get inlined at build time
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const USE_SUPABASE = process.env.NEXT_PUBLIC_USE_SUPABASE;
+const GRAFANA_LOKI_URL = process.env.NEXT_PUBLIC_GRAFANA_LOKI_URL;
+const GRAFANA_LOKI_USERNAME = process.env.NEXT_PUBLIC_GRAFANA_LOKI_USERNAME;
+const GRAFANA_LOKI_API_TOKEN = process.env.NEXT_PUBLIC_GRAFANA_LOKI_API_TOKEN;
+const GRAFANA_APP_NAME = process.env.NEXT_PUBLIC_GRAFANA_APP_NAME || 'ski-directory-ui';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://skidirectory.com';
 
 /**
  * Environment configuration with typed access
  */
 export const env = {
   /** Current Node environment */
-  NODE_ENV: getOptionalEnv('NODE_ENV', 'development'),
+  NODE_ENV: process.env.NODE_ENV || 'development',
 
   /** Whether running in production */
   isProduction: process.env.NODE_ENV === 'production',
@@ -57,30 +33,25 @@ export const env = {
 
   /** Supabase configuration */
   supabase: {
-    get url() {
-      return getRequiredEnv('NEXT_PUBLIC_SUPABASE_URL');
-    },
-    get anonKey() {
-      return getRequiredEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY');
-    },
-    get serviceRoleKey() {
-      return process.env.SUPABASE_SERVICE_ROLE_KEY;
-    },
+    url: SUPABASE_URL,
+    anonKey: SUPABASE_ANON_KEY,
+    serviceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    useSupabase: USE_SUPABASE === 'true',
   },
 
   /** Grafana/Loki observability configuration */
   grafana: {
-    lokiUrl: process.env.NEXT_PUBLIC_GRAFANA_LOKI_URL,
-    lokiUsername: process.env.NEXT_PUBLIC_GRAFANA_LOKI_USERNAME,
-    lokiToken: process.env.NEXT_PUBLIC_GRAFANA_LOKI_API_TOKEN,
-    appName: getOptionalEnv('NEXT_PUBLIC_GRAFANA_APP_NAME', 'ski-directory-ui'),
+    lokiUrl: GRAFANA_LOKI_URL,
+    lokiUsername: GRAFANA_LOKI_USERNAME,
+    lokiToken: GRAFANA_LOKI_API_TOKEN,
+    appName: GRAFANA_APP_NAME,
     get isConfigured() {
       return !!(this.lokiUrl && this.lokiUsername && this.lokiToken);
     },
   },
 
   /** Site URL for canonical URLs and redirects */
-  siteUrl: getOptionalEnv('NEXT_PUBLIC_SITE_URL', 'https://skidirectory.com'),
+  siteUrl: SITE_URL,
 } as const;
 
 /**

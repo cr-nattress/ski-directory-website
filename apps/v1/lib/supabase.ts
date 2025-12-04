@@ -8,26 +8,51 @@
  * - createServerClient: Server-side client factory (uses service role key)
  * - GCS URL helpers: getCardImageUrl, getHeroImageUrl, getTrailMapUrl
  *
- * @sideeffects
- * - Throws at module load if environment variables missing
- *
  * @dependencies
  * - NEXT_PUBLIC_SUPABASE_URL (required)
  * - NEXT_PUBLIC_SUPABASE_ANON_KEY (required)
  * - SUPABASE_SERVICE_ROLE_KEY (optional, for server-side)
  */
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase";
 import { env } from "@/lib/config/env";
+
+/**
+ * Create Supabase client lazily to avoid build-time errors
+ * when env vars aren't available during static generation
+ */
+let _supabase: SupabaseClient<Database> | null = null;
 
 /**
  * Supabase client for client-side usage
  * Uses the anon key which respects Row Level Security
  */
-export const supabase = createClient<Database>(
-  env.supabase.url,
-  env.supabase.anonKey
-);
+export const supabase: SupabaseClient<Database> = (() => {
+  // Return existing client if already created
+  if (_supabase) return _supabase;
+
+  const url = env.supabase.url;
+  const anonKey = env.supabase.anonKey;
+
+  // Validate required env vars
+  if (!url || !anonKey) {
+    // During build/SSG, env vars may not be available - create a dummy client
+    // that will be replaced at runtime
+    if (typeof window === 'undefined') {
+      // Server-side during build - return a placeholder
+      return createClient<Database>(
+        'https://placeholder.supabase.co',
+        'placeholder-key'
+      );
+    }
+    throw new Error(
+      'Missing Supabase configuration. Ensure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set.'
+    );
+  }
+
+  _supabase = createClient<Database>(url, anonKey);
+  return _supabase;
+})();
 
 /**
  * Create a Supabase client for server-side usage
