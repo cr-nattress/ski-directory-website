@@ -84,9 +84,9 @@ export async function generateMetadata({
     : '/images/og-default.jpg';
 
   // Build geo meta tags
-  const lat = resortData.latitude;
-  const lng = resortData.longitude;
-  const stateCode = resortData.state_slug?.toUpperCase() || params.state.toUpperCase();
+  const lat = resortData.lat;
+  const lng = resortData.lng;
+  const stateCode = resortData.state?.toUpperCase() || params.state.toUpperCase();
 
   return {
     title: `${resortData.name} | ${skiableAcres.toLocaleString()} Acres | ${nearestCity || stateName}`,
