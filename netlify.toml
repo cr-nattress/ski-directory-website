@@ -1,6 +1,6 @@
 [build]
   base = "apps/v1"
-  command = "printenv | grep -i supabase && npm run build"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
