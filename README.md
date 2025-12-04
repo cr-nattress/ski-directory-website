@@ -1,3 +1,17 @@
+---
+title: "Ski Resort Directory"
+description: "Comprehensive guide to 100+ ski resorts across North America with interactive maps, terrain stats, and real-time conditions"
+version: "1.0.0"
+tags:
+  - nextjs
+  - typescript
+  - supabase
+  - ski-resorts
+  - directory
+  - leaflet
+  - tailwindcss
+---
+
 # Ski Resort Directory
 
 **The comprehensive guide to ski resorts across North America**

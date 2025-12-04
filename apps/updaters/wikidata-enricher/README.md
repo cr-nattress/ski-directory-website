@@ -1,3 +1,15 @@
+---
+title: "Wikidata Enricher"
+description: "Enriches resort data using OpenAI to extract Wikipedia content and generate descriptions"
+parent: "ski-resort-directory"
+tags:
+  - updater
+  - wikidata
+  - openai
+  - enrichment
+  - supabase
+---
+
 # Wikidata Enricher
 
 Enriches ski resort data using OpenAI to extract and format Wikipedia data from GCS. Generates compelling taglines, detailed descriptions, and extracts statistics for each resort.

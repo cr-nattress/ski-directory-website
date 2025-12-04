@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
@@ -18,6 +18,17 @@ interface WebcamGalleryProps {
 export function WebcamGallery({ webcams, className }: WebcamGalleryProps) {
   const [selectedWebcam, setSelectedWebcam] = useState<Webcam | null>(null);
   const [loadErrors, setLoadErrors] = useState<Set<string>>(new Set());
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedWebcam) {
+        setSelectedWebcam(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedWebcam]);
 
   if (!webcams || webcams.length === 0) {
     return null;
@@ -47,6 +58,7 @@ export function WebcamGallery({ webcams, className }: WebcamGalleryProps) {
               <button
                 key={`${webcam.name}-${index}`}
                 onClick={() => setSelectedWebcam(webcam)}
+                aria-label={`View ${webcam.name} webcam in full screen`}
                 className="group relative aspect-video bg-neutral-100 rounded-lg overflow-hidden hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 {hasError ? (
@@ -56,13 +68,14 @@ export function WebcamGallery({ webcams, className }: WebcamGalleryProps) {
                     </svg>
                   </div>
                 ) : (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={webcam.image}
                     alt={webcam.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-200"
                     onError={() => handleImageError(webcam.image)}
-                    loading="lazy"
+                    unoptimized
+                    sizes="(max-width: 768px) 50vw, 33vw"
                   />
                 )}
 
@@ -90,6 +103,9 @@ export function WebcamGallery({ webcams, className }: WebcamGalleryProps) {
       {/* Lightbox modal */}
       {selectedWebcam && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="webcam-modal-title"
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
           onClick={() => setSelectedWebcam(null)}
         >
@@ -100,6 +116,7 @@ export function WebcamGallery({ webcams, className }: WebcamGalleryProps) {
             {/* Close button */}
             <button
               onClick={() => setSelectedWebcam(null)}
+              aria-label="Close webcam viewer"
               className="absolute -top-12 right-0 text-white hover:text-neutral-300"
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,18 +125,21 @@ export function WebcamGallery({ webcams, className }: WebcamGalleryProps) {
             </button>
 
             {/* Image */}
-            <div className="bg-neutral-900 rounded-lg overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="bg-neutral-900 rounded-lg overflow-hidden relative aspect-video">
+              <Image
                 src={selectedWebcam.image}
                 alt={selectedWebcam.name}
-                className="w-full h-auto"
+                fill
+                className="object-contain"
+                unoptimized
+                sizes="(max-width: 1024px) 100vw, 896px"
+                priority
               />
             </div>
 
             {/* Info bar */}
             <div className="mt-3 flex items-center justify-between">
-              <span className="text-white font-medium">{selectedWebcam.name}</span>
+              <h2 id="webcam-modal-title" className="text-white font-medium">{selectedWebcam.name}</h2>
               <a
                 href={selectedWebcam.source}
                 target="_blank"

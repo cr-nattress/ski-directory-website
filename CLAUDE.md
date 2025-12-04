@@ -1,3 +1,13 @@
+---
+title: "Claude Code Instructions"
+description: "AI coding assistant context and instructions for the Ski Resort Directory project"
+tags:
+  - claude-code
+  - ai-assistant
+  - development
+  - instructions
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.

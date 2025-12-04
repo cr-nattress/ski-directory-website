@@ -1,0 +1,146 @@
+{
+  "project": "ski-resort-directory",
+  "description": "Comprehensive guide to 100+ ski resorts across North America",
+  "generated": "2025-12-03",
+  "version": "1.0.0",
+  "documents": [
+    {
+      "path": "README.md",
+      "title": "Ski Resort Directory",
+      "description": "Project overview, features, quick start guide",
+      "tags": ["overview", "features", "setup", "nextjs", "typescript", "supabase", "ski-resorts"],
+      "sections": ["features", "quick-start", "project-structure", "architecture", "data-model", "development"],
+      "priority": "high"
+    },
+    {
+      "path": "CLAUDE.md",
+      "title": "Claude Code Instructions",
+      "description": "AI coding assistant context and development patterns",
+      "tags": ["claude-code", "ai-assistant", "development", "patterns", "instructions"],
+      "sections": ["development-commands", "architecture-overview", "common-gotchas", "git-workflow"],
+      "priority": "high"
+    },
+    {
+      "path": "docs/README.md",
+      "title": "Documentation Index",
+      "description": "Central documentation hub with navigation links",
+      "tags": ["documentation", "index", "navigation"],
+      "sections": ["quick-links", "repository-structure"],
+      "priority": "medium"
+    },
+    {
+      "path": "docs/architecture.md",
+      "title": "Architecture Overview",
+      "description": "System design, data flow, and technology stack",
+      "tags": ["architecture", "nextjs", "supabase", "system-design"],
+      "sections": ["tech-stack", "system-architecture", "data-flow", "directory-structure", "key-patterns"],
+      "priority": "high"
+    },
+    {
+      "path": "docs/development.md",
+      "title": "Development Guide",
+      "description": "Setup instructions, commands, and development patterns",
+      "tags": ["development", "setup", "commands", "patterns"],
+      "sections": ["prerequisites", "quick-start", "environment-variables", "available-commands", "common-patterns", "troubleshooting", "git-workflow"],
+      "priority": "high"
+    },
+    {
+      "path": "docs/data-model.md",
+      "title": "Data Model",
+      "description": "Resort schema, TypeScript types, and database structure",
+      "tags": ["data-model", "typescript", "supabase", "schema"],
+      "sections": ["resort-type", "map-pin-type", "conditions-type", "database-tables", "pass-affiliations", "geographic-coverage"],
+      "priority": "high"
+    },
+    {
+      "path": "docs/api-reference.md",
+      "title": "API Reference",
+      "description": "Supabase services, React hooks, and API endpoints",
+      "tags": ["api", "supabase", "hooks", "endpoints"],
+      "sections": ["supabase-resort-service", "react-hooks", "api-endpoints", "validation-schemas"],
+      "priority": "high"
+    },
+    {
+      "path": "docs/updaters.md",
+      "title": "Data Updaters",
+      "description": "Wikipedia, Liftie, and data synchronization tools",
+      "tags": ["updaters", "wikipedia", "liftie", "data-sync"],
+      "sections": ["overview", "liftie-sync", "wikipedia-updater", "wikidata-enricher"],
+      "priority": "medium"
+    },
+    {
+      "path": "backlog/README.md",
+      "title": "Project Backlog",
+      "description": "Epic overview and implementation roadmap",
+      "tags": ["backlog", "epics", "planning", "roadmap"],
+      "sections": ["epic-overview", "implementation-order"],
+      "priority": "medium"
+    },
+    {
+      "path": "apps/v1/README.md",
+      "title": "Main Application (v1)",
+      "description": "Next.js 14 application entry point",
+      "tags": ["nextjs", "application", "frontend"],
+      "sections": ["quick-start", "documentation", "directory-structure", "available-scripts"],
+      "priority": "medium"
+    },
+    {
+      "path": "apps/v1/grafana/README.md",
+      "title": "Grafana Dashboards & Alerts",
+      "description": "Dashboard and alert configurations for observability",
+      "tags": ["grafana", "observability", "dashboards", "alerts", "monitoring"],
+      "sections": ["prerequisites", "dashboards", "alerts", "import-instructions", "logql-reference"],
+      "priority": "low"
+    },
+    {
+      "path": "apps/updaters/liftie-sync/README.md",
+      "title": "Liftie Sync",
+      "description": "Real-time lift status and weather sync tool",
+      "tags": ["updater", "liftie", "conditions", "sync", "supabase"],
+      "sections": ["overview", "setup", "usage", "database-schema", "scheduling"],
+      "priority": "low"
+    },
+    {
+      "path": "apps/updaters/wikipedia-updater/README.md",
+      "title": "Wikipedia Updater",
+      "description": "Wikipedia content fetcher for resort pages",
+      "tags": ["updater", "wikipedia", "content", "gcs"],
+      "sections": ["setup", "usage", "output", "file-locations"],
+      "priority": "low"
+    },
+    {
+      "path": "apps/updaters/wikidata-enricher/README.md",
+      "title": "Wikidata Enricher",
+      "description": "OpenAI-powered content enrichment from Wikipedia",
+      "tags": ["updater", "wikidata", "openai", "enrichment", "supabase"],
+      "sections": ["features", "prerequisites", "setup", "usage"],
+      "priority": "low"
+    },
+    {
+      "path": "schemas/README.md",
+      "title": "Resort Data Schema",
+      "description": "JSON Schema and TypeScript definitions for resort data",
+      "tags": ["schema", "json-schema", "typescript", "data-model"],
+      "sections": ["files", "gcs-structure", "required-fields", "optional-fields", "validation"],
+      "priority": "low"
+    }
+  ],
+  "tag_taxonomy": {
+    "language": ["typescript", "javascript"],
+    "framework": ["nextjs", "react", "tailwindcss"],
+    "database": ["supabase", "postgresql"],
+    "infrastructure": ["gcs", "grafana", "observability"],
+    "domain": ["ski-resorts", "directory", "maps", "conditions"],
+    "type": ["overview", "guide", "reference", "api-doc", "schema"]
+  },
+  "retrieval_hints": {
+    "setup_questions": ["README.md", "docs/development.md", "CLAUDE.md"],
+    "architecture_questions": ["docs/architecture.md", "CLAUDE.md"],
+    "api_questions": ["docs/api-reference.md", "docs/data-model.md"],
+    "data_questions": ["docs/data-model.md", "schemas/README.md"],
+    "conditions_questions": ["docs/updaters.md", "apps/updaters/liftie-sync/README.md"],
+    "troubleshooting": ["docs/development.md", "CLAUDE.md"],
+    "observability_questions": ["apps/v1/grafana/README.md", "docs/architecture.md"],
+    "planning_questions": ["backlog/README.md"]
+  }
+}

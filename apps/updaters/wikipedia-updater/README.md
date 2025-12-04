@@ -1,3 +1,14 @@
+---
+title: "Wikipedia Updater"
+description: "Fetches Wikipedia data and generates resort README files for GCS"
+parent: "ski-resort-directory"
+tags:
+  - updater
+  - wikipedia
+  - content
+  - gcs
+---
+
 # Wikipedia Updater
 
 Fetches Wikipedia data for all ski resorts in the database and generates README files that are uploaded to Google Cloud Storage.

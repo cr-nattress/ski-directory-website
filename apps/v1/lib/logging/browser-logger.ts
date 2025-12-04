@@ -208,12 +208,9 @@ class BrowserLokiLogger {
     // Create Basic auth header
     const auth = btoa(`${config.lokiUsername}:${config.lokiToken}`);
 
-    // Try sendBeacon first (for page unload scenarios)
-    if (navigator.sendBeacon) {
-      const blob = new Blob([body], { type: 'application/json' });
-      // Note: sendBeacon doesn't support custom headers, so we need to use fetch for auth
-      // Fall through to fetch
-    }
+    // Note: sendBeacon doesn't support custom headers for auth,
+    // so we use fetch instead. sendBeacon would be preferred for
+    // page unload scenarios but requires a different auth approach.
 
     try {
       const response = await fetch(url, {

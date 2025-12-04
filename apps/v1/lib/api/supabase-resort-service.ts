@@ -434,8 +434,18 @@ class SupabaseResortService {
         }> | null
       };
 
+    // Define the conditions type explicitly
+    type ConditionsData = {
+      resort_id: string;
+      lifts_open: number;
+      lifts_total: number;
+      lifts_percentage: number;
+      weather_condition: string | null;
+      weather_high: number | null;
+    };
+
     // Create a map of resort_id to conditions for quick lookup
-    const conditionsMap = new Map<string, typeof conditionsData extends Array<infer T> ? T : never>();
+    const conditionsMap = new Map<string, ConditionsData>();
     if (conditionsData) {
       for (const cond of conditionsData) {
         conditionsMap.set(cond.resort_id, cond);
@@ -464,12 +474,12 @@ class SupabaseResortService {
           isLost: row.is_lost,
           terrainOpenPercent: row.terrain_open_percent,
           snowfall24h: row.snowfall_24h,
-          // Add conditions data if available
+          // Add conditions data if available (convert null to undefined for type safety)
           liftsOpen: conditions?.lifts_open,
           liftsTotal: conditions?.lifts_total,
           liftsPercentage: conditions?.lifts_percentage,
-          weatherCondition: conditions?.weather_condition,
-          weatherHigh: conditions?.weather_high,
+          weatherCondition: conditions?.weather_condition ?? undefined,
+          weatherHigh: conditions?.weather_high ?? undefined,
         };
       });
 

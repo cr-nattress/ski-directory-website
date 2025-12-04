@@ -1,3 +1,13 @@
+---
+title: "Resort Data Schema"
+description: "JSON Schema and TypeScript definitions for resort data files"
+tags:
+  - schema
+  - json-schema
+  - typescript
+  - data-model
+---
+
 # Resort Data Schema
 
 This directory contains the schema definitions for resort data files stored in GCS.

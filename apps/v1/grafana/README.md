@@ -1,3 +1,15 @@
+---
+title: "Grafana Dashboards & Alerts"
+description: "Dashboard and alert configurations for Ski Directory UI observability"
+parent: "ski-resort-directory"
+tags:
+  - grafana
+  - observability
+  - dashboards
+  - alerts
+  - monitoring
+---
+
 # Grafana Dashboards & Alerts
 
 This directory contains Grafana dashboard and alert configurations for the Ski Directory UI observability system.

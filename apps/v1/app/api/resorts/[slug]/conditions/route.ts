@@ -13,6 +13,8 @@
  */
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { resortSlugSchema } from '@/lib/validation/api-schemas';
+import { checkRateLimit, RATE_LIMITS } from '@/lib/middleware/rate-limit';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -28,14 +30,29 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  // Check rate limit
+  const rateLimitResponse = checkRateLimit(request, RATE_LIMITS.conditions);
+  if (rateLimitResponse) {
+    return rateLimitResponse;
+  }
+
   try {
     const { slug } = await params;
+
+    // Validate slug parameter with Zod
+    const slugResult = resortSlugSchema.safeParse(slug);
+    if (!slugResult.success) {
+      return NextResponse.json(
+        { error: 'Invalid slug format' },
+        { status: 400 }
+      );
+    }
 
     // First get the resort ID from the slug
     const { data: resort, error: resortError } = await supabase
       .from('resorts')
       .select('id')
-      .eq('slug', slug)
+      .eq('slug', slugResult.data)
       .single();
 
     if (resortError || !resort) {

@@ -1,6 +1,16 @@
+---
+title: "Project Backlog"
+description: "Epic overview and implementation roadmap for the Ski Resort Directory"
+tags:
+  - backlog
+  - epics
+  - planning
+  - roadmap
+---
+
 # Project Backlog
 
-This folder contains the backlog for the Colorado Ski Resort Directory application. Each epic represents a major feature or initiative, broken down into user stories.
+This folder contains the backlog for the Ski Resort Directory application. Each epic represents a major feature or initiative, broken down into user stories.
 
 ## Epic Overview
 

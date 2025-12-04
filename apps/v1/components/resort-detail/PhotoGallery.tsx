@@ -2,8 +2,9 @@
 
 import { Resort, ResortImage } from '@/lib/types';
 import { getSortedImages, PLACEHOLDER_IMAGE } from '@/lib/utils/resort-images';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { X } from 'lucide-react';
+import Image from 'next/image';
 
 interface PhotoGalleryProps {
   resort: Resort;
@@ -39,6 +40,22 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
     setLightboxOpen(false);
   };
 
+  // Close lightbox on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft' && currentImageIndex > 0) {
+        setCurrentImageIndex(currentImageIndex - 1);
+      } else if (e.key === 'ArrowRight' && currentImageIndex < images.length - 1) {
+        setCurrentImageIndex(currentImageIndex + 1);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, currentImageIndex, images.length]);
+
   return (
     <>
       {/* Desktop Gallery Grid */}
@@ -46,13 +63,18 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
         {/* Large main image */}
         <button
           onClick={() => openLightbox(0)}
+          aria-label={`View ${images[0].alt} in full screen`}
           className="col-span-2 row-span-2 relative group overflow-hidden"
         >
-          <img
+          <Image
             src={getImageUrl(images[0].url)}
             alt={images[0].alt}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
             onError={() => handleImageError(images[0].url)}
+            unoptimized
+            sizes="(max-width: 1024px) 50vw, 400px"
+            priority
           />
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
         </button>
@@ -62,13 +84,17 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
           <button
             key={index}
             onClick={() => openLightbox(index + 1)}
+            aria-label={`View ${image.alt} in full screen`}
             className="relative group overflow-hidden aspect-square"
           >
-            <img
+            <Image
               src={getImageUrl(image.url)}
               alt={image.alt}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
               onError={() => handleImageError(image.url)}
+              unoptimized
+              sizes="(max-width: 1024px) 25vw, 200px"
             />
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
           </button>
@@ -84,12 +110,16 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
       </div>
 
       {/* Mobile Gallery - Single swipeable image */}
-      <div className="sm:hidden relative rounded-lg overflow-hidden">
-        <img
+      <div className="sm:hidden relative rounded-lg overflow-hidden h-64">
+        <Image
           src={getImageUrl(images[0].url)}
           alt={images[0].alt}
-          className="w-full h-64 object-cover"
+          fill
+          className="object-cover"
           onError={() => handleImageError(images[0].url)}
+          unoptimized
+          sizes="100vw"
+          priority
         />
         <button
           onClick={() => openLightbox(0)}
@@ -102,22 +132,30 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
       {/* Lightbox Modal */}
       {lightboxOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Photo gallery viewer - ${images[currentImageIndex].alt}`}
           className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center"
           onClick={closeLightbox}
         >
           <button
             onClick={closeLightbox}
+            aria-label="Close photo gallery"
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
           >
             <X className="w-8 h-8" />
           </button>
 
-          <div className="relative max-w-7xl max-h-screen p-4" onClick={(e) => e.stopPropagation()}>
-            <img
+          <div className="relative max-w-7xl w-full h-[90vh] p-4" onClick={(e) => e.stopPropagation()}>
+            <Image
               src={getImageUrl(images[currentImageIndex].url)}
               alt={images[currentImageIndex].alt}
-              className="max-w-full max-h-[90vh] object-contain mx-auto"
+              fill
+              className="object-contain"
               onError={() => handleImageError(images[currentImageIndex].url)}
+              unoptimized
+              sizes="100vw"
+              priority
             />
 
             {/* Image counter */}
@@ -132,6 +170,7 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
                   e.stopPropagation();
                   setCurrentImageIndex(currentImageIndex - 1);
                 }}
+                aria-label="Previous photo"
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-colors"
               >
                 ←
@@ -144,6 +183,7 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
                   e.stopPropagation();
                   setCurrentImageIndex(currentImageIndex + 1);
                 }}
+                aria-label="Next photo"
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-colors"
               >
                 →

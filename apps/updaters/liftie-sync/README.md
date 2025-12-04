@@ -1,6 +1,18 @@
+---
+title: "Liftie Sync"
+description: "Syncs real-time lift status, weather, and webcam data to Supabase"
+parent: "ski-resort-directory"
+tags:
+  - updater
+  - liftie
+  - conditions
+  - sync
+  - supabase
+---
+
 # Liftie Sync
 
-Syncs real-time lift status, weather, and webcam data from Liftie (stored in GCS) to the Supabase `resort_conditions` table.
+Syncs real-time lift status, weather, and webcam data from Liftie.info to the Supabase `resort_conditions` table.
 
 ## Overview
 

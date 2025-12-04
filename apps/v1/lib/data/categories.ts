@@ -51,7 +51,7 @@ export const categories: Category[] = [
     label: 'Near Denver',
     icon: '📍',
     filter: (resort: Resort) =>
-      resort.driveTimeFromDenver <= 120 ||
+      (resort.driveTimeFromDenver !== undefined && resort.driveTimeFromDenver <= 120) ||
       resort.tags.includes('near-denver'),
   },
   {
@@ -59,6 +59,8 @@ export const categories: Category[] = [
     label: 'I-70 Corridor',
     icon: '🛣️',
     filter: (resort: Resort) =>
+      resort.driveTimeFromDenver !== undefined &&
+      resort.distanceFromDenver !== undefined &&
       resort.driveTimeFromDenver <= 150 &&
       resort.distanceFromDenver <= 100,
   },

@@ -11,6 +11,11 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import {
+  engagementRequestSchema,
+  type EngagementEvent,
+} from '@/lib/validation/api-schemas';
+import { checkRateLimit, RATE_LIMITS } from '@/lib/middleware/rate-limit';
 
 // Use service role key for server-side inserts
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -18,77 +23,6 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-/**
- * Event types
- */
-type EventType = 'impression' | 'click' | 'dwell';
-
-/**
- * Context where event occurred
- */
-type EventContext = 'landing' | 'directory' | 'search' | 'themed_section' | 'map';
-
-/**
- * Single engagement event
- */
-interface EngagementEvent {
-  resort_id: string;
-  resort_slug: string;
-  event_type: EventType;
-  context?: EventContext;
-  section_id?: string;
-  position_index?: number;
-  page_number?: number;
-  session_id?: string;
-  dwell_seconds?: number;
-}
-
-/**
- * Request body for batch events
- */
-interface EngagementRequestBody {
-  events: EngagementEvent[];
-}
-
-/**
- * Validate event type
- */
-function isValidEventType(type: string): type is EventType {
-  return ['impression', 'click', 'dwell'].includes(type);
-}
-
-/**
- * Validate context
- */
-function isValidContext(context: string): context is EventContext {
-  return ['landing', 'directory', 'search', 'themed_section', 'map'].includes(context);
-}
-
-/**
- * Validate a single event
- */
-function validateEvent(event: unknown): event is EngagementEvent {
-  if (typeof event !== 'object' || event === null) return false;
-
-  const e = event as Record<string, unknown>;
-
-  // Required fields
-  if (typeof e.resort_id !== 'string' || !e.resort_id) return false;
-  if (typeof e.resort_slug !== 'string' || !e.resort_slug) return false;
-  if (typeof e.event_type !== 'string' || !isValidEventType(e.event_type)) return false;
-
-  // Optional fields with type validation
-  if (e.context !== undefined && (typeof e.context !== 'string' || !isValidContext(e.context))) {
-    return false;
-  }
-  if (e.section_id !== undefined && typeof e.section_id !== 'string') return false;
-  if (e.position_index !== undefined && typeof e.position_index !== 'number') return false;
-  if (e.page_number !== undefined && typeof e.page_number !== 'number') return false;
-  if (e.session_id !== undefined && typeof e.session_id !== 'string') return false;
-  if (e.dwell_seconds !== undefined && typeof e.dwell_seconds !== 'number') return false;
-
-  return true;
-}
 
 /**
  * POST /api/engagement
@@ -96,49 +30,39 @@ function validateEvent(event: unknown): event is EngagementEvent {
  * Log one or more engagement events
  */
 export async function POST(request: NextRequest) {
+  // Check rate limit
+  const rateLimitResponse = checkRateLimit(request, RATE_LIMITS.engagement);
+  if (rateLimitResponse) {
+    return rateLimitResponse;
+  }
+
   try {
-    const body = await request.json() as EngagementRequestBody;
+    const body = await request.json();
 
-    // Validate request body
-    if (!body.events || !Array.isArray(body.events)) {
+    // Validate request body with Zod
+    const parseResult = engagementRequestSchema.safeParse(body);
+
+    if (!parseResult.success) {
+      // Format Zod issues into readable error messages
+      const details = parseResult.error.issues
+        .map((issue) => `${issue.path.join('.')}: ${issue.message}`)
+        .join('; ');
+
       return NextResponse.json(
-        { error: 'Missing or invalid events array' },
+        {
+          error: 'Validation failed',
+          details,
+        },
         { status: 400 }
       );
     }
 
-    // Limit batch size to prevent abuse
-    if (body.events.length > 100) {
-      return NextResponse.json(
-        { error: 'Maximum 100 events per request' },
-        { status: 400 }
-      );
-    }
-
-    // Validate each event
-    const validEvents: EngagementEvent[] = [];
-    const invalidIndices: number[] = [];
-
-    for (let i = 0; i < body.events.length; i++) {
-      if (validateEvent(body.events[i])) {
-        validEvents.push(body.events[i]);
-      } else {
-        invalidIndices.push(i);
-      }
-    }
-
-    // If no valid events, return error
-    if (validEvents.length === 0) {
-      return NextResponse.json(
-        { error: 'No valid events provided', invalidIndices },
-        { status: 400 }
-      );
-    }
+    const { events } = parseResult.data;
 
     // Insert events into database
     const { error } = await supabase
       .from('resort_impressions')
-      .insert(validEvents);
+      .insert(events as EngagementEvent[]);
 
     if (error) {
       console.error('Error inserting engagement events:', error);
@@ -150,11 +74,17 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      logged: validEvents.length,
-      skipped: invalidIndices.length,
+      logged: events.length,
     });
-
   } catch (error) {
+    // Handle JSON parse errors
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { error: 'Invalid JSON in request body' },
+        { status: 400 }
+      );
+    }
+
     console.error('Engagement API error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
