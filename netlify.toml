@@ -1,12 +1,14 @@
 [build]
   base = "apps/v1"
-  command = "npm run build"
+  command = "rm -rf .next && npm run build"
   publish = ".next"
 
 [build.environment]
   # These will be overridden by Netlify UI environment variables
   # but serve as fallback documentation
   NEXT_PUBLIC_USE_SUPABASE = "true"
+  # Disable Next.js telemetry during build
+  NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
