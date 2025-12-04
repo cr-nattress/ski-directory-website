@@ -1,0 +1,17 @@
+# robots.txt for skidirectory.org
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow API routes
+Disallow: /api/
+
+# Disallow Next.js internal routes
+Disallow: /_next/
+
+# Disallow any admin/internal pages
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://skidirectory.org/sitemap.xml

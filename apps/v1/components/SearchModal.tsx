@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { X, MapPin, Calendar, Users, Search } from 'lucide-react';
 import { useAllResorts } from '@/lib/hooks';
+import { trackSearch, trackFilterSelection } from '@/lib/analytics';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -54,8 +55,21 @@ export function SearchModal({ isOpen, onClose, initialFilters, onSearch }: Searc
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Track the search with filter info
+    const searchQuery = [
+      filters.where && `where:${filters.where}`,
+      filters.when && `when:${filters.when}`,
+      filters.who && `who:${filters.who}`,
+    ].filter(Boolean).join(',') || 'all';
+    trackSearch(searchQuery, resorts.length);
     onSearch(filters);
     onClose();
+  };
+
+  const handleFilterChange = (filterType: string, value: string) => {
+    if (value) {
+      trackFilterSelection(filterType, value);
+    }
   };
 
   return (
@@ -90,7 +104,10 @@ export function SearchModal({ isOpen, onClose, initialFilters, onSearch }: Searc
           <select
             id="modal-where"
             value={filters.where}
-            onChange={(e) => setFilters({ ...filters, where: e.target.value })}
+            onChange={(e) => {
+              handleFilterChange('where', e.target.value);
+              setFilters({ ...filters, where: e.target.value });
+            }}
             className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-ski-blue focus:border-ski-blue"
           >
             <option value="">All Resorts</option>
@@ -111,7 +128,10 @@ export function SearchModal({ isOpen, onClose, initialFilters, onSearch }: Searc
           <select
             id="modal-when"
             value={filters.when}
-            onChange={(e) => setFilters({ ...filters, when: e.target.value })}
+            onChange={(e) => {
+              handleFilterChange('when', e.target.value);
+              setFilters({ ...filters, when: e.target.value });
+            }}
             className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-ski-blue focus:border-ski-blue"
           >
             <option value="">Flexible dates</option>
@@ -130,7 +150,10 @@ export function SearchModal({ isOpen, onClose, initialFilters, onSearch }: Searc
           <select
             id="modal-who"
             value={filters.who}
-            onChange={(e) => setFilters({ ...filters, who: e.target.value })}
+            onChange={(e) => {
+              handleFilterChange('who', e.target.value);
+              setFilters({ ...filters, who: e.target.value });
+            }}
             className="w-full px-4 py-3 min-h-[48px] border border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-ski-blue focus:border-ski-blue"
           >
             <option value="">Any skill level</option>

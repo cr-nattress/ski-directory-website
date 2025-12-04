@@ -10,9 +10,12 @@ import { TrailMapCard } from './TrailMapCard';
 import { WeatherForecastCard } from './WeatherForecastCard';
 import { ConditionsSection } from './ConditionsSection';
 import { MobileResortSections } from './MobileResortSections';
-import { BreadcrumbJsonLd } from '@/components/schema';
+import { RelatedResortsSection } from './RelatedResortsSection';
+import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 import { FeatureFlag } from '@/components/FeatureFlag';
+import { generateResortFAQs } from '@/lib/utils/generate-resort-faqs';
+import { Suspense } from 'react';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://skidirectory.org';
 
@@ -34,10 +37,14 @@ export function ResortDetail({ resort }: ResortDetailProps) {
     { name: resort.name, url: `${BASE_URL}/${resort.countryCode}/${resort.stateCode}/${resort.slug}` },
   ];
 
+  // Generate FAQ data for structured data
+  const faqs = generateResortFAQs(resort);
+
   return (
     <div className="min-h-screen bg-white">
       <ResortStructuredData resort={resort} />
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      <FAQJsonLd faqs={faqs} />
 
       <PageWrapper headerVariant="solid" resortSlug={resort.slug} />
 
@@ -145,6 +152,11 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                   <TrailMapCard resort={resort} />
                 </section>
               </FeatureFlag>
+
+              {/* Related Resorts */}
+              <Suspense fallback={<div className="h-48 flex items-center justify-center text-gray-500">Loading related resorts...</div>}>
+                <RelatedResortsSection resort={resort} />
+              </Suspense>
             </div>
           </div>
 

@@ -1,5 +1,8 @@
+'use client';
+
 import { Resort } from '@/lib/types';
 import { Facebook, Instagram, Youtube, Music, Twitter } from 'lucide-react';
+import { trackSocialLinkClick } from '@/lib/analytics';
 
 interface SocialMediaCardProps {
   resort: Resort;
@@ -68,6 +71,7 @@ export function SocialMediaCard({ resort }: SocialMediaCardProps) {
               className={`flex flex-col items-center justify-center p-3 rounded-lg bg-gray-50 transition-all ${link.color} hover:bg-gray-100`}
               aria-label={`Follow on ${link.name}`}
               title={`Follow on ${link.name}`}
+              onClick={() => trackSocialLinkClick(link.name, resort.name)}
             >
               <Icon className="w-6 h-6" />
             </a>

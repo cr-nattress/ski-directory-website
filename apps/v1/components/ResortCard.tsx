@@ -21,6 +21,7 @@ import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { useLogger } from '@/lib/hooks/useLogger';
 import { featureFlags } from '@/lib/config/feature-flags';
+import { trackResortClick } from '@/lib/analytics';
 
 /** Lift conditions data from Liftie integration */
 export interface LiftConditions {
@@ -135,6 +136,7 @@ export function ResortCard({ resort, liftConditions }: ResortCardProps) {
     <Link
       href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
       className="card group cursor-pointer"
+      onClick={() => trackResortClick(resort.name, 'card')}
     >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">

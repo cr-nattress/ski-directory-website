@@ -1,8 +1,26 @@
 'use client';
 
 import Script from 'next/script';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, Suspense } from 'react';
 
-const GA_MEASUREMENT_ID = 'G-JE4S4F12GX';
+export const GA_MEASUREMENT_ID = 'G-JE4S4F12GX';
+
+function GoogleAnalyticsTracking() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (pathname && window.gtag) {
+      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+      window.gtag('config', GA_MEASUREMENT_ID, {
+        page_path: url,
+      });
+    }
+  }, [pathname, searchParams]);
+
+  return null;
+}
 
 export function GoogleAnalytics() {
   return (
@@ -19,6 +37,9 @@ export function GoogleAnalytics() {
           gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
+      <Suspense fallback={null}>
+        <GoogleAnalyticsTracking />
+      </Suspense>
     </>
   );
 }

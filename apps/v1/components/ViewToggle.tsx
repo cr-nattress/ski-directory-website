@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 import { LayoutGrid, Map } from 'lucide-react';
 import { useLogger } from '@/lib/hooks/useLogger';
+import { trackViewModeChange } from '@/lib/analytics';
 
 export type ViewMode = 'cards' | 'map';
 
@@ -20,6 +21,7 @@ export function ViewToggle({ value, onChange }: ViewToggleProps) {
         previousMode: value,
         newMode,
       });
+      trackViewModeChange(newMode);
     }
     onChange(newMode);
   };

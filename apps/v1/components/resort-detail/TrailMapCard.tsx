@@ -1,6 +1,9 @@
+'use client';
+
 import { Resort } from '@/lib/types';
 import { Map, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import { trackTrailMapView } from '@/lib/analytics';
 
 interface TrailMapCardProps {
   resort: Resort;
@@ -24,6 +27,7 @@ export function TrailMapCard({ resort }: TrailMapCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="text-ski-blue hover:text-blue-700 transition-colors text-sm flex items-center gap-1"
+            onClick={() => trackTrailMapView(resort.name)}
           >
             <span>View Full Size</span>
             <ExternalLink className="w-4 h-4" />

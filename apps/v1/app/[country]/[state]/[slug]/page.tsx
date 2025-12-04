@@ -34,24 +34,74 @@ export async function generateMetadata({
   const skiableAcres = resortData.stats?.skiableAcres || 0;
   const verticalDrop = resortData.stats?.verticalDrop || 0;
   const runsCount = resortData.stats?.runsCount || 0;
+  const liftsCount = resortData.stats?.liftsCount || 0;
+  const nearestCity = resortData.nearest_city || '';
+  const passAffiliations = resortData.pass_affiliations || [];
 
-  const description = `${resortData.name} ski resort in ${resortData.nearest_city || stateName}. ${skiableAcres.toLocaleString()} skiable acres, ${verticalDrop.toLocaleString()}' vertical drop, ${runsCount} runs. Current conditions and trail maps.`;
+  // Build a more comprehensive, keyword-rich description
+  const descriptionParts = [
+    `${resortData.name} ski resort`,
+    nearestCity ? `near ${nearestCity}, ${stateName}` : `in ${stateName}`,
+  ];
+
+  if (skiableAcres > 0) {
+    descriptionParts.push(`offers ${skiableAcres.toLocaleString()} skiable acres`);
+  }
+  if (runsCount > 0) {
+    descriptionParts.push(`${runsCount} runs`);
+  }
+  if (verticalDrop > 0) {
+    descriptionParts.push(`${verticalDrop.toLocaleString()}ft vertical drop`);
+  }
+  if (passAffiliations.length > 0) {
+    const passes = passAffiliations.map((p: string) => {
+      switch (p) {
+        case 'epic': return 'Epic Pass';
+        case 'ikon': return 'Ikon Pass';
+        default: return p.charAt(0).toUpperCase() + p.slice(1);
+      }
+    }).join(', ');
+    descriptionParts.push(`Accepts ${passes}`);
+  }
+
+  const description = descriptionParts.join('. ') + '.';
+
+  // Generate keywords
+  const keywords = [
+    resortData.name,
+    `${resortData.name} ski resort`,
+    `${resortData.name} skiing`,
+    `skiing ${nearestCity}`,
+    `ski resorts ${stateName}`,
+    `${stateName} skiing`,
+    nearestCity,
+    ...passAffiliations.map((p: string) => `${p} pass resorts`),
+  ].filter(Boolean);
 
   // Get hero image URL for OG image
   const heroImageUrl = resortData.asset_path
     ? getHeroImageUrl(resortData.asset_path)
     : '/images/og-default.jpg';
 
+  // Build geo meta tags
+  const lat = resortData.latitude;
+  const lng = resortData.longitude;
+  const stateCode = resortData.state_slug?.toUpperCase() || params.state.toUpperCase();
+
   return {
-    title: `${resortData.name} Ski Resort`,
+    title: `${resortData.name} | ${skiableAcres.toLocaleString()} Acres | ${nearestCity || stateName}`,
     description,
+    keywords,
     alternates: {
       canonical: `/${params.country}/${params.state}/${params.slug}`,
     },
     openGraph: {
-      title: `${resortData.name} | ${stateName} Ski Resort`,
+      title: `${resortData.name} Ski Resort`,
       description,
       type: 'website',
+      url: `https://skidirectory.org/${params.country}/${params.state}/${params.slug}`,
+      siteName: 'Ski Directory',
+      locale: 'en_US',
       images: [
         {
           url: heroImageUrl,
@@ -63,9 +113,17 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${resortData.name} | ${stateName} Ski Resort`,
+      title: `${resortData.name} Ski Resort`,
       description,
       images: [heroImageUrl],
+    },
+    other: {
+      'geo.region': `US-${stateCode}`,
+      'geo.placename': nearestCity || stateName,
+      ...(lat && lng ? {
+        'geo.position': `${lat};${lng}`,
+        'ICBM': `${lat}, ${lng}`,
+      } : {}),
     },
   };
 }

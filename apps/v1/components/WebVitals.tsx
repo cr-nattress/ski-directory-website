@@ -2,6 +2,7 @@
 
 import { useReportWebVitals } from 'next/web-vitals';
 import { logger } from '@/lib/logging';
+import { GA_MEASUREMENT_ID } from '@/lib/analytics';
 
 /**
  * Core Web Vitals monitoring component
@@ -10,6 +11,7 @@ import { logger } from '@/lib/logging';
  * Logs metrics to:
  * - Console in development
  * - Grafana Cloud Loki when observability logging is enabled
+ * - Google Analytics 4 for performance monitoring
  */
 export function WebVitals() {
   useReportWebVitals((metric) => {
@@ -28,6 +30,22 @@ export function WebVitals() {
       navigationType: metric.navigationType,
       page: typeof window !== 'undefined' ? window.location.pathname : '',
     });
+
+    // Send to Google Analytics 4
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', metric.name, {
+        event_category: 'Web Vitals',
+        event_label: metric.id,
+        // CLS value needs to be multiplied by 1000 for GA4 (expects integer)
+        value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+        non_interaction: true,
+        // Custom dimensions for analysis
+        metric_id: metric.id,
+        metric_value: metric.value,
+        metric_delta: metric.delta,
+        metric_rating: metric.rating, // 'good', 'needs-improvement', 'poor'
+      });
+    }
   });
 
   return null;
