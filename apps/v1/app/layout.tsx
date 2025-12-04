@@ -67,8 +67,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans pb-20 md:pb-0">
+      <head>
         <GoogleAnalytics />
+      </head>
+      <body className="font-sans pb-20 md:pb-0">
         <WebVitals />
         <ErrorBoundary>
           {children}
