@@ -4,6 +4,7 @@ import "./globals.css";
 import { WebVitals } from "@/components/WebVitals";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className="font-sans pb-20 md:pb-0">
+        <GoogleAnalytics />
         <WebVitals />
         <ErrorBoundary>
           {children}

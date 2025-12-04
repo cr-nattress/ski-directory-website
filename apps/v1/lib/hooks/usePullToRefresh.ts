@@ -9,7 +9,7 @@ interface UsePullToRefreshOptions {
 }
 
 interface UsePullToRefreshReturn {
-  containerRef: React.RefObject<HTMLDivElement | null>;
+  containerRef: React.RefObject<HTMLDivElement>;
   isPulling: boolean;
   isRefreshing: boolean;
   pullDistance: number;
