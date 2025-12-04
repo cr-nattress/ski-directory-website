@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -23,19 +24,22 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
           : 'relative bg-white border-b border-gray-200'
       )}
     >
-      <nav className="container-custom py-4">
+      <nav className="container-custom py-1.5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <Link
               href="/"
-              className={cn(
-                'font-display text-2xl font-bold flex items-center gap-2',
-                isOverlay ? 'text-white' : 'text-ski-blue'
-              )}
+              className="flex items-center"
             >
-              <span>⛷️</span>
-              <span>Ski Directory</span>
+              <Image
+                src="/images/logo.png"
+                alt="Ski Directory logo"
+                width={215}
+                height={54}
+                priority
+                unoptimized
+              />
             </Link>
           </div>
 
