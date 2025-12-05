@@ -22,9 +22,11 @@ const LocationMapCardDynamic = dynamic(
 
 interface LocationMapCardWrapperProps {
   resort: Resort;
+  /** When true, card fills parent height (for hero alignment) */
+  fillHeight?: boolean;
 }
 
-export function LocationMapCardWrapper({ resort }: LocationMapCardWrapperProps) {
+export function LocationMapCardWrapper({ resort, fillHeight = false }: LocationMapCardWrapperProps) {
   const [skiShops, setSkiShops] = useState<SkiShop[]>([]);
 
   useEffect(() => {
@@ -43,5 +45,5 @@ export function LocationMapCardWrapper({ resort }: LocationMapCardWrapperProps) 
     fetchSkiShops();
   }, [resort.slug]);
 
-  return <LocationMapCardDynamic resort={resort} skiShops={skiShops} />;
+  return <LocationMapCardDynamic resort={resort} skiShops={skiShops} fillHeight={fillHeight} />;
 }

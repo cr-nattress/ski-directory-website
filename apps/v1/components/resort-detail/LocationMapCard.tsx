@@ -12,6 +12,8 @@ import { Globe, Phone } from 'lucide-react';
 interface LocationMapCardProps {
   resort: Resort;
   skiShops?: SkiShop[];
+  /** When true, card fills parent height (for hero alignment) */
+  fillHeight?: boolean;
 }
 
 /**
@@ -29,7 +31,7 @@ function FitBounds({ bounds }: { bounds: LatLngBounds | null }) {
   return null;
 }
 
-export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps) {
+export function LocationMapCard({ resort, skiShops = [], fillHeight = false }: LocationMapCardProps) {
   const [resortIcon, setResortIcon] = useState<Icon | null>(null);
   const [shopIcon, setShopIcon] = useState<Icon | null>(null);
 
@@ -106,9 +108,9 @@ export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps)
 
   if (!resortIcon) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6">
+      <div className={`bg-white border border-gray-200 rounded-lg shadow-md p-6 ${fillHeight ? 'h-full flex flex-col' : ''}`}>
         <h3 className="text-lg font-semibold mb-2">Location</h3>
-        <div className="h-[300px] w-full bg-gray-100 rounded-lg flex items-center justify-center">
+        <div className={`${fillHeight ? 'flex-1' : 'h-[300px]'} w-full bg-gray-100 rounded-lg flex items-center justify-center`}>
           <p className="text-gray-500">Loading map...</p>
         </div>
       </div>
@@ -116,11 +118,11 @@ export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps)
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-      <div className="p-6 pb-4">
+    <div className={`bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden ${fillHeight ? 'h-full flex flex-col' : ''}`}>
+      <div className="p-4 pb-2">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-semibold mb-2">Location</h3>
+            <h3 className="text-lg font-semibold mb-1">Location</h3>
             <p className="text-sm text-gray-600">{resort.nearestCity}</p>
           </div>
           {shopsWithCoords.length > 0 && (
@@ -134,7 +136,7 @@ export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps)
         </div>
       </div>
 
-      <div className="h-[300px] w-full">
+      <div className={`${fillHeight ? 'flex-1 min-h-0' : 'h-[300px]'} w-full`}>
         <MapContainer
           center={[resort.location.lat, resort.location.lng]}
           zoom={13}
@@ -178,12 +180,15 @@ export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps)
         </MapContainer>
       </div>
 
-      <div className="p-6 pt-4 bg-gray-50 border-t border-gray-200">
-        <div className="flex justify-between items-center text-sm">
-          <span className="text-gray-600">Distance from {resort.majorCityName}</span>
-          <span className="font-semibold">{resort.distanceFromMajorCity} miles • {resort.driveTimeToMajorCity} min</span>
+      {/* Footer - hide when fillHeight to maximize map area */}
+      {!fillHeight && (
+        <div className="p-6 pt-4 bg-gray-50 border-t border-gray-200">
+          <div className="flex justify-between items-center text-sm">
+            <span className="text-gray-600">Distance from {resort.majorCityName}</span>
+            <span className="font-semibold">{resort.distanceFromMajorCity} miles • {resort.driveTimeToMajorCity} min</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

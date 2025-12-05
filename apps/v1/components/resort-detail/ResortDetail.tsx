@@ -58,8 +58,25 @@ export function ResortDetail({ resort }: ResortDetailProps) {
       />
 
       <div className="container-custom py-8">
-        {/* Resort Hero - always visible */}
-        <ResortHero resort={resort} />
+        {/* Mobile: Resort Hero full width */}
+        <div className="lg:hidden">
+          <ResortHero resort={resort} />
+        </div>
+
+        {/* Desktop: Resort Hero (8 cols) with Location Map (4 cols) aligned to images */}
+        <div className="hidden lg:grid lg:grid-cols-12 gap-8 items-end">
+          {/* Left: Resort Hero spanning 8 columns */}
+          <div className="lg:col-span-8">
+            <ResortHero resort={resort} />
+          </div>
+
+          {/* Right: Location Map - height matches the photo gallery (400px) */}
+          <div className="lg:col-span-4 h-[400px]">
+            <FeatureFlag name="locationMapCard">
+              <LocationMapCardWrapper resort={resort} fillHeight />
+            </FeatureFlag>
+          </div>
+        </div>
 
         {/* Mobile: Collapsible accordion sections */}
         <MobileResortSections resort={resort} />
@@ -227,11 +244,6 @@ export function ResortDetail({ resort }: ResortDetailProps) {
               {/* Weather Forecast Card - hidden for lost ski areas */}
               <FeatureFlag name="weatherForecastCard">
                 {!resort.isLost && <WeatherForecastCard resort={resort} />}
-              </FeatureFlag>
-
-              {/* Location Map Card */}
-              <FeatureFlag name="locationMapCard">
-                <LocationMapCardWrapper resort={resort} />
               </FeatureFlag>
 
               {/* Social Media Card */}
