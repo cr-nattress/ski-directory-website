@@ -40,7 +40,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container-custom text-center px-4">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4 text-balance">
-          Every Resort, One Directory
+          Every Resort, One Place
         </h1>
         <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
           Conditions, terrain, trail maps, and pass info at a glance. Decide fast, ride sooner.
