@@ -37,7 +37,7 @@ This epic includes:
 | 36.10 | Deep research: PWA feasibility | Medium | Large | Done |
 | 36.11 | Compact mobile categories on dashboard | Medium | Medium | Pending |
 | 36.12 | Add regions category for resorts | Low | Medium-Large | Pending |
-| 36.13 | Add website link to dashboard cards | Medium | Small | Pending |
+| 36.13 | Add website link to dashboard cards | Medium | Small | Done |
 | 36.14 | Dashboard cards filter/sorting investigation | Medium | Medium | Pending |
 | 36.15 | Decrease mobile logo size by 10% | Low | Small | Done |
 | 36.16 | Deep research: Monetization strategies | High | Large | Done |

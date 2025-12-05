@@ -16,7 +16,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Resort } from '@/lib/types';
 import { getCardImageUrl, PLACEHOLDER_IMAGE } from '@/lib/utils/resort-images';
-import { Star, MapPin, Snowflake, Gauge } from 'lucide-react';
+import { Star, MapPin, Snowflake, Gauge, Globe } from 'lucide-react';
 import { formatDistance, formatSnowfall, formatRating } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { useLogger } from '@/lib/hooks/useLogger';
@@ -132,13 +132,16 @@ export function ResortCard({ resort, liftConditions }: ResortCardProps) {
     return 'bg-red-500';
   };
 
+  const resortUrl = `/${resort.countryCode}/${resort.stateCode}/${resort.slug}`;
+
   return (
-    <Link
-      href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
-      className="card group cursor-pointer"
-      onClick={() => trackResortClick(resort.name, 'card')}
-    >
-      {/* Image */}
+    <div className="card group cursor-pointer relative">
+      <Link
+        href={resortUrl}
+        className="block"
+        onClick={() => trackResortClick(resort.name, 'card')}
+      >
+        {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={imageUrl}
@@ -164,26 +167,45 @@ export function ResortCard({ resort, liftConditions }: ResortCardProps) {
           ))}
         </div>
 
-        {/* Status indicator */}
+        {/* Status indicator - always show Open/Closed unless Lost */}
         {resort.isLost ? (
           <div className="absolute top-3 left-3 bg-gray-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-white" />
             Lost
           </div>
-        ) : resort.conditions.status === 'open' && (
+        ) : resort.conditions.status === 'open' ? (
           <div className="absolute top-3 left-3 bg-success-green text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-white" />
             Open
+          </div>
+        ) : (
+          <div className="absolute top-3 left-3 bg-red-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-white" />
+            Closed
           </div>
         )}
       </div>
 
       {/* Content */}
       <div className="p-4">
-        {/* Resort name */}
-        <h3 className="font-display font-semibold text-lg text-gray-900 mb-1 group-hover:text-ski-blue transition-colors">
-          {resort.name}
-        </h3>
+        {/* Resort name with website link */}
+        <div className="flex items-start justify-between gap-2 mb-1">
+          <h3 className="font-display font-semibold text-lg text-gray-900 group-hover:text-ski-blue transition-colors">
+            {resort.name}
+          </h3>
+          {resort.websiteUrl && (
+            <a
+              href={resort.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 hover:bg-ski-blue hover:text-white text-gray-500 transition-colors"
+              aria-label={`Visit ${resort.name} official website`}
+            >
+              <Globe className="w-4 h-4" />
+            </a>
+          )}
+        </div>
 
         {/* Rating - hidden for lost ski areas and controlled by feature flag */}
         {featureFlags.resortCardRating && !resort.isLost && (
@@ -270,6 +292,7 @@ export function ResortCard({ resort, liftConditions }: ResortCardProps) {
           </>
         )}
       </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
