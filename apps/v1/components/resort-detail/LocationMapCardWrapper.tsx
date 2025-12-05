@@ -1,7 +1,9 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 import { Resort } from '@/lib/types';
+import { SkiShop, SkiShopsApiResponse, sortShopsByProximity } from '@/lib/types/ski-shop';
 
 const LocationMapCardDynamic = dynamic(
   () => import('./LocationMapCard').then((mod) => mod.LocationMapCard),
@@ -23,5 +25,23 @@ interface LocationMapCardWrapperProps {
 }
 
 export function LocationMapCardWrapper({ resort }: LocationMapCardWrapperProps) {
-  return <LocationMapCardDynamic resort={resort} />;
+  const [skiShops, setSkiShops] = useState<SkiShop[]>([]);
+
+  useEffect(() => {
+    async function fetchSkiShops() {
+      try {
+        const response = await fetch(`/api/resorts/${resort.slug}/ski-shops`);
+        if (response.ok) {
+          const data: SkiShopsApiResponse = await response.json();
+          setSkiShops(sortShopsByProximity(data.shops || []));
+        }
+      } catch {
+        // Silently fail - map will just show without ski shops
+      }
+    }
+
+    fetchSkiShops();
+  }, [resort.slug]);
+
+  return <LocationMapCardDynamic resort={resort} skiShops={skiShops} />;
 }
