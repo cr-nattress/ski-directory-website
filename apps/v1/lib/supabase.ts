@@ -18,33 +18,22 @@ import type { Database } from "@/types/supabase";
 import { env } from "@/lib/config/env";
 
 /**
- * Create Supabase client lazily to avoid build-time errors
- * when env vars aren't available during static generation
+ * Supabase client singleton
+ * Uses lazy initialization to handle both SSR and client-side usage
  */
 let _supabase: SupabaseClient<Database> | null = null;
 
 /**
- * Supabase client for client-side usage
- * Uses the anon key which respects Row Level Security
+ * Get the Supabase client (creates one if needed)
+ * Works on both server and client side
  */
-export const supabase: SupabaseClient<Database> = (() => {
-  // Return existing client if already created
+function getSupabaseClient(): SupabaseClient<Database> {
   if (_supabase) return _supabase;
 
   const url = env.supabase.url;
   const anonKey = env.supabase.anonKey;
 
-  // Validate required env vars
   if (!url || !anonKey) {
-    // During build/SSG, env vars may not be available - create a dummy client
-    // that will be replaced at runtime
-    if (typeof window === 'undefined') {
-      // Server-side during build - return a placeholder
-      return createClient<Database>(
-        'https://placeholder.supabase.co',
-        'placeholder-key'
-      );
-    }
     throw new Error(
       'Missing Supabase configuration. Ensure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set.'
     );
@@ -52,7 +41,22 @@ export const supabase: SupabaseClient<Database> = (() => {
 
   _supabase = createClient<Database>(url, anonKey);
   return _supabase;
-})();
+}
+
+/**
+ * Supabase client for general usage
+ * Uses the anon key which respects Row Level Security
+ */
+export const supabase: SupabaseClient<Database> = new Proxy({} as SupabaseClient<Database>, {
+  get(_target, prop) {
+    const client = getSupabaseClient();
+    const value = client[prop as keyof SupabaseClient<Database>];
+    if (typeof value === 'function') {
+      return value.bind(client);
+    }
+    return value;
+  },
+});
 
 /**
  * Create a Supabase client for server-side usage

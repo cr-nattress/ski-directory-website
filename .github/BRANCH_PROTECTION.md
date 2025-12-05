@@ -2,19 +2,13 @@
 
 This document describes the recommended branch protection rules for the `master` branch.
 
-## Current Status: DISABLED
-
-Branch protection is currently **disabled** for this repository to allow for rapid development. The settings below are documented for future implementation when the project matures.
-
----
-
 ## Manual Configuration Required
 
 Branch protection rules must be configured manually in GitHub:
 
 **Settings > Branches > Add branch protection rule**
 
-## Recommended Settings for `master` (Future Implementation)
+## Recommended Settings for `master`
 
 ### Branch name pattern
 ```
