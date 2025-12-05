@@ -27,21 +27,29 @@ interface CountryOption {
   name: string;
 }
 
+interface RegionOption {
+  slug: string;
+  name: string;
+}
+
 interface DirectoryFiltersProps {
   sortBy: SortOption;
   passFilter: PassFilter;
   statusFilter: StatusFilter;
   stateFilter: string;
   countryFilter: string;
+  regionFilter: string;
   onSortChange: (sort: SortOption) => void;
   onPassFilterChange: (pass: PassFilter) => void;
   onStatusFilterChange: (status: StatusFilter) => void;
   onStateFilterChange: (state: string) => void;
   onCountryFilterChange: (country: string) => void;
+  onRegionFilterChange: (region: string) => void;
   totalResorts: number;
   filteredCount: number;
   availableStates: StateOption[];
   availableCountries: CountryOption[];
+  availableRegions: RegionOption[];
 }
 
 const sortOptions: { value: SortOption; label: string }[] = [
@@ -81,15 +89,18 @@ export function DirectoryFilters({
   statusFilter,
   stateFilter,
   countryFilter,
+  regionFilter,
   onSortChange,
   onPassFilterChange,
   onStatusFilterChange,
   onStateFilterChange,
   onCountryFilterChange,
+  onRegionFilterChange,
   totalResorts,
   filteredCount,
   availableStates,
   availableCountries,
+  availableRegions,
 }: DirectoryFiltersProps) {
   // Only show country filter if there are multiple countries
   const showCountryFilter = availableCountries.length > 1;
@@ -202,6 +213,33 @@ export function DirectoryFilters({
             <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
           </div>
         )}
+
+        {/* Region Filter Dropdown */}
+        <div className="relative">
+          <label htmlFor="region-select" className="sr-only">
+            Filter by region
+          </label>
+          <select
+            id="region-select"
+            value={regionFilter}
+            onChange={(e) => onRegionFilterChange(e.target.value)}
+            className={cn(
+              'appearance-none bg-white border border-gray-300 rounded-lg',
+              'pl-3 pr-10 py-2 text-sm font-medium text-gray-700',
+              'focus:outline-none focus:ring-2 focus:ring-ski-blue focus:border-ski-blue',
+              'cursor-pointer hover:border-gray-400 transition-colors',
+              regionFilter && 'border-ski-blue bg-ski-blue/5'
+            )}
+          >
+            <option value="">All Regions</option>
+            {availableRegions.map((region) => (
+              <option key={region.slug} value={region.slug}>
+                {region.name}
+              </option>
+            ))}
+          </select>
+          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
+        </div>
 
         {/* State Filter Dropdown */}
         <div className="relative">

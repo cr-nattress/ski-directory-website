@@ -70,7 +70,7 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
     id: supabaseResort.id,
     slug: supabaseResort.slug,
     name: supabaseResort.name,
-    tagline: undefined, // Not in Supabase schema yet
+    tagline: supabaseResort.tagline || undefined,
     description: supabaseResort.description || "",
     isActive: supabaseResort.is_active,
     isLost: supabaseResort.is_lost,
@@ -78,6 +78,10 @@ export function adaptResortFromSupabase(supabaseResort: ResortFull): Resort {
     // Country and state codes for URL routing
     countryCode: supabaseResort.country,
     stateCode: supabaseResort.state,
+
+    // Region information
+    regionSlug: supabaseResort.region_slug || undefined,
+    regionName: supabaseResort.region_name || undefined,
 
     // Location
     location: {

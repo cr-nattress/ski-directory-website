@@ -23,12 +23,14 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
   const initialStatus = (searchParams.get('status') as StatusFilter) || 'all';
   const initialState = searchParams.get('state') || '';
   const initialCountry = searchParams.get('country') || '';
+  const initialRegion = searchParams.get('region') || '';
 
   const [sortBy, setSortBy] = useState<SortOption>(initialSort);
   const [passFilter, setPassFilter] = useState<PassFilter>(initialPass);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>(initialStatus);
   const [stateFilter, setStateFilter] = useState<string>(initialState);
   const [countryFilter, setCountryFilter] = useState<string>(initialCountry);
+  const [regionFilter, setRegionFilter] = useState<string>(initialRegion);
 
   // Update URL when filters change
   const updateURL = (
@@ -36,7 +38,8 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
     pass: PassFilter,
     status: StatusFilter,
     state: string = stateFilter,
-    country: string = countryFilter
+    country: string = countryFilter,
+    region: string = regionFilter
   ) => {
     const params = new URLSearchParams();
     if (sort !== 'name') params.set('sort', sort);
@@ -44,6 +47,7 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
     if (status !== 'all') params.set('status', status);
     if (state) params.set('state', state);
     if (country) params.set('country', country);
+    if (region) params.set('region', region);
 
     const queryString = params.toString();
     router.push(queryString ? `/directory?${queryString}` : '/directory', { scroll: false });
@@ -66,22 +70,34 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
 
   const handleStateFilterChange = (state: string) => {
     setStateFilter(state);
-    // Clear country filter when state is selected (state is more specific)
+    // Clear country and region filters when state is selected (state is more specific)
     if (state) {
       setCountryFilter('');
-      updateURL(sortBy, passFilter, statusFilter, state, '');
+      setRegionFilter('');
+      updateURL(sortBy, passFilter, statusFilter, state, '', '');
     } else {
-      updateURL(sortBy, passFilter, statusFilter, state, countryFilter);
+      updateURL(sortBy, passFilter, statusFilter, state, countryFilter, regionFilter);
     }
   };
 
   const handleCountryFilterChange = (country: string) => {
     setCountryFilter(country);
     // Clear state filter when country is selected (unless state is within that country)
-    updateURL(sortBy, passFilter, statusFilter, stateFilter, country);
+    updateURL(sortBy, passFilter, statusFilter, stateFilter, country, regionFilter);
   };
 
-  // Get unique states and countries from resorts for dropdown options
+  const handleRegionFilterChange = (region: string) => {
+    setRegionFilter(region);
+    // Clear state filter when region is selected (region is broader)
+    if (region) {
+      setStateFilter('');
+      updateURL(sortBy, passFilter, statusFilter, '', countryFilter, region);
+    } else {
+      updateURL(sortBy, passFilter, statusFilter, stateFilter, countryFilter, region);
+    }
+  };
+
+  // Get unique states, countries, and regions from resorts for dropdown options
   const availableStates = useMemo(() => {
     const states = new Set<string>();
     resorts.forEach((resort) => {
@@ -106,6 +122,18 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [resorts]);
 
+  const availableRegions = useMemo(() => {
+    const regions = new Map<string, string>(); // slug -> name
+    resorts.forEach((resort) => {
+      if (resort.regionSlug && resort.regionName) {
+        regions.set(resort.regionSlug, resort.regionName);
+      }
+    });
+    return Array.from(regions.entries())
+      .map(([slug, name]) => ({ slug, name }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [resorts]);
+
   // Filter and sort resorts
   const filteredAndSortedResorts = useMemo(() => {
     let result = [...resorts];
@@ -121,6 +149,13 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
     if (countryFilter && !stateFilter) {
       result = result.filter(
         (resort) => resort.countryCode?.toLowerCase() === countryFilter.toLowerCase()
+      );
+    }
+
+    // Apply region filter (only if no state filter - state is more specific)
+    if (regionFilter && !stateFilter) {
+      result = result.filter(
+        (resort) => resort.regionSlug?.toLowerCase() === regionFilter.toLowerCase()
       );
     }
 
@@ -168,7 +203,7 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
     }
 
     return result;
-  }, [resorts, sortBy, passFilter, statusFilter, stateFilter, countryFilter]);
+  }, [resorts, sortBy, passFilter, statusFilter, stateFilter, countryFilter, regionFilter]);
 
   // Get display names for current filters
   const stateDisplayName = stateFilter ? getStateName(stateFilter) : null;
@@ -205,15 +240,18 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
             statusFilter={statusFilter}
             stateFilter={stateFilter}
             countryFilter={countryFilter}
+            regionFilter={regionFilter}
             onSortChange={handleSortChange}
             onPassFilterChange={handlePassFilterChange}
             onStatusFilterChange={handleStatusFilterChange}
             onStateFilterChange={handleStateFilterChange}
             onCountryFilterChange={handleCountryFilterChange}
+            onRegionFilterChange={handleRegionFilterChange}
             totalResorts={resorts.length}
             filteredCount={filteredAndSortedResorts.length}
             availableStates={availableStates}
             availableCountries={availableCountries}
+            availableRegions={availableRegions}
           />
 
           {/* Desktop Table View */}
@@ -239,7 +277,8 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
                   setStatusFilter('all');
                   setStateFilter('');
                   setCountryFilter('');
-                  updateURL(sortBy, 'all', 'all', '', '');
+                  setRegionFilter('');
+                  updateURL(sortBy, 'all', 'all', '', '', '');
                 }}
                 className="mt-4 text-ski-blue hover:underline"
               >

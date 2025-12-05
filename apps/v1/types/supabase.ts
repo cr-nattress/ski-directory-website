@@ -345,6 +345,7 @@ export interface Database {
           id: string;
           slug: string;
           name: string;
+          tagline: string | null;
           country: string;
           country_name: string;
           state: string;
@@ -369,6 +370,8 @@ export interface Database {
           drive_time_to_major_city: number | null;
           pass_affiliations: string[];
           tags: string[];
+          region_slug: string | null;
+          region_name: string | null;
         };
       };
       resorts_list: {

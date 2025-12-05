@@ -51,6 +51,10 @@ export interface Resort {
   // State code for URL routing (e.g., 'colorado', 'utah', 'vermont')
   stateCode: string;
 
+  // Region information (e.g., 'rocky-mountains', 'new-england')
+  regionSlug?: string;
+  regionName?: string;
+
   // Location
   location: {
     lat: number;
