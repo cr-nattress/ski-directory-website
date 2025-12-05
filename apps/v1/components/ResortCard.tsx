@@ -142,70 +142,58 @@ export function ResortCard({ resort, liftConditions }: ResortCardProps) {
         onClick={() => trackResortClick(resort.name, 'card')}
       >
         {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-110"
-          unoptimized={imageUrl.startsWith('https://')}
-        />
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-110"
+            unoptimized={imageUrl.startsWith('https://')}
+          />
 
-        {/* Pass badges */}
-        <div className="absolute top-3 right-3 flex flex-wrap gap-1.5">
-          {resort.passAffiliations.map((pass) => (
-            <span
-              key={pass}
-              className={cn(
-                'px-2 py-1 rounded text-xs font-semibold uppercase',
-                getPassBadgeStyles(pass)
-              )}
-            >
-              {getPassLabel(pass)}
-            </span>
-          ))}
-        </div>
+          {/* Pass badges */}
+          <div className="absolute top-3 right-3 flex flex-wrap gap-1.5">
+            {resort.passAffiliations.map((pass) => (
+              <span
+                key={pass}
+                className={cn(
+                  'px-2 py-1 rounded text-xs font-semibold uppercase',
+                  getPassBadgeStyles(pass)
+                )}
+              >
+                {getPassLabel(pass)}
+              </span>
+            ))}
+          </div>
 
-        {/* Status indicator - always show Open/Closed unless Lost */}
-        {resort.isLost ? (
-          <div className="absolute top-3 left-3 bg-gray-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-white" />
-            Lost
-          </div>
-        ) : resort.conditions.status === 'open' ? (
-          <div className="absolute top-3 left-3 bg-success-green text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-white" />
-            Open
-          </div>
-        ) : (
-          <div className="absolute top-3 left-3 bg-red-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-white" />
-            Closed
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-4">
-        {/* Resort name with website link */}
-        <div className="flex items-start justify-between gap-2 mb-1">
-          <h3 className="font-display font-semibold text-lg text-gray-900 group-hover:text-ski-blue transition-colors">
-            {resort.name}
-          </h3>
-          {resort.websiteUrl && (
-            <a
-              href={resort.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 hover:bg-ski-blue hover:text-white text-gray-500 transition-colors"
-              aria-label={`Visit ${resort.name} official website`}
-            >
-              <Globe className="w-4 h-4" />
-            </a>
+          {/* Status indicator - always show Open/Closed unless Lost */}
+          {resort.isLost ? (
+            <div className="absolute top-3 left-3 bg-gray-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              Lost
+            </div>
+          ) : resort.conditions.status === 'open' ? (
+            <div className="absolute top-3 left-3 bg-success-green text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              Open
+            </div>
+          ) : (
+            <div className="absolute top-3 left-3 bg-red-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              Closed
+            </div>
           )}
         </div>
+
+        {/* Content */}
+        <div className="p-4">
+          {/* Resort name */}
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-display font-semibold text-lg text-gray-900 group-hover:text-ski-blue transition-colors">
+              {resort.name}
+            </h3>
+          </div>
 
         {/* Rating - hidden for lost ski areas and controlled by feature flag */}
         {featureFlags.resortCardRating && !resort.isLost && (
@@ -291,8 +279,21 @@ export function ResortCard({ resort, liftConditions }: ResortCardProps) {
             </div>
           </>
         )}
-      </div>
+        </div>
       </Link>
+
+      {/* Website link - positioned absolutely outside the Link to avoid nested <a> */}
+      {resort.websiteUrl && (
+        <a
+          href={resort.websiteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-4 right-4 z-10 flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 hover:bg-ski-blue hover:text-white text-gray-500 transition-colors"
+          aria-label={`Visit ${resort.name} official website`}
+        >
+          <Globe className="w-4 h-4" />
+        </a>
+      )}
     </div>
   );
 }
