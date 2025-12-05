@@ -33,6 +33,9 @@ export const featureFlags = {
   /** Location Map card with interactive Leaflet map */
   locationMapCard: true,
 
+  /** Ski Shops card showing nearby ski shops */
+  skiShopsCard: true,
+
   // ============================================
   // Global Components
   // ============================================

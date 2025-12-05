@@ -11,6 +11,7 @@ import { WeatherForecastCard } from './WeatherForecastCard';
 import { ConditionsSection } from './ConditionsSection';
 import { MobileResortSections } from './MobileResortSections';
 import { RelatedResortsSection } from './RelatedResortsSection';
+import { SkiShopsCard } from './SkiShopsCard';
 import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 import { FeatureFlag } from '@/components/FeatureFlag';
@@ -236,6 +237,19 @@ export function ResortDetail({ resort }: ResortDetailProps) {
               {/* Social Media Card */}
               <FeatureFlag name="socialMediaCard">
                 <SocialMediaCard resort={resort} />
+              </FeatureFlag>
+
+              {/* Ski Shops Card */}
+              <FeatureFlag name="skiShopsCard">
+                <SkiShopsCard
+                  resort={resort}
+                  onViewAll={() => {
+                    // Scroll to mobile section or expand accordion
+                    document.getElementById('ski-shops')?.scrollIntoView({
+                      behavior: 'smooth',
+                    });
+                  }}
+                />
               </FeatureFlag>
             </div>
           </div>

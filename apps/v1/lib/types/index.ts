@@ -105,3 +105,24 @@ export {
   getPrimaryImage,
   getPrimaryImageUrl,
 } from './wikipedia';
+
+// Ski Shop types
+export type {
+  ShopType,
+  ShopService,
+  SkiShop,
+  SkiShopsData,
+  ShopServicesSummary,
+  SkiShopCardProps,
+  SkiShopsListProps,
+} from './ski-shop';
+
+export {
+  formatPhone,
+  getTelLink,
+  getDirectionsLink,
+  calculateServicesSummary,
+  getShopTypeLabel,
+  getServiceLabel,
+  sortShopsByProximity,
+} from './ski-shop';
