@@ -3,10 +3,10 @@
 import type { Resort } from '@/lib/types';
 import type { SkiShop } from '@/lib/types/ski-shop';
 import { formatPhone, getTelLink, getShopTypeLabel } from '@/lib/types/ski-shop';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useEffect, useState } from 'react';
-import type { Icon } from 'leaflet';
+import { useEffect, useState, useMemo } from 'react';
+import type { Icon, LatLngBounds } from 'leaflet';
 import { Globe, Phone } from 'lucide-react';
 
 interface LocationMapCardProps {
@@ -14,9 +14,51 @@ interface LocationMapCardProps {
   skiShops?: SkiShop[];
 }
 
+/**
+ * Component to fit map bounds to include all markers
+ */
+function FitBounds({ bounds }: { bounds: LatLngBounds | null }) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (bounds && bounds.isValid()) {
+      map.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+    }
+  }, [map, bounds]);
+
+  return null;
+}
+
 export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps) {
   const [resortIcon, setResortIcon] = useState<Icon | null>(null);
   const [shopIcon, setShopIcon] = useState<Icon | null>(null);
+
+  // Filter ski shops with valid coordinates
+  const shopsWithCoords = useMemo(() =>
+    skiShops.filter((shop) => shop.latitude && shop.longitude),
+    [skiShops]
+  );
+
+  // Calculate bounds to fit all markers
+  const bounds = useMemo(() => {
+    if (typeof window === 'undefined') return null;
+
+    const L = require('leaflet');
+    const allPoints: [number, number][] = [
+      [resort.location.lat, resort.location.lng]
+    ];
+
+    shopsWithCoords.forEach((shop) => {
+      allPoints.push([shop.latitude, shop.longitude]);
+    });
+
+    if (allPoints.length === 1) {
+      // Only resort marker, no need for bounds fitting
+      return null;
+    }
+
+    return L.latLngBounds(allPoints) as LatLngBounds;
+  }, [resort.location.lat, resort.location.lng, shopsWithCoords]);
 
   useEffect(() => {
     // Only run on client side
@@ -62,11 +104,6 @@ export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps)
     }
   }, []);
 
-  // Filter ski shops with valid coordinates
-  const shopsWithCoords = skiShops.filter(
-    (shop) => shop.latitude && shop.longitude
-  );
-
   if (!resortIcon) {
     return (
       <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6">
@@ -109,6 +146,9 @@ export function LocationMapCard({ resort, skiShops = [] }: LocationMapCardProps)
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+
+          {/* Fit bounds to show all markers */}
+          <FitBounds bounds={bounds} />
 
           {/* Resort marker */}
           <Marker
