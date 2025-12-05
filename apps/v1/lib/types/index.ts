@@ -111,7 +111,7 @@ export type {
   ShopType,
   ShopService,
   SkiShop,
-  SkiShopsData,
+  SkiShopsApiResponse,
   ShopServicesSummary,
   SkiShopCardProps,
   SkiShopsListProps,

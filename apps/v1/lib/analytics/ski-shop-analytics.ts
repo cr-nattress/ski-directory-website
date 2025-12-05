@@ -1,17 +1,9 @@
 /**
  * Analytics tracking for ski shop interactions
  * Uses Google Analytics 4 gtag events
+ *
+ * Note: Window.gtag type is defined in types/gtag.d.ts
  */
-
-declare global {
-  interface Window {
-    gtag?: (
-      command: string,
-      action: string,
-      params?: Record<string, unknown>
-    ) => void;
-  }
-}
 
 /**
  * Track when a user clicks the Call button
