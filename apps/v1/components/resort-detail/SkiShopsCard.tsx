@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Store, ChevronRight, Phone, Mountain } from 'lucide-react';
 import {
   SkiShop,
-  SkiShopsData,
+  SkiShopsApiResponse,
   calculateServicesSummary,
   formatPhone,
   getTelLink,
@@ -16,53 +16,28 @@ import { cn } from '@/lib/utils';
 
 interface SkiShopsCardProps {
   resort: Resort;
-  onViewAll?: () => void;
   className?: string;
-}
-
-const GCS_BASE_URL = 'https://storage.googleapis.com/sda-assets-prod';
-
-/**
- * Helper to construct asset path from resort data
- */
-function getAssetPath(resort: Resort): string | null {
-  if (resort.assetLocation) {
-    return `${resort.assetLocation.country}/${resort.assetLocation.state}/${resort.assetLocation.slug}`;
-  }
-  if (resort.countryCode && resort.stateCode && resort.slug) {
-    return `${resort.countryCode}/${resort.stateCode}/${resort.slug}`;
-  }
-  return null;
 }
 
 /**
  * Compact ski shops card for desktop sidebar
  * Shows service summary and top 3 shops with "See All" link
+ * Fetches data from Supabase via API route
  */
 export function SkiShopsCard({
   resort,
-  onViewAll,
   className,
 }: SkiShopsCardProps) {
   const [shops, setShops] = useState<SkiShop[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const assetPath = getAssetPath(resort);
-
   useEffect(() => {
     async function fetchShops() {
-      if (!assetPath) {
-        setIsLoading(false);
-        return;
-      }
-
       try {
-        const response = await fetch(
-          `${GCS_BASE_URL}/resorts/${assetPath}/ski-shops.json`
-        );
+        const response = await fetch(`/api/resorts/${resort.slug}/ski-shops`);
 
         if (response.ok) {
-          const data: SkiShopsData = await response.json();
+          const data: SkiShopsApiResponse = await response.json();
           setShops(sortShopsByProximity(data.shops || []));
         }
       } catch {
@@ -73,7 +48,7 @@ export function SkiShopsCard({
     }
 
     fetchShops();
-  }, [assetPath]);
+  }, [resort.slug]);
 
   // Don't render if loading or no shops
   if (isLoading) {
@@ -131,7 +106,12 @@ export function SkiShopsCard({
       {/* See All Link */}
       {hasMore && (
         <button
-          onClick={onViewAll}
+          onClick={() => {
+            // Scroll to ski shops section (on mobile accordion)
+            document.getElementById('ski-shops')?.scrollIntoView({
+              behavior: 'smooth',
+            });
+          }}
           className={cn(
             'w-full px-6 py-3 flex items-center justify-center gap-1',
             'text-sm text-ski-blue font-medium',

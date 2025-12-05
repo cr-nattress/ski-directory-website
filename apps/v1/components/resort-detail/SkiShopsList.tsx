@@ -8,6 +8,10 @@ import {
   SkiShopsListProps,
   calculateServicesSummary,
 } from '@/lib/types/ski-shop';
+import {
+  trackSkiShopsExpand,
+  trackSkiShopsFilter,
+} from '@/lib/analytics/ski-shop-analytics';
 import { SkiShopCard } from './SkiShopCard';
 import { cn } from '@/lib/utils';
 
@@ -49,11 +53,14 @@ export function SkiShopsList({
   const hasMore = remainingCount > 0;
 
   const toggleFilter = (type: ShopType) => {
+    const isRemoving = activeFilters.includes(type);
     setActiveFilters((prev) =>
-      prev.includes(type)
-        ? prev.filter((t) => t !== type)
-        : [...prev, type]
+      isRemoving ? prev.filter((t) => t !== type) : [...prev, type]
     );
+    // Track filter usage
+    if (resortName) {
+      trackSkiShopsFilter(resortName, type, isRemoving ? 'remove' : 'add');
+    }
     // Reset expansion when filter changes
     setIsExpanded(false);
   };
@@ -160,7 +167,12 @@ export function SkiShopsList({
       {/* Show More / Show Less Button */}
       {hasMore && filteredShops.length > 0 && (
         <button
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={() => {
+            if (!isExpanded && resortName) {
+              trackSkiShopsExpand(resortName, filteredShops.length);
+            }
+            setIsExpanded(!isExpanded);
+          }}
           className={cn(
             'w-full flex items-center justify-center gap-2',
             'py-3 px-4 rounded-lg',

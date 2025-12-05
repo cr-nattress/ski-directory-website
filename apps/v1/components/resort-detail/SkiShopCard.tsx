@@ -9,10 +9,16 @@ import {
   getDirectionsLink,
   getShopTypeLabel,
 } from '@/lib/types/ski-shop';
+import {
+  trackSkiShopCall,
+  trackSkiShopDirections,
+  trackSkiShopWebsite,
+} from '@/lib/analytics/ski-shop-analytics';
 import { cn } from '@/lib/utils';
 
 export function SkiShopCard({
   shop,
+  resortName,
   variant = 'full',
   showActions = true,
 }: SkiShopCardProps) {
@@ -66,6 +72,11 @@ export function SkiShopCard({
           {telLink && (
             <a
               href={telLink}
+              onClick={() => {
+                if (resortName) {
+                  trackSkiShopCall(shop.name, resortName, shop.distance_miles);
+                }
+              }}
               className={cn(
                 'flex items-center justify-center gap-2 w-full',
                 'bg-ski-blue text-white font-medium',
@@ -90,6 +101,11 @@ export function SkiShopCard({
             href={directionsLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (resortName) {
+                trackSkiShopDirections(shop.name, resortName, shop.distance_miles);
+              }
+            }}
             className={cn(
               'flex items-center justify-center gap-2 w-full',
               'bg-gray-100 text-gray-700 font-medium',
@@ -109,6 +125,11 @@ export function SkiShopCard({
               href={shop.website_url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (resortName && shop.website_url) {
+                  trackSkiShopWebsite(shop.name, resortName, shop.website_url);
+                }
+              }}
               className={cn(
                 'flex items-center justify-center gap-1',
                 'text-sm text-ski-blue hover:underline',

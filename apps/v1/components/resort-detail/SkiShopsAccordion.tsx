@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Store } from 'lucide-react';
 import {
   SkiShop,
-  SkiShopsData,
+  SkiShopsApiResponse,
   sortShopsByProximity,
 } from '@/lib/types/ski-shop';
 import { SkiShopsList, SkiShopsListSkeleton } from './SkiShopsList';
@@ -15,23 +15,8 @@ interface SkiShopsAccordionContentProps {
 }
 
 /**
- * Helper to construct asset path from resort data
- */
-function getAssetPath(resort: Resort): string | null {
-  if (resort.assetLocation) {
-    return `${resort.assetLocation.country}/${resort.assetLocation.state}/${resort.assetLocation.slug}`;
-  }
-  if (resort.countryCode && resort.stateCode && resort.slug) {
-    return `${resort.countryCode}/${resort.stateCode}/${resort.slug}`;
-  }
-  return null;
-}
-
-const GCS_BASE_URL = 'https://storage.googleapis.com/sda-assets-prod';
-
-/**
  * Ski shops content for mobile accordion
- * Fetches data client-side to avoid making ResortDetail async
+ * Fetches data from Supabase via API route
  */
 export function SkiShopsAccordionContent({
   resort,
@@ -40,19 +25,10 @@ export function SkiShopsAccordionContent({
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const assetPath = getAssetPath(resort);
-
   useEffect(() => {
     async function fetchShops() {
-      if (!assetPath) {
-        setIsLoading(false);
-        return;
-      }
-
       try {
-        const response = await fetch(
-          `${GCS_BASE_URL}/resorts/${assetPath}/ski-shops.json`
-        );
+        const response = await fetch(`/api/resorts/${resort.slug}/ski-shops`);
 
         if (!response.ok) {
           if (response.status === 404) {
@@ -64,7 +40,7 @@ export function SkiShopsAccordionContent({
           throw new Error(`Failed to fetch: ${response.status}`);
         }
 
-        const data: SkiShopsData = await response.json();
+        const data: SkiShopsApiResponse = await response.json();
         setShops(sortShopsByProximity(data.shops || []));
       } catch (err) {
         console.error('Failed to fetch ski shops:', err);
@@ -75,7 +51,7 @@ export function SkiShopsAccordionContent({
     }
 
     fetchShops();
-  }, [assetPath]);
+  }, [resort.slug]);
 
   if (isLoading) {
     return (
@@ -109,6 +85,7 @@ export function SkiShopsAccordionContent({
         resortName={resort.name}
         initialCount={3}
         showServiceSummary={true}
+        enableFiltering={true}
         variant="full"
       />
     </div>
@@ -127,20 +104,15 @@ export function SkiShopsAccordionHeader({
   resort,
 }: SkiShopsAccordionHeaderProps) {
   const [shopCount, setShopCount] = useState<number | null>(null);
-  const assetPath = getAssetPath(resort);
 
   useEffect(() => {
     async function fetchCount() {
-      if (!assetPath) return;
-
       try {
-        const response = await fetch(
-          `${GCS_BASE_URL}/resorts/${assetPath}/ski-shops.json`
-        );
+        const response = await fetch(`/api/resorts/${resort.slug}/ski-shops`);
 
         if (response.ok) {
-          const data: SkiShopsData = await response.json();
-          setShopCount(data.shops?.length || 0);
+          const data: SkiShopsApiResponse = await response.json();
+          setShopCount(data.count || 0);
         }
       } catch {
         // Silently fail - will just not show count
@@ -148,7 +120,7 @@ export function SkiShopsAccordionHeader({
     }
 
     fetchCount();
-  }, [assetPath]);
+  }, [resort.slug]);
 
   return (
     <div className="flex items-center justify-between w-full">
@@ -169,28 +141,24 @@ export function SkiShopsAccordionHeader({
  */
 export function useSkiShopsExist(resort: Resort): boolean {
   const [exists, setExists] = useState(false);
-  const assetPath = getAssetPath(resort);
 
   useEffect(() => {
     async function check() {
-      if (!assetPath) {
-        setExists(false);
-        return;
-      }
-
       try {
-        const response = await fetch(
-          `${GCS_BASE_URL}/resorts/${assetPath}/ski-shops.json`,
-          { method: 'HEAD' }
-        );
-        setExists(response.ok);
+        const response = await fetch(`/api/resorts/${resort.slug}/ski-shops`);
+        if (response.ok) {
+          const data: SkiShopsApiResponse = await response.json();
+          setExists(data.count > 0);
+        } else {
+          setExists(false);
+        }
       } catch {
         setExists(false);
       }
     }
 
     check();
-  }, [assetPath]);
+  }, [resort.slug]);
 
   return exists;
 }

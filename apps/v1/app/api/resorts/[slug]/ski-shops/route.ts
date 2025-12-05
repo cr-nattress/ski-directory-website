@@ -32,19 +32,19 @@ export async function GET(
 
   // Parse query parameters
   const maxDistance = parseFloat(searchParams.get('maxDistance') || '30');
-  const types = searchParams.get('types')?.split(',');
   const limit = parseInt(searchParams.get('limit') || '20');
 
   try {
     const supabase = createServerClient();
 
-    // Use the database function for efficient querying
-    const { data, error } = await supabase.rpc('get_resort_ski_shops', {
-      p_resort_slug: slug,
-      p_max_distance: maxDistance,
-      p_shop_types: types || null,
-      p_limit: limit,
-    });
+    // Query the view directly for simpler, more reliable queries
+    const { data, error } = await supabase
+      .from('resort_ski_shops_full')
+      .select('*')
+      .eq('resort_slug', slug)
+      .lte('distance_miles', maxDistance)
+      .order('distance_miles')
+      .limit(limit);
 
     if (error) {
       console.error('Error fetching ski shops:', error);
@@ -56,7 +56,7 @@ export async function GET(
       id: shop.shop_id as string,
       name: shop.shop_name as string,
       slug: shop.shop_slug as string,
-      description: shop.description as string | null,
+      description: shop.shop_description as string | null,
       address: shop.full_address as string,
       city: shop.city as string,
       state: shop.state as string,

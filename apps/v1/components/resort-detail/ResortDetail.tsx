@@ -241,15 +241,7 @@ export function ResortDetail({ resort }: ResortDetailProps) {
 
               {/* Ski Shops Card */}
               <FeatureFlag name="skiShopsCard">
-                <SkiShopsCard
-                  resort={resort}
-                  onViewAll={() => {
-                    // Scroll to mobile section or expand accordion
-                    document.getElementById('ski-shops')?.scrollIntoView({
-                      behavior: 'smooth',
-                    });
-                  }}
-                />
+                <SkiShopsCard resort={resort} />
               </FeatureFlag>
             </div>
           </div>

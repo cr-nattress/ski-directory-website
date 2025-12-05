@@ -1,6 +1,6 @@
 /**
  * Ski shop types for resort detail UI
- * Matches GCS ski-shops.json schema from Epic 34
+ * Matches Supabase API response from /api/resorts/[slug]/ski-shops
  */
 
 // Shop type categories
@@ -17,16 +17,16 @@ export type ShopService =
   | 'lessons';
 
 /**
- * Individual ski shop from GCS JSON
+ * Individual ski shop from Supabase API
  */
 export interface SkiShop {
+  id: string;
   name: string;
   slug: string;
   description: string | null;
   address: string;
   city: string;
   state: string;
-  postal_code: string;
   latitude: number;
   longitude: number;
   phone: string | null;
@@ -35,33 +35,16 @@ export interface SkiShop {
   services: ShopService[];
   distance_miles: number;
   is_on_mountain: boolean;
+  proximity_label: string;
+  verified: boolean;
 }
 
 /**
- * Full ski-shops.json response from GCS
+ * API response from /api/resorts/[slug]/ski-shops
  */
-export interface SkiShopsData {
-  version: string;
-  enriched_at: string;
-  model: string;
-  resort: {
-    id: string;
-    name: string;
-    slug: string;
-    asset_path: string;
-  };
-  search: {
-    radius_miles: number;
-    latitude: number;
-    longitude: number;
-  };
-  statistics: {
-    shops_found: number;
-    shops_valid: number;
-    prompt_tokens: number;
-    completion_tokens: number;
-    total_cost: number;
-  };
+export interface SkiShopsApiResponse {
+  resort_slug: string;
+  count: number;
   shops: SkiShop[];
 }
 
@@ -128,7 +111,7 @@ export function getTelLink(phone: string | null): string | null {
  */
 export function getDirectionsLink(shop: SkiShop): string {
   const query = encodeURIComponent(
-    `${shop.name}, ${shop.address}, ${shop.city}, ${shop.state} ${shop.postal_code}`
+    `${shop.name}, ${shop.address}, ${shop.city}, ${shop.state}`
   );
   return `https://www.google.com/maps/dir/?api=1&destination=${query}`;
 }

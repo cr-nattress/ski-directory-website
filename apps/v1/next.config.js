@@ -75,8 +75,8 @@ const nextConfig = {
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
               // Styles: self, inline for Tailwind
               "style-src 'self' 'unsafe-inline'",
-              // Images: self, data URIs, and approved domains (including Google Analytics)
-              "img-src 'self' data: blob: https://storage.googleapis.com https://images.unsplash.com https://source.unsplash.com https://picsum.photos https://unpkg.com https://*.tile.openstreetmap.org https://www.google-analytics.com https://www.googletagmanager.com",
+              // Images: self, data URIs, and approved domains (including Google Analytics, Windy webcams)
+              "img-src 'self' data: blob: https://storage.googleapis.com https://images.unsplash.com https://source.unsplash.com https://picsum.photos https://unpkg.com https://*.tile.openstreetmap.org https://www.google-analytics.com https://www.googletagmanager.com https://imgproxy.windy.com",
               // Fonts: self and common CDNs
               "font-src 'self' https://fonts.gstatic.com",
               // Connect: API endpoints (including Google Analytics)
