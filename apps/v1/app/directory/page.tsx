@@ -6,14 +6,14 @@ import { DirectoryContent } from '@/components/directory/DirectoryContent';
 import { resortService } from '@/lib/api/resort-service';
 
 export const metadata: Metadata = {
-  title: 'Ski Resorts A-Z Directory',
+  title: 'Ski Resorts | Ski Directory',
   description:
     'Compare all ski resorts at a glance. View real-time snow conditions, terrain open, skiable acres, vertical drop, and pass information for every resort.',
   alternates: {
     canonical: '/directory',
   },
   openGraph: {
-    title: 'Ski Resorts A-Z Directory | Ski Directory',
+    title: 'Ski Resorts | Ski Directory',
     description:
       'Compare all ski resorts at a glance. View real-time snow conditions, terrain open, skiable acres, vertical drop, and pass information.',
     type: 'website',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: '/images/og-directory.jpg',
         width: 1200,
         height: 630,
-        alt: 'Ski Directory - A-Z Resort Directory',
+        alt: 'Ski Directory - Resorts',
       },
     ],
   },

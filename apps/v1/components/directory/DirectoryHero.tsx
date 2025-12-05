@@ -25,7 +25,7 @@ export function DirectoryHero({
     ? `${stateName} Ski Resorts`
     : countryName
     ? `${countryName} Ski Resorts`
-    : 'A-Z Resort Directory';
+    : 'Resorts';
 
   const description = stateName
     ? `Explore all ${resortCount} ski resorts in ${stateName}. Sort by snow conditions, terrain, size, or distance to find your perfect mountain.`

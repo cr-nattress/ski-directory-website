@@ -44,6 +44,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
                 height={54}
                 priority
                 unoptimized
+                className="w-[193px] h-[49px] md:w-[215px] md:h-[54px]"
               />
             </Link>
           </div>
@@ -51,7 +52,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
           {/* Desktop Navigation - hidden on mobile */}
           <div className="hidden md:flex items-center gap-6">
             <Link href="/directory" className={navLinkClasses}>
-              Directory
+              Resorts
             </Link>
             <Link href="/ski-links" className={navLinkClasses}>
               Links
@@ -89,7 +90,7 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
               className="block px-4 py-3 min-h-[44px] text-gray-700 hover:bg-gray-100 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Directory
+              Resorts
             </Link>
             <Link
               href="/ski-links"

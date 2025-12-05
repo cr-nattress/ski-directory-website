@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Resort } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { Snowflake, MapPin, Star, ChevronRight, ChevronDown, Mountain, Thermometer } from 'lucide-react';
+import { Snowflake, MapPin, ChevronRight, ChevronDown, Mountain, Thermometer, Globe } from 'lucide-react';
 import { StatusBadge } from './StatusBadge';
 import { PassBadge } from './PassBadge';
 
@@ -45,17 +45,15 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
               isExpanded && 'shadow-md'
             )}
           >
-            <Link
-              href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
-              className={cn(
-                'block p-4',
-                'hover:bg-gray-50 transition-colors'
-              )}
-            >
-            {/* Header Row */}
-            <div className="flex items-start justify-between gap-3 mb-3">
+            {/* Header Row with Website Badge */}
+            <div className="flex items-start justify-between gap-3 p-4 pb-0">
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-gray-900 truncate">{resort.name}</h3>
+                <Link
+                  href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
+                  className="hover:text-ski-blue transition-colors"
+                >
+                  <h3 className="font-semibold text-gray-900 truncate">{resort.name}</h3>
+                </Link>
                 <div className="flex items-center gap-2 mt-1">
                   <StatusBadge status={resort.conditions.status} isLost={resort.isLost} />
                   <div className="flex gap-1">
@@ -65,11 +63,26 @@ export function DirectoryList({ resorts }: DirectoryListProps) {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-1 text-sm text-gray-500">
-                <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span className="font-medium text-gray-700">{resort.rating.toFixed(1)}</span>
-              </div>
+              {resort.websiteUrl && (
+                <a
+                  href={resort.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-ski-blue hover:text-white text-gray-500 transition-colors"
+                  aria-label={`Visit ${resort.name} official website`}
+                >
+                  <Globe className="w-4 h-4" />
+                </a>
+              )}
             </div>
+
+            <Link
+              href={`/${resort.countryCode}/${resort.stateCode}/${resort.slug}`}
+              className={cn(
+                'block px-4 pb-4 pt-3',
+                'hover:bg-gray-50 transition-colors'
+              )}
+            >
 
             {/* Stats Grid */}
             <div className="grid grid-cols-4 gap-3 mb-3">

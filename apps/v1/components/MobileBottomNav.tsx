@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { Home, List, Map, Link2 } from 'lucide-react';
+import { Home, List, Users, Link2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
@@ -14,9 +14,9 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
-  { href: '/directory', label: 'Directory', icon: List, matchPaths: ['/directory'] },
-  { href: '/?view=map', label: 'Map', icon: Map },
-  { href: '/ski-links', label: 'Ski Links', icon: Link2 },
+  { href: '/directory', label: 'Resorts', icon: List, matchPaths: ['/directory'] },
+  { href: '/social-links', label: 'Social', icon: Users, matchPaths: ['/social-links'] },
+  { href: '/ski-links', label: 'Links', icon: Link2 },
 ];
 
 export function MobileBottomNav() {

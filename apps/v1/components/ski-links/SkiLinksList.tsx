@@ -7,6 +7,7 @@ import {
   GraduationCap,
   Users,
   Newspaper,
+  ChevronDown,
 } from 'lucide-react';
 import { SkiLink, SkiLinkType, SKI_LINK_TYPE_LABELS } from '@/lib/types/ski-links';
 import { SkiLinkCard } from './SkiLinkCard';
@@ -53,11 +54,16 @@ export function SkiLinksList({ groupedLinks, showGroupHeadings = true }: SkiLink
   }
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-4">
       {nonEmptySections.map((type) => (
-        <section key={type} aria-labelledby={`section-${type}`}>
+        <details
+          key={type}
+          open
+          className="group border border-gray-200 rounded-lg bg-white"
+        >
           {showGroupHeadings && (
-            <div className="flex items-center gap-2 mb-4">
+            <summary className="flex items-center gap-2 p-4 cursor-pointer select-none hover:bg-gray-50 transition-colors rounded-lg">
+              <ChevronDown className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-0 -rotate-90" />
               <span className="text-ski-blue">{typeIcons[type]}</span>
               <h2
                 id={`section-${type}`}
@@ -66,15 +72,15 @@ export function SkiLinksList({ groupedLinks, showGroupHeadings = true }: SkiLink
                 {SKI_LINK_TYPE_LABELS[type]}
               </h2>
               <span className="text-sm text-gray-400">({groupedLinks[type].length})</span>
-            </div>
+            </summary>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="p-4 pt-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {groupedLinks[type].map((link) => (
               <SkiLinkCard key={link.id} link={link} />
             ))}
           </div>
-        </section>
+        </details>
       ))}
     </div>
   );
