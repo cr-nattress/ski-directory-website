@@ -33,14 +33,14 @@ This epic includes:
 | 36.6 | Compact filter display on directory | Medium | Medium | Pending |
 | 36.7 | Remove star rating from directory | Low | Small | Done |
 | 36.8 | Add website badge to resort cards | Medium | Small | Done |
-| 36.9 | Deep research: Performance optimization | High | Large | Pending |
-| 36.10 | Deep research: PWA feasibility | Medium | Large | Pending |
+| 36.9 | Deep research: Performance optimization | High | Large | Done |
+| 36.10 | Deep research: PWA feasibility | Medium | Large | Done |
 | 36.11 | Compact mobile categories on dashboard | Medium | Medium | Pending |
 | 36.12 | Add regions category for resorts | Low | Medium-Large | Pending |
 | 36.13 | Add website link to dashboard cards | Medium | Small | Pending |
 | 36.14 | Dashboard cards filter/sorting investigation | Medium | Medium | Pending |
 | 36.15 | Decrease mobile logo size by 10% | Low | Small | Done |
-| 36.16 | Deep research: Monetization strategies | High | Large | Pending |
+| 36.16 | Deep research: Monetization strategies | High | Large | Done |
 | 36.17 | Website metadata export for research | Medium | Medium | Pending |
 
 ## Guidelines
