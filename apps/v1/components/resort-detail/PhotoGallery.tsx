@@ -72,7 +72,6 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             onError={() => handleImageError(images[0].url)}
-            unoptimized
             sizes="(max-width: 1024px) 50vw, 400px"
             priority
           />
@@ -93,8 +92,8 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
               onError={() => handleImageError(image.url)}
-              unoptimized
               sizes="(max-width: 1024px) 25vw, 200px"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
           </button>
@@ -114,7 +113,6 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
           fill
           className="object-cover"
           onError={() => handleImageError(images[0].url)}
-          unoptimized
           sizes="100vw"
           priority
         />
@@ -144,7 +142,6 @@ export function PhotoGallery({ resort }: PhotoGalleryProps) {
               fill
               className="object-contain"
               onError={() => handleImageError(images[currentImageIndex].url)}
-              unoptimized
               sizes="100vw"
               priority
             />

@@ -43,7 +43,6 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
                 width={215}
                 height={54}
                 priority
-                unoptimized
                 className="w-[193px] h-[49px] md:w-[215px] md:h-[54px]"
               />
             </Link>

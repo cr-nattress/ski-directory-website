@@ -1,11 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
 import { useAllResorts } from '@/lib/hooks';
 import { featureFlags } from '@/lib/config/feature-flags';
-import { SearchModal } from './SearchModal';
+
+// Lazy load SearchModal - only shown on mobile when user clicks
+const SearchModal = dynamic(() => import('./SearchModal').then(mod => mod.SearchModal), {
+  ssr: false,
+});
 
 export function Hero() {
   const [whereValue, setWhereValue] = useState('');
