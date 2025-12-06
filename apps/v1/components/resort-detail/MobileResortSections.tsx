@@ -178,21 +178,20 @@ export function MobileResortSections({ resort }: MobileResortSectionsProps) {
             </div>
           </AccordionItem>
         )}
+        {/* Location Map - inside accordion for uniform styling */}
+        <FeatureFlag name="locationMapCard">
+          <AccordionItem title="Location" id="location">
+            <LocationMapCardWrapper resort={resort} variant="minimal" />
+          </AccordionItem>
+        </FeatureFlag>
+
+        {/* Nearby Services (Shops & Dining) - inside accordion for uniform styling */}
+        <FeatureFlag name="nearbyServicesCard">
+          <AccordionItem title="Nearby" id="nearby">
+            <NearbyServicesCard resort={resort} variant="minimal" />
+          </AccordionItem>
+        </FeatureFlag>
       </Accordion>
-
-      {/* Location Map - Mobile */}
-      <FeatureFlag name="locationMapCard">
-        <div className="mt-6">
-          <LocationMapCardWrapper resort={resort} />
-        </div>
-      </FeatureFlag>
-
-      {/* Nearby Services (Shops & Dining) - Mobile */}
-      <FeatureFlag name="nearbyServicesCard">
-        <div className="mt-6">
-          <NearbyServicesCard resort={resort} />
-        </div>
-      </FeatureFlag>
     </div>
   );
 }

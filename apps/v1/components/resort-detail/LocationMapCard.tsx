@@ -21,6 +21,8 @@ interface LocationMapCardProps {
   diningVenues?: DiningVenue[];
   /** When true, card fills parent height (for hero alignment) */
   fillHeight?: boolean;
+  /** Use 'minimal' inside accordion to remove card border/shadow */
+  variant?: 'card' | 'minimal';
 }
 
 /**
@@ -38,7 +40,8 @@ function FitBounds({ bounds }: { bounds: LatLngBounds | null }) {
   return null;
 }
 
-export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fillHeight = false }: LocationMapCardProps) {
+export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fillHeight = false, variant = 'card' }: LocationMapCardProps) {
+  const isMinimal = variant === 'minimal';
   const [resortIcon, setResortIcon] = useState<Icon | null>(null);
   const [shopIcon, setShopIcon] = useState<Icon | null>(null);
   const [diningIcon, setDiningIcon] = useState<Icon | null>(null);
@@ -144,8 +147,8 @@ export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fill
 
   if (!resortIcon) {
     return (
-      <div className={`bg-white border border-gray-200 rounded-lg shadow-md p-6 ${fillHeight ? 'h-full flex flex-col' : ''}`}>
-        <h3 className="text-lg font-semibold mb-2">Location</h3>
+      <div className={`${isMinimal ? '' : 'bg-white border border-gray-200 rounded-lg shadow-md p-6'} ${fillHeight ? 'h-full flex flex-col' : ''}`}>
+        {!isMinimal && <h3 className="text-lg font-semibold mb-2">Location</h3>}
         <div className={`${fillHeight ? 'flex-1' : 'h-[300px]'} w-full bg-gray-100 rounded-lg flex items-center justify-center`}>
           <p className="text-gray-500">Loading map...</p>
         </div>
@@ -154,13 +157,15 @@ export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fill
   }
 
   return (
-    <div className={`bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden ${fillHeight ? 'h-full flex flex-col' : ''}`}>
-      <div className="p-4 pb-2">
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-semibold mb-1">Location</h3>
-            <p className="text-sm text-gray-600">{resort.nearestCity}</p>
-          </div>
+    <div className={`${isMinimal ? '' : 'bg-white border border-gray-200 rounded-lg shadow-md'} overflow-hidden ${fillHeight ? 'h-full flex flex-col' : ''}`}>
+      {/* Header - hide in minimal mode (accordion provides title) */}
+      {!isMinimal && (
+        <div className="p-4 pb-2">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-semibold mb-1">Location</h3>
+              <p className="text-sm text-gray-600">{resort.nearestCity}</p>
+            </div>
           {(shopsWithCoords.length > 0 || diningWithCoords.length > 0) && (
             <div className="flex items-center gap-3 text-xs text-gray-500">
               {shopsWithCoords.length > 0 && (
@@ -177,8 +182,9 @@ export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fill
               )}
             </div>
           )}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className={`${fillHeight ? 'flex-1 min-h-0' : 'h-[300px]'} w-full`}>
         <MapContainer
@@ -237,8 +243,8 @@ export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fill
         </MapContainer>
       </div>
 
-      {/* Footer - hide when fillHeight to maximize map area */}
-      {!fillHeight && (
+      {/* Footer - hide when fillHeight or minimal mode */}
+      {!fillHeight && !isMinimal && (
         <div className="p-6 pt-4 bg-gray-50 border-t border-gray-200">
           <div className="flex justify-between items-center text-sm">
             <span className="text-gray-600">Distance from {resort.majorCityName}</span>

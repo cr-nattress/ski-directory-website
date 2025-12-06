@@ -30,6 +30,8 @@ interface NearbyServicesCardProps {
   resort: Resort;
   className?: string;
   defaultTab?: TabType;
+  /** Use 'minimal' inside accordion to remove card border/shadow */
+  variant?: 'card' | 'minimal';
 }
 
 function getVenueIcon(venueTypes: VenueType[]) {
@@ -47,7 +49,9 @@ export function NearbyServicesCard({
   resort,
   className,
   defaultTab = 'dining',
+  variant = 'card',
 }: NearbyServicesCardProps) {
+  const isMinimal = variant === 'minimal';
   const [activeTab, setActiveTab] = useState<TabType>(defaultTab);
   const [shops, setShops] = useState<SkiShop[]>([]);
   const [venues, setVenues] = useState<DiningVenue[]>([]);
@@ -117,16 +121,19 @@ export function NearbyServicesCard({
   return (
     <div
       className={cn(
-        'bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden',
+        'overflow-hidden',
+        !isMinimal && 'bg-white border border-gray-200 rounded-lg shadow-md',
         className
       )}
     >
-      {/* Header with Toggle */}
-      <div className="px-4 py-3 border-b border-gray-100">
-        <div className="flex items-center gap-2 mb-3">
-          <MapPin className="w-5 h-5 text-gray-600" />
-          <h3 className="font-semibold text-gray-900">Nearby</h3>
-        </div>
+      {/* Header with Toggle - hide header in minimal mode (accordion provides title) */}
+      <div className={cn('px-4 py-3', !isMinimal && 'border-b border-gray-100')}>
+        {!isMinimal && (
+          <div className="flex items-center gap-2 mb-3">
+            <MapPin className="w-5 h-5 text-gray-600" />
+            <h3 className="font-semibold text-gray-900">Nearby</h3>
+          </div>
+        )}
 
         {/* Tab Toggle */}
         <div className="flex bg-gray-100 rounded-lg p-1">

@@ -25,9 +25,11 @@ interface LocationMapCardWrapperProps {
   resort: Resort;
   /** When true, card fills parent height (for hero alignment) */
   fillHeight?: boolean;
+  /** Use 'minimal' inside accordion to remove card border/shadow */
+  variant?: 'card' | 'minimal';
 }
 
-export function LocationMapCardWrapper({ resort, fillHeight = false }: LocationMapCardWrapperProps) {
+export function LocationMapCardWrapper({ resort, fillHeight = false, variant = 'card' }: LocationMapCardWrapperProps) {
   const [skiShops, setSkiShops] = useState<SkiShop[]>([]);
   const [diningVenues, setDiningVenues] = useState<DiningVenue[]>([]);
 
@@ -66,6 +68,7 @@ export function LocationMapCardWrapper({ resort, fillHeight = false }: LocationM
       skiShops={skiShops}
       diningVenues={diningVenues}
       fillHeight={fillHeight}
+      variant={variant}
     />
   );
 }
