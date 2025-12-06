@@ -14,6 +14,7 @@ import { RelatedResortsSection } from './RelatedResortsSection';
 import { SkiShopsCard } from './SkiShopsCard';
 import { DiningVenuesCard } from './DiningVenuesCard';
 import { NearbyServicesCard } from './NearbyServicesCard';
+import { TruncatedText } from './TruncatedText';
 import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 import { FeatureFlag } from '@/components/FeatureFlag';
@@ -59,7 +60,7 @@ export function ResortDetail({ resort }: ResortDetailProps) {
         ]}
       />
 
-      <div className="container-custom py-8">
+      <div className="container-custom pt-4 pb-8">
         {/* Mobile: Resort Hero full width */}
         <div className="lg:hidden">
           <ResortHero resort={resort} />
@@ -92,9 +93,7 @@ export function ResortDetail({ resort }: ResortDetailProps) {
               {/* Overview + Map Split */}
               <section className="border-t border-gray-200 pt-8">
                 <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {resort.description}
-                </p>
+                <TruncatedText text={resort.description} maxLength={350} />
               </section>
 
               {/* Mountain Stats - controlled by feature flag (Epic 38) */}

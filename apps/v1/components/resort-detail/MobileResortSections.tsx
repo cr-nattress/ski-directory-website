@@ -2,6 +2,7 @@
 
 import { Accordion, AccordionItem } from '@/components/ui/Accordion';
 import { TrailMapCard } from './TrailMapCard';
+import { TruncatedText } from './TruncatedText';
 import { FeatureFlag } from '@/components/FeatureFlag';
 import { SkiShopsAccordionContent, useSkiShopsExist } from './SkiShopsAccordion';
 import { DiningVenuesAccordionContent, useDiningVenuesExist } from './DiningVenuesAccordion';
@@ -31,9 +32,7 @@ export function MobileResortSections({ resort }: MobileResortSectionsProps) {
       <Accordion>
         {/* Overview - Open by default */}
         <AccordionItem title="Overview" defaultOpen id="overview">
-          <p className="text-gray-700 leading-relaxed">
-            {resort.description}
-          </p>
+          <TruncatedText text={resort.description} maxLength={350} />
         </AccordionItem>
 
         {/* Mountain Stats - controlled by feature flag (Epic 38) */}

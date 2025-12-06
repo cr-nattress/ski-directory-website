@@ -13,12 +13,12 @@ export function ResortHero({ resort }: ResortHeroProps) {
     <div className="space-y-6">
       {/* Resort Identity */}
       <div className="space-y-3">
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
           {resort.name}
         </h1>
 
         {resort.tagline && (
-          <p className="text-xl text-gray-600">{resort.tagline}</p>
+          <p className="hidden sm:block text-xl text-gray-600">{resort.tagline}</p>
         )}
 
         {/* Pass Types and Website Chips */}
