@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, ChevronDown, X } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   SkiLinkType,
@@ -16,11 +16,9 @@ export type RegionFilter = SkiLinkRegion | 'all';
 export type AudienceFilter = SkiLinkAudience | 'all';
 
 interface SkiLinksFiltersProps {
-  searchQuery: string;
   typeFilter: TypeFilter;
   regionFilter: RegionFilter;
   audienceFilter: AudienceFilter;
-  onSearchChange: (query: string) => void;
   onTypeChange: (type: TypeFilter) => void;
   onRegionChange: (region: RegionFilter) => void;
   onAudienceChange: (audience: AudienceFilter) => void;
@@ -59,11 +57,9 @@ const audienceOptions: { value: AudienceFilter; label: string }[] = [
 ];
 
 export function SkiLinksFilters({
-  searchQuery,
   typeFilter,
   regionFilter,
   audienceFilter,
-  onSearchChange,
   onTypeChange,
   onRegionChange,
   onAudienceChange,
@@ -71,51 +67,21 @@ export function SkiLinksFilters({
   filteredCount,
 }: SkiLinksFiltersProps) {
   const hasActiveFilters =
-    searchQuery || typeFilter !== 'all' || regionFilter !== 'all' || audienceFilter !== 'all';
+    typeFilter !== 'all' || regionFilter !== 'all' || audienceFilter !== 'all';
 
   const clearFilters = () => {
-    onSearchChange('');
     onTypeChange('all');
     onRegionChange('all');
     onAudienceChange('all');
   };
 
   return (
-    <div className="space-y-4 pb-4 border-b border-gray-200">
-      {/* Search bar */}
-      <div className="relative max-w-md">
-        <label htmlFor="link-search" className="sr-only">
-          Search links
-        </label>
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-        <input
-          id="link-search"
-          type="text"
-          placeholder="Search links..."
-          value={searchQuery}
-          onChange={(e) => onSearchChange(e.target.value)}
-          className={cn(
-            'w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg',
-            'focus:outline-none focus:ring-2 focus:ring-ski-blue focus:border-ski-blue',
-            'placeholder:text-gray-400'
-          )}
-        />
-        {searchQuery && (
-          <button
-            onClick={() => onSearchChange('')}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-            aria-label="Clear search"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        )}
-      </div>
-
+    <div className="pb-4 border-b border-gray-200">
       {/* Filter dropdowns */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 w-full sm:w-auto">
           {/* Type Filter */}
-          <div className="relative">
+          <div className="relative w-full sm:w-auto">
             <label htmlFor="type-select" className="sr-only">
               Filter by type
             </label>
@@ -128,6 +94,7 @@ export function SkiLinksFilters({
                 'pl-3 pr-10 py-2 text-sm font-medium text-gray-700',
                 'focus:outline-none focus:ring-2 focus:ring-ski-blue focus:border-ski-blue',
                 'cursor-pointer hover:border-gray-400 transition-colors',
+                'w-full sm:w-auto',
                 typeFilter !== 'all' && 'border-ski-blue bg-ski-blue/5'
               )}
             >
@@ -141,7 +108,7 @@ export function SkiLinksFilters({
           </div>
 
           {/* Region Filter */}
-          <div className="relative">
+          <div className="relative w-full sm:w-auto">
             <label htmlFor="region-select" className="sr-only">
               Filter by region
             </label>
@@ -154,6 +121,7 @@ export function SkiLinksFilters({
                 'pl-3 pr-10 py-2 text-sm font-medium text-gray-700',
                 'focus:outline-none focus:ring-2 focus:ring-ski-blue focus:border-ski-blue',
                 'cursor-pointer hover:border-gray-400 transition-colors',
+                'w-full sm:w-auto',
                 regionFilter !== 'all' && 'border-ski-blue bg-ski-blue/5'
               )}
             >
@@ -167,7 +135,7 @@ export function SkiLinksFilters({
           </div>
 
           {/* Audience Filter */}
-          <div className="relative">
+          <div className="relative w-full sm:w-auto">
             <label htmlFor="audience-select" className="sr-only">
               Filter by audience
             </label>
@@ -180,6 +148,7 @@ export function SkiLinksFilters({
                 'pl-3 pr-10 py-2 text-sm font-medium text-gray-700',
                 'focus:outline-none focus:ring-2 focus:ring-ski-blue focus:border-ski-blue',
                 'cursor-pointer hover:border-gray-400 transition-colors',
+                'w-full sm:w-auto',
                 audienceFilter !== 'all' && 'border-ski-blue bg-ski-blue/5'
               )}
             >
@@ -196,7 +165,7 @@ export function SkiLinksFilters({
           {hasActiveFilters && (
             <button
               onClick={clearFilters}
-              className="text-sm text-ski-blue hover:text-ski-blue/80 font-medium flex items-center gap-1"
+              className="text-sm text-ski-blue hover:text-ski-blue/80 font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
             >
               <X className="w-3.5 h-3.5" />
               Clear

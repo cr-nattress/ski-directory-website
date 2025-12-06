@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { SocialLinksHero } from '@/components/social-links/SocialLinksHero';
 import { SocialLinksContent } from '@/components/social-links/SocialLinksContent';
 import { getSocialLinks, getUniquePlatformCount } from '@/lib/data/social-links';
@@ -40,6 +41,13 @@ export default function SocialLinksPage() {
   return (
     <main className="min-h-screen bg-white">
       <PageWrapper headerVariant="solid" />
+
+      <Breadcrumb
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Social', href: '/social' },
+        ]}
+      />
 
       <SocialLinksHero channelCount={links.length} platformCount={platformCount} />
 

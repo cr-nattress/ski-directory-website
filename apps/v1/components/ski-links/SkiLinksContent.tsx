@@ -28,48 +28,39 @@ export function SkiLinksContent({ links }: SkiLinksContentProps) {
   const initialType = (searchParams.get('type') as TypeFilter) || 'all';
   const initialRegion = (searchParams.get('region') as RegionFilter) || 'all';
   const initialAudience = (searchParams.get('audience') as AudienceFilter) || 'all';
-  const initialSearch = searchParams.get('q') || '';
 
   const [typeFilter, setTypeFilter] = useState<TypeFilter>(initialType);
   const [regionFilter, setRegionFilter] = useState<RegionFilter>(initialRegion);
   const [audienceFilter, setAudienceFilter] = useState<AudienceFilter>(initialAudience);
-  const [searchQuery, setSearchQuery] = useState(initialSearch);
 
   // Update URL when filters change
   const updateURL = (
     type: TypeFilter,
     region: RegionFilter,
-    audience: AudienceFilter,
-    query: string
+    audience: AudienceFilter
   ) => {
     const params = new URLSearchParams();
     if (type !== 'all') params.set('type', type);
     if (region !== 'all') params.set('region', region);
     if (audience !== 'all') params.set('audience', audience);
-    if (query) params.set('q', query);
 
     const queryString = params.toString();
-    router.push(queryString ? `/ski-links?${queryString}` : '/ski-links', { scroll: false });
+    router.push(queryString ? `/links?${queryString}` : '/links', { scroll: false });
   };
 
   const handleTypeChange = (type: TypeFilter) => {
     setTypeFilter(type);
-    updateURL(type, regionFilter, audienceFilter, searchQuery);
+    updateURL(type, regionFilter, audienceFilter);
   };
 
   const handleRegionChange = (region: RegionFilter) => {
     setRegionFilter(region);
-    updateURL(typeFilter, region, audienceFilter, searchQuery);
+    updateURL(typeFilter, region, audienceFilter);
   };
 
   const handleAudienceChange = (audience: AudienceFilter) => {
     setAudienceFilter(audience);
-    updateURL(typeFilter, regionFilter, audience, searchQuery);
-  };
-
-  const handleSearchChange = (query: string) => {
-    setSearchQuery(query);
-    updateURL(typeFilter, regionFilter, audienceFilter, query);
+    updateURL(typeFilter, regionFilter, audience);
   };
 
   // Filter and group links
@@ -78,7 +69,6 @@ export function SkiLinksContent({ links }: SkiLinksContentProps) {
       type: typeFilter !== 'all' ? typeFilter : null,
       region: regionFilter !== 'all' ? regionFilter : null,
       audience: audienceFilter !== 'all' ? audienceFilter : null,
-      query: searchQuery || undefined,
     });
 
     const sorted = sortSkiLinks(filtered);
@@ -92,24 +82,21 @@ export function SkiLinksContent({ links }: SkiLinksContentProps) {
       groupedLinks: grouped,
       showGroupHeadings: showHeadings,
     };
-  }, [links, typeFilter, regionFilter, audienceFilter, searchQuery]);
+  }, [links, typeFilter, regionFilter, audienceFilter]);
 
   const clearFilters = () => {
     setTypeFilter('all');
     setRegionFilter('all');
     setAudienceFilter('all');
-    setSearchQuery('');
-    router.push('/ski-links', { scroll: false });
+    router.push('/links', { scroll: false });
   };
 
   return (
     <div className="space-y-6">
       <SkiLinksFilters
-        searchQuery={searchQuery}
         typeFilter={typeFilter}
         regionFilter={regionFilter}
         audienceFilter={audienceFilter}
-        onSearchChange={handleSearchChange}
         onTypeChange={handleTypeChange}
         onRegionChange={handleRegionChange}
         onAudienceChange={handleAudienceChange}

@@ -28,48 +28,39 @@ export function SocialLinksContent({ links }: SocialLinksContentProps) {
   const initialPlatform = (searchParams.get('platform') as PlatformFilter) || 'all';
   const initialTopic = (searchParams.get('topic') as TopicFilter) || 'all';
   const initialRegion = (searchParams.get('region') as RegionFilter) || 'all';
-  const initialSearch = searchParams.get('q') || '';
 
   const [platformFilter, setPlatformFilter] = useState<PlatformFilter>(initialPlatform);
   const [topicFilter, setTopicFilter] = useState<TopicFilter>(initialTopic);
   const [regionFilter, setRegionFilter] = useState<RegionFilter>(initialRegion);
-  const [searchQuery, setSearchQuery] = useState(initialSearch);
 
   // Update URL when filters change
   const updateURL = (
     platform: PlatformFilter,
     topic: TopicFilter,
-    region: RegionFilter,
-    query: string
+    region: RegionFilter
   ) => {
     const params = new URLSearchParams();
     if (platform !== 'all') params.set('platform', platform);
     if (topic !== 'all') params.set('topic', topic);
     if (region !== 'all') params.set('region', region);
-    if (query) params.set('q', query);
 
     const queryString = params.toString();
-    router.push(queryString ? `/social-links?${queryString}` : '/social-links', { scroll: false });
+    router.push(queryString ? `/social?${queryString}` : '/social', { scroll: false });
   };
 
   const handlePlatformChange = (platform: PlatformFilter) => {
     setPlatformFilter(platform);
-    updateURL(platform, topicFilter, regionFilter, searchQuery);
+    updateURL(platform, topicFilter, regionFilter);
   };
 
   const handleTopicChange = (topic: TopicFilter) => {
     setTopicFilter(topic);
-    updateURL(platformFilter, topic, regionFilter, searchQuery);
+    updateURL(platformFilter, topic, regionFilter);
   };
 
   const handleRegionChange = (region: RegionFilter) => {
     setRegionFilter(region);
-    updateURL(platformFilter, topicFilter, region, searchQuery);
-  };
-
-  const handleSearchChange = (query: string) => {
-    setSearchQuery(query);
-    updateURL(platformFilter, topicFilter, regionFilter, query);
+    updateURL(platformFilter, topicFilter, region);
   };
 
   // Filter and group links
@@ -78,7 +69,6 @@ export function SocialLinksContent({ links }: SocialLinksContentProps) {
       platform: platformFilter !== 'all' ? platformFilter : null,
       topic: topicFilter !== 'all' ? topicFilter : null,
       region: regionFilter !== 'all' ? regionFilter : null,
-      query: searchQuery || undefined,
     });
 
     const sorted = sortSocialLinks(filtered);
@@ -92,24 +82,21 @@ export function SocialLinksContent({ links }: SocialLinksContentProps) {
       groupedLinks: grouped,
       showGroupHeadings: showHeadings,
     };
-  }, [links, platformFilter, topicFilter, regionFilter, searchQuery]);
+  }, [links, platformFilter, topicFilter, regionFilter]);
 
   const clearFilters = () => {
     setPlatformFilter('all');
     setTopicFilter('all');
     setRegionFilter('all');
-    setSearchQuery('');
-    router.push('/social-links', { scroll: false });
+    router.push('/social', { scroll: false });
   };
 
   return (
     <div className="space-y-6">
       <SocialLinksFilters
-        searchQuery={searchQuery}
         platformFilter={platformFilter}
         topicFilter={topicFilter}
         regionFilter={regionFilter}
-        onSearchChange={handleSearchChange}
         onPlatformChange={handlePlatformChange}
         onTopicChange={handleTopicChange}
         onRegionChange={handleRegionChange}

@@ -7,6 +7,7 @@ import { DirectoryFilters, SortOption, PassFilter, StatusFilter } from './Direct
 import { DirectoryTable } from './DirectoryTable';
 import { DirectoryList } from './DirectoryList';
 import { DirectoryHero } from './DirectoryHero';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 
 interface DirectoryContentProps {
@@ -221,15 +222,51 @@ export function DirectoryContent({ resorts }: DirectoryContentProps) {
 
   const countryDisplayName = inferredCountryCode ? getCountryName(inferredCountryCode) : null;
 
+  // Build breadcrumb items dynamically based on filters
+  const breadcrumbItems = useMemo(() => {
+    const items = [{ label: 'Home', href: '/' }];
+
+    if (stateDisplayName || countryDisplayName) {
+      items.push({ label: 'Resorts', href: '/directory' });
+
+      if (countryDisplayName && inferredCountryCode) {
+        if (stateDisplayName) {
+          // State is selected, country should link
+          items.push({
+            label: countryDisplayName,
+            href: `/directory?country=${inferredCountryCode}`,
+          });
+        } else {
+          // Only country is selected, it's the final item
+          items.push({
+            label: countryDisplayName,
+            href: `/directory?country=${inferredCountryCode}`,
+          });
+        }
+      }
+
+      if (stateDisplayName && stateFilter) {
+        items.push({
+          label: stateDisplayName,
+          href: `/directory?state=${stateFilter}`,
+        });
+      }
+    } else {
+      items.push({ label: 'Resorts', href: '/directory' });
+    }
+
+    return items;
+  }, [stateDisplayName, countryDisplayName, stateFilter, inferredCountryCode]);
+
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
+
       <DirectoryHero
         resortCount={filteredAndSortedResorts.length}
         totalResorts={resorts.length}
         stateName={stateDisplayName}
         countryName={countryDisplayName}
-        stateCode={stateFilter}
-        countryCode={inferredCountryCode || undefined}
       />
 
       <div className="container-custom py-8">

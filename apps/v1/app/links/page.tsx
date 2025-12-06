@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Footer } from '@/components/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { SkiLinksHero } from '@/components/ski-links/SkiLinksHero';
 import { SkiLinksContent } from '@/components/ski-links/SkiLinksContent';
 import { getSkiLinks, getSkiLinkStats } from '@/lib/data/ski-links';
@@ -43,6 +44,13 @@ export default function SkiLinksPage() {
   return (
     <main className="min-h-screen bg-white">
       <PageWrapper headerVariant="solid" />
+
+      <Breadcrumb
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Links', href: '/links' },
+        ]}
+      />
 
       <SkiLinksHero linkCount={stats.total} categoryCount={categoryCount} />
 
