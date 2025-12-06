@@ -57,6 +57,8 @@ export function NearbyServicesCard({
   const [venues, setVenues] = useState<DiningVenue[]>([]);
   const [isLoadingShops, setIsLoadingShops] = useState(true);
   const [isLoadingVenues, setIsLoadingVenues] = useState(true);
+  const [showAllShops, setShowAllShops] = useState(false);
+  const [showAllVenues, setShowAllVenues] = useState(false);
 
   // Fetch ski shops
   useEffect(() => {
@@ -185,17 +187,18 @@ export function NearbyServicesCard({
 
           {/* Shop List */}
           <div className="divide-y divide-gray-100">
-            {shops.slice(0, 4).map((shop) => (
+            {(showAllShops ? shops : shops.slice(0, 4)).map((shop) => (
               <ShopRow key={shop.slug} shop={shop} />
             ))}
           </div>
 
-          {/* See All Link */}
+          {/* See All / Show Less Toggle */}
           {shops.length > 4 && (
-            <SeeAllButton
+            <ExpandCollapseButton
               count={shops.length}
               label="Shops"
-              targetId="ski-shops"
+              isExpanded={showAllShops}
+              onToggle={() => setShowAllShops(!showAllShops)}
               color="blue"
             />
           )}
@@ -228,17 +231,18 @@ export function NearbyServicesCard({
 
           {/* Venue List */}
           <div className="divide-y divide-gray-100">
-            {venues.slice(0, 4).map((venue) => (
+            {(showAllVenues ? venues : venues.slice(0, 4)).map((venue) => (
               <VenueRow key={venue.slug} venue={venue} />
             ))}
           </div>
 
-          {/* See All Link */}
+          {/* See All / Show Less Toggle */}
           {venues.length > 4 && (
-            <SeeAllButton
+            <ExpandCollapseButton
               count={venues.length}
               label="Venues"
-              targetId="dining"
+              isExpanded={showAllVenues}
+              onToggle={() => setShowAllVenues(!showAllVenues)}
               color="orange"
             />
           )}
@@ -417,48 +421,26 @@ function Badge({ count, label }: { count: number; label: string }) {
 }
 
 /**
- * See All button component
- * Scrolls to target accordion and expands it if collapsed
+ * Expand/Collapse button component for showing all items in-place
  */
-function SeeAllButton({
+function ExpandCollapseButton({
   count,
   label,
-  targetId,
+  isExpanded,
+  onToggle,
   color,
 }: {
   count: number;
   label: string;
-  targetId: string;
+  isExpanded: boolean;
+  onToggle: () => void;
   color: 'blue' | 'orange';
 }) {
   const textColor = color === 'blue' ? 'text-ski-blue' : 'text-orange-600';
 
-  const handleClick = () => {
-    const targetElement = document.getElementById(targetId);
-    if (!targetElement) return;
-
-    // Find the accordion button inside the target element
-    const accordionButton = targetElement.querySelector('button[aria-expanded]');
-    if (accordionButton) {
-      const isExpanded = accordionButton.getAttribute('aria-expanded') === 'true';
-      // Expand the accordion if it's collapsed
-      if (!isExpanded) {
-        (accordionButton as HTMLButtonElement).click();
-      }
-    }
-
-    // Scroll to the target after a brief delay to allow accordion to expand
-    setTimeout(() => {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }, 50);
-  };
-
   return (
     <button
-      onClick={handleClick}
+      onClick={onToggle}
       className={cn(
         'w-full px-4 py-3 flex items-center justify-center gap-1',
         `text-sm ${textColor} font-medium`,
@@ -466,8 +448,8 @@ function SeeAllButton({
         'border-t border-gray-100'
       )}
     >
-      <span>See All {count} {label}</span>
-      <ChevronRight className="w-4 h-4" />
+      <span>{isExpanded ? `Show Less` : `See All ${count} ${label}`}</span>
+      <ChevronRight className={cn('w-4 h-4 transition-transform', isExpanded && 'rotate-90')} />
     </button>
   );
 }
