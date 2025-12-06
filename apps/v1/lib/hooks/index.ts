@@ -46,25 +46,25 @@ export { useInfiniteResorts } from './useInfiniteResorts';
 export { useViewMode } from './useViewMode';
 export type { ViewMode } from './useViewMode';
 export { useEventBanner } from './useEventBanner';
-export { useFeatureFlag } from './useFeatureFlag';
 
 // =============================================================================
-// Analytics & Tracking
+// Cross-Cutting Hooks (re-exported from @shared/hooks)
+// @deprecated Import directly from '@shared/hooks' instead
 // =============================================================================
 
+export { useFeatureFlag, useFeatureFlags } from '@shared/hooks';
 export {
   useImpressionTracking,
   useClickTracking,
   useResortTracking,
-} from './useImpressionTracking';
-
-// =============================================================================
-// Utilities
-// =============================================================================
-
-export { useIntersectionObserver } from './useIntersectionObserver';
-export { useLogger, createLogger } from './useLogger';
-export { usePullToRefresh } from './usePullToRefresh';
+} from '@shared/hooks';
+export {
+  useIntersectionObserver,
+  useIntersectionCallback,
+} from '@shared/hooks';
+export { useLogger, createLogger } from '@shared/hooks';
+export type { UseLoggerOptions, Logger } from '@shared/hooks';
+export { usePullToRefresh } from '@shared/hooks';
 
 // =============================================================================
 // Type Exports
