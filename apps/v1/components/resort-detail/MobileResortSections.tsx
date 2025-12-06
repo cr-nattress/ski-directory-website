@@ -5,6 +5,8 @@ import { TrailMapCard } from './TrailMapCard';
 import { FeatureFlag } from '@/components/FeatureFlag';
 import { SkiShopsAccordionContent, useSkiShopsExist } from './SkiShopsAccordion';
 import { DiningVenuesAccordionContent, useDiningVenuesExist } from './DiningVenuesAccordion';
+import { LocationMapCardWrapper } from './LocationMapCardWrapper';
+import { NearbyServicesCard } from './NearbyServicesCard';
 import type { Resort } from '@/lib/types';
 
 interface MobileResortSectionsProps {
@@ -176,6 +178,20 @@ export function MobileResortSections({ resort }: MobileResortSectionsProps) {
           </AccordionItem>
         )}
       </Accordion>
+
+      {/* Location Map - Mobile */}
+      <FeatureFlag name="locationMapCard">
+        <div className="mt-6">
+          <LocationMapCardWrapper resort={resort} />
+        </div>
+      </FeatureFlag>
+
+      {/* Nearby Services (Shops & Dining) - Mobile */}
+      <FeatureFlag name="nearbyServicesCard">
+        <div className="mt-6">
+          <NearbyServicesCard resort={resort} />
+        </div>
+      </FeatureFlag>
     </div>
   );
 }
