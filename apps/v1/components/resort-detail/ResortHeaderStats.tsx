@@ -128,44 +128,49 @@ export function ResortHeaderStats({ resort, className }: ResortHeaderStatsProps)
         </div>
       </div>
 
-      {/* Expandable: Key Stats Section */}
-      {isExpanded && (
-        <div className="mt-4 pt-4 border-t border-gray-200">
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-            Key Stats
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div>
-              <div className="text-lg font-semibold text-gray-900">
-                {stats.skiableAcres.toLocaleString()}
-              </div>
-              <div className="text-xs text-gray-500">Skiable Acres</div>
-            </div>
-            <div>
-              <div className="text-lg font-semibold text-gray-900">
-                {stats.runsCount}
-              </div>
-              <div className="text-xs text-gray-500">Runs</div>
-            </div>
-            {stats.liftsCount > 0 && (
+      {/* Expandable: Key Stats Section - Uses CSS Grid for smooth animation without CLS */}
+      <div
+        className="grid transition-all duration-200 ease-out"
+        style={{ gridTemplateRows: isExpanded ? '1fr' : '0fr' }}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+              Key Stats
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div>
                 <div className="text-lg font-semibold text-gray-900">
-                  {stats.liftsCount}
+                  {stats.skiableAcres.toLocaleString()}
                 </div>
-                <div className="text-xs text-gray-500">Lifts</div>
+                <div className="text-xs text-gray-500">Skiable Acres</div>
               </div>
-            )}
-            {stats.avgAnnualSnowfall > 0 && (
               <div>
                 <div className="text-lg font-semibold text-gray-900">
-                  {stats.avgAnnualSnowfall}&quot;
+                  {stats.runsCount}
                 </div>
-                <div className="text-xs text-gray-500">Avg Snowfall/yr</div>
+                <div className="text-xs text-gray-500">Runs</div>
               </div>
-            )}
+              {stats.liftsCount > 0 && (
+                <div>
+                  <div className="text-lg font-semibold text-gray-900">
+                    {stats.liftsCount}
+                  </div>
+                  <div className="text-xs text-gray-500">Lifts</div>
+                </div>
+              )}
+              {stats.avgAnnualSnowfall > 0 && (
+                <div>
+                  <div className="text-lg font-semibold text-gray-900">
+                    {stats.avgAnnualSnowfall}&quot;
+                  </div>
+                  <div className="text-xs text-gray-500">Avg Snowfall/yr</div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Expand/Collapse Icon - Bottom Right */}
       <button

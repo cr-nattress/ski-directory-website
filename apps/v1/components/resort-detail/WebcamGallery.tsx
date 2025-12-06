@@ -75,6 +75,7 @@ export function WebcamGallery({ webcams, className }: WebcamGalleryProps) {
                     className="object-cover group-hover:scale-105 transition-transform duration-200"
                     onError={() => handleImageError(webcam.image)}
                     unoptimized
+                    loading="lazy"
                     sizes="(max-width: 768px) 50vw, 33vw"
                   />
                 )}

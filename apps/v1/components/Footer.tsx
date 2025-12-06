@@ -14,7 +14,7 @@ export function Footer() {
                 alt="Ski Directory logo"
                 width={215}
                 height={54}
-                unoptimized
+                loading="lazy"
               />
             </Link>
             <p className="text-gray-400 text-sm">

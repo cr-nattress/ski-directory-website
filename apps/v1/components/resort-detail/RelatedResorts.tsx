@@ -38,7 +38,7 @@ export function RelatedResorts({
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                unoptimized
+                loading="lazy"
               />
               {resort.passAffiliations.length > 0 && (
                 <div className="absolute top-2 right-2 flex gap-1">
