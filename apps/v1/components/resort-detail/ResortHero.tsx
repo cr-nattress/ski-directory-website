@@ -1,5 +1,7 @@
 import type { Resort } from '@/lib/types';
 import { PhotoGallery } from './PhotoGallery';
+import { ResortHeaderStats } from './ResortHeaderStats';
+import { FeatureFlag } from '@/components/FeatureFlag';
 import { cn } from '@/lib/utils';
 
 interface ResortHeroProps {
@@ -74,49 +76,12 @@ export function ResortHero({ resort }: ResortHeroProps) {
           )}
         </div>
 
-        {/* Terrain Distribution - hidden for lost ski areas */}
-        {!resort.isLost && (
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-700">
-            {/* Beginner - Green Circle */}
-            <span className="inline-flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="7" cy="7" r="6" fill="#22c55e"/>
-              </svg>
-              {resort.terrain.beginner}%
-            </span>
-            {/* Intermediate - Blue Square */}
-            <span className="inline-flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="1" y="1" width="12" height="12" fill="#3b82f6"/>
-              </svg>
-              {resort.terrain.intermediate}%
-            </span>
-            {/* Advanced - Black Diamond */}
-            <span className="inline-flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 0L14 7L7 14L0 7L7 0Z" fill="#000000"/>
-              </svg>
-              {resort.terrain.advanced}%
-            </span>
-            {/* Expert - Double Black Diamond */}
-            {resort.terrain.expert > 0 && (
-              <span className="inline-flex items-center gap-1.5">
-                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 0L10 7L5 14L0 7L5 0Z" fill="#000000"/>
-                  <path d="M15 0L20 7L15 14L10 7L15 0Z" fill="#000000"/>
-                </svg>
-                {resort.terrain.expert}%
-              </span>
-            )}
-          </div>
-        )}
-
-        {/* Elevation */}
-        <div className="text-sm text-gray-600">
-          Base {resort.stats.baseElevation.toLocaleString()} ft · Summit{' '}
-          {resort.stats.summitElevation.toLocaleString()} ft
-        </div>
       </div>
+
+      {/* Consolidated Header Stats - Epic 38 */}
+      <FeatureFlag name="resortHeaderStats">
+        <ResortHeaderStats resort={resort} className="mt-4" />
+      </FeatureFlag>
 
       {/* Photo Gallery */}
       <PhotoGallery resort={resort} />

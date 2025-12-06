@@ -97,74 +97,76 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                 </p>
               </section>
 
-              {/* Mountain Stats */}
-              <section className="border-t border-gray-200 pt-8">
-                <h2 className="text-2xl font-semibold mb-4">Mountain Stats</h2>
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
-                  <StatCard
-                    label="Vertical"
-                    value={`${resort.stats.verticalDrop.toLocaleString()}'`}
-                  />
-                  <StatCard
-                    label="Summit"
-                    value={`${resort.stats.summitElevation.toLocaleString()}'`}
-                  />
-                  <StatCard
-                    label="Base"
-                    value={`${resort.stats.baseElevation.toLocaleString()}'`}
-                  />
-                  <StatCard
-                    label="Acres"
-                    value={resort.stats.skiableAcres.toLocaleString()}
-                  />
-                  <StatCard
-                    label="Snowfall"
-                    value={`${resort.stats.avgAnnualSnowfall}"/yr`}
-                  />
-                  <StatCard
-                    label="Runs"
-                    value={resort.stats.runsCount.toString()}
-                  />
-                  {/* Hide lifts count for lost ski areas with 0 lifts */}
-                  {!(resort.isLost && resort.stats.liftsCount === 0) && (
+              {/* Mountain Stats - controlled by feature flag (Epic 38) */}
+              <FeatureFlag name="mountainStatsSection">
+                <section className="border-t border-gray-200 pt-8">
+                  <h2 className="text-2xl font-semibold mb-4">Mountain Stats</h2>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
                     <StatCard
-                      label="Total Lifts"
-                      value={resort.stats.liftsCount.toString()}
+                      label="Vertical"
+                      value={`${resort.stats.verticalDrop.toLocaleString()}'`}
                     />
-                  )}
-                  {/* Only show optional stats if they have values */}
-                  {resort.highSpeedLifts?.count != null && resort.highSpeedLifts.count > 0 && (
                     <StatCard
-                      label="High-Speed"
-                      value={resort.highSpeedLifts.count.toString()}
+                      label="Summit"
+                      value={`${resort.stats.summitElevation.toLocaleString()}'`}
                     />
-                  )}
-                  {resort.baseAreas?.count != null && resort.baseAreas.count > 0 && (
                     <StatCard
-                      label="Base Areas"
-                      value={resort.baseAreas.count.toString()}
+                      label="Base"
+                      value={`${resort.stats.baseElevation.toLocaleString()}'`}
                     />
-                  )}
-                  {resort.nearby?.restaurants?.count != null && resort.nearby.restaurants.count > 0 && (
                     <StatCard
-                      label="Restaurants"
-                      value={resort.nearby.restaurants.count.toString()}
+                      label="Acres"
+                      value={resort.stats.skiableAcres.toLocaleString()}
                     />
-                  )}
-                  {resort.nearby?.bars?.count != null && resort.nearby.bars.count > 0 && (
                     <StatCard
-                      label="Bars"
-                      value={resort.nearby.bars.count.toString()}
+                      label="Snowfall"
+                      value={`${resort.stats.avgAnnualSnowfall}"/yr`}
                     />
-                  )}
-                  {resort.nearby?.hotels?.count != null && resort.nearby.hotels.count > 0 && (
                     <StatCard
-                      label="Hotels"
-                      value={resort.nearby.hotels.count.toString()}
+                      label="Runs"
+                      value={resort.stats.runsCount.toString()}
                     />
-                  )}
-                </div>
-              </section>
+                    {/* Hide lifts count for lost ski areas with 0 lifts */}
+                    {!(resort.isLost && resort.stats.liftsCount === 0) && (
+                      <StatCard
+                        label="Total Lifts"
+                        value={resort.stats.liftsCount.toString()}
+                      />
+                    )}
+                    {/* Only show optional stats if they have values */}
+                    {resort.highSpeedLifts?.count != null && resort.highSpeedLifts.count > 0 && (
+                      <StatCard
+                        label="High-Speed"
+                        value={resort.highSpeedLifts.count.toString()}
+                      />
+                    )}
+                    {resort.baseAreas?.count != null && resort.baseAreas.count > 0 && (
+                      <StatCard
+                        label="Base Areas"
+                        value={resort.baseAreas.count.toString()}
+                      />
+                    )}
+                    {resort.nearby?.restaurants?.count != null && resort.nearby.restaurants.count > 0 && (
+                      <StatCard
+                        label="Restaurants"
+                        value={resort.nearby.restaurants.count.toString()}
+                      />
+                    )}
+                    {resort.nearby?.bars?.count != null && resort.nearby.bars.count > 0 && (
+                      <StatCard
+                        label="Bars"
+                        value={resort.nearby.bars.count.toString()}
+                      />
+                    )}
+                    {resort.nearby?.hotels?.count != null && resort.nearby.hotels.count > 0 && (
+                      <StatCard
+                        label="Hotels"
+                        value={resort.nearby.hotels.count.toString()}
+                      />
+                    )}
+                  </div>
+                </section>
+              </FeatureFlag>
 
               {/* Trail Map */}
               <FeatureFlag name="trailMapCard">

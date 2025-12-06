@@ -42,6 +42,12 @@ export const featureFlags = {
   /** Consolidated Nearby Services card with toggle between shops/dining (Story 37.17) */
   nearbyServicesCard: true,
 
+  /** Consolidated header stats (trail difficulty, elevation, key metrics) - Epic 38 */
+  resortHeaderStats: true,
+
+  /** Legacy Mountain Stats section (disable when resortHeaderStats is enabled) - Epic 38 */
+  mountainStatsSection: false,
+
   // ============================================
   // Global Components
   // ============================================

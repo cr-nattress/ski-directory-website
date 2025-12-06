@@ -36,53 +36,55 @@ export function MobileResortSections({ resort }: MobileResortSectionsProps) {
           </p>
         </AccordionItem>
 
-        {/* Mountain Stats */}
-        <AccordionItem title="Mountain Stats" id="stats">
-          <div className="grid grid-cols-3 gap-2">
-            <StatCard
-              label="Vertical"
-              value={`${resort.stats.verticalDrop.toLocaleString()}'`}
-            />
-            <StatCard
-              label="Summit"
-              value={`${resort.stats.summitElevation.toLocaleString()}'`}
-            />
-            <StatCard
-              label="Base"
-              value={`${resort.stats.baseElevation.toLocaleString()}'`}
-            />
-            <StatCard
-              label="Acres"
-              value={resort.stats.skiableAcres.toLocaleString()}
-            />
-            <StatCard
-              label="Snowfall"
-              value={`${resort.stats.avgAnnualSnowfall}"/yr`}
-            />
-            <StatCard
-              label="Runs"
-              value={resort.stats.runsCount.toString()}
-            />
-            {!(resort.isLost && resort.stats.liftsCount === 0) && (
+        {/* Mountain Stats - controlled by feature flag (Epic 38) */}
+        <FeatureFlag name="mountainStatsSection">
+          <AccordionItem title="Mountain Stats" id="stats">
+            <div className="grid grid-cols-3 gap-2">
               <StatCard
-                label="Total Lifts"
-                value={resort.stats.liftsCount.toString()}
+                label="Vertical"
+                value={`${resort.stats.verticalDrop.toLocaleString()}'`}
               />
-            )}
-            {resort.highSpeedLifts?.count != null && resort.highSpeedLifts.count > 0 && (
               <StatCard
-                label="High-Speed"
-                value={resort.highSpeedLifts.count.toString()}
+                label="Summit"
+                value={`${resort.stats.summitElevation.toLocaleString()}'`}
               />
-            )}
-            {resort.baseAreas?.count != null && resort.baseAreas.count > 0 && (
               <StatCard
-                label="Base Areas"
-                value={resort.baseAreas.count.toString()}
+                label="Base"
+                value={`${resort.stats.baseElevation.toLocaleString()}'`}
               />
-            )}
-          </div>
-        </AccordionItem>
+              <StatCard
+                label="Acres"
+                value={resort.stats.skiableAcres.toLocaleString()}
+              />
+              <StatCard
+                label="Snowfall"
+                value={`${resort.stats.avgAnnualSnowfall}"/yr`}
+              />
+              <StatCard
+                label="Runs"
+                value={resort.stats.runsCount.toString()}
+              />
+              {!(resort.isLost && resort.stats.liftsCount === 0) && (
+                <StatCard
+                  label="Total Lifts"
+                  value={resort.stats.liftsCount.toString()}
+                />
+              )}
+              {resort.highSpeedLifts?.count != null && resort.highSpeedLifts.count > 0 && (
+                <StatCard
+                  label="High-Speed"
+                  value={resort.highSpeedLifts.count.toString()}
+                />
+              )}
+              {resort.baseAreas?.count != null && resort.baseAreas.count > 0 && (
+                <StatCard
+                  label="Base Areas"
+                  value={resort.baseAreas.count.toString()}
+                />
+              )}
+            </div>
+          </AccordionItem>
+        </FeatureFlag>
 
         {/* Terrain & Conditions - Only for active resorts */}
         {!resort.isLost && (
