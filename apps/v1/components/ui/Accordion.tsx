@@ -1,20 +1,36 @@
 'use client';
 
-import { useState, useId, ReactNode } from 'react';
+import { useState, useId, ReactNode, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface AccordionItemProps {
   title: string;
   defaultOpen?: boolean;
+  /** Open by default on tablet (md) and larger screens */
+  defaultOpenOnTablet?: boolean;
   children: ReactNode;
   id?: string;
 }
 
-export function AccordionItem({ title, defaultOpen = false, children, id }: AccordionItemProps) {
+export function AccordionItem({ title, defaultOpen = false, defaultOpenOnTablet = false, children, id }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const contentId = useId();
   const headerId = useId();
+
+  // Handle responsive defaultOpen for tablet
+  useEffect(() => {
+    if (defaultOpenOnTablet && !defaultOpen) {
+      const checkTablet = () => {
+        const isTablet = window.matchMedia('(min-width: 768px)').matches;
+        if (isTablet) {
+          setIsOpen(true);
+        }
+      };
+      checkTablet();
+      // No need to add resize listener since this only affects initial state
+    }
+  }, [defaultOpenOnTablet, defaultOpen]);
 
   return (
     <div className="border-b border-gray-200" id={id}>

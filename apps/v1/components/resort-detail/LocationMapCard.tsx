@@ -40,6 +40,33 @@ function FitBounds({ bounds }: { bounds: LatLngBounds | null }) {
   return null;
 }
 
+/**
+ * Component to invalidate map size when container becomes visible
+ * This fixes issues with Leaflet not properly detecting container size
+ * when the map is initially hidden (e.g., inside a closed accordion)
+ */
+function InvalidateSizeOnMount() {
+  const map = useMap();
+
+  useEffect(() => {
+    // Small delay to ensure container is fully rendered
+    const timer = setTimeout(() => {
+      map.invalidateSize();
+    }, 100);
+
+    // Also invalidate on resize
+    const handleResize = () => map.invalidateSize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [map]);
+
+  return null;
+}
+
 export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fillHeight = false, variant = 'card' }: LocationMapCardProps) {
   const isMinimal = variant === 'minimal';
   const [resortIcon, setResortIcon] = useState<Icon | null>(null);
@@ -198,6 +225,9 @@ export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fill
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+
+          {/* Invalidate size on mount for accordion/hidden containers */}
+          <InvalidateSizeOnMount />
 
           {/* Fit bounds to show all markers */}
           <FitBounds bounds={bounds} />

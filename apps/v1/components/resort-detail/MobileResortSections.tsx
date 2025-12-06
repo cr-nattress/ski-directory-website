@@ -8,6 +8,7 @@ import { SkiShopsAccordionContent, useSkiShopsExist } from './SkiShopsAccordion'
 import { DiningVenuesAccordionContent, useDiningVenuesExist } from './DiningVenuesAccordion';
 import { LocationMapCardWrapper } from './LocationMapCardWrapper';
 import { NearbyServicesCard } from './NearbyServicesCard';
+import { RelatedResortsAccordionContent } from './RelatedResortsAccordion';
 import type { Resort } from '@/lib/types';
 
 interface MobileResortSectionsProps {
@@ -85,44 +86,21 @@ export function MobileResortSections({ resort }: MobileResortSectionsProps) {
           </AccordionItem>
         </FeatureFlag>
 
-        {/* Terrain & Conditions - Only for active resorts */}
+        {/* Conditions - Only for active resorts */}
         {!resort.isLost && (
-          <AccordionItem title="Terrain & Conditions" id="terrain">
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm text-gray-600 mb-2">Terrain Breakdown</p>
-                <div className="grid grid-cols-4 gap-2 text-center text-sm">
-                  <div>
-                    <div className="text-green-600 font-semibold">{resort.terrain.beginner}%</div>
-                    <div className="text-xs text-gray-500">Beginner</div>
-                  </div>
-                  <div>
-                    <div className="text-blue-600 font-semibold">{resort.terrain.intermediate}%</div>
-                    <div className="text-xs text-gray-500">Intermediate</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-900 font-semibold">{resort.terrain.advanced}%</div>
-                    <div className="text-xs text-gray-500">Advanced</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-900 font-semibold">{resort.terrain.expert}%</div>
-                    <div className="text-xs text-gray-500">Expert</div>
-                  </div>
-                </div>
+          <AccordionItem title="Conditions" id="conditions">
+            <div className="space-y-1 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-700">New Snow (24h)</span>
+                <span className="font-semibold">{resort.conditions.snowfall24h}&quot;</span>
               </div>
-              <div className="space-y-1 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-700">New Snow (24h)</span>
-                  <span className="font-semibold">{resort.conditions.snowfall24h}&quot;</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Base Depth</span>
-                  <span className="font-semibold">{resort.conditions.baseDepth}&quot;</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Terrain Open</span>
-                  <span className="font-semibold">{resort.conditions.terrainOpen}%</span>
-                </div>
+              <div className="flex justify-between">
+                <span className="text-gray-700">Base Depth</span>
+                <span className="font-semibold">{resort.conditions.baseDepth}&quot;</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-700">Terrain Open</span>
+                <span className="font-semibold">{resort.conditions.terrainOpen}%</span>
               </div>
             </div>
           </AccordionItem>
@@ -187,10 +165,15 @@ export function MobileResortSections({ resort }: MobileResortSectionsProps) {
 
         {/* Nearby Services (Shops & Dining) - inside accordion for uniform styling */}
         <FeatureFlag name="nearbyServicesCard">
-          <AccordionItem title="Nearby" id="nearby">
+          <AccordionItem title="Shops & Dining" id="nearby">
             <NearbyServicesCard resort={resort} variant="minimal" />
           </AccordionItem>
         </FeatureFlag>
+
+        {/* Related Resorts - collapsed by default */}
+        <AccordionItem title="Nearby Resorts" id="related-resorts">
+          <RelatedResortsAccordionContent resort={resort} />
+        </AccordionItem>
       </Accordion>
     </div>
   );
