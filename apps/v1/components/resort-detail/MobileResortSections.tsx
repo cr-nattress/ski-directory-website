@@ -4,6 +4,7 @@ import { Accordion, AccordionItem } from '@/components/ui/Accordion';
 import { TrailMapCard } from './TrailMapCard';
 import { FeatureFlag } from '@/components/FeatureFlag';
 import { SkiShopsAccordionContent, useSkiShopsExist } from './SkiShopsAccordion';
+import { DiningVenuesAccordionContent, useDiningVenuesExist } from './DiningVenuesAccordion';
 import type { Resort } from '@/lib/types';
 
 interface MobileResortSectionsProps {
@@ -21,6 +22,7 @@ function StatCard({ label, value }: { label: string; value: string }) {
 
 export function MobileResortSections({ resort }: MobileResortSectionsProps) {
   const hasSkiShops = useSkiShopsExist(resort);
+  const hasDiningVenues = useDiningVenuesExist(resort);
 
   return (
     <div className="lg:hidden mt-8">
@@ -128,6 +130,15 @@ export function MobileResortSections({ resort }: MobileResortSectionsProps) {
           <FeatureFlag name="skiShopsCard">
             <AccordionItem title="Ski Shops" id="ski-shops">
               <SkiShopsAccordionContent resort={resort} />
+            </AccordionItem>
+          </FeatureFlag>
+        )}
+
+        {/* Dining Venues - Only show if data exists */}
+        {hasDiningVenues && (
+          <FeatureFlag name="diningVenuesCard">
+            <AccordionItem title="Dining" id="dining">
+              <DiningVenuesAccordionContent resort={resort} />
             </AccordionItem>
           </FeatureFlag>
         )}

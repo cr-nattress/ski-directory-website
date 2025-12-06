@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { Resort } from '@/lib/types';
 import { SkiShop, SkiShopsApiResponse, sortShopsByProximity } from '@/lib/types/ski-shop';
+import { DiningVenue, DiningApiResponse, sortVenuesByProximity } from '@/lib/types/dining';
 
 const LocationMapCardDynamic = dynamic(
   () => import('./LocationMapCard').then((mod) => mod.LocationMapCard),
@@ -28,6 +29,7 @@ interface LocationMapCardWrapperProps {
 
 export function LocationMapCardWrapper({ resort, fillHeight = false }: LocationMapCardWrapperProps) {
   const [skiShops, setSkiShops] = useState<SkiShop[]>([]);
+  const [diningVenues, setDiningVenues] = useState<DiningVenue[]>([]);
 
   useEffect(() => {
     async function fetchSkiShops() {
@@ -42,8 +44,28 @@ export function LocationMapCardWrapper({ resort, fillHeight = false }: LocationM
       }
     }
 
+    async function fetchDiningVenues() {
+      try {
+        const response = await fetch(`/api/resorts/${resort.slug}/dining`);
+        if (response.ok) {
+          const data: DiningApiResponse = await response.json();
+          setDiningVenues(sortVenuesByProximity(data.venues || []));
+        }
+      } catch {
+        // Silently fail - map will just show without dining venues
+      }
+    }
+
     fetchSkiShops();
+    fetchDiningVenues();
   }, [resort.slug]);
 
-  return <LocationMapCardDynamic resort={resort} skiShops={skiShops} fillHeight={fillHeight} />;
+  return (
+    <LocationMapCardDynamic
+      resort={resort}
+      skiShops={skiShops}
+      diningVenues={diningVenues}
+      fillHeight={fillHeight}
+    />
+  );
 }

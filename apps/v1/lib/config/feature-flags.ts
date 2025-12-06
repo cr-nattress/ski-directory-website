@@ -33,8 +33,14 @@ export const featureFlags = {
   /** Location Map card with interactive Leaflet map */
   locationMapCard: true,
 
-  /** Ski Shops card showing nearby ski shops */
-  skiShopsCard: true,
+  /** Ski Shops card showing nearby ski shops (disabled in favor of nearbyServicesCard) */
+  skiShopsCard: false,
+
+  /** Dining Venues card showing nearby restaurants and bars (disabled in favor of nearbyServicesCard) */
+  diningVenuesCard: false,
+
+  /** Consolidated Nearby Services card with toggle between shops/dining (Story 37.17) */
+  nearbyServicesCard: true,
 
   // ============================================
   // Global Components

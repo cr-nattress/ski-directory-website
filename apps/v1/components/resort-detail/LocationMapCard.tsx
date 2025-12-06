@@ -2,7 +2,13 @@
 
 import type { Resort } from '@/lib/types';
 import type { SkiShop } from '@/lib/types/ski-shop';
+import type { DiningVenue } from '@/lib/types/dining';
 import { formatPhone, getTelLink, getShopTypeLabel } from '@/lib/types/ski-shop';
+import {
+  formatPhone as formatDiningPhone,
+  getTelLink as getDiningTelLink,
+  getVenueTypeLabel,
+} from '@/lib/types/dining';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useState, useMemo } from 'react';
@@ -12,6 +18,7 @@ import { Globe, Phone } from 'lucide-react';
 interface LocationMapCardProps {
   resort: Resort;
   skiShops?: SkiShop[];
+  diningVenues?: DiningVenue[];
   /** When true, card fills parent height (for hero alignment) */
   fillHeight?: boolean;
 }
@@ -31,14 +38,21 @@ function FitBounds({ bounds }: { bounds: LatLngBounds | null }) {
   return null;
 }
 
-export function LocationMapCard({ resort, skiShops = [], fillHeight = false }: LocationMapCardProps) {
+export function LocationMapCard({ resort, skiShops = [], diningVenues = [], fillHeight = false }: LocationMapCardProps) {
   const [resortIcon, setResortIcon] = useState<Icon | null>(null);
   const [shopIcon, setShopIcon] = useState<Icon | null>(null);
+  const [diningIcon, setDiningIcon] = useState<Icon | null>(null);
 
   // Filter ski shops with valid coordinates
   const shopsWithCoords = useMemo(() =>
     skiShops.filter((shop) => shop.latitude && shop.longitude),
     [skiShops]
+  );
+
+  // Filter dining venues with valid coordinates
+  const diningWithCoords = useMemo(() =>
+    diningVenues.filter((venue) => venue.latitude && venue.longitude),
+    [diningVenues]
   );
 
   // Calculate bounds to fit all markers
@@ -54,13 +68,17 @@ export function LocationMapCard({ resort, skiShops = [], fillHeight = false }: L
       allPoints.push([shop.latitude, shop.longitude]);
     });
 
+    diningWithCoords.forEach((venue) => {
+      allPoints.push([venue.latitude, venue.longitude]);
+    });
+
     if (allPoints.length === 1) {
       // Only resort marker, no need for bounds fitting
       return null;
     }
 
     return L.latLngBounds(allPoints) as LatLngBounds;
-  }, [resort.location.lat, resort.location.lng, shopsWithCoords]);
+  }, [resort.location.lat, resort.location.lng, shopsWithCoords, diningWithCoords]);
 
   useEffect(() => {
     // Only run on client side
@@ -101,8 +119,26 @@ export function LocationMapCard({ resort, skiShops = [], fillHeight = false }: L
         popupAnchor: [0, -24]
       });
 
+      // Dining venue marker (orange-red) using divIcon for custom styling
+      const diningMarker = L.divIcon({
+        html: `<div style="
+          background-color: #ea580c;
+          width: 24px;
+          height: 24px;
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          border: 2px solid white;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        "></div>`,
+        className: 'dining-venue-marker',
+        iconSize: [24, 24],
+        iconAnchor: [12, 24],
+        popupAnchor: [0, -24]
+      });
+
       setResortIcon(resortMarker);
       setShopIcon(shopMarker);
+      setDiningIcon(diningMarker);
     }
   }, []);
 
@@ -125,12 +161,20 @@ export function LocationMapCard({ resort, skiShops = [], fillHeight = false }: L
             <h3 className="text-lg font-semibold mb-1">Location</h3>
             <p className="text-sm text-gray-600">{resort.nearestCity}</p>
           </div>
-          {shopsWithCoords.length > 0 && (
-            <div className="flex items-center gap-2 text-xs text-gray-500">
-              <span className="inline-flex items-center gap-1">
-                <span className="w-3 h-3 bg-amber-500 rounded-full"></span>
-                Ski Shops ({shopsWithCoords.length})
-              </span>
+          {(shopsWithCoords.length > 0 || diningWithCoords.length > 0) && (
+            <div className="flex items-center gap-3 text-xs text-gray-500">
+              {shopsWithCoords.length > 0 && (
+                <span className="inline-flex items-center gap-1">
+                  <span className="w-3 h-3 bg-amber-500 rounded-full"></span>
+                  Shops ({shopsWithCoords.length})
+                </span>
+              )}
+              {diningWithCoords.length > 0 && (
+                <span className="inline-flex items-center gap-1">
+                  <span className="w-3 h-3 bg-orange-600 rounded-full"></span>
+                  Dining ({diningWithCoords.length})
+                </span>
+              )}
             </div>
           )}
         </div>
@@ -174,6 +218,19 @@ export function LocationMapCard({ resort, skiShops = [], fillHeight = false }: L
             >
               <Popup>
                 <SkiShopPopup shop={shop} />
+              </Popup>
+            </Marker>
+          ))}
+
+          {/* Dining venue markers */}
+          {diningIcon && diningWithCoords.map((venue) => (
+            <Marker
+              key={venue.id}
+              position={[venue.latitude, venue.longitude]}
+              icon={diningIcon}
+            >
+              <Popup>
+                <DiningVenuePopup venue={venue} />
               </Popup>
             </Marker>
           ))}
@@ -227,6 +284,51 @@ function SkiShopPopup({ shop }: { shop: SkiShop }) {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 text-xs text-ski-blue hover:underline"
+        >
+          <Globe className="w-3 h-3" />
+          Visit Website
+        </a>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Popup content for dining venue markers
+ */
+function DiningVenuePopup({ venue }: { venue: DiningVenue }) {
+  const formattedPhone = formatDiningPhone(venue.phone);
+  const telLink = getDiningTelLink(venue.phone);
+  const venueTypes = venue.venue_type.map(getVenueTypeLabel).join(' • ');
+
+  return (
+    <div className="min-w-[180px] max-w-[220px]">
+      {/* Venue name */}
+      <p className="font-semibold text-gray-900 text-sm mb-1">{venue.name}</p>
+
+      {/* Price and type */}
+      <p className="text-xs text-gray-600 mb-2">
+        <span className="font-medium">{venue.price_range}</span> • {venueTypes}
+      </p>
+
+      {/* Phone */}
+      {formattedPhone && telLink && (
+        <a
+          href={telLink}
+          className="flex items-center gap-1.5 text-xs text-orange-600 hover:underline mb-1.5"
+        >
+          <Phone className="w-3 h-3" />
+          {formattedPhone}
+        </a>
+      )}
+
+      {/* Website */}
+      {venue.website_url && (
+        <a
+          href={venue.website_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-xs text-orange-600 hover:underline"
         >
           <Globe className="w-3 h-3" />
           Visit Website

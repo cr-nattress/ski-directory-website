@@ -12,6 +12,8 @@ import { ConditionsSection } from './ConditionsSection';
 import { MobileResortSections } from './MobileResortSections';
 import { RelatedResortsSection } from './RelatedResortsSection';
 import { SkiShopsCard } from './SkiShopsCard';
+import { DiningVenuesCard } from './DiningVenuesCard';
+import { NearbyServicesCard } from './NearbyServicesCard';
 import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/schema';
 import { getStateName, getCountryName } from '@/lib/data/geo-mappings';
 import { FeatureFlag } from '@/components/FeatureFlag';
@@ -251,9 +253,20 @@ export function ResortDetail({ resort }: ResortDetailProps) {
                 <SocialMediaCard resort={resort} />
               </FeatureFlag>
 
+              {/* Consolidated Nearby Services Card (Story 37.17) */}
+              <FeatureFlag name="nearbyServicesCard">
+                <NearbyServicesCard resort={resort} />
+              </FeatureFlag>
+
+              {/* Individual Cards (disabled when nearbyServicesCard is enabled) */}
               {/* Ski Shops Card */}
               <FeatureFlag name="skiShopsCard">
                 <SkiShopsCard resort={resort} />
+              </FeatureFlag>
+
+              {/* Dining Venues Card */}
+              <FeatureFlag name="diningVenuesCard">
+                <DiningVenuesCard resort={resort} />
               </FeatureFlag>
             </div>
           </div>
