@@ -12,5 +12,5 @@ export * from './layout';
 // Media
 export * from './media';
 
-// Feedback components will be added as they are migrated
-// export * from './feedback';
+// Feedback
+export * from './feedback';
