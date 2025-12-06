@@ -418,6 +418,7 @@ function Badge({ count, label }: { count: number; label: string }) {
 
 /**
  * See All button component
+ * Scrolls to target accordion and expands it if collapsed
  */
 function SeeAllButton({
   count,
@@ -432,13 +433,32 @@ function SeeAllButton({
 }) {
   const textColor = color === 'blue' ? 'text-ski-blue' : 'text-orange-600';
 
+  const handleClick = () => {
+    const targetElement = document.getElementById(targetId);
+    if (!targetElement) return;
+
+    // Find the accordion button inside the target element
+    const accordionButton = targetElement.querySelector('button[aria-expanded]');
+    if (accordionButton) {
+      const isExpanded = accordionButton.getAttribute('aria-expanded') === 'true';
+      // Expand the accordion if it's collapsed
+      if (!isExpanded) {
+        (accordionButton as HTMLButtonElement).click();
+      }
+    }
+
+    // Scroll to the target after a brief delay to allow accordion to expand
+    setTimeout(() => {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 50);
+  };
+
   return (
     <button
-      onClick={() => {
-        document.getElementById(targetId)?.scrollIntoView({
-          behavior: 'smooth',
-        });
-      }}
+      onClick={handleClick}
       className={cn(
         'w-full px-4 py-3 flex items-center justify-center gap-1',
         `text-sm ${textColor} font-medium`,
