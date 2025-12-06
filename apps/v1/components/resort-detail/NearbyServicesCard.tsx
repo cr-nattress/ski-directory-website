@@ -94,12 +94,8 @@ export function NearbyServicesCard({
   const hasShops = shops.length > 0;
   const hasVenues = venues.length > 0;
 
-  // Don't render if no data at all
-  if (!isLoading && !hasShops && !hasVenues) {
-    return null;
-  }
-
   // If only one type of data exists, default to that tab
+  // This useEffect must be called before any conditional returns
   useEffect(() => {
     if (!isLoading) {
       if (!hasVenues && hasShops) {
@@ -112,6 +108,11 @@ export function NearbyServicesCard({
 
   const shopsSummary = calculateServicesSummary(shops);
   const venuesSummary = calculateVenueTypeSummary(venues);
+
+  // Don't render if no data at all
+  if (!isLoading && !hasShops && !hasVenues) {
+    return null;
+  }
 
   return (
     <div
