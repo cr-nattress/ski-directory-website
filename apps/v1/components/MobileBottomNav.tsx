@@ -15,8 +15,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/directory', label: 'Resorts', icon: List, matchPaths: ['/directory'] },
-  { href: '/social-links', label: 'Social', icon: Users, matchPaths: ['/social-links'] },
-  { href: '/ski-links', label: 'Links', icon: Link2 },
+  { href: '/social', label: 'Social', icon: Users, matchPaths: ['/social'] },
+  { href: '/links', label: 'Links', icon: Link2 },
 ];
 
 export function MobileBottomNav() {

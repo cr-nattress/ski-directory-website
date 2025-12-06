@@ -58,7 +58,6 @@ export function SkiLinksList({ groupedLinks, showGroupHeadings = true }: SkiLink
       {nonEmptySections.map((type) => (
         <details
           key={type}
-          open
           className="group border border-gray-200 rounded-lg bg-white"
         >
           {showGroupHeadings && (

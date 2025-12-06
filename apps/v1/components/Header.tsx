@@ -54,10 +54,10 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
             <Link href="/directory" className={navLinkClasses}>
               Resorts
             </Link>
-            <Link href="/ski-links" className={navLinkClasses}>
+            <Link href="/links" className={navLinkClasses}>
               Links
             </Link>
-            <Link href="/social-links" className={navLinkClasses}>
+            <Link href="/social" className={navLinkClasses}>
               Social
             </Link>
           </div>
@@ -93,14 +93,14 @@ export function Header({ variant = 'overlay' }: HeaderProps) {
               Resorts
             </Link>
             <Link
-              href="/ski-links"
+              href="/links"
               className="block px-4 py-3 min-h-[44px] text-gray-700 hover:bg-gray-100 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Links
             </Link>
             <Link
-              href="/social-links"
+              href="/social"
               className="block px-4 py-3 min-h-[44px] text-gray-700 hover:bg-gray-100 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >

@@ -8,7 +8,7 @@ interface SocialLinksHeroProps {
 export function SocialLinksHero({ channelCount, platformCount }: SocialLinksHeroProps) {
   return (
     <div className="bg-gradient-to-b from-ski-blue/5 to-white border-b border-gray-100">
-      <div className="container-custom py-12">
+      <div className="container-custom py-4 md:py-12">
         <div className="flex items-center gap-3 mb-4">
           <div className="p-2 bg-ski-blue/10 rounded-lg">
             <Users className="w-6 h-6 text-ski-blue" />
@@ -23,9 +23,9 @@ export function SocialLinksHero({ channelCount, platformCount }: SocialLinksHero
         </div>
 
         <h1 className="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-          Social Media Directory
+          Social Media
         </h1>
-        <p className="text-gray-600 text-lg max-w-2xl mb-4">
+        <p className="hidden md:block text-gray-600 text-lg max-w-2xl mb-4">
           Find the best ski YouTube channels, Instagram feeds, TikToks, and communities in one
           place. From technique tutorials to powder stoke, we&apos;ve curated the accounts worth
           following.

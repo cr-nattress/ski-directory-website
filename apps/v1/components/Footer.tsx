@@ -54,12 +54,12 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/ski-links" className="text-gray-400 hover:text-white transition-colors">
-                  Ski Links Directory
+                <Link href="/links" className="text-gray-400 hover:text-white transition-colors">
+                  Links Directory
                 </Link>
               </li>
               <li>
-                <Link href="/social-links" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/social" className="text-gray-400 hover:text-white transition-colors">
                   Social Media Directory
                 </Link>
               </li>

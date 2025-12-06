@@ -31,13 +31,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/ski-links`,
+      url: `${BASE_URL}/links`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/social-links`,
+      url: `${BASE_URL}/social`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,

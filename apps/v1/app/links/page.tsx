@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Curated links to the best ski websites: resorts, snow reports, webcams, trail maps, lodging, gear reviews, communities, and more. Your one-stop ski resource hub.',
   alternates: {
-    canonical: '/ski-links',
+    canonical: '/links',
   },
   openGraph: {
     title: 'Skiing Websites & Resources Directory | Ski Directory',
