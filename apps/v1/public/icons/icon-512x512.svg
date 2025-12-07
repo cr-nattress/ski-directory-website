@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#1E40AF"/>
+
+  <!-- Mountain shape -->
+  <g transform="translate(51, 51)">
+    <!-- Main mountain -->
+    <polygon
+      points="205,61.5 348.5,307.5 61.5,307.5"
+      fill="#FFFFFF"
+    />
+    <!-- Snow cap -->
+    <polygon
+      points="205,61.5 246,143.5 164,143.5"
+      fill="#E0E7FF"
+    />
+    <!-- Second peak -->
+    <polygon
+      points="295.2,143.5 377.2,307.5 213.20000000000002,307.5"
+      fill="#DBEAFE"
+    />
+    <!-- Ski trail line -->
+    <path
+      d="M 184.5 164 Q 225.50000000000003 225.50000000000003, 164 287"
+      stroke="#60A5FA"
+      stroke-width="8.2"
+      fill="none"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <!-- Text "SD" for larger icons -->
+  
+  <text
+    x="256"
+    y="471.04"
+    font-family="Arial, sans-serif"
+    font-size="61.44"
+    font-weight="bold"
+    fill="#FFFFFF"
+    text-anchor="middle"
+  >SKI DIRECTORY</text>
+  
+</svg>

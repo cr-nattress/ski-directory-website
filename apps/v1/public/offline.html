@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1E40AF">
+  <title>Offline | Ski Directory</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon svg {
+      width: 60px;
+      height: 60px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 16px;
+      opacity: 0.9;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    button, a {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button {
+      background: white;
+      color: #1E40AF;
+      border: none;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    a {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .cached-pages {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cached-pages h2 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+
+    .cached-pages ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .cached-pages a {
+      padding: 8px 16px;
+      font-size: 14px;
+      border-width: 1px;
+    }
+
+    .snowflake {
+      position: fixed;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 20px;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">
+      <!-- Mountain icon -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,10 85,75 15,75" fill="#FFFFFF"/>
+        <polygon points="50,10 60,35 40,35" fill="#E0E7FF"/>
+        <polygon points="70,35 92,75 48,75" fill="#DBEAFE"/>
+        <path d="M 42 40 Q 55 55, 38 70" stroke="#60A5FA" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <h1>You're Offline</h1>
+    <p>
+      It looks like you've lost your internet connection.
+      Don't worry - some pages may still be available!
+    </p>
+
+    <div class="actions">
+      <button onclick="window.location.reload()">
+        Try Again
+      </button>
+    </div>
+
+    <div class="cached-pages">
+      <h2>Try These Pages</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/directory">Directory</a></li>
+        <li><a href="/links">Ski Links</a></li>
+        <li><a href="/social">Social</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Decorative snowflakes -->
+  <script>
+    // Create falling snowflakes for visual interest
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      snowflake.innerHTML = '❄';
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = (Math.random() * 3 + 5) + 's';
+      snowflake.style.fontSize = (Math.random() * 15 + 10) + 'px';
+      document.body.appendChild(snowflake);
+
+      // Remove after animation completes
+      setTimeout(() => snowflake.remove(), 8000);
+    }
+
+    // Create snowflakes periodically
+    setInterval(createSnowflake, 500);
+
+    // Create initial batch
+    for (let i = 0; i < 5; i++) {
+      setTimeout(createSnowflake, i * 200);
+    }
+
+    // Auto-reload when back online
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>

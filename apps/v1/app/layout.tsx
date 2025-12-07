@@ -5,6 +5,8 @@ import { WebVitals } from "@/components/WebVitals";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+import { InstallPrompt } from "@/components/InstallPrompt";
 import { QueryProvider } from "@shared/api";
 
 const inter = Inter({
@@ -41,6 +43,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Ski Directory',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -69,6 +77,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        <meta name="theme-color" content="#1E40AF" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.svg" />
         <GoogleAnalytics />
       </head>
       <body className="font-sans pb-20 md:pb-0">
@@ -78,6 +88,8 @@ export default function RootLayout({
             {children}
           </ErrorBoundary>
           <MobileBottomNav />
+          <ServiceWorkerRegistration />
+          <InstallPrompt />
         </QueryProvider>
       </body>
     </html>
