@@ -4,7 +4,7 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
-import { useAllResorts } from '@/lib/hooks';
+import { useAllResorts } from '@shared/api';
 import { featureFlags } from '@/lib/config/feature-flags';
 
 // Lazy load SearchModal - only shown on mobile when user clicks

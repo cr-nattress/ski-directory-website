@@ -124,3 +124,21 @@ export function useNearbyResortsQuery(maxDistance: number, enabled = true) {
     staleTime: 5 * 60 * 1000,
   });
 }
+
+/**
+ * Compatibility hook matching the legacy useAllResorts interface.
+ * Drop-in replacement for @/lib/hooks useAllResorts.
+ *
+ * @example
+ * const { resorts, isLoading, error, refetch } = useAllResorts();
+ */
+export function useAllResorts() {
+  const query = useAllResortsQuery();
+
+  return {
+    resorts: query.data ?? [],
+    isLoading: query.isLoading,
+    error: query.error,
+    refetch: query.refetch,
+  };
+}

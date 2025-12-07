@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import { categories } from '@/lib/data/categories';
-import { useAllResorts, Resort } from '@/lib/hooks';
+import { useAllResorts } from '@shared/api';
+import { Resort } from '@/lib/api/types';
 import { ResortCard } from './ResortCard';
 import { CategoryChips } from './CategoryChips';
 

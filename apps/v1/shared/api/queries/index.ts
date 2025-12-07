@@ -6,6 +6,7 @@
 export {
   useResortsQuery,
   useAllResortsQuery,
+  useAllResorts,
   useResortsByPassQuery,
   useFeaturedResortsQuery,
   useNearbyResortsQuery,
@@ -22,3 +23,11 @@ export { useSearchQuery, useInstantSearchQuery } from './useSearchQuery';
 
 // Alerts query
 export { useAlertsQuery } from './useAlertsQuery';
+
+// Themed resorts query
+export {
+  useThemedResortsQuery,
+  useThemedResorts,
+  THEMED_SECTIONS,
+} from './useThemedResortsQuery';
+export type { ThemedSections } from './useThemedResortsQuery';

@@ -1,6 +1,6 @@
 'use client';
 
-import { useThemedResorts, THEMED_SECTIONS } from '@/lib/hooks/useThemedResorts';
+import { useThemedResorts, THEMED_SECTIONS } from '@shared/api';
 import { ResortRow, ResortRowSkeleton } from './ResortRow';
 
 /**

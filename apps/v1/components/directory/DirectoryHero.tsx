@@ -1,5 +1,3 @@
-import { Mountain } from 'lucide-react';
-
 interface DirectoryHeroProps {
   resortCount: number;
   totalResorts?: number;
@@ -31,12 +29,6 @@ export function DirectoryHero({
   return (
     <div className="bg-gradient-to-b from-ski-blue/5 to-white border-b border-gray-100">
       <div className="container-custom py-4 md:py-12">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 bg-ski-blue/10 rounded-lg">
-            <Mountain className="w-6 h-6 text-ski-blue" />
-          </div>
-        </div>
-
         <h1 className="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3">
           {title}
         </h1>

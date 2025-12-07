@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { X, MapPin, Calendar, Users, Search } from 'lucide-react';
-import { useAllResorts } from '@/lib/hooks';
+import { useAllResorts } from '@shared/api';
 import { trackSearch, trackFilterSelection } from '@/lib/analytics';
 
 interface SearchModalProps {
