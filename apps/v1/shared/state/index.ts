@@ -14,6 +14,7 @@
 export {
   useUIStore,
   useViewMode,
+  useViewModeValue,
   useSetViewMode,
   useIsHydrated,
 } from './uiStore';

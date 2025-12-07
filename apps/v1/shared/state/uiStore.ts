@@ -49,6 +49,26 @@ export const useUIStore = create<UIState>()(
 );
 
 // Selector hooks for granular subscriptions (prevents unnecessary re-renders)
-export const useViewMode = () => useUIStore((state) => state.viewMode);
+export const useViewModeValue = () => useUIStore((state) => state.viewMode);
 export const useSetViewMode = () => useUIStore((state) => state.setViewMode);
 export const useIsHydrated = () => useUIStore((state) => state.isHydrated);
+
+/**
+ * Hook that provides the same interface as the legacy useViewMode hook.
+ * Drop-in replacement for @/lib/hooks/useViewMode.
+ *
+ * @param defaultMode - Ignored (kept for API compatibility)
+ * @returns { mode, setMode, isHydrated }
+ *
+ * @example
+ * const { mode, setMode, isHydrated } = useViewMode('cards');
+ * if (!isHydrated) return <Skeleton />;
+ * return mode === 'map' ? <MapView /> : <CardsView />;
+ */
+export function useViewMode(_defaultMode?: ViewMode) {
+  const mode = useUIStore((state) => state.viewMode);
+  const setMode = useUIStore((state) => state.setViewMode);
+  const isHydrated = useUIStore((state) => state.isHydrated);
+
+  return { mode, setMode, isHydrated };
+}

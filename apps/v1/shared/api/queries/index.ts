@@ -15,7 +15,7 @@ export {
 export { useResortQuery, useResortByIdQuery } from './useResortQuery';
 
 // Map pins query
-export { useMapPinsQuery } from './useMapPinsQuery';
+export { useMapPinsQuery, useMapPins } from './useMapPinsQuery';
 
 // Search query
 export { useSearchQuery, useInstantSearchQuery } from './useSearchQuery';

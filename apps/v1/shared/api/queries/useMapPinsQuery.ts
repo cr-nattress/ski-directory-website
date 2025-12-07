@@ -32,3 +32,21 @@ export function useMapPinsQuery(enabled = true) {
     gcTime: 10 * 60 * 1000, // 10 minutes
   });
 }
+
+/**
+ * Compatibility hook matching the legacy useMapPins interface.
+ * Drop-in replacement for @/lib/hooks/useMapPins.
+ *
+ * @example
+ * const { pins, isLoading, error, refetch } = useMapPins();
+ */
+export function useMapPins() {
+  const query = useMapPinsQuery();
+
+  return {
+    pins: query.data ?? [],
+    isLoading: query.isLoading,
+    error: query.error,
+    refetch: query.refetch,
+  };
+}

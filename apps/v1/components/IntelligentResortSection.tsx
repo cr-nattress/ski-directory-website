@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { ViewToggle } from './ViewToggle';
 import { ResortMapViewWrapper } from './ResortMapViewWrapper';
-import { useViewMode } from '@/lib/hooks/useViewMode';
+import { useViewMode } from '@shared/state';
 import { categories } from '@/lib/data/categories';
 import { useRankedResorts } from '@/lib/hooks/useRankedResorts';
 import { useIntersectionObserver } from '@/lib/hooks/useIntersectionObserver';

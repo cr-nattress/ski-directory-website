@@ -18,7 +18,7 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { useRouter } from 'next/navigation';
-import { useMapPins } from '@/lib/hooks/useMapPins';
+import { useMapPins } from '@shared/api';
 import { cn } from '@/lib/utils';
 import { Navigation, Loader2, X, ChevronUp, ChevronDown } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
