@@ -33,3 +33,9 @@ export * from './config';
 
 // Hooks (full export - no conflicts)
 export * from './hooks';
+
+// API (TanStack Query infrastructure)
+export * from './api';
+
+// State (Zustand stores)
+export * from './state';

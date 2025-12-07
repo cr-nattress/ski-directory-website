@@ -5,6 +5,7 @@ import { WebVitals } from "@/components/WebVitals";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { QueryProvider } from "@shared/api";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -71,11 +72,13 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
       <body className="font-sans pb-20 md:pb-0">
-        <WebVitals />
-        <ErrorBoundary>
-          {children}
-        </ErrorBoundary>
-        <MobileBottomNav />
+        <QueryProvider>
+          <WebVitals />
+          <ErrorBoundary>
+            {children}
+          </ErrorBoundary>
+          <MobileBottomNav />
+        </QueryProvider>
       </body>
     </html>
   );
