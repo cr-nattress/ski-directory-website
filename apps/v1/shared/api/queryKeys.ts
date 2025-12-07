@@ -11,13 +11,7 @@
  * - queryClient.invalidateQueries({ queryKey: ['resorts', 'list'] }) - just lists
  */
 
-interface ResortFilters {
-  pass?: string;
-  state?: string;
-  status?: string;
-  search?: string;
-  [key: string]: string | undefined;
-}
+import type { ResortFilters } from '@/lib/api/types';
 
 export const queryKeys = {
   resorts: {

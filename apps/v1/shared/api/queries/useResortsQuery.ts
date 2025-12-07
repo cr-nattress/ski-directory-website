@@ -70,7 +70,7 @@ export function useAllResortsQuery(enabled = true) {
  */
 export function useResortsByPassQuery(passType: string, enabled = true) {
   return useQuery({
-    queryKey: queryKeys.resorts.list({ pass: passType }),
+    queryKey: queryKeys.resorts.list({ passAffiliation: [passType] }),
     queryFn: async () => {
       const response = await resortService.getResortsByPass(passType);
       if (response.status === 'error') {
