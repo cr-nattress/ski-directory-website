@@ -34,7 +34,7 @@ export function MobileBottomNav() {
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       aria-label="Mobile navigation"
     >
-      <div className="flex items-center justify-around h-16">
+      <div className="flex items-center h-16 w-full">
         {navItems.map((item) => {
           const Icon = item.icon;
           const active = isActive(item);
@@ -44,7 +44,7 @@ export function MobileBottomNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                'flex flex-col items-center justify-center min-w-[64px] min-h-[44px] px-3 py-2 transition-colors',
+                'flex-1 flex flex-col items-center justify-center min-h-[44px] py-2 transition-colors',
                 active
                   ? 'text-ski-blue'
                   : 'text-gray-500 hover:text-gray-700'
