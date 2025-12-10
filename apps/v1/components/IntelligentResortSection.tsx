@@ -147,52 +147,88 @@ export function IntelligentResortSection() {
         </section>
       )}
 
-      <section className="py-8 bg-bg-light">
-        <div className="container-custom">
-          {/* Header with View Toggle */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
-                {mode === 'cards' && selectedCategory
-                  ? `${categories.find((c) => c.id === selectedCategory)?.icon} ${categories.find((c) => c.id === selectedCategory)?.label} Resorts`
-                  : '🗺️ North America'}
-              </h2>
-              {!isLoading && (
-                <p className="text-gray-600 mt-2">
-                  {mode === 'map' ? (
-                    <>
-                      Showing {displayCount} resort{displayCount !== 1 ? 's' : ''}
-                    </>
-                  ) : selectedCategory ? (
-                    <>
-                      {filteredResorts.length} resort{filteredResorts.length !== 1 ? 's' : ''} found
-                    </>
-                  ) : (
-                    <>
-                      Showing {filteredResorts.length} of {displayCount} resort{displayCount !== 1 ? 's' : ''}
-                    </>
-                  )}
-                </p>
+      {/* Cards/Map Section - hidden when map-first layout is enabled */}
+      {!isMapFirstLayout && (
+        <section className="py-8 bg-bg-light">
+          <div className="container-custom">
+            {/* Header with View Toggle */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900">
+                  {mode === 'cards' && selectedCategory
+                    ? `${categories.find((c) => c.id === selectedCategory)?.icon} ${categories.find((c) => c.id === selectedCategory)?.label} Resorts`
+                    : '🗺️ North America'}
+                </h2>
+                {!isLoading && (
+                  <p className="text-gray-600 mt-2">
+                    {mode === 'map' ? (
+                      <>
+                        Showing {displayCount} resort{displayCount !== 1 ? 's' : ''}
+                      </>
+                    ) : selectedCategory ? (
+                      <>
+                        {filteredResorts.length} resort{filteredResorts.length !== 1 ? 's' : ''} found
+                      </>
+                    ) : (
+                      <>
+                        Showing {filteredResorts.length} of {displayCount} resort{displayCount !== 1 ? 's' : ''}
+                      </>
+                    )}
+                  </p>
+                )}
+              </div>
+
+              {/* View Toggle */}
+              {isHydrated && (
+                <ViewToggle value={mode} onChange={setMode} />
               )}
             </div>
 
-            {/* View Toggle - hidden when map-first layout is enabled (map shown above) */}
-            {isHydrated && !isMapFirstLayout && (
-              <ViewToggle value={mode} onChange={setMode} />
-            )}
-          </div>
+            {/* Category Chips - horizontal scroll on mobile, centered wrap on desktop */}
+            {featureFlags.categoryChips && (
+              <>
+                {/* Mobile: Horizontal scroll */}
+                <div className="md:hidden mb-8">
+                  <HorizontalScrollChips fadeColor="from-bg-light">
+                    {/* All Resorts chip */}
+                    <button
+                      onClick={() => handleCategorySelect(null)}
+                      className={cn(
+                        'flex-shrink-0 snap-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs min-h-[40px]',
+                        selectedCategory === null
+                          ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
+                          : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
+                      )}
+                    >
+                      <span>🗺️</span>
+                      <span>All</span>
+                    </button>
 
-          {/* Category Chips - horizontal scroll on mobile, centered wrap on desktop */}
-          {featureFlags.categoryChips && (
-            <>
-              {/* Mobile: Horizontal scroll */}
-              <div className="md:hidden mb-8">
-                <HorizontalScrollChips fadeColor="from-bg-light">
+                    {categories.map((category) => (
+                      <button
+                        key={category.id}
+                        onClick={() => handleCategorySelect(category.id)}
+                        className={cn(
+                          'flex-shrink-0 snap-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs min-h-[40px]',
+                          selectedCategory === category.id
+                            ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
+                            : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
+                        )}
+                      >
+                        <span>{category.icon}</span>
+                        <span>{category.label}</span>
+                      </button>
+                    ))}
+                  </HorizontalScrollChips>
+                </div>
+
+                {/* Desktop: Centered wrap */}
+                <div className="hidden md:flex flex-wrap justify-center gap-2 mb-8">
                   {/* All Resorts chip */}
                   <button
                     onClick={() => handleCategorySelect(null)}
                     className={cn(
-                      'flex-shrink-0 snap-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs min-h-[40px]',
+                      'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
                       selectedCategory === null
                         ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
                         : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
@@ -207,7 +243,7 @@ export function IntelligentResortSection() {
                       key={category.id}
                       onClick={() => handleCategorySelect(category.id)}
                       className={cn(
-                        'flex-shrink-0 snap-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs min-h-[40px]',
+                        'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
                         selectedCategory === category.id
                           ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
                           : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
@@ -217,125 +253,92 @@ export function IntelligentResortSection() {
                       <span>{category.label}</span>
                     </button>
                   ))}
-                </HorizontalScrollChips>
-              </div>
-
-              {/* Desktop: Centered wrap */}
-              <div className="hidden md:flex flex-wrap justify-center gap-2 mb-8">
-                {/* All Resorts chip */}
-                <button
-                  onClick={() => handleCategorySelect(null)}
-                  className={cn(
-                    'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
-                    selectedCategory === null
-                      ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
-                      : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
-                  )}
-                >
-                  <span>🗺️</span>
-                  <span>All</span>
-                </button>
-
-                {categories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => handleCategorySelect(category.id)}
-                    className={cn(
-                      'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all whitespace-nowrap font-medium text-xs',
-                      selectedCategory === category.id
-                        ? 'bg-ski-blue border-ski-blue text-white shadow-sm'
-                        : 'bg-white border-gray-200 text-gray-600 hover:border-ski-blue hover:text-ski-blue'
-                    )}
-                  >
-                    <span>{category.icon}</span>
-                    <span>{category.label}</span>
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
-
-          {/* View content - always show cards when map-first layout is enabled */}
-          <div
-            className={cn(
-              'transition-opacity duration-300',
-              !isHydrated && 'opacity-0'
-            )}
-          >
-            {(mode === 'cards' || isMapFirstLayout) ? (
-              <div ref={pullToRefreshRef}>
-                {/* Pull-to-refresh indicator (mobile only) */}
-                <div className="md:hidden">
-                  <PullToRefreshIndicator
-                    pullProgress={pullProgress}
-                    isRefreshing={isRefreshing}
-                    isPulling={isPulling}
-                  />
                 </div>
-
-                {/* Loading state */}
-                {isLoading && (
-                  <ResortGridSkeleton count={paginationConfig.landing.initialPageSize} />
-                )}
-
-                {/* Error state */}
-                {error && (
-                  <div className="text-center py-12">
-                    <p className="text-red-500 mb-4">
-                      Failed to load resorts. Please try again.
-                    </p>
-                    <button
-                      onClick={() => reset()}
-                      className="px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      Retry
-                    </button>
-                  </div>
-                )}
-
-                {/* Empty state */}
-                {!isLoading && !error && filteredResorts.length === 0 && (
-                  <div className="text-center py-12">
-                    <p className="text-gray-600">No resorts found matching your criteria.</p>
-                  </div>
-                )}
-
-                {/* Resort grid */}
-                {!isLoading && !error && filteredResorts.length > 0 && (
-                  <>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                      {filteredResorts.map((resort) => (
-                        <ResortCard key={resort.id} resort={resort} />
-                      ))}
-                    </div>
-
-                    {/* Infinite scroll UI */}
-                    {showLoadMoreUI && (
-                      <>
-                        <LoadingMore
-                          isLoading={isLoadingMore}
-                          hasMore={hasMore}
-                          loadedCount={filteredResorts.length}
-                          totalCount={totalCount}
-                        />
-
-                        {/* Sentinel element */}
-                        <div
-                          ref={sentinelRef}
-                          className="h-4"
-                          aria-hidden="true"
-                        />
-                      </>
-                    )}
-                  </>
-                )}
-              </div>
-            ) : (
-              <ResortMapViewWrapper />
+              </>
             )}
+
+            {/* View content */}
+            <div
+              className={cn(
+                'transition-opacity duration-300',
+                !isHydrated && 'opacity-0'
+              )}
+            >
+              {mode === 'cards' ? (
+                <div ref={pullToRefreshRef}>
+                  {/* Pull-to-refresh indicator (mobile only) */}
+                  <div className="md:hidden">
+                    <PullToRefreshIndicator
+                      pullProgress={pullProgress}
+                      isRefreshing={isRefreshing}
+                      isPulling={isPulling}
+                    />
+                  </div>
+
+                  {/* Loading state */}
+                  {isLoading && (
+                    <ResortGridSkeleton count={paginationConfig.landing.initialPageSize} />
+                  )}
+
+                  {/* Error state */}
+                  {error && (
+                    <div className="text-center py-12">
+                      <p className="text-red-500 mb-4">
+                        Failed to load resorts. Please try again.
+                      </p>
+                      <button
+                        onClick={() => reset()}
+                        className="px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        Retry
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Empty state */}
+                  {!isLoading && !error && filteredResorts.length === 0 && (
+                    <div className="text-center py-12">
+                      <p className="text-gray-600">No resorts found matching your criteria.</p>
+                    </div>
+                  )}
+
+                  {/* Resort grid */}
+                  {!isLoading && !error && filteredResorts.length > 0 && (
+                    <>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {filteredResorts.map((resort) => (
+                          <ResortCard key={resort.id} resort={resort} />
+                        ))}
+                      </div>
+
+                      {/* Infinite scroll UI */}
+                      {showLoadMoreUI && (
+                        <>
+                          <LoadingMore
+                            isLoading={isLoadingMore}
+                            hasMore={hasMore}
+                            loadedCount={filteredResorts.length}
+                            totalCount={totalCount}
+                          />
+
+                          {/* Sentinel element */}
+                          <div
+                            ref={sentinelRef}
+                            className="h-4"
+                            aria-hidden="true"
+                          />
+                        </>
+                      )}
+                    </>
+                  )}
+                </div>
+              ) : (
+                <ResortMapViewWrapper />
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }
