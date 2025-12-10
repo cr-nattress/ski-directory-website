@@ -88,6 +88,9 @@ export const featureFlags = {
   // Landing Page Features
   // ============================================
 
+  /** Map-first layout: Show map directly below hero instead of discovery sections */
+  mapFirstLayout: false,
+
   /** Infinite scroll on landing page resort cards */
   infiniteScroll: true,
 

@@ -19,6 +19,9 @@ import { paginationConfig } from '@/lib/config/pagination';
 import { useLogger } from '@/lib/hooks/useLogger';
 import { featureFlags } from '@/lib/config/feature-flags';
 
+// Check if map-first layout is enabled (map shown above this section)
+const isMapFirstLayout = featureFlags.mapFirstLayout;
+
 /**
  * Intelligent Resort Section
  *
@@ -173,8 +176,8 @@ export function IntelligentResortSection() {
               )}
             </div>
 
-            {/* View Toggle */}
-            {isHydrated && (
+            {/* View Toggle - hidden when map-first layout is enabled (map shown above) */}
+            {isHydrated && !isMapFirstLayout && (
               <ViewToggle value={mode} onChange={setMode} />
             )}
           </div>
@@ -252,14 +255,14 @@ export function IntelligentResortSection() {
             </>
           )}
 
-          {/* View content */}
+          {/* View content - always show cards when map-first layout is enabled */}
           <div
             className={cn(
               'transition-opacity duration-300',
               !isHydrated && 'opacity-0'
             )}
           >
-            {mode === 'cards' ? (
+            {(mode === 'cards' || isMapFirstLayout) ? (
               <div ref={pullToRefreshRef}>
                 {/* Pull-to-refresh indicator (mobile only) */}
                 <div className="md:hidden">

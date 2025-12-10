@@ -13,12 +13,14 @@
  * Use feature flags to conditionally render:
  * - intelligentListing: AI-ranked resort sections vs basic ResortSection
  * - contentSection: Editorial content (disabled by default)
+ * - mapFirstLayout: Show map directly below hero instead of discovery sections
  */
 import { Metadata } from 'next';
 import { PageWrapper } from '@/components/PageWrapper';
 import { Hero } from '@/components/Hero';
 import { ResortSection } from '@/components/ResortSection';
 import { IntelligentResortSection } from '@/components/IntelligentResortSection';
+import { MapSection } from '@/components/MapSection';
 import { ContentSection } from '@/components/ContentSection';
 import { Footer } from '@/components/Footer';
 import { WebsiteJsonLd, OrganizationJsonLd } from '@/components/schema';
@@ -37,6 +39,10 @@ export default function Home() {
       <OrganizationJsonLd />
       <PageWrapper headerVariant="overlay" />
       <Hero />
+      {/* Map-first layout: Show map directly below hero */}
+      <FeatureFlag name="mapFirstLayout">
+        <MapSection />
+      </FeatureFlag>
       <FeatureFlag name="intelligentListing" fallback={<ResortSection />}>
         <IntelligentResortSection />
       </FeatureFlag>
