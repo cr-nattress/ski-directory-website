@@ -217,11 +217,9 @@ class AdminResortService {
     if (input.terrain !== undefined) updateData.terrain = input.terrain;
     if (input.features !== undefined) updateData.features = input.features;
 
-    // @ts-ignore - Supabase generic type inference issue in Netlify build
-    const { error: updateError } = await supabase
-      .from('resorts')
-      .update(updateData)
-      .eq('id', id);
+    const resortsTable = supabase.from('resorts');
+    // @ts-ignore - Supabase generic type inference issue
+    const { error: updateError } = await resortsTable.update(updateData).eq('id', id);
 
     if (updateError) {
       log.error('Failed to update resort', { error: updateError.message });
@@ -298,11 +296,9 @@ class AdminResortService {
         updated_at: new Date().toISOString(),
       };
 
+      const resortsTableForDelete = supabase.from('resorts');
       // @ts-ignore - Supabase generic type inference issue
-      const { error } = await supabase
-        .from('resorts')
-        .update(softDeleteData)
-        .eq('id', id);
+      const { error } = await resortsTableForDelete.update(softDeleteData).eq('id', id);
 
       if (error) {
         log.error('Failed to soft delete resort', { error: error.message });
@@ -381,10 +377,9 @@ class AdminResortService {
       updated_at: new Date().toISOString(),
     };
 
+    const conditionsTable = supabase.from('resort_conditions');
     // @ts-ignore - Supabase generic type inference issue
-    const { error } = await supabase
-      .from('resort_conditions')
-      .upsert(conditionsData, { onConflict: 'resort_id' });
+    const { error } = await conditionsTable.upsert(conditionsData, { onConflict: 'resort_id' });
 
     if (error) {
       log.error('Failed to update conditions', { error: error.message });
