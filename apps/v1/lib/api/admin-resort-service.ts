@@ -6,9 +6,12 @@
 
 import { createServerClient } from '@/lib/supabase';
 import type { Resort } from '@/lib/types';
-import type { ResortStats, ResortTerrain, ResortFeatures } from '@/types/supabase';
+import type { ResortStats, ResortTerrain, ResortFeatures, Database } from '@/types/supabase';
 import { adaptResortFromSupabase } from './supabase-resort-adapter';
 import { createLogger } from '@/lib/hooks/useLogger';
+
+type ResortInsert = Database['public']['Tables']['resorts']['Insert'];
+type ResortUpdate = Database['public']['Tables']['resorts']['Update'];
 
 const log = createLogger('AdminResortService');
 
@@ -89,7 +92,7 @@ class AdminResortService {
     const assetPath = `${input.countryCode}/${input.stateSlug}/${input.slug}`;
 
     // Insert resort
-    const { error: insertError } = await supabase.from('resorts').insert({
+    const insertData: ResortInsert = {
       id: resortId,
       slug: input.slug,
       name: input.name,
@@ -99,11 +102,13 @@ class AdminResortService {
       nearest_city: input.nearestCity || null,
       website_url: input.websiteUrl || null,
       description: input.description || null,
-      stats: input.stats || {},
-      terrain: input.terrain || {},
-      features: input.features || {},
+      stats: input.stats,
+      terrain: input.terrain,
+      features: input.features,
       asset_path: assetPath,
-    });
+    };
+
+    const { error: insertError } = await supabase.from('resorts').insert(insertData);
 
     if (insertError) {
       log.error('Failed to create resort', { error: insertError.message });
@@ -266,14 +271,15 @@ class AdminResortService {
         return { data: null, error: error.message };
       }
     } else {
-      // Soft delete - set status to defunct
+      // Soft delete - set status to defunct (is_active is computed from status)
+      const softDeleteData: ResortUpdate = {
+        status: 'defunct',
+        updated_at: new Date().toISOString(),
+      };
+
       const { error } = await supabase
         .from('resorts')
-        .update({
-          status: 'defunct',
-          is_active: false,
-          updated_at: new Date().toISOString(),
-        })
+        .update(softDeleteData)
         .eq('id', id);
 
       if (error) {
