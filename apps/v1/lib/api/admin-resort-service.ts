@@ -81,7 +81,7 @@ class AdminResortService {
       .from('resorts')
       .select('id')
       .eq('slug', input.slug)
-      .single();
+      .single() as { data: { id: string } | null; error: unknown };
 
     if (existing) {
       return {
@@ -95,7 +95,7 @@ class AdminResortService {
       .from('states')
       .select('slug')
       .eq('slug', input.stateSlug)
-      .single();
+      .single() as { data: { slug: string } | null; error: unknown };
 
     if (!state) {
       return {
@@ -174,7 +174,7 @@ class AdminResortService {
       .from('resorts')
       .select('id, slug')
       .eq('id', id)
-      .single();
+      .single() as { data: { id: string; slug: string } | null; error: unknown };
 
     if (!existing) {
       return {
@@ -190,7 +190,7 @@ class AdminResortService {
         .select('id')
         .eq('slug', input.slug)
         .neq('id', id)
-        .single();
+        .single() as { data: { id: string } | null; error: unknown };
 
       if (slugConflict) {
         return {
@@ -274,7 +274,7 @@ class AdminResortService {
       .from('resorts')
       .select('id')
       .eq('id', id)
-      .single();
+      .single() as { data: { id: string } | null; error: unknown };
 
     if (!existing) {
       return {
@@ -319,6 +319,7 @@ class AdminResortService {
   async getResortById(id: string): Promise<AdminResult<Resort>> {
     const supabase = getAdminClient();
 
+    // @ts-expect-error - Supabase generic type inference issue
     const { data, error } = await supabase
       .from('resorts_full')
       .select('*')
@@ -358,7 +359,7 @@ class AdminResortService {
       .from('resorts')
       .select('id')
       .eq('id', resortId)
-      .single();
+      .single() as { data: { id: string } | null; error: unknown };
 
     if (!resort) {
       return {
