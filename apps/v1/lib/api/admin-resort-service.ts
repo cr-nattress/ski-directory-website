@@ -127,7 +127,7 @@ class AdminResortService {
       asset_path: assetPath,
     };
 
-    // @ts-expect-error - Supabase generic type inference doesn't resolve properly in some build environments
+    // @ts-ignore - Supabase generic type inference doesn't resolve properly in some build environments
     const { error: insertError } = await supabase.from('resorts').insert(insertData);
 
     if (insertError) {
@@ -144,7 +144,7 @@ class AdminResortService {
         resort_id: resortId,
         pass_slug: passSlug,
       }));
-      // @ts-expect-error - Supabase generic type inference issue
+      // @ts-ignore - Supabase generic type inference issue
       await supabase.from('resort_passes').insert(passData);
     }
 
@@ -154,7 +154,7 @@ class AdminResortService {
         resort_id: resortId,
         tag,
       }));
-      // @ts-expect-error - Supabase generic type inference issue
+      // @ts-ignore - Supabase generic type inference issue
       await supabase.from('resort_tags').insert(tagData);
     }
 
@@ -217,6 +217,7 @@ class AdminResortService {
     if (input.terrain !== undefined) updateData.terrain = input.terrain;
     if (input.features !== undefined) updateData.features = input.features;
 
+    // @ts-ignore - Supabase generic type inference issue in Netlify build
     const { error: updateError } = await supabase
       .from('resorts')
       .update(updateData)
@@ -239,7 +240,7 @@ class AdminResortService {
           resort_id: id,
           pass_slug: passSlug,
         }));
-        // @ts-expect-error - Supabase generic type inference issue
+        // @ts-ignore - Supabase generic type inference issue
         await supabase.from('resort_passes').insert(passData);
       }
     }
@@ -253,7 +254,7 @@ class AdminResortService {
           resort_id: id,
           tag,
         }));
-        // @ts-expect-error - Supabase generic type inference issue
+        // @ts-ignore - Supabase generic type inference issue
         await supabase.from('resort_tags').insert(tagData);
       }
     }
@@ -297,7 +298,7 @@ class AdminResortService {
         updated_at: new Date().toISOString(),
       };
 
-      // @ts-expect-error - Supabase generic type inference issue
+      // @ts-ignore - Supabase generic type inference issue
       const { error } = await supabase
         .from('resorts')
         .update(softDeleteData)
@@ -318,7 +319,7 @@ class AdminResortService {
   async getResortById(id: string): Promise<AdminResult<Resort>> {
     const supabase = getAdminClient();
 
-    // @ts-expect-error - Supabase generic type inference issue
+    // @ts-ignore - Supabase generic type inference issue
     const { data, error } = await supabase
       .from('resorts_full')
       .select('*')
@@ -380,7 +381,7 @@ class AdminResortService {
       updated_at: new Date().toISOString(),
     };
 
-    // @ts-expect-error - Supabase generic type inference issue
+    // @ts-ignore - Supabase generic type inference issue
     const { error } = await supabase
       .from('resort_conditions')
       .upsert(conditionsData, { onConflict: 'resort_id' });
