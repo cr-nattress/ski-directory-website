@@ -4,7 +4,7 @@
  * @context Uses service role key for write operations
  */
 
-import { createServerClient } from '@/lib/supabase';
+import { createClient } from '@supabase/supabase-js';
 import type { Resort } from '@/lib/types';
 import type { ResortStats, ResortTerrain, ResortFeatures, Database } from '@/types/supabase';
 import { adaptResortFromSupabase } from './supabase-resort-adapter';
@@ -12,6 +12,26 @@ import { createLogger } from '@/lib/hooks/useLogger';
 
 type ResortInsert = Database['public']['Tables']['resorts']['Insert'];
 type ResortUpdate = Database['public']['Tables']['resorts']['Update'];
+
+/**
+ * Create admin Supabase client with service role key
+ * This is separate from the main client to ensure proper typing
+ */
+function getAdminClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!url || !serviceKey) {
+    throw new Error('Missing Supabase admin configuration');
+  }
+
+  return createClient<Database>(url, serviceKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  });
+}
 
 const log = createLogger('AdminResortService');
 
@@ -55,7 +75,7 @@ class AdminResortService {
    */
   async createResort(input: CreateResortInput): Promise<AdminResult<Resort>> {
     log.info('Creating resort', { slug: input.slug });
-    const supabase = createServerClient();
+    const supabase = getAdminClient();
 
     // Check for duplicate slug
     const { data: existing } = await supabase
@@ -147,7 +167,7 @@ class AdminResortService {
    */
   async updateResort(id: string, input: UpdateResortInput): Promise<AdminResult<Resort>> {
     log.info('Updating resort', { id });
-    const supabase = createServerClient();
+    const supabase = getAdminClient();
 
     // Check resort exists
     const { data: existing } = await supabase
@@ -246,7 +266,7 @@ class AdminResortService {
    */
   async deleteResort(id: string, hard: boolean = false): Promise<AdminResult<void>> {
     log.info('Deleting resort', { id, hard });
-    const supabase = createServerClient();
+    const supabase = getAdminClient();
 
     // Check resort exists
     const { data: existing } = await supabase
@@ -295,7 +315,7 @@ class AdminResortService {
    * Get resort by ID
    */
   async getResortById(id: string): Promise<AdminResult<Resort>> {
-    const supabase = createServerClient();
+    const supabase = getAdminClient();
 
     const { data, error } = await supabase
       .from('resorts_full')
@@ -329,7 +349,7 @@ class AdminResortService {
     }
   ): Promise<AdminResult<void>> {
     log.info('Updating conditions', { resortId });
-    const supabase = createServerClient();
+    const supabase = getAdminClient();
 
     // Verify resort exists
     const { data: resort } = await supabase
