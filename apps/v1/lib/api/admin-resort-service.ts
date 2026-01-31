@@ -217,7 +217,6 @@ class AdminResortService {
     if (input.terrain !== undefined) updateData.terrain = input.terrain;
     if (input.features !== undefined) updateData.features = input.features;
 
-    // @ts-expect-error - Supabase generic type inference issue
     const { error: updateError } = await supabase
       .from('resorts')
       .update(updateData)
