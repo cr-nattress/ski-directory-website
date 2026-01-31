@@ -62,12 +62,12 @@ export const supabase: SupabaseClient<Database> = new Proxy({} as SupabaseClient
  * Create a Supabase client for server-side usage
  * This should only be used in server components or API routes
  */
-export function createServerClient() {
+export function createServerClient(): SupabaseClient<Database> {
   const serviceRoleKey = env.supabase.serviceRoleKey;
 
   if (!serviceRoleKey) {
     // Fall back to anon key if service role not available
-    return supabase;
+    return getSupabaseClient();
   }
 
   return createClient<Database>(env.supabase.url, serviceRoleKey, {
